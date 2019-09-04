@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>jp.ac.osaka_u.ist.sel</groupId>
-	<artifactId>ccvolti</artifactId>
+	<artifactId>icvolti</artifactId>
 	<version>19.01.24</version>
 	<packaging>jar</packaging>
 
-	<name>ccvolti</name>
+	<name>icvolti</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,14 +24,14 @@
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>3.0.0</version>
 				<configuration>
-					<finalName>ccvolti</finalName>
+					<finalName>icvolti</finalName>
 			        <appendAssemblyId>false</appendAssemblyId>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>jp.ac.osaka_u.ist.sel.ccvolti.CloneDetector</mainClass>
+							<mainClass>jp.ac.osaka_u.ist.sel.icvolti.CloneDetector</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
