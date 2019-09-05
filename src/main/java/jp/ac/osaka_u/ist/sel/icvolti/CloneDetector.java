@@ -52,6 +52,17 @@ public class CloneDetector {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
+		firstRun(args);
+
+	}
+	/* <p>
+	 * 最初の実行
+	 * <p>
+	 * @param args
+	 * @throws Exception
+	 */
+
+	private static void firstRun(String[] args) throws Exception {
 		System.out.println("ICVolti " + version);
 		System.out.println("AAAAAAAAAAAAAAAAAA");
 		System.out.println("----BoW ver----");
@@ -187,6 +198,7 @@ public class CloneDetector {
 		System.out.print("Finished : ");
 		currentTime = System.currentTimeMillis();
 		System.out.println(currentTime - start + "[ms]");
+
 	}
 
 	private static void getApplicationPath() throws URISyntaxException {

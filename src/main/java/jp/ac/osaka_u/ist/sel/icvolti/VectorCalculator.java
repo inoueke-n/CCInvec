@@ -148,7 +148,8 @@ public class VectorCalculator {
 		if (Config.LSH_PRG == LSHController.E2LSH) {
 			outputDenseDataset(blockList);
 		} else {
-			// outputSparseDataset(CloneDetector.blockList);
+//			outputSparseDataset(CloneDetector.blockList);
+			outputSparseDataset(blockList);
 			outputSparseDatasetBinary(blockList);
 		}
 		outputDictionary(dictionary);
@@ -157,12 +158,15 @@ public class VectorCalculator {
 		System.out.println(System.currentTimeMillis() - start + "[ms]");
 	}
 
-	private static void outputSparseDataset(ArrayList<Block> blockList) {
+	//private static void outputSparseDataset(ArrayList<Block> blockList) {
+	private static void outputSparseDataset(List<Block> blockList) {
 		try {
+			Block.serializeBlockList(blockList);
+			List<Block> blockList2 =Block.deserializeBlockList("blockList.bin");
 
 			PrintWriter writer = new PrintWriter(
 					new BufferedWriter(new FileWriter(CloneDetector.DATASET_FILE + ".txt")));
-			for (Block block : blockList) {
+			for (Block block : blockList2) {
 				StringBuilder buf = new StringBuilder();
 				OpenMapRealVector vector = block.getVector();
 				for (int index : RealVectorUtil.getSparseIndexList(vector)) {
@@ -185,6 +189,7 @@ public class VectorCalculator {
 
 		try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(CloneDetector.DATASET_FILE))) {
 			int i = 0;
+
 
 			for (Block block : blockList) {
 				OpenMapRealVector vector = block.getVector();

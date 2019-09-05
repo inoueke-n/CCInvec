@@ -1,11 +1,18 @@
 package jp.ac.osaka_u.ist.sel.icvolti.model;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.math3.linear.OpenMapRealVector;
 
-public class Block implements Comparable<Block> {
+public class Block implements Comparable<Block>, Serializable {
 
 	private int id;
 	private String fileName;
@@ -28,7 +35,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * メソッドIDの取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final int getId() {
@@ -39,7 +46,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * メソッドIDの設定
 	 * </p>
-	 * 
+	 *
 	 * @param id
 	 */
 	public final void setId(int id) {
@@ -50,7 +57,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * メソッド名の取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final String getName() {
@@ -61,7 +68,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * メソッド名の設定
 	 * </p>
-	 * 
+	 *
 	 * @param name
 	 */
 	public final void setName(String name) {
@@ -72,7 +79,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * クラス名の取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final String getFileName() {
@@ -83,7 +90,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * クラス名の設定
 	 * </p>
-	 * 
+	 *
 	 * @param className
 	 */
 	public final void setFileName(String fileName) {
@@ -97,7 +104,7 @@ public class Block implements Comparable<Block> {
 	public final void setLen(double len) {
 		this.len = len;
 	}
-	
+
 	/**
 	 * <p>
 	 * ワードリストへの追加
@@ -113,7 +120,7 @@ public class Block implements Comparable<Block> {
 		wordList.add(new Word(word, Word.WORD, 1));
 		return true;
 	}
-	
+
 	/**
 	 * <p>
 	 * ワードリストへの追加
@@ -130,7 +137,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * ワードリストの取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final List<Word> getWordList() {
@@ -146,7 +153,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * ノード数取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final int getNodeNum() {
@@ -157,7 +164,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * ノード数設定
 	 * </p>
-	 * 
+	 *
 	 * @param nodeNum
 	 */
 	public final void setNodeNum(int nodeNum) {
@@ -168,7 +175,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * ノード数加算
 	 * </p>
-	 * 
+	 *
 	 * @param
 	 */
 	public final void incNodeNum() {
@@ -179,7 +186,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 特徴ベクトルの取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final OpenMapRealVector getVector() {
@@ -190,7 +197,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 特徴ベクトルの設定
 	 * </p>
-	 * 
+	 *
 	 * @param vector
 	 */
 	public final void setVector(OpenMapRealVector vector) {
@@ -217,7 +224,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 開始行の取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final int getStartLine() {
@@ -228,7 +235,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 開始行の設定
 	 * </p>
-	 * 
+	 *
 	 * @param startLine
 	 */
 	public final void setStartLine(int startLine) {
@@ -239,7 +246,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 終了行の取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final int getEndLine() {
@@ -250,7 +257,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 終了行の設定
 	 * </p>
-	 * 
+	 *
 	 * @param endLine
 	 */
 	public final void setEndLine(int endLine) {
@@ -261,7 +268,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * ブロックの行数の取得
 	 * </p>
-	 * 
+	 *
 	 * @param endLine
 	 */
 	public final int getLineSize() {
@@ -272,7 +279,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 開始行の取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final int getMethodStartLine() {
@@ -283,7 +290,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 開始行の設定
 	 * </p>
-	 * 
+	 *
 	 * @param startLine
 	 */
 	public final void setMethodStartLine(int startLine) {
@@ -294,7 +301,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 終了行の取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final int getMethodEndLine() {
@@ -305,7 +312,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 終了行の設定
 	 * </p>
-	 * 
+	 *
 	 * @param endLine
 	 */
 	public final void setMethodEndLine(int endLine) {
@@ -316,7 +323,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 親ブロックの取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final Block getParent() {
@@ -327,7 +334,7 @@ public class Block implements Comparable<Block> {
 	 * <p>
 	 * 親ブロックの設定
 	 * </p>
-	 * 
+	 *
 	 * @param parent
 	 */
 	public final void setParent(Block parent) {
@@ -341,6 +348,57 @@ public class Block implements Comparable<Block> {
 		result = prime * result + id;
 		return result;
 	}
+
+
+	/**
+	 * <p>
+	 * ブロックリストをシリアライズ化
+	 * <p>
+	 * @param blocklist
+	 */
+	public static void serializeBlockList(List<Block> blockList) {
+		 try {
+             ObjectOutputStream objOutStream =
+             new ObjectOutputStream(
+             new FileOutputStream("blockList.bin"));
+             objOutStream.writeObject(blockList);
+             objOutStream.close();
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+	}
+
+
+	/**
+	 * <p>
+	 * ブロックリストをデシリアライズ化
+	 * <p>
+	 * @param blocklist
+	 */
+	public static List<Block> deserializeBlockList(String blockListName) {
+        try {
+            ObjectInputStream objInStream
+              = new ObjectInputStream(
+                new FileInputStream(blockListName));
+
+            List<Block> blockList = (List<Block>) objInStream.readObject();
+
+            objInStream.close();
+
+            return blockList;
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+		return null;
+	}
+
 
 	@Override
 	public boolean equals(Object obj) {
