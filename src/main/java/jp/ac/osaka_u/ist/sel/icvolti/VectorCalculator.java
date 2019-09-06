@@ -149,7 +149,7 @@ public class VectorCalculator {
 			outputDenseDataset(blockList);
 		} else {
 //			outputSparseDataset(CloneDetector.blockList);
-			outputSparseDataset(blockList);
+//			outputSparseDataset(blockList);
 			outputSparseDatasetBinary(blockList);
 		}
 		outputDictionary(dictionary);
@@ -189,9 +189,11 @@ public class VectorCalculator {
 
 		try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(CloneDetector.DATASET_FILE))) {
 			int i = 0;
+			Block.serializeBlockList(blockList);
+			List<Block> blockList2 =Block.deserializeBlockList("blockList.bin");
 
 
-			for (Block block : blockList) {
+			for (Block block : blockList2) {
 				OpenMapRealVector vector = block.getVector();
 				//System.out.println(i + " = " + vector);
 					i++;
