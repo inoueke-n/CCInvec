@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.antlr.v4.runtime.CharStream;
@@ -26,6 +27,7 @@ import jp.ac.osaka_u.ist.sel.icvolti.grammar.Java.JavaParser;
 import jp.ac.osaka_u.ist.sel.icvolti.grammar.Java.JavaParser.CompilationUnitContext;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.BlockFactory;
+import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
 
 public class JavaAnalyzer3 {
 
@@ -48,20 +50,20 @@ public class JavaAnalyzer3 {
 		blockID = 0;
 		countFiles=0;
 		countParseFiles=0;
-		
+
 	}
 
 	/**
 	 * <p>
 	 * 単語リストの取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final ArrayList<String> getWordList() {
 		return allWordList;
 	}
-	
+
 	public static final ArrayList<String> searchFiles(String pathname) {
 		ArrayList<String> fileList = new ArrayList<String>();
 		File file = new File(pathname);
@@ -75,16 +77,83 @@ public class JavaAnalyzer3 {
 		}
 		return fileList;
 	}
+
+	public static final ArrayList<String> searchFilesName(String pathname) {
+		ArrayList<String> fileList = new ArrayList<String>();
+		File file = new File(pathname);
+		if(file.isFile() && file.getName().endsWith(".java")) {
+			fileList.add(file.getAbsolutePath().substring(pathname.length() + 1));
+		} else if (file.isDirectory()) {
+			File[] files = file.listFiles();
+			for (File f : files) {
+				fileList.addAll(searchFilesName(f.getAbsolutePath().substring(pathname.length() + 1)));
+			}
+		}
+		return fileList;
+	}
+
+
+	public static final ArrayList<SourceFile> setFilesInfo(String newPathName, String oldPathName ) {
+		ArrayList<SourceFile> fileList = new ArrayList<SourceFile>();
+	//	File file = new File(pathname);
+		ArrayList<String> newFileNameList = searchFiles(newPathName);
+		ArrayList<String> oldFileNameList = searchFiles(oldPathName);
+		// ソースファイルの取得
+		Iterator<String> it = newFileNameList.iterator();
+		int fileId = 0;
+		System.out.print("file list start " );
+		while (it.hasNext()) {
+			String fileName = it.next();
+			SourceFile file = new SourceFile();
+		//	System.out.println("fileName = " + fileName);
+			System.out.println("new path fileName = " +fileName);
+			//file.setName(fileName);
+			System.out.println("file liest now  id = " + fileId );
+			//file.setNewPath(newPathName + "\\" + fileName);
+			//file.setOldPath(oldPathName + "\\" + fileName);
+			file.setNewPath(fileName);
+			file.setOldPath(oldPathName + "\\" + fileName.substring(newPathName.length() + 1));
+			//file.setOldPath(oldPathName + "\\" + fileName);
+			System.out.println( "old path file name = " + oldPathName + "\\" +fileName.substring(newPathName.length()+1));
+			file.setId(fileId++);
+
+			// 旧ファイルリストに含まれないファイルは新規追加分
+//			int index = oldFileNameList.indexOf(fileName);
+			int index = oldFileNameList.indexOf(oldPathName + "\\" + fileName.substring(newPathName.length()+1));
+			if (index > -1) {
+				file.setState(SourceFile.NORMAL);
+				oldFileNameList.remove(oldPathName + "\\" + fileName.substring(newPathName.length()+1));
+			} else {
+				file.setState(SourceFile.ADDED);
+			}
+			fileList.add(file);
+		}
+		// 残った旧ファイルは変更後に消えたもの
+		it = oldFileNameList.iterator();
+		while (it.hasNext()) {
+			String fileName = it.next();
+		    System.out.println("DELETED FILE = " + fileName);
+			SourceFile file = new SourceFile();
+			//file.setName(fileName);
+			file.setOldPath(fileName);
+			file.setId(fileId++);
+			file.setState(SourceFile.DELETED);
+			fileList.add(file);
+		}
+
+		return fileList;
+	}
+
 	/**
 	 * <p>
 	 * ディレクトリ探索
 	 * </p>
-	 * 
+	 *
 	 * @param file
 	 * @throws IOException
 	 */
-	public List<Block> analyze(List<String> fileList) throws IOException {
-		List<Block> blockList = new ArrayList<>();
+	public ArrayList<Block> analyze(ArrayList<String> fileList) throws IOException {
+		ArrayList<Block> blockList = new ArrayList<>();
 
 		for (String file : fileList) {
 			countFiles++;
@@ -139,7 +208,7 @@ public class JavaAnalyzer3 {
 	 * <p>
 	 * ソースコードテキスト取得
 	 * </p>
-	 * 
+	 *
 	 * @param file
 	 * @return
 	 * @throws IOException
@@ -158,7 +227,7 @@ public class JavaAnalyzer3 {
 	 * <p>
 	 * ASTから各メソッドのASTを構築
 	 * </p>
-	 * 
+	 *
 	 * @param method
 	 * @param node
 	 * @param parent

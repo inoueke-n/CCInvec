@@ -20,16 +20,67 @@ public class Block implements Comparable<Block>, Serializable {
 	private int endLine;
 	private int methodStartLine;
 	private int methodEndLine;
+	private int category = NULL;
 	private String name;
 	// private String code;
 	private double len;
+	private double localitySimilarity = 0.0;
 	private List<Word> wordList = new ArrayList<Word>();
 	private int nodeNum = 0;
 	private OpenMapRealVector vector;
 	// private HashMap<Integer, String> stringVector;
 	// private boolean checkFlg = false;
 	private Block parent;
+	//旧バージョンのコードブロック
+	private Block oldBlock = null;
+	//新バージョンのコードブロック
+	private Block newBlock = null;
 	// private ArrayList<Block> children;
+
+	/** このクローンを含んでいるファイル */
+
+
+
+	/** <p>初期状態</p> */
+	public final static int NULL = -1;
+
+	/** <p>Stable Clone</p> */
+	public final static int STABLE = 0;
+
+	/** <p>Modified Clone</p> */
+	public final static int MODIFIED = 1;
+
+	/** <p>Moved Clone</p> */
+	public final static int MOVED = 2;
+
+	/** <p>Added Clone</p> */
+	public final static int ADDED = 3;
+
+	/** <p>Deleted Clone</p> */
+	public final static int DELETED = 4;
+
+	/** <p>Modified and Deleted Clone</p> */
+	public final static int DELETE_MODIFIED = 5;
+
+
+	public Block() {
+
+	}
+
+	public Block(Block block) {
+
+		this.category = block.getCategory();
+		this.fileName = block.getFileName();
+		this.name = block.getName();
+		this.startLine = block.getStartLine();
+		this.endLine = block.getEndLine();
+	//	this.startColumn = block.getStartColumn();
+	//	this.endColumn = block.getEndColumn();
+	//	this.startToken = block.getStartToken();
+	//	this.endToken = block.getEndToken();
+		this.newBlock = block.getNewBlock();
+		this.newBlock = block.getOldBlock();
+	}
 
 	/**
 	 * <p>
@@ -319,6 +370,83 @@ public class Block implements Comparable<Block>, Serializable {
 		this.methodEndLine = endLine;
 	}
 
+
+	/**
+	 * <p>旧コードブロックの取得</p>
+	 * @return 旧コードブロックオブジェクト
+	 */
+	public final Block getOldBlock() {
+		return oldBlock;
+	}
+
+	/**
+	 * <p>旧コードブロックの設定</p>
+	 * @param oldBlock 旧コードブロックオブジェクト
+	 */
+	public void setOldBlock(Block oldBlock) {
+		this.oldBlock = oldBlock;
+	}
+
+	/**
+	 * <p>新コードブロックの取得</p>
+	 * @return 新コードブロックオブジェクト
+	 */
+	public Block getNewBlock() {
+		return newBlock;
+	}
+
+	/**
+	 * <p>新コードブロックの設定</p>
+	 * @param newBlock 新コードブロックオブジェクト
+	 */
+	public void setNewBlock(Block newBlock) {
+		this.newBlock = newBlock;
+	}
+
+	/**
+	 * <p>コードブロック分類の取得</p>
+	 * @return 分類情報
+	 */
+	public int getCategory() {
+		return category;
+	}
+
+	/**
+	 *  <p>コードブロック分類の取得</p>
+	 * @return 分類情報
+	 */
+	public String getCategoryString() {
+		String str = null;
+		switch (category) {
+		case ADDED:
+			str = "ADDED";
+			break;
+		case DELETED:
+			str = "DELETED";
+			break;
+		case MODIFIED:
+			str = "MODIFIED";
+			break;
+		case MOVED:
+			str = "MOVED";
+			break;
+		case STABLE:
+			str = "STABLE";
+			break;
+		case DELETE_MODIFIED:
+			str = "DELETE_MODIFIED";
+		}
+		return str;
+	}
+
+	/**
+	 * <p>クローン分類の設定</p>
+	 * @param category 分類情報
+	 */
+	public void setCategory(int category) {
+		this.category = category;
+	}
+
 	/**
 	 * <p>
 	 * 親ブロックの取得
@@ -340,6 +468,28 @@ public class Block implements Comparable<Block>, Serializable {
 	public final void setParent(Block parent) {
 		this.parent = parent;
 	}
+
+
+	/**
+	 * 親子クローン同士位置類似度
+	 * @author s-tokui
+	 * @return double localitySimilarity
+	 */
+	public double getLocationSimilarity() {
+		return localitySimilarity;
+	}
+
+	/**
+	 * 親子クローン同士位置類似度の設定
+	 * @author s-tokui
+	 * @param double
+	 *            localitySimilarity
+	 */
+	public void setLocationSimilarity(double sim) {
+		this.localitySimilarity = sim;
+	}
+
+
 
 	@Override
 	public int hashCode() {

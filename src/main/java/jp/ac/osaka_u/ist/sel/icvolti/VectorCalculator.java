@@ -326,7 +326,7 @@ public class VectorCalculator {
 		OpenMapRealVector vector = new OpenMapRealVector(wordMap.size());
 		final int size = indexList.size();
 		for (int i = 0; i < size; i++) {
-			System.out.println("index " +  indexList.get(i) +  "; valueList.get(i) / len) = " + valueList.get(i) / len);
+	//		System.out.println("index " +  indexList.get(i) +  "; valueList.get(i) / len) = " + valueList.get(i) / len);
 			vector.setEntry(indexList.get(i), valueList.get(i) / len);
 		}
 

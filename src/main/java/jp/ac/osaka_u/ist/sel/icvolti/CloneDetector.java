@@ -1,5 +1,6 @@
 package jp.ac.osaka_u.ist.sel.icvolti;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -7,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.CodeSource;
 import java.security.ProtectionDomain;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,6 +26,8 @@ import jp.ac.osaka_u.ist.sel.icvolti.analyze.JavaAnalyzer3;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.ClonePair;
 import jp.ac.osaka_u.ist.sel.icvolti.model.CloneSet;
+import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
+import jp.ac.osaka_u.ist.sel.icvolti.trace.TraceManager;
 
 public class CloneDetector {
 	public static final String PARAM_FILE = "dataset.txt.params";
@@ -38,6 +42,8 @@ public class CloneDetector {
 	public static String javaClassPath;
 
 	private static List<Block> blockList;
+	private static List<Block> oldBlockList;
+	private static List<Block> newBlockList;
 	public static List<ClonePair> clonePairList;
 	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
 	public static int countMethod, countBlock, countLine;
@@ -52,6 +58,13 @@ public class CloneDetector {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
+		// ログファイル初期化
+		try {
+			Logger.init();
+		} catch (IOException e) {
+			Logger.printlnConsole("Can't generate log file.", Logger.ERROR);
+			System.exit(1);
+		}
 		firstRun(args);
 		incrementalRun(args);
 
@@ -80,12 +93,16 @@ public class CloneDetector {
 		countMethod = 0;
 		countBlock = 0;
 		countLine = 0;
-		List<String> fileList = null;
+		//ArrayList<SourceFile> fileList = new ArrayList<SourceFile>();
+		//SourceFile file = new SourceFile();
+		//ArrayList<String> fileListName = null;
+		ArrayList<String> fileList = null;
 		//fileListの取得をちゃんとする
 		switch (Config.lang) {
 		case 0: // "java"
 			JavaAnalyzer3 javaanalyzer = new JavaAnalyzer3();
 			fileList = JavaAnalyzer3.searchFiles(Config.target);
+	//		fileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			blockList = javaanalyzer.analyze(fileList);
 			System.out.println(
 					"Parse file / All file = " + javaanalyzer.countParseFiles + " / " + javaanalyzer.countFiles);
@@ -227,29 +244,52 @@ public class CloneDetector {
 		countMethod = 0;
 		countBlock = 0;
 		countLine = 0;
-		List<String> fileList = null;
+		ArrayList<String> oldFileList = null;
+		ArrayList<String> newFileList = null;
 		//fileListの取得をちゃんとする
 		switch (Config.lang) {
 		case 0: // "java"
-			JavaAnalyzer3 javaanalyzer = new JavaAnalyzer3();
-			fileList = JavaAnalyzer3.searchFiles(Config.target);
-			blockList = javaanalyzer.analyze(fileList);
+			JavaAnalyzer3 oldJavaanalyzer = new JavaAnalyzer3();
+			JavaAnalyzer3 newJavaanalyzer = new JavaAnalyzer3();
+			oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
+			newFileList = JavaAnalyzer3.searchFiles(Config.target);
+			ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target, Config.target2);
+	//		System.out.println(Arrays.asList(FileList));
+
+
+			oldBlockList = oldJavaanalyzer.analyze(oldFileList);
+			newBlockList = newJavaanalyzer.analyze(newFileList);
+			//新旧コードブロック間の対応をとる
+			if(TraceManager.analyzeBlock(FileList)) {
+				System.out.print("analyze block done ====");
+			}else {
+
+				System.out.print("====analyze block cant ====");
+			}
+
+
 			System.out.println(
-					"Parse file / All file = " + javaanalyzer.countParseFiles + " / " + javaanalyzer.countFiles);
+					"Parse old file / All file = " + oldJavaanalyzer.countParseFiles + " / " + oldJavaanalyzer.countFiles);
+			System.out.println(
+					"Parse new file / All file = " + newJavaanalyzer.countParseFiles + " / " + newJavaanalyzer.countFiles);
 			break;
 		case 1: // "c"
-			CAnalyzer4 canalyzer = new CAnalyzer4();
-			fileList = canalyzer.searchFiles(Config.target);
-			blockList = canalyzer.analyze(fileList);
+			CAnalyzer4 oldCanalyzer = new CAnalyzer4();
+			CAnalyzer4 newCanalyzer = new CAnalyzer4();
+			oldFileList = oldCanalyzer.searchFiles(Config.target2);
+			newFileList = newCanalyzer.searchFiles(Config.target);
+			oldBlockList = oldCanalyzer.analyze(oldFileList);
+			newBlockList = oldCanalyzer.analyze(newFileList);
+
 			break;
 		case 2: // "c#"
-			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
+/*			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
 			fileList = CSharpAnalyzer.searchFiles(Config.target);
 			blockList = csharpAnalyzer.analyze(fileList);
 			System.out.println(
 					"Parse file / All file = " + csharpAnalyzer.countParseFiles + " / " + csharpAnalyzer.countFiles);
 			break;
-		}
+	*/	}
 		System.out.println("The number of methods : " + countMethod);
 		System.out.println("The number of blocks (Excluding methods) : " + countBlock);
 		System.out.println("The line : " + countLine);
@@ -260,15 +300,16 @@ public class CloneDetector {
 		subStart = System.currentTimeMillis();
 
 		VectorCalculator calculator = new VectorCalculator();
-		blockList = calculator.filterMethod(blockList);
+//		blockList = calculator.filterMethod(blockList);
+		newBlockList = calculator.filterMethod(newBlockList);
 		System.out.println("The threshold of size for method : " + Config.METHOD_NODE_TH);
 		System.out.println("The threshold of size for block : " + Config.BLOCK_NODE_TH);
 		System.out.println("The threshold of line of block : " + Config.LINE_TH);
-		System.out.println("Filtered blocks / All blocks : " + blockList.size() + " / " + (countMethod + countBlock));
+		System.out.println("Filtered blocks / All blocks : " + newBlockList.size() + " / " + (countMethod + countBlock));
 		System.out.println();
 
 		System.out.println("Calculate vector of each method ...");
-		calculator.calculateVector(blockList);
+		calculator.calculateVector(newBlockList);
 		// System.out.println("wordmap.size = " + wordMap.size());
 		currentTime = System.currentTimeMillis();
 		System.out.println(
@@ -286,11 +327,11 @@ public class CloneDetector {
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();
-			clonePairList = cloneJudge.getClonePairList(blockList);
+			clonePairList = cloneJudge.getClonePairList(newBlockList);
 			cloneJudge = null;
 		} else {
 			CloneJudgement cloneJudge = new CloneJudgement();
-			clonePairList = cloneJudge.getClonePairListNoLSH(blockList);
+			clonePairList = cloneJudge.getClonePairListNoLSH(newBlockList);
 		}
 
 		System.out.println("The number of clone pair : " + clonePairList.size());
@@ -326,7 +367,7 @@ public class CloneDetector {
 		if (Config.resultHTML != null)
 			Outputter.outputHTML(clonePairList);
 		if (Config.resultNotifier != null)
-			Outputter.outputNotifier(cloneSetList, fileList);
+			Outputter.outputNotifier(cloneSetList, newFileList);
 		if (Config.resultCloneSet != null)
 			Outputter.outputCloneSetTXTforCPP(cloneSetList);
 		// Outputter.outputForBigCloneEval(clonePairList);
