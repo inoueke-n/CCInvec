@@ -38,6 +38,7 @@ ant,IntrospectionHelper.java,1039,1047,ant,IntrospectionHelper.java,1088,1096,0.
 ant,IntrospectionHelper.java,1039,1047,ant,IntrospectionHelper.java,1098,1106,0.923248
 ant,IntrospectionHelper.java,1088,1096,ant,IntrospectionHelper.java,1098,1106,0.980196
 ant,IntrospectionHelper.java,1088,1096,ant,IntrospectionHelper.java,1109,1117,0.949563
+ant,IntrospectionHelper.java,1098,1106,ant,IntrospectionHelper.java,1109,1117,0.930758
 ant,Main.java,527,537,ant,Main.java,600,609,0.933700
 ant,Project.java,1405,1414,ant,Project.java,1414,1424,0.953049
 ant,Project.java,1405,1414,taskdefs,SubAnt.java,247,255,0.958541
@@ -69,6 +70,7 @@ condition,HasFreeSpace.java,62,69,src,Find.java,43,47,0.907393
 condition,HasFreeSpace.java,62,69,src,Find.java,56,60,0.907393
 condition,HasFreeSpace.java,62,69,src,Find.java,58,62,0.907393
 condition,IsLastModified.java,70,81,taskdefs,Touch.java,150,161,0.993958
+condition,IsLastModified.java,126,150,taskdefs,Touch.java,230,255,0.941019
 taskdefs,Copy.java,359,366,taskdefs,ExecuteOn.java,282,289,1.000000
 taskdefs,Copy.java,359,366,taskdefs,Expand.java,439,446,0.965307
 taskdefs,Copy.java,359,366,taskdefs,Get.java,511,518,1.000000
@@ -89,7 +91,6 @@ email,EmailTask.java,194,201,email,EmailTask.java,208,215,0.981664
 email,EmailTask.java,299,305,email,EmailTask.java,321,327,0.975610
 email,EmailTask.java,299,305,email,EmailTask.java,343,349,0.975610
 email,EmailTask.java,321,327,email,EmailTask.java,343,349,0.975610
-email,MimeMailer.java,315,323,email,PlainMailer.java,155,162,0.913346
 taskdefs,Exec.java,107,116,taskdefs,Exec.java,118,127,1.000000
 taskdefs,ExecTask.java,517,525,taskdefs,Java.java,169,179,1.000000
 taskdefs,ExecuteOn.java,282,289,taskdefs,Expand.java,439,446,0.965307
@@ -515,13 +516,9 @@ tar,TarUtils.java,443,451,tar,TarUtils.java,539,548,0.943880
 zip,ExtraFieldUtils.java,193,219,zip,ExtraFieldUtils.java,227,252,0.961451
 zip,ZipEntry.java,406,422,zip,ZipEntry.java,433,449,0.952020
 zip,ZipLong.java,129,134,zip,ZipLong.java,146,152,0.946053
-ant,AntAssert.java,39,43,ant,AntAssert.java,61,65,0.972973
-ant,AntClassLoaderDelegationTest.java,86,102,ant,AntClassLoaderDelegationTest.java,106,122,1.000000
-ant,AntClassLoaderDelegationTest.java,86,102,ant,AntClassLoaderDelegationTest.java,126,142,1.000000
-ant,AntClassLoaderDelegationTest.java,86,102,ant,AntClassLoaderDelegationTest.java,146,162,1.000000
-ant,AntClassLoaderDelegationTest.java,106,122,ant,AntClassLoaderDelegationTest.java,126,142,1.000000
-ant,AntClassLoaderDelegationTest.java,106,122,ant,AntClassLoaderDelegationTest.java,146,162,1.000000
-ant,AntClassLoaderDelegationTest.java,126,142,ant,AntClassLoaderDelegationTest.java,146,162,1.000000
+ant,AntClassLoaderDelegationTest.java,61,79,ant,AntClassLoaderDelegationTest.java,83,99,0.994266
+ant,AntClassLoaderDelegationTest.java,61,79,ant,AntClassLoaderDelegationTest.java,103,119,0.994266
+ant,AntClassLoaderDelegationTest.java,83,99,ant,AntClassLoaderDelegationTest.java,103,119,1.000000
 ant,AntClassLoaderTest.java,73,82,ant,AntClassLoaderTest.java,85,94,1.000000
 ant,BuildFileRule.java,77,86,ant,BuildFileTest.java,79,95,1.000000
 ant,BuildFileRule.java,126,135,ant,BuildFileTest.java,299,308,1.000000
@@ -1000,6 +997,7 @@ taskdefs,DemuxOutputTask.java,55,63,taskdefs,DemuxOutputTask.java,65,73,0.907407
 taskdefs,DynamicTest.java,39,45,taskdefs,ManifestClassPathTest.java,117,129,0.948683
 taskdefs,DynamicTest.java,39,45,taskdefs,ManifestClassPathTest.java,132,144,0.948683
 taskdefs,DynamicTest.java,39,45,taskdefs,ManifestClassPathTest.java,187,201,0.948683
+taskdefs,DynamicTest.java,39,45,taskdefs,PropertyTest.java,137,146,0.900770
 taskdefs,DynamicTest.java,39,45,taskdefs,XmlPropertyTest.java,67,76,0.998685
 taskdefs,ExecuteJavaTest.java,75,89,taskdefs,ExecuteJavaTest.java,101,115,0.988571
 taskdefs,ExecuteJavaTest.java,121,129,taskdefs,ExecuteWatchdogTest.java,58,66,1.000000
@@ -1420,6 +1418,7 @@ modules,LinkTest.java,408,440,modules,LinkTest.java,456,488,1.000000
 modules,LinkTest.java,633,645,modules,LinkTest.java,649,661,1.000000
 modules,LinkTest.java,693,704,modules,LinkTest.java,708,720,0.966465
 modules,LinkTest.java,693,704,modules,LinkTest.java,724,736,0.966465
+modules,LinkTest.java,693,704,modules,LinkTest.java,746,760,0.927613
 modules,LinkTest.java,693,704,modules,LinkTest.java,764,776,0.968033
 modules,LinkTest.java,693,704,modules,LinkTest.java,780,793,0.968033
 modules,LinkTest.java,693,704,modules,LinkTest.java,797,809,1.000000
@@ -1840,6 +1839,7 @@ types,PathTest.java,234,242,types,PathTest.java,318,324,0.976805
 types,PathTest.java,286,294,types,PathTest.java,318,324,0.976805
 types,PathTest.java,377,393,types,PathTest.java,412,429,0.945288
 types,PathTest.java,432,437,types,PathTest.java,448,455,0.900103
+types,PathTest.java,432,437,types,PathTest.java,506,512,0.907485
 types,PathTest.java,506,512,types,PatternSetTest.java,138,144,0.937425
 types,PathTest.java,506,512,types,PatternSetTest.java,147,153,0.937425
 types,PathTest.java,550,559,types,PathTest.java,562,571,0.948840
@@ -1855,6 +1855,7 @@ resources,FileResourceTest.java,56,63,resources,FileResourceTest.java,74,79,0.94
 resources,FileResourceTest.java,56,63,resources,FileResourceTest.java,82,87,0.960215
 resources,FileResourceTest.java,66,71,resources,FileResourceTest.java,74,79,0.991663
 resources,FileResourceTest.java,66,71,resources,FileResourceTest.java,82,87,0.978319
+resources,FileResourceTest.java,66,71,resources,FileResourceTest.java,90,97,0.915133
 resources,FileResourceTest.java,66,71,resources,FileResourceTest.java,119,125,0.913700
 resources,FileResourceTest.java,74,79,resources,FileResourceTest.java,82,87,0.978912
 resources,FileResourceTest.java,74,79,resources,FileResourceTest.java,90,97,0.915689
@@ -1959,11 +1960,7 @@ selectors,DepthSelectorTest.java,53,58,selectors,PresentSelectorTest.java,66,71,
 selectors,DepthSelectorTest.java,53,58,selectors,SizeSelectorTest.java,70,75,1.000000
 selectors,DepthSelectorTest.java,53,58,selectors,SizeSelectorTest.java,78,84,0.968385
 selectors,DepthSelectorTest.java,53,58,selectors,TypeSelectorTest.java,52,57,1.000000
-selectors,DepthSelectorTest.java,61,68,selectors,FilenameSelectorTest.java,54,59,0.915844
-selectors,DepthSelectorTest.java,61,68,selectors,PresentSelectorTest.java,66,71,0.915844
-selectors,DepthSelectorTest.java,61,68,selectors,SizeSelectorTest.java,70,75,0.915844
 selectors,DepthSelectorTest.java,61,68,selectors,SizeSelectorTest.java,78,84,0.944512
-selectors,DepthSelectorTest.java,61,68,selectors,TypeSelectorTest.java,52,57,0.915844
 selectors,DepthSelectorTest.java,71,82,selectors,DepthSelectorTest.java,85,96,1.000000
 selectors,DepthSelectorTest.java,71,82,selectors,DepthSelectorTest.java,99,110,1.000000
 selectors,DepthSelectorTest.java,71,82,selectors,FilenameSelectorTest.java,65,75,0.982186
@@ -2034,7 +2031,6 @@ util,DOMElementWriterTest.java,191,201,util,DOMElementWriterTest.java,232,243,0.
 util,DOMElementWriterTest.java,204,215,util,DOMElementWriterTest.java,218,229,0.983288
 util,DOMElementWriterTest.java,204,215,util,DOMElementWriterTest.java,232,243,0.942609
 util,DOMElementWriterTest.java,218,229,util,DOMElementWriterTest.java,232,243,0.932050
-util,FileUtilsTest.java,125,174,util,FileUtilsTest.java,252,307,0.901043
 util,FileUtilsTest.java,152,173,util,FileUtilsTest.java,176,192,0.935395
 util,FileUtilsTest.java,614,618,util,FileUtilsTest.java,624,628,0.975900
 util,FileUtilsTest.java,631,638,util,FileUtilsTest.java,657,664,0.998295

@@ -24,10 +24,10 @@ public class SourceFile {
 	/** ファイルの状態 */
 	private int state = NULL;
 
-	/** 新バージョンにおける, このファイルに属するクローン */
+	/** 新バージョンにおける, このファイルに属するブロック */
 	private ArrayList<Block> newBlockList = new ArrayList<Block>();
 
-	/** 旧バージョンにおける, このファイルに属するクローン */
+	/** 旧バージョンにおける, このファイルに属するブロック */
 	private ArrayList<Block> oldBlockList = new ArrayList<Block>();
 
 	/** 新バージョンで追加されたコード行 */
@@ -113,32 +113,33 @@ public class SourceFile {
 	}
 
 	/**
-	 * <p>新バージョンソースファイルに含まれるクローンリストの取得</p>
-	 * @return クローンリスト
+	 * <p>新バージョンソースファイルに含まれるブロックリストの取得</p>
+	 * @return ブロックリスト
 	 */
 	public ArrayList<Block> getNewBlockList() {
 		return newBlockList;
 	}
 
+
 	/**
-	 * <p>新バージョンソースファイルに含まれるクローンリストの設定</p>
-	 * @param newBlockList クローンリスト
+	 * <p>新バージョンソースファイルに含まれるブロックリストの設定</p>
+	 * @param newBlockList ブロックリスト
 	 */
 	public void setNewBlockList(ArrayList<Block> newBlockList) {
 		this.newBlockList = newBlockList;
 	}
 
 	/**
-	 * <p>旧バージョンソースファイルに含まれるクローンリストの取得</p>
-	 * @return　クローンリスト
+	 * <p>旧バージョンソースファイルに含まれるブロックリストの取得</p>
+	 * @return　ブロックリスト
 	 */
 	public ArrayList<Block> getOldBlockList() {
 		return oldBlockList;
 	}
 
 	/**
-	 * <p>旧バージョンソースファイルに含まれるクローンリストの取得</p>
-	 * @return　クローンリスト
+	 * <p>旧バージョンソースファイルに含まれるブロックリストの取得</p>
+	 * @return　ブロックリスト
 	 */
 	public void initBlockList() {
 		newBlockList = new ArrayList<Block>();
@@ -146,8 +147,8 @@ public class SourceFile {
 	}
 
 	/**
-	 * <p>旧バージョンソースファイルに含まれるクローンリストの設定</p>
-	 * @param oldBlockList クローンリスト
+	 * <p>旧バージョンソースファイルに含まれるブロックリストの設定</p>
+	 * @param oldBlockList ブロックリスト
 	 */
 	public void setOldBlockList(ArrayList<Block> oldBlockList) {
 		this.oldBlockList = oldBlockList;
@@ -198,7 +199,7 @@ public class SourceFile {
 	}
 
 	/**
-	 * <p>クローンリストを行番号順で整列</p>
+	 * <p>ブロックリストを行番号順で整列</p>
 	 */
 	public void sortBlockListbyLine() {
 		sortBlockListbyLine(newBlockList);
@@ -206,21 +207,21 @@ public class SourceFile {
 	}
 
 	/**
-	 * <p>クローンリストを行番号順で整列</p>
-	 * @param cloneList クローンリスト
+	 * <p>ブロックリストを行番号順で整列</p>
+	 * @param blockList ブロックリスト
 	 */
-	private void sortBlockListbyLine(ArrayList<Block> cloneList) {
-		for(int i = 0; i < cloneList.size(); i++) {
-			for (int j = i; j > 0 && cloneList.get(j).getStartLine() < cloneList.get(j - 1).getStartLine(); j--) {
-				Block tmp = cloneList.get(j);
-				cloneList.set(j,cloneList.get(j-1));
-				cloneList.set(j-1,tmp);
+	private void sortBlockListbyLine(ArrayList<Block> blockList) {
+		for(int i = 0; i < blockList.size(); i++) {
+			for (int j = i; j > 0 && blockList.get(j).getStartLine() < blockList.get(j - 1).getStartLine(); j--) {
+				Block tmp = blockList.get(j);
+				blockList.set(j,blockList.get(j-1));
+				blockList.set(j-1,tmp);
 			}
 		}
 	}
 
 	/**
-	 * <p>クローンリストをトークン順で整列</p>
+	 * <p>ブロックリストをトークン順で整列</p>
 	 */
 /*	public void sortBlockListbyToken() {
 		sortBlockListbyToken(newBlockList);
@@ -228,21 +229,21 @@ public class SourceFile {
 	}
 */
 	/**
-	 * <p>クローンリストをトークン順で整列</p>
-	 * @param cloneList クローンリスト
+	 * <p>ブロックリストをトークン順で整列</p>
+	 * @param blockList ブロックリスト
 	 */
-/*	private void sortBlockListbyToken(ArrayList<Block> cloneList) {
-		for(int i = 0; i < cloneList.size(); i++) {
-			for(int j = i; j > 0 && cloneList.get(j).getStartToken() < cloneList.get(j-1).getStartToken(); j--) {
-				Block tmp = cloneList.get(j);
-				cloneList.set(j,cloneList.get(j-1));
-				cloneList.set(j-1,tmp);
+/*	private void sortBlockListbyToken(ArrayList<Block> blockList) {
+		for(int i = 0; i < blockList.size(); i++) {
+			for(int j = i; j > 0 && blockList.get(j).getStartToken() < blockList.get(j-1).getStartToken(); j--) {
+				Block tmp = blockList.get(j);
+				blockList.set(j,blockList.get(j-1));
+				blockList.set(j-1,tmp);
 			}
 		}
 	}
 */
 	/**
-	 * <p>クローンリストをメソッド名順で整列</p>
+	 * <p>ブロックリストをメソッド名順で整列</p>
 	 * @author m-sano
 	 */
 	public void sortBlockListbyMethod() {
@@ -251,16 +252,16 @@ public class SourceFile {
 	}
 
 	/**
-	 * <p>クローンリストをメソッド名順で整列</p>
+	 * <p>ブロックリストをメソッド名順で整列</p>
 	 * @author m-sano
-	 * @param cloneList クローンリスト
+	 * @param blockList ブロックリスト
 	 */
-	private void sortBlockListbyMethod(ArrayList<Block> cloneList) {
-		for(int i = 0; i < cloneList.size(); i++) {
-			for(int j = i; j > 0 && cloneList.get(j).getName().compareTo(cloneList.get(j-1).getName()) < 0; j--) {
-				Block tmp = cloneList.get(j);
-				cloneList.set(j, cloneList.get(j-1));
-				cloneList.set(j-1, tmp);
+	private void sortBlockListbyMethod(ArrayList<Block> blockList) {
+		for(int i = 0; i < blockList.size(); i++) {
+			for(int j = i; j > 0 && blockList.get(j).getName().compareTo(blockList.get(j-1).getName()) < 0; j--) {
+				Block tmp = blockList.get(j);
+				blockList.set(j, blockList.get(j-1));
+				blockList.set(j-1, tmp);
 			}
 		}
 	}

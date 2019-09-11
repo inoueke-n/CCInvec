@@ -11,7 +11,7 @@ package jp.ac.osaka_u.ist.sel.icvolti;
 
 public class Def {
 	/** analyze.jar へのパス */
-	public static String NOTIFIER_PATH = null;
+	public static String CCVOLTI_PATH = null;
 
 	/**
 	 * CCFinderX
@@ -128,7 +128,7 @@ public class Def {
 
 	/**
 	 * 指定ツールに対して言語名が有効か調べる.
-	 * 
+	 *
 	 * @author m-sano
 	 * @param lang
 	 * @param tool

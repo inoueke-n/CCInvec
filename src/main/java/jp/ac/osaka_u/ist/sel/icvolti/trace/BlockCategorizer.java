@@ -7,7 +7,7 @@ import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
 
 /**
  * <p>
- * コードクローンの変更履歴分類クラス
+ * コードブロックの変更履歴分類クラス
  * </p>
  *
  * @author y-yuuki
@@ -16,7 +16,7 @@ public class BlockCategorizer {
 
 	/**
 	 * <p>
-	 * コードクローンの分類
+	 * コードブロックの分類
 	 * </p>
 	 *
 	 * @param fileList
@@ -25,11 +25,13 @@ public class BlockCategorizer {
 	public void categorizeBlock(ArrayList<SourceFile> fileList) {
 
 		for (SourceFile file : fileList) {
+		//	System.out.println(" start filelist");
 			if (file.getState() == SourceFile.NORMAL) {
+	//		System.out.println("Source File Nomal ");
 				categorizeStableModified(file);
 			}
 
-			// 実行時点で, 新旧両方に存在するクローンは分類されているはず
+			// 実行時点で, 新旧両方に存在するブロックは分類されているはず
 			categorizeAddedDeleted(file);
 
 		}
@@ -37,26 +39,31 @@ public class BlockCategorizer {
 
 	/**
 	 * <p>
-	 * Stable/Modifiedクローンの分類
+	 * Stable/Modifiedブロックの分類
 	 * </p>
 	 *
 	 * @param file
-	 *            クローン分類を行うソースファイル
+	 *            ブロック分類を行うソースファイル
 	 */
 	private void categorizeStableModified(SourceFile file) {
-
+		//int i = 0;
 		for (Block blockA : file.getNewBlockList()) {
+
+
+	//		System.out.println(i +  " getNewCloneList = " + file.getNewPath());
+	//		System.out.println("categorize stable = " + blockA.getId() + " getfile = "  + blockA.getStartLine() + "- " + blockA.getEndLine());
+	//		i++;
 
 			int addedLineStart = 0;
 			int addedLineEnd = 0;
 
 			//2バージョン間に存在して，追加された行がなければ，ここのfor文は通らない
-			//コードクローンの開始行/終了行までの追加行の計算
+			//コードブロックの開始行/終了行までの追加行の計算
 			for (int line : file.getAddedCodeList()) {
 				if (line < blockA.getStartLine()) {
 					addedLineStart++;
 					addedLineEnd++;
-				//コードクローン内に追加された行があれば，コードクローンの終了行をインクメント
+				//コードブロック内に追加された行があれば，コードブロックの終了行をインクメント
 				} else if (line <= blockA.getEndLine()) {
 					addedLineEnd++;
 				} else {
@@ -68,13 +75,13 @@ public class BlockCategorizer {
 
 				int deletedLineStart = 0;
 				int deletedLineEnd = 0;
-				// コードクローンの開始行/終了行までの削除行の計算
+				// コードブロックの開始行/終了行までの削除行の計算
 				for (int line : file.getDeletedCodeList()) {
-					//コードクローンがある場所よりまえで削除された行があれば，
+					//コードブロックがある場所よりまえで削除された行があれば，
 					if (line < blockB.getStartLine()) {
 						deletedLineStart++;
 						deletedLineEnd++;
-					//コードクローン内で削除された行があれば，
+					//コードブロック内で削除された行があれば，
 					} else if (line <= blockB.getEndLine()) {
 						deletedLineEnd++;
 					} else {
@@ -105,8 +112,10 @@ public class BlockCategorizer {
 							blockA.setLocationSimilarity(sim);
 							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
 								blockA.setCategory(Block.STABLE);
+	//System.out.println("Block STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 							} else {
 								blockA.setCategory(Block.MODIFIED);
+	System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 							}
 						}
 						//上のifに入るのはどんな状況？基本的にはしたのelseにはいる？
@@ -115,8 +124,10 @@ public class BlockCategorizer {
 						blockA.setLocationSimilarity(sim);
 						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
 							blockA.setCategory(Block.STABLE);
+//	System.out.println("Block STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						} else {
 							blockA.setCategory(Block.MODIFIED);
+	System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						}
 					}
 					if (blockB.getNewBlock() != null) {
@@ -125,8 +136,10 @@ public class BlockCategorizer {
 							blockB.setLocationSimilarity(sim);
 							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
 								blockB.setCategory(Block.STABLE);
+	//System.out.println("Block STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 							} else {
 								blockB.setCategory(Block.MODIFIED);
+	System.out.println("Block MODIFIED = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 							}
 						}
 					}else {
@@ -134,8 +147,10 @@ public class BlockCategorizer {
 						blockB.setLocationSimilarity(sim);
 						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
 							blockB.setCategory(Block.STABLE);
+//	System.out.println("Block STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 						} else {
 							blockB.setCategory(Block.MODIFIED);
+System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						}
 					}
 
@@ -154,11 +169,11 @@ public class BlockCategorizer {
 	private double calcurateLocationSimilarity(Block blockA, Block blockB, int startLineA, int endLineA, int startLineB,
 			int endLineB) {
 		double sim = 0.0;
-		//クローンの行数計算
+		//ブロックの行数計算
 		int lineA = blockA.getEndLine() - blockA.getStartLine();
 		int lineB = blockB.getEndLine() - blockB.getStartLine();
 
-		//コードクローンが削除されている？
+		//コードブロックが削除されている？
 		if (startLineA >= endLineB) {
 			return 0;
 		}
@@ -184,25 +199,27 @@ public class BlockCategorizer {
 
 	/**
 	 * <p>
-	 * Added/Deletedクローンの分類
+	 * Added/Deletedブロックの分類
 	 * </p>
 	 *
 	 * @param file
-	 *            クローン分類を行うソースファイル
+	 *            ブロック分類を行うソースファイル
 	 */
 	private void categorizeAddedDeleted(SourceFile file) {
 
-		// Addedクローンの分類
+		// Addedブロックの分類
 		for (Block block : file.getNewBlockList()) {
 			if (block.getCategory() == Block.NULL) {
 				block.setCategory(Block.ADDED);
+System.out.println("Block ADDED = filename " + block.getFileName() + "start line =  " + block.getStartLine() + "end line = " + block.getEndLine());
 			}
 		}
 
-		// Deletedクローンの分類
+		// Deletedブロックの分類
 		for (Block block : file.getOldBlockList()) {
 			if (block.getCategory() == Block.NULL) {
 				block.setCategory(Block.DELETED);
+System.out.println("Block DELETED = filename " + block.getFileName() + "start line =  " + block.getStartLine() + "end line = " + block.getEndLine());
 			}
 		}
 	}

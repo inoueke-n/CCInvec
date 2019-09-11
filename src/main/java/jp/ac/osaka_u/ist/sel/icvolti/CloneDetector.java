@@ -1,5 +1,6 @@
 package jp.ac.osaka_u.ist.sel.icvolti;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -65,6 +66,9 @@ public class CloneDetector {
 			Logger.printlnConsole("Can't generate log file.", Logger.ERROR);
 			System.exit(1);
 		}
+		Def.CCVOLTI_PATH = new File(".").getAbsoluteFile().getParent();
+		System.out.println("CCVolti = " + Def.CCVOLTI_PATH);
+
 		firstRun(args);
 		incrementalRun(args);
 
@@ -104,6 +108,7 @@ public class CloneDetector {
 			fileList = JavaAnalyzer3.searchFiles(Config.target);
 	//		fileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			blockList = javaanalyzer.analyze(fileList);
+			ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			System.out.println(
 					"Parse file / All file = " + javaanalyzer.countParseFiles + " / " + javaanalyzer.countFiles);
 			break;
@@ -224,7 +229,7 @@ public class CloneDetector {
 	 * <p>
 	 * 2回目以降の実行
 	 * <p>
-	 * @param args
+	 * @param args, 旧バージョンのソースファイルオブジェクト
 	 * @throws Exception
 	 */
 
@@ -249,16 +254,19 @@ public class CloneDetector {
 		//fileListの取得をちゃんとする
 		switch (Config.lang) {
 		case 0: // "java"
-			JavaAnalyzer3 oldJavaanalyzer = new JavaAnalyzer3();
+	//		JavaAnalyzer3 oldJavaanalyzer = new JavaAnalyzer3();
 			JavaAnalyzer3 newJavaanalyzer = new JavaAnalyzer3();
-			oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
+	//		oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
+	/*ゆくゆくはなくしたいやつ*/
 			newFileList = JavaAnalyzer3.searchFiles(Config.target);
 			ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target, Config.target2);
 	//		System.out.println(Arrays.asList(FileList));
 
 
-			oldBlockList = oldJavaanalyzer.analyze(oldFileList);
+		//	oldBlockList = oldJavaanalyzer.analyze(oldFileList);
 			newBlockList = newJavaanalyzer.analyze(newFileList);
+			newJavaanalyzer.analyze_test(FileList);
+
 			//新旧コードブロック間の対応をとる
 			if(TraceManager.analyzeBlock(FileList)) {
 				System.out.print("analyze block done ====");
@@ -268,8 +276,6 @@ public class CloneDetector {
 			}
 
 
-			System.out.println(
-					"Parse old file / All file = " + oldJavaanalyzer.countParseFiles + " / " + oldJavaanalyzer.countFiles);
 			System.out.println(
 					"Parse new file / All file = " + newJavaanalyzer.countParseFiles + " / " + newJavaanalyzer.countFiles);
 			break;

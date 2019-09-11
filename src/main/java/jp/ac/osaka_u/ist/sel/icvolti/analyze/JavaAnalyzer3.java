@@ -144,6 +144,36 @@ public class JavaAnalyzer3 {
 		return fileList;
 	}
 
+
+	public static final ArrayList<SourceFile> setFilesInfo(String PathName) {
+		ArrayList<SourceFile> fileList = new ArrayList<SourceFile>();
+	//	File file = new File(pathname);
+		ArrayList<String> FileNameList = searchFiles(PathName);
+		// ソースファイルの取得
+		Iterator<String> it = FileNameList.iterator();
+		int fileId = 0;
+		System.out.print("file list start " );
+		while (it.hasNext()) {
+			String fileName = it.next();
+			SourceFile file = new SourceFile();
+		//	System.out.println("fileName = " + fileName);
+			System.out.println("new path fileName = " +fileName);
+			//file.setName(fileName);
+			System.out.println("file liest now  id = " + fileId );
+			//file.setNewPath(newPathName + "\\" + fileName);
+			//file.setOldPath(oldPathName + "\\" + fileName);
+			file.setNewPath(fileName);
+			//file.setOldPath(oldPathName + "\\" + fileName);
+			file.setId(fileId++);
+
+			// 旧ファイルリストに含まれないファイルは新規追加分
+//			int index = oldFileNameList.indexOf(fileName);
+			fileList.add(file);
+		}
+		// 残った旧ファイルは変更後に消えたもの
+		return fileList;
+	}
+
 	/**
 	 * <p>
 	 * ディレクトリ探索
@@ -156,6 +186,7 @@ public class JavaAnalyzer3 {
 		ArrayList<Block> blockList = new ArrayList<>();
 
 		for (String file : fileList) {
+		//	System.out.println("analyze file  = " + file);
 			countFiles++;
 			CharStream stream = CharStreams.fromFileName(file, Charset.forName(Config.charset));
 			JavaLexer lexer = new JavaLexer(stream);
@@ -203,6 +234,96 @@ public class JavaAnalyzer3 {
 		}
 		return blockList;
 	}
+
+	/**
+	 * <p>
+	 * ディレクトリ探索
+	 * </p>
+	 *
+	 * @param file
+	 * @throws IOException
+	 */
+	public void analyze_test(ArrayList<SourceFile> fileList) throws IOException {
+		ArrayList<Block> blockList = new ArrayList<>();
+
+		for (SourceFile file : fileList) {
+			countFiles++;
+			CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
+			JavaLexer newlexer = new JavaLexer(newstream);
+			newlexer.removeErrorListeners();
+			// lexer.addErrorListener(SilentErrorListener.INSTANCE);
+
+			CommonTokenStream newtokens = new CommonTokenStream(newlexer);
+			JavaParser newparser = new JavaParser(newtokens);
+
+			// parser.addParseListener(new JavaMyListener());
+			CompilationUnitContext newtree = null;
+			newparser.removeErrorListeners();
+			// parser.addErrorListener(SilentErrorListener.INSTANCE);
+
+			newparser.getInterpreter().setPredictionMode(PredictionMode.SLL);
+			CharStream oldstream = CharStreams.fromFileName(file.getOldPath(), Charset.forName(Config.charset));
+			JavaLexer oldlexer = new JavaLexer(oldstream);
+			oldlexer.removeErrorListeners();
+			// lexer.addErrorListener(SilentErrorListener.INSTANCE);
+
+			CommonTokenStream oldtokens = new CommonTokenStream(oldlexer);
+			JavaParser oldparser = new JavaParser(oldtokens);
+
+			// parser.addParseListener(old JavaMyListener());
+			CompilationUnitContext oldtree = null;
+			oldparser.removeErrorListeners();
+			// parser.addErrorListener(SilentErrorListener.INSTANCE);
+
+			oldparser.getInterpreter().setPredictionMode(PredictionMode.SLL);
+			try {
+				newtree = newparser.compilationUnit(); // STAGE 1
+				oldtree = oldparser.compilationUnit(); // STAGE 1
+			} catch (Exception ex) {
+				System.out.println("try predictionMode LL");
+				newlexer = new JavaLexer(newstream);
+				newlexer.removeErrorListeners();
+				// lexer.addErrorListener(DescriptiveErrorListener.INSTANCE);
+				newtokens = new CommonTokenStream(newlexer); // rewind input stream
+				newparser = new JavaParser(newtokens);
+				newparser.getInterpreter().setPredictionMode(PredictionMode.LL);
+				newparser.removeErrorListeners();
+				// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
+				System.out.println("try predictionMode LL old ");
+				oldlexer = new JavaLexer(oldstream);
+				oldlexer.removeErrorListeners();
+				// lexer.addErrorListener(DescriptiveErrorListener.INSTANCE);
+				oldtokens = new CommonTokenStream(oldlexer); // rewind input stream
+				oldparser = new JavaParser(oldtokens);
+				oldparser.getInterpreter().setPredictionMode(PredictionMode.LL);
+				oldparser.removeErrorListeners();
+				// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
+				try {
+					newtree = newparser.compilationUnit(); // STAGE 2
+					oldtree = oldparser.compilationUnit(); // STAGE 2
+//					System.out.println("success");
+				} catch (ParseCancellationException e) {
+					System.err.println(file + " parse cancel");
+					continue;
+				} catch (Exception e) {
+					System.err.println(e);
+					continue;
+				}
+				// if we parse ok, it's LL not SLL
+			}
+			blockList.addAll(extractMethod(newtree, newparser));
+			file.getNewBlockList().addAll(extractMethod(newtree, newparser));
+			countParseFiles++;
+			newtokens.fill();
+
+			file.getOldBlockList().addAll(extractMethod(oldtree, oldparser));
+			oldtokens.fill();
+			CloneDetector.countLine += oldtokens.LT(oldtokens.size()).getLine();
+
+		}
+	}
+
+
 
 	/**
 	 * <p>

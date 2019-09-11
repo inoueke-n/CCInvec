@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -29,10 +30,10 @@ public class DiffDetector {
 
 			// ファイルが存続 かつ ブロックが消滅していない場合
 		//	if(file.getState() == SourceFile.NORMAL && !(file.getNewBlockList().isEmpty() && !file.getOldBlockList().isEmpty())) {
-			System.out.println("SourceFile.NOMAL = " + file.getState());
+		//	System.out.println("SourceFile.NOMAL = " + file.getState());
 
 			if(file.getState() == SourceFile.NORMAL) {
-				System.out.println("NOMAL source FIle");
+			//	System.out.println("NOMAL source FIle");
 				if(!executeDiff(file)) {
 				System.out.println("diff false");
 					return false;
@@ -55,19 +56,19 @@ public class DiffDetector {
 	private static boolean executeDiff(SourceFile file) {
 		try{
 
-			System.out.println("DIFFFFFFFFF");
+			//System.out.println("DIFFFFFFFFF");
 
 			ProcessBuilder pb;
 			if (File.separatorChar == '\\') {
-				String[] cmdArray = { Def.DIFF_PATH, file.getOldPath(),
+				String[] cmdArray = { Paths.get(Def.CCVOLTI_PATH, Def.DIFF_PATH).toString(), file.getOldPath(),
 						file.getNewPath() };
-				System.out.println(Arrays.asList(cmdArray));
-				System.out.println("kita  ====");
+			//	System.out.println(Arrays.asList(cmdArray));
+				//System.out.println("kita  ====");
 				pb = new ProcessBuilder(cmdArray);
 			} else {
 				String[] cmdArray = { "diff", file.getOldPath(), file.getNewPath() };
 				System.out.println(Arrays.asList(cmdArray));
-				System.out.println("kitaeeeeeeee  ====");
+				//System.out.println("kitaeeeeeeee  ====");
 				pb = new ProcessBuilder(cmdArray);
 			}
 			Process p = pb.start();

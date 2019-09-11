@@ -2329,9 +2329,6 @@ lzero
 comm
 1980
 21
-formatted
-needle
-haystack
 testcases
 mainjarstring
 rule
