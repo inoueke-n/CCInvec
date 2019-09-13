@@ -23,7 +23,7 @@ public class TraceManager {
 		// TODO 自動生成されたメソッド・スタブ
 		// ファイルのdiffを取得
 		System.out.print("analyze block start");
-		if (!DiffDetector.getDiff(FileList)) {
+		if (!DiffDetector.getDiff_test(FileList)) {
 		System.out.println("diff miss ======");
 			Logger.writeln("Can't get diff of source code.", Logger.ERROR);
 			return false;

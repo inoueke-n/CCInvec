@@ -91,6 +91,7 @@ email,EmailTask.java,194,201,email,EmailTask.java,208,215,0.981664
 email,EmailTask.java,299,305,email,EmailTask.java,321,327,0.975610
 email,EmailTask.java,299,305,email,EmailTask.java,343,349,0.975610
 email,EmailTask.java,321,327,email,EmailTask.java,343,349,0.975610
+email,MimeMailer.java,315,323,email,PlainMailer.java,155,162,0.913346
 taskdefs,Exec.java,107,116,taskdefs,Exec.java,118,127,1.000000
 taskdefs,ExecTask.java,517,525,taskdefs,Java.java,169,179,1.000000
 taskdefs,ExecuteOn.java,282,289,taskdefs,Expand.java,439,446,0.965307
@@ -501,14 +502,13 @@ bzip2,CBZip2InputStream.java,947,958,bzip2,CBZip2InputStream.java,974,986,0.9437
 bzip2,CBZip2OutputStream.java,222,375,bzip2,CBZip2OutputStream.java,379,526,0.996616
 bzip2,CBZip2OutputStream.java,269,287,bzip2,CBZip2OutputStream.java,299,317,1.000000
 bzip2,CBZip2OutputStream.java,424,442,bzip2,CBZip2OutputStream.java,454,472,1.000000
-bzip2,CBZip2OutputStream.java,1225,1241,bzip2,CBZip2OutputStream.java,1258,1278,0.900982
+bzip2,CBZip2OutputStream.java,1226,1240,bzip2,CBZip2OutputStream.java,1258,1278,0.933985
 bzip2,CBZip2OutputStream.java,1228,1239,bzip2,CBZip2OutputStream.java,1307,1318,0.941181
 bzip2,CBZip2OutputStream.java,1228,1239,bzip2,CBZip2OutputStream.java,1320,1331,0.953020
 bzip2,CBZip2OutputStream.java,1248,1282,bzip2,CBZip2OutputStream.java,1305,1341,0.915762
 bzip2,CBZip2OutputStream.java,1307,1318,bzip2,CBZip2OutputStream.java,1320,1331,0.993828
 bzip2,CBZip2OutputStream.java,1462,1482,bzip2,CBZip2OutputStream.java,1489,1508,0.991779
 bzip2,CRC.java,120,126,bzip2,CRC.java,130,135,0.907625
-tar,TarBuffer.java,329,358,tar,TarBuffer.java,369,398,0.937266
 tar,TarEntry.java,1106,1112,tar,TarEntry.java,1112,1118,1.000000
 tar,TarUtils.java,418,427,tar,TarUtils.java,443,451,0.943880
 tar,TarUtils.java,418,427,tar,TarUtils.java,539,548,1.000000
@@ -519,7 +519,6 @@ zip,ZipLong.java,129,134,zip,ZipLong.java,146,152,0.946053
 ant,AntClassLoaderDelegationTest.java,61,79,ant,AntClassLoaderDelegationTest.java,83,99,0.994266
 ant,AntClassLoaderDelegationTest.java,61,79,ant,AntClassLoaderDelegationTest.java,103,119,0.994266
 ant,AntClassLoaderDelegationTest.java,83,99,ant,AntClassLoaderDelegationTest.java,103,119,1.000000
-ant,AntClassLoaderTest.java,73,82,ant,AntClassLoaderTest.java,85,94,1.000000
 ant,BuildFileRule.java,77,86,ant,BuildFileTest.java,79,95,1.000000
 ant,BuildFileRule.java,126,135,ant,BuildFileTest.java,299,308,1.000000
 ant,BuildFileRule.java,152,166,ant,BuildFileTest.java,326,341,1.000000
@@ -1960,7 +1959,11 @@ selectors,DepthSelectorTest.java,53,58,selectors,PresentSelectorTest.java,66,71,
 selectors,DepthSelectorTest.java,53,58,selectors,SizeSelectorTest.java,70,75,1.000000
 selectors,DepthSelectorTest.java,53,58,selectors,SizeSelectorTest.java,78,84,0.968385
 selectors,DepthSelectorTest.java,53,58,selectors,TypeSelectorTest.java,52,57,1.000000
+selectors,DepthSelectorTest.java,61,68,selectors,FilenameSelectorTest.java,54,59,0.915844
+selectors,DepthSelectorTest.java,61,68,selectors,PresentSelectorTest.java,66,71,0.915844
+selectors,DepthSelectorTest.java,61,68,selectors,SizeSelectorTest.java,70,75,0.915844
 selectors,DepthSelectorTest.java,61,68,selectors,SizeSelectorTest.java,78,84,0.944512
+selectors,DepthSelectorTest.java,61,68,selectors,TypeSelectorTest.java,52,57,0.915844
 selectors,DepthSelectorTest.java,71,82,selectors,DepthSelectorTest.java,85,96,1.000000
 selectors,DepthSelectorTest.java,71,82,selectors,DepthSelectorTest.java,99,110,1.000000
 selectors,DepthSelectorTest.java,71,82,selectors,FilenameSelectorTest.java,65,75,0.982186
@@ -2031,6 +2034,7 @@ util,DOMElementWriterTest.java,191,201,util,DOMElementWriterTest.java,232,243,0.
 util,DOMElementWriterTest.java,204,215,util,DOMElementWriterTest.java,218,229,0.983288
 util,DOMElementWriterTest.java,204,215,util,DOMElementWriterTest.java,232,243,0.942609
 util,DOMElementWriterTest.java,218,229,util,DOMElementWriterTest.java,232,243,0.932050
+util,FileUtilsTest.java,125,174,util,FileUtilsTest.java,252,307,0.901043
 util,FileUtilsTest.java,152,173,util,FileUtilsTest.java,176,192,0.935395
 util,FileUtilsTest.java,614,618,util,FileUtilsTest.java,624,628,0.975900
 util,FileUtilsTest.java,631,638,util,FileUtilsTest.java,657,664,0.998295
@@ -2052,7 +2056,6 @@ regexp,RegexpMatcherTest.java,179,186,regexp,RegexpMatcherTest.java,206,213,0.93
 regexp,RegexpMatcherTest.java,188,195,regexp,RegexpMatcherTest.java,197,204,0.939826
 regexp,RegexpMatcherTest.java,188,195,regexp,RegexpMatcherTest.java,206,213,1.000000
 regexp,RegexpMatcherTest.java,197,204,regexp,RegexpMatcherTest.java,206,213,0.939826
-regexp,RegexpTest.java,42,48,regexp,RegexpTest.java,51,57,0.962963
 regexp,RegexpTest.java,42,48,regexp,RegexpTest.java,60,66,0.962963
 regexp,RegexpTest.java,51,57,regexp,RegexpTest.java,60,66,0.981481
 util,StringUtilsTest.java,39,47,util,StringUtilsTest.java,50,59,0.992536
@@ -2091,8 +2094,6 @@ src,FindTest.java,77,82,src,FindTest.java,80,85,1.000000
 src,FindTest.java,77,82,src,FindTest.java,88,93,0.950947
 src,Find.java,43,47,src,Find.java,56,60,0.962963
 src,Find.java,43,47,src,Find.java,58,62,0.962963
-src,Find.java,52,60,src,Find.java,64,72,0.921250
-src,Find.java,52,60,src,Find.java,67,75,0.921250
 src,FindTest.java,60,67,src,FindTest.java,60,67,1.000000
 src,FindTest.java,60,67,src,FindTest.java,63,70,1.000000
 src,FindTest.java,77,82,src,FindTest.java,76,81,1.000000

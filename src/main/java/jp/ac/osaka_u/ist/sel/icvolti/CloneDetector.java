@@ -69,7 +69,7 @@ public class CloneDetector {
 		Def.CCVOLTI_PATH = new File(".").getAbsoluteFile().getParent();
 		System.out.println("CCVolti = " + Def.CCVOLTI_PATH);
 
-		firstRun(args);
+	//	firstRun(args);
 		incrementalRun(args);
 
 	}
@@ -107,8 +107,9 @@ public class CloneDetector {
 			JavaAnalyzer3 javaanalyzer = new JavaAnalyzer3();
 			fileList = JavaAnalyzer3.searchFiles(Config.target);
 	//		fileList = JavaAnalyzer3.setFilesInfo(Config.target);
-			blockList = javaanalyzer.analyze(fileList);
+			//blockList = javaanalyzer.analyze(fileList);
 			ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target);
+			blockList = javaanalyzer.analyze_test_first(FileList);
 			System.out.println(
 					"Parse file / All file = " + javaanalyzer.countParseFiles + " / " + javaanalyzer.countFiles);
 			break;
@@ -254,16 +255,16 @@ public class CloneDetector {
 		//fileListの取得をちゃんとする
 		switch (Config.lang) {
 		case 0: // "java"
-	//		JavaAnalyzer3 oldJavaanalyzer = new JavaAnalyzer3();
+		//	JavaAnalyzer3 oldJavaanalyzer = new JavaAnalyzer3();
 			JavaAnalyzer3 newJavaanalyzer = new JavaAnalyzer3();
-	//		oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
+			//oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
 	/*ゆくゆくはなくしたいやつ*/
 			newFileList = JavaAnalyzer3.searchFiles(Config.target);
 			ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target, Config.target2);
 	//		System.out.println(Arrays.asList(FileList));
 
 
-		//	oldBlockList = oldJavaanalyzer.analyze(oldFileList);
+			//oldBlockList = oldJavaanalyzer.analyze(oldFileList);
 			newBlockList = newJavaanalyzer.analyze(newFileList);
 			newJavaanalyzer.analyze_test(FileList);
 

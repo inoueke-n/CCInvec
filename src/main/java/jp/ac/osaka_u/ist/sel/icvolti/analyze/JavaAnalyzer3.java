@@ -106,15 +106,15 @@ public class JavaAnalyzer3 {
 			String fileName = it.next();
 			SourceFile file = new SourceFile();
 		//	System.out.println("fileName = " + fileName);
-			System.out.println("new path fileName = " +fileName);
+		//	System.out.println("new path fileName = " +fileName);
 			//file.setName(fileName);
-			System.out.println("file liest now  id = " + fileId );
+	//		System.out.println("file liest now  id = " + fileId );
 			//file.setNewPath(newPathName + "\\" + fileName);
 			//file.setOldPath(oldPathName + "\\" + fileName);
 			file.setNewPath(fileName);
 			file.setOldPath(oldPathName + "\\" + fileName.substring(newPathName.length() + 1));
 			//file.setOldPath(oldPathName + "\\" + fileName);
-			System.out.println( "old path file name = " + oldPathName + "\\" +fileName.substring(newPathName.length()+1));
+	//		System.out.println( "old path file name = " + oldPathName + "\\" +fileName.substring(newPathName.length()+1));
 			file.setId(fileId++);
 
 			// 旧ファイルリストに含まれないファイルは新規追加分
@@ -248,6 +248,7 @@ public class JavaAnalyzer3 {
 
 		for (SourceFile file : fileList) {
 			countFiles++;
+			//System.out.println("fi = " + file.getNewPath());
 			CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
 			JavaLexer newlexer = new JavaLexer(newstream);
 			newlexer.removeErrorListeners();
@@ -318,9 +319,75 @@ public class JavaAnalyzer3 {
 
 			file.getOldBlockList().addAll(extractMethod(oldtree, oldparser));
 			oldtokens.fill();
-			CloneDetector.countLine += oldtokens.LT(oldtokens.size()).getLine();
+			CloneDetector.countLine += newtokens.LT(newtokens.size()).getLine();
 
 		}
+	}
+
+
+	/**
+	 * <p>
+	 * ディレクトリ探索
+	 * </p>
+	 *
+	 * @param file
+	 * @return
+	 * @throws IOException
+	 */
+	public ArrayList<Block> analyze_test_first(ArrayList<SourceFile> fileList) throws IOException {
+		ArrayList<Block> blockList = new ArrayList<>();
+
+		for (SourceFile file : fileList) {
+			countFiles++;
+			CharStream stream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
+			JavaLexer lexer = new JavaLexer(stream);
+			lexer.removeErrorListeners();
+			// lexer.addErrorListener(SilentErrorListener.INSTANCE);
+
+			CommonTokenStream tokens = new CommonTokenStream(lexer);
+			JavaParser parser = new JavaParser(tokens);
+
+			// parser.addParseListener(new JavaMyListener());
+			CompilationUnitContext tree = null;
+			parser.removeErrorListeners();
+			// parser.addErrorListener(SilentErrorListener.INSTANCE);
+
+			parser.getInterpreter().setPredictionMode(PredictionMode.SLL);
+			try {
+				tree = parser.compilationUnit(); // STAGE 1
+			} catch (Exception ex) {
+				System.out.println("try predictionMode LL");
+				lexer = new JavaLexer(stream);
+				lexer.removeErrorListeners();
+				// lexer.addErrorListener(DescriptiveErrorListener.INSTANCE);
+				tokens = new CommonTokenStream(lexer); // rewind input stream
+				parser = new JavaParser(tokens);
+				parser.getInterpreter().setPredictionMode(PredictionMode.LL);
+				parser.removeErrorListeners();
+				// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
+				try {
+					tree = parser.compilationUnit(); // STAGE 2
+//					System.out.println("success");
+				} catch (ParseCancellationException e) {
+					System.err.println(file + " parse cancel");
+					continue;
+				} catch (Exception e) {
+					System.err.println(e);
+					continue;
+				}
+				// if we parse ok, it's LL not SLL
+			}
+			blockList.addAll(extractMethod(tree, parser));
+			file.getNewBlockList().addAll(extractMethod(tree, parser));
+			countParseFiles++;
+			tokens.fill();
+
+			CloneDetector.countLine += tokens.LT(tokens.size()).getLine();
+
+
+		}
+		return blockList;
+
 	}
 
 
