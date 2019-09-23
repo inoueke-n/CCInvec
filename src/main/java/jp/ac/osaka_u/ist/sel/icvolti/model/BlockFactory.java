@@ -1,11 +1,13 @@
 package jp.ac.osaka_u.ist.sel.icvolti.model;
 
+import java.io.Serializable;
+
 import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.misc.Interval;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-public class BlockFactory {
+public class BlockFactory implements Serializable{
 	public static Block create(int id, String name, Parser parser, ParseTree tree, int idType) {
 		Block block = new Block();
 		block.setId(id);

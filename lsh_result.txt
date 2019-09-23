@@ -251,8 +251,8 @@ Query point 68
 
 Query point 69
 69
-68
 3854
+68
 
 Query point 70
 70
@@ -303,8 +303,8 @@ Query point 83
 Query point 84
 83
 84
-70
 89
+70
 
 Query point 85
 85
@@ -318,14 +318,14 @@ Query point 87
 87
 
 Query point 88
+83
 88
 89
-83
 
 Query point 89
+84
 88
 89
-84
 
 Query point 90
 90
@@ -343,42 +343,42 @@ Query point 93
 
 Query point 94
 94
+758
 97
 99
 100
-758
 
 Query point 95
 95
 96
 
 Query point 96
-96
 95
+96
 
 Query point 97
-94
 97
 99
 100
 758
+94
 
 Query point 98
 98
 
 Query point 99
-94
-97
 99
 100
+97
 758
+94
 
 Query point 100
-94
-97
 99
 100
+97
 758
+94
 
 Query point 101
 101
@@ -389,8 +389,8 @@ Query point 102
 765
 
 Query point 103
-102
 103
+102
 765
 
 Query point 104
@@ -398,8 +398,8 @@ Query point 104
 105
 
 Query point 105
-104
 105
+104
 
 Query point 106
 106
@@ -442,10 +442,10 @@ Query point 116
 4039
 
 Query point 117
-116
 117
 4038
 4039
+116
 
 Query point 118
 118
@@ -492,8 +492,8 @@ Query point 131
 132
 
 Query point 132
-132
 131
+132
 
 Query point 133
 133
@@ -549,15 +549,15 @@ Query point 146
 148
 
 Query point 147
-147
-148
 145
 146
-
-Query point 148
 147
 148
+
+Query point 148
+148
 146
+147
 
 Query point 149
 149
@@ -587,8 +587,8 @@ Query point 156
 157
 
 Query point 157
-156
 157
+156
 
 Query point 158
 158
@@ -600,24 +600,24 @@ Query point 159
 
 Query point 160
 160
-164
 161
 162
+164
 
 Query point 161
-161
 160
+161
 162
 
 Query point 162
+160
+161
 162
 163
-161
-160
 
 Query point 163
-162
 163
+162
 
 Query point 164
 160
@@ -651,8 +651,8 @@ Query point 172
 172
 
 Query point 173
-173
 169
+173
 
 Query point 174
 174
@@ -746,9 +746,9 @@ Query point 200
 201
 
 Query point 201
-201
 199
 200
+201
 
 Query point 202
 202
@@ -804,8 +804,8 @@ Query point 218
 218
 219
 284
-285
 293
+285
 
 Query point 219
 218
@@ -823,16 +823,16 @@ Query point 220
 Query point 221
 221
 222
-288
 287
 220
 286
+288
 
 Query point 222
 221
 222
-288
 287
+288
 220
 286
 
@@ -850,8 +850,8 @@ Query point 225
 270
 
 Query point 226
-226
 224
+226
 
 Query point 227
 227
@@ -859,7 +859,6 @@ Query point 227
 
 Query point 228
 228
-227
 
 Query point 229
 229
@@ -871,19 +870,19 @@ Query point 230
 238
 
 Query point 231
-230
 231
 232
 238
 239
 240
+230
 
 Query point 232
-230
 231
 232
 239
 240
+230
 
 Query point 233
 233
@@ -896,8 +895,8 @@ Query point 234
 270
 
 Query point 235
-235
 233
+235
 
 Query point 236
 236
@@ -906,11 +905,11 @@ Query point 237
 237
 
 Query point 238
-230
 231
 238
 239
 240
+230
 
 Query point 239
 231
@@ -920,29 +919,29 @@ Query point 239
 240
 
 Query point 240
-240
 231
 232
 238
 239
+240
 
 Query point 241
 241
-274
 242
+274
 
 Query point 242
-242
 241
+242
 
 Query point 243
 243
-244
 278
+244
 
 Query point 244
-243
 244
+243
 
 Query point 245
 245
@@ -977,16 +976,16 @@ Query point 252
 254
 
 Query point 253
+254
 251
 252
 253
-254
 
 Query point 254
+254
 251
 252
 253
-254
 
 Query point 255
 255
@@ -1002,8 +1001,8 @@ Query point 257
 270
 
 Query point 258
-258
 256
+258
 
 Query point 259
 259
@@ -1014,14 +1013,14 @@ Query point 260
 262
 
 Query point 261
-260
 261
 262
+260
 
 Query point 262
-260
 261
 262
+260
 
 Query point 263
 263
@@ -1066,34 +1065,34 @@ Query point 273
 273
 
 Query point 274
-274
 241
+274
 275
 
 Query point 275
+274
 275
 276
-274
 277
 
 Query point 276
-276
 275
+276
 277
 
 Query point 277
-277
-276
 275
+276
+277
 
 Query point 278
-243
 278
 279
+243
 
 Query point 279
-278
 279
+278
 
 Query point 280
 280
@@ -1103,50 +1102,50 @@ Query point 281
 282
 
 Query point 282
-281
 282
+281
 283
 
 Query point 283
-282
 283
+282
 
 Query point 284
 218
 284
-285
 293
+285
 
 Query point 285
+285
 218
 219
 284
-285
 293
 
 Query point 286
 220
 286
-288
 221
 222
 287
+288
 
 Query point 287
 221
 222
-288
 287
 220
 286
+288
 
 Query point 288
+288
 221
 222
-288
-286
-220
 287
+220
+286
 
 Query point 289
 289
@@ -1167,11 +1166,11 @@ Query point 292
 292
 
 Query point 293
-218
-284
-285
 293
 294
+218
+285
+284
 
 Query point 294
 293
@@ -1188,8 +1187,8 @@ Query point 297
 298
 
 Query point 298
-297
 298
+297
 
 Query point 299
 299
@@ -1233,8 +1232,8 @@ Query point 310
 311
 
 Query point 311
-310
 311
+310
 
 Query point 312
 312
@@ -1244,8 +1243,8 @@ Query point 313
 314
 
 Query point 314
-313
 314
+313
 
 Query point 315
 315
@@ -1291,12 +1290,12 @@ Query point 325
 
 Query point 326
 326
-327
 324
+327
 
 Query point 327
-326
 327
+326
 
 Query point 328
 328
@@ -1391,10 +1390,11 @@ Query point 354
 
 Query point 355
 355
-354
 356
+354
 
 Query point 356
+355
 356
 354
 
@@ -1412,8 +1412,8 @@ Query point 360
 361
 
 Query point 361
-360
 361
+360
 
 Query point 362
 362
@@ -1427,8 +1427,8 @@ Query point 364
 365
 
 Query point 365
-365
 364
+365
 336
 
 Query point 366
@@ -1449,8 +1449,8 @@ Query point 370
 371
 
 Query point 371
-370
 371
+370
 
 Query point 372
 372
@@ -1612,13 +1612,13 @@ Query point 417
 
 Query point 418
 418
-419
 413
 417
+419
 
 Query point 419
-419
 417
+419
 418
 
 Query point 420
@@ -1643,18 +1643,18 @@ Query point 425
 
 Query point 426
 426
-427
 428
+427
 
 Query point 427
-426
 427
+426
 428
 
 Query point 428
 426
-427
 428
+427
 
 Query point 429
 429
@@ -1692,18 +1692,18 @@ Query point 438
 
 Query point 439
 439
-440
 441
+440
 
 Query point 440
-439
 440
+439
 441
 
 Query point 441
 439
-440
 441
+440
 
 Query point 442
 442
@@ -1763,8 +1763,8 @@ Query point 459
 460
 
 Query point 460
-460
 459
+460
 
 Query point 461
 461
@@ -1780,16 +1780,14 @@ Query point 463
 
 Query point 464
 464
-465
 
 Query point 465
-464
 465
 
 Query point 466
-463
 466
 467
+463
 
 Query point 467
 466
@@ -1851,16 +1849,16 @@ Query point 482
 484
 
 Query point 483
-481
-482
 483
 484
+481
+482
 
 Query point 484
-481
-482
 483
 484
+481
+482
 
 Query point 485
 485
@@ -1924,8 +1922,8 @@ Query point 496
 497
 
 Query point 497
-497
 496
+497
 
 Query point 498
 498
@@ -1989,8 +1987,10 @@ Query point 516
 514
 515
 516
+517
 
 Query point 517
+516
 517
 
 Query point 518
@@ -2076,8 +2076,8 @@ Query point 541
 542
 
 Query point 542
-541
 542
+541
 
 Query point 543
 543
@@ -2093,8 +2093,8 @@ Query point 546
 546
 
 Query point 547
-545
 547
+545
 
 Query point 548
 548
@@ -2110,21 +2110,21 @@ Query point 551
 
 Query point 552
 552
+553
 554
 555
 556
 557
-553
 
 Query point 553
-553
 552
+553
 554
 
 Query point 554
 552
-554
 553
+554
 
 Query point 555
 552
@@ -2133,23 +2133,23 @@ Query point 555
 557
 
 Query point 556
-552
-555
 556
 557
 558
+552
+555
 
 Query point 557
+556
+557
+558
 552
 555
-556
-557
-558
 
 Query point 558
-558
 556
 557
+558
 
 Query point 559
 559
@@ -2309,8 +2309,8 @@ Query point 598
 598
 
 Query point 599
-599
 596
+599
 
 Query point 600
 600
@@ -2426,8 +2426,8 @@ Query point 634
 633
 
 Query point 635
-635
 631
+635
 
 Query point 636
 636
@@ -2485,8 +2485,8 @@ Query point 651
 652
 
 Query point 652
-651
 652
+651
 
 Query point 653
 653
@@ -2499,8 +2499,8 @@ Query point 655
 656
 
 Query point 656
-656
 655
+656
 
 Query point 657
 657
@@ -2541,8 +2541,8 @@ Query point 667
 668
 
 Query point 668
-668
 667
+668
 
 Query point 669
 669
@@ -2555,8 +2555,8 @@ Query point 671
 672
 
 Query point 672
-672
 671
+672
 
 Query point 673
 673
@@ -2629,8 +2629,8 @@ Query point 692
 693
 
 Query point 693
-693
 692
+693
 
 Query point 694
 694
@@ -2639,8 +2639,8 @@ Query point 695
 695
 
 Query point 696
-607
 696
+607
 697
 
 Query point 697
@@ -2717,9 +2717,9 @@ Query point 714
 715
 
 Query point 715
+715
 712
 714
-715
 
 Query point 716
 716
@@ -2750,8 +2750,8 @@ Query point 724
 725
 
 Query point 725
-724
 725
+724
 
 Query point 726
 726
@@ -2767,8 +2767,8 @@ Query point 729
 730
 
 Query point 730
-729
 730
+729
 
 Query point 731
 731
@@ -2855,9 +2855,9 @@ Query point 757
 757
 
 Query point 758
+94
 756
 758
-94
 97
 99
 100
@@ -2881,9 +2881,9 @@ Query point 764
 764
 
 Query point 765
+765
 102
 103
-765
 
 Query point 766
 766
@@ -2924,8 +2924,8 @@ Query point 774
 775
 
 Query point 775
-775
 774
+775
 
 Query point 776
 776
@@ -3009,18 +3009,18 @@ Query point 799
 
 Query point 800
 800
-802
 801
+802
 
 Query point 801
-801
 800
+801
 802
 
 Query point 802
 800
-802
 801
+802
 
 Query point 803
 803
@@ -3083,17 +3083,17 @@ Query point 821
 
 Query point 822
 822
-856
 863
 826
+856
 
 Query point 823
 823
 824
 
 Query point 824
-824
 823
+824
 
 Query point 825
 825
@@ -3167,8 +3167,8 @@ Query point 844
 
 Query point 845
 845
-856
 861
+856
 
 Query point 846
 846
@@ -3178,8 +3178,8 @@ Query point 847
 848
 
 Query point 848
-848
 847
+848
 
 Query point 849
 849
@@ -3196,25 +3196,25 @@ Query point 852
 854
 
 Query point 853
-852
 853
 854
+852
 
 Query point 854
-852
 853
 854
+852
 
 Query point 855
 855
 
 Query point 856
+856
 822
 845
-856
-861
 863
 826
+861
 
 Query point 857
 828
@@ -3231,9 +3231,9 @@ Query point 860
 860
 
 Query point 861
+861
 845
 856
-861
 863
 
 Query point 862
@@ -3241,9 +3241,9 @@ Query point 862
 
 Query point 863
 822
-856
-861
 863
+861
+856
 
 Query point 864
 864
@@ -3272,23 +3272,22 @@ Query point 871
 
 Query point 872
 872
-870
 
 Query point 873
 873
 874
 
 Query point 874
-874
 873
+874
 876
 
 Query point 875
 875
 
 Query point 876
-876
 874
+876
 
 Query point 877
 877
@@ -3333,9 +3332,9 @@ Query point 888
 904
 
 Query point 889
+888
 889
 904
-888
 
 Query point 890
 890
@@ -3384,19 +3383,19 @@ Query point 903
 903
 
 Query point 904
+888
 889
 904
-888
+5807
+5816
 2402
 2439
-5785
-5791
-5797
-5806
+5795
+5801
 
 Query point 905
-782
 905
+782
 
 Query point 906
 906
@@ -3450,8 +3449,8 @@ Query point 921
 921
 
 Query point 922
-922
 894
+922
 
 Query point 923
 895
@@ -3500,8 +3499,8 @@ Query point 935
 935
 
 Query point 936
-936
 795
+936
 
 Query point 937
 937
@@ -3513,8 +3512,8 @@ Query point 938
 939
 
 Query point 939
-939
 938
+939
 
 Query point 940
 940
@@ -3550,9 +3549,9 @@ Query point 946
 947
 
 Query point 947
-947
-946
 945
+946
+947
 981
 982
 
@@ -3564,16 +3563,16 @@ Query point 949
 950
 
 Query point 950
-950
 949
+950
 
 Query point 951
 951
 952
 
 Query point 952
-952
 951
+952
 
 Query point 953
 953
@@ -3602,11 +3601,12 @@ Query point 960
 960
 
 Query point 961
+957
 961
 
 Query point 962
-962
 958
+962
 
 Query point 963
 963
@@ -3617,24 +3617,24 @@ Query point 964
 964
 965
 966
-963
-973
 974
+973
+963
 
 Query point 965
 964
 965
 966
-975
-963
 974
+963
+975
 
 Query point 966
 964
 965
 966
-975
 974
+975
 
 Query point 967
 967
@@ -3644,8 +3644,8 @@ Query point 968
 969
 
 Query point 969
-969
 968
+969
 
 Query point 970
 970
@@ -3664,34 +3664,34 @@ Query point 972
 Query point 973
 972
 973
+964
 974
 975
-964
 
 Query point 974
-972
-973
-974
 964
 965
 966
-975
-
-Query point 975
-965
-966
+974
 975
 972
 973
+
+Query point 975
+975
+965
+966
 974
+972
+973
 
 Query point 976
 976
 977
 
 Query point 977
-976
 977
+976
 
 Query point 978
 978
@@ -3703,18 +3703,18 @@ Query point 980
 980
 
 Query point 981
+947
 981
 982
 2536
 2537
-947
 
 Query point 982
+947
 981
 982
 2536
 2537
-947
 
 Query point 983
 983
@@ -3835,8 +3835,8 @@ Query point 1017
 1017
 
 Query point 1018
-1018
 1010
+1018
 
 Query point 1019
 1019
@@ -3902,8 +3902,8 @@ Query point 1038
 1035
 
 Query point 1039
-1038
 1039
+1038
 
 Query point 1040
 1040
@@ -3963,13 +3963,13 @@ Query point 1057
 1058
 
 Query point 1058
+1057
 1058
 1059
-1057
 
 Query point 1059
-1058
 1059
+1058
 
 Query point 1060
 1060
@@ -4105,9 +4105,9 @@ Query point 1094
 1095
 
 Query point 1095
-1095
 1093
 1094
+1095
 
 Query point 1096
 1096
@@ -4126,8 +4126,8 @@ Query point 1100
 1101
 
 Query point 1101
-1101
 1100
+1101
 
 Query point 1102
 1102
@@ -4152,7 +4152,6 @@ Query point 1108
 
 Query point 1109
 1109
-1114
 
 Query point 1110
 1110
@@ -4168,9 +4167,9 @@ Query point 1113
 1114
 
 Query point 1114
-1109
 1113
 1114
+1109
 
 Query point 1115
 1115
@@ -4191,16 +4190,16 @@ Query point 1118
 1120
 
 Query point 1119
-1117
-1118
 1119
 1120
+1117
+1118
 
 Query point 1120
-1117
-1118
 1119
 1120
+1117
+1118
 
 Query point 1121
 1121
@@ -4218,8 +4217,8 @@ Query point 1124
 1125
 
 Query point 1125
-1124
 1125
+1124
 
 Query point 1126
 1126
@@ -4248,8 +4247,8 @@ Query point 1133
 1134
 
 Query point 1134
-1133
 1134
+1133
 
 Query point 1135
 1135
@@ -4359,30 +4358,30 @@ Query point 1164
 1166
 
 Query point 1165
+1165
+1166
 1163
 1164
-1165
-1166
 
 Query point 1166
-1164
 1165
 1166
+1164
 
 Query point 1167
 1167
-1168
 1169
+1168
 
 Query point 1168
-1167
 1168
+1167
 1169
 
 Query point 1169
 1167
-1168
 1169
+1168
 
 Query point 1170
 1170
@@ -4426,14 +4425,14 @@ Query point 1180
 1182
 
 Query point 1181
+1180
 1181
 1182
-1180
 
 Query point 1182
+1180
 1181
 1182
-1180
 
 Query point 1183
 1183
@@ -4458,27 +4457,27 @@ Query point 1189
 1190
 
 Query point 1190
-1189
 1190
+1189
 1192
 
 Query point 1191
 1191
-1193
 3694
+1193
 1192
 
 Query point 1192
 1192
+1193
 1190
 1191
-1193
 
 Query point 1193
-1191
 1193
-1192
+1191
 3694
+1192
 
 Query point 1194
 943
@@ -4600,8 +4599,8 @@ Query point 1225
 1225
 
 Query point 1226
-1226
 1224
+1226
 
 Query point 1227
 1227
@@ -4727,8 +4726,8 @@ Query point 1261
 1262
 
 Query point 1262
-1261
 1262
+1261
 
 Query point 1263
 1263
@@ -4750,8 +4749,8 @@ Query point 1268
 1269
 
 Query point 1269
-1268
 1269
+1268
 
 Query point 1270
 1270
@@ -4776,8 +4775,8 @@ Query point 1276
 1277
 
 Query point 1277
-1277
 1276
+1277
 
 Query point 1278
 1278
@@ -4799,8 +4798,8 @@ Query point 1283
 1284
 
 Query point 1284
-1284
 1283
+1284
 
 Query point 1285
 1285
@@ -4829,8 +4828,8 @@ Query point 1291
 1292
 
 Query point 1292
-1291
 1292
+1291
 
 Query point 1293
 1293
@@ -4916,14 +4915,14 @@ Query point 1316
 1318
 
 Query point 1317
-1317
 1316
+1317
 1318
 
 Query point 1318
-1318
 1316
 1317
+1318
 
 Query point 1319
 1319
@@ -4943,18 +4942,18 @@ Query point 1322
 
 Query point 1323
 1323
-1324
 1325
+1324
 
 Query point 1324
-1323
 1324
+1323
 1325
 
 Query point 1325
 1323
-1324
 1325
+1324
 
 Query point 1326
 1326
@@ -4981,8 +4980,8 @@ Query point 1332
 1333
 
 Query point 1333
-1333
 1332
+1333
 
 Query point 1334
 1334
@@ -5011,24 +5010,24 @@ Query point 1340
 1341
 
 Query point 1341
-1341
 1340
+1341
 
 Query point 1342
 1342
 1343
 
 Query point 1343
-1342
 1343
+1342
 
 Query point 1344
 1344
 1345
 
 Query point 1345
-1345
 1344
+1345
 
 Query point 1346
 1346
@@ -5052,15 +5051,15 @@ Query point 1351
 
 Query point 1352
 1352
-1361
 1354
+1361
 
 Query point 1353
 1353
 
 Query point 1354
-1354
 1352
+1354
 1361
 
 Query point 1355
@@ -5085,8 +5084,8 @@ Query point 1360
 
 Query point 1361
 1352
-1361
 1354
+1361
 
 Query point 1362
 1362
@@ -5122,16 +5121,16 @@ Query point 1371
 1372
 
 Query point 1372
-1372
 1371
+1372
 
 Query point 1373
 1373
 1374
 
 Query point 1374
-1374
 1373
+1374
 
 Query point 1375
 1375
@@ -5184,24 +5183,24 @@ Query point 1386
 1388
 
 Query point 1387
-1386
 1387
 1388
+1386
 
 Query point 1388
-1386
 1387
 1388
+1386
 1389
 
 Query point 1389
-1388
 1389
 1390
+1388
 
 Query point 1390
-1390
 1389
+1390
 
 Query point 1391
 1391
@@ -5223,21 +5222,21 @@ Query point 1395
 1397
 
 Query point 1396
-1395
 1396
-1397
 1398
+1395
+1397
 
 Query point 1397
+1397
 1395
 1396
-1397
 1398
 
 Query point 1398
 1396
-1397
 1398
+1397
 
 Query point 1399
 1399
@@ -5245,25 +5244,26 @@ Query point 1399
 Query point 1400
 1400
 1401
+1402
 
 Query point 1401
+1400
 1401
 1402
-1400
 
 Query point 1402
+1400
 1401
 1402
-1400
 
 Query point 1403
 1403
 1404
 
 Query point 1404
-1403
 1404
 1405
+1403
 
 Query point 1405
 1404
@@ -5288,8 +5288,8 @@ Query point 1410
 1411
 
 Query point 1411
-1410
 1411
+1410
 
 Query point 1412
 1412
@@ -5304,8 +5304,8 @@ Query point 1414
 1415
 
 Query point 1415
-1414
 1415
+1414
 
 Query point 1416
 1416
@@ -5336,9 +5336,9 @@ Query point 1423
 1424
 
 Query point 1424
-1424
 1422
 1423
+1424
 
 Query point 1425
 1425
@@ -5357,8 +5357,8 @@ Query point 1429
 1430
 
 Query point 1430
-1429
 1430
+1429
 
 Query point 1431
 1431
@@ -5459,8 +5459,8 @@ Query point 1457
 1458
 
 Query point 1458
-1457
 1458
+1457
 
 Query point 1459
 1459
@@ -5547,24 +5547,24 @@ Query point 1484
 1485
 
 Query point 1485
-1484
 1485
+1484
 
 Query point 1486
 1486
 1487
 
 Query point 1487
-1487
 1486
+1487
 
 Query point 1488
 1488
 1489
 
 Query point 1489
-1488
 1489
+1488
 
 Query point 1490
 1490
@@ -5664,11 +5664,11 @@ Query point 1517
 1518
 
 Query point 1518
+1517
 1518
 1519
 1524
 1525
-1517
 
 Query point 1519
 1518
@@ -5691,16 +5691,16 @@ Query point 1523
 
 Query point 1524
 1518
-1522
 1524
 1525
+1522
 
 Query point 1525
 1518
 1519
-1522
 1524
 1525
+1522
 
 Query point 1526
 1526
@@ -5728,9 +5728,9 @@ Query point 1532
 1533
 
 Query point 1533
-1533
 1531
 1532
+1533
 
 Query point 1534
 1534
@@ -5777,20 +5777,20 @@ Query point 1547
 1547
 
 Query point 1548
-3402
 1548
 3400
+3402
 
 Query point 1549
-1549
-1550
 1071
 1072
+1549
 1551
+1550
 
 Query point 1550
-1549
 1550
+1549
 1551
 
 Query point 1551
@@ -5826,10 +5826,10 @@ Query point 1557
 1558
 
 Query point 1558
+1558
 1555
 1556
 1557
-1558
 
 Query point 1559
 1559
@@ -5870,8 +5870,8 @@ Query point 1570
 1571
 
 Query point 1571
-1570
 1571
+1570
 
 Query point 1572
 1572
@@ -5926,26 +5926,26 @@ Query point 1586
 Query point 1587
 1587
 1588
-1590
 1589
+1590
 
 Query point 1588
 1587
 1588
-1590
 1589
+1590
 
 Query point 1589
-1589
-1588
-1590
 1587
+1588
+1589
+1590
 
 Query point 1590
 1587
 1588
-1590
 1589
+1590
 
 Query point 1591
 1591
@@ -5959,8 +5959,8 @@ Query point 1593
 1593
 
 Query point 1594
-1594
 970
+1594
 
 Query point 1595
 971
@@ -5971,8 +5971,8 @@ Query point 1596
 1597
 
 Query point 1597
-1597
 1596
+1597
 
 Query point 1598
 1598
@@ -6006,8 +6006,8 @@ Query point 1607
 
 Query point 1608
 1608
-2009
 2148
+2009
 
 Query point 1609
 1609
@@ -6065,12 +6065,12 @@ Query point 1625
 
 Query point 1626
 1626
-1628
 1636
+1639
 1647
 1657
 1659
-1639
+1628
 
 Query point 1627
 1625
@@ -6079,12 +6079,12 @@ Query point 1627
 2771
 
 Query point 1628
-1626
 1628
 1636
 1647
 1657
 1659
+1626
 
 Query point 1629
 1629
@@ -6114,57 +6114,57 @@ Query point 1635
 1637
 1640
 1642
-1646
 1648
 1650
 1652
 1661
 1663
+1646
 1665
 
 Query point 1636
 1626
-1628
 1636
+1639
+1643
 1647
-1649
 1651
+1653
 1657
 1659
 1666
+1649
+1628
 1667
-1639
-1643
-1653
 
 Query point 1637
 1635
 1637
 1640
 1642
-1646
 1648
 1650
 1652
 1661
 1663
+1646
 1665
 
 Query point 1638
 1638
 
 Query point 1639
+1626
+1636
 1639
 1641
 1643
-1653
-1626
-1636
 1647
-1649
 1651
+1653
 1657
 1659
+1649
 1666
 
 Query point 1640
@@ -6172,7 +6172,6 @@ Query point 1640
 1637
 1640
 1642
-1646
 1648
 1650
 1652
@@ -6180,21 +6179,21 @@ Query point 1640
 1658
 1661
 1663
+1646
 1665
 
 Query point 1641
 1639
 1641
 1643
-1653
 1651
+1653
 
 Query point 1642
 1635
 1637
 1640
 1642
-1646
 1648
 1650
 1652
@@ -6202,18 +6201,19 @@ Query point 1642
 1658
 1661
 1663
+1646
 1665
 
 Query point 1643
+1636
 1639
 1641
 1643
-1653
-1636
-1649
 1651
+1653
 1657
 1659
+1649
 
 Query point 1644
 1644
@@ -6222,89 +6222,88 @@ Query point 1645
 1645
 
 Query point 1646
+1646
+1665
 1635
 1637
 1640
 1642
-1646
 1648
 1650
 1652
 1656
 1661
 1663
-1665
 
 Query point 1647
 1626
-1628
 1636
+1639
 1647
-1649
 1651
+1653
 1657
 1659
+1649
+1628
 1666
 1667
-1639
-1653
 
 Query point 1648
 1635
 1637
 1640
 1642
-1646
 1648
 1650
 1652
 1661
 1663
+1646
 1665
 
 Query point 1649
-1636
-1647
 1649
-1651
-1657
-1659
+1636
 1639
 1643
+1647
+1651
 1653
+1657
+1659
 
 Query point 1650
 1635
 1637
 1640
 1642
-1646
 1648
 1650
 1652
 1656
 1661
 1663
+1646
 1665
 
 Query point 1651
 1636
+1639
+1641
+1643
 1647
-1649
 1651
+1653
 1657
 1659
-1639
-1643
-1653
-1641
+1649
 
 Query point 1652
 1635
 1637
 1640
 1642
-1646
 1648
 1650
 1652
@@ -6312,19 +6311,20 @@ Query point 1652
 1658
 1661
 1663
+1646
 1665
 
 Query point 1653
+1636
 1639
 1641
 1643
-1653
-1636
 1647
-1649
 1651
+1653
 1657
 1659
+1649
 
 Query point 1654
 1654
@@ -6337,28 +6337,28 @@ Query point 1655
 Query point 1656
 1640
 1642
-1646
 1650
 1652
 1656
 1658
 1661
 1663
+1646
 
 Query point 1657
 1626
-1628
 1636
-1647
-1649
-1651
-1657
-1659
-1666
-1667
 1639
 1643
+1647
+1651
 1653
+1657
+1659
+1649
+1628
+1666
+1667
 
 Query point 1658
 1640
@@ -6370,17 +6370,17 @@ Query point 1658
 
 Query point 1659
 1626
-1628
 1636
-1647
-1649
-1651
-1657
-1659
-1666
 1639
 1643
+1647
+1651
 1653
+1657
+1659
+1649
+1628
+1666
 
 Query point 1660
 1660
@@ -6390,13 +6390,13 @@ Query point 1661
 1637
 1640
 1642
-1646
 1648
 1650
 1652
 1656
 1661
 1663
+1646
 1665
 
 Query point 1662
@@ -6408,7 +6408,6 @@ Query point 1663
 1637
 1640
 1642
-1646
 1648
 1650
 1652
@@ -6416,49 +6415,50 @@ Query point 1663
 1658
 1661
 1663
+1646
 1665
 
 Query point 1664
 1664
 
 Query point 1665
+1646
+1665
 1635
 1637
 1640
 1642
-1646
 1648
 1650
 1652
 1661
 1663
-1665
 
 Query point 1666
+1662
+1666
+1667
 1636
+1639
 1647
 1657
 1659
-1666
-1667
-1639
-1662
 
 Query point 1667
+1667
 1636
 1647
 1657
 1666
-1667
 
 Query point 1668
-1668
 1633
+1668
 
 Query point 1669
 1669
-2560
 2613
+2560
 
 Query point 1670
 1670
@@ -6489,8 +6489,8 @@ Query point 1676
 1677
 
 Query point 1677
-1677
 1676
+1677
 
 Query point 1678
 1678
@@ -6525,14 +6525,14 @@ Query point 1687
 1689
 
 Query point 1688
-1687
 1688
 1689
+1687
 
 Query point 1689
-1687
 1688
 1689
+1687
 
 Query point 1690
 1690
@@ -6569,9 +6569,9 @@ Query point 1696
 1697
 
 Query point 1697
+1696
 1697
 1698
-1696
 
 Query point 1698
 1697
@@ -6603,8 +6603,8 @@ Query point 1706
 1706
 
 Query point 1707
-1707
 1703
+1707
 
 Query point 1708
 1708
@@ -6617,8 +6617,8 @@ Query point 1710
 1711
 
 Query point 1711
-1710
 1711
+1710
 
 Query point 1712
 1712
@@ -6662,14 +6662,13 @@ Query point 1722
 1723
 
 Query point 1723
-1721
-1722
 1723
 1724
+1721
 
 Query point 1724
-1723
 1724
+1723
 
 Query point 1725
 1725
@@ -6765,8 +6764,8 @@ Query point 1750
 1751
 
 Query point 1751
-1751
 1750
+1751
 
 Query point 1752
 1752
@@ -6806,9 +6805,9 @@ Query point 1762
 
 Query point 1763
 1763
-1774
-1775
 1773
+1775
+1774
 
 Query point 1764
 1764
@@ -6829,8 +6828,8 @@ Query point 1769
 1769
 
 Query point 1770
-1770
 1629
+1770
 
 Query point 1771
 1771
@@ -6839,21 +6838,21 @@ Query point 1772
 1772
 
 Query point 1773
-1774
-1775
 1773
+1775
 1763
+1774
 
 Query point 1774
 1774
-1775
 1773
+1775
 1763
 
 Query point 1775
-1774
-1775
 1773
+1775
+1774
 1763
 
 Query point 1776
@@ -6882,8 +6881,8 @@ Query point 1783
 1784
 
 Query point 1784
-1784
 1783
+1784
 
 Query point 1785
 1785
@@ -6950,8 +6949,8 @@ Query point 1803
 1804
 
 Query point 1804
-1803
 1804
+1803
 
 Query point 1805
 1805
@@ -6990,20 +6989,20 @@ Query point 1815
 1816
 
 Query point 1816
-1815
 1816
+1815
 
 Query point 1817
 1817
-1850
 1818
+1850
 
 Query point 1818
+1817
 1818
+1850
 1851
 1853
-1817
-1850
 
 Query point 1819
 1819
@@ -7050,8 +7049,8 @@ Query point 1832
 1833
 
 Query point 1833
-1832
 1833
+1832
 
 Query point 1834
 1834
@@ -7067,8 +7066,8 @@ Query point 1837
 1838
 
 Query point 1838
-1838
 1837
+1838
 
 Query point 1839
 1839
@@ -7083,8 +7082,8 @@ Query point 1842
 1842
 
 Query point 1843
-1843
 119
+1843
 
 Query point 1844
 1844
@@ -7108,8 +7107,8 @@ Query point 1849
 
 Query point 1850
 1817
-1850
 1818
+1850
 
 Query point 1851
 1818
@@ -7218,8 +7217,8 @@ Query point 1878
 1879
 
 Query point 1879
-1879
 1878
+1879
 
 Query point 1880
 1880
@@ -7309,18 +7308,18 @@ Query point 1903
 
 Query point 1904
 1904
-1905
 1906
+1905
 
 Query point 1905
-1904
 1905
+1904
 1906
 
 Query point 1906
 1904
-1905
 1906
+1905
 
 Query point 1907
 1907
@@ -7341,8 +7340,8 @@ Query point 1911
 1912
 
 Query point 1912
-1911
 1912
+1911
 1913
 
 Query point 1913
@@ -7373,16 +7372,16 @@ Query point 1920
 1920
 
 Query point 1921
-1919
 1921
+1919
 
 Query point 1922
 1922
 1923
 
 Query point 1923
-1923
 1922
+1923
 
 Query point 1924
 1924
@@ -7491,37 +7490,39 @@ Query point 1951
 
 Query point 1952
 1952
-1960
 1953
 1954
+1960
 1961
 1962
 
 Query point 1953
+1952
 1953
 1954
+1955
+1960
 1961
 1962
-1955
 1963
-1952
-1960
 
 Query point 1954
+1952
 1953
 1954
+1955
+1960
 1961
 1962
-1952
-1960
-1955
 1963
 
 Query point 1955
-1955
-1963
+1953
 1954
+1955
+1961
 1962
+1963
 
 Query point 1956
 1956
@@ -7546,37 +7547,39 @@ Query point 1959
 
 Query point 1960
 1952
-1960
 1953
 1954
+1960
 1961
 1962
 
 Query point 1961
+1952
 1953
 1954
+1955
+1960
 1961
 1962
-1955
 1963
-1952
-1960
 
 Query point 1962
+1952
 1953
 1954
+1955
+1960
 1961
 1962
-1952
-1960
-1955
 1963
 
 Query point 1963
-1955
-1963
+1953
 1954
+1955
+1961
 1962
+1963
 
 Query point 1964
 1964
@@ -7596,8 +7599,8 @@ Query point 1968
 1969
 
 Query point 1969
-1968
 1969
+1968
 
 Query point 1970
 1970
@@ -7635,8 +7638,8 @@ Query point 1979
 
 Query point 1980
 1980
-1984
 1988
+1984
 
 Query point 1981
 1981
@@ -7648,26 +7651,29 @@ Query point 1983
 1983
 
 Query point 1984
-1980
 1984
+1980
 1988
 
 Query point 1985
 1985
 1986
+1987
 
 Query point 1986
-1986
 1985
+1986
 1987
 
 Query point 1987
+1985
+1986
 1987
 
 Query point 1988
-1980
-1984
 1988
+1984
+1980
 
 Query point 1989
 1989
@@ -7680,8 +7686,8 @@ Query point 1991
 1992
 
 Query point 1992
-1991
 1992
+1991
 
 Query point 1993
 1993
@@ -7713,8 +7719,8 @@ Query point 2000
 2000
 
 Query point 2001
-1997
 2001
+1997
 
 Query point 2002
 1998
@@ -7742,8 +7748,8 @@ Query point 2008
 2008
 
 Query point 2009
-1608
 2009
+1608
 2148
 
 Query point 2010
@@ -7833,8 +7839,8 @@ Query point 2035
 2035
 
 Query point 2036
-1615
 2036
+1615
 
 Query point 2037
 2037
@@ -7887,8 +7893,8 @@ Query point 2051
 2051
 
 Query point 2052
-2052
 2041
+2052
 
 Query point 2053
 2053
@@ -7901,8 +7907,8 @@ Query point 2055
 2056
 
 Query point 2056
-2055
 2056
+2055
 
 Query point 2057
 2057
@@ -7970,13 +7976,13 @@ Query point 2077
 2078
 
 Query point 2078
+2077
 2078
 2079
-2077
 
 Query point 2079
-2079
 2078
+2079
 
 Query point 2080
 2080
@@ -8021,10 +8027,11 @@ Query point 2092
 
 Query point 2093
 2093
+2094
 
 Query point 2094
-2094
 2093
+2094
 
 Query point 2095
 2095
@@ -8064,8 +8071,8 @@ Query point 2106
 2107
 
 Query point 2107
-2107
 2106
+2107
 
 Query point 2108
 2108
@@ -8078,8 +8085,8 @@ Query point 2110
 2111
 
 Query point 2111
-2111
 2110
+2111
 
 Query point 2112
 2112
@@ -8117,18 +8124,18 @@ Query point 2121
 2122
 
 Query point 2122
-2122
 2121
+2122
 
 Query point 2123
+2016
 2123
 2124
-2016
 
 Query point 2124
-2123
 2124
 2016
+2123
 
 Query point 2125
 2125
@@ -8161,8 +8168,8 @@ Query point 2133
 2133
 
 Query point 2134
-2132
 2134
+2132
 
 Query point 2135
 2135
@@ -8187,8 +8194,8 @@ Query point 2141
 2142
 
 Query point 2142
-2142
 2141
+2142
 
 Query point 2143
 2143
@@ -8209,8 +8216,8 @@ Query point 2147
 
 Query point 2148
 1608
-2009
 2148
+2009
 
 Query point 2149
 2149
@@ -8296,25 +8303,25 @@ Query point 2170
 
 Query point 2171
 2171
+2174
 2172
 2173
-2174
 
 Query point 2172
-2171
 2172
 2173
+2171
 2174
 
 Query point 2173
-2171
 2172
 2173
+2171
 
 Query point 2174
-2171
-2172
 2174
+2172
+2171
 
 Query point 2175
 2175
@@ -8338,8 +8345,8 @@ Query point 2180
 2181
 
 Query point 2181
-2180
 2181
+2180
 
 Query point 2182
 2182
@@ -8381,8 +8388,8 @@ Query point 2193
 2194
 
 Query point 2194
-2194
 2193
+2194
 
 Query point 2195
 2195
@@ -8451,8 +8458,8 @@ Query point 2215
 2215
 
 Query point 2216
-2216
 2211
+2216
 
 Query point 2217
 2217
@@ -8475,9 +8482,9 @@ Query point 2222
 2223
 
 Query point 2223
+1755
 2222
 2223
-1755
 
 Query point 2224
 2224
@@ -8572,8 +8579,8 @@ Query point 2252
 2253
 
 Query point 2253
-2252
 2253
+2252
 
 Query point 2254
 2254
@@ -8643,8 +8650,8 @@ Query point 2272
 
 Query point 2273
 2273
-2280
 2281
+2280
 
 Query point 2274
 2268
@@ -8658,28 +8665,28 @@ Query point 2276
 2276
 
 Query point 2277
+2270
 2277
 2278
-2270
 
 Query point 2278
+2270
 2277
 2278
-2270
 
 Query point 2279
 2272
 2279
 
 Query point 2280
-2273
 2280
+2273
 2281
 
 Query point 2281
 2273
-2280
 2281
+2280
 
 Query point 2282
 2268
@@ -8697,8 +8704,8 @@ Query point 2285
 2286
 
 Query point 2286
-2286
 2285
+2286
 
 Query point 2287
 2287
@@ -8792,16 +8799,16 @@ Query point 2314
 2314
 
 Query point 2315
-2315
 2313
+2315
 
 Query point 2316
 2316
 2311
 
 Query point 2317
-2312
 2317
+2312
 
 Query point 2318
 2318
@@ -8835,8 +8842,8 @@ Query point 2327
 2328
 
 Query point 2328
-2327
 2328
+2327
 
 Query point 2329
 2329
@@ -8952,23 +8959,23 @@ Query point 2362
 
 Query point 2363
 2363
-2451
 2364
+2451
 2452
 
 Query point 2364
-2364
-2365
-2452
-2453
 2363
+2364
 2451
+2452
+2365
+2453
 
 Query point 2365
-2364
 2365
-2452
 2453
+2364
+2452
 
 Query point 2366
 2366
@@ -9001,15 +9008,15 @@ Query point 2369
 Query point 2370
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
+2372
 2373
 2375
 2377
+2460
 2461
 2463
 2465
@@ -9017,117 +9024,117 @@ Query point 2370
 Query point 2371
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
+2372
 2373
 2374
 2375
 2377
+2460
 2461
 2462
 2463
 2465
 
 Query point 2372
+2372
+2375
+2377
+2460
+2463
+2465
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
 2373
 2374
-2375
-2377
 2461
 2462
-2463
-2465
 
 Query point 2373
 2373
 2374
-2375
-2377
 2461
 2462
+2372
+2375
+2377
+2460
 2463
 2465
 2370
 2371
-2372
 2458
 2459
-2460
 
 Query point 2374
 2373
 2374
-2375
-2377
 2461
 2462
+2372
+2375
+2377
+2460
 2463
 2465
 2371
-2372
 2459
-2460
 
 Query point 2375
-2373
-2374
+2372
 2375
 2377
-2461
-2462
+2460
 2463
 2465
+2373
+2374
+2461
+2462
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
 
 Query point 2376
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
+2372
 2375
 2377
+2460
 2463
 2465
 
 Query point 2377
-2373
-2374
+2372
 2375
 2377
-2461
-2462
+2460
 2463
 2465
+2373
+2374
+2461
+2462
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
 
 Query point 2378
@@ -9145,10 +9152,10 @@ Query point 2380
 2469
 
 Query point 2381
+2380
 2381
 2468
 2469
-2380
 
 Query point 2382
 2382
@@ -9157,27 +9164,27 @@ Query point 2382
 Query point 2383
 2383
 2384
-2385
 2471
-2473
 2472
+2385
+2473
 
 Query point 2384
 2383
 2384
-2385
 2471
-2473
 2472
+2385
+2473
 
 Query point 2385
+2385
+2473
 2383
 2384
-2385
-2471
-2473
-2472
 2386
+2471
+2472
 2474
 
 Query point 2386
@@ -9227,8 +9234,8 @@ Query point 2394
 2482
 
 Query point 2395
-2394
 2395
+2394
 2483
 
 Query point 2396
@@ -9240,9 +9247,9 @@ Query point 2397
 2398
 
 Query point 2398
+2397
 2398
 2486
-2397
 
 Query point 2399
 2399
@@ -9250,15 +9257,15 @@ Query point 2399
 
 Query point 2400
 2400
-2437
 2401
+2437
 2438
 
 Query point 2401
-2401
-2438
 2400
+2401
 2437
+2438
 
 Query point 2402
 2402
@@ -9273,15 +9280,15 @@ Query point 2404
 
 Query point 2405
 2405
+2406
 2407
 2490
 2491
 2492
-2406
 
 Query point 2406
-2406
 2405
+2406
 2407
 2490
 2491
@@ -9291,18 +9298,19 @@ Query point 2406
 
 Query point 2407
 2405
+2406
 2407
 2491
 2492
-2493
 2408
-2406
+2493
 
 Query point 2408
 2408
 2493
 2406
 2407
+2491
 2492
 
 Query point 2409
@@ -9311,15 +9319,15 @@ Query point 2409
 
 Query point 2410
 2410
-2495
 2411
+2495
 2496
 
 Query point 2411
-2411
-2496
 2410
+2411
 2495
+2496
 
 Query point 2412
 2412
@@ -9378,19 +9386,19 @@ Query point 2425
 2426
 
 Query point 2426
-2425
 2426
+2425
 
 Query point 2427
 2427
 2428
-2513
 2512
+2513
 
 Query point 2428
-2427
 2428
 2513
+2427
 
 Query point 2429
 2429
@@ -9422,15 +9430,15 @@ Query point 2436
 
 Query point 2437
 2400
-2437
 2401
+2437
 2438
 
 Query point 2438
-2401
-2438
 2400
+2401
 2437
+2438
 
 Query point 2439
 2402
@@ -9474,28 +9482,28 @@ Query point 2449
 2449
 
 Query point 2450
-2450
 2362
+2450
 
 Query point 2451
 2363
-2451
 2364
+2451
 2452
 
 Query point 2452
-2364
-2365
-2452
-2453
 2363
+2364
 2451
+2452
+2365
+2453
 
 Query point 2453
-2364
 2365
-2452
 2453
+2364
+2452
 
 Query point 2454
 2366
@@ -9528,15 +9536,15 @@ Query point 2457
 Query point 2458
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
+2372
 2373
 2375
 2377
+2460
 2461
 2463
 2465
@@ -9544,167 +9552,167 @@ Query point 2458
 Query point 2459
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
+2372
 2373
 2374
 2375
 2377
+2460
 2461
 2462
 2463
 2465
 
 Query point 2460
+2372
+2375
+2377
+2460
+2463
+2465
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
 2373
 2374
-2375
-2377
 2461
 2462
-2463
-2465
 
 Query point 2461
 2373
 2374
-2375
-2377
 2461
 2462
+2372
+2375
+2377
+2460
 2463
 2465
 2370
 2371
-2372
 2458
 2459
-2460
 
 Query point 2462
 2373
 2374
-2375
-2377
 2461
 2462
+2372
+2375
+2377
+2460
 2463
 2465
 2371
-2372
 2459
-2460
 
 Query point 2463
-2373
-2374
+2372
 2375
 2377
-2461
-2462
+2460
 2463
 2465
+2373
+2374
+2461
+2462
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
 
 Query point 2464
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
+2372
 2375
 2377
+2460
 2463
 2465
 
 Query point 2465
-2373
-2374
+2372
 2375
 2377
-2461
-2462
+2460
 2463
 2465
+2373
+2374
+2461
+2462
 2370
 2371
-2372
 2376
 2458
 2459
-2460
 2464
 
 Query point 2466
-2378
 2466
+2378
 
 Query point 2467
 2379
 2467
 
 Query point 2468
+2380
 2381
 2468
 2469
-2380
 
 Query point 2469
-2381
-2468
 2469
 2380
+2381
+2468
 
 Query point 2470
-2382
 2470
+2382
 
 Query point 2471
 2383
 2384
-2385
 2471
-2473
 2472
+2385
+2473
 
 Query point 2472
-2472
 2383
 2384
-2385
 2471
+2472
+2385
 2473
 
 Query point 2473
+2385
+2473
 2383
 2384
-2385
-2471
-2473
-2472
 2386
+2471
+2472
 2474
 
 Query point 2474
@@ -9714,8 +9722,8 @@ Query point 2474
 2473
 
 Query point 2475
-2387
 2475
+2387
 
 Query point 2476
 2388
@@ -9750,13 +9758,13 @@ Query point 2481
 
 Query point 2482
 2482
-2483
 2394
+2483
 
 Query point 2483
-2395
 2483
 2482
+2395
 
 Query point 2484
 2396
@@ -9768,8 +9776,8 @@ Query point 2485
 
 Query point 2486
 2398
-2485
 2486
+2485
 
 Query point 2487
 2399
@@ -9783,53 +9791,54 @@ Query point 2489
 
 Query point 2490
 2405
+2406
 2490
 2491
 2492
-2406
 
 Query point 2491
 2405
+2406
 2407
 2490
 2491
 2492
-2406
 2408
 2493
 
 Query point 2492
 2405
+2406
 2407
 2490
 2491
 2492
-2493
 2408
-2406
+2493
 
 Query point 2493
 2493
 2408
 2406
 2407
+2491
 2492
 
 Query point 2494
-2494
 2409
+2494
 
 Query point 2495
 2410
-2495
 2411
+2495
 2496
 
 Query point 2496
-2411
-2496
 2410
+2411
 2495
+2496
 
 Query point 2497
 2497
@@ -9856,20 +9865,20 @@ Query point 2502
 2504
 
 Query point 2503
-2418
-2420
 2503
 2505
+2418
+2420
 
 Query point 2504
 2502
 2504
 
 Query point 2505
-2418
-2420
 2503
 2505
+2418
+2420
 
 Query point 2506
 2421
@@ -9897,16 +9906,16 @@ Query point 2511
 2512
 
 Query point 2512
-2511
 2512
-2427
 2513
+2427
+2511
 
 Query point 2513
-2427
 2428
-2513
 2512
+2513
+2427
 
 Query point 2514
 2514
@@ -9934,21 +9943,21 @@ Query point 2520
 Query point 2521
 2521
 2522
+2523
 2524
 2525
-2523
 2526
 
 Query point 2522
 2521
 2522
-2524
 2523
+2524
 
 Query point 2523
-2523
 2521
 2522
+2523
 
 Query point 2524
 2521
@@ -9959,13 +9968,13 @@ Query point 2524
 Query point 2525
 2521
 2525
-2527
 2526
+2527
 
 Query point 2526
-2526
 2521
 2525
+2526
 
 Query point 2527
 2524
@@ -10047,8 +10056,8 @@ Query point 2546
 2547
 
 Query point 2547
-2547
 2546
+2547
 
 Query point 2548
 2548
@@ -10139,8 +10148,8 @@ Query point 2573
 2574
 
 Query point 2574
-2574
 2573
+2574
 
 Query point 2575
 2575
@@ -10157,14 +10166,14 @@ Query point 2578
 2580
 
 Query point 2579
+2578
 2579
 2580
-2578
 
 Query point 2580
+2578
 2579
 2580
-2578
 
 Query point 2581
 2581
@@ -10201,8 +10210,8 @@ Query point 2591
 2592
 
 Query point 2592
-2592
 2591
+2592
 
 Query point 2593
 2593
@@ -10254,21 +10263,22 @@ Query point 2608
 
 Query point 2609
 2609
-2755
 2610
+2755
 2756
 
 Query point 2610
-2610
 2609
+2610
 2755
-2611
+2757
 2756
+2611
 
 Query point 2611
-2611
-2757
 2610
+2757
+2611
 
 Query point 2612
 2612
@@ -10283,11 +10293,11 @@ Query point 2614
 
 Query point 2615
 2615
+2770
 2620
 2622
 2623
 2769
-2770
 2773
 2774
 
@@ -10297,15 +10307,15 @@ Query point 2616
 2618
 2619
 2620
+2621
 2622
 2623
+2770
 2768
 2769
-2770
 2772
 2773
 2774
-2621
 
 Query point 2617
 2616
@@ -10313,9 +10323,9 @@ Query point 2617
 2618
 2619
 2620
+2621
 2622
 2623
-2621
 
 Query point 2618
 2616
@@ -10323,10 +10333,10 @@ Query point 2618
 2618
 2619
 2620
+2621
 2622
 2623
 2774
-2621
 
 Query point 2619
 2616
@@ -10334,76 +10344,76 @@ Query point 2619
 2618
 2619
 2620
+2621
 2622
 2623
-2621
 
 Query point 2620
-2615
 2616
 2617
 2618
 2619
 2620
+2621
 2622
 2623
+2615
+2770
 2768
 2769
-2770
 2772
 2773
 2774
-2621
 
 Query point 2621
-2621
 2616
 2617
 2618
 2619
 2620
+2621
 2622
 2623
 
 Query point 2622
-2615
 2616
 2617
 2618
 2619
 2620
+2621
 2622
 2623
+2615
 2770
 2773
 2774
-2621
 
 Query point 2623
-2615
 2616
 2617
 2618
 2619
 2620
+2621
 2622
 2623
+2776
+2615
+2770
 2768
 2769
-2770
 2772
 2773
 2774
-2776
-2621
 
 Query point 2624
 2624
 2625
 
 Query point 2625
-2624
 2625
+2624
 
 Query point 2626
 2626
@@ -10496,9 +10506,9 @@ Query point 2649
 2650
 
 Query point 2650
-2650
 2648
 2649
+2650
 
 Query point 2651
 2651
@@ -10534,8 +10544,8 @@ Query point 2660
 2661
 
 Query point 2661
-2661
 2660
+2661
 
 Query point 2662
 2662
@@ -10548,8 +10558,8 @@ Query point 2664
 2665
 
 Query point 2665
-2665
 2664
+2665
 
 Query point 2666
 2666
@@ -10595,8 +10605,8 @@ Query point 2678
 2679
 
 Query point 2679
-2679
 2678
+2679
 
 Query point 2680
 2680
@@ -10669,8 +10679,8 @@ Query point 2698
 2697
 2698
 2699
-2701
 2700
+2701
 
 Query point 2699
 2696
@@ -10681,20 +10691,20 @@ Query point 2699
 2701
 
 Query point 2700
-2700
-2701
 2696
 2697
 2698
 2699
+2700
+2701
 
 Query point 2701
-2700
-2701
 2696
 2697
 2698
 2699
+2700
+2701
 
 Query point 2702
 2702
@@ -10730,43 +10740,43 @@ Query point 2711
 
 Query point 2712
 2712
-2715
 2713
+2715
 2716
 
 Query point 2713
-2713
-2714
-2716
-2717
 2712
+2713
 2715
+2716
+2714
+2717
 
 Query point 2714
-2713
 2714
-2716
 2717
+2713
+2716
 
 Query point 2715
 2712
-2715
 2713
+2715
 2716
 
 Query point 2716
-2713
-2714
-2716
-2717
 2712
+2713
 2715
+2716
+2714
+2717
 
 Query point 2717
-2713
 2714
-2716
 2717
+2713
+2716
 
 Query point 2718
 2718
@@ -10799,8 +10809,8 @@ Query point 2726
 2727
 
 Query point 2727
-2726
 2727
+2726
 
 Query point 2728
 2728
@@ -10862,13 +10872,13 @@ Query point 2745
 
 Query point 2746
 2746
-2745
 2747
+2745
 
 Query point 2747
+2746
 2747
 2745
-2746
 
 Query point 2748
 2748
@@ -10895,19 +10905,22 @@ Query point 2754
 
 Query point 2755
 2609
+2610
 2755
 2756
 
 Query point 2756
 2756
 2609
-2755
 2610
+2755
+2757
 
 Query point 2757
-2611
-2757
 2610
+2757
+2756
+2611
 
 Query point 2758
 2758
@@ -10917,8 +10930,8 @@ Query point 2759
 2760
 
 Query point 2760
-2760
 2759
+2760
 
 Query point 2761
 2761
@@ -10940,127 +10953,127 @@ Query point 2766
 2767
 
 Query point 2767
-2766
 2767
+2766
 
 Query point 2768
-2616
-2620
-2623
 2768
 2769
-2770
-2771
 2772
 2773
 2774
+2771
+2770
+2616
+2620
+2623
 2776
 
 Query point 2769
-2615
-2616
-2620
-2623
 2768
 2769
-2770
-2771
 2772
 2773
 2774
+2771
+2616
+2620
+2623
 2776
+2615
+2770
 
 Query point 2770
 2615
+2770
 2616
 2620
 2622
 2623
+2776
 2768
 2769
-2770
-2771
 2772
 2773
 2774
-2776
+2771
 
 Query point 2771
-1627
+2771
 2768
 2769
-2770
-2771
 2772
 2773
 2774
+1627
 2776
+2770
 
 Query point 2772
+2768
+2769
+2772
+2773
+2774
+2771
 2616
 2620
 2623
+2776
+2770
+
+Query point 2773
 2768
 2769
-2770
-2771
 2772
 2773
 2774
-2776
-
-Query point 2773
-2615
 2616
 2620
 2622
 2623
-2768
-2769
+2776
+2615
 2770
 2771
+
+Query point 2774
+2768
+2769
 2772
 2773
 2774
-2776
-
-Query point 2774
-2615
 2616
 2618
 2620
 2622
 2623
-2768
-2769
+2776
+2615
 2770
 2771
-2772
-2773
-2774
-2776
 
 Query point 2775
 2775
 
 Query point 2776
 2623
+2776
 2768
 2769
-2770
-2771
 2772
 2773
 2774
-2776
+2770
+2771
 
 Query point 2777
 2777
 2778
 
 Query point 2778
-2778
 2777
+2778
 
 Query point 2779
 2779
@@ -11099,8 +11112,8 @@ Query point 2789
 2790
 
 Query point 2790
-2789
 2790
+2789
 
 Query point 2791
 1233
@@ -11115,8 +11128,8 @@ Query point 2792
 2792
 
 Query point 2793
-2793
 1235
+2793
 
 Query point 2794
 2794
@@ -11145,9 +11158,9 @@ Query point 2800
 2801
 
 Query point 2801
+2801
 2799
 2800
-2801
 
 Query point 2802
 2802
@@ -11192,24 +11205,24 @@ Query point 2814
 2814
 
 Query point 2815
-1474
 2815
+1474
 
 Query point 2816
 2816
 2817
 
 Query point 2817
-2816
 2817
+2816
 
 Query point 2818
 2818
 2819
 
 Query point 2819
-2819
 2818
+2819
 
 Query point 2820
 2820
@@ -11325,16 +11338,16 @@ Query point 2853
 2854
 
 Query point 2854
-2854
 2853
+2854
 
 Query point 2855
 2855
 2856
 
 Query point 2856
-2855
 2856
+2855
 
 Query point 2857
 2857
@@ -11379,8 +11392,8 @@ Query point 2869
 2869
 
 Query point 2870
-2870
 2868
+2870
 
 Query point 2871
 2871
@@ -11405,12 +11418,12 @@ Query point 2877
 
 Query point 2878
 2878
-5784
 2879
+5794
 
 Query point 2879
-2879
 2878
+2879
 
 Query point 2880
 2880
@@ -11500,8 +11513,8 @@ Query point 2905
 2906
 
 Query point 2906
-2905
 2906
+2905
 
 Query point 2907
 2907
@@ -11574,8 +11587,8 @@ Query point 2928
 2929
 
 Query point 2929
-2929
 2928
+2929
 
 Query point 2930
 2930
@@ -11659,12 +11672,12 @@ Query point 2952
 2954
 
 Query point 2953
-2953
 2952
+2953
 
 Query point 2954
-2954
 2952
+2954
 
 Query point 2955
 2955
@@ -11702,8 +11715,8 @@ Query point 2964
 2965
 
 Query point 2965
-2964
 2965
+2964
 
 Query point 2966
 2966
@@ -11745,20 +11758,20 @@ Query point 2975
 2977
 
 Query point 2976
+2976
+2977
 582
 583
 584
 2975
-2976
-2977
 
 Query point 2977
+2976
+2977
 582
 583
 584
 2975
-2976
-2977
 
 Query point 2978
 2978
@@ -11811,9 +11824,9 @@ Query point 2992
 2993
 
 Query point 2993
-2992
 2993
 2994
+2992
 
 Query point 2994
 2994
@@ -11857,8 +11870,8 @@ Query point 3006
 3007
 
 Query point 3007
-3007
 3006
+3007
 
 Query point 3008
 3008
@@ -11891,18 +11904,18 @@ Query point 3016
 
 Query point 3017
 3017
-3019
 3018
+3019
 
 Query point 3018
-3018
 3017
+3018
 3019
 
 Query point 3019
 3017
-3019
 3018
+3019
 
 Query point 3020
 3020
@@ -11920,25 +11933,25 @@ Query point 3024
 3024
 
 Query point 3025
-911
 3025
+911
 
 Query point 3026
 3026
-3027
 3028
+3027
 
 Query point 3027
 913
-3026
 3027
+3026
 3028
 
 Query point 3028
-913
 3026
-3027
 3028
+913
+3027
 
 Query point 3029
 3029
@@ -11957,8 +11970,8 @@ Query point 3033
 3033
 
 Query point 3034
-3034
 3032
+3034
 3035
 
 Query point 3035
@@ -11970,8 +11983,8 @@ Query point 3036
 3037
 
 Query point 3037
-3036
 3037
+3036
 
 Query point 3038
 3038
@@ -12119,18 +12132,18 @@ Query point 3079
 
 Query point 3080
 3080
-3081
 3082
+3081
 
 Query point 3081
-3080
 3081
+3080
 3082
 
 Query point 3082
 3080
-3081
 3082
+3081
 
 Query point 3083
 3083
@@ -12219,8 +12232,8 @@ Query point 3107
 3108
 
 Query point 3108
-3108
 3107
+3108
 
 Query point 3109
 3109
@@ -12251,8 +12264,8 @@ Query point 3117
 3118
 
 Query point 3118
-3117
 3118
+3117
 
 Query point 3119
 3119
@@ -12287,8 +12300,8 @@ Query point 3127
 3126
 
 Query point 3128
-3128
 3127
+3128
 
 Query point 3129
 3129
@@ -12361,6 +12374,7 @@ Query point 3148
 
 Query point 3149
 3149
+3148
 
 Query point 3150
 3150
@@ -12384,8 +12398,8 @@ Query point 3155
 3156
 
 Query point 3156
-3155
 3156
+3155
 
 Query point 3157
 3157
@@ -12456,7 +12470,6 @@ Query point 3177
 
 Query point 3178
 3178
-3179
 
 Query point 3179
 3179
@@ -12496,32 +12509,32 @@ Query point 3189
 3190
 
 Query point 3190
-3189
 3190
+3189
 
 Query point 3191
 3191
+3800
 3300
 3689
-3800
 3476
 
 Query point 3192
 3192
 3301
-3690
 3799
+3690
 
 Query point 3193
 3193
-3205
-3384
 3483
+3205
 3492
+3806
+3384
 3514
 3607
 3625
-3806
 
 Query point 3194
 3194
@@ -12558,11 +12571,11 @@ Query point 3204
 3795
 
 Query point 3205
-3193
 3205
-3384
-3483
 3492
+3193
+3483
+3384
 3514
 3607
 3625
@@ -12581,8 +12594,8 @@ Query point 3209
 3210
 
 Query point 3210
-3210
 3209
+3210
 
 Query point 3211
 3211
@@ -12704,8 +12717,8 @@ Query point 3247
 3248
 
 Query point 3248
-3247
 3248
+3247
 
 Query point 3249
 3229
@@ -12733,8 +12746,8 @@ Query point 3255
 
 Query point 3256
 3256
-3257
 3258
+3257
 
 Query point 3257
 3257
@@ -12742,8 +12755,8 @@ Query point 3257
 3258
 
 Query point 3258
-3258
 3256
+3258
 3257
 
 Query point 3259
@@ -12783,13 +12796,13 @@ Query point 3269
 3270
 
 Query point 3270
+3269
 3270
 3271
-3269
 
 Query point 3271
-3271
 3270
+3271
 
 Query point 3272
 3272
@@ -12878,24 +12891,24 @@ Query point 3297
 
 Query point 3298
 3298
-3297
 3299
+3297
 
 Query point 3299
-3299
 3298
+3299
 
 Query point 3300
-3191
 3300
 3689
+3191
 3800
 
 Query point 3301
 3192
 3301
-3690
 3799
+3690
 
 Query point 3302
 3302
@@ -12929,8 +12942,8 @@ Query point 3311
 3312
 
 Query point 3312
-3312
 3311
+3312
 
 Query point 3313
 3313
@@ -12944,13 +12957,13 @@ Query point 3315
 Query point 3316
 3316
 3323
-3342
 3326
+3342
 
 Query point 3317
 3317
-3343
 3324
+3343
 3351
 
 Query point 3318
@@ -12969,26 +12982,26 @@ Query point 3320
 
 Query point 3321
 3321
-3322
-3320
-3347
 3348
+3320
+3322
+3347
 
 Query point 3322
-3321
 3322
 3349
+3321
 
 Query point 3323
-3316
 3323
 3350
+3316
 
 Query point 3324
-3324
-3351
 3317
+3324
 3343
+3351
 
 Query point 3325
 3318
@@ -13023,10 +13036,10 @@ Query point 3331
 3332
 
 Query point 3332
-3331
 3332
 3338
 3360
+3331
 
 Query point 3333
 3333
@@ -13049,12 +13062,12 @@ Query point 3337
 3366
 
 Query point 3338
+3337
+3338
+3332
 3318
 3325
 3329
-3332
-3337
-3338
 
 Query point 3339
 3339
@@ -13069,15 +13082,15 @@ Query point 3341
 3370
 
 Query point 3342
-3316
 3342
-3353
 3350
+3353
+3316
 
 Query point 3343
 3317
-3343
 3324
+3343
 3351
 
 Query point 3344
@@ -13094,28 +13107,28 @@ Query point 3346
 
 Query point 3347
 3347
-3348
 3321
+3348
 
 Query point 3348
-3347
-3348
 3321
+3348
+3347
 
 Query point 3349
-3349
 3322
+3349
 
 Query point 3350
+3342
 3350
 3323
-3342
 
 Query point 3351
-3324
-3351
 3317
+3324
 3343
+3351
 
 Query point 3352
 3345
@@ -13150,11 +13163,11 @@ Query point 3359
 3359
 
 Query point 3360
-3332
 3360
 3361
 3366
 3367
+3332
 
 Query point 3361
 3360
@@ -13189,8 +13202,8 @@ Query point 3367
 3367
 
 Query point 3368
-3368
 3339
+3368
 
 Query point 3369
 3340
@@ -13217,8 +13230,8 @@ Query point 3375
 3376
 
 Query point 3376
-3376
 3375
+3376
 
 Query point 3377
 3377
@@ -13242,14 +13255,14 @@ Query point 3383
 3383
 
 Query point 3384
-3193
-3205
 3384
-3483
-3492
 3514
 3607
 3625
+3193
+3205
+3483
+3492
 
 Query point 3385
 3385
@@ -13305,17 +13318,17 @@ Query point 3399
 3399
 
 Query point 3400
-3400
 1548
+3400
 3402
 
 Query point 3401
 3401
 
 Query point 3402
-3402
-3400
 1548
+3400
+3402
 
 Query point 3403
 3403
@@ -13339,34 +13352,34 @@ Query point 3408
 
 Query point 3409
 3409
+3410
 3411
 3413
 3414
-3410
 
 Query point 3410
-3410
-3412
 3409
+3410
 3411
+3412
 3413
 
 Query point 3411
 3409
-3411
 3410
+3411
 3412
 
 Query point 3412
 3410
-3412
 3411
+3412
 
 Query point 3413
 3409
+3410
 3413
 3414
-3410
 3415
 
 Query point 3414
@@ -13377,8 +13390,8 @@ Query point 3414
 
 Query point 3415
 3415
-3414
 3413
+3414
 
 Query point 3416
 3416
@@ -13520,14 +13533,14 @@ Query point 3456
 3458
 
 Query point 3457
+3456
 3457
 3458
-3456
 
 Query point 3458
+3456
 3457
 3458
-3456
 
 Query point 3459
 3459
@@ -13549,8 +13562,8 @@ Query point 3464
 3465
 
 Query point 3465
-3465
 3464
+3465
 
 Query point 3466
 3466
@@ -13602,25 +13615,25 @@ Query point 3480
 3482
 
 Query point 3481
-3480
 3481
 3482
+3480
 
 Query point 3482
-3480
-3481
 3482
+3481
+3480
 
 Query point 3483
 3193
-3205
-3384
 3483
+3205
 3492
+3806
+3384
 3514
 3607
 3625
-3806
 
 Query point 3484
 3484
@@ -13631,9 +13644,9 @@ Query point 3485
 
 Query point 3486
 3486
+3634
 3610
 3625
-3634
 
 Query point 3487
 3487
@@ -13654,14 +13667,14 @@ Query point 3491
 3491
 
 Query point 3492
-3193
 3205
-3384
-3483
 3492
+3384
 3514
 3607
 3625
+3193
+3483
 
 Query point 3493
 3493
@@ -13741,14 +13754,14 @@ Query point 3513
 3513
 
 Query point 3514
-3193
-3205
 3384
-3483
-3492
 3514
 3607
 3625
+3205
+3492
+3193
+3483
 3572
 
 Query point 3515
@@ -13764,9 +13777,9 @@ Query point 3517
 3518
 
 Query point 3518
+3517
 3518
 3519
-3517
 
 Query point 3519
 3519
@@ -13801,8 +13814,8 @@ Query point 3528
 3529
 
 Query point 3529
-3528
 3529
+3528
 
 Query point 3530
 3530
@@ -13827,12 +13840,12 @@ Query point 3536
 3536
 
 Query point 3537
-3174
 3537
+3174
 
 Query point 3538
-3176
 3538
+3176
 
 Query point 3539
 3539
@@ -13859,8 +13872,8 @@ Query point 3545
 3545
 
 Query point 3546
-3188
 3546
+3188
 
 Query point 3547
 3547
@@ -13902,8 +13915,8 @@ Query point 3556
 3557
 
 Query point 3557
-3556
 3557
+3556
 
 Query point 3558
 3558
@@ -13951,13 +13964,13 @@ Query point 3571
 
 Query point 3572
 3572
-3573
 3514
 3610
+3573
 
 Query point 3573
-3572
 3573
+3572
 
 Query point 3574
 3574
@@ -14054,30 +14067,30 @@ Query point 3602
 3602
 
 Query point 3603
-3603
 3503
+3603
 
 Query point 3604
 3500
 3604
 
 Query point 3605
-3605
 3501
+3605
 
 Query point 3606
 3606
 
 Query point 3607
-3193
-3205
 3384
-3483
-3492
-3496
 3514
 3607
 3625
+3193
+3483
+3205
+3492
+3496
 
 Query point 3608
 3608
@@ -14086,12 +14099,12 @@ Query point 3609
 3609
 
 Query point 3610
-3486
-3496
 3610
 3625
-3572
+3496
 3611
+3486
+3572
 
 Query point 3611
 3611
@@ -14102,8 +14115,8 @@ Query point 3612
 3613
 
 Query point 3613
-3613
 3612
+3613
 
 Query point 3614
 3614
@@ -14141,18 +14154,18 @@ Query point 3624
 3624
 
 Query point 3625
-3193
-3205
 3384
-3483
-3486
-3492
-3496
 3514
 3607
 3610
 3625
+3193
+3483
+3486
 3634
+3205
+3492
+3496
 
 Query point 3626
 3626
@@ -14179,8 +14192,8 @@ Query point 3633
 3633
 
 Query point 3634
-3634
 3486
+3634
 3625
 
 Query point 3635
@@ -14188,13 +14201,13 @@ Query point 3635
 3636
 
 Query point 3636
-3635
 3636
 3637
+3635
 
 Query point 3637
-3637
 3636
+3637
 
 Query point 3638
 3638
@@ -14285,79 +14298,79 @@ Query point 3663
 
 Query point 3664
 3664
-3668
+3665
 3669
 3670
+3673
 3695
 3696
 3697
-3665
+3668
 3666
-3673
 
 Query point 3665
-3665
-3666
 3664
-3668
+3665
 3669
 3670
+3674
 3695
 3696
 3697
-3674
+3666
+3668
 
 Query point 3666
-3665
 3666
 3664
-3668
+3665
 3669
 3670
 3695
 3696
 3697
+3668
 
 Query point 3667
 3667
 
 Query point 3668
-3664
 3668
+3664
+3665
 3669
 3670
+3673
 3695
 3696
 3697
-3665
 3666
-3673
 
 Query point 3669
 3664
-3668
+3665
 3669
 3670
+3673
+3674
+3675
 3695
 3696
 3697
-3674
-3675
-3665
+3668
 3666
-3673
 
 Query point 3670
 3664
-3668
+3665
 3669
 3670
+3674
+3675
 3695
 3696
 3697
-3674
-3675
-3665
+3668
 3666
 
 Query point 3671
@@ -14365,37 +14378,37 @@ Query point 3671
 
 Query point 3672
 3672
-3693
 3677
+3693
 
 Query point 3673
-3673
 3664
-3668
 3669
-3695
-3696
+3673
 3674
 3675
+3695
+3696
+3668
 3678
 
 Query point 3674
+3665
+3669
+3670
+3673
 3674
 3675
 3679
-3673
-3669
-3670
 3696
 3697
-3665
 
 Query point 3675
-3674
-3675
-3673
 3669
 3670
+3673
+3674
+3675
 3696
 3697
 
@@ -14403,16 +14416,16 @@ Query point 3676
 3676
 
 Query point 3677
-3677
-3737
 3672
+3677
 3693
+3737
 
 Query point 3678
 3678
+3673
 3679
 3680
-3673
 
 Query point 3679
 3674
@@ -14448,19 +14461,19 @@ Query point 3687
 3688
 
 Query point 3688
-3687
 3688
+3687
 
 Query point 3689
-3191
 3300
 3689
+3191
 3800
 
 Query point 3690
+3690
 3192
 3301
-3690
 3799
 
 Query point 3691
@@ -14471,52 +14484,52 @@ Query point 3692
 
 Query point 3693
 3672
-3693
 3677
+3693
 
 Query point 3694
-3694
 1191
+3694
 1193
 
 Query point 3695
 3664
-3668
+3665
 3669
 3670
+3673
 3695
 3696
 3697
-3665
+3668
 3666
-3673
 
 Query point 3696
 3664
-3668
+3665
 3669
 3670
+3673
+3674
+3675
 3695
 3696
 3697
-3673
-3665
 3666
-3674
-3675
+3668
 
 Query point 3697
 3664
-3668
+3665
 3669
 3670
+3674
+3675
 3695
 3696
 3697
-3674
-3675
-3665
 3666
+3668
 
 Query point 3698
 3698
@@ -14535,6 +14548,8 @@ Query point 3701
 3701
 
 Query point 3702
+3702
+3738
 943
 1158
 1194
@@ -14542,20 +14557,18 @@ Query point 3702
 1951
 1959
 3056
-3702
-3738
 
 Query point 3703
 3703
-3704
 3739
+3704
 3740
 
 Query point 3704
-3703
 3704
-3739
 3740
+3703
+3739
 
 Query point 3705
 3705
@@ -14573,8 +14586,8 @@ Query point 3708
 3708
 
 Query point 3709
-3709
 799
+3709
 
 Query point 3710
 3710
@@ -14679,6 +14692,8 @@ Query point 3737
 3737
 
 Query point 3738
+3702
+3738
 943
 1158
 1194
@@ -14686,24 +14701,22 @@ Query point 3738
 1951
 1959
 3056
-3702
-3738
 
 Query point 3739
 3703
-3704
 3739
+3704
 3740
 
 Query point 3740
-3703
 3704
-3739
 3740
+3703
+3739
 
 Query point 3741
-3741
 3705
+3741
 
 Query point 3742
 3742
@@ -14746,11 +14759,11 @@ Query point 3750
 3756
 
 Query point 3751
-3751
-3756
 3743
 3745
 3750
+3751
+3756
 
 Query point 3752
 3752
@@ -14765,10 +14778,10 @@ Query point 3755
 3755
 
 Query point 3756
-3751
-3756
 3745
 3750
+3751
+3756
 
 Query point 3757
 3757
@@ -14784,13 +14797,13 @@ Query point 3760
 3761
 
 Query point 3761
-3761
 3760
+3761
 3762
 
 Query point 3762
-3762
 3761
+3762
 
 Query point 3763
 3763
@@ -14817,18 +14830,18 @@ Query point 3769
 
 Query point 3770
 3770
-3771
 3772
+3771
 
 Query point 3771
-3770
 3771
+3770
 3772
 
 Query point 3772
 3770
-3771
 3772
+3771
 
 Query point 3773
 3773
@@ -14850,25 +14863,25 @@ Query point 3777
 3778
 
 Query point 3778
+3778
 3776
 3777
-3778
 
 Query point 3779
 3779
 3780
 
 Query point 3780
-3779
 3780
+3779
 
 Query point 3781
 3781
 3782
 
 Query point 3782
-3781
 3782
+3781
 
 Query point 3783
 3783
@@ -14897,16 +14910,16 @@ Query point 3789
 3790
 
 Query point 3790
-3790
 3789
+3790
 
 Query point 3791
 3791
 3792
 
 Query point 3792
-3792
 3791
+3792
 
 Query point 3793
 3793
@@ -14916,8 +14929,8 @@ Query point 3794
 3794
 
 Query point 3795
-3204
 3795
+3204
 
 Query point 3796
 3796
@@ -14931,14 +14944,14 @@ Query point 3798
 Query point 3799
 3192
 3301
-3690
 3799
+3690
 
 Query point 3800
 3191
+3800
 3300
 3689
-3800
 3476
 
 Query point 3801
@@ -14955,17 +14968,18 @@ Query point 3804
 3805
 
 Query point 3805
+3804
 3805
 
 Query point 3806
+3806
+3807
 3193
 3483
-3806
-3807
 
 Query point 3807
-3807
 3806
+3807
 
 Query point 3808
 3808
@@ -15015,19 +15029,19 @@ Query point 3821
 3822
 
 Query point 3822
-3822
 3821
+3822
 
 Query point 3823
 3823
 3824
-3831
 3830
+3831
 
 Query point 3824
+3823
 3824
 3831
-3823
 
 Query point 3825
 3825
@@ -15050,15 +15064,15 @@ Query point 3829
 3829
 
 Query point 3830
+3823
 3830
 3831
-3823
 
 Query point 3831
-3824
-3831
-3830
 3823
+3824
+3830
+3831
 
 Query point 3832
 3825
@@ -15084,14 +15098,14 @@ Query point 3837
 3838
 
 Query point 3838
-3838
-3839
 3836
 3837
-
-Query point 3839
 3838
 3839
+
+Query point 3839
+3839
+3838
 
 Query point 3840
 3793
@@ -15108,8 +15122,8 @@ Query point 3843
 3844
 
 Query point 3844
-3843
 3844
+3843
 
 Query point 3845
 3845
@@ -15123,23 +15137,23 @@ Query point 3847
 3849
 
 Query point 3848
+3847
 3848
 3849
-3847
 
 Query point 3849
+3847
 3848
 3849
-3847
 
 Query point 3850
 3850
 3851
 
 Query point 3851
+681
 3850
 3851
-681
 
 Query point 3852
 3852
@@ -15148,8 +15162,8 @@ Query point 3853
 3853
 
 Query point 3854
-3854
 69
+3854
 
 Query point 3855
 3855
@@ -15159,8 +15173,8 @@ Query point 3856
 3857
 
 Query point 3857
-3856
 3857
+3856
 
 Query point 3858
 3858
@@ -15198,8 +15212,8 @@ Query point 3866
 3867
 
 Query point 3867
-3867
 3866
+3867
 
 Query point 3868
 3868
@@ -15214,8 +15228,8 @@ Query point 3871
 3871
 
 Query point 3872
-3872
 3864
+3872
 
 Query point 3873
 3873
@@ -15334,29 +15348,29 @@ Query point 3903
 
 Query point 3904
 3904
-3905
-3906
 3908
 3910
+3906
+3905
 
 Query point 3905
-3904
 3905
-3906
+3904
 3908
+3910
 3907
 3909
 3911
-3910
+3906
 
 Query point 3906
-3904
-3905
 3906
+3905
+3904
 3908
+3910
 3907
 3909
-3910
 3911
 
 Query point 3907
@@ -15364,18 +15378,18 @@ Query point 3907
 3909
 3911
 3905
-3906
 3908
 3910
+3906
 
 Query point 3908
 3904
-3905
-3906
 3908
+3910
+3906
+3905
 3907
 3909
-3910
 3911
 
 Query point 3909
@@ -15383,16 +15397,16 @@ Query point 3909
 3909
 3911
 3905
-3906
 3908
 3910
+3906
 
 Query point 3910
-3910
 3904
-3905
-3906
 3908
+3910
+3906
+3905
 3907
 3909
 3911
@@ -15428,47 +15442,47 @@ Query point 3915
 
 Query point 3916
 3916
-3917
 3919
+3917
 3923
 
 Query point 3917
-3916
 3917
+3916
 
 Query point 3918
 3915
 3918
 
 Query point 3919
+3916
 3919
 3923
-3916
 
 Query point 3920
 3920
 3921
 
 Query point 3921
-3921
 3920
+3921
 
 Query point 3922
-3915
 3922
+3915
 
 Query point 3923
-3919
 3923
 3916
+3919
 
 Query point 3924
 3924
 3925
 
 Query point 3925
-3925
 3924
+3925
 
 Query point 3926
 3926
@@ -15478,8 +15492,8 @@ Query point 3927
 3928
 
 Query point 3928
-3928
 3927
+3928
 
 Query point 3929
 3929
@@ -15489,20 +15503,20 @@ Query point 3930
 3931
 
 Query point 3931
+3930
 3931
 3932
 3933
-3930
 
 Query point 3932
+3931
 3932
 3933
-3931
 
 Query point 3933
+3931
 3932
 3933
-3931
 
 Query point 3934
 3934
@@ -15521,8 +15535,8 @@ Query point 3938
 3939
 
 Query point 3939
-3939
 3938
+3939
 
 Query point 3940
 3940
@@ -15620,8 +15634,8 @@ Query point 3969
 3970
 
 Query point 3970
-3970
 3969
+3970
 
 Query point 3971
 3971
@@ -15676,22 +15690,22 @@ Query point 3986
 3988
 
 Query point 3987
+3986
 3987
 3988
-3986
 
 Query point 3988
+3986
 3987
 3988
-3986
 
 Query point 3989
 3989
 3990
 
 Query point 3990
-3990
 3989
+3990
 
 Query point 3991
 3991
@@ -15770,10 +15784,11 @@ Query point 4012
 
 Query point 4013
 4013
-4012
 4014
+4012
 
 Query point 4014
+4013
 4014
 
 Query point 4015
@@ -15834,26 +15849,26 @@ Query point 4031
 Query point 4032
 4032
 4033
-4035
 4034
+4035
 
 Query point 4033
 4032
 4033
-4035
 4034
+4035
 
 Query point 4034
-4034
 4032
 4033
+4034
 4035
 
 Query point 4035
 4032
 4033
-4035
 4034
+4035
 
 Query point 4036
 3874
@@ -15864,32 +15879,32 @@ Query point 4037
 4037
 
 Query point 4038
-116
 117
 4038
 4039
+116
 
 Query point 4039
-116
 117
 4038
 4039
+116
 
 Query point 4040
 4040
-4042
 4041
+4042
 
 Query point 4041
 4041
-4040
 4042
 4043
+4040
 
 Query point 4042
-4040
-4042
 4041
+4042
+4040
 
 Query point 4043
 4043
@@ -15934,8 +15949,8 @@ Query point 4054
 4055
 
 Query point 4055
-4054
 4055
+4054
 
 Query point 4056
 4056
@@ -15959,10 +15974,11 @@ Query point 4061
 
 Query point 4062
 4062
+4063
 
 Query point 4063
-4063
 4062
+4063
 
 Query point 4064
 4064
@@ -15993,12 +16009,12 @@ Query point 4071
 4073
 
 Query point 4072
-4072
 4070
+4072
 
 Query point 4073
-4073
 4071
+4073
 
 Query point 4074
 4074
@@ -16052,10 +16068,10 @@ Query point 4088
 4089
 
 Query point 4089
-4087
-4088
 4089
 4090
+4087
+4088
 
 Query point 4090
 4089
@@ -16065,14 +16081,14 @@ Query point 4091
 4091
 
 Query point 4092
+406
 4092
 4093
-406
 
 Query point 4093
+406
 4092
 4093
-406
 
 Query point 4094
 4094
@@ -16107,8 +16123,8 @@ Query point 4103
 
 Query point 4104
 4104
-4106
 4105
+4106
 
 Query point 4105
 4105
@@ -16176,9 +16192,9 @@ Query point 4120
 4118
 
 Query point 4121
-4121
 4119
 4120
+4121
 
 Query point 4122
 4122
@@ -16191,8 +16207,8 @@ Query point 4124
 4125
 
 Query point 4125
-4124
 4125
+4124
 
 Query point 4126
 4126
@@ -16260,8 +16276,8 @@ Query point 4145
 4146
 
 Query point 4146
-4146
 4145
+4146
 
 Query point 4147
 4147
@@ -16328,13 +16344,13 @@ Query point 4166
 4167
 
 Query point 4167
-4166
 4167
 4168
+4166
 
 Query point 4168
-4168
 4167
+4168
 
 Query point 4169
 4169
@@ -16358,8 +16374,8 @@ Query point 4174
 4175
 
 Query point 4175
-4175
 4174
+4175
 
 Query point 4176
 4176
@@ -16400,8 +16416,8 @@ Query point 4186
 4187
 
 Query point 4187
-4186
 4187
+4186
 
 Query point 4188
 4188
@@ -16445,8 +16461,8 @@ Query point 4198
 4198
 
 Query point 4199
-4199
 2804
+4199
 
 Query point 4200
 4200
@@ -16479,8 +16495,8 @@ Query point 4208
 4209
 
 Query point 4209
-4209
 4208
+4209
 
 Query point 4210
 4210
@@ -16511,20 +16527,20 @@ Query point 4218
 
 Query point 4219
 4219
-4222
 4220
 4221
+4222
 
 Query point 4220
 4220
-4221
 4219
+4221
 
 Query point 4221
-4220
 4221
-4219
 4222
+4219
+4220
 
 Query point 4222
 4222
@@ -16534,29 +16550,25 @@ Query point 4222
 Query point 4223
 4223
 4224
-4225
 4239
+4225
 
 Query point 4224
 4223
 4224
-4225
 4239
 
 Query point 4225
 4225
-4227
 4226
-4223
-4224
 
 Query point 4226
-4226
 4225
+4226
 
 Query point 4227
-4225
 4227
+4225
 
 Query point 4228
 4228
@@ -16598,11 +16610,11 @@ Query point 4238
 4239
 
 Query point 4239
+4223
+4224
 4237
 4238
 4239
-4223
-4224
 
 Query point 4240
 4240
@@ -16627,8 +16639,8 @@ Query point 4246
 4247
 
 Query point 4247
-4246
 4247
+4246
 
 Query point 4248
 4248
@@ -16638,8 +16650,8 @@ Query point 4249
 4250
 
 Query point 4250
-4249
 4250
+4249
 
 Query point 4251
 4251
@@ -16695,16 +16707,15 @@ Query point 4266
 
 Query point 4267
 4267
-4268
 4270
+4342
+4367
+4268
 4290
 4295
 4298
-4342
-4367
 
 Query point 4268
-4267
 4268
 4269
 4271
@@ -16713,6 +16724,7 @@ Query point 4268
 4294
 4296
 4299
+4267
 
 Query point 4269
 4268
@@ -16725,25 +16737,25 @@ Query point 4269
 4299
 
 Query point 4270
-4267
 4270
+4267
+4342
+4367
 4271
 4290
 4295
 4298
-4342
-4367
 
 Query point 4271
 4268
 4269
-4270
 4271
 4289
 4291
 4294
 4296
 4299
+4270
 
 Query point 4272
 4272
@@ -16765,8 +16777,8 @@ Query point 4277
 4278
 
 Query point 4278
-4278
 4277
+4278
 
 Query point 4279
 4279
@@ -16788,28 +16800,28 @@ Query point 4284
 4284
 4285
 4286
-4287
 4292
+4287
 
 Query point 4285
 4284
 4285
 4286
-4287
 4292
+4287
 
 Query point 4286
 4284
 4285
 4286
-4287
 4292
+4287
 
 Query point 4287
+4287
 4284
 4285
 4286
-4287
 4292
 
 Query point 4288
@@ -16827,11 +16839,11 @@ Query point 4289
 4299
 
 Query point 4290
-4267
-4270
 4290
 4295
 4298
+4270
+4267
 4366
 4369
 
@@ -16849,8 +16861,8 @@ Query point 4292
 4284
 4285
 4286
-4287
 4292
+4287
 
 Query point 4293
 4288
@@ -16867,11 +16879,11 @@ Query point 4294
 4299
 
 Query point 4295
-4267
-4270
 4290
 4295
 4298
+4270
+4267
 4366
 4369
 
@@ -16889,11 +16901,11 @@ Query point 4297
 4297
 
 Query point 4298
-4267
-4270
 4290
 4295
 4298
+4270
+4267
 4366
 4369
 
@@ -16914,55 +16926,55 @@ Query point 4301
 4301
 4302
 4303
-4304
 4305
 4308
+4304
 
 Query point 4302
 4301
 4302
 4303
-4304
 4305
 4308
+4304
 
 Query point 4303
-4303
-4304
 4301
 4302
+4303
 4306
 4308
+4304
 
 Query point 4304
-4303
 4304
 4301
 4302
+4303
 4308
 
 Query point 4305
 4305
-4307
 4301
 4302
 4306
+4307
 
 Query point 4306
 4306
 4308
-4303
 4305
+4303
 
 Query point 4307
-4305
 4307
+4305
 
 Query point 4308
 4308
+4303
 4301
 4302
-4303
 4304
 4306
 
@@ -17015,15 +17027,15 @@ Query point 4316
 
 Query point 4317
 4317
-4326
 4318
+4326
 4327
 
 Query point 4318
-4318
-4327
 4317
+4318
 4326
+4327
 
 Query point 4319
 4310
@@ -17071,15 +17083,15 @@ Query point 4325
 
 Query point 4326
 4317
-4326
 4318
+4326
 4327
 
 Query point 4327
-4318
-4327
 4317
+4318
 4326
+4327
 
 Query point 4328
 4328
@@ -17132,15 +17144,15 @@ Query point 4341
 Query point 4342
 4342
 4366
-4369
-4373
-4374
-4267
 4367
 4368
+4369
+4267
+4372
+4373
+4374
 4370
 4270
-4372
 4371
 
 Query point 4343
@@ -17191,13 +17203,13 @@ Query point 4354
 
 Query point 4355
 4355
+4356
 4350
 4352
-4356
 
 Query point 4356
-4356
 4355
+4356
 
 Query point 4357
 4357
@@ -17212,9 +17224,9 @@ Query point 4359
 4360
 
 Query point 4360
+4282
 4359
 4360
-4282
 
 Query point 4361
 4361
@@ -17229,141 +17241,140 @@ Query point 4364
 4364
 4365
 4366
+4368
 
 Query point 4365
-4364
 4365
 4366
 4367
 4368
+4364
 
 Query point 4366
 4342
+4365
 4366
+4367
+4368
 4369
+4372
 4373
 4374
+4364
+4371
+4370
 4290
 4295
 4298
-4364
-4365
-4370
-4371
-4372
-4367
-4368
 
 Query point 4367
+4342
+4365
+4366
 4367
 4368
-4370
-4371
-4372
-4342
-4366
 4369
+4371
+4370
+4372
 4373
 4374
-4365
 4267
+4270
 
 Query point 4368
-4367
-4368
-4370
-4371
-4372
 4342
-4369
-4364
 4365
 4366
+4367
+4368
+4369
+4372
 4373
 4374
+4370
+4371
+4364
 
 Query point 4369
 4342
 4366
-4369
-4373
-4374
 4367
 4368
-4370
+4369
 4371
+4370
 4372
 4290
 4295
 4298
 
 Query point 4370
-4367
-4368
 4370
 4371
+4342
 4372
-4366
 4373
 4374
-4342
+4366
+4368
 4369
+4367
 
 Query point 4371
-4367
-4368
 4370
 4371
 4372
-4366
 4373
 4374
-4342
+4366
+4368
 4369
+4342
+4367
 
 Query point 4372
-4367
-4368
-4370
-4371
 4372
-4366
 4373
 4374
+4370
+4371
 4342
+4366
+4368
 4369
+4367
 
 Query point 4373
-4342
-4366
-4369
+4372
 4373
 4374
-4367
-4368
+4342
 4370
+4366
 4371
-4372
+4368
+4369
 
 Query point 4374
-4342
-4366
-4369
+4372
 4373
 4374
-4367
-4368
+4342
 4370
+4368
+4369
+4366
 4371
-4372
+4367
 
 Query point 4375
 4375
 4376
 
 Query point 4376
-4376
 4375
+4376
 
 Query point 4377
 4377
@@ -17382,32 +17393,32 @@ Query point 4380
 4384
 
 Query point 4381
+4380
 4381
 4382
 4383
 4384
-4380
 
 Query point 4382
+4380
 4381
 4382
 4383
 4384
-4380
 
 Query point 4383
+4380
 4381
 4382
 4383
 4384
-4380
 
 Query point 4384
+4380
 4381
 4382
 4383
 4384
-4380
 
 Query point 4385
 4385
@@ -17418,8 +17429,8 @@ Query point 4386
 4387
 
 Query point 4387
-4387
 4386
+4387
 4385
 
 Query point 4388
@@ -17476,10 +17487,11 @@ Query point 4403
 
 Query point 4404
 4404
+4405
 
 Query point 4405
-4405
 4404
+4405
 
 Query point 4406
 4406
@@ -17523,8 +17535,8 @@ Query point 4417
 4418
 
 Query point 4418
-4417
 4418
+4417
 
 Query point 4419
 4419
@@ -17536,22 +17548,22 @@ Query point 4420
 4423
 
 Query point 4421
-4420
 4421
 4422
 4423
+4420
 
 Query point 4422
+4421
 4422
 4423
 4420
-4421
 
 Query point 4423
+4421
 4422
 4423
 4420
-4421
 
 Query point 4424
 4424
@@ -17561,8 +17573,8 @@ Query point 4425
 4426
 
 Query point 4426
-4425
 4426
+4425
 
 Query point 4427
 4427
@@ -17585,46 +17597,46 @@ Query point 4432
 Query point 4433
 4433
 4434
+4435
 4436
 4437
-4435
 
 Query point 4434
-4433
 4434
 4435
 4436
 4437
+4433
 
 Query point 4435
 4435
 4436
 4437
 4438
-4433
 4434
+4433
 
 Query point 4436
+4435
 4436
 4437
 4438
-4435
-4433
 4434
+4433
 
 Query point 4437
+4435
 4436
 4437
 4438
 4433
 4434
-4435
 
 Query point 4438
+4435
 4436
 4437
 4438
-4435
 
 Query point 4439
 4439
@@ -17642,8 +17654,8 @@ Query point 4442
 4443
 
 Query point 4443
-4443
 4442
+4443
 
 Query point 4444
 4444
@@ -17653,16 +17665,16 @@ Query point 4445
 4446
 
 Query point 4446
-4445
 4446
+4445
 
 Query point 4447
 4447
 4448
 
 Query point 4448
-4448
 4447
+4448
 
 Query point 4449
 4449
@@ -17681,20 +17693,20 @@ Query point 4453
 
 Query point 4454
 4454
-4456
 4458
+4456
 
 Query point 4455
 4455
 
 Query point 4456
-4454
 4456
 4457
+4454
 
 Query point 4457
-4457
 4456
+4457
 
 Query point 4458
 4458
@@ -17708,8 +17720,8 @@ Query point 4460
 4461
 
 Query point 4461
-4461
 4460
+4461
 
 Query point 4462
 4462
@@ -17779,18 +17791,19 @@ Query point 4482
 
 Query point 4483
 4483
+4482
 
 Query point 4484
 4484
 
 Query point 4485
 4485
-4486
 4490
+4486
 
 Query point 4486
-4485
 4486
+4485
 4490
 
 Query point 4487
@@ -17804,8 +17817,8 @@ Query point 4489
 
 Query point 4490
 4485
-4486
 4490
+4486
 
 Query point 4491
 4491
@@ -17890,8 +17903,8 @@ Query point 4515
 4516
 
 Query point 4516
-4516
 4515
+4516
 
 Query point 4517
 4517
@@ -17910,8 +17923,8 @@ Query point 4521
 4522
 
 Query point 4522
-4521
 4522
+4521
 
 Query point 4523
 4523
@@ -17939,8 +17952,8 @@ Query point 4530
 4531
 
 Query point 4531
-4531
 4530
+4531
 
 Query point 4532
 4532
@@ -17968,8 +17981,8 @@ Query point 4538
 
 Query point 4539
 4539
-4587
 4586
+4587
 
 Query point 4540
 4540
@@ -17994,38 +18007,38 @@ Query point 4546
 
 Query point 4547
 4547
+4550
 4548
 4549
-4550
 4551
 
 Query point 4548
-4547
 4548
 4549
-4550
 4551
+4547
+4550
 
 Query point 4549
-4547
 4548
 4549
-4550
 4551
+4547
+4550
 
 Query point 4550
 4547
+4550
 4548
 4549
-4550
 4551
 
 Query point 4551
-4547
 4548
 4549
-4550
 4551
+4547
+4550
 
 Query point 4552
 4552
@@ -18056,9 +18069,9 @@ Query point 4559
 4560
 
 Query point 4560
+4560
 4558
 4559
-4560
 
 Query point 4561
 4561
@@ -18107,22 +18120,22 @@ Query point 4573
 4572
 
 Query point 4574
-4573
 4574
 4575
 4576
+4573
 
 Query point 4575
-4573
 4574
 4575
 4576
+4573
 
 Query point 4576
-4573
 4574
 4575
 4576
+4573
 
 Query point 4577
 4577
@@ -18154,21 +18167,21 @@ Query point 4584
 4585
 
 Query point 4585
-4584
 4585
+4584
 
 Query point 4586
 4586
-4539
 4587
 4627
+4539
 
 Query point 4587
-4539
+4586
 4587
 4627
-4586
 4629
+4539
 
 Query point 4588
 4588
@@ -18181,8 +18194,8 @@ Query point 4590
 4591
 
 Query point 4591
-4591
 4590
+4591
 
 Query point 4592
 4592
@@ -18198,11 +18211,10 @@ Query point 4595
 
 Query point 4596
 4596
-4597
 
 Query point 4597
-4596
 4597
+4596
 
 Query point 4598
 4598
@@ -18221,8 +18233,8 @@ Query point 4602
 4603
 
 Query point 4603
-4602
 4603
+4602
 
 Query point 4604
 4604
@@ -18244,9 +18256,9 @@ Query point 4608
 4609
 
 Query point 4609
-4609
 4607
 4608
+4609
 
 Query point 4610
 4610
@@ -18277,8 +18289,8 @@ Query point 4618
 4619
 
 Query point 4619
-4618
 4619
+4618
 
 Query point 4620
 4620
@@ -18302,17 +18314,17 @@ Query point 4626
 4626
 
 Query point 4627
+4586
 4587
 4627
-4586
 
 Query point 4628
 4538
 4628
 
 Query point 4629
-4629
 4587
+4629
 
 Query point 4630
 4630
@@ -18375,575 +18387,574 @@ Query point 4646
 
 Query point 4647
 4647
-4652
+4648
 
 Query point 4648
+4647
 4648
-4655
 
 Query point 4649
 4649
-4656
 
 Query point 4650
 4650
-4657
+4652
 
 Query point 4651
 4651
-4660
 
 Query point 4652
-4647
+4650
 4652
 
 Query point 4653
 4653
-4654
 
 Query point 4654
-4653
 4654
+4655
 
 Query point 4655
-4648
+4654
 4655
 
 Query point 4656
-4649
 4656
 
 Query point 4657
 4657
-4650
+4662
 
 Query point 4658
 4658
+4665
 
 Query point 4659
 4659
+4666
 
 Query point 4660
-4651
 4660
+4667
 
 Query point 4661
 4661
+4670
 
 Query point 4662
+4657
 4662
-4663
-4665
-4666
-4667
-4669
-4671
-4672
-4673
-4674
-4675
-4676
-4679
-4680
-4681
-4682
-4664
-4668
-4683
-4684
 
 Query point 4663
-4662
 4663
-4665
-4666
-4667
-4669
-4671
-4672
-4673
-4674
-4675
-4676
-4679
-4680
-4681
-4682
 4664
-4668
-4683
-4684
 
 Query point 4664
-4664
-4668
-4683
-4684
-4662
 4663
-4665
-4669
-4671
-4673
-4675
-4679
-4680
-4681
-4682
-4666
-4667
-4672
-4674
-4676
+4664
 
 Query point 4665
-4662
-4663
+4658
 4665
-4666
-4667
-4669
-4671
-4672
-4673
-4674
-4675
-4676
-4679
-4680
-4681
-4682
-4664
-4668
-4683
-4684
 
 Query point 4666
-4662
-4663
-4665
+4659
 4666
-4667
-4669
-4671
-4672
-4673
-4674
-4675
-4676
-4679
-4680
-4681
-4682
-4683
-4684
-4668
 
 Query point 4667
-4662
-4663
-4665
-4666
+4660
 4667
-4669
-4671
-4672
-4673
-4674
-4675
-4676
-4679
-4680
-4681
-4682
-4683
-4684
-4668
 
 Query point 4668
-4664
 4668
-4683
-4684
-4662
-4663
-4665
-4666
-4667
-4669
-4671
-4672
-4673
-4674
-4675
-4676
-4679
-4680
-4681
-4682
 
 Query point 4669
-4662
-4663
-4665
-4666
-4667
 4669
-4671
-4672
-4673
-4674
-4675
-4676
-4679
-4680
-4681
-4682
-4664
-4668
-4683
-4684
 
 Query point 4670
+4661
 4670
 
 Query point 4671
-4662
-4663
-4665
-4666
-4667
-4669
 4671
-4672
-4673
-4674
-4675
-4676
-4679
-4680
-4681
-4682
-4664
-4668
-4683
-4684
 
 Query point 4672
-4662
-4663
-4665
-4666
-4667
-4669
-4671
 4672
 4673
-4674
 4675
 4676
-4679
-4680
+4677
 4681
 4682
 4683
 4684
-4668
+4685
+4686
+4689
+4690
+4691
+4692
+4674
+4678
+4679
+4693
+4694
 
 Query point 4673
-4662
-4663
-4665
-4666
-4667
-4669
-4671
 4672
 4673
-4674
 4675
 4676
-4679
-4680
+4677
 4681
 4682
-4664
-4668
 4683
 4684
+4685
+4686
+4689
+4690
+4691
+4692
+4674
+4678
+4679
+4693
+4694
 
 Query point 4674
-4662
-4663
-4665
-4666
-4667
-4669
-4671
+4674
+4678
+4679
+4693
+4694
 4672
 4673
-4674
 4675
 4676
-4679
-4680
+4677
 4681
 4682
 4683
 4684
-4668
+4685
+4686
+4689
+4690
+4691
+4692
 
 Query point 4675
-4662
-4663
-4665
-4666
-4667
-4669
-4671
 4672
 4673
-4674
 4675
 4676
-4679
-4680
+4677
 4681
 4682
-4664
-4668
 4683
 4684
+4685
+4686
+4689
+4690
+4691
+4692
+4674
+4678
+4679
+4693
+4694
 
 Query point 4676
-4662
-4663
-4665
-4666
-4667
-4669
-4671
 4672
 4673
-4674
 4675
 4676
-4679
-4680
+4677
 4681
 4682
 4683
 4684
-4668
+4685
+4686
+4689
+4690
+4691
+4692
+4693
+4694
+4678
+4679
+4674
 
 Query point 4677
+4672
+4673
+4675
+4676
 4677
+4681
+4682
+4683
+4684
+4685
+4686
+4689
+4690
+4691
+4692
+4693
+4694
 4678
+4679
+4674
 
 Query point 4678
-4677
+4674
 4678
+4679
+4693
+4694
+4672
+4673
+4675
+4676
+4677
+4681
+4682
+4683
+4684
+4685
+4686
+4689
+4690
+4691
+4692
 
 Query point 4679
-4662
-4663
-4665
-4666
-4667
-4669
-4671
+4674
+4678
+4679
+4693
+4694
 4672
 4673
-4674
 4675
 4676
-4679
-4680
+4677
 4681
 4682
-4664
-4668
 4683
 4684
+4685
+4686
+4689
+4690
+4691
+4692
 
 Query point 4680
-4662
-4663
-4665
-4666
-4667
-4669
-4671
-4672
-4673
-4674
-4675
-4676
-4679
 4680
-4681
-4682
-4664
-4668
-4683
-4684
 
 Query point 4681
-4662
-4663
-4665
-4666
-4667
-4669
-4671
 4672
 4673
-4674
 4675
 4676
-4679
-4680
+4677
 4681
 4682
-4664
-4668
 4683
 4684
+4685
+4686
+4689
+4690
+4691
+4692
+4674
+4678
+4679
+4693
+4694
 
 Query point 4682
-4662
-4663
-4665
-4666
-4667
-4669
-4671
 4672
 4673
-4674
 4675
 4676
-4679
-4680
+4677
 4681
 4682
-4664
-4668
 4683
 4684
+4685
+4686
+4689
+4690
+4691
+4692
+4693
+4694
+4678
+4679
+4674
 
 Query point 4683
-4664
-4668
-4683
-4684
-4662
-4663
-4665
-4669
-4671
+4672
 4673
 4675
-4679
-4680
+4676
+4677
 4681
 4682
-4666
-4667
-4672
+4683
+4684
+4685
+4686
+4689
+4690
+4691
+4692
 4674
-4676
+4678
+4679
+4693
+4694
 
 Query point 4684
-4664
-4668
-4683
-4684
-4662
-4663
-4665
-4669
-4671
+4672
 4673
 4675
-4679
-4680
+4676
+4677
 4681
 4682
-4666
-4667
-4672
+4683
+4684
+4685
+4686
+4689
+4690
+4691
+4692
+4693
+4694
+4678
+4679
 4674
-4676
 
 Query point 4685
+4672
+4673
+4675
+4676
+4677
+4681
+4682
+4683
+4684
 4685
+4686
+4689
+4690
+4691
+4692
+4674
+4678
+4679
+4693
+4694
 
 Query point 4686
+4672
+4673
+4675
+4676
+4677
+4681
+4682
+4683
+4684
+4685
 4686
-4688
 4689
+4690
+4691
+4692
+4693
+4694
+4678
+4679
+4674
 
 Query point 4687
 4687
+4688
 
 Query point 4688
-4686
+4687
 4688
-4689
 
 Query point 4689
+4672
+4673
+4675
+4676
+4677
+4681
+4682
+4683
+4684
+4685
 4686
-4688
 4689
+4690
+4691
+4692
+4674
+4678
+4679
+4693
+4694
 
 Query point 4690
+4672
+4673
+4675
+4676
+4677
+4681
+4682
+4683
+4684
+4685
+4686
+4689
 4690
+4691
+4692
+4674
+4678
+4679
+4693
+4694
 
 Query point 4691
+4672
+4673
+4675
+4676
+4677
+4681
+4682
+4683
+4684
+4685
+4686
+4689
+4690
 4691
+4692
+4674
+4678
+4679
+4693
+4694
 
 Query point 4692
+4672
+4673
+4675
+4676
+4677
+4681
+4682
+4683
+4684
+4685
+4686
+4689
+4690
+4691
 4692
+4674
+4678
+4679
+4693
+4694
 
 Query point 4693
+4674
+4678
+4679
 4693
+4694
+4672
+4673
+4675
+4676
+4677
+4681
+4682
+4683
+4684
+4685
+4686
+4689
+4690
+4691
+4692
 
 Query point 4694
+4674
+4678
+4679
+4693
 4694
+4672
+4673
+4675
+4676
+4677
+4681
+4682
+4683
+4684
+4685
+4686
+4689
+4690
+4691
+4692
 
 Query point 4695
 4695
 
 Query point 4696
 4696
+4698
+4699
 
 Query point 4697
 4697
 
 Query point 4698
 4698
-4700
 4699
-4701
+4696
 
 Query point 4699
-4699
-4701
 4698
-4700
+4699
+4696
 
 Query point 4700
 4700
-4698
-4699
-4701
 
 Query point 4701
-4699
 4701
-4698
-4700
 
 Query point 4702
 4702
@@ -18956,23 +18967,6 @@ Query point 4704
 
 Query point 4705
 4705
-4709
-4712
-4713
-4714
-4717
-4857
-5291
-5308
-4711
-4716
-5178
-5179
-4855
-4856
-5029
-5030
-5469
 
 Query point 4706
 4706
@@ -18982,495 +18976,521 @@ Query point 4707
 
 Query point 4708
 4708
+4709
+4711
+4710
 
 Query point 4709
+4708
 4709
-4712
-4713
-4714
-4717
-4855
-4856
-5029
-5030
-5178
-5179
-5291
-5308
-5469
 4711
-4716
-4857
-4705
+4710
 
 Query point 4710
 4710
-4715
-4787
-4945
-5362
-5439
+4708
+4709
+4711
 
 Query point 4711
-4711
-4716
-4705
+4708
 4709
-4712
-4713
-4714
-4717
+4711
+4710
 
 Query point 4712
-4709
 4712
-4713
-4714
-4717
-4855
-4856
-5029
-5030
-5178
-5179
-5291
-5308
-5469
-4711
-4716
-4857
-4705
 
 Query point 4713
-4709
-4712
 4713
-4714
-4717
-4855
-4856
-5029
-5030
-5178
-5179
-5291
-5308
-5469
-4711
-4716
-4857
-4705
 
 Query point 4714
-4709
-4712
-4713
 4714
-4717
-4855
-4856
-5029
-5030
-5178
-5179
-5291
-5308
-5469
-4711
-4716
-4857
-4705
 
 Query point 4715
-4710
 4715
-4787
-4945
-5362
-5439
+4719
+4721
+4722
+4723
+4724
+4726
+4727
+5301
+5318
+5479
+4865
+4866
+5039
+5040
+5188
+5189
+4867
 
 Query point 4716
-4711
 4716
-4705
-4709
-4712
-4713
-4714
-4717
 
 Query point 4717
-4709
-4712
-4713
-4714
 4717
-4855
-4856
-5029
-5030
-5178
-5179
-5291
-5308
-5469
-4711
-4716
-4857
-4705
 
 Query point 4718
 4718
-4719
-4724
-4725
-4721
-4726
 
 Query point 4719
-4718
+4715
 4719
-4724
-4725
 4721
+4722
+4723
+4724
 4726
+4727
+5301
+5318
+5479
+4865
+4866
+5039
+5040
+5188
+5189
+4867
 
 Query point 4720
 4720
-4724
 4725
-4722
-4723
-4727
+4797
+4955
+5372
+5449
 
 Query point 4721
-4721
-4726
-4718
+4715
 4719
+4721
+4722
+4723
 4724
-4725
-4728
-4729
+4726
+4727
 
 Query point 4722
+4715
+4719
+4721
 4722
 4723
-4720
+4724
+4726
+4727
+5301
+5318
+5479
+4865
+4866
+5039
+5040
+5188
+5189
+4867
 
 Query point 4723
+4715
+4719
+4721
 4722
 4723
+4724
+4726
 4727
-4720
+5301
+5318
+5479
+4865
+4866
+5039
+5040
+5188
+5189
+4867
 
 Query point 4724
-4718
+4715
 4719
-4720
-4724
-4725
-4727
 4721
+4722
+4723
+4724
 4726
+4727
+5301
+5318
+5479
+4865
+4866
+5039
+5040
+5188
+5189
+4867
 
 Query point 4725
-4718
-4719
 4720
-4724
 4725
-4727
-4721
-4726
+4797
+4955
+5372
+5449
 
 Query point 4726
-4721
-4726
-4718
+4715
 4719
+4721
+4722
+4723
 4724
-4725
-4728
-4729
+4726
+4727
 
 Query point 4727
+4715
+4719
+4721
+4722
 4723
-4727
-4720
 4724
-4725
+4726
+4727
+5301
+5318
+5479
+4865
+4866
+5039
+5040
+5188
+5189
+4867
 
 Query point 4728
 4728
 4729
-4721
-4726
+4734
+4735
+4731
+4736
 
 Query point 4729
 4728
 4729
-4721
-4726
+4734
+4735
+4731
+4736
 
 Query point 4730
 4730
-4731
-4910
+4732
+4734
+4735
+4737
+4733
 
 Query point 4731
 4731
-4910
-4730
+4736
+4738
+4739
+4728
+4729
+4734
+4735
 
 Query point 4732
+4730
 4732
+4733
 
 Query point 4733
 4733
+4730
+4732
+4737
 
 Query point 4734
 4734
-
-Query point 4735
 4735
-4754
-
-Query point 4736
+4737
+4730
+4728
+4729
+4731
 4736
 
-Query point 4737
+Query point 4735
+4734
+4735
 4737
+4730
+4728
+4729
+4731
+4736
+
+Query point 4736
+4731
+4736
+4738
+4739
+4728
+4729
+4734
+4735
+
+Query point 4737
+4734
+4735
+4737
+4730
+4733
 
 Query point 4738
+4731
+4736
 4738
+4739
 
 Query point 4739
+4731
+4736
+4738
 4739
-4746
-4740
-4741
-4742
-4743
-4744
-4745
-4747
-4748
-4749
-4750
-4751
 
 Query point 4740
 4740
 4741
-4742
-4743
-4744
-4745
-4747
-4748
-4749
-4750
-4751
-4739
-4746
+4920
 
 Query point 4741
 4740
 4741
-4742
-4743
-4744
-4745
-4747
-4748
-4749
-4750
-4751
-4739
-4746
+4920
 
 Query point 4742
-4740
-4741
 4742
-4743
-4744
-4745
-4747
-4748
-4749
-4750
-4751
-4739
-4746
 
 Query point 4743
-4740
-4741
-4742
 4743
-4744
-4745
-4747
-4748
-4749
-4750
-4751
-4739
-4746
 
 Query point 4744
-4740
-4741
-4742
-4743
 4744
-4745
-4747
-4748
-4749
-4750
-4751
-4739
-4746
 
 Query point 4745
-4740
-4741
-4742
-4743
-4744
 4745
-4747
-4748
-4749
-4750
-4751
-4739
-4746
+4764
 
 Query point 4746
-4739
 4746
-4740
-4741
-4742
-4743
-4744
-4745
-4747
-4748
-4749
-4750
-4751
 
 Query point 4747
-4740
-4741
-4742
-4743
-4744
-4745
 4747
-4748
-4749
-4750
-4751
-4739
-4746
 
 Query point 4748
-4740
-4741
-4742
-4743
-4744
-4745
-4747
 4748
-4749
-4750
-4751
-4739
-4746
 
 Query point 4749
-4740
-4741
-4742
-4743
-4744
-4745
-4747
-4748
 4749
 4750
 4751
-4739
-4746
+4752
+4753
+4754
+4755
+4756
+4757
+4758
+4759
+4760
+4761
 
 Query point 4750
-4740
-4741
-4742
-4743
-4744
-4745
-4747
-4748
 4749
 4750
 4751
-4739
-4746
+4752
+4753
+4754
+4755
+4756
+4757
+4758
+4759
+4760
+4761
 
 Query point 4751
-4740
-4741
-4742
-4743
-4744
-4745
-4747
-4748
 4749
 4750
 4751
-4739
-4746
+4752
+4753
+4754
+4755
+4756
+4757
+4758
+4759
+4760
+4761
 
 Query point 4752
+4749
+4750
+4751
 4752
+4753
+4754
+4755
+4756
+4757
+4758
+4759
+4760
+4761
 
 Query point 4753
+4749
+4750
+4751
+4752
 4753
+4754
+4755
+4756
+4757
+4758
+4759
+4760
+4761
 
 Query point 4754
-4735
+4749
+4750
+4751
+4752
+4753
 4754
+4755
+4756
+4757
+4758
+4759
+4760
+4761
 
 Query point 4755
+4749
+4750
+4751
+4752
+4753
+4754
 4755
+4756
+4757
+4758
+4759
+4760
+4761
 
 Query point 4756
+4749
+4750
+4751
+4752
+4753
+4754
+4755
 4756
+4757
+4758
+4759
+4760
+4761
 
 Query point 4757
+4749
+4750
+4751
+4752
+4753
+4754
+4755
+4756
 4757
 4758
+4759
+4760
+4761
 
 Query point 4758
-4758
+4749
+4750
+4751
+4752
+4753
+4754
+4755
+4756
 4757
+4758
+4759
+4760
+4761
 
 Query point 4759
+4749
+4750
+4751
+4752
+4753
+4754
+4755
+4756
+4757
+4758
 4759
+4760
+4761
 
 Query point 4760
+4749
+4750
+4751
+4752
+4753
+4754
+4755
+4756
+4757
+4758
+4759
 4760
+4761
 
 Query point 4761
+4749
+4750
+4751
+4752
+4753
+4754
+4755
+4756
+4757
+4758
+4759
+4760
 4761
 
 Query point 4762
@@ -19481,6 +19501,7 @@ Query point 4763
 
 Query point 4764
 4764
+4745
 
 Query point 4765
 4765
@@ -19501,10 +19522,8 @@ Query point 4769
 
 Query point 4770
 4770
-4771
 
 Query point 4771
-4770
 4771
 
 Query point 4772
@@ -19524,26 +19543,22 @@ Query point 4776
 
 Query point 4777
 4777
+4778
 
 Query point 4778
+4777
 4778
-5619
 
 Query point 4779
 4779
-5620
 
 Query point 4780
 4780
-5644
 4781
-5645
 
 Query point 4781
-4781
-5645
 4780
-5644
+4781
 
 Query point 4782
 4782
@@ -19561,449 +19576,410 @@ Query point 4786
 4786
 
 Query point 4787
-4710
-4715
 4787
-4945
-5362
-5439
 
 Query point 4788
 4788
+5629
 
 Query point 4789
 4789
-4804
-4921
-4922
-5039
-5277
-4923
-4924
-5186
+5630
 
 Query point 4790
 4790
+5654
 4791
-5060
-5063
-5053
-5057
-5058
+5655
 
 Query point 4791
-4790
 4791
-5060
-5063
-5053
-5057
-5058
+5655
+4790
+5654
 
 Query point 4792
 4792
-4793
-4794
-4795
-5275
-5276
 
 Query point 4793
-4792
 4793
-4794
-4795
-5275
-5276
 
 Query point 4794
-4792
-4793
 4794
-4795
-5275
-5276
 
 Query point 4795
-4792
-4793
-4794
 4795
-5275
-5276
 
 Query point 4796
 4796
-5278
 
 Query point 4797
+4720
+4725
 4797
-4798
-4799
+4955
+5372
+5449
 
 Query point 4798
-4797
 4798
-4799
 
 Query point 4799
-4797
-4798
 4799
+4814
+4932
+4933
+4934
+5049
+5196
+5287
+4931
 
 Query point 4800
 4800
+4801
+5063
+5067
+5068
+5070
+5073
 
 Query point 4801
+4800
 4801
+5063
+5067
+5068
+5070
+5073
 
 Query point 4802
 4802
+4803
+4804
+4805
+5285
+5286
 
 Query point 4803
+4802
 4803
+4804
+4805
+5285
+5286
 
 Query point 4804
-4789
+4802
+4803
 4804
-4921
-4922
-5039
-5277
-4923
-4924
-5186
+4805
+5285
+5286
 
 Query point 4805
+4802
+4803
+4804
 4805
+5285
+5286
 
 Query point 4806
 4806
-4812
-5279
+5288
 
 Query point 4807
 4807
-5280
+4808
+4809
 
 Query point 4808
+4807
 4808
 4809
 
 Query point 4809
+4807
 4808
 4809
 
 Query point 4810
 4810
-4811
 
 Query point 4811
-4810
 4811
 
 Query point 4812
-4806
 4812
-5279
 
 Query point 4813
 4813
 
 Query point 4814
+4799
 4814
+4932
+4933
+4934
+5049
+5196
+5287
+4931
 
 Query point 4815
 4815
 
 Query point 4816
 4816
-4817
-4818
-4819
+5289
+4822
 
 Query point 4817
-4816
 4817
-4818
-4819
-4820
+5290
 
 Query point 4818
-4816
-4817
 4818
 4819
-4820
 
 Query point 4819
-4816
-4817
 4818
 4819
-4820
-4821
-4822
-4823
 
 Query point 4820
 4820
-4817
-4818
-4819
 4821
-4822
-4823
 
 Query point 4821
-4821
-4822
-4823
 4820
-4819
+4821
 
 Query point 4822
-4821
 4822
-4823
-4820
-4819
+4816
+5289
 
 Query point 4823
-4821
-4822
 4823
-4820
-4819
 
 Query point 4824
 4824
-4825
 
 Query point 4825
 4825
-4824
 
 Query point 4826
 4826
+4827
+4828
+4829
 
 Query point 4827
 4827
 4828
+4829
+4830
+4826
 
 Query point 4828
-4828
 4827
+4828
+4829
+4830
+4826
 
 Query point 4829
+4827
+4828
 4829
+4830
+4831
+4832
+4833
+4826
 
 Query point 4830
+4827
+4828
+4829
 4830
+4831
+4832
+4833
 
 Query point 4831
+4829
+4830
 4831
+4832
+4833
 
 Query point 4832
+4829
+4830
+4831
 4832
-4837
+4833
 
 Query point 4833
+4829
+4830
+4831
+4832
 4833
-4838
 
 Query point 4834
 4834
-4839
-5088
+4835
 
 Query point 4835
+4834
 4835
-4836
 
 Query point 4836
-4835
 4836
 
 Query point 4837
-4832
 4837
+4838
 
 Query point 4838
-4833
+4837
 4838
 
 Query point 4839
-4834
 4839
-5088
 
 Query point 4840
 4840
 
 Query point 4841
 4841
-4845
-4846
-4843
-4844
 
 Query point 4842
 4842
+4847
 
 Query point 4843
 4843
-4844
-4841
-4845
-4846
+4848
 
 Query point 4844
-4841
-4845
-4846
-4843
 4844
+4849
+5098
 
 Query point 4845
-4841
 4845
 4846
-4843
-4844
 
 Query point 4846
-4841
 4845
 4846
-4843
-4844
 
 Query point 4847
+4842
 4847
-4857
 
 Query point 4848
+4843
 4848
 
 Query point 4849
+4844
 4849
+5098
 
 Query point 4850
 4850
-4851
-4877
-4908
-4909
-4953
-4954
-4958
-5171
-5320
-5454
-5239
 
 Query point 4851
-4850
 4851
-4877
-4908
-4909
-4953
-4954
-4958
-5171
-5320
-5454
-5239
+4853
+4854
+4855
+4856
 
 Query point 4852
 4852
-4853
-4967
-5290
 
 Query point 4853
+4851
 4853
-4967
-4852
+4854
+4855
+4856
 
 Query point 4854
+4851
+4853
 4854
+4855
+4856
 
 Query point 4855
-4709
-4712
-4713
-4714
-4717
+4851
+4853
+4854
 4855
 4856
-5029
-5030
-5178
-5179
-5291
-5308
-4705
 
 Query point 4856
-4709
-4712
-4713
-4714
-4717
+4851
+4853
+4854
 4855
 4856
-5029
-5030
-5178
-5179
-5291
-5308
-4705
 
 Query point 4857
-4847
 4857
-4709
-4712
-4713
-4714
-4717
-5291
-5308
-4705
+4867
 
 Query point 4858
 4858
-4859
-4861
-4862
 
 Query point 4859
-4858
 4859
-4861
-4862
 
 Query point 4860
 4860
+4887
+4918
+4919
+4963
+4964
+4968
+5181
+5330
+4861
+5464
+5249
 
 Query point 4861
-4858
-4859
 4861
-4862
+5464
+4860
+4887
+4918
+4919
+4963
+4964
+4968
+5181
+5330
+5249
 
 Query point 4862
-4858
-4859
-4861
 4862
+5300
+4977
+4863
 
 Query point 4863
 4863
+4977
+4862
 
 Query point 4864
 4864
@@ -20011,34 +19987,72 @@ Query point 4864
 Query point 4865
 4865
 4866
+5039
+5040
+4715
+4719
+4722
+4723
+4724
+4727
+5188
+5189
+5301
+5318
 
 Query point 4866
 4865
 4866
+5039
+5040
+4715
+4719
+4722
+4723
+4724
+4727
+5188
+5189
+5301
+5318
 
 Query point 4867
 4867
+4857
+4715
+4719
+4722
+4723
+4724
+4727
+5301
+5318
 
 Query point 4868
 4868
 4869
-4870
+4871
+4872
 
 Query point 4869
-4869
-4870
 4868
+4869
+4871
+4872
 
 Query point 4870
-4869
 4870
-4868
 
 Query point 4871
-5069
+4868
+4869
 4871
+4872
 
 Query point 4872
+4868
+4869
+4871
 4872
 
 Query point 4873
@@ -20046,60 +20060,67 @@ Query point 4873
 
 Query point 4874
 4874
-4875
 
 Query point 4875
-4874
 4875
+4876
 
 Query point 4876
+4875
 4876
 
 Query point 4877
-4850
-4851
 4877
-4908
-4909
-4953
-4954
-4958
-5171
-5320
-5454
-5239
 
 Query point 4878
 4878
+4879
+4880
 
 Query point 4879
+4878
 4879
+4880
 
 Query point 4880
+4878
+4879
 4880
 
 Query point 4881
 4881
+5079
 
 Query point 4882
 4882
 
 Query point 4883
 4883
-4884
 
 Query point 4884
-4883
 4884
+4885
 
 Query point 4885
 4885
+4884
 
 Query point 4886
 4886
 
 Query point 4887
+4860
 4887
+4918
+4919
+4963
+4964
+4968
+5181
+5330
+4861
+5464
+5249
 
 Query point 4888
 4888
@@ -20109,21 +20130,19 @@ Query point 4889
 
 Query point 4890
 4890
-4891
 
 Query point 4891
 4891
-4890
 
 Query point 4892
 4892
-4893
 
 Query point 4893
-4892
 4893
+4894
 
 Query point 4894
+4893
 4894
 
 Query point 4895
@@ -20131,13 +20150,11 @@ Query point 4895
 
 Query point 4896
 4896
-4898
 
 Query point 4897
 4897
 
 Query point 4898
-4896
 4898
 
 Query point 4899
@@ -20145,65 +20162,49 @@ Query point 4899
 
 Query point 4900
 4900
+4901
 
 Query point 4901
+4900
 4901
-4902
 
 Query point 4902
-4901
 4902
+4903
 
 Query point 4903
+4902
 4903
 
 Query point 4904
 4904
-5249
 
 Query point 4905
 4905
-4960
 
 Query point 4906
 4906
+4908
 
 Query point 4907
 4907
 
 Query point 4908
-4850
-4851
-4877
 4908
-4909
-4953
-4954
-4958
-5320
-5454
+4906
 
 Query point 4909
-4850
-4851
-4877
-4908
 4909
-4953
-4954
-4958
-5320
-5454
 
 Query point 4910
-4731
 4910
-4730
 
 Query point 4911
 4911
+4912
 
 Query point 4912
+4911
 4912
 
 Query point 4913
@@ -20211,9 +20212,11 @@ Query point 4913
 
 Query point 4914
 4914
+5259
 
 Query point 4915
 4915
+4970
 
 Query point 4916
 4916
@@ -20222,63 +20225,51 @@ Query point 4917
 4917
 
 Query point 4918
+4860
+4887
 4918
+4919
+4963
+4964
+4968
+5330
+4861
+5464
 
 Query point 4919
+4860
+4887
+4918
 4919
+4963
+4964
+4968
+5330
+4861
+5464
 
 Query point 4920
 4920
+4740
+4741
 
 Query point 4921
-4789
-4804
 4921
-4922
-5039
-5277
-4923
-4924
-5284
-5285
 
 Query point 4922
-4789
-4804
-4921
 4922
-5039
-5277
-4923
-4924
-5186
 
 Query point 4923
 4923
-4924
-4789
-4804
-4921
-4922
-5277
-5039
 
 Query point 4924
-4923
 4924
-4789
-4804
-4921
-4922
-5277
-5039
 
 Query point 4925
 4925
 
 Query point 4926
 4926
-5251
 
 Query point 4927
 4927
@@ -20293,26 +20284,54 @@ Query point 4930
 4930
 
 Query point 4931
-4931
+4799
+4814
 4932
+4933
+4934
+5049
+5287
+4931
+5294
+5295
 
 Query point 4932
-4931
+4799
+4814
 4932
+4933
+4934
+5049
+5196
+5287
+4931
 
 Query point 4933
+4799
+4814
+4932
 4933
+4934
+5049
+5287
+4931
 
 Query point 4934
+4799
+4814
+4932
+4933
 4934
+5049
+5287
+4931
 
 Query point 4935
 4935
-4936
 
 Query point 4936
-4935
 4936
+5261
 
 Query point 4937
 4937
@@ -20328,8 +20347,10 @@ Query point 4940
 
 Query point 4941
 4941
+4942
 
 Query point 4942
+4941
 4942
 
 Query point 4943
@@ -20339,14 +20360,11 @@ Query point 4944
 4944
 
 Query point 4945
-4710
-4715
-4787
 4945
-5362
-5439
+4946
 
 Query point 4946
+4945
 4946
 
 Query point 4947
@@ -20354,978 +20372,970 @@ Query point 4947
 
 Query point 4948
 4948
-4949
-4951
-4952
-4955
-4950
 
 Query point 4949
-4948
 4949
-4951
-4952
-4955
-4950
 
 Query point 4950
 4950
-4948
-4949
-4951
-4952
-4955
 
 Query point 4951
-4948
-4949
 4951
-4952
-4955
-4950
 
 Query point 4952
-4948
-4949
-4951
 4952
-4955
-4950
 
 Query point 4953
-4850
-4851
-4877
-4908
-4909
 4953
-4954
-4958
-5171
-5320
-5454
 
 Query point 4954
-4850
-4851
-4877
-4908
-4909
-4953
 4954
-4958
-5171
-5320
-5454
 
 Query point 4955
-4948
-4949
-4951
-4952
+4720
+4725
+4797
 4955
-4950
+5372
+5449
 
 Query point 4956
 4956
-4957
 
 Query point 4957
-4956
 4957
 
 Query point 4958
-4850
-4851
-4877
-4908
-4909
-4953
-4954
 4958
-5171
-5320
-5454
-
-Query point 4959
 4959
-
-Query point 4960
-4905
 4960
-5250
-
-Query point 4961
 4961
 4962
-
-Query point 4962
-4962
-4961
-
-Query point 4963
-4963
-
-Query point 4964
-4964
 4965
 
-Query point 4965
+Query point 4959
+4958
+4959
+4960
+4961
+4962
+4965
+
+Query point 4960
+4958
+4959
+4960
+4961
+4962
+4965
+
+Query point 4961
+4958
+4959
+4960
+4961
+4962
+4965
+
+Query point 4962
+4958
+4959
+4960
+4961
+4962
+4965
+
+Query point 4963
+4860
+4887
+4918
+4919
+4963
 4964
+4968
+5181
+5330
+4861
+5464
+
+Query point 4964
+4860
+4887
+4918
+4919
+4963
+4964
+4968
+5181
+5330
+4861
+5464
+
+Query point 4965
+4958
+4959
+4960
+4961
+4962
 4965
 
 Query point 4966
 4966
+4967
 
 Query point 4967
-4853
+4966
 4967
-4852
-5290
 
 Query point 4968
+4860
+4887
+4918
+4919
+4963
+4964
 4968
+5181
+5330
+4861
+5464
 
 Query point 4969
 4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
-4979
-4980
-4981
-4982
-4983
-4984
-4985
-4986
-4987
-4988
-4989
-4990
-4991
-4994
-4995
-4998
-4992
 
 Query point 4970
-4969
 4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
-4979
-4980
-4981
-4982
-4983
-4984
-4985
-4986
-4987
-4988
-4989
-4990
-4991
-4994
-4995
-4998
-4992
+5260
+4915
 
 Query point 4971
-4969
-4970
 4971
 4972
-4973
-4974
-4975
-4976
-4977
-4978
-4979
-4980
-4981
-4982
-4983
-4984
-4985
-4986
-4987
-4988
-4989
-4990
-4991
-4994
-4995
-4998
-4992
 
 Query point 4972
-4969
-4970
-4971
 4972
-4973
-4974
-4975
-4976
-4977
-4978
-4979
-4980
-4981
-4982
-4983
-4984
-4985
-4986
-4987
-4988
-4989
-4990
-4991
-4994
-4995
-4998
-4992
+4971
 
 Query point 4973
-4969
-4970
-4971
-4972
 4973
-4974
-4975
-4976
-4977
-4978
-4979
-4980
-4981
-4982
-4983
-4984
-4985
-4986
-4987
-4988
-4989
-4990
-4991
-4994
-4995
-4998
-4992
 
 Query point 4974
-4969
-4970
-4971
-4972
-4973
 4974
 4975
-4976
-4977
-4978
-4979
-4980
-4981
-4982
-4983
-4984
-4985
-4986
-4987
-4988
-4989
-4990
-4991
-4994
-4995
-4998
-4992
 
 Query point 4975
-4969
-4970
-4971
-4972
-4973
 4974
 4975
-4976
-4977
-4978
-4979
-4980
-4981
-4982
-4983
-4984
-4985
-4986
-4987
-4988
-4989
-4990
-4991
-4994
-4995
-4998
-4992
 
 Query point 4976
-4969
-4970
-4971
-4972
-4973
-4974
-4975
 4976
-4977
-4978
-4979
-4980
-4981
-4982
-4983
-4984
-4985
-4986
-4987
-4988
-4989
-4990
-4991
-4994
-4995
-4998
-4992
 
 Query point 4977
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
+4863
 4977
-4978
-4979
-4980
-4981
-4982
-4983
-4984
-4985
-4986
-4987
-4988
-4989
-4990
-4991
-4994
-4995
-4998
-4992
+4862
+5300
 
 Query point 4978
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
 4978
-4979
-4980
-4981
-4982
-4983
-4984
-4985
-4986
-4987
-4988
-4989
-4990
-4991
-4994
-4995
-4998
-4992
 
 Query point 4979
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4980
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4981
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4982
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
+4982
+4986
+4990
+4994
+4998
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
 
 Query point 4983
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4984
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4985
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4986
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
+4982
+4986
+4990
+4994
+4998
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
 
 Query point 4987
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4988
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4989
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4990
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
+4982
+4986
+4990
+4994
+4998
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
 
 Query point 4991
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4992
-4992
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
+4992
+4993
 4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
 4998
 
 Query point 4993
+4979
+4980
+4981
+4983
+4984
+4985
+4987
+4988
+4989
+4991
+4992
 4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4994
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
+4982
+4986
+4990
+4994
+4998
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
 
 Query point 4995
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 4996
-4996
-
-Query point 4997
-4997
-
-Query point 4998
-4969
-4970
-4971
-4972
-4973
-4974
-4975
-4976
-4977
-4978
 4979
 4980
 4981
-4982
 4983
 4984
 4985
-4986
 4987
 4988
 4989
-4990
 4991
-4994
-4995
-4998
 4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
+
+Query point 4997
+4979
+4980
+4981
+4983
+4984
+4985
+4987
+4988
+4989
+4991
+4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
+
+Query point 4998
+4982
+4986
+4990
+4994
+4998
+4979
+4980
+4981
+4983
+4984
+4985
+4987
+4988
+4989
+4991
+4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
+5008
 
 Query point 4999
+4979
+4980
+4981
+4983
+4984
+4985
+4987
+4988
+4989
+4991
+4992
+4993
+4995
+4996
+4997
 4999
-5028
+5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 5000
+4979
+4980
+4981
+4983
+4984
+4985
+4987
+4988
+4989
+4991
+4992
+4993
+4995
+4996
+4997
+4999
 5000
+5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 5001
+4979
+4980
+4981
+4983
+4984
+4985
+4987
+4988
+4989
+4991
+4992
+4993
+4995
+4996
+4997
+4999
+5000
 5001
+5002
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 5002
+4979
+4980
+4981
+4983
+4984
+4985
+4987
+4988
+4989
+4991
+4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
 5002
-5013
+5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 5003
 5003
 
 Query point 5004
+4979
+4980
+4981
+4983
+4984
+4985
+4987
+4988
+4989
+4991
+4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
 5004
+5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 5005
+4979
+4980
+4981
+4983
+4984
+4985
+4987
+4988
+4989
+4991
+4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
 5005
+5008
+4982
+4986
+4990
+4994
+4998
 
 Query point 5006
 5006
 
 Query point 5007
 5007
-5008
-5009
-5010
 
 Query point 5008
-5007
+4979
+4980
+4981
+4983
+4984
+4985
+4987
+4988
+4989
+4991
+4992
+4993
+4995
+4996
+4997
+4999
+5000
+5001
+5002
+5004
+5005
 5008
-5009
-5010
+4982
+4986
+4990
+4994
+4998
 
 Query point 5009
-5007
-5008
 5009
-5010
+5038
 
 Query point 5010
-5007
-5008
-5009
 5010
 
 Query point 5011
@@ -21333,9 +21343,9 @@ Query point 5011
 
 Query point 5012
 5012
+5023
 
 Query point 5013
-5002
 5013
 
 Query point 5014
@@ -21346,342 +21356,354 @@ Query point 5015
 
 Query point 5016
 5016
-5017
 
 Query point 5017
-5016
 5017
+5018
+5019
+5020
 
 Query point 5018
+5017
 5018
-5024
 5019
 5020
-5021
-5022
-5023
 
 Query point 5019
+5017
+5018
 5019
 5020
-5021
-5022
-5023
-5018
-5024
 
 Query point 5020
+5017
+5018
 5019
 5020
-5021
-5022
-5023
-5018
-5024
 
 Query point 5021
-5019
-5020
 5021
-5018
-5024
 
 Query point 5022
-5019
-5020
 5022
-5023
-5018
-5024
 
 Query point 5023
-5019
-5020
-5022
+5012
 5023
-5018
-5024
 
 Query point 5024
-5018
 5024
-5019
-5020
-5021
-5022
-5023
 
 Query point 5025
 5025
-5027
 
 Query point 5026
 5026
+5027
 
 Query point 5027
-5025
+5026
 5027
 
 Query point 5028
 5028
-4999
+5029
+5030
+5034
+5032
+5033
+5031
 
 Query point 5029
-4709
-4712
-4713
-4714
-4717
-4855
-4856
+5028
 5029
 5030
-5178
-5179
-5291
-5308
-4705
+5034
+5031
+5032
+5033
 
 Query point 5030
-4709
-4712
-4713
-4714
-4717
-4855
-4856
+5028
 5029
 5030
-5178
-5179
-5291
-5308
-4705
+5034
+5031
+5032
+5033
 
 Query point 5031
 5031
-5032
-5033
+5029
+5030
+5028
 5034
 
 Query point 5032
-5031
 5032
 5033
+5028
+5029
+5030
 5034
 
 Query point 5033
-5031
 5032
 5033
+5028
+5029
+5030
 5034
 
 Query point 5034
-5031
+5028
+5029
+5030
+5034
 5032
 5033
-5034
+5031
 
 Query point 5035
 5035
+5037
 
 Query point 5036
 5036
 
 Query point 5037
+5035
 5037
 
 Query point 5038
+5009
 5038
 
 Query point 5039
-4789
-4804
-4921
-4922
+4865
+4866
 5039
 5040
-5041
-5277
-4923
-4924
+4715
+4719
+4722
+4723
+4724
+4727
+5188
+5189
+5301
+5318
 
 Query point 5040
+4865
+4866
 5039
 5040
-5041
+4715
+4719
+4722
+4723
+4724
+4727
+5188
+5189
+5301
+5318
 
 Query point 5041
-5039
-5040
 5041
+5042
+5044
+5043
 
 Query point 5042
+5041
 5042
+5044
 5043
 
 Query point 5043
-5042
 5043
-5047
+5041
+5042
 5044
-5045
 
 Query point 5044
+5041
+5042
 5044
-5045
-5047
 5043
 
 Query point 5045
-5044
 5045
-5047
-5043
 
 Query point 5046
 5046
-5397
 
 Query point 5047
-5044
-5045
 5047
-5043
 
 Query point 5048
 5048
 
 Query point 5049
+4799
+4814
+4932
+4933
+4934
 5049
+5287
+4931
+5050
+5051
 
 Query point 5050
 5050
+5051
+5049
 
 Query point 5051
+5050
 5051
+5049
 
 Query point 5052
 5052
-5380
+5053
 
 Query point 5053
+5052
 5053
+5054
+5055
 5057
-5058
-4790
-4791
-5060
-5063
 
 Query point 5054
+5053
 5054
 5055
-5056
-5061
-5062
+5057
 
 Query point 5055
+5053
 5054
 5055
-5056
-5061
-5062
+5057
 
 Query point 5056
 5056
-5061
-5062
-5054
-5055
+5407
 
 Query point 5057
 5053
+5054
+5055
 5057
-5058
-4790
-4791
-5060
-5063
 
 Query point 5058
-5053
-5057
 5058
-4790
-4791
-5060
-5063
 
 Query point 5059
 5059
-5064
 
 Query point 5060
-4790
-4791
 5060
-5063
-5053
-5057
-5058
 
 Query point 5061
-5056
 5061
-5062
-5054
-5055
 
 Query point 5062
-5056
-5061
 5062
-5054
-5055
+5390
 
 Query point 5063
-4790
-4791
-5060
 5063
-5053
-5057
-5058
+5067
+5068
+5070
+5073
+4800
+4801
 
 Query point 5064
 5064
-5059
+5065
+5066
+5071
+5072
 
 Query point 5065
+5064
 5065
+5066
+5071
+5072
 
 Query point 5066
+5064
+5065
 5066
+5071
+5072
 
 Query point 5067
+5063
 5067
+5068
+5070
+5073
+4800
+4801
 
 Query point 5068
+5063
+5067
 5068
+5070
+5073
+4800
+4801
 
 Query point 5069
 5069
-4871
+5074
 
 Query point 5070
 5070
+5073
+4800
+4801
+5063
+5067
+5068
 
 Query point 5071
+5064
+5065
+5066
 5071
+5072
 
 Query point 5072
+5064
+5065
+5066
+5071
 5072
 
 Query point 5073
+5070
 5073
+4800
+4801
+5063
+5067
+5068
 
 Query point 5074
+5069
 5074
 
 Query point 5075
@@ -21698,6 +21720,7 @@ Query point 5078
 
 Query point 5079
 5079
+4881
 
 Query point 5080
 5080
@@ -21707,68 +21730,45 @@ Query point 5081
 
 Query point 5082
 5082
-5083
 
 Query point 5083
-5082
 5083
 
 Query point 5084
 5084
-5085
 
 Query point 5085
-5084
 5085
 
 Query point 5086
 5086
-5129
 
 Query point 5087
 5087
 
 Query point 5088
-4834
-4839
 5088
 
 Query point 5089
 5089
-5090
-5091
-5092
 
 Query point 5090
-5089
 5090
-5091
-5092
 
 Query point 5091
-5089
-5090
 5091
-5092
 
 Query point 5092
-5089
-5090
-5091
 5092
+5093
 
 Query point 5093
+5092
 5093
-5094
-5097
-5098
 
 Query point 5094
 5094
 5095
-5093
-5097
-5098
 
 Query point 5095
 5094
@@ -21776,43 +21776,52 @@ Query point 5095
 
 Query point 5096
 5096
-5100
-5099
+5139
 
 Query point 5097
-5098
 5097
-5093
-5094
 
 Query point 5098
+4844
+4849
 5098
-5094
-5093
-5097
 
 Query point 5099
 5099
-5096
 5100
+5101
+5102
 
 Query point 5100
-5096
-5100
 5099
+5100
+5101
+5102
 
 Query point 5101
+5099
+5100
 5101
+5102
 
 Query point 5102
+5099
+5100
+5101
 5102
 
 Query point 5103
 5103
+5104
+5107
+5108
 
 Query point 5104
+5103
 5104
 5105
+5107
+5108
 
 Query point 5105
 5104
@@ -21820,46 +21829,46 @@ Query point 5105
 
 Query point 5106
 5106
-5107
+5109
+5110
 
 Query point 5107
+5103
+5104
 5107
-5106
+5108
 
 Query point 5108
+5103
+5104
+5107
 5108
 
 Query point 5109
+5106
 5109
-5124
+5110
 
 Query point 5110
+5106
+5109
 5110
-5111
-5113
 
 Query point 5111
 5111
-5113
-5114
-5110
 
 Query point 5112
 5112
-5121
-5122
 
 Query point 5113
-5111
 5113
-5110
 
 Query point 5114
-5111
 5114
-5119
+5115
 
 Query point 5115
+5114
 5115
 
 Query point 5116
@@ -21867,702 +21876,680 @@ Query point 5116
 5117
 
 Query point 5117
-5116
 5117
+5116
 
 Query point 5118
 5118
-5119
-5120
 
 Query point 5119
-5114
-5118
 5119
-5120
+5134
 
 Query point 5120
-5118
-5119
 5120
+5121
+5123
 
 Query point 5121
-5112
+5120
 5121
-5122
 5123
-5126
-5127
+5124
 
 Query point 5122
-5112
-5121
 5122
-5123
-5126
-5127
+5131
+5132
 
 Query point 5123
-5123
-5126
-5127
+5120
 5121
-5122
+5123
 
 Query point 5124
-5109
 5124
-5125
+5121
+5129
 
 Query point 5125
 5125
-5124
 
 Query point 5126
-5123
 5126
 5127
-5121
-5122
 
 Query point 5127
-5123
 5126
 5127
-5121
-5122
 
 Query point 5128
 5128
+5129
+5130
 
 Query point 5129
-5086
+5128
 5129
+5124
+5130
 
 Query point 5130
 5130
+5128
+5129
 
 Query point 5131
 5131
+5132
+5133
+5137
+5122
+5136
 
 Query point 5132
+5131
 5132
+5133
+5137
+5122
+5136
 
 Query point 5133
 5133
+5137
+5136
+5131
+5132
 
 Query point 5134
+5119
 5134
+5135
 
 Query point 5135
 5135
-5136
-5137
-5138
-5139
-5140
-5141
-5145
-5146
-5147
-5149
-5150
-5151
-5152
-5153
-5154
-5155
-5156
-5157
-5158
-5159
+5134
 
 Query point 5136
-5135
 5136
+5131
+5132
+5133
 5137
-5138
-5139
-5140
-5141
-5145
-5146
-5147
-5149
-5150
-5151
-5152
-5153
-5154
-5155
-5156
-5157
-5158
-5159
 
 Query point 5137
-5135
-5136
+5133
 5137
-5138
-5139
-5140
-5141
-5145
-5146
-5147
-5149
-5150
-5151
-5152
-5153
-5154
-5155
-5156
-5157
-5158
-5159
+5131
+5132
+5136
 
 Query point 5138
-5135
-5136
-5137
 5138
-5139
-5140
-5141
-5145
-5146
-5147
-5149
-5150
-5151
-5152
-5153
-5154
-5155
-5156
-5157
-5158
-5159
 
 Query point 5139
-5135
-5136
-5137
-5138
 5139
-5140
-5141
-5145
-5146
-5147
-5149
-5150
-5151
-5152
-5153
-5154
-5155
-5156
-5157
-5158
-5159
+5096
 
 Query point 5140
-5135
-5136
-5137
-5138
-5139
 5140
-5141
-5145
-5146
-5147
-5149
-5150
-5151
-5152
-5153
-5154
-5155
-5156
-5157
-5158
-5159
 
 Query point 5141
-5135
-5136
-5137
-5138
-5139
-5140
 5141
-5145
-5146
-5147
-5149
-5150
-5151
-5152
-5153
-5154
-5155
-5156
-5157
-5158
-5159
 
 Query point 5142
 5142
 
 Query point 5143
 5143
-5144
 
 Query point 5144
-5143
 5144
 
 Query point 5145
-5135
-5136
-5137
-5138
-5139
-5140
-5141
 5145
 5146
 5147
+5148
 5149
 5150
 5151
-5152
-5153
-5154
 5155
 5156
 5157
-5158
 5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5146
-5135
-5136
-5137
-5138
-5139
-5140
-5141
 5145
 5146
 5147
+5148
 5149
 5150
 5151
-5152
-5153
-5154
 5155
 5156
 5157
-5158
 5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5147
-5135
-5136
-5137
-5138
-5139
-5140
-5141
 5145
 5146
 5147
+5148
 5149
 5150
 5151
-5152
-5153
-5154
 5155
 5156
 5157
-5158
 5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5148
+5145
+5146
+5147
 5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5149
-5135
-5136
-5137
-5138
-5139
-5140
-5141
 5145
 5146
 5147
+5148
 5149
 5150
 5151
-5152
-5153
-5154
 5155
 5156
 5157
-5158
 5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5150
-5135
-5136
-5137
-5138
-5139
-5140
-5141
 5145
 5146
 5147
+5148
 5149
 5150
 5151
-5152
-5153
-5154
 5155
 5156
 5157
-5158
 5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5151
-5135
-5136
-5137
-5138
-5139
-5140
-5141
 5145
 5146
 5147
+5148
 5149
 5150
 5151
-5152
-5153
-5154
 5155
 5156
 5157
-5158
 5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5152
-5135
-5136
-5137
-5138
-5139
-5140
-5141
-5145
-5146
-5147
-5149
-5150
-5151
 5152
-5153
-5154
-5155
-5156
-5157
-5158
-5159
 
 Query point 5153
-5135
-5136
-5137
-5138
-5139
-5140
-5141
-5145
-5146
-5147
-5149
-5150
-5151
-5152
 5153
 5154
-5155
-5156
-5157
-5158
-5159
 
 Query point 5154
-5135
-5136
-5137
-5138
-5139
-5140
-5141
-5145
-5146
-5147
-5149
-5150
-5151
-5152
 5153
 5154
-5155
-5156
-5157
-5158
-5159
 
 Query point 5155
-5135
-5136
-5137
-5138
-5139
-5140
-5141
 5145
 5146
 5147
+5148
 5149
 5150
 5151
-5152
-5153
-5154
 5155
 5156
 5157
-5158
 5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5156
-5135
-5136
-5137
-5138
-5139
-5140
-5141
 5145
 5146
 5147
+5148
 5149
 5150
 5151
-5152
-5153
-5154
 5155
 5156
 5157
-5158
 5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5157
-5135
-5136
-5137
-5138
-5139
-5140
-5141
 5145
 5146
 5147
+5148
 5149
 5150
 5151
-5152
-5153
-5154
 5155
 5156
 5157
-5158
 5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5158
-5135
-5136
-5137
-5138
-5139
-5140
-5141
-5145
-5146
-5147
-5149
-5150
-5151
-5152
-5153
-5154
-5155
-5156
-5157
 5158
-5159
 
 Query point 5159
-5159
-5135
-5136
-5137
-5138
-5139
-5140
-5141
 5145
 5146
 5147
+5148
 5149
 5150
 5151
-5152
-5153
-5154
 5155
 5156
 5157
-5158
+5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5160
+5145
+5146
+5147
+5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
 5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5161
+5145
+5146
+5147
+5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
+5160
 5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5162
+5145
+5146
+5147
+5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
+5160
+5161
 5162
 5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5163
+5145
+5146
+5147
+5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
+5160
+5161
 5162
 5163
+5164
+5165
+5166
+5167
+5168
+5169
 
 Query point 5164
+5145
+5146
+5147
+5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
+5160
+5161
+5162
+5163
 5164
+5165
 5166
+5167
+5168
+5169
 
 Query point 5165
+5145
+5146
+5147
+5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
+5160
+5161
+5162
+5163
+5164
 5165
+5166
+5167
+5168
+5169
 
 Query point 5166
+5145
+5146
+5147
+5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
+5160
+5161
+5162
+5163
 5164
+5165
 5166
+5167
+5168
+5169
 
 Query point 5167
+5145
+5146
+5147
+5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
 5167
+5168
+5169
 
 Query point 5168
+5145
+5146
+5147
+5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
 5168
+5169
 
 Query point 5169
+5145
+5146
+5147
+5148
+5149
+5150
+5151
+5155
+5156
+5157
+5159
+5160
+5161
+5162
+5163
+5164
+5165
+5166
+5167
+5168
 5169
 
 Query point 5170
 5170
 
 Query point 5171
-4850
-4851
-4877
-4953
-4954
-4958
 5171
-5320
 
 Query point 5172
 5172
+5173
 
 Query point 5173
 5173
+5172
 
 Query point 5174
 5174
+5176
 
 Query point 5175
 5175
 
 Query point 5176
 5176
+5174
 
 Query point 5177
 5177
 
 Query point 5178
-4709
-4712
-4713
-4714
-4717
-4855
-4856
-5029
-5030
 5178
-5179
-5291
-5308
-5469
-4705
 
 Query point 5179
-4709
-4712
-4713
-4714
-4717
-4855
-4856
-5029
-5030
-5178
 5179
-5291
-5308
-5469
-4705
 
 Query point 5180
 5180
-5181
-5247
-5248
-5334
 
 Query point 5181
-5180
+4860
+4887
+4963
+4964
+4968
 5181
-5247
-5248
-5334
+5330
+4861
 
 Query point 5182
 5182
@@ -22572,55 +22559,85 @@ Query point 5183
 
 Query point 5184
 5184
-5185
 
 Query point 5185
-5184
 5185
 
 Query point 5186
 5186
-5292
-4789
-4804
-4922
-5277
 
 Query point 5187
 5187
 
 Query point 5188
 5188
+5189
+4715
+4719
+4722
+4723
+4724
+4727
+5301
+5318
+5479
+4865
+4866
+5039
+5040
 
 Query point 5189
+5188
 5189
-5190
+4715
+4719
+4722
+4723
+4724
+4727
+5301
+5318
+5479
+4865
+4866
+5039
+5040
 
 Query point 5190
-5189
 5190
+5191
+5258
+5257
+5344
 
 Query point 5191
+5190
 5191
-5192
+5258
+5257
+5344
 
 Query point 5192
 5192
-5191
 
 Query point 5193
 5193
-5194
 
 Query point 5194
-5193
 5194
+5195
 
 Query point 5195
+5194
 5195
 
 Query point 5196
+4799
+4814
+4932
 5196
+5287
+5302
 
 Query point 5197
 5197
@@ -22630,21 +22647,27 @@ Query point 5198
 
 Query point 5199
 5199
+5200
 
 Query point 5200
+5199
 5200
 
 Query point 5201
 5201
+5202
 
 Query point 5202
+5201
 5202
 
 Query point 5203
 5203
+5204
 
 Query point 5204
 5204
+5203
 
 Query point 5205
 5205
@@ -22663,7 +22686,6 @@ Query point 5209
 
 Query point 5210
 5210
-5656
 
 Query point 5211
 5211
@@ -22688,14 +22710,13 @@ Query point 5217
 
 Query point 5218
 5218
-5219
 
 Query point 5219
 5219
-5218
 
 Query point 5220
 5220
+5666
 
 Query point 5221
 5221
@@ -22752,12 +22773,11 @@ Query point 5237
 
 Query point 5238
 5238
+5239
 
 Query point 5239
 5239
-4850
-4851
-4877
+5238
 
 Query point 5240
 5240
@@ -22767,401 +22787,385 @@ Query point 5241
 
 Query point 5242
 5242
-5243
-5244
-5245
-5246
 
 Query point 5243
-5242
 5243
-5244
-5245
-5246
 
 Query point 5244
-5242
-5243
 5244
-5245
-5246
 
 Query point 5245
-5242
-5243
-5244
 5245
-5246
 
 Query point 5246
 5246
-5242
-5243
-5244
-5245
 
 Query point 5247
 5247
-5248
-5334
-5180
-5181
 
 Query point 5248
-5247
 5248
-5334
-5180
-5181
-5340
 
 Query point 5249
-4904
 5249
+4860
+4861
+4887
 
 Query point 5250
 5250
-4960
 
 Query point 5251
-4926
 5251
 
 Query point 5252
 5252
+5253
+5254
+5255
+5256
 
 Query point 5253
+5252
 5253
 5254
+5255
+5256
 
 Query point 5254
+5252
 5253
 5254
+5255
+5256
 
 Query point 5255
+5252
+5253
+5254
 5255
+5256
 
 Query point 5256
+5252
+5253
+5254
+5255
 5256
-5257
 
 Query point 5257
-5256
 5257
-
-Query point 5258
+5344
+5190
+5191
 5258
 
+Query point 5258
+5190
+5191
+5258
+5257
+5344
+5350
+
 Query point 5259
+4914
 5259
 
 Query point 5260
+4970
 5260
 
 Query point 5261
 5261
+4936
 
 Query point 5262
 5262
 
 Query point 5263
 5263
+5264
 
 Query point 5264
 5264
+5263
 
 Query point 5265
 5265
-5266
-5267
-5268
 
 Query point 5266
 5266
-5268
-5265
+5267
 
 Query point 5267
-5267
-5268
-5265
-
-Query point 5268
 5266
 5267
+
+Query point 5268
 5268
-5265
 
 Query point 5269
 5269
-5270
-5271
-5272
-5273
-5274
 
 Query point 5270
 5270
-5271
-5272
-5273
-5274
-5269
 
 Query point 5271
-5270
 5271
-5272
-5273
-5274
-5269
 
 Query point 5272
-5270
-5271
 5272
-5273
-5274
-5269
 
 Query point 5273
-5270
-5271
-5272
 5273
-5274
-5269
 
 Query point 5274
-5270
-5271
-5272
-5273
 5274
-5269
 
 Query point 5275
 5275
+5277
+5278
 5276
-4792
-4793
-4794
-4795
 
 Query point 5276
-5275
 5276
-4792
-4793
-4794
-4795
-
-Query point 5277
-4789
-4804
-4921
-4922
-5039
-5277
-5186
-5292
-4923
-4924
-
-Query point 5278
-4796
+5275
 5278
 
+Query point 5277
+5277
+5278
+5275
+
+Query point 5278
+5277
+5278
+5276
+5275
+
 Query point 5279
-4806
-4812
 5279
+5282
+5283
+5284
+5280
+5281
 
 Query point 5280
-4807
 5280
+5281
+5279
+5282
+5283
+5284
 
 Query point 5281
+5280
 5281
+5279
 5282
 5283
 5284
-5287
-5288
-5285
-5286
 
 Query point 5282
-5281
+5279
 5282
 5283
 5284
-5287
-5288
-5285
-5286
+5280
+5281
 
 Query point 5283
-5281
+5279
 5282
 5283
 5284
-5287
-5288
-5285
-5286
+5280
+5281
 
 Query point 5284
-5281
+5279
 5282
 5283
 5284
-5287
-5288
-5285
-5286
-4921
+5280
+5281
 
 Query point 5285
 5285
 5286
-5281
-5282
-5283
-5284
-5287
-5288
-4921
+4802
+4803
+4804
+4805
 
 Query point 5286
 5285
 5286
-5281
-5282
-5283
-5284
-5287
-5288
+4802
+4803
+4804
+4805
 
 Query point 5287
-5281
-5282
-5283
-5284
+4799
+4814
+4932
+4933
+4934
+5049
+5196
 5287
-5288
-5285
-5286
+5302
+4931
 
 Query point 5288
-5281
-5282
-5283
-5284
-5287
+4806
 5288
-5285
-5286
 
 Query point 5289
+4816
 5289
+4822
 
 Query point 5290
+4817
 5290
-4967
-4852
 
 Query point 5291
-4709
-4712
-4713
-4714
-4717
-4855
-4856
-5029
-5030
-5178
-5179
 5291
-5308
-5469
-4857
-4705
+5292
+5293
+5294
+5295
+5297
+5298
+5296
 
 Query point 5292
-5186
+5291
 5292
-5277
+5293
+5294
+5295
+5297
+5298
+5296
 
 Query point 5293
+5291
+5292
 5293
 5294
+5295
+5297
+5298
+5296
 
 Query point 5294
-5294
+5291
+5292
 5293
+5294
+5295
+5297
+5298
+4931
+5296
 
 Query point 5295
+5291
+5292
+5293
+5294
 5295
+5297
+5298
+4931
+5296
 
 Query point 5296
 5296
+5291
+5292
+5293
+5294
+5295
+5297
+5298
 
 Query point 5297
+5291
+5292
+5293
+5294
+5295
 5297
+5298
+5296
 
 Query point 5298
+5291
+5292
+5293
+5294
+5295
+5297
 5298
+5296
 
 Query point 5299
 5299
 
 Query point 5300
 5300
-5301
+4862
+4977
 
 Query point 5301
-5300
+4715
+4719
+4722
+4723
+4724
+4727
 5301
+5318
+5479
+4865
+4866
+5039
+5040
+5188
+5189
+4867
 
 Query point 5302
+5196
+5287
 5302
 
 Query point 5303
 5303
+5304
 
 Query point 5304
+5303
 5304
 
 Query point 5305
 5305
-5306
 
 Query point 5306
-5305
 5306
 
 Query point 5307
 5307
 
 Query point 5308
-4709
-4712
-4713
-4714
-4717
-4855
-4856
-5029
-5030
-5178
-5179
-5291
 5308
-5469
-4705
-4857
 
 Query point 5309
 5309
@@ -23169,299 +23173,305 @@ Query point 5309
 Query point 5310
 5310
 5311
-5312
-5313
-5314
-5315
-5316
-5317
-5318
 
 Query point 5311
 5310
 5311
-5312
-5313
-5314
-5315
-5316
-5317
-5318
 
 Query point 5312
-5310
-5311
 5312
-5313
-5314
-5315
-5316
-5317
-5318
 
 Query point 5313
-5310
-5311
-5312
 5313
-5314
-5315
-5316
-5317
-5318
 
 Query point 5314
-5310
-5311
-5312
-5313
 5314
-5315
-5316
-5317
-5318
 
 Query point 5315
-5310
-5311
-5312
-5313
-5314
 5315
 5316
-5317
-5318
 
 Query point 5316
-5310
-5311
-5312
-5313
-5314
 5315
 5316
-5317
-5318
 
 Query point 5317
-5310
-5311
-5312
-5313
-5314
-5315
-5316
 5317
-5318
 
 Query point 5318
-5310
-5311
-5312
-5313
-5314
-5315
-5316
-5317
+4715
+4719
+4722
+4723
+4724
+4727
+5301
 5318
+5479
+4865
+4866
+5039
+5040
+5188
+5189
+4867
 
 Query point 5319
 5319
 
 Query point 5320
-4850
-4851
-4877
-4908
-4909
-4953
-4954
-4958
-5171
 5320
+5321
+5322
+5323
+5324
+5325
+5326
+5327
+5328
 
 Query point 5321
+5320
 5321
 5322
+5323
+5324
+5325
+5326
+5327
+5328
 
 Query point 5322
-5322
+5320
 5321
+5322
+5323
+5324
+5325
+5326
+5327
+5328
 
 Query point 5323
+5320
+5321
+5322
 5323
 5324
+5325
+5326
+5327
+5328
 
 Query point 5324
-5324
+5320
+5321
+5322
 5323
+5324
+5325
+5326
+5327
+5328
 
 Query point 5325
+5320
+5321
+5322
+5323
+5324
 5325
+5326
+5327
+5328
 
 Query point 5326
+5320
+5321
+5322
+5323
+5324
+5325
 5326
+5327
+5328
 
 Query point 5327
+5320
+5321
+5322
+5323
+5324
+5325
+5326
 5327
+5328
 
 Query point 5328
+5320
+5321
+5322
+5323
+5324
+5325
+5326
+5327
 5328
 
 Query point 5329
 5329
 
 Query point 5330
+4860
+4887
+4918
+4919
+4963
+4964
+4968
+5181
 5330
+4861
 
 Query point 5331
 5331
+5332
 
 Query point 5332
 5332
+5331
 
 Query point 5333
 5333
+5334
 
 Query point 5334
-5247
-5248
+5333
 5334
-5180
-5181
-5340
 
 Query point 5335
 5335
 
 Query point 5336
 5336
-5337
-5338
-5339
 
 Query point 5337
-5336
 5337
-5338
-5339
 
 Query point 5338
-5336
-5337
 5338
-5339
 
 Query point 5339
-5336
-5337
-5338
 5339
 
 Query point 5340
 5340
-5248
-5334
 
 Query point 5341
 5341
 
 Query point 5342
 5342
-5343
-5344
 
 Query point 5343
-5342
 5343
-5344
 
 Query point 5344
+5257
 5344
-5345
-5368
-5369
-5342
-5343
+5350
+5190
+5191
+5258
 
 Query point 5345
-5344
 5345
-5346
 
 Query point 5346
-5345
 5346
+5347
+5348
+5349
 
 Query point 5347
+5346
 5347
 5348
 5349
 
 Query point 5348
+5346
 5347
 5348
+5349
 
 Query point 5349
-5349
+5346
 5347
+5348
+5349
 
 Query point 5350
+5344
 5350
+5258
 
 Query point 5351
 5351
 
 Query point 5352
 5352
+5353
+5354
 
 Query point 5353
+5352
 5353
+5354
 
 Query point 5354
 5354
+5355
+5378
+5379
+5352
+5353
 
 Query point 5355
+5354
 5355
+5356
 
 Query point 5356
 5356
+5355
 
 Query point 5357
 5357
+5358
+5359
 
 Query point 5358
+5357
 5358
 
 Query point 5359
 5359
-5360
-5361
+5357
 
 Query point 5360
 5360
-5359
-5361
 
 Query point 5361
 5361
-5360
-5359
 
 Query point 5362
-4710
-4715
-4787
-4945
 5362
-5439
 
 Query point 5363
 5363
-5364
 
 Query point 5364
-5363
 5364
 
 Query point 5365
@@ -23474,431 +23484,436 @@ Query point 5367
 5367
 
 Query point 5368
-5344
 5368
-5369
-5370
-5371
 
 Query point 5369
-5344
-5368
 5369
 5370
 5371
 
 Query point 5370
+5369
 5370
 5371
-5368
-5369
 
 Query point 5371
+5369
 5370
 5371
-5368
-5369
 
 Query point 5372
+4720
+4725
+4797
+4955
 5372
-5373
-5374
+5449
 
 Query point 5373
-5372
 5373
 5374
 
 Query point 5374
-5372
 5373
 5374
 
 Query point 5375
 5375
-5376
-5377
 
 Query point 5376
-5375
 5376
-5377
 
 Query point 5377
 5377
-5375
-5376
 
 Query point 5378
 5378
+5379
+5354
+5380
+5381
 
 Query point 5379
+5378
 5379
+5354
+5380
+5381
 
 Query point 5380
-5052
 5380
+5381
+5378
+5379
 
 Query point 5381
+5380
 5381
+5378
+5379
 
 Query point 5382
 5382
+5383
+5384
 
 Query point 5383
+5382
 5383
+5384
 
 Query point 5384
 5384
+5382
+5383
 
 Query point 5385
 5385
+5386
+5387
 
 Query point 5386
+5385
 5386
 5387
 
 Query point 5387
+5385
 5386
 5387
 
 Query point 5388
 5388
-5389
-5390
-5391
 
 Query point 5389
-5388
 5389
-5390
-5391
 
 Query point 5390
 5390
-5391
-5388
-5389
+5062
 
 Query point 5391
-5390
 5391
-5388
-5389
 
 Query point 5392
 5392
-5393
-5395
 
 Query point 5393
-5392
 5393
-5394
-5395
 
 Query point 5394
-5393
 5394
 
 Query point 5395
-5392
-5393
 5395
 
 Query point 5396
 5396
+5397
 
 Query point 5397
-5046
+5396
 5397
 
 Query point 5398
 5398
-5562
+5399
+5400
+5401
 
 Query point 5399
+5398
 5399
+5400
 5401
-5416
-5417
 
 Query point 5400
+5398
+5399
 5400
+5401
 
 Query point 5401
-5399
 5401
-5416
-5417
+5398
+5399
+5400
 
 Query point 5402
 5402
-5405
-5417
 5403
-5406
-5409
-5412
-5414
-5408
-5411
+5405
 
 Query point 5403
-5403
-5406
 5402
+5403
 5405
-5409
-5412
-5414
-5408
-5411
+5404
 
 Query point 5404
 5404
-5407
-5408
-5409
-5410
-5411
-5412
-5413
-5414
-5415
+5403
 
 Query point 5405
 5402
-5405
-5417
 5403
-5406
-5409
-5412
-5414
-5408
-5411
+5405
 
 Query point 5406
-5403
 5406
-5402
-5405
-5409
-5412
-5414
-5408
-5411
 
 Query point 5407
-5404
+5056
 5407
-5408
-5409
-5410
-5411
-5412
-5413
-5414
-5415
 
 Query point 5408
-5404
-5407
 5408
-5409
-5410
-5411
-5412
-5413
-5414
-5415
-5402
-5403
-5405
-5406
+5572
 
 Query point 5409
-5404
-5407
-5408
 5409
-5410
 5411
-5412
-5413
-5414
-5415
-5402
-5403
-5405
-5406
+5426
+5427
 
 Query point 5410
-5404
-5407
-5408
-5409
 5410
-5411
-5412
-5413
-5414
-5415
 
 Query point 5411
-5404
-5407
-5408
 5409
-5410
 5411
-5412
-5413
-5414
-5415
-5402
-5403
-5405
-5406
+5426
+5427
 
 Query point 5412
-5404
-5407
-5408
-5409
-5410
-5411
 5412
-5413
-5414
 5415
-5402
-5403
-5405
-5406
+5418
+5419
+5421
+5422
+5424
+5427
+5413
+5416
 
 Query point 5413
-5404
-5407
-5408
-5409
-5410
-5411
-5412
 5413
-5414
-5415
-
-Query point 5414
-5404
-5407
-5408
-5409
-5410
-5411
-5412
-5413
-5414
-5415
-5403
-5406
-5402
-5405
-
-Query point 5415
-5404
-5407
-5408
-5409
-5410
-5411
-5412
-5413
-5414
-5415
-
-Query point 5416
-5399
-5401
 5416
-5417
-
-Query point 5417
-5399
-5401
-5402
-5405
-5416
-5417
-
-Query point 5418
+5412
+5415
 5418
 5419
-5420
-
-Query point 5419
-5418
-5419
-5420
-
-Query point 5420
-5420
-5418
-5419
-
-Query point 5421
 5421
-5423
 5422
-
-Query point 5422
-5422
-5421
-
-Query point 5423
-5423
-5430
-5431
-5421
-
-Query point 5424
 5424
 
-Query point 5425
+Query point 5414
+5414
+5417
+5420
+5423
+5425
+5418
+5419
+5421
+5422
+5424
+
+Query point 5415
+5412
+5415
+5418
+5419
+5421
+5422
+5424
+5427
+5413
+5416
+
+Query point 5416
+5413
+5416
+5412
+5415
+5418
+5419
+5421
+5422
+5424
+
+Query point 5417
+5414
+5417
+5420
+5423
+5425
+5418
+5419
+5421
+5422
+5424
+
+Query point 5418
+5412
+5415
+5418
+5419
+5421
+5422
+5424
+5413
+5416
+5414
+5417
+5420
+5423
 5425
 
+Query point 5419
+5412
+5415
+5418
+5419
+5421
+5422
+5424
+5413
+5416
+5414
+5417
+5420
+5423
+5425
+
+Query point 5420
+5414
+5417
+5420
+5423
+5425
+5418
+5419
+5421
+5422
+5424
+
+Query point 5421
+5412
+5415
+5418
+5419
+5421
+5422
+5424
+5413
+5416
+5414
+5417
+5420
+5423
+5425
+
+Query point 5422
+5412
+5415
+5418
+5419
+5421
+5422
+5424
+5413
+5416
+5414
+5417
+5420
+5423
+5425
+
+Query point 5423
+5414
+5417
+5420
+5423
+5425
+5418
+5419
+5421
+5422
+5424
+
+Query point 5424
+5412
+5415
+5418
+5419
+5421
+5422
+5424
+5413
+5416
+5414
+5417
+5420
+5423
+5425
+
+Query point 5425
+5414
+5417
+5420
+5423
+5425
+5418
+5419
+5421
+5422
+5424
+
 Query point 5426
+5409
+5411
 5426
 5427
 
 Query point 5427
+5409
+5411
+5412
+5415
 5426
 5427
 
 Query point 5428
 5428
+5429
+5430
 
 Query point 5429
+5428
 5429
+5430
 
 Query point 5430
-5423
+5428
+5429
 5430
-5431
 
 Query point 5431
-5423
-5430
 5431
+5432
+5433
 
 Query point 5432
+5431
 5432
-5433
 
 Query point 5433
-5432
 5433
+5440
+5431
+5441
 
 Query point 5434
 5434
@@ -23908,516 +23923,512 @@ Query point 5435
 
 Query point 5436
 5436
+5437
 
 Query point 5437
+5436
 5437
 
 Query point 5438
 5438
 
 Query point 5439
-4710
-4715
-4787
-4945
-5362
 5439
 
 Query point 5440
+5433
 5440
+5441
 
 Query point 5441
 5441
+5433
+5440
 
 Query point 5442
 5442
+5443
 
 Query point 5443
+5442
 5443
-5445
-5446
-5448
-5444
-5447
 
 Query point 5444
 5444
-5447
-5443
-5445
-5446
 
 Query point 5445
-5443
 5445
-5446
-5448
-5451
-5444
-5447
 
 Query point 5446
-5443
-5445
 5446
-5448
-5451
-5444
-5447
 
 Query point 5447
-5444
 5447
-5443
-5445
-5446
 
 Query point 5448
-5443
-5445
-5446
 5448
 
 Query point 5449
+4720
+4725
+4797
+4955
+5372
 5449
 
 Query point 5450
 5450
 
 Query point 5451
-5445
-5446
 5451
 
 Query point 5452
 5452
-5453
 
 Query point 5453
-5452
 5453
+5454
+5457
+5455
+5456
+5458
 
 Query point 5454
-4850
-4851
-4877
-4908
-4909
-4953
-4954
-4958
+5453
 5454
+5457
+5455
+5456
 
 Query point 5455
 5455
+5456
+5453
+5454
 5457
+5458
+5461
 
 Query point 5456
+5455
 5456
+5453
+5454
+5457
 5458
+5461
 
 Query point 5457
-5455
+5453
+5454
 5457
+5455
+5456
 
 Query point 5458
-5456
 5458
+5453
+5455
+5456
 
 Query point 5459
 5459
 
 Query point 5460
 5460
-5462
 
 Query point 5461
 5461
-5463
+5455
+5456
 
 Query point 5462
-5460
 5462
+5463
 
 Query point 5463
-5461
+5462
 5463
 
 Query point 5464
+4861
 5464
-5465
+4860
+4887
+4918
+4919
+4963
+4964
+4968
 
 Query point 5465
-5464
 5465
+5467
 
 Query point 5466
 5466
-5467
+5468
 
 Query point 5467
-5466
+5465
 5467
 
 Query point 5468
+5466
 5468
 
 Query point 5469
-4709
-4712
-4713
-4714
-4717
-5178
-5179
-5291
-5308
 5469
-4705
 
 Query point 5470
 5470
+5472
 
 Query point 5471
 5471
-5475
+5473
 
 Query point 5472
 5472
-5476
+5470
 
 Query point 5473
+5471
 5473
 
 Query point 5474
 5474
+5475
 
 Query point 5475
-5471
+5474
 5475
 
 Query point 5476
-5472
 5476
+5477
 
 Query point 5477
+5476
 5477
-5527
 
 Query point 5478
 5478
-5528
 
 Query point 5479
+4715
+4719
+4722
+4723
+4724
+4727
+5301
+5318
 5479
+5188
+5189
 
 Query point 5480
 5480
 
 Query point 5481
 5481
-5484
 5485
-5486
-5493
-5500
-5501
-5505
-5537
-5544
-5545
-5559
 
 Query point 5482
 5482
-5506
-5546
-5547
-5487
-5488
-5489
-5502
-5503
-5504
-5548
+5486
 
 Query point 5483
 5483
 
 Query point 5484
-5481
 5484
-5485
-5486
-5493
-5500
-5501
-5505
-5537
-5544
-5545
-5559
 
 Query point 5485
 5481
-5484
 5485
-5486
-5493
-5500
-5501
-5505
-5537
-5544
-5545
-5559
 
 Query point 5486
-5481
-5484
-5485
+5482
 5486
-5493
-5500
-5501
-5505
-5537
-5544
-5545
-5559
 
 Query point 5487
 5487
-5488
-5489
-5502
-5503
-5504
-5482
-5506
-5546
-5547
-5548
+5537
 
 Query point 5488
-5487
 5488
-5489
-5502
-5503
-5504
-5482
-5506
-5546
-5547
-5548
+5538
 
 Query point 5489
-5487
-5488
 5489
-5502
-5503
-5504
-5482
-5506
-5546
-5547
-5548
 
 Query point 5490
 5490
-5552
-5507
 
 Query point 5491
 5491
-5492
+5494
+5503
+5510
+5515
+5547
+5554
+5569
+5555
+5495
+5496
+5511
 
 Query point 5492
 5492
-5491
+5497
+5498
+5499
+5512
+5513
+5514
+5516
+5556
+5557
+5558
 
 Query point 5493
-5481
-5484
-5485
-5486
 5493
-5500
-5501
-5505
-5537
-5544
-5545
-5559
 
 Query point 5494
+5491
 5494
-5538
+5503
+5510
+5515
+5547
+5554
+5569
+5555
+5495
+5496
+5511
 
 Query point 5495
 5495
-5540
 5496
+5555
+5491
+5494
+5503
+5510
+5515
+5547
+5554
+5569
+5511
 
 Query point 5496
-5496
 5495
-5540
+5496
+5555
+5491
+5494
+5503
+5510
+5515
+5547
+5554
+5569
+5511
 
 Query point 5497
+5492
 5497
 5498
 5499
-5541
+5512
+5513
+5514
+5516
+5556
+5557
+5558
 
 Query point 5498
+5492
 5497
 5498
 5499
-5541
+5512
+5513
+5514
+5516
+5556
+5557
+5558
 
 Query point 5499
+5492
 5497
 5498
 5499
-5541
+5512
+5513
+5514
+5516
+5556
+5557
+5558
 
 Query point 5500
-5481
-5484
-5485
-5486
-5493
 5500
-5501
-5505
-5537
-5544
-5545
-5559
+5562
+5517
 
 Query point 5501
-5481
-5484
-5485
-5486
-5493
-5500
 5501
-5505
-5537
-5544
-5545
-5559
+5502
 
 Query point 5502
-5487
-5488
-5489
 5502
-5503
-5504
-5482
-5506
-5546
-5547
-5548
+5501
 
 Query point 5503
-5487
-5488
-5489
-5502
+5491
+5494
 5503
-5504
-5482
-5506
-5546
+5510
+5515
 5547
-5548
+5554
+5569
+5555
+5495
+5496
+5511
 
 Query point 5504
-5487
-5488
-5489
-5502
-5503
 5504
-5482
-5506
-5546
-5547
 5548
 
 Query point 5505
-5481
-5484
-5485
-5486
-5493
-5500
-5501
 5505
-5537
-5544
-5545
-5559
+5506
+5550
 
 Query point 5506
-5482
+5505
 5506
-5546
-5547
-5487
-5488
-5489
-5502
-5503
-5504
-5548
+5550
 
 Query point 5507
 5507
-5490
-5552
+5508
+5509
+5551
 
 Query point 5508
+5507
 5508
+5509
+5551
 
 Query point 5509
+5507
+5508
 5509
+5551
 
 Query point 5510
+5491
+5494
+5503
 5510
+5515
+5547
+5554
+5569
+5555
+5495
+5496
+5511
 
 Query point 5511
 5511
-5512
+5495
+5496
+5555
 
 Query point 5512
-5511
+5492
+5497
+5498
+5499
 5512
+5513
+5514
+5516
+5556
+5557
+5558
 
 Query point 5513
+5492
+5497
+5498
+5499
+5512
 5513
+5514
+5516
+5556
+5557
+5558
 
 Query point 5514
+5492
+5497
+5498
+5499
+5512
+5513
 5514
+5516
+5556
+5557
+5558
 
 Query point 5515
+5491
+5494
+5503
+5510
 5515
+5547
+5554
+5569
+5555
+5495
+5496
+5511
 
 Query point 5516
+5492
+5497
+5498
+5499
+5512
+5513
+5514
 5516
+5556
+5557
+5558
 
 Query point 5517
 5517
-5518
+5500
+5562
 
 Query point 5518
-5517
 5518
 
 Query point 5519
@@ -24428,8 +24439,10 @@ Query point 5520
 
 Query point 5521
 5521
+5522
 
 Query point 5522
+5521
 5522
 
 Query point 5523
@@ -24446,10 +24459,10 @@ Query point 5526
 
 Query point 5527
 5527
-5477
+5528
 
 Query point 5528
-5478
+5527
 5528
 
 Query point 5529
@@ -24477,35 +24490,20 @@ Query point 5536
 5536
 
 Query point 5537
-5481
-5484
-5485
-5486
-5493
-5500
-5501
-5505
+5487
 5537
-5544
-5545
-5559
 
 Query point 5538
-5494
+5488
 5538
 
 Query point 5539
 5539
 
 Query point 5540
-5495
 5540
-5496
 
 Query point 5541
-5497
-5498
-5499
 5541
 
 Query point 5542
@@ -24515,138 +24513,143 @@ Query point 5543
 5543
 
 Query point 5544
-5481
-5484
-5485
-5486
-5493
-5500
-5501
-5505
-5537
 5544
-5545
-5559
 
 Query point 5545
-5481
-5484
-5485
-5486
-5493
-5500
-5501
-5505
-5537
-5544
 5545
-5559
 
 Query point 5546
-5482
-5506
 5546
-5547
-5487
-5488
-5489
-5502
-5503
-5504
-5548
 
 Query point 5547
-5482
-5506
-5546
-5547
-5487
-5488
-5489
-5502
+5491
+5494
 5503
-5504
-5548
+5510
+5515
+5547
+5554
+5569
+5555
+5495
+5496
+5511
 
 Query point 5548
-5548
-5482
-5487
-5488
-5489
-5502
-5503
 5504
-5506
-5546
-5547
+5548
 
 Query point 5549
 5549
-5551
 
 Query point 5550
 5550
-5551
+5505
+5506
 
 Query point 5551
-5549
-5550
+5507
+5508
+5509
 5551
 
 Query point 5552
-5490
 5552
-5507
 
 Query point 5553
 5553
-5554
 
 Query point 5554
-5553
+5491
+5494
+5503
+5510
+5515
+5547
 5554
+5569
+5555
+5495
+5496
+5511
 
 Query point 5555
+5495
+5496
 5555
+5491
+5494
+5503
+5510
+5515
+5547
+5554
+5569
+5511
 
 Query point 5556
+5492
+5497
+5498
+5499
+5512
+5513
+5514
+5516
 5556
+5557
+5558
 
 Query point 5557
+5492
+5497
+5498
+5499
+5512
+5513
+5514
+5516
+5556
 5557
+5558
 
 Query point 5558
 5558
+5492
+5497
+5498
+5499
+5512
+5513
+5514
+5516
+5556
+5557
 
 Query point 5559
-5481
-5484
-5485
-5486
-5493
-5500
-5501
-5505
-5537
-5544
-5545
 5559
+5561
 
 Query point 5560
 5560
+5561
 
 Query point 5561
 5561
+5560
+5559
 
 Query point 5562
-5398
+5500
 5562
+5517
 
 Query point 5563
 5563
+5564
 
 Query point 5564
+5563
 5564
 
 Query point 5565
@@ -24662,23 +24665,31 @@ Query point 5568
 5568
 
 Query point 5569
+5491
+5494
+5503
+5510
+5515
+5547
+5554
 5569
+5555
+5495
+5496
+5511
 
 Query point 5570
 5570
-5571
 
 Query point 5571
-5570
 5571
 
 Query point 5572
+5408
 5572
-5573
 
 Query point 5573
 5573
-5572
 
 Query point 5574
 5574
@@ -24703,14 +24714,16 @@ Query point 5580
 5581
 
 Query point 5581
-5581
 5580
+5581
 
 Query point 5582
 5582
+5583
 
 Query point 5583
 5583
+5582
 
 Query point 5584
 5584
@@ -24720,26 +24733,22 @@ Query point 5585
 
 Query point 5586
 5586
-5588
-5587
 
 Query point 5587
 5587
-5586
-5588
 
 Query point 5588
-5586
 5588
-5587
 
 Query point 5589
 5589
 
 Query point 5590
 5590
+5591
 
 Query point 5591
+5590
 5591
 
 Query point 5592
@@ -24753,31 +24762,27 @@ Query point 5594
 
 Query point 5595
 5595
-5596
 
 Query point 5596
-5595
 5596
+5597
+5598
 
 Query point 5597
 5597
+5598
+5596
 
 Query point 5598
+5597
 5598
+5596
 
 Query point 5599
 5599
 
 Query point 5600
 5600
-5603
-5604
-5605
-5606
-5607
-5608
-5609
-5610
 
 Query point 5601
 5601
@@ -24787,91 +24792,37 @@ Query point 5602
 
 Query point 5603
 5603
-5605
-5606
-5607
-5608
-5609
-5610
-5604
-5600
 
 Query point 5604
 5604
-5603
-5605
-5606
-5607
-5608
-5609
-5610
-5600
 
 Query point 5605
-5603
 5605
 5606
-5607
-5608
-5609
-5610
-5604
-5600
 
 Query point 5606
-5603
 5605
 5606
-5607
-5608
-5609
-5610
-5600
-5604
 
 Query point 5607
-5603
-5605
-5606
 5607
-5608
-5609
-5610
-5600
-5604
 
 Query point 5608
-5603
-5605
-5606
-5607
 5608
-5609
-5610
-5600
-5604
 
 Query point 5609
-5603
-5605
-5606
-5607
-5608
 5609
-5610
-5600
-5604
 
 Query point 5610
-5603
-5605
-5606
-5607
-5608
-5609
 5610
-5604
-5600
+5613
+5614
+5615
+5616
+5617
+5618
+5619
+5620
 
 Query point 5611
 5611
@@ -24881,51 +24832,99 @@ Query point 5612
 
 Query point 5613
 5613
+5614
+5615
+5616
+5617
+5618
+5619
+5610
+5620
 
 Query point 5614
+5613
 5614
+5615
+5616
+5617
+5618
+5619
+5610
+5620
 
 Query point 5615
+5613
+5614
 5615
+5610
+5620
+5617
+5618
+5619
+5616
 
 Query point 5616
 5616
+5617
+5618
+5619
+5610
+5613
+5614
+5615
+5620
 
 Query point 5617
+5616
 5617
 5618
 5619
-5622
+5613
+5614
+5615
+5610
+5620
 
 Query point 5618
+5616
 5617
 5618
 5619
-5622
-5623
+5613
+5614
+5615
+5610
+5620
 
 Query point 5619
-4778
+5616
 5617
 5618
 5619
+5613
+5614
+5615
+5610
+5620
 
 Query point 5620
 5620
-4779
+5616
+5617
+5618
+5619
+5613
+5614
+5615
+5610
 
 Query point 5621
 5621
 
 Query point 5622
-5617
-5618
 5622
-5623
 
 Query point 5623
-5618
-5622
 5623
 
 Query point 5624
@@ -24939,29 +24938,39 @@ Query point 5626
 
 Query point 5627
 5627
+5628
+5629
 
 Query point 5628
 5628
+5629
+5627
+5632
+5633
 
 Query point 5629
+4788
+5628
 5629
-5630
-5637
+5627
 
 Query point 5630
-5629
 5630
+4789
 
 Query point 5631
 5631
-5632
 
 Query point 5632
-5631
 5632
+5633
+5627
+5628
 
 Query point 5633
+5632
 5633
+5628
 
 Query point 5634
 5634
@@ -24973,161 +24982,156 @@ Query point 5636
 5636
 
 Query point 5637
-5629
 5637
-5638
-5640
-5639
-5641
-5642
 
 Query point 5638
-5637
 5638
-5640
-5639
-5641
-5642
 
 Query point 5639
 5639
-5641
-5642
-5637
-5638
 5640
+5647
 
 Query point 5640
-5637
-5638
-5640
 5639
-5641
-5642
+5640
 
 Query point 5641
-5639
 5641
 5642
-5637
-5638
-5640
 
 Query point 5642
-5639
 5641
 5642
-5637
-5638
-5640
 
 Query point 5643
 5643
 
 Query point 5644
-4780
 5644
-4781
-5645
 
 Query point 5645
-4781
 5645
-4780
-5644
 
 Query point 5646
 5646
-5647
-5648
-5649
 
 Query point 5647
-5646
+5639
 5647
 5648
 5649
+5650
+5651
+5652
 
 Query point 5648
-5646
-5647
 5648
 5649
+5650
+5651
+5652
+5647
 
 Query point 5649
-5649
-5646
-5647
 5648
+5649
+5650
+5651
+5652
+5647
 
 Query point 5650
+5648
+5649
 5650
+5651
+5652
+5647
 
 Query point 5651
+5648
+5649
+5650
 5651
 5652
+5647
 
 Query point 5652
+5648
+5649
+5650
 5651
 5652
+5647
 
 Query point 5653
 5653
-5654
-5655
 
 Query point 5654
-5653
+4790
 5654
+4791
 5655
 
 Query point 5655
-5653
-5654
+4791
 5655
+4790
+5654
 
 Query point 5656
-5210
 5656
+5657
+5658
+5659
 
 Query point 5657
+5656
 5657
+5658
+5659
 
 Query point 5658
+5656
+5657
 5658
-5665
+5659
 
 Query point 5659
 5659
-5661
-5665
+5656
+5657
+5658
 
 Query point 5660
 5660
 
 Query point 5661
-5659
 5661
-5665
+5662
 
 Query point 5662
+5661
 5662
-5663
 
 Query point 5663
-5662
 5663
+5664
+5665
 
 Query point 5664
+5663
 5664
+5665
 
 Query point 5665
+5663
+5664
 5665
-5659
-5661
-5658
 
 Query point 5666
+5220
 5666
 
 Query point 5667
@@ -25135,35 +25139,40 @@ Query point 5667
 
 Query point 5668
 5668
+5675
 
 Query point 5669
 5669
+5671
+5675
 
 Query point 5670
 5670
-5671
 
 Query point 5671
+5669
 5671
-5670
+5675
 
 Query point 5672
 5672
+5673
 
 Query point 5673
+5672
 5673
-5674
 
 Query point 5674
-5673
 5674
 
 Query point 5675
+5668
 5675
+5669
+5671
 
 Query point 5676
 5676
-5708
 
 Query point 5677
 5677
@@ -25176,8 +25185,10 @@ Query point 5679
 
 Query point 5680
 5680
+5681
 
 Query point 5681
+5680
 5681
 
 Query point 5682
@@ -25185,8 +25196,10 @@ Query point 5682
 
 Query point 5683
 5683
+5684
 
 Query point 5684
+5683
 5684
 
 Query point 5685
@@ -25194,118 +25207,111 @@ Query point 5685
 
 Query point 5686
 5686
+5718
 
 Query point 5687
 5687
 
 Query point 5688
 5688
-5689
 
 Query point 5689
 5689
-5688
 
 Query point 5690
 5690
 
 Query point 5691
 5691
-5692
-5693
-5694
 
 Query point 5692
-5691
 5692
-5693
-5694
 
 Query point 5693
-5691
-5692
 5693
-5694
 
 Query point 5694
-5691
-5692
-5693
 5694
 
 Query point 5695
 5695
-5697
 
 Query point 5696
 5696
-5695
-5697
 
 Query point 5697
-5695
 5697
-5696
 
 Query point 5698
 5698
+5699
 
 Query point 5699
+5698
 5699
-5700
 
 Query point 5700
-5699
 5700
 
 Query point 5701
 5701
 5702
+5703
+5704
 
 Query point 5702
-5702
 5701
+5702
+5703
+5704
 
 Query point 5703
+5701
+5702
 5703
+5704
 
 Query point 5704
+5701
+5702
+5703
 5704
 
 Query point 5705
 5705
 5706
+5707
 
 Query point 5706
 5705
 5706
+5707
 
 Query point 5707
 5707
+5705
+5706
 
 Query point 5708
 5708
-5676
 
 Query point 5709
 5709
+5710
 
 Query point 5710
+5709
 5710
 
 Query point 5711
 5711
 5712
-5713
 
 Query point 5712
-5711
 5712
-5713
+5711
 
 Query point 5713
-5711
-5712
 5713
 
 Query point 5714
@@ -25323,91 +25329,70 @@ Query point 5717
 5717
 
 Query point 5718
+5686
 5718
-5719
 
 Query point 5719
 5719
-5718
 
 Query point 5720
 5720
 
 Query point 5721
 5721
+5722
+5723
 
 Query point 5722
+5721
 5722
+5723
 
 Query point 5723
+5721
+5722
 5723
 
 Query point 5724
 5724
-5725
 
 Query point 5725
-5724
 5725
+5726
 
 Query point 5726
 5726
+5725
 
 Query point 5727
 5727
 
 Query point 5728
 5728
+5729
 
 Query point 5729
+5728
 5729
-5730
-5731
-5732
-5733
-5734
 
 Query point 5730
-5729
 5730
-5731
-5732
-5733
-5734
 
 Query point 5731
-5729
-5730
 5731
-5732
-5733
-5734
 
 Query point 5732
-5729
-5730
-5731
 5732
-5733
-5734
 
 Query point 5733
-5729
-5730
-5731
-5732
 5733
-5734
 
 Query point 5734
-5729
-5730
-5731
-5732
-5733
 5734
+5735
 
 Query point 5735
+5734
 5735
 
 Query point 5736
@@ -25421,26 +25406,50 @@ Query point 5738
 
 Query point 5739
 5739
+5740
+5741
+5742
+5743
+5744
 
 Query point 5740
+5739
 5740
+5741
+5742
+5743
+5744
 
 Query point 5741
+5739
+5740
 5741
 5742
 5743
+5744
 
 Query point 5742
+5739
+5740
 5741
 5742
 5743
+5744
 
 Query point 5743
+5739
+5740
 5741
 5742
 5743
+5744
 
 Query point 5744
+5739
+5740
+5741
+5742
+5743
 5744
 
 Query point 5745
@@ -25451,31 +25460,29 @@ Query point 5746
 
 Query point 5747
 5747
-5748
-5749
 
 Query point 5748
-5747
 5748
-5749
 
 Query point 5749
-5747
-5748
 5749
 
 Query point 5750
 5750
-5751
 
 Query point 5751
-5750
 5751
+5752
+5753
 
 Query point 5752
+5751
 5752
+5753
 
 Query point 5753
+5751
+5752
 5753
 
 Query point 5754
@@ -25486,33 +25493,37 @@ Query point 5755
 
 Query point 5756
 5756
-5757
 
 Query point 5757
-5756
 5757
+5758
+5759
 
 Query point 5758
+5757
 5758
+5759
 
 Query point 5759
 5759
+5757
+5758
 
 Query point 5760
 5760
+5761
 
 Query point 5761
+5760
 5761
 
 Query point 5762
 5762
-5764
 
 Query point 5763
 5763
 
 Query point 5764
-5762
 5764
 
 Query point 5765
@@ -25520,8 +25531,10 @@ Query point 5765
 
 Query point 5766
 5766
+5767
 
 Query point 5767
+5766
 5767
 
 Query point 5768
@@ -25538,11 +25551,13 @@ Query point 5771
 
 Query point 5772
 5772
+5774
 
 Query point 5773
 5773
 
 Query point 5774
+5772
 5774
 
 Query point 5775
@@ -25562,39 +25577,26 @@ Query point 5779
 
 Query point 5780
 5780
-5781
-5782
 
 Query point 5781
 5781
-5782
-5780
 
 Query point 5782
-5781
 5782
-5780
 
 Query point 5783
 5783
 
 Query point 5784
 5784
-2878
 
 Query point 5785
 5785
-5791
-5797
-5806
-904
 
 Query point 5786
 5786
-5787
 
 Query point 5787
-5786
 5787
 
 Query point 5788
@@ -25602,166 +25604,211 @@ Query point 5788
 
 Query point 5789
 5789
-5795
-5803
-5812
 
 Query point 5790
 5790
-5796
-5804
-5805
-5813
-5814
+5792
+5791
 
 Query point 5791
-5785
 5791
-5797
-5806
-904
+5790
+5792
 
 Query point 5792
+5790
 5792
+5791
 
 Query point 5793
 5793
-5794
 
 Query point 5794
 5794
-5793
+2878
 
 Query point 5795
-5789
 5795
-5803
-5812
+5801
+904
+5807
+5816
 
 Query point 5796
-5790
 5796
-5804
-5805
-5813
-5814
+5797
 
 Query point 5797
-5785
-5791
+5796
 5797
-5806
-904
 
 Query point 5798
 5798
-5807
 
 Query point 5799
 5799
-5808
-5800
-5809
-5793
+5805
+5813
+5822
 
 Query point 5800
 5800
-5809
-5799
-5808
+5806
+5814
+5815
+5823
+5824
 
 Query point 5801
 5801
-5802
-5810
-5811
+904
+5807
+5816
+5795
 
 Query point 5802
-5801
 5802
-5810
-5811
 
 Query point 5803
-5789
-5795
 5803
-5812
+5804
+5809
+5818
 
 Query point 5804
-5790
-5796
 5804
-5805
-5813
-5814
+5803
 
 Query point 5805
-5790
-5796
-5804
+5799
 5805
 5813
-5814
+5822
 
 Query point 5806
-5785
-5791
-5797
+5800
 5806
-904
+5814
+5815
+5823
+5824
 
 Query point 5807
-5798
+904
 5807
+5816
+5795
+5801
 
 Query point 5808
-5799
 5808
-5800
-5809
-5793
+5817
 
 Query point 5809
-5800
 5809
-5799
-5808
+5810
+5818
+5819
+5803
 
 Query point 5810
-5801
-5802
+5809
 5810
-5811
+5818
+5819
 
 Query point 5811
-5801
-5802
-5810
 5811
+5820
+5812
+5821
 
 Query point 5812
-5789
-5795
-5803
 5812
+5821
+5811
+5820
 
 Query point 5813
-5790
-5796
-5804
+5799
 5805
 5813
-5814
+5822
 
 Query point 5814
-5790
-5796
-5804
-5805
-5813
+5800
+5806
 5814
+5815
+5823
+5824
 
 Query point 5815
+5800
+5806
+5814
 5815
+5823
+5824
+
+Query point 5816
+904
+5807
+5816
+5795
+5801
+
+Query point 5817
+5808
+5817
+
+Query point 5818
+5809
+5810
+5818
+5819
+5803
+
+Query point 5819
+5809
+5810
+5818
+5819
+
+Query point 5820
+5811
+5820
+5812
+5821
+
+Query point 5821
+5812
+5821
+5811
+5820
+
+Query point 5822
+5799
+5805
+5813
+5822
+
+Query point 5823
+5800
+5806
+5814
+5815
+5823
+5824
+
+Query point 5824
+5800
+5806
+5814
+5815
+5823
+5824
+
+Query point 5825
+5825
 

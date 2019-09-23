@@ -1,13 +1,14 @@
 package jp.ac.osaka_u.ist.sel.icvolti.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CloneSet {
+public class CloneSet implements Serializable {
 
 	public ArrayList<Block> cloneList = new ArrayList<Block>();
 	public int over50Token = 0;
 	public double tokenAverage = 0;
-	
+
 	/**
 	 * <p>メトリック計算</p>
 	 */
@@ -17,7 +18,7 @@ public class CloneSet {
 			if(clone.getNodeNum() >= 50) over50Token++;
 			sum += clone.getNodeNum();
 		}
-		tokenAverage = sum/(double)cloneList.size();		
+		tokenAverage = sum/(double)cloneList.size();
 	}
-	
+
 }

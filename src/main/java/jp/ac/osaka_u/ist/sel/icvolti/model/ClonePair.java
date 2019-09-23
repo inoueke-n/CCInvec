@@ -1,6 +1,8 @@
 package jp.ac.osaka_u.ist.sel.icvolti.model;
 
-public class ClonePair implements Comparable<ClonePair> {
+import java.io.Serializable;
+
+public class ClonePair implements Comparable<ClonePair>,Serializable {
 	public final Block cloneA;
 	public final Block cloneB;
 	public final double sim;

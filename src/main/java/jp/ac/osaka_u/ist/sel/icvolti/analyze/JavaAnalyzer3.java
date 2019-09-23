@@ -243,10 +243,11 @@ public class JavaAnalyzer3 {
 	 * @param file
 	 * @throws IOException
 	 */
-	public void analyze_test(ArrayList<SourceFile> fileList) throws IOException {
-		ArrayList<Block> blockList = new ArrayList<>();
+	public List<Block> analyze_test(ArrayList<SourceFile> fileList) throws IOException {
+		List<Block> blockList = new ArrayList<>();
 
 		for (SourceFile file : fileList) {
+			List<Block> blockListOfFile = new ArrayList<>();
 			countFiles++;
 			//System.out.println("fi = " + file.getNewPath());
 			CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
@@ -312,8 +313,12 @@ public class JavaAnalyzer3 {
 				}
 				// if we parse ok, it's LL not SLL
 			}
-			blockList.addAll(extractMethod(newtree, newparser));
-			file.getNewBlockList().addAll(extractMethod(newtree, newparser));
+			blockListOfFile = extractMethod(newtree,newparser);
+			blockList.addAll(blockListOfFile);
+			file.getNewBlockList().addAll(blockListOfFile);
+
+		//	blockList.addAll(extractMethod(newtree, newparser));
+		//	file.getNewBlockList().addAll(extractMethod(newtree, newparser));
 			countParseFiles++;
 			newtokens.fill();
 
@@ -322,6 +327,7 @@ public class JavaAnalyzer3 {
 			CloneDetector.countLine += newtokens.LT(newtokens.size()).getLine();
 
 		}
+		return blockList;
 	}
 
 

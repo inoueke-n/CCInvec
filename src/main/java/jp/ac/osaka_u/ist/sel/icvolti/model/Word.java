@@ -1,10 +1,11 @@
 package jp.ac.osaka_u.ist.sel.icvolti.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class Word {
+public class Word implements Serializable{
 
 	private String name;
 	private int type;
@@ -18,7 +19,7 @@ public class Word {
 	 * <p>
 	 * コンストラクタ
 	 * </p>
-	 * 
+	 *
 	 * @param word
 	 */
 	public Word(String name, int type, int count) {
@@ -52,7 +53,7 @@ public class Word {
 	 * <p>
 	 * 単語名取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public String getName() {
@@ -63,7 +64,7 @@ public class Word {
 	 * <p>
 	 * 単語名設定
 	 * </p>
-	 * 
+	 *
 	 * @param name
 	 */
 	public void setName(String name) {
@@ -74,7 +75,7 @@ public class Word {
 	 * <p>
 	 * カウント値取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public double getCount() {
@@ -94,7 +95,7 @@ public class Word {
 	 * <p>
 	 * ワードタイプの取得
 	 * <p>
-	 * 
+	 *
 	 * @return
 	 */
 	public int getType() {
@@ -105,7 +106,7 @@ public class Word {
 	 * <p>
 	 * ワードタイプの設定
 	 * <p>
-	 * 
+	 *
 	 * @param type
 	 */
 	public void setType(int type) {

@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -19,7 +20,7 @@ import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.RealVectorUtil;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Word;
 
-public class VectorCalculator {
+public class VectorCalculator implements Serializable {
 	private static final int APPEARANCE_TH = 1;
 	private static final int SPARSE = 0;
 	private static final int DENSE = 1;
@@ -37,6 +38,38 @@ public class VectorCalculator {
 	 * @return
 	 */
 	public ArrayList<Block> filterMethod(List<Block> blockList) {
+		ArrayList<Block> newBlockList = new ArrayList<Block>(blockList.size());
+		int i = 0;
+		for (Block block : blockList) {
+			if (filter(block)) {
+				/*
+				 * && !('A' <= block.getName().charAt(0) && block.getName().charAt(0) <= 'Z')
+				 */
+				// !method.getName().contains("test") &&
+				// !method.getName().contains("Test")&&
+				// !method.getClassName().contains("test") &&
+				// !method.getClassName().contains("Test")){
+				block.setId(i++);
+				newBlockList.add(block);
+				/*
+				 * for(Word word: block.getWordList()){
+				 * if(!CloneDetector.wordMap.containsKey(word.getName()))
+				 * CloneDetector.wordMap.put(word.getName(),i++); }
+				 */
+			}
+		}
+		newBlockList.trimToSize();
+		return newBlockList;
+	}
+
+	/**
+	 * <p>
+	 * メソッドリストのフィルタリング
+	 * </p>
+	 *
+	 * @return
+	 */
+	public ArrayList<Block> filterMethod_test(List<Block> blockList) {
 		ArrayList<Block> newBlockList = new ArrayList<Block>(blockList.size());
 		int i = 0;
 		for (Block block : blockList) {
@@ -86,6 +119,87 @@ public class VectorCalculator {
 	 * @throws FileNotFoundException
 	 */
 	public void calculateVector(List<Block> blockList) throws FileNotFoundException {
+		// ワードマップの生成
+		HashMap<String, Integer> wordFreqMap = new HashMap<String, Integer>();
+		ArrayList<String> dictionary = new ArrayList<String>();
+
+		// ワードの出現頻度の計測と、ワード辞書の生成
+		int elementCount = 0;
+		for (Block block : blockList) {
+			if (block.getParent() == null) {
+				for (Word word : block.getWordList()) {
+					if (wordFreqMap.containsKey(word.getName())) {
+						int value = wordFreqMap.get(word.getName());
+						wordFreqMap.put(word.getName(), ++value);
+					} else {
+						wordFreqMap.put(word.getName(), 1);
+						dictionary.add(word.getName());
+					}
+					elementCount++;
+				}
+			} else {
+				elementCount += block.getWordList().size();
+			}
+		}
+
+		System.out.println("blocklist size : " + blockList.size());
+		System.out.println("word count : " + wordFreqMap.size());
+		System.out.println("element count : " + elementCount);
+		System.out.println("Density : " + String.format("%f",
+				(double) elementCount / ((double) wordFreqMap.size() * (double) blockList.size())));
+
+		// ワードの出現回数でフィルタリング（デフォルト 1以下は除去）
+		Map<String, Integer> wordMap = new HashMap<>();
+		int wordFreq[] = new int[wordFreqMap.size()];
+		Iterator<String> iter = dictionary.iterator();
+		for (int i = 0; iter.hasNext();) {
+			String wordName = iter.next();
+			if (wordFreqMap.get(wordName) > APPEARANCE_TH) {
+				wordMap.put(wordName, i);
+				wordFreq[i] = wordFreqMap.get(wordName);
+				i++;
+			} else {
+				iter.remove();
+			}
+		}
+		dimention = wordMap.size();
+		System.out.println("filtered word count : " + wordMap.size());
+
+		long start = System.currentTimeMillis();
+		{
+			final int size = blockList.size();
+			for (int i = 0; i < size; i++) {
+				blockList.set(i, calcTfIdf(blockList.get(i), wordMap, wordFreq, CloneDetector.countMethod));
+			}
+		}
+		System.out.print("calc vector done : ");
+		System.out.println(System.currentTimeMillis() - start + "[ms]");
+
+		System.out.println("file out start");
+		start = System.currentTimeMillis();
+
+		if (Config.LSH_PRG == LSHController.E2LSH) {
+			outputDenseDataset(blockList);
+		} else {
+//			outputSparseDataset(CloneDetector.blockList);
+//			outputSparseDataset(blockList);
+			outputSparseDatasetBinary(blockList);
+		}
+		outputDictionary(dictionary);
+
+		System.out.print("file out done : ");
+		System.out.println(System.currentTimeMillis() - start + "[ms]");
+	}
+
+
+	/**
+	 * <p>
+	 * 重みの計算
+	 * </p>
+	 *
+	 * @throws FileNotFoundException
+	 */
+	public void calculateVector_test(List<Block> blockList) throws FileNotFoundException {
 		// ワードマップの生成
 		HashMap<String, Integer> wordFreqMap = new HashMap<String, Integer>();
 		ArrayList<String> dictionary = new ArrayList<String>();

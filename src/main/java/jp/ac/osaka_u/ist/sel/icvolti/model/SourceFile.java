@@ -1,5 +1,6 @@
 package jp.ac.osaka_u.ist.sel.icvolti.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -7,7 +8,7 @@ import java.util.ArrayList;
  * ソースファイルデータクラス
  * @author h-honda
  */
-public class SourceFile {
+public class SourceFile implements Serializable {
 
 	/** ファイルID */
 	private int id = NULL;

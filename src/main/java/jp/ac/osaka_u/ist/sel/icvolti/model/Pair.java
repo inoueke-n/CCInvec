@@ -1,6 +1,8 @@
 package jp.ac.osaka_u.ist.sel.icvolti.model;
 
-public class Pair {
+import java.io.Serializable;
+
+public class Pair implements Serializable{
 	public final int first;
 	public final int second;
 

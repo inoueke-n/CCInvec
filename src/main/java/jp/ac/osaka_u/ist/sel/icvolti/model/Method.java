@@ -1,9 +1,10 @@
 package jp.ac.osaka_u.ist.sel.icvolti.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Method {
-	
+public class Method implements Serializable{
+
 	private int id=0;
 	private String className;
 	private int startLine = 0;
@@ -27,7 +28,7 @@ public class Method {
 	public int getId() {
 		return id;
 	}
-	
+
 	/**
 	 * <p>メソッドIDの設定</p>
 	 * @param id
@@ -35,9 +36,9 @@ public class Method {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
-	
+
+
+
 	/**
 	 * <p>メソッド名の取得</p>
 	 * @return
@@ -45,7 +46,7 @@ public class Method {
 	public String getName() {
 		return name;
 	}
-	
+
 	/**
 	 * <p>メソッド名の設定</p>
 	 * @param name
@@ -141,8 +142,8 @@ public class Method {
 	public void setWordNum(int wordCount) {
 		this.wordNum = wordCount;
 	}
-	
-	
+
+
 	/**
 	 * <p>ステートメント数の取得</p>
 	 * @return
@@ -158,7 +159,7 @@ public class Method {
 	public void setStatementNum(int statementNum) {
 		this.statementNum = statementNum;
 	}
-	
+
 	/**
 	 * <p>オペレータ数の取得</p>
 	 * @return
@@ -207,7 +208,7 @@ public class Method {
 		this.checkFlg = checkFlg;
 	}
 
-	
+
 	/**
 	 * <p>開始行の取得</p>
 	 * @return
@@ -231,7 +232,7 @@ public class Method {
 	public int getEndLine() {
 		return endLine;
 	}
-	
+
 	/**
 	 * <p>終了行の設定</p>
 	 * @param endLine
@@ -241,17 +242,17 @@ public class Method {
 	}
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
