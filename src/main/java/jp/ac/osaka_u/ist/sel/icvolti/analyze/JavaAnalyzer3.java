@@ -95,9 +95,10 @@ public class JavaAnalyzer3 {
 
 	public static final ArrayList<SourceFile> setFilesInfo(String newPathName, String oldPathName ) {
 		ArrayList<SourceFile> fileList = new ArrayList<SourceFile>();
-	//	File file = new File(pathname);
+		//	File file = new File(pathname);
 		ArrayList<String> newFileNameList = searchFiles(newPathName);
 		ArrayList<String> oldFileNameList = searchFiles(oldPathName);
+
 		// ソースファイルの取得
 		Iterator<String> it = newFileNameList.iterator();
 		int fileId = 0;
@@ -105,21 +106,22 @@ public class JavaAnalyzer3 {
 		while (it.hasNext()) {
 			String fileName = it.next();
 			SourceFile file = new SourceFile();
-		//	System.out.println("fileName = " + fileName);
-		//	System.out.println("new path fileName = " +fileName);
+			//	System.out.println("fileName = " + fileName);
+			//	System.out.println("new path fileName = " +fileName);
 			//file.setName(fileName);
-	//		System.out.println("file liest now  id = " + fileId );
+			//		System.out.println("file liest now  id = " + fileId );
 			//file.setNewPath(newPathName + "\\" + fileName);
 			//file.setOldPath(oldPathName + "\\" + fileName);
 			file.setNewPath(fileName);
-			file.setOldPath(oldPathName + "\\" + fileName.substring(newPathName.length() + 1));
+			String oldPath = oldPathName + "\\" + fileName.substring(newPathName.length() + 1);
+			file.setOldPath(oldPath);
 			//file.setOldPath(oldPathName + "\\" + fileName);
-	//		System.out.println( "old path file name = " + oldPathName + "\\" +fileName.substring(newPathName.length()+1));
+			//		System.out.println( "old path file name = " + oldPathName + "\\" +fileName.substring(newPathName.length()+1));
 			file.setId(fileId++);
 
 			// 旧ファイルリストに含まれないファイルは新規追加分
-//			int index = oldFileNameList.indexOf(fileName);
-			int index = oldFileNameList.indexOf(oldPathName + "\\" + fileName.substring(newPathName.length()+1));
+			//			int index = oldFileNameList.indexOf(fileName);
+			int index = oldFileNameList.indexOf(oldPath);
 			if (index > -1) {
 				file.setState(SourceFile.NORMAL);
 				oldFileNameList.remove(oldPathName + "\\" + fileName.substring(newPathName.length()+1));
@@ -132,7 +134,7 @@ public class JavaAnalyzer3 {
 		it = oldFileNameList.iterator();
 		while (it.hasNext()) {
 			String fileName = it.next();
-		    System.out.println("DELETED FILE = " + fileName);
+			System.out.println("DELETED FILE = " + fileName);
 			SourceFile file = new SourceFile();
 			//file.setName(fileName);
 			file.setOldPath(fileName);
@@ -147,7 +149,7 @@ public class JavaAnalyzer3 {
 
 	public static final ArrayList<SourceFile> setFilesInfo(String PathName) {
 		ArrayList<SourceFile> fileList = new ArrayList<SourceFile>();
-	//	File file = new File(pathname);
+		//	File file = new File(pathname);
 		ArrayList<String> FileNameList = searchFiles(PathName);
 		// ソースファイルの取得
 		Iterator<String> it = FileNameList.iterator();
@@ -156,10 +158,10 @@ public class JavaAnalyzer3 {
 		while (it.hasNext()) {
 			String fileName = it.next();
 			SourceFile file = new SourceFile();
-		//	System.out.println("fileName = " + fileName);
-			System.out.println("new path fileName = " +fileName);
+			//	System.out.println("fileName = " + fileName);
+			//		System.out.println("new path fileName = " +fileName);
 			//file.setName(fileName);
-			System.out.println("file liest now  id = " + fileId );
+			//		System.out.println("file liest now  id = " + fileId );
 			//file.setNewPath(newPathName + "\\" + fileName);
 			//file.setOldPath(oldPathName + "\\" + fileName);
 			file.setNewPath(fileName);
@@ -167,7 +169,7 @@ public class JavaAnalyzer3 {
 			file.setId(fileId++);
 
 			// 旧ファイルリストに含まれないファイルは新規追加分
-//			int index = oldFileNameList.indexOf(fileName);
+			//			int index = oldFileNameList.indexOf(fileName);
 			fileList.add(file);
 		}
 		// 残った旧ファイルは変更後に消えたもの
@@ -186,7 +188,7 @@ public class JavaAnalyzer3 {
 		ArrayList<Block> blockList = new ArrayList<>();
 
 		for (String file : fileList) {
-		//	System.out.println("analyze file  = " + file);
+			//	System.out.println("analyze file  = " + file);
 			countFiles++;
 			CharStream stream = CharStreams.fromFileName(file, Charset.forName(Config.charset));
 			JavaLexer lexer = new JavaLexer(stream);
@@ -216,7 +218,7 @@ public class JavaAnalyzer3 {
 				// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
 				try {
 					tree = parser.compilationUnit(); // STAGE 2
-//					System.out.println("success");
+					//					System.out.println("success");
 				} catch (ParseCancellationException e) {
 					System.err.println(file + " parse cancel");
 					continue;
@@ -250,34 +252,33 @@ public class JavaAnalyzer3 {
 			List<Block> blockListOfFile = new ArrayList<>();
 			countFiles++;
 			//System.out.println("fi = " + file.getNewPath());
+			//////////////////////////////////////////
 			CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
 			JavaLexer newlexer = new JavaLexer(newstream);
 			newlexer.removeErrorListeners();
 			// lexer.addErrorListener(SilentErrorListener.INSTANCE);
-
 			CommonTokenStream newtokens = new CommonTokenStream(newlexer);
 			JavaParser newparser = new JavaParser(newtokens);
-
 			// parser.addParseListener(new JavaMyListener());
 			CompilationUnitContext newtree = null;
 			newparser.removeErrorListeners();
 			// parser.addErrorListener(SilentErrorListener.INSTANCE);
-
 			newparser.getInterpreter().setPredictionMode(PredictionMode.SLL);
+
+			/////////////////////////////////////////
 			CharStream oldstream = CharStreams.fromFileName(file.getOldPath(), Charset.forName(Config.charset));
 			JavaLexer oldlexer = new JavaLexer(oldstream);
 			oldlexer.removeErrorListeners();
 			// lexer.addErrorListener(SilentErrorListener.INSTANCE);
-
 			CommonTokenStream oldtokens = new CommonTokenStream(oldlexer);
 			JavaParser oldparser = new JavaParser(oldtokens);
-
 			// parser.addParseListener(old JavaMyListener());
 			CompilationUnitContext oldtree = null;
 			oldparser.removeErrorListeners();
 			// parser.addErrorListener(SilentErrorListener.INSTANCE);
-
 			oldparser.getInterpreter().setPredictionMode(PredictionMode.SLL);
+
+
 			try {
 				newtree = newparser.compilationUnit(); // STAGE 1
 				oldtree = oldparser.compilationUnit(); // STAGE 1
@@ -303,7 +304,7 @@ public class JavaAnalyzer3 {
 				try {
 					newtree = newparser.compilationUnit(); // STAGE 2
 					oldtree = oldparser.compilationUnit(); // STAGE 2
-//					System.out.println("success");
+					//					System.out.println("success");
 				} catch (ParseCancellationException e) {
 					System.err.println(file + " parse cancel");
 					continue;
@@ -317,8 +318,8 @@ public class JavaAnalyzer3 {
 			blockList.addAll(blockListOfFile);
 			file.getNewBlockList().addAll(blockListOfFile);
 
-		//	blockList.addAll(extractMethod(newtree, newparser));
-		//	file.getNewBlockList().addAll(extractMethod(newtree, newparser));
+			//	blockList.addAll(extractMethod(newtree, newparser));
+			//	file.getNewBlockList().addAll(extractMethod(newtree, newparser));
 			countParseFiles++;
 			newtokens.fill();
 
@@ -326,6 +327,73 @@ public class JavaAnalyzer3 {
 			oldtokens.fill();
 			CloneDetector.countLine += newtokens.LT(newtokens.size()).getLine();
 
+		}
+		return blockList;
+	}
+
+
+	/**
+	 * <p>
+	 * ディレクトリ探索
+	 * </p>
+	 *
+	 * @param file
+	 * @throws IOException
+	 */
+	public List<Block> incrementalAnalyze(ArrayList<SourceFile> fileList) throws IOException {
+		List<Block> blockList = new ArrayList<>();
+
+		for (SourceFile file : fileList) {
+			countFiles++;
+
+			if(file.getState()==SourceFile.NORMAL) {
+				blockList.addAll(file.getNewBlockList());
+			}else {
+				//新規追加されたソースファイル
+				List<Block> blockListOfFile = new ArrayList<>();
+				CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
+				JavaLexer newlexer = new JavaLexer(newstream);
+				newlexer.removeErrorListeners();
+				// lexer.addErrorListener(SilentErrorListener.INSTANCE);
+				CommonTokenStream newtokens = new CommonTokenStream(newlexer);
+				JavaParser newparser = new JavaParser(newtokens);
+				// parser.addParseListener(new JavaMyListener());
+				CompilationUnitContext newtree = null;
+				newparser.removeErrorListeners();
+				// parser.addErrorListener(SilentErrorListener.INSTANCE);
+				newparser.getInterpreter().setPredictionMode(PredictionMode.SLL);
+
+				try {
+					newtree = newparser.compilationUnit(); // STAGE 1
+				} catch (Exception ex) {
+					System.out.println("try predictionMode LL");
+					newlexer = new JavaLexer(newstream);
+					newlexer.removeErrorListeners();
+					// lexer.addErrorListener(DescriptiveErrorListener.INSTANCE);
+					newtokens = new CommonTokenStream(newlexer); // rewind input stream
+					newparser = new JavaParser(newtokens);
+					newparser.getInterpreter().setPredictionMode(PredictionMode.LL);
+					newparser.removeErrorListeners();
+					// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
+					try {
+						newtree = newparser.compilationUnit(); // STAGE 2
+						//						System.out.println("success");
+					} catch (ParseCancellationException e) {
+						System.err.println(file + " parse cancel");
+						continue;
+					} catch (Exception e) {
+						System.err.println(e);
+						continue;
+					}
+					// if we parse ok, it's LL not SLL
+				}
+				blockListOfFile = extractMethod(newtree,newparser);
+				blockList.addAll(blockListOfFile);
+				file.getNewBlockList().addAll(blockListOfFile);
+				countParseFiles++;
+				newtokens.fill();
+				CloneDetector.countLine += newtokens.LT(newtokens.size()).getLine();
+			}
 		}
 		return blockList;
 	}
@@ -373,7 +441,7 @@ public class JavaAnalyzer3 {
 				// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
 				try {
 					tree = parser.compilationUnit(); // STAGE 2
-//					System.out.println("success");
+					//					System.out.println("success");
 				} catch (ParseCancellationException e) {
 					System.err.println(file + " parse cancel");
 					continue;

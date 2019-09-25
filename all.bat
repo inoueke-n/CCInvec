@@ -12,7 +12,7 @@ cd /d %~dp0
     
 #)
 
-java -jar icvolti.jar -d E:\data_for_ICvolti\ant2 -d2 E:\data_for_ICvolti\ant -l java -oc test.csv
+java -jar icvolti.jar -d E:\data_for_ICvolti\ant -d2 E:\data_for_ICvolti\ant2 -l java -oc test.csv
 #java -jar icvolti_tfidf.jar -d ..\bcb_reduced\31 -l java -oc result20190807sim09\31.csv
 #java -jar icvolti_tfidf.jar -d ..\bcb_reduced\32 -l java -oc result20190807sim09\32.csv
 #java -jar icvolti_tfidf.jar -d ..\bcb_reduced\35 -l java -oc result20190807sim09\35.csv

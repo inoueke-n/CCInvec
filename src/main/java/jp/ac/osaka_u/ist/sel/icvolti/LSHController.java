@@ -89,7 +89,7 @@ public class LSHController {
 	 * <p>
 	 * LSHの実行
 	 * </p>
-	 * 
+	 *
 	 * @throws InterruptedException
 	 * @throws IOException
 	 */
@@ -162,5 +162,88 @@ public class LSHController {
 			e.printStackTrace();
 		}
 	}
+
+
+	/**
+	 * <p>
+	 * 更新されたコードブロックの周辺のみLSHの実行
+	 * </p>
+	 *
+	 * @throws InterruptedException
+	 * @throws IOException
+	 */
+	public void executePartially(List<Block> blockList,List<Block> updatedBlockList, int dimention, int program) {
+		int numHardThread = Runtime.getRuntime().availableProcessors();
+		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
+			Config.NUM_THREADS = numHardThread;
+
+		ArrayList<String> fromArray = new ArrayList<String>();
+		if (program == FALCONN64) {
+			fromArray.add(Paths.get(CloneDetector.javaClassPath, "FALCONN", "falconn4bcd.exe").toString());
+			fromArray.add(Integer.toString(updatedBlockList.size()));
+			fromArray.add(Integer.toString(dimention));
+			fromArray.add(Integer.toString(Config.LSH_L));
+			fromArray.add(CloneDetector.DATASET_FILE);
+			//query point
+			fromArray.add(CloneDetector.PARTIAL_QUERY_POINT);
+			fromArray.add(Double.toString(Config.SIM_TH));
+			fromArray.add(Integer.toString(Config.NUM_THREADS));
+		} else if (program == FALCONN32) {
+			fromArray.add(Paths.get(CloneDetector.javaClassPath, "FALCONN32", "falconn4bcd.exe").toString());
+			fromArray.add(Integer.toString(blockList.size()));
+			fromArray.add(Integer.toString(dimention));
+			fromArray.add(Integer.toString(Config.LSH_L));
+			fromArray.add(CloneDetector.DATASET_FILE);
+			fromArray.add(CloneDetector.DATASET_FILE);
+			fromArray.add(Double.toString(Config.SIM_TH));
+			fromArray.add(Integer.toString(Config.NUM_THREADS));
+		} else if (program == E2LSH) {
+			computeParam(blockList, dimention);
+
+			fromArray.add("E2LSH\\LSHMain.exe");
+			fromArray.add(Integer.toString(blockList.size()));
+			fromArray.add(Integer.toString(blockList.size()));
+			fromArray.add(Integer.toString(dimention));
+			fromArray.add(Double.toString(Config.LSH_PROB));
+			fromArray.add(Double.toString(Config.LSH_R));
+			fromArray.add(CloneDetector.DATASET_FILE);
+			fromArray.add(CloneDetector.DATASET_FILE);
+			fromArray.add("3978000000");
+			fromArray.add("-p");
+			fromArray.add(CloneDetector.PARAM_FILE);
+		}
+
+		for (String string : fromArray) {
+			System.out.print(string + " ");
+		}
+		System.out.println();
+
+		ProcessBuilder pb = new ProcessBuilder(fromArray);
+		try {
+			PrintWriter writer;
+			if (Config.LSH_PRG == E2LSH) {
+				writer = new PrintWriter(new FileOutputStream(CloneDetector.LSH_FILE));
+			} else {
+				writer = new PrintWriter(new FileOutputStream(CloneDetector.LSH_LOG));
+			}
+			Process p = pb.start();
+			InputStream errIn = p.getErrorStream();
+			InputStream stdIn = p.getInputStream();
+			int c;
+			while ((c = stdIn.read()) != -1)
+				writer.print((char) c);
+			stdIn.close();
+			while ((c = errIn.read()) != -1)
+				System.err.print((char) c);
+			errIn.close();
+			p.waitFor();
+			writer.close();
+		} catch (InterruptedException | IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+
 }
 

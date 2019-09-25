@@ -33,6 +33,7 @@ import jp.ac.osaka_u.ist.sel.icvolti.trace.TraceManager;
 public class CloneDetector {
 	public static final String PARAM_FILE = "dataset.txt.params";
 	public static final String DATASET_FILE = "dataset";
+	public static final String PARTIAL_QUERY_POINT = "partialQueryPoint";
 	public static final String LSH_FILE = "lsh_result.txt";
 	public static final String LSH_LOG = "lsh_log.txt";
 	public static final String BLOCKLIST_CSV = "blocklist.csv";
@@ -45,6 +46,7 @@ public class CloneDetector {
 	private static List<Block> blockList;
 	private static List<Block> oldBlockList;
 	private static List<Block> newBlockList;
+	private static List<Block> newBlockListCorrect;
 	public static List<Block> updatedBlockList;
 	public static List<ClonePair> clonePairList;
 	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
@@ -102,6 +104,7 @@ public class CloneDetector {
 		//SourceFile file = new SourceFile();
 		//ArrayList<String> fileListName = null;
 		ArrayList<String> fileList = null;
+		ArrayList<SourceFile> FileList = new ArrayList<SourceFile>();
 		//fileListの取得をちゃんとする
 		switch (Config.lang) {
 		case 0: // "java"
@@ -109,7 +112,7 @@ public class CloneDetector {
 			fileList = JavaAnalyzer3.searchFiles(Config.target);
 	//		fileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			//blockList = javaanalyzer.analyze(fileList);
-			ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target);
+			FileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			blockList = javaanalyzer.analyze_test_first(FileList);
 			System.out.println(
 					"Parse file / All file = " + javaanalyzer.countParseFiles + " / " + javaanalyzer.countFiles);
@@ -117,11 +120,13 @@ public class CloneDetector {
 		case 1: // "c"
 			CAnalyzer4 canalyzer = new CAnalyzer4();
 			fileList = canalyzer.searchFiles(Config.target);
+			FileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			blockList = canalyzer.analyze(fileList);
 			break;
 		case 2: // "c#"
 			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
 			fileList = CSharpAnalyzer.searchFiles(Config.target);
+			FileList= JavaAnalyzer3.setFilesInfo(Config.target);
 			blockList = csharpAnalyzer.analyze(fileList);
 			System.out.println(
 					"Parse file / All file = " + csharpAnalyzer.countParseFiles + " / " + csharpAnalyzer.countFiles);
@@ -221,6 +226,7 @@ public class CloneDetector {
 		// Debug.outputResult02(cloneSetList);
 		// Debug.outputResult(cloneSetList);
 
+		BlockUpdater.serializeSourceFileList(FileList);
 		System.out.print("Finished : ");
 		currentTime = System.currentTimeMillis();
 		System.out.println(currentTime - start + "[ms]");
@@ -247,12 +253,15 @@ public class CloneDetector {
 		long subStart = start;
 		long currentTime;
 
+
 		System.out.println("Extract word in source code ...");
 		countMethod = 0;
 		countBlock = 0;
 		countLine = 0;
+
 		ArrayList<String> oldFileList = null;
 		ArrayList<String> newFileList = null;
+		//ArrayList<SourceFile> newFileList
 		//fileListの取得をちゃんとする
 		switch (Config.lang) {
 		case 0: // "java"
@@ -260,8 +269,11 @@ public class CloneDetector {
 			JavaAnalyzer3 newJavaanalyzer = new JavaAnalyzer3();
 			//oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
 	/*ゆくゆくはなくしたいやつ*/
-			newFileList = JavaAnalyzer3.searchFiles(Config.target);
-			ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target, Config.target2);
+			newFileList = JavaAnalyzer3.searchFiles(Config.target2);
+			ArrayList<SourceFile> oldFileList_test = BlockUpdater.deserializeSourceFileList("SourceFileList.bin");
+			ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
+
+			//ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target, Config.target2);
 	//		System.out.println(Arrays.asList(FileList));
 
 
@@ -270,9 +282,12 @@ public class CloneDetector {
 			//List<Block> oldBlockList = new ArrayList<Block>();
 			//oldBlockList.deserializeBlockList("blcoklist.bin");
 
-			newBlockList = newJavaanalyzer.analyze_test(FileList);
-			oldBlockList = BlockUpdater.deserializeBlockList("blocklist.bin");
-			System.out.println("old Block Size  = " + oldBlockList.size());
+			newBlockListCorrect = newJavaanalyzer.analyze_test(FileList);
+			newBlockList = newJavaanalyzer.incrementalAnalyze(FileList);
+			//oldBlockList = BlockUpdater.deserializeBlockList("blocklist.bin");
+			//System.out.println("old Block Size  = " + oldBlockList.size());
+			System.out.println("new Block Correct Size  = " + newBlockListCorrect.size());
+			System.out.println("new Block Size  = " + newBlockList.size());
 
 
 
@@ -335,7 +350,8 @@ public class CloneDetector {
 
 		System.out.println("Calculate vector of each method ...");
 	//	calculator.calculateVector(newBlockList);
-		calculator.calculateVector_test(newBlockList);
+		System.out.println("updated Blok List ID = " + updatedBlockList.get(1).getId());
+		calculator.calculateVector_test(newBlockList, updatedBlockList);
 		// System.out.println("wordmap.size = " + wordMap.size());
 		currentTime = System.currentTimeMillis();
 		System.out.println(
@@ -349,7 +365,7 @@ public class CloneDetector {
 			// LSHController.computeParam(wordMap.size());
 			System.out.println("LSH start");
 			LSHController lshCtlr = new LSHController();
-			lshCtlr.execute(newBlockList, calculator.getDimention(), Config.LSH_PRG);
+			lshCtlr.executePartially(newBlockList,updatedBlockList, calculator.getDimention(), Config.LSH_PRG);
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();

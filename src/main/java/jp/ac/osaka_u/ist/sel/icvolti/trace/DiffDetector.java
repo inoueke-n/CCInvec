@@ -75,7 +75,8 @@ public class DiffDetector {
 
 			ProcessBuilder pb;
 			if (File.separatorChar == '\\') {
-				String[] cmdArray = { Paths.get(Def.CCVOLTI_PATH, Def.DIFF_PATH).toString(),"-r" ,Config.target2, Config.target };
+				//diff -r oldfolpath newfolpath
+				String[] cmdArray = { Paths.get(Def.CCVOLTI_PATH, Def.DIFF_PATH).toString(),"-r" ,Config.target, Config.target2 };
 			//	System.out.println(Arrays.asList(cmdArray));
 				//System.out.println("kita  ====");
 				pb = new ProcessBuilder(cmdArray);
@@ -208,6 +209,7 @@ public class DiffDetector {
 
 			ProcessBuilder pb;
 			if (File.separatorChar == '\\') {
+
 				String[] cmdArray = { Paths.get(Def.CCVOLTI_PATH, Def.DIFF_PATH).toString(), file.getOldPath(),
 						file.getNewPath() };
 			//	System.out.println(Arrays.asList(cmdArray));

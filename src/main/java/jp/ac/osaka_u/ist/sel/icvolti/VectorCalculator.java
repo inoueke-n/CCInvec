@@ -199,7 +199,7 @@ public class VectorCalculator implements Serializable {
 	 *
 	 * @throws FileNotFoundException
 	 */
-	public void calculateVector_test(List<Block> blockList) throws FileNotFoundException {
+	public void calculateVector_test(List<Block> blockList, List<Block> updatedBlockList) throws FileNotFoundException {
 		// ワードマップの生成
 		HashMap<String, Integer> wordFreqMap = new HashMap<String, Integer>();
 		ArrayList<String> dictionary = new ArrayList<String>();
@@ -265,6 +265,8 @@ public class VectorCalculator implements Serializable {
 //			outputSparseDataset(CloneDetector.blockList);
 //			outputSparseDataset(blockList);
 			outputSparseDatasetBinary(blockList);
+			outputSparsePartialDatasetBinary(updatedBlockList);
+
 		}
 		outputDictionary(dictionary);
 
@@ -345,6 +347,50 @@ public class VectorCalculator implements Serializable {
 			e.printStackTrace();
 		}
 	}
+
+	private static void outputSparsePartialDatasetBinary(List<Block> updatedBlockList) {
+		byte[] writeBuffer = new byte[8];
+
+		try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(CloneDetector.PARTIAL_QUERY_POINT))) {
+
+			for (Block block : updatedBlockList) {
+				OpenMapRealVector vector = block.getVector();
+				int size = (int) Math.round(vector.getDimension() * vector.getSparsity());
+				out.write((size >>> 0) & 0xFF);
+				out.write((size >>> 8) & 0xFF);
+				out.write((size >>> 16) & 0xFF);
+				out.write((size >>> 24) & 0xFF);
+
+				for (int index : RealVectorUtil.getSparseIndexList(vector)) {
+					//System.out.println("index" + " = " + index);
+					out.write((index >>> 0) & 0xFF);
+					out.write((index >>> 8) & 0xFF);
+					out.write((index >>> 16) & 0xFF);
+					out.write((index >>> 24) & 0xFF);
+
+					long entry = Double.doubleToLongBits(vector.getEntry(index));
+					//System.out.println("entry" + " = " + entry);
+					writeBuffer[0] = (byte) (entry >>> 0);
+					writeBuffer[1] = (byte) (entry >>> 8);
+					writeBuffer[2] = (byte) (entry >>> 16);
+					writeBuffer[3] = (byte) (entry >>> 24);
+					writeBuffer[4] = (byte) (entry >>> 32);
+					writeBuffer[5] = (byte) (entry >>> 40);
+					writeBuffer[6] = (byte) (entry >>> 48);
+					writeBuffer[7] = (byte) (entry >>> 56);
+					out.write(writeBuffer, 0, 8);
+				}
+			}
+		} catch (FileNotFoundException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+	}
+
+
 
 	private static void outputDenseDataset(List<Block> blockList) {
 		try {
