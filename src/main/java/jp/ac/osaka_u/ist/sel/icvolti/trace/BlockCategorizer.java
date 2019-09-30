@@ -217,7 +217,7 @@ public class BlockCategorizer {
 	 * @param file
 	 *            ブロック分類を行うソースファイル
 	 */
-	private void categorizeAddedDeleted(SourceFile file, List<Block> updatedBlockList) {
+	private List<Block> categorizeAddedDeleted(SourceFile file, List<Block> updatedBlockList) {
 
 		// Addedブロックの分類
 		for (Block block : file.getNewBlockList()) {
@@ -232,8 +232,10 @@ public class BlockCategorizer {
 		for (Block block : file.getOldBlockList()) {
 			if (block.getCategory() == Block.NULL) {
 				block.setCategory(Block.DELETED);
+				updatedBlockList.add(block);
 				System.out.println("Block DELETED = filename " + block.getFileName() + "start line =  " + block.getStartLine() + "end line = " + block.getEndLine());
 			}
 		}
+		return updatedBlockList;
 	}
 }

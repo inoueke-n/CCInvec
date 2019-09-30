@@ -1,6 +1,7 @@
 package jp.ac.osaka_u.ist.sel.icvolti.trace;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import jp.ac.osaka_u.ist.sel.icvolti.Logger;
@@ -28,18 +29,53 @@ public class TraceManager {
 
 		List<Block> updatedBlockList = new ArrayList<Block>();
 
+		long start;
+		long end;
+		start = System.currentTimeMillis();
 		if (!DiffDetector.getDiff_test(FileList)) {
-		System.out.println("diff miss ======");
+			System.out.println("diff miss ======");
 			Logger.writeln("Can't get diff of source code.", Logger.ERROR);
 			return null;
 		}
-		System.out.println("diff done ======");
+		end = System.currentTimeMillis();
+		System.out.println("diff done  time = " + (end - start) + "[ms]");
 
 		// クローンの分類，コード位置の重複に基づいた親子クローン取得
 		updatedBlockList =  new BlockCategorizer().categorizeBlock(FileList);
 		Logger.writeln("<Success> Categorized clone.", Logger.INFO);
 
 		return updatedBlockList;
+
+	}
+
+	public static ArrayList<Block> devideBlockCategory(List<Block> updatedBlockList, int flag){
+		ArrayList<Block> devidedBlockList = new ArrayList<Block>();
+		//flag == 0の場合, 追加，編集されたものに分ける
+		//flag == 1の場合, 削除されたものに分ける
+		if(flag == 0) {
+			Iterator<Block> i = updatedBlockList.iterator();
+			while(i.hasNext()){
+				Block bk = i .next();
+				int category = bk.getCategory();
+				if(category == 1 || category == 3) {
+					devidedBlockList.add(bk);
+				}
+			}
+
+		}else if(flag == 1){
+			Iterator<Block> i = updatedBlockList.iterator();
+			while(i.hasNext()){
+				Block bk = i .next();
+				int category = bk.getCategory();
+				if(category == 4) {
+					devidedBlockList.add(bk);
+				}
+
+			}
+
+		}
+
+		return devidedBlockList;
 
 	}
 

@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
+import jp.ac.osaka_u.ist.sel.icvolti.model.ClonePair;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
 
 public class BlockUpdater {
@@ -89,7 +90,7 @@ public class BlockUpdater {
 
 	/**
 	 * <p>
-	 * ブロックリストをデシリアライズ化
+	 * ソースファイルリストをデシリアライズ化
 	 * <p>
 	 * @param blocklist
 	 */
@@ -117,7 +118,7 @@ public class BlockUpdater {
 
 	/**
 	 * <p>
-	 * ソースファイルをブロック
+	 * ソースファイルリストを更新
 	 * <p>
 	 */
 /*
@@ -149,7 +150,7 @@ public class BlockUpdater {
 			int index = newFileList.indexOf(newTargetFilePath);
 			if(index > -1) {
 				file.setNewPath(newTargetFilePath);
-				System.out.println("newFile = " + newTargetFilePath);
+				System.out.println("newFile = " + newFilePath);
 				newFileList.remove(newTargetFilePath);
 				file.setState(SourceFile.NORMAL);
 				for(Block block : file.getNewBlockList()) {
@@ -179,6 +180,79 @@ public class BlockUpdater {
 		return fileList;
 
 	}
+
+
+	/**
+	 * <p>
+	 * ソースファイルリストをシリアライズ化
+	 * <p>
+	 * @param clonePairList
+	 */
+	public static void serializeClonePairList(List<ClonePair> clonePairList) {
+		try {
+			ObjectOutputStream objOutStream =
+					new ObjectOutputStream(
+							new FileOutputStream("clonePairList.bin"));
+			objOutStream.writeObject(clonePairList);
+			objOutStream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	/**
+	 * <p>
+	 * ソースファイルリストをデシリアライズ化
+	 * <p>
+	 * @param blocklist
+	 */
+	public static List<ClonePair> deserializeClonePairList(String clonePairListName) {
+		try {
+			ObjectInputStream objInStream
+			= new ObjectInputStream(
+					new FileInputStream(clonePairListName));
+
+			List<ClonePair> clonePairList = (List<ClonePair>) objInStream.readObject();
+
+			objInStream.close();
+
+			return clonePairList;
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static void resetClonePair(List<ClonePair> ClonePairList, List<Block> addedModifiedBlockList, List<Block> deletedBlockList) {
+
+		//ClonePairList.removeIf(ClonePair -> ClonePair.cloneA);
+
+		//iteratorでぶん回す？
+		Iterator<ClonePair> i = ClonePairList.iterator();
+		while(i.hasNext()) {
+			ClonePair cp  = i.next();
+			int aU = addedModifiedBlockList.indexOf(cp.cloneA);
+			int aD = deletedBlockList.indexOf(cp.cloneA);
+			int bU = addedModifiedBlockList.indexOf(cp.cloneB);
+			int bD = deletedBlockList.indexOf(cp.cloneB);
+			if(aU > -1 || aD > -1 || bU > -1 || bD > -1) {
+				System.out.println("DELETE CLONEPAIR ");
+				i.remove();
+			}
+
+		}
+
+	}
+
+
 
 
 }

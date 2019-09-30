@@ -24,6 +24,7 @@ import org.apache.commons.cli.ParseException;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.CAnalyzer4;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.CSharpAnalyzer;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.JavaAnalyzer3;
+import jp.ac.osaka_u.ist.sel.icvolti.model.AllData;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.ClonePair;
 import jp.ac.osaka_u.ist.sel.icvolti.model.CloneSet;
@@ -48,6 +49,8 @@ public class CloneDetector {
 	private static List<Block> newBlockList;
 	private static List<Block> newBlockListCorrect;
 	public static List<Block> updatedBlockList;
+	public static List<Block> deletedBlockList;
+	public static List<Block> addedModifiedBlockList;
 	public static List<ClonePair> clonePairList;
 	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
 	public static int countMethod, countBlock, countLine;
@@ -105,12 +108,13 @@ public class CloneDetector {
 		//ArrayList<String> fileListName = null;
 		ArrayList<String> fileList = null;
 		ArrayList<SourceFile> FileList = new ArrayList<SourceFile>();
+		AllData allData = new AllData();
 		//fileListの取得をちゃんとする
 		switch (Config.lang) {
 		case 0: // "java"
 			JavaAnalyzer3 javaanalyzer = new JavaAnalyzer3();
 			fileList = JavaAnalyzer3.searchFiles(Config.target);
-	//		fileList = JavaAnalyzer3.setFilesInfo(Config.target);
+			//		fileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			//blockList = javaanalyzer.analyze(fileList);
 			FileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			blockList = javaanalyzer.analyze_test_first(FileList);
@@ -225,8 +229,13 @@ public class CloneDetector {
 		// Debug.debug();
 		// Debug.outputResult02(cloneSetList);
 		// Debug.outputResult(cloneSetList);
-
-		BlockUpdater.serializeSourceFileList(FileList);
+		//SourceFileListをシリアライズ化
+		//BlockUpdater.serializeSourceFileList(FileList);
+		//ClonePairListをシリアライズ化
+		//BlockUpdater.serializeClonePairList(clonePairList);
+		allData.setSourceFileList(FileList);
+		allData.setClonePairList(clonePairList);
+		AllData.serializeAllDataList(allData);
 		System.out.print("Finished : ");
 		currentTime = System.currentTimeMillis();
 		System.out.println(currentTime - start + "[ms]");
@@ -263,18 +272,23 @@ public class CloneDetector {
 		ArrayList<String> newFileList = null;
 		//ArrayList<SourceFile> newFileList
 		//fileListの取得をちゃんとする
+		AllData allData = AllData.deserializeAllDataList("allData.bin");
+		List<ClonePair> ClonePairList = allData.getClonePair();
+
 		switch (Config.lang) {
 		case 0: // "java"
-		//	JavaAnalyzer3 oldJavaanalyzer = new JavaAnalyzer3();
+			//	JavaAnalyzer3 oldJavaanalyzer = new JavaAnalyzer3();
 			JavaAnalyzer3 newJavaanalyzer = new JavaAnalyzer3();
 			//oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
-	/*ゆくゆくはなくしたいやつ*/
+			/*ゆくゆくはなくしたいやつ*/
 			newFileList = JavaAnalyzer3.searchFiles(Config.target2);
-			ArrayList<SourceFile> oldFileList_test = BlockUpdater.deserializeSourceFileList("SourceFileList.bin");
+			ArrayList<SourceFile> oldFileList_test = allData.getSourceFile();
 			ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
+//			ArrayList<SourceFile> oldFileList_test = BlockUpdater.deserializeSourceFileList("SourceFileList.bin");
+	//		ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
 
 			//ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target, Config.target2);
-	//		System.out.println(Arrays.asList(FileList));
+			//		System.out.println(Arrays.asList(FileList));
 
 
 			//oldBlockList = oldJavaanalyzer.analyze(oldFileList);
@@ -293,21 +307,28 @@ public class CloneDetector {
 
 			//新旧コードブロック間の対応をとる
 			updatedBlockList = TraceManager.analyzeBlock(FileList);
+			addedModifiedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 0);
+			deletedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 1);
 
-			if(updatedBlockList != null) {
+
+			if(addedModifiedBlockList != null) {
 				System.out.println("analyze block done ====");
 			}else {
 
 				System.out.println("====analyze block cant ====");
 
 			}
-		    for (Block block : updatedBlockList) {
-		        System.out.println(block.getCategory());
-		      }
+			for (Block block : addedModifiedBlockList) {
+				System.out.println(block.getCategory());
+			}
 
 
-			System.out.println("updated block size  = " + updatedBlockList.size());
-			System.out.println(" block size  = " + newBlockList.size());
+			System.out.println("updated block size  = " + addedModifiedBlockList.size());
+			System.out.println(" block size  = " + addedModifiedBlockList.size());
+
+
+			System.out.println("deleted block size  = " + deletedBlockList.size());
+			System.out.println(" block size  = " + deletedBlockList.size());
 
 
 			System.out.println(
@@ -323,24 +344,29 @@ public class CloneDetector {
 
 			break;
 		case 2: // "c#"
-/*			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
+			/*			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
 			fileList = CSharpAnalyzer.searchFiles(Config.target);
 			blockList = csharpAnalyzer.analyze(fileList);
 			System.out.println(
 					"Parse file / All file = " + csharpAnalyzer.countParseFiles + " / " + csharpAnalyzer.countFiles);
 			break;
-	*/	}
+			 */	}
+
 		System.out.println("The number of methods : " + countMethod);
 		System.out.println("The number of blocks (Excluding methods) : " + countBlock);
 		System.out.println("The line : " + countLine);
 		System.out.println("Extract word in source code done : " + (System.currentTimeMillis() - start) + "[ms]");
 		System.out.println();
 
+
+		//編集，削除されたクローンペアの削除
+		BlockUpdater.resetClonePair(ClonePairList, addedModifiedBlockList, deletedBlockList);
+
 		// 特徴ベクトル計算
 		subStart = System.currentTimeMillis();
 
 		VectorCalculator calculator = new VectorCalculator();
-//		blockList = calculator.filterMethod(blockList);
+		//		blockList = calculator.filterMethod(blockList);
 		newBlockList = calculator.filterMethod(newBlockList);
 		System.out.println("The threshold of size for method : " + Config.METHOD_NODE_TH);
 		System.out.println("The threshold of size for block : " + Config.BLOCK_NODE_TH);
@@ -349,9 +375,9 @@ public class CloneDetector {
 		System.out.println();
 
 		System.out.println("Calculate vector of each method ...");
-	//	calculator.calculateVector(newBlockList);
-		System.out.println("updated Blok List ID = " + updatedBlockList.get(1).getId());
-		calculator.calculateVector_test(newBlockList, updatedBlockList);
+		//	calculator.calculateVector(newBlockList);
+		System.out.println("updated Blok List ID = " + addedModifiedBlockList.get(1).getId());
+		calculator.calculateVector_test(newBlockList, addedModifiedBlockList);
 		// System.out.println("wordmap.size = " + wordMap.size());
 		currentTime = System.currentTimeMillis();
 		System.out.println(
@@ -365,7 +391,7 @@ public class CloneDetector {
 			// LSHController.computeParam(wordMap.size());
 			System.out.println("LSH start");
 			LSHController lshCtlr = new LSHController();
-			lshCtlr.executePartially(newBlockList,updatedBlockList, calculator.getDimention(), Config.LSH_PRG);
+			lshCtlr.executePartially(newBlockList,addedModifiedBlockList, calculator.getDimention(), Config.LSH_PRG);
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();
@@ -486,11 +512,11 @@ public class CloneDetector {
 				.argName("value").build());
 		options.addOption(
 				Option.builder().longOpt("size").desc("set threshold of size for method  ( 0<=size ) ( default: 50 )")
-						.hasArg().argName("value").build());
+				.hasArg().argName("value").build());
 		options.addOption(
 				Option.builder().longOpt("sizeb")
-						.desc("set threshold of size for block  ( 0<=size ) ( default: sizeb = size )")
-						.hasArg().argName("value").build());
+				.desc("set threshold of size for block  ( 0<=size ) ( default: sizeb = size )")
+				.hasArg().argName("value").build());
 		options.addOption(Option.builder("mil").longOpt("min-lines")
 				.desc("set threshold of line of block ( 0<=mil ) ( default: 0 )").hasArg().argName("value").build());
 		options.addOption(Option.builder("cs").longOpt("charset")
@@ -498,6 +524,8 @@ public class CloneDetector {
 		options.addOption(Option.builder("t").longOpt("threads")
 				.desc("set the number of threads. 0 indicates max threads. ( default: 1 )").hasArg().argName("value")
 				.build());
+
+
 
 		CommandLine cl = null;
 		try {
@@ -507,20 +535,9 @@ public class CloneDetector {
 			System.err.println("Error: can't read options.");
 			System.exit(1);
 		}
-		if (cl.hasOption("help") || args.length == 0) {
-			HelpFormatter f = new HelpFormatter();
-			f.printHelp("-d [dirname] -l [lang] <*options>", options);
-			System.exit(0);
-		}
-		if (cl.hasOption("dir"))
-			Config.target = cl.getOptionValue("dir");
-		if (Config.target == null) {
-			System.err.println("Usage Error: please select target directory for clone detection.");
-			System.exit(1);
-		}
-		if (cl.hasOption("dir2"))
+		if (cl.hasOption("help") || args.length == 0) { HelpFormatter f = new HelpFormatter(); f.printHelp("-d [dirname] -l [lang] <*options>", options); System.exit(0); } if (cl.hasOption("dir")) Config.target = cl.getOptionValue("dir"); if (Config.target == null) { System.err.println("Usage Error: please select target directory for clone detection."); System.exit(1); } if (cl.hasOption("dir2"))
 			Config.target2 = cl.getOptionValue("dir2");
-		    System.out.println("args = " + cl.getOptionValue("dir2"));
+		System.out.println("args = " + cl.getOptionValue("dir2"));
 		if (Config.target2 == null) {
 			System.err.println("Usage Error: please select target directory for clone detection.");
 			System.exit(1);
