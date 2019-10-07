@@ -30,8 +30,11 @@ public class BlockCategorizer {
 		for (SourceFile file : fileList) {
 			//	System.out.println(" start filelist");
 			if (file.getState() == SourceFile.NORMAL) {
-				//		System.out.println("Source File Nomal ");
+				//System.out.println("Source File Nomal ");
 				categorizeStableModified(file,updatedBlockList);
+			}else {
+
+				System.out.println("=============Source File ADD DELETE ");
 			}
 
 			// 実行時点で, 新旧両方に存在するブロックは分類されているはず
@@ -120,7 +123,7 @@ public class BlockCategorizer {
 							} else {
 								blockA.setCategory(Block.MODIFIED);
 								updatedBlockList.add(blockA);
-								System.out.println("ADD block List");
+								System.out.println("ADD block List 1");
 								System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 							}
 						}
@@ -134,7 +137,7 @@ public class BlockCategorizer {
 						} else {
 							blockA.setCategory(Block.MODIFIED);
 							updatedBlockList.add(blockA);
-								System.out.println("ADD block List");
+							System.out.println("ADD block List 2");
 							System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						}
 					}
@@ -147,8 +150,8 @@ public class BlockCategorizer {
 								//System.out.println("Block STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 							} else {
 								blockB.setCategory(Block.MODIFIED);
-							updatedBlockList.add(blockA);
-								System.out.println("ADD block List");
+								updatedBlockList.add(blockA);
+								System.out.println("ADD block List 3 ");
 								System.out.println("Block MODIFIED = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 							}
 						}
@@ -161,7 +164,7 @@ public class BlockCategorizer {
 						} else {
 							blockB.setCategory(Block.MODIFIED);
 							updatedBlockList.add(blockA);
-								System.out.println("ADD block List");
+							System.out.println("ADD block List 4 ");
 							System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						}
 					}

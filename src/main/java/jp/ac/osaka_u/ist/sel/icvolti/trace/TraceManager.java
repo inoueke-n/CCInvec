@@ -22,7 +22,7 @@ public class TraceManager {
 	 *           <li>失敗の場合 - false</li>
 	 *         </ul>
 	 */
-	public static List<Block> analyzeBlock(ArrayList<SourceFile> FileList) {
+	public static List<Block> analyzeBlock(ArrayList<SourceFile> FileList, List<Block> newBlockList) {
 		// TODO 自動生成されたメソッド・スタブ
 		// ファイルのdiffを取得
 		System.out.print("analyze block start");
@@ -32,7 +32,7 @@ public class TraceManager {
 		long start;
 		long end;
 		start = System.currentTimeMillis();
-		if (!DiffDetector.getDiff_test(FileList)) {
+		if (!DiffDetector.getDiff_test(FileList, newBlockList)) {
 			System.out.println("diff miss ======");
 			Logger.writeln("Can't get diff of source code.", Logger.ERROR);
 			return null;
@@ -52,6 +52,7 @@ public class TraceManager {
 		ArrayList<Block> devidedBlockList = new ArrayList<Block>();
 		//flag == 0の場合, 追加，編集されたものに分ける
 		//flag == 1の場合, 削除されたものに分ける
+		//flag == 2の場合，追加，編集，削除されたものに分ける
 		if(flag == 0) {
 			Iterator<Block> i = updatedBlockList.iterator();
 			while(i.hasNext()){
@@ -61,7 +62,6 @@ public class TraceManager {
 					devidedBlockList.add(bk);
 				}
 			}
-
 		}else if(flag == 1){
 			Iterator<Block> i = updatedBlockList.iterator();
 			while(i.hasNext()){
@@ -73,6 +73,24 @@ public class TraceManager {
 
 			}
 
+		}else if(flag == 2) {
+			Iterator<Block> i = updatedBlockList.iterator();
+			while(i.hasNext()){
+				Block bk = i .next();
+				int category = bk.getCategory();
+			//	System.out.println("cate = " + category);
+				if(category == 1 ) {
+					System.out.println(" bk..getOldBlock getFile = " + bk.getOldBlock().getFileName() );
+
+				}
+				if(category == -1) {
+					System.out.println(" block class = " + bk.getFileName() );
+
+				}
+				if(category == 1 || category == 3 || category ==4) {
+					devidedBlockList.add(bk);
+				}
+			}
 		}
 
 		return devidedBlockList;

@@ -121,7 +121,7 @@ public class BlockUpdater {
 	 * ソースファイルリストを更新
 	 * <p>
 	 */
-/*
+	/*
 	public static void changePathNewToOld(String newTarget, String oldTarget, ArrayList<SourceFile> FileList, ArrayList<String> newFileListOrigin){
 		ArrayList<String> newFileList = (ArrayList<String>) newFileListOrigin.clone();
 
@@ -132,7 +132,7 @@ public class BlockUpdater {
 			int index = newFileNameList.indexOf(filename)
 		}
 	}
-*/
+	 */
 
 
 	public static ArrayList<SourceFile> updateSourceFileList(String newTarget, String oldTarget, ArrayList<SourceFile> FileList, ArrayList<String> newFileListOrigin){
@@ -143,17 +143,18 @@ public class BlockUpdater {
 		for(SourceFile file : FileList ) {
 			String newFilePath = file.getNewPath();
 			String oldFilePath = file.getOldPath();
-			System.out.println("oldFile = " + newFilePath);
+			//System.out.println("oldFile = " + newFilePath);
 			file.setOldPath(newFilePath);
 			String newTargetFilePath = newTarget + file.getOldPath().substring(oldTarget.length());
 
 			int index = newFileList.indexOf(newTargetFilePath);
 			if(index > -1) {
 				file.setNewPath(newTargetFilePath);
-				System.out.println("newFile = " + newFilePath);
+				//System.out.println("newFile = " + newFilePath);
 				newFileList.remove(newTargetFilePath);
 				file.setState(SourceFile.NORMAL);
 				for(Block block : file.getNewBlockList()) {
+					block.setOldFileName(block.getFileName());
 					block.setFileName(newTargetFilePath);
 				}
 				file.setId(fileId++);
@@ -162,7 +163,7 @@ public class BlockUpdater {
 				//新バージョンのファイルリストに含まれないファイルは削除されたもの
 				file.setState(SourceFile.DELETED);
 
-				 // ここで削除されたファイルのコードブロックに関わる情報は削除？
+				// ここで削除されたファイルのコードブロックに関わる情報は削除？
 
 			}
 		}
@@ -203,6 +204,8 @@ public class BlockUpdater {
 	}
 
 
+
+
 	/**
 	 * <p>
 	 * ソースファイルリストをデシリアライズ化
@@ -231,6 +234,7 @@ public class BlockUpdater {
 		return null;
 	}
 
+	/*
 	public static void resetClonePair(List<ClonePair> ClonePairList, List<Block> addedModifiedBlockList, List<Block> deletedBlockList) {
 
 		//ClonePairList.removeIf(ClonePair -> ClonePair.cloneA);
@@ -250,8 +254,117 @@ public class BlockUpdater {
 
 		}
 
+	}*/
+
+
+	public static void resetClonePair(List<ClonePair> ClonePairList,  List<Block> updatedBlockList) {
+
+		//ClonePairList.removeIf(ClonePair -> ClonePair.cloneA);
+
+		//iteratorでぶん回す？
+		Iterator<ClonePair> i = ClonePairList.iterator();
+		int j = 0;
+		while(i.hasNext()) {
+			ClonePair cp  = i.next();
+			/*if(cp.clone) {
+
+			}*/
+			System.out.println("clone pair j  = " + j++ + "cp.cloneA = " + cp.cloneA.getFileName());
+			/*			System.out.println("============= = ");
+			System.out.println("clone A = " + cp.cloneA.getId());
+			System.out.println("clone B = " + cp.cloneB.getId());
+			System.out.println("============= = ");
+			 */
+			for(Block block : updatedBlockList) {
+				//System.out.println("aa");
+				int category  = block.getCategory();
+				if (category == 1 || category == 3 ||category == 4) {
+					if(block.getOldBlock() != null) {
+
+					//	System.out.println(" old block " + block.getOldBlock().getFileName());
+					//	System.out.println(" cpA block " + cp.cloneA.getFileName());
+					//	System.out.println(" cpB block " + cp.cloneB.getFileName());
+						int aU = updatedBlockList.indexOf(cp.cloneA);
+						int bU = updatedBlockList.indexOf(cp.cloneB);
+						//if(block.getOldBlock().equals(cp.cloneA,1) || block.getOldBlock().equals(cp.cloneB,1) ) {
+						if((aU != -1) || (bU != -1)) {
+							System.out.println("DELETE CLONEPAIR ");
+							System.out.println("============= = ");
+							System.out.println("clone A = " + cp.cloneA.getId());
+							System.out.println("clone B = " + cp.cloneB.getId());
+							System.out.println("============= = ");
+							i.remove();
+							break;
+						}
+					}
+				}
+
+			}
+			/*
+			int aU = updatedBlockList.indexOf(cp.cloneA);
+			int bU = updatedBlockList.indexOf(cp.cloneB);
+			System.out.println(" au = " + aU);
+			System.out.println(" bu = " + bU);
+			if((aU != -1) || (bU != -1)) {
+				System.out.println("DELETE CLONEPAIR ");
+				System.out.println("============= = ");
+				System.out.println("clone A = " + cp.cloneA.getId());
+				System.out.println("clone B = " + cp.cloneB.getId());
+				System.out.println("============= = ");
+				i.remove();
+				break;
+			}*/
+
+		}
+
+		//	Iterator it = updatedBlockList.iterator();
+
+		/*	while(it.hasNext())
+		{
+		    Block value = (Block)it.next();
+		    System.out.println("updated ID " + value.getId());
+		}*/
+
 	}
 
+
+	public static void deleteOldBlock(List<ClonePair> ClonePairList,  List<Block> updatedBlockList) {
+
+		//ClonePairList.removeIf(ClonePair -> ClonePair.cloneA);
+
+		//iteratorでぶん回す？
+		Iterator<ClonePair> i = ClonePairList.iterator();
+		int j = 0;
+		while(i.hasNext()) {
+			System.out.println("clone pair j  = " + j++);
+			ClonePair cp  = i.next();
+			/*			System.out.println("============= = ");
+			System.out.println("clone A = " + cp.cloneA.getId());
+			System.out.println("clone B = " + cp.cloneB.getId());
+			System.out.println("============= = ");
+			 */
+			int aU = updatedBlockList.indexOf(cp.cloneA);
+			int bU = updatedBlockList.indexOf(cp.cloneB);
+			if((aU != -1) || (bU != -1)) {
+				System.out.println("DELETE CLONEPAIR ");
+				System.out.println("============= = ");
+				System.out.println("clone A = " + cp.cloneA.getId());
+				System.out.println("clone B = " + cp.cloneB.getId());
+				System.out.println("============= = ");
+				i.remove();
+			}
+
+		}
+
+		//	Iterator it = updatedBlockList.iterator();
+
+		/*	while(it.hasNext())
+		{
+		    Block value = (Block)it.next();
+		    System.out.println("updated ID " + value.getId());
+		}*/
+
+	}
 
 
 

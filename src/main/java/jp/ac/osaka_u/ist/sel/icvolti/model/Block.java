@@ -16,6 +16,7 @@ public class Block implements Comparable<Block>, Serializable {
 
 	private int id;
 	private String fileName;
+	private String oldfileName;
 	private int startLine;
 	private int endLine;
 	private int methodStartLine;
@@ -71,6 +72,8 @@ public class Block implements Comparable<Block>, Serializable {
 
 		this.category = block.getCategory();
 		this.fileName = block.getFileName();
+		this.oldfileName = block.getOldFileName();
+
 		this.name = block.getName();
 		this.startLine = block.getStartLine();
 		this.endLine = block.getEndLine();
@@ -146,6 +149,28 @@ public class Block implements Comparable<Block>, Serializable {
 	 */
 	public final void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+
+	/**
+	 * <p>
+	 * 旧クラス名の取得
+	 * </p>
+	 *
+	 * @return
+	 */
+	public final String getOldFileName() {
+		return oldfileName;
+	}
+
+	/**
+	 * <p>
+	 * 旧クラス名の設定
+	 * </p>
+	 *
+	 * @param className
+	 */
+	public final void setOldFileName(String oldfileName) {
+		this.oldfileName = oldfileName;
 	}
 
 	public final double getLen() {
@@ -552,15 +577,44 @@ public class Block implements Comparable<Block>, Serializable {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
+			//System.out.println(" object true");
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
+			//System.out.println(" object null");
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
+			//System.out.println(" object class difference");
 			return false;
+		}
 		Block other = (Block) obj;
-		if (id != other.id)
+		if (id != other.id) {
+			//System.out.println(" object id difference");
 			return false;
+		}
+		return true;
+	}
+
+	public boolean equals(Object obj, int i) {
+		if (this == obj) {
+			System.out.println(" object true");
+			return true;
+		}
+		if (obj == null) {
+			System.out.println(" object null");
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			System.out.println(" object class difference");
+			return false;
+		}
+		Block other = (Block) obj;
+		if (id != other.id) {
+			//System.out.println(" object id difference");
+			return false;
+		}
 		return true;
 	}
 

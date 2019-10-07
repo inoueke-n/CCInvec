@@ -51,7 +51,7 @@ public class CloneDetector {
 	public static List<Block> updatedBlockList;
 	public static List<Block> deletedBlockList;
 	public static List<Block> addedModifiedBlockList;
-	public static List<ClonePair> clonePairList;
+	//public static ArrayList<ClonePair> clonePairList;
 	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
 	public static int countMethod, countBlock, countLine;
 	private static final String version = "19.01.24";
@@ -108,12 +108,13 @@ public class CloneDetector {
 		//ArrayList<String> fileListName = null;
 		ArrayList<String> fileList = null;
 		ArrayList<SourceFile> FileList = new ArrayList<SourceFile>();
+		ArrayList<ClonePair> clonePairList = new ArrayList<ClonePair>();
 		AllData allData = new AllData();
 		//fileListの取得をちゃんとする
 		switch (Config.lang) {
 		case 0: // "java"
 			JavaAnalyzer3 javaanalyzer = new JavaAnalyzer3();
-			fileList = JavaAnalyzer3.searchFiles(Config.target);
+			//fileList = JavaAnalyzer3.searchFiles(Config.target);
 			//		fileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			//blockList = javaanalyzer.analyze(fileList);
 			FileList = JavaAnalyzer3.setFilesInfo(Config.target);
@@ -186,7 +187,7 @@ public class CloneDetector {
 		currentTime = System.currentTimeMillis();
 		System.out.println("Cluster done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
 
-		List<CloneSet> cloneSetList = null;
+		ArrayList<CloneSet> cloneSetList = null;
 		if (Config.resultNotifier != null || Config.resultCloneSet != null) {
 			System.out.println("generate clone set start...");
 			subStart = System.currentTimeMillis();
@@ -272,8 +273,11 @@ public class CloneDetector {
 		ArrayList<String> newFileList = null;
 		//ArrayList<SourceFile> newFileList
 		//fileListの取得をちゃんとする
-		AllData allData = AllData.deserializeAllDataList("allData.bin");
-		List<ClonePair> ClonePairList = allData.getClonePair();
+		AllData allData = new AllData();
+		allData =  AllData.deserializeAllDataList("allData.bin");
+		ArrayList<ClonePair> ClonePairList_test = new ArrayList<ClonePair>();
+		AllData.synchronizeAllData();
+		ClonePairList_test = allData.getClonePairList();
 
 		switch (Config.lang) {
 		case 0: // "java"
@@ -282,7 +286,8 @@ public class CloneDetector {
 			//oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
 			/*ゆくゆくはなくしたいやつ*/
 			newFileList = JavaAnalyzer3.searchFiles(Config.target2);
-			ArrayList<SourceFile> oldFileList_test = allData.getSourceFile();
+			ArrayList<SourceFile> oldFileList_test = new ArrayList<SourceFile>();
+			oldFileList_test =  allData.getSourceFileList();
 			ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
 //			ArrayList<SourceFile> oldFileList_test = BlockUpdater.deserializeSourceFileList("SourceFileList.bin");
 	//		ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
@@ -296,19 +301,37 @@ public class CloneDetector {
 			//List<Block> oldBlockList = new ArrayList<Block>();
 			//oldBlockList.deserializeBlockList("blcoklist.bin");
 
-			newBlockListCorrect = newJavaanalyzer.analyze_test(FileList);
+			System.out.println("newFileList size = " + newFileList.size());
+			System.out.println("FileList size = " + FileList.size());
+		//	newBlockListCorrect = newJavaanalyzer.analyze_test(FileList);
 			newBlockList = newJavaanalyzer.incrementalAnalyze(FileList);
 			//oldBlockList = BlockUpdater.deserializeBlockList("blocklist.bin");
 			//System.out.println("old Block Size  = " + oldBlockList.size());
-			System.out.println("new Block Correct Size  = " + newBlockListCorrect.size());
-			System.out.println("new Block Size  = " + newBlockList.size());
+			//System.out.println("new Block Correct Size  = " + newBlockListCorrect.size());
 
+			System.out.println("new Block Size 1  = " + newBlockList.size());
 
 
 			//新旧コードブロック間の対応をとる
-			updatedBlockList = TraceManager.analyzeBlock(FileList);
+			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList));
+
+
+			//newBlockListの中から，DELETEDやADDEDやMODIFIEDに分類されたものがupdatedBLockListになるようにする
+
+			System.out.println("new Block Size 2  = " + newBlockList.size());
+
+			updatedBlockList = TraceManager.devideBlockCategory(newBlockList, 2);
 			addedModifiedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 0);
 			deletedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 1);
+
+
+			//test
+			/*for(Block block: updatedBlockList) {
+				int index = newBlockList.indexOf(block.getOldBlock());
+				System.out.println("index = " + index);
+				System.out.println("block = " + block.getOldBlock());
+			}*/
+
 
 
 			if(addedModifiedBlockList != null) {
@@ -318,9 +341,9 @@ public class CloneDetector {
 				System.out.println("====analyze block cant ====");
 
 			}
-			for (Block block : addedModifiedBlockList) {
+		/*	for (Block block : addedModifiedBlockList) {
 				System.out.println(block.getCategory());
-			}
+			}*/
 
 
 			System.out.println("updated block size  = " + addedModifiedBlockList.size());
@@ -360,7 +383,8 @@ public class CloneDetector {
 
 
 		//編集，削除されたクローンペアの削除
-		BlockUpdater.resetClonePair(ClonePairList, addedModifiedBlockList, deletedBlockList);
+		BlockUpdater.resetClonePair(ClonePairList_test, updatedBlockList);
+		//BlockUpdater.resetClonePair(ClonePairList_test, newBlockList);
 
 		// 特徴ベクトル計算
 		subStart = System.currentTimeMillis();
@@ -395,25 +419,25 @@ public class CloneDetector {
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();
-			clonePairList = cloneJudge.getClonePairList(newBlockList);
+			//clonePairList = cloneJudge.getClonePairList(newBlockList);
 			cloneJudge = null;
 		} else {
 			CloneJudgement cloneJudge = new CloneJudgement();
-			clonePairList = cloneJudge.getClonePairListNoLSH(newBlockList);
+			//clonePairList = cloneJudge.getClonePairListNoLSH(newBlockList);
 		}
 
-		System.out.println("The number of clone pair : " + clonePairList.size());
+		System.out.println("The number of clone pair : " + ClonePairList_test.size());
 		if (removeMethodPair)
-			CloneJudgement.removePairOfMethod(clonePairList);
+			CloneJudgement.removePairOfMethod(ClonePairList_test);
 
 		currentTime = System.currentTimeMillis();
 		System.out.println("Cluster done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
 
-		List<CloneSet> cloneSetList = null;
+		ArrayList<CloneSet> cloneSetList = null;
 		if (Config.resultNotifier != null || Config.resultCloneSet != null) {
 			System.out.println("generate clone set start...");
 			subStart = System.currentTimeMillis();
-			cloneSetList = CloneJudgement.getCloneSetList(clonePairList, blockList);
+			cloneSetList = CloneJudgement.getCloneSetList(ClonePairList_test, blockList);
 			System.out.println("The number of clone set : " + cloneSetList.size());
 			currentTime = System.currentTimeMillis();
 			System.out.println(
@@ -429,11 +453,11 @@ public class CloneDetector {
 		// Outputter.outputCloneSetCSVforCPP(cloneSetList);
 		// Outputter.outputCSVforCPP(clonePairList);
 		if (Config.resultCSV != null)
-			Outputter.outputCSV(clonePairList);
+			Outputter.outputCSV(ClonePairList_test);
 		if (Config.resultTXT != null)
-			Outputter.outputTXT(clonePairList);
+			Outputter.outputTXT(ClonePairList_test);
 		if (Config.resultHTML != null)
-			Outputter.outputHTML(clonePairList);
+			Outputter.outputHTML(ClonePairList_test);
 		if (Config.resultNotifier != null)
 			Outputter.outputNotifier(cloneSetList, newFileList);
 		if (Config.resultCloneSet != null)

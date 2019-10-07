@@ -7,9 +7,12 @@ import java.io.InputStreamReader;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
 import jp.ac.osaka_u.ist.sel.icvolti.Def;
+import jp.ac.osaka_u.ist.sel.icvolti.analyze.JavaAnalyzer3;
+import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
 
 /**
@@ -47,11 +50,11 @@ public class DiffDetector {
 	}
 
 
-	public static boolean  getDiff_test(ArrayList<SourceFile> fileList) {
+	public static boolean  getDiff_test(ArrayList<SourceFile> fileList, List<Block> newBlockList) {
 
 		//ディレクトリ全体にdiffをかけて
 
-		if(!executeDiff_test(fileList)) {
+		if(!executeDiff_test(fileList, newBlockList)) {
 			return false;
 		}else {
 			return true;
@@ -68,7 +71,7 @@ public class DiffDetector {
 	 *           <li>失敗の場合 - false</li>
 	 *         </ul>
 	 */
-	private static boolean executeDiff_test(ArrayList<SourceFile> fileList) {
+	private static boolean executeDiff_test(ArrayList<SourceFile> fileList, List<Block> newBlockList) {
 		try{
 
 			//System.out.println("DIFFFFFFFFF");
@@ -92,17 +95,26 @@ public class DiffDetector {
 
 			SourceFile subjectFile = null ;
 			while((line = reader.readLine()) != null) {
-			// 	System.out.println("line = " + line);
+			 	System.out.println("line = " + line);
 		//	 	System.out.println("watasiha = ! " + line.substring(0,4).contains("diff"));
 
 			 	//ここのファイル検索もっと効率化できる
 			 	if(line.contains("diff -r ")) {
 			 		String[] command = line.split(" ");
 			    	//	   System.out.println("command = " + command[3].replace("/", "\\"));
+
+			 		//ここのファイル検索の効率化
+
+
 			       for(SourceFile file: fileList) {
 			    //		   System.out.println("===========miki = "  + file.getNewPath());
 			    	   if(file.getNewPath().contains(command[3].replace("/", "\\"))){
 			    		   subjectFile = file;
+			    		   JavaAnalyzer3.analyzeAFile(file, newBlockList);
+
+			    		   System.out.println("=========== newBlock List===============");
+			    		   //ソースコードのparse
+			    		   break;
 			    	//	   System.out.println("===========diff===============");
 			    	   }
 			       }

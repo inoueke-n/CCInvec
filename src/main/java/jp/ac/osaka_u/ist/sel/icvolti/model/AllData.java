@@ -8,19 +8,18 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class AllData implements  Serializable {
 
-	ArrayList<SourceFile> SourceFileList;
-	List<ClonePair> ClonePairList;
+	static ArrayList<SourceFile> SourceFileList;
+	static ArrayList<ClonePair> ClonePairList;
 
 
 	/**
 	 * <p>ソースファイルリストの取得</p>
 	 * @return ソースファイルリストオブジェクト
 	 */
-	public ArrayList<SourceFile> getSourceFile() {
+	public ArrayList<SourceFile> getSourceFileList() {
 		return SourceFileList;
 	}
 
@@ -36,7 +35,7 @@ public class AllData implements  Serializable {
 	 * <p>クローンペアリストの取得</p>
 	 * @return クローンペアリストオブジェクト
 	 */
-	public List<ClonePair> getClonePair() {
+	public ArrayList<ClonePair> getClonePairList() {
 		return ClonePairList;
 	}
 
@@ -44,8 +43,8 @@ public class AllData implements  Serializable {
 	 * <p>クローンペアリストの設定</p>
 	 * @param clonePairList2
 	 */
-	public void setClonePairList(List<ClonePair> clonePairList2) {
-		this.ClonePairList = clonePairList2;
+	public void setClonePairList(ArrayList<ClonePair> clonePairList) {
+		this.ClonePairList = clonePairList;
 	}
 
 	/**
@@ -94,7 +93,48 @@ public class AllData implements  Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
 		return null;
 	}
+
+	/**
+	 * <p>
+	 * allDataのSourceFileListとClonePairListの同期をとる
+	 * <p>
+	 */
+	public static void synchronizeAllData() {
+
+		ArrayList<Block> blockList = new ArrayList<>();
+		blockList.addAll(createBlockList());
+		for(ClonePair cp : ClonePairList) {
+			int idA = cp.cloneA.getId();
+			int idB = cp.cloneB.getId();
+			System.out.println("test");
+
+			cp.setCloneA(blockList.get(idA));
+			cp.setCloneB(blockList.get(idB));
+
+		}
+
+
+	}
+
+	/**
+	 * <p>
+	 * allDataのSourceFileListとClonePairListの同期をとる
+	 * <p>
+	 */
+	public static ArrayList<Block> createBlockList() {
+		ArrayList<Block> blockList = new ArrayList<>();
+
+		for (SourceFile file : SourceFileList) {
+			blockList.addAll(file.getNewBlockList());
+
+		}
+		return blockList;
+	}
+
+
+
 
 }

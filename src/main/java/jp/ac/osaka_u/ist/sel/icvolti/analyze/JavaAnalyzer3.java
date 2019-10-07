@@ -34,8 +34,8 @@ public class JavaAnalyzer3 {
 	// private ASTParser parser = ASTParser.newParser(AST.JLS4);
 	private ArrayList<String> allWordList;
 	private static int blockID;
-	public int countFiles;
-	public int countParseFiles;
+	public static int countFiles;
+	public static int countParseFiles;
 
 	/**
 	 * <p>
@@ -347,9 +347,13 @@ public class JavaAnalyzer3 {
 			countFiles++;
 
 			if(file.getState()==SourceFile.NORMAL) {
+				file.getOldBlockList().clear();
+				file.getOldBlockList().addAll(file.getNewBlockList());
 				blockList.addAll(file.getNewBlockList());
+				//System.out.println(" Normal yade");
 			}else {
 				//新規追加されたソースファイル
+				System.out.println("new File Analysis");
 				List<Block> blockListOfFile = new ArrayList<>();
 				CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
 				JavaLexer newlexer = new JavaLexer(newstream);
@@ -397,6 +401,80 @@ public class JavaAnalyzer3 {
 		}
 		return blockList;
 	}
+
+
+
+	/**
+	 * <p>
+	 * ディレクトリ探索
+	 * </p>
+	 *
+	 * @param file
+	 * @return
+	 * @throws IOException
+	 */
+	public static void analyzeAFile(SourceFile file, List<Block> newBlockList) throws IOException {
+
+		for(Block block : file.getNewBlockList()) {
+			int index = newBlockList.indexOf(block);
+			if(index > -1) {
+				newBlockList.remove(index);
+			}
+		}
+			System.out.println("new Block Size 3  = " + newBlockList.size());
+
+
+
+		countFiles++;
+		CharStream stream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
+		JavaLexer lexer = new JavaLexer(stream);
+		lexer.removeErrorListeners();
+		// lexer.addErrorListener(SilentErrorListener.INSTANCE);
+
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+		JavaParser parser = new JavaParser(tokens);
+
+		// parser.addParseListener(new JavaMyListener());
+		CompilationUnitContext tree = null;
+		parser.removeErrorListeners();
+		// parser.addErrorListener(SilentErrorListener.INSTANCE);
+
+		parser.getInterpreter().setPredictionMode(PredictionMode.SLL);
+		try {
+			tree = parser.compilationUnit(); // STAGE 1
+		} catch (Exception ex) {
+			System.out.println("try predictionMode LL");
+			lexer = new JavaLexer(stream);
+			lexer.removeErrorListeners();
+			// lexer.addErrorListener(DescriptiveErrorListener.INSTANCE);
+			tokens = new CommonTokenStream(lexer); // rewind input stream
+			parser = new JavaParser(tokens);
+			parser.getInterpreter().setPredictionMode(PredictionMode.LL);
+			parser.removeErrorListeners();
+			// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
+			try {
+				tree = parser.compilationUnit(); // STAGE 2
+				//					System.out.println("success");
+			} catch (ParseCancellationException e) {
+				System.err.println(file + " parse cancel");
+
+			} catch (Exception e) {
+				System.err.println(e);
+
+			}
+			// if we parse ok, it's LL not SLL
+		}
+		//newBlockList.addAll(extractMethod(tree, parser));
+		file.getNewBlockList().addAll(extractMethod(tree, parser));
+		countParseFiles++;
+		tokens.fill();
+
+		CloneDetector.countLine += tokens.LT(tokens.size()).getLine();
+
+	}
+
+
+
 
 
 	/**

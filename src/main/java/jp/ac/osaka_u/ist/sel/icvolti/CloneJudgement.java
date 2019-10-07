@@ -226,7 +226,7 @@ public class CloneJudgement {
 	 * @return
 	 * @throws IOException
 	 */
-	public static List<CloneSet> getCloneSetList(List<ClonePair> clonePairList, List<Block> blockList) {
+	public static ArrayList<CloneSet> getCloneSetList(ArrayList<ClonePair> clonePairList, List<Block> blockList) {
 		Graph<Integer, DefaultEdge> graph = new SimpleGraph<>(DefaultEdge.class);
 		for (ClonePair clonePair : clonePairList) {
 			graph.addVertex(clonePair.cloneA.getId());
@@ -239,7 +239,7 @@ public class CloneJudgement {
 		// cliqueFinder = new PivotBronKerboschCliqueFinder<>(graph);
 		cliqueFinder = new DegeneracyBronKerboschCliqueFinder<>(graph);
 
-		List<CloneSet> cloneSetList = new ArrayList<>();
+		ArrayList<CloneSet> cloneSetList = new ArrayList<>();
 		for (Set<Integer> clique : cliqueFinder) {
 			CloneSet cloneSet = new CloneSet();
 			clique = new TreeSet<>(clique); // セットをソート

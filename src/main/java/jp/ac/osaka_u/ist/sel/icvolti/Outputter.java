@@ -2,7 +2,6 @@ package jp.ac.osaka_u.ist.sel.icvolti;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
@@ -30,7 +29,7 @@ public class Outputter {
 	 * @param clonePairList
 	 * @throws IOException
 	 */
-/*	public static void outputCSV(List<ClonePair> clonePairList) throws IOException {
+	public static void outputCSV(List<ClonePair> clonePairList) throws IOException {
 		System.out.println("output CSV");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(Config.resultCSV)));
 		writer.println(
@@ -45,8 +44,8 @@ public class Outputter {
 		}
 		writer.close();
 	}
-*/
-	public static void outputCSV(List<ClonePair> clonePairList) throws IOException {
+
+/*	public static void outputCSV(List<ClonePair> clonePairList) throws IOException {
 		System.out.println("output CSV");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(Config.resultCSV)));
 		for (ClonePair pair : clonePairList) {
@@ -64,7 +63,7 @@ public class Outputter {
 		}
 		writer.close();
 	}
-
+*/
 	/**
 	 * <p>
 	 * 可視化用出力

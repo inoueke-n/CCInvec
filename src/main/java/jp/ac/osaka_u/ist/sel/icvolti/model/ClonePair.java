@@ -3,8 +3,8 @@ package jp.ac.osaka_u.ist.sel.icvolti.model;
 import java.io.Serializable;
 
 public class ClonePair implements Comparable<ClonePair>,Serializable {
-	public final Block cloneA;
-	public final Block cloneB;
+	public Block cloneA;
+	public Block cloneB;
 	public final double sim;
 //	public boolean check = false;
 //	public int set;
@@ -19,6 +19,16 @@ public class ClonePair implements Comparable<ClonePair>,Serializable {
 		this.sim = sim;
 	}
 
+	public void setCloneA(Block block) {
+		this.cloneA = block;
+
+	}
+
+	public void setCloneB(Block block) {
+		this.cloneB = block;
+
+	}
+
 	@Override
 	public int compareTo(ClonePair o) {
 		if (this.cloneA.getId() == o.cloneA.getId())
@@ -26,4 +36,6 @@ public class ClonePair implements Comparable<ClonePair>,Serializable {
 
 		return this.cloneA.getId() - o.cloneA.getId();
 	}
+
+
 }
