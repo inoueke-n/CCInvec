@@ -269,7 +269,7 @@ public class BlockUpdater {
 			/*if(cp.clone) {
 
 			}*/
-			System.out.println("clone pair j  = " + j++ + "cp.cloneA = " + cp.cloneA.getFileName());
+		//	System.out.println("clone pair j  = " + j++ + "cp.cloneA = " + cp.cloneA.getFileName());
 			/*			System.out.println("============= = ");
 			System.out.println("clone A = " + cp.cloneA.getId());
 			System.out.println("clone B = " + cp.cloneB.getId());

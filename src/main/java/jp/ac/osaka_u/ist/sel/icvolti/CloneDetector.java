@@ -44,9 +44,10 @@ public class CloneDetector {
 
 	public static String javaClassPath;
 
-	private static List<Block> blockList;
+	private static ArrayList<Block> blockList;
 	private static List<Block> oldBlockList;
 	private static List<Block> newBlockList;
+	private static List<Block> allBlockList;
 	private static List<Block> newBlockListCorrect;
 	public static List<Block> updatedBlockList;
 	public static List<Block> deletedBlockList;
@@ -236,6 +237,7 @@ public class CloneDetector {
 		//BlockUpdater.serializeClonePairList(clonePairList);
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(clonePairList);
+		allData.setBlockListOfCalcedVec(blockList);
 		AllData.serializeAllDataList(allData);
 		System.out.print("Finished : ");
 		currentTime = System.currentTimeMillis();
@@ -314,6 +316,7 @@ public class CloneDetector {
 
 			//新旧コードブロック間の対応をとる
 			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList));
+			//コードブロックのIDを再度割り振りなおす
 
 
 			//newBlockListの中から，DELETEDやADDEDやMODIFIEDに分類されたものがupdatedBLockListになるようにする
@@ -321,6 +324,7 @@ public class CloneDetector {
 			System.out.println("new Block Size 2  = " + newBlockList.size());
 
 			updatedBlockList = TraceManager.devideBlockCategory(newBlockList, 2);
+			allBlockList = TraceManager.devideBlockCategory(newBlockList, 3);
 			addedModifiedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 0);
 			deletedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 1);
 
@@ -391,7 +395,8 @@ public class CloneDetector {
 
 		VectorCalculator calculator = new VectorCalculator();
 		//		blockList = calculator.filterMethod(blockList);
-		newBlockList = calculator.filterMethod(newBlockList);
+		//newBlockList = calculator.filterMethod(newBlockList);
+		allBlockList = calculator.filterMethod(allBlockList);
 		System.out.println("The threshold of size for method : " + Config.METHOD_NODE_TH);
 		System.out.println("The threshold of size for block : " + Config.BLOCK_NODE_TH);
 		System.out.println("The threshold of line of block : " + Config.LINE_TH);
@@ -401,7 +406,19 @@ public class CloneDetector {
 		System.out.println("Calculate vector of each method ...");
 		//	calculator.calculateVector(newBlockList);
 		System.out.println("updated Blok List ID = " + addedModifiedBlockList.get(1).getId());
-		calculator.calculateVector_test(newBlockList, addedModifiedBlockList);
+		int i = 0;
+			for (Block block : allBlockList) {
+
+				if(block.getVector() == null) {
+				//System.out.println(i + " vector null !!");
+
+				}else {
+				System.out.println(block.getVector());
+
+				}
+				i++;
+			}
+		calculator.calculateVector_test(allBlockList, addedModifiedBlockList);
 		// System.out.println("wordmap.size = " + wordMap.size());
 		currentTime = System.currentTimeMillis();
 		System.out.println(
@@ -415,7 +432,7 @@ public class CloneDetector {
 			// LSHController.computeParam(wordMap.size());
 			System.out.println("LSH start");
 			LSHController lshCtlr = new LSHController();
-			lshCtlr.executePartially(newBlockList,addedModifiedBlockList, calculator.getDimention(), Config.LSH_PRG);
+			lshCtlr.executePartially(allBlockList,addedModifiedBlockList, calculator.getDimention(), Config.LSH_PRG);
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();

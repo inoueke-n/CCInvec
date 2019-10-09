@@ -59,7 +59,7 @@ public class CSharpAnalyzer {
 	 * <p>
 	 * 単語リストの取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final ArrayList<String> getWordList() {
@@ -102,12 +102,12 @@ public class CSharpAnalyzer {
 	 * <p>
 	 * ディレクトリ探索
 	 * </p>
-	 * 
+	 *
 	 * @param file
 	 * @throws IOException
 	 */
-	public List<Block> analyze(List<String> fileList) throws IOException {
-		List<Block> blockList = new ArrayList<>();
+	public ArrayList<Block> analyze(List<String> fileList) throws IOException {
+		ArrayList<Block> blockList = new ArrayList<>();
 		for (String file : fileList) {
 			countFiles++;
 
@@ -224,7 +224,7 @@ public class CSharpAnalyzer {
 	 * <p>
 	 * ソースコードテキスト取得
 	 * </p>
-	 * 
+	 *
 	 * @param file
 	 * @return
 	 * @throws IOException
@@ -243,7 +243,7 @@ public class CSharpAnalyzer {
 	 * <p>
 	 * ASTから各メソッドのASTを構築
 	 * </p>
-	 * 
+	 *
 	 * @param method
 	 * @param node
 	 * @param parent

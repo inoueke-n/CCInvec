@@ -53,6 +53,7 @@ public class TraceManager {
 		//flag == 0の場合, 追加，編集されたものに分ける
 		//flag == 1の場合, 削除されたものに分ける
 		//flag == 2の場合，追加，編集，削除されたものに分ける
+		//flag == 3の場合，Stableも含めた，現状プロジェクト内にあるすべてのコードブロック
 		if(flag == 0) {
 			Iterator<Block> i = updatedBlockList.iterator();
 			while(i.hasNext()){
@@ -88,6 +89,24 @@ public class TraceManager {
 
 				}
 				if(category == 1 || category == 3 || category ==4) {
+					devidedBlockList.add(bk);
+				}
+			}
+		}else if(flag == 3) {
+			Iterator<Block> i = updatedBlockList.iterator();
+			while(i.hasNext()){
+				Block bk = i .next();
+				int category = bk.getCategory();
+			//	System.out.println("cate = " + category);
+				if(category == 1 ) {
+					System.out.println(" bk..getOldBlock getFile = " + bk.getOldBlock().getFileName() );
+
+				}
+				if(category == -1) {
+					System.out.println(" block class = " + bk.getFileName() );
+
+				}
+				if(category == 0 ||category == 1 || category == 3) {
 					devidedBlockList.add(bk);
 				}
 			}

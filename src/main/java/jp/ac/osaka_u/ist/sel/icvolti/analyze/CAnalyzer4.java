@@ -41,7 +41,7 @@ public class CAnalyzer4 {
 	 * <p>
 	 * ディレクトリ探索
 	 * </p>
-	 * 
+	 *
 	 * @param file
 	 * @throws IOException
 	 */
@@ -63,15 +63,15 @@ public class CAnalyzer4 {
 	 * <p>
 	 * 単語リストの取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public ArrayList<String> getWordList() {
 		return allWordList;
 	}
 
-	public List<Block> analyze(List<String> fileList) {
-		List<Block> blockList = new ArrayList<>();
+	public ArrayList<Block> analyze(List<String> fileList) {
+		ArrayList<Block> blockList = new ArrayList<>();
 		for (String file : fileList) {
 			try {
 				blockList.addAll(extractMethod(new File(file)));
@@ -86,7 +86,7 @@ public class CAnalyzer4 {
 	 * <p>
 	 * ソースファイルから関数を抽出する
 	 * </p>
-	 * 
+	 *
 	 * @param file
 	 * @throws Exception
 	 * @throws IOException
@@ -244,7 +244,7 @@ public class CAnalyzer4 {
 	 * <p>
 	 * 関数からワードを抽出
 	 * </p>
-	 * 
+	 *
 	 * @param tokenizer
 	 * @param method
 	 * @throws IOException
