@@ -348,6 +348,11 @@ public class JavaAnalyzer3 {
 
 			if(file.getState()==SourceFile.NORMAL) {
 				file.getOldBlockList().clear();
+				for(Block block : file.getNewBlockList()) {
+					Block oldBlock = new Block();
+					oldBlock = block.clone();
+					file.getOldBlockList().add(oldBlock);
+				}
 				file.getOldBlockList().addAll(file.getNewBlockList());
 				blockList.addAll(file.getNewBlockList());
 				//System.out.println(" Normal yade");

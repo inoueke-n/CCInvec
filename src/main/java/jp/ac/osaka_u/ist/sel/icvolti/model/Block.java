@@ -12,7 +12,7 @@ import java.util.List;
 
 import org.apache.commons.math3.linear.OpenMapRealVector;
 
-public class Block implements Comparable<Block>, Serializable {
+public class Block implements Comparable<Block>, Serializable,Cloneable {
 
 	private int id;
 	private String fileName;
@@ -629,5 +629,17 @@ public class Block implements Comparable<Block>, Serializable {
 	public int compareTo(Block b) {
 		return this.id - b.id;
 	}
+
+    @Override
+    public Block clone(){
+
+        Block block = new Block();
+        try {
+           block = (Block)super.clone();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return block;
+    }
 
 }
