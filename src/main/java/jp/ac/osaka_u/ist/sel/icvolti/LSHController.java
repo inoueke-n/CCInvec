@@ -181,6 +181,7 @@ public class LSHController {
 		if (program == FALCONN64) {
 			fromArray.add(Paths.get(CloneDetector.javaClassPath, "FALCONN", "falconn4bcd.exe").toString());
 			fromArray.add(Integer.toString(updatedBlockList.size()));
+		//	fromArray.add(Integer.toString(blockList.size()));
 			fromArray.add(Integer.toString(dimention));
 			fromArray.add(Integer.toString(Config.LSH_L));
 			fromArray.add(CloneDetector.DATASET_FILE);

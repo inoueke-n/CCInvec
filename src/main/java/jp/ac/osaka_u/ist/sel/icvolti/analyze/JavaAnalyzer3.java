@@ -340,8 +340,8 @@ public class JavaAnalyzer3 {
 	 * @param file
 	 * @throws IOException
 	 */
-	public List<Block> incrementalAnalyze(ArrayList<SourceFile> fileList) throws IOException {
-		List<Block> blockList = new ArrayList<>();
+	public ArrayList<Block> incrementalAnalyze(ArrayList<SourceFile> fileList) throws IOException {
+		ArrayList<Block> blockList = new ArrayList<>();
 
 		for (SourceFile file : fileList) {
 			countFiles++;
@@ -355,10 +355,13 @@ public class JavaAnalyzer3 {
 				}
 				file.getOldBlockList().addAll(file.getNewBlockList());
 				blockList.addAll(file.getNewBlockList());
+			/*	for(Block block : blockList) {
+					System.out.println("aaaa Block l====enn =     " + block.getLen());
+				}*/
 				//System.out.println(" Normal yade");
 			}else {
 				//新規追加されたソースファイル
-				System.out.println("new File Analysis");
+				System.out.println("==============new File Analysis");
 				List<Block> blockListOfFile = new ArrayList<>();
 				CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
 				JavaLexer newlexer = new JavaLexer(newstream);
@@ -426,7 +429,10 @@ public class JavaAnalyzer3 {
 				newBlockList.remove(index);
 			}
 		}
-			System.out.println("new Block Size 3  = " + newBlockList.size());
+		System.out.println("new Block Size 3  = " + newBlockList.size());
+
+		//新しくnweBlockListを作るので，前作ってたものを削除
+		file.getNewBlockList().clear();
 
 
 
@@ -471,6 +477,7 @@ public class JavaAnalyzer3 {
 		}
 		//newBlockList.addAll(extractMethod(tree, parser));
 		file.getNewBlockList().addAll(extractMethod(tree, parser));
+		newBlockList.addAll(file.getNewBlockList());
 		countParseFiles++;
 		tokens.fill();
 

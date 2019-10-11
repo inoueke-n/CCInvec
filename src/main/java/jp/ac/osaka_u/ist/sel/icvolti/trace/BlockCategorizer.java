@@ -119,6 +119,10 @@ public class BlockCategorizer {
 							blockA.setLocationSimilarity(sim);
 							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
 								blockA.setCategory(Block.STABLE);
+								if(blockA.getVector() == null) {
+									blockA.setVector(blockB.getVector());
+									blockA.setLen(blockB.getLen());
+								}
 								//System.out.println("Block STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 							} else {
 								blockA.setCategory(Block.MODIFIED);
@@ -133,6 +137,10 @@ public class BlockCategorizer {
 						blockA.setLocationSimilarity(sim);
 						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
 							blockA.setCategory(Block.STABLE);
+							if(blockA.getVector() == null) {
+								blockA.setVector(blockB.getVector());
+								blockA.setLen(blockB.getLen());
+							}
 							//	System.out.println("Block STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						} else {
 							blockA.setCategory(Block.MODIFIED);

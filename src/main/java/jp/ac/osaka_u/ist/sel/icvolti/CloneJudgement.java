@@ -151,6 +151,146 @@ public class CloneJudgement {
 		return clonePairList;
 	}
 
+	/**
+	 * <p>
+	 * インクリメンタルにクローンペアの検出
+	 * </p>
+	 *
+	 * @return
+	 * @throws IOException
+	 */
+	public ArrayList<ClonePair> getClonePairListPartially(ArrayList<Block> blockList, ArrayList<Block> addedModifiedBlockList) {
+		System.out.println("parallel calc distanse");
+		long start = System.currentTimeMillis();
+		int numHardThread = Runtime.getRuntime().availableProcessors();
+		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
+			Config.NUM_THREADS = numHardThread;
+
+		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
+		System.out.println("The number of threads : " + Config.NUM_THREADS);
+
+		List<Callable<Double>> tasks = new ArrayList<Callable<Double>>();
+		List<Pair<Integer, Integer>> pairList = new ArrayList<Pair<Integer, Integer>>();
+		ArrayList<Integer> qpList = new ArrayList<Integer>();
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(CloneDetector.LSH_FILE));
+			String line = null;
+			int i = 0;
+			int qp = 0;
+
+			// ExecutorService executor = Executors.newFixedThreadPool(1);
+
+			List<Integer> methodIdList = null;
+			while ((line = reader.readLine()) != null) {
+				if (line.startsWith("Query point")) {
+					qp = addedModifiedBlockList.get(i).getId();
+					qpList.add(qp);
+					methodIdList = new ArrayList<Integer>();
+					System.out.println(qp + "qp fileName" + blockList.get(qp).getFileName());
+					System.out.println(qp + "qp  start " + blockList.get(qp).getStartLine() + " end " + blockList.get(qp).getEndLine() );
+					// Map<Integer, Double> methodList = new TreeMap<Integer,
+					// Double>();
+				} else if (line.matches("\\d+")) {
+					if (methodIdList != null) {
+						methodIdList.add(Integer.valueOf(line.replaceAll("\t.*", "")));
+					} else {
+						System.err.println("can't read lsh_result.txt.");
+					}
+				} else if (line.equals("")) {
+					Collections.sort(methodIdList);
+
+					System.out.println("qp = " + qp);
+					for (Integer methodId : methodIdList) {
+						// Double diff =
+						// Double.valueOf(line.split("\t")[1].replace("Distance:",""));
+						//クラスタ内の自分の番号より上のコード片を対象に類似度を計算
+						System.out.println("mId = " + methodId);
+
+						if (qp <  methodId) {
+							System.out.println(methodId + "methodiD fileName" + blockList.get(methodId).getFileName());
+							System.out.println(methodId + "methodID start " + blockList.get(methodId).getStartLine() + " end " + blockList.get(methodId).getEndLine() );
+							tasks.add(new parallelGetClonePair(blockList.get(qp), blockList.get(methodId)));
+							//tasks.add(new parallelGetClonePair(addedModifiedBlockList.get(i), blockList.get(methodId)));
+							pairList.add(new Pair<Integer, Integer>(qp, methodId));
+						}else if(qpList.indexOf(methodId) == -1) {
+							System.out.println(methodId + "methodiD fileName" + blockList.get(methodId).getFileName());
+							System.out.println(methodId + "methodID start " + blockList.get(methodId).getStartLine() + " end " + blockList.get(methodId).getEndLine() );
+							tasks.add(new parallelGetClonePair(blockList.get(qp), blockList.get(methodId)));
+							//tasks.add(new parallelGetClonePair(addedModifiedBlockList.get(i), blockList.get(methodId)));
+							pairList.add(new Pair<Integer, Integer>(qp, methodId));
+						}
+					}
+					i++;
+					methodIdList = null;
+				}
+			}
+			reader.close();
+
+		} catch (FileNotFoundException e1) {
+			// TODO 自動生成された catch ブロック
+			e1.printStackTrace();
+		} catch (NumberFormatException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+
+		System.out.println("task add done");
+		ArrayList<ClonePair> clonePairList = new ArrayList<ClonePair>(tasks.size());
+
+		try {
+			List<Future<Double>> futures;
+			try {
+				//類似度が閾値以下はここで省かれている
+				futures = executor.invokeAll(tasks);
+				tasks = null;
+			} catch (InterruptedException e) {
+				System.err.println(e);
+				return null;
+			}
+			Double sim;
+			int i = 0;
+			for (Future<Double> future : futures) {
+				try {
+
+					if ((sim = future.get()) != null) {
+						clonePairList.add(new ClonePair(blockList.get(pairList.get(i).getFirst()),
+								blockList.get(pairList.get(i).getSecond()), sim));
+						System.out.println("add clonepair " + i);
+					}
+					i++;
+				} catch (Exception e) {
+					System.err.println(e);
+				}
+			}
+
+		} finally {
+			if (executor != null)
+				executor.shutdown();
+		}
+		System.out.print("parallel calc distanse done : ");
+		System.out.println(System.currentTimeMillis() - start + "[ms]");
+
+		System.out.println("filtering start");
+		start = System.currentTimeMillis();
+
+		ArrayList<ClonePair> newClonePairList = new ArrayList<ClonePair>(clonePairList.size());
+
+		for (ClonePair pair : clonePairList)
+			if (filteringPair(clonePairList, pair.cloneA, pair.cloneB))
+				newClonePairList.add(pair);
+
+		newClonePairList.trimToSize();
+		clonePairList = newClonePairList;
+		System.out.print("filtering done : ");
+		System.out.println(System.currentTimeMillis() - start + "[ms]");
+		System.out.println("cloenpairList sieze = " + clonePairList.size());
+
+		return clonePairList;
+	}
+
 	public ArrayList<ClonePair> getClonePairListNoLSH(List<Block> blockList) {
 		System.out.println("parallel calc distanse no LSH");
 		long start = System.currentTimeMillis();
@@ -467,16 +607,29 @@ class parallelGetClonePair implements Callable<Double> {
 
 	@Override
 	public Double call() throws Exception {
+		//クローン間のノード数の差が30以下かつ
+		//
+
+	//	System.out.println("clone A getNodeNum = " + cloneA.getNodeNum() + " cloneB.getNodeNum " + cloneB.getNodeNum() );
+	//	System.out.println("clone A getlen = " + cloneA.getLen() + " cloneB.getLen " + cloneB.getLen() );
+
 		if (Math.abs(cloneA.getNodeNum() - cloneB.getNodeNum()) < Config.DIFF_TH
 				&& Math.abs(cloneA.getLen() - cloneB.getLen()) < Config.DIS_TH) {
+
+		//	System.out.println(" ==== call call callS");
 			if (Config.SIM_TH == 1.0)
-				if (cloneA.getVector().equals(cloneB.getVector()))
+				if (cloneA.getVector().equals(cloneB.getVector())) {
+			//		System.out.println("same vec");
 					return 1.0;
+				}
 
 			double sim = scalar(cloneA.getVector(), cloneB.getVector());
 			if (sim >= Config.SIM_TH) {
+//					System.out.println("similar vec");
 				return sim;
 			}
+		}else {
+	//				System.out.println("not or similar vec");
 		}
 		return null;
 	}

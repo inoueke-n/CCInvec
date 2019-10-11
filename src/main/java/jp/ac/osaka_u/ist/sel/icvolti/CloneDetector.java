@@ -11,7 +11,6 @@ import java.security.CodeSource;
 import java.security.ProtectionDomain;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -45,17 +44,19 @@ public class CloneDetector {
 	public static String javaClassPath;
 
 	private static ArrayList<Block> blockList;
-	private static List<Block> oldBlockList;
-	private static List<Block> newBlockList;
-	private static List<Block> allBlockList;
-	private static List<Block> newBlockListCorrect;
-	public static List<Block> updatedBlockList;
-	public static List<Block> deletedBlockList;
-	public static List<Block> addedModifiedBlockList;
+	private static ArrayList<Block> oldBlockList;
+	private static ArrayList<Block> newBlockList;
+	private static ArrayList<Block> allBlockList;
+	private static ArrayList<Block> newBlockListCorrect;
+	public static ArrayList<Block> updatedBlockList;
+	public static ArrayList<Block> testBlockList;
+	public static ArrayList<Block> deletedBlockList;
+	public static ArrayList<Block> addedModifiedBlockList;
 	//public static ArrayList<ClonePair> clonePairList;
 	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
 	public static int countMethod, countBlock, countLine;
 	private static final String version = "19.01.24";
+	public static int dimention_test;
 
 	/**
 	 * <p>
@@ -156,7 +157,13 @@ public class CloneDetector {
 		System.out.println();
 
 		System.out.println("Calculate vector of each method ...");
-		calculator.calculateVector(blockList);
+		calculator.calculateVector(blockList, allData);
+
+	/*		for(Block block : blockList) {
+				System.out.println("l====enn =     " + block.getLen());
+			}
+*/
+
 		// System.out.println("wordmap.size = " + wordMap.size());
 		currentTime = System.currentTimeMillis();
 		System.out.println(
@@ -170,6 +177,8 @@ public class CloneDetector {
 			// LSHController.computeParam(wordMap.size());
 			System.out.println("LSH start");
 			LSHController lshCtlr = new LSHController();
+			dimention_test = calculator.getDimention();
+			System.out.println("dimention = " + dimention_test);
 			lshCtlr.execute(blockList, calculator.getDimention(), Config.LSH_PRG);
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
@@ -235,10 +244,17 @@ public class CloneDetector {
 		//BlockUpdater.serializeSourceFileList(FileList);
 		//ClonePairListをシリアライズ化
 		//BlockUpdater.serializeClonePairList(clonePairList);
+
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(clonePairList);
 		allData.setBlockListOfCalcedVec(blockList);
 		AllData.serializeAllDataList(allData);
+		/*for(SourceFile file : FileList) {
+			for(Block block : file.getNewBlockList()) {
+				System.out.println("l====enn =     " + block.getLen());
+			}
+
+		}*/
 		System.out.print("Finished : ");
 		currentTime = System.currentTimeMillis();
 		System.out.println(currentTime - start + "[ms]");
@@ -291,8 +307,8 @@ public class CloneDetector {
 			ArrayList<SourceFile> oldFileList_test = new ArrayList<SourceFile>();
 			oldFileList_test =  allData.getSourceFileList();
 			ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
-//			ArrayList<SourceFile> oldFileList_test = BlockUpdater.deserializeSourceFileList("SourceFileList.bin");
-	//		ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
+			//			ArrayList<SourceFile> oldFileList_test = BlockUpdater.deserializeSourceFileList("SourceFileList.bin");
+			//		ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
 
 			//ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target, Config.target2);
 			//		System.out.println(Arrays.asList(FileList));
@@ -302,10 +318,16 @@ public class CloneDetector {
 			//newBlockList = newJavaanalyzer.analyze(newFileList);
 			//List<Block> oldBlockList = new ArrayList<Block>();
 			//oldBlockList.deserializeBlockList("blcoklist.bin");
+		/*	for(SourceFile file : FileList) {
+			for(Block block : file.getNewBlockList()) {
+				System.out.println("FLIE l====enn =     " + block.getLen());
+			}
+
+			}*/
 
 			System.out.println("newFileList size = " + newFileList.size());
 			System.out.println("FileList size = " + FileList.size());
-		//	newBlockListCorrect = newJavaanalyzer.analyze_test(FileList);
+			//	newBlockListCorrect = newJavaanalyzer.analyze_test(FileList);
 			newBlockList = newJavaanalyzer.incrementalAnalyze(FileList);
 			//oldBlockList = BlockUpdater.deserializeBlockList("blocklist.bin");
 			//System.out.println("old Block Size  = " + oldBlockList.size());
@@ -316,7 +338,11 @@ public class CloneDetector {
 
 			//新旧コードブロック間の対応をとる
 			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList));
+	/*		for(Block block : newBlockList) {
+				System.out.println("new Block l====enn =     " + block.getLen());
+			}*/
 			//コードブロックのIDを再度割り振りなおす
+			allBlockList = TraceManager.getAllBlock(FileList);
 
 
 			//newBlockListの中から，DELETEDやADDEDやMODIFIEDに分類されたものがupdatedBLockListになるようにする
@@ -324,8 +350,8 @@ public class CloneDetector {
 			System.out.println("new Block Size 2  = " + newBlockList.size());
 
 			updatedBlockList = TraceManager.devideBlockCategory(newBlockList, 2);
-			allBlockList = TraceManager.devideBlockCategory(newBlockList, 3);
-			addedModifiedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 0);
+			//allBlockList = TraceManager.devideBlockCategory(newBlockList, 3);
+			addedModifiedBlockList = TraceManager.devideBlockCategory(allBlockList, 0);
 			deletedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 1);
 
 
@@ -345,17 +371,15 @@ public class CloneDetector {
 				System.out.println("====analyze block cant ====");
 
 			}
-		/*	for (Block block : addedModifiedBlockList) {
+			/*	for (Block block : addedModifiedBlockList) {
 				System.out.println(block.getCategory());
 			}*/
 
 
-			System.out.println("updated block size  = " + addedModifiedBlockList.size());
-			System.out.println(" block size  = " + addedModifiedBlockList.size());
+			System.out.println("addedModified block size  = " + addedModifiedBlockList.size());
 
 
 			System.out.println("deleted block size  = " + deletedBlockList.size());
-			System.out.println(" block size  = " + deletedBlockList.size());
 
 
 			System.out.println(
@@ -405,8 +429,8 @@ public class CloneDetector {
 
 		System.out.println("Calculate vector of each method ...");
 		//	calculator.calculateVector(newBlockList);
-		System.out.println("updated Blok List ID = " + addedModifiedBlockList.get(1).getId());
-		int i = 0;
+		//System.out.println("updated Blok List ID = " + addedModifiedBlockList.get(1).getId());
+		/*	int i = 0;
 			for (Block block : allBlockList) {
 
 				if(block.getVector() == null) {
@@ -417,8 +441,16 @@ public class CloneDetector {
 
 				}
 				i++;
+			}*/
+	/*	for(Block block : allBlockList) {
+			System.out.println("All Block l====enn =     " + block.getLen());
+		}*/
+		calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
+		for(Block block : allBlockList) {
+			if(block.getVector() == null) {
+				System.out.println(" vecotor null ID" + block.getId());
 			}
-		calculator.calculateVector_test(allBlockList, addedModifiedBlockList);
+		}
 		// System.out.println("wordmap.size = " + wordMap.size());
 		currentTime = System.currentTimeMillis();
 		System.out.println(
@@ -433,10 +465,13 @@ public class CloneDetector {
 			System.out.println("LSH start");
 			LSHController lshCtlr = new LSHController();
 			lshCtlr.executePartially(allBlockList,addedModifiedBlockList, calculator.getDimention(), Config.LSH_PRG);
+			System.out.println("dimention = " + dimention_test);
+			System.out.println("calculator.getDimention() = " + calculator.getDimention());
+		//	lshCtlr.executePartially(allBlockList,addedModifiedBlockList, dimention_test, Config.LSH_PRG);
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();
-			//clonePairList = cloneJudge.getClonePairList(newBlockList);
+			ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList));
 			cloneJudge = null;
 		} else {
 			CloneJudgement cloneJudge = new CloneJudgement();

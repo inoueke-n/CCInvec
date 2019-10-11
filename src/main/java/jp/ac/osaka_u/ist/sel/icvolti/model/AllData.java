@@ -8,12 +8,15 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class AllData implements  Serializable {
 
 	static ArrayList<SourceFile> SourceFileList;
 	static ArrayList<ClonePair> ClonePairList;
 	static ArrayList<Block> BlockListOfCalcedVec;
+	static Map<String, Integer> wordMap;
+	static int wordFreq[];
 
 
 	/**
@@ -62,6 +65,38 @@ public class AllData implements  Serializable {
 	 */
 	public void setBlockListOfCalcedVec(ArrayList<Block> blockList) {
 		this.BlockListOfCalcedVec = blockList;
+	}
+
+	/**
+	 * <p>ワードマップの取得</p>
+	 * @return ワードマップ
+	 */
+	public Map<String, Integer> getWordMap() {
+		return wordMap;
+	}
+
+	/**
+	 * <p>ワードマップの設定</p>
+	 * @param ワードマップ
+	 */
+	public void setWordMap( Map<String, Integer> wordMap) {
+		this.wordMap = wordMap;
+	}
+
+	/**
+	 * <p>ワードマップの取得</p>
+	 * @return ワードマップ
+	 */
+	public int[] getWordFreq() {
+		return wordFreq;
+	}
+
+	/**
+	 * <p>ワードマップの設定</p>
+	 * @param ワードマップ
+	 */
+	public void setWordFreq(int[] wordFreq) {
+		this.wordFreq = wordFreq;
 	}
 
 	/**
@@ -175,6 +210,10 @@ public class AllData implements  Serializable {
 		int i =0;
 		for(Block block : blockList) {
 			block.setVector(BlockListOfCalcedVec.get(i).getVector());
+	//		System.out.println("block.setLen(BlockListOfCalcedVec.get(i).getLen()) == " + BlockListOfCalcedVec.get(i).getLen());
+
+			block.setLen(BlockListOfCalcedVec.get(i).getLen());
+			i++;
 		}
 		return blockList;
 	}

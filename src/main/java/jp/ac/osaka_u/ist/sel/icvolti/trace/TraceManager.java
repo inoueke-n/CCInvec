@@ -22,12 +22,12 @@ public class TraceManager {
 	 *           <li>失敗の場合 - false</li>
 	 *         </ul>
 	 */
-	public static List<Block> analyzeBlock(ArrayList<SourceFile> FileList, List<Block> newBlockList) {
+	public static ArrayList<Block> analyzeBlock(ArrayList<SourceFile> FileList, List<Block> newBlockList) {
 		// TODO 自動生成されたメソッド・スタブ
 		// ファイルのdiffを取得
 		System.out.print("analyze block start");
 
-		List<Block> updatedBlockList = new ArrayList<Block>();
+		ArrayList<Block> updatedBlockList = new ArrayList<Block>();
 
 		long start;
 		long end;
@@ -43,6 +43,9 @@ public class TraceManager {
 		// クローンの分類，コード位置の重複に基づいた親子クローン取得
 		updatedBlockList =  new BlockCategorizer().categorizeBlock(FileList);
 		Logger.writeln("<Success> Categorized clone.", Logger.INFO);
+
+
+		System.out.println(" ============ blocksize + " + updatedBlockList.size());
 
 		return updatedBlockList;
 
@@ -115,5 +118,16 @@ public class TraceManager {
 		return devidedBlockList;
 
 	}
+
+	public static ArrayList<Block> getAllBlock(ArrayList<SourceFile> FileList) {
+		ArrayList<Block> blockList = new ArrayList<Block>();
+		for(SourceFile file : FileList) {
+			blockList.addAll(file.getNewBlockList());
+		}
+		System.out.println("end getAllBlock");
+
+		return blockList;
+	}
+
 
 }

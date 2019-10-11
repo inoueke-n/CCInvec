@@ -264,6 +264,7 @@ public class BlockUpdater {
 		//iteratorでぶん回す？
 		Iterator<ClonePair> i = ClonePairList.iterator();
 		int j = 0;
+		int deleteCP = 0;
 		while(i.hasNext()) {
 			ClonePair cp  = i.next();
 			/*if(cp.clone) {
@@ -294,6 +295,7 @@ public class BlockUpdater {
 							System.out.println("clone B = " + cp.cloneB.getId());
 							System.out.println("============= = ");
 							i.remove();
+							deleteCP++;
 							break;
 						}
 					}
@@ -316,6 +318,7 @@ public class BlockUpdater {
 			}*/
 
 		}
+		System.out.println("The number of deleted Clone Pairs = " + deleteCP);
 
 		//	Iterator it = updatedBlockList.iterator();
 
@@ -336,7 +339,7 @@ public class BlockUpdater {
 		Iterator<ClonePair> i = ClonePairList.iterator();
 		int j = 0;
 		while(i.hasNext()) {
-			System.out.println("clone pair j  = " + j++);
+		//	System.out.println("clone pair j  = " + j++);
 			ClonePair cp  = i.next();
 			/*			System.out.println("============= = ");
 			System.out.println("clone A = " + cp.cloneA.getId());
@@ -365,6 +368,8 @@ public class BlockUpdater {
 		}*/
 
 	}
+
+
 
 
 
