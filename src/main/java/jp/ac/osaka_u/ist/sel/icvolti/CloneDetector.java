@@ -44,14 +44,7 @@ public class CloneDetector {
 	public static String javaClassPath;
 
 	private static ArrayList<Block> blockList;
-	private static ArrayList<Block> oldBlockList;
-	private static ArrayList<Block> newBlockList;
-	private static ArrayList<Block> allBlockList;
-	private static ArrayList<Block> newBlockListCorrect;
-	public static ArrayList<Block> updatedBlockList;
 	public static ArrayList<Block> testBlockList;
-	public static ArrayList<Block> deletedBlockList;
-	public static ArrayList<Block> addedModifiedBlockList;
 	//public static ArrayList<ClonePair> clonePairList;
 	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
 	public static int countMethod, countBlock, countLine;
@@ -289,6 +282,12 @@ public class CloneDetector {
 
 		ArrayList<String> oldFileList = null;
 		ArrayList<String> newFileList = null;
+		ArrayList<Block> newBlockList = new ArrayList<Block>();
+		ArrayList<Block> oldBlockList = new ArrayList<Block>();
+		ArrayList<Block> updatedBlockList = new ArrayList<Block>();
+		ArrayList<Block> addedModifiedBlockList = new ArrayList<Block>();
+		ArrayList<Block> deletedBlockList = new ArrayList<Block>();
+		ArrayList<Block> allBlockList = new ArrayList<Block>();
 		//ArrayList<SourceFile> newFileList
 		//fileListの取得をちゃんとする
 		AllData allData = new AllData();
@@ -306,7 +305,7 @@ public class CloneDetector {
 			newFileList = JavaAnalyzer3.searchFiles(Config.target2);
 			ArrayList<SourceFile> oldFileList_test = new ArrayList<SourceFile>();
 			oldFileList_test =  allData.getSourceFileList();
-			ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
+			ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList,updatedBlockList);
 			//			ArrayList<SourceFile> oldFileList_test = BlockUpdater.deserializeSourceFileList("SourceFileList.bin");
 			//		ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
 
@@ -349,7 +348,7 @@ public class CloneDetector {
 
 			System.out.println("new Block Size 2  = " + newBlockList.size());
 
-			updatedBlockList = TraceManager.devideBlockCategory(newBlockList, 2);
+			updatedBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 2));
 			//allBlockList = TraceManager.devideBlockCategory(newBlockList, 3);
 			addedModifiedBlockList = TraceManager.devideBlockCategory(allBlockList, 0);
 			deletedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 1);

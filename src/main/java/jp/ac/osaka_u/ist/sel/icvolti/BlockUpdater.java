@@ -135,12 +135,13 @@ public class BlockUpdater {
 	 */
 
 
-	public static ArrayList<SourceFile> updateSourceFileList(String newTarget, String oldTarget, ArrayList<SourceFile> FileList, ArrayList<String> newFileListOrigin){
+	public static ArrayList<SourceFile> updateSourceFileList(String newTarget, String oldTarget, ArrayList<SourceFile> oldFileList, ArrayList<String> newFileListOrigin, ArrayList<Block> deletedBlockList){
+
 		ArrayList<SourceFile> fileList = new ArrayList<SourceFile>();
 
 		ArrayList<String> newFileList = (ArrayList<String>) newFileListOrigin.clone();
 		int fileId = 0;
-		for(SourceFile file : FileList ) {
+		for(SourceFile file : oldFileList ) {
 			String newFilePath = file.getNewPath();
 			String oldFilePath = file.getOldPath();
 			//System.out.println("oldFile = " + newFilePath);
@@ -162,8 +163,12 @@ public class BlockUpdater {
 			}else {
 				//新バージョンのファイルリストに含まれないファイルは削除されたもの
 				file.setState(SourceFile.DELETED);
-
 				// ここで削除されたファイルのコードブロックに関わる情報は削除？
+				for(Block block : file.getNewBlockList()){
+					block.setCategory(4);
+
+				}
+				deletedBlockList.addAll(file.getNewBlockList());
 
 			}
 		}
@@ -279,8 +284,9 @@ public class BlockUpdater {
 			for(Block block : updatedBlockList) {
 				//System.out.println("aa");
 				int category  = block.getCategory();
-				if (category == 1 || category == 3 ||category == 4) {
-					if(block.getOldBlock() != null) {
+				if (category == 1 ||category == 4) {
+					//System.out.println("=========  category  =========  " + category);
+					//if(block.getOldBlock() != null) {
 
 					//	System.out.println(" old block " + block.getOldBlock().getFileName());
 					//	System.out.println(" cpA block " + cp.cloneA.getFileName());
@@ -298,7 +304,7 @@ public class BlockUpdater {
 							deleteCP++;
 							break;
 						}
-					}
+					//}
 				}
 
 			}
