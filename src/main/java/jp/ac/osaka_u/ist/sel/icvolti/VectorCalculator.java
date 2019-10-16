@@ -38,11 +38,11 @@ public class VectorCalculator implements Serializable {
 	 *
 	 * @return
 	 */
-	public ArrayList<Block> filterMethod(List<Block> blockList) {
+	public ArrayList<Block> filterMethod(List<Block> blockList, Config config) {
 		ArrayList<Block> newBlockList = new ArrayList<Block>(blockList.size());
 		int i = 0;
 		for (Block block : blockList) {
-			if (filter(block)) {
+			if (filter(block, config)) {
 				/*
 				 * && !('A' <= block.getName().charAt(0) && block.getName().charAt(0) <= 'Z')
 				 */
@@ -63,50 +63,19 @@ public class VectorCalculator implements Serializable {
 		return newBlockList;
 	}
 
-	/**
-	 * <p>
-	 * メソッドリストのフィルタリング
-	 * </p>
-	 *
-	 * @return
-	 */
-	public ArrayList<Block> filterMethod_test(List<Block> blockList) {
-		ArrayList<Block> newBlockList = new ArrayList<Block>(blockList.size());
-		int i = 0;
-		for (Block block : blockList) {
-			if (filter(block)) {
-				/*
-				 * && !('A' <= block.getName().charAt(0) && block.getName().charAt(0) <= 'Z')
-				 */
-				// !method.getName().contains("test") &&
-				// !method.getName().contains("Test")&&
-				// !method.getClassName().contains("test") &&
-				// !method.getClassName().contains("Test")){
-				block.setId(i++);
-				newBlockList.add(block);
-				/*
-				 * for(Word word: block.getWordList()){
-				 * if(!CloneDetector.wordMap.containsKey(word.getName()))
-				 * CloneDetector.wordMap.put(word.getName(),i++); }
-				 */
-			}
-		}
-		newBlockList.trimToSize();
-		return newBlockList;
-	}
 
-	private static boolean filter(Block block) {
+	private static boolean filter(Block block, Config config) {
 		if (block.getParent() == null) {
 			//親がいない（メソッド）かつトークン数が閾値以下であれば省く
-			if (block.getNodeNum() < Config.METHOD_NODE_TH)
+			if (block.getNodeNum() < config.getSize())
 				return false;
 		} else {
 			//親がいる（ブロック）トークン数が閾値以下あれば省く
-			if (block.getNodeNum() < Config.BLOCK_NODE_TH)
+			if (block.getNodeNum() < config.getBlockSize())
 				return false;
 		}
 		//行数が閾値以下であれば省く
-		if (block.getLineSize() < Config.LINE_TH)
+		if (block.getLineSize() < config.getMinLine())
 			return false;
 
 		return true;

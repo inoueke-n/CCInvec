@@ -40,15 +40,15 @@ public class CloneJudgement {
 	 * @return
 	 * @throws IOException
 	 */
-	public ArrayList<ClonePair> getClonePairList(List<Block> blockList) {
+	public ArrayList<ClonePair> getClonePairList(List<Block> blockList, Config config) {
 		System.out.println("parallel calc distanse");
 		long start = System.currentTimeMillis();
 		int numHardThread = Runtime.getRuntime().availableProcessors();
-		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
-			Config.NUM_THREADS = numHardThread;
+		if (config.getThreads() == 0 || config.getThreads() > numHardThread)
+			config.setThreads(numHardThread);
 
-		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
-		System.out.println("The number of threads : " + Config.NUM_THREADS);
+		ExecutorService executor = Executors.newFixedThreadPool(config.getThreads());
+		System.out.println("The number of threads : " + config.getThreads());
 
 		List<Callable<Double>> tasks = new ArrayList<Callable<Double>>();
 		List<Pair<Integer, Integer>> pairList = new ArrayList<Pair<Integer, Integer>>();
@@ -159,15 +159,15 @@ public class CloneJudgement {
 	 * @return
 	 * @throws IOException
 	 */
-	public ArrayList<ClonePair> getClonePairListPartially(ArrayList<Block> blockList, ArrayList<Block> addedModifiedBlockList) {
+	public ArrayList<ClonePair> getClonePairListPartially(ArrayList<Block> blockList, ArrayList<Block> addedModifiedBlockList, Config config) {
 		System.out.println("parallel calc distanse");
 		long start = System.currentTimeMillis();
 		int numHardThread = Runtime.getRuntime().availableProcessors();
-		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
-			Config.NUM_THREADS = numHardThread;
+		if (config.getThreads() == 0 || config.getThreads() > numHardThread)
+			config.setThreads(numHardThread);
 
-		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
-		System.out.println("The number of threads : " + Config.NUM_THREADS);
+		ExecutorService executor = Executors.newFixedThreadPool(config.getThreads());
+		System.out.println("The number of threads : " + config.getThreads());
 
 		List<Callable<Double>> tasks = new ArrayList<Callable<Double>>();
 		List<Pair<Integer, Integer>> pairList = new ArrayList<Pair<Integer, Integer>>();
@@ -291,15 +291,15 @@ public class CloneJudgement {
 		return clonePairList;
 	}
 
-	public ArrayList<ClonePair> getClonePairListNoLSH(List<Block> blockList) {
+	public ArrayList<ClonePair> getClonePairListNoLSH(List<Block> blockList, Config config) {
 		System.out.println("parallel calc distanse no LSH");
 		long start = System.currentTimeMillis();
 
 		int numHardThread = Runtime.getRuntime().availableProcessors();
-		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
-			Config.NUM_THREADS = numHardThread;
+		if (config.getThreads() == 0 || config.getThreads() > numHardThread)
+			config.setThreads(numHardThread);
 
-		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
+		ExecutorService executor = Executors.newFixedThreadPool(config.getThreads());
 
 		List<Callable<Double>> tasks = new ArrayList<Callable<Double>>();
 		ArrayList<ClonePair> clonePairList = new ArrayList<ClonePair>();

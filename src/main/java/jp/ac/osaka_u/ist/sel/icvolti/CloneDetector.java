@@ -12,14 +12,6 @@ import java.security.ProtectionDomain;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.DefaultParser;
-import org.apache.commons.cli.HelpFormatter;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
-
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.CAnalyzer4;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.CSharpAnalyzer;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.JavaAnalyzer3;
@@ -70,8 +62,35 @@ public class CloneDetector {
 		Def.CCVOLTI_PATH = new File(".").getAbsoluteFile().getParent();
 		System.out.println("CCVolti = " + Def.CCVOLTI_PATH);
 
-		firstRun(args);
-		incrementalRun(args);
+
+		Config config = new Config();
+		if(args.length == 1) {
+			if(SettingFileLoader.loadSettingFile(args, config)) {
+				if(config.getPreData()) {
+					//前のデータがある場合
+					for(int i =0; i < config.getInputDir().size(); i++) {
+
+					}
+				}else {
+					//前のデータがない場合
+					for(int i =0; i < config.getInputDir().size(); i++) {
+						if(i == 0) {
+							config.setNewTarget(config.getInputDir().get(0));
+							config.setResultFile(config.getOutputDir() + "\\result" + i+1);
+							firstRun(config);
+						}else {
+							config.setOldTarget(config.getInputDir().get(i-1));
+							config.setNewTarget(config.getInputDir().get(i));
+							config.setResultFile(config.getOutputDir() + "\\result" + i+1);
+							incrementalRun(config);
+						}
+					}
+
+				}
+
+
+			}
+		}
 
 	}
 	/**
@@ -82,13 +101,13 @@ public class CloneDetector {
 	 * @throws Exception
 	 */
 
-	private static void firstRun(String[] args) throws Exception {
+	private static void firstRun(Config config) throws Exception {
 		System.out.println("ICVolti " + version);
 		System.out.println("AAAAAAAAAAAAAAAAAA");
 		System.out.println("----BoW ver----");
 		// setJavaClassPath();
 		getApplicationPath();
-		commandOption(args);
+		//commandOption(args);
 
 		long start = System.currentTimeMillis();
 		long subStart = start;
@@ -106,27 +125,27 @@ public class CloneDetector {
 		ArrayList<ClonePair> clonePairList = new ArrayList<ClonePair>();
 		AllData allData = new AllData();
 		//fileListの取得をちゃんとする
-		switch (Config.lang) {
+		switch (config.getLang()) {
 		case 0: // "java"
 			JavaAnalyzer3 javaanalyzer = new JavaAnalyzer3();
 			//fileList = JavaAnalyzer3.searchFiles(Config.target);
 			//		fileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			//blockList = javaanalyzer.analyze(fileList);
-			FileList = JavaAnalyzer3.setFilesInfo(Config.target);
+			FileList = JavaAnalyzer3.setFilesInfo(config.getNewTarget());
 			blockList = javaanalyzer.analyze_test_first(FileList);
 			System.out.println(
 					"Parse file / All file = " + javaanalyzer.countParseFiles + " / " + javaanalyzer.countFiles);
 			break;
 		case 1: // "c"
 			CAnalyzer4 canalyzer = new CAnalyzer4();
-			fileList = canalyzer.searchFiles(Config.target);
-			FileList = JavaAnalyzer3.setFilesInfo(Config.target);
+			fileList = canalyzer.searchFiles(config.getNewTarget());
+			FileList = JavaAnalyzer3.setFilesInfo(config.getNewTarget());
 			blockList = canalyzer.analyze(fileList);
 			break;
 		case 2: // "c#"
 			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
-			fileList = CSharpAnalyzer.searchFiles(Config.target);
-			FileList= JavaAnalyzer3.setFilesInfo(Config.target);
+			fileList = CSharpAnalyzer.searchFiles(config.getNewTarget());
+			FileList= JavaAnalyzer3.setFilesInfo(config.getNewTarget());
 			blockList = csharpAnalyzer.analyze(fileList);
 			System.out.println(
 					"Parse file / All file = " + csharpAnalyzer.countParseFiles + " / " + csharpAnalyzer.countFiles);
@@ -142,20 +161,20 @@ public class CloneDetector {
 		subStart = System.currentTimeMillis();
 
 		VectorCalculator calculator = new VectorCalculator();
-		blockList = calculator.filterMethod(blockList);
-		System.out.println("The threshold of size for method : " + Config.METHOD_NODE_TH);
-		System.out.println("The threshold of size for block : " + Config.BLOCK_NODE_TH);
-		System.out.println("The threshold of line of block : " + Config.LINE_TH);
+		blockList = calculator.filterMethod(blockList, config);
+		System.out.println("The threshold of size for method : " + config.getSize());
+		System.out.println("The threshold of size for block : " + config.getBlockSize());
+		System.out.println("The threshold of line of block : " + config.getMinLine());
 		System.out.println("Filtered blocks / All blocks : " + blockList.size() + " / " + (countMethod + countBlock));
 		System.out.println();
 
 		System.out.println("Calculate vector of each method ...");
 		calculator.calculateVector(blockList, allData);
 
-	/*		for(Block block : blockList) {
+		/*		for(Block block : blockList) {
 				System.out.println("l====enn =     " + block.getLen());
 			}
-*/
+		 */
 
 		// System.out.println("wordmap.size = " + wordMap.size());
 		currentTime = System.currentTimeMillis();
@@ -172,15 +191,15 @@ public class CloneDetector {
 			LSHController lshCtlr = new LSHController();
 			dimention_test = calculator.getDimention();
 			System.out.println("dimention = " + dimention_test);
-			lshCtlr.execute(blockList, calculator.getDimention(), Config.LSH_PRG);
+			lshCtlr.execute(blockList, calculator.getDimention(), Config.LSH_PRG, config);
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();
-			clonePairList = cloneJudge.getClonePairList(blockList);
+			clonePairList = cloneJudge.getClonePairList(blockList, config);
 			cloneJudge = null;
 		} else {
 			CloneJudgement cloneJudge = new CloneJudgement();
-			clonePairList = cloneJudge.getClonePairListNoLSH(blockList);
+			clonePairList = cloneJudge.getClonePairListNoLSH(blockList, config);
 		}
 
 		System.out.println("The number of clone pair : " + clonePairList.size());
@@ -191,7 +210,7 @@ public class CloneDetector {
 		System.out.println("Cluster done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
 
 		ArrayList<CloneSet> cloneSetList = null;
-		if (Config.resultNotifier != null || Config.resultCloneSet != null) {
+		if (config.getResultNotifier() != null || config.getResultCloneSet() != null) {
 			System.out.println("generate clone set start...");
 			subStart = System.currentTimeMillis();
 			cloneSetList = CloneJudgement.getCloneSetList(clonePairList, blockList);
@@ -209,16 +228,27 @@ public class CloneDetector {
 		// LSHController.getCloneSetList(clonePairList);
 		// Outputter.outputCloneSetCSVforCPP(cloneSetList);
 		// Outputter.outputCSVforCPP(clonePairList);
-		if (Config.resultCSV != null)
+		if (config.getResultCSV() != null) {
+			System.out.println("=======output csv" + config.getResultCSV());
 			Outputter.outputCSV(clonePairList);
-		if (Config.resultTXT != null)
+		}
+		if (config.getResultTXT() != null) {
+			System.out.println("=======output txt" + config.getResultTXT());
 			Outputter.outputTXT(clonePairList);
-		if (Config.resultHTML != null)
+		}
+		if (config.getResultHTML() != null) {
+			System.out.println("=======output html" + config.getResultHTML());
 			Outputter.outputHTML(clonePairList);
-		if (Config.resultNotifier != null)
+		}
+		if (config.getResultNotifier() != null) {
+			System.out.println("=======output notifier" + config.getResultNotifier());
 			Outputter.outputNotifier(cloneSetList, fileList);
-		if (Config.resultCloneSet != null)
+		}
+		if (config.getResultCloneSet() != null) {
+			System.out.println("=======output cloneset " + config.getResultCloneSet());
+			Outputter.outputNotifier(cloneSetList, fileList);
 			Outputter.outputCloneSetTXTforCPP(cloneSetList);
+		}
 		// Outputter.outputForBigCloneEval(clonePairList);
 		// Outputter.outputTXTforCPP(clonePairList);
 		// Outputter.outputCSVforJava(clonePairList);
@@ -262,13 +292,13 @@ public class CloneDetector {
 	 * @throws Exception
 	 */
 
-	private static void incrementalRun(String[] args) throws Exception {
+	private static void incrementalRun(Config config) throws Exception {
 		System.out.println("ICVolti " + version);
 		System.out.println("Start Incremental Clone Detection fase");
 		System.out.println("----BoW ver----");
 		// setJavaClassPath();
 		getApplicationPath();
-		commandOption(args);
+		//commandOption(args);
 
 		long start = System.currentTimeMillis();
 		long subStart = start;
@@ -296,16 +326,16 @@ public class CloneDetector {
 		AllData.synchronizeAllData();
 		ClonePairList_test = allData.getClonePairList();
 
-		switch (Config.lang) {
+		switch (config.getLang()) {
 		case 0: // "java"
 			//	JavaAnalyzer3 oldJavaanalyzer = new JavaAnalyzer3();
 			JavaAnalyzer3 newJavaanalyzer = new JavaAnalyzer3();
 			//oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
 			/*ゆくゆくはなくしたいやつ*/
-			newFileList = JavaAnalyzer3.searchFiles(Config.target2);
+			newFileList = JavaAnalyzer3.searchFiles(config.getNewTarget());
 			ArrayList<SourceFile> oldFileList_test = new ArrayList<SourceFile>();
 			oldFileList_test =  allData.getSourceFileList();
-			ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList,updatedBlockList);
+			ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
 			//			ArrayList<SourceFile> oldFileList_test = BlockUpdater.deserializeSourceFileList("SourceFileList.bin");
 			//		ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
 
@@ -317,7 +347,7 @@ public class CloneDetector {
 			//newBlockList = newJavaanalyzer.analyze(newFileList);
 			//List<Block> oldBlockList = new ArrayList<Block>();
 			//oldBlockList.deserializeBlockList("blcoklist.bin");
-		/*	for(SourceFile file : FileList) {
+			/*	for(SourceFile file : FileList) {
 			for(Block block : file.getNewBlockList()) {
 				System.out.println("FLIE l====enn =     " + block.getLen());
 			}
@@ -337,7 +367,7 @@ public class CloneDetector {
 
 			//新旧コードブロック間の対応をとる
 			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList));
-	/*		for(Block block : newBlockList) {
+			/*		for(Block block : newBlockList) {
 				System.out.println("new Block l====enn =     " + block.getLen());
 			}*/
 			//コードブロックのIDを再度割り振りなおす
@@ -387,8 +417,8 @@ public class CloneDetector {
 		case 1: // "c"
 			CAnalyzer4 oldCanalyzer = new CAnalyzer4();
 			CAnalyzer4 newCanalyzer = new CAnalyzer4();
-			oldFileList = oldCanalyzer.searchFiles(Config.target2);
-			newFileList = newCanalyzer.searchFiles(Config.target);
+	//		oldFileList = oldCanalyzer.searchFiles(Config.target2);
+	//		newFileList = newCanalyzer.searchFiles(Config.target);
 			oldBlockList = oldCanalyzer.analyze(oldFileList);
 			newBlockList = oldCanalyzer.analyze(newFileList);
 
@@ -419,11 +449,11 @@ public class CloneDetector {
 		VectorCalculator calculator = new VectorCalculator();
 		//		blockList = calculator.filterMethod(blockList);
 		//newBlockList = calculator.filterMethod(newBlockList);
-		allBlockList = calculator.filterMethod(allBlockList);
-		System.out.println("The threshold of size for method : " + Config.METHOD_NODE_TH);
-		System.out.println("The threshold of size for block : " + Config.BLOCK_NODE_TH);
-		System.out.println("The threshold of line of block : " + Config.LINE_TH);
-		System.out.println("Filtered blocks / All blocks : " + newBlockList.size() + " / " + (countMethod + countBlock));
+		allBlockList = calculator.filterMethod(allBlockList, config);
+		System.out.println("The threshold of size for method : " + config.getSize());
+		System.out.println("The threshold of size for block : " + config.getBlockSize());
+		System.out.println("The threshold of line of block : " + config.getMinLine());
+		System.out.println("Filtered blocks / All blocks : " + blockList.size() + " / " + (countMethod + countBlock));
 		System.out.println();
 
 		System.out.println("Calculate vector of each method ...");
@@ -441,7 +471,7 @@ public class CloneDetector {
 				}
 				i++;
 			}*/
-	/*	for(Block block : allBlockList) {
+		/*	for(Block block : allBlockList) {
 			System.out.println("All Block l====enn =     " + block.getLen());
 		}*/
 		calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
@@ -463,14 +493,14 @@ public class CloneDetector {
 			// LSHController.computeParam(wordMap.size());
 			System.out.println("LSH start");
 			LSHController lshCtlr = new LSHController();
-			lshCtlr.executePartially(allBlockList,addedModifiedBlockList, calculator.getDimention(), Config.LSH_PRG);
+			lshCtlr.executePartially(allBlockList,addedModifiedBlockList, calculator.getDimention(), Config.LSH_PRG,config);
 			System.out.println("dimention = " + dimention_test);
 			System.out.println("calculator.getDimention() = " + calculator.getDimention());
-		//	lshCtlr.executePartially(allBlockList,addedModifiedBlockList, dimention_test, Config.LSH_PRG);
+			//	lshCtlr.executePartially(allBlockList,addedModifiedBlockList, dimention_test, Config.LSH_PRG);
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();
-			ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList));
+			ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, config));
 			cloneJudge = null;
 		} else {
 			CloneJudgement cloneJudge = new CloneJudgement();
@@ -485,7 +515,7 @@ public class CloneDetector {
 		System.out.println("Cluster done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
 
 		ArrayList<CloneSet> cloneSetList = null;
-		if (Config.resultNotifier != null || Config.resultCloneSet != null) {
+		if (config.getResultNotifier() != null || config.getResultCloneSet() != null) {
 			System.out.println("generate clone set start...");
 			subStart = System.currentTimeMillis();
 			cloneSetList = CloneJudgement.getCloneSetList(ClonePairList_test, blockList);
@@ -503,16 +533,20 @@ public class CloneDetector {
 		// LSHController.getCloneSetList(clonePairList);
 		// Outputter.outputCloneSetCSVforCPP(cloneSetList);
 		// Outputter.outputCSVforCPP(clonePairList);
-		if (Config.resultCSV != null)
+
+
+		if (config.getResultCSV() != null)
 			Outputter.outputCSV(ClonePairList_test);
-		if (Config.resultTXT != null)
+		if (config.getResultTXT() != null)
 			Outputter.outputTXT(ClonePairList_test);
-		if (Config.resultHTML != null)
+		if (config.getResultHTML() != null)
 			Outputter.outputHTML(ClonePairList_test);
-		if (Config.resultNotifier != null)
+		if (config.getResultNotifier() != null)
 			Outputter.outputNotifier(cloneSetList, newFileList);
-		if (Config.resultCloneSet != null)
+		if (config.getResultCloneSet() != null)
 			Outputter.outputCloneSetTXTforCPP(cloneSetList);
+
+
 		// Outputter.outputForBigCloneEval(clonePairList);
 		// Outputter.outputTXTforCPP(clonePairList);
 		// Outputter.outputCSVforJava(clonePairList);
@@ -557,7 +591,7 @@ public class CloneDetector {
 		javaClassPath = path.toString();
 	}
 
-	private static void commandOption(String[] args) {
+/*	private static void commandOption(String[] args) {
 		Options options = new Options();
 		options.addOption(Option.builder("h").longOpt("help").desc("display help").build());
 		options.addOption(Option.builder("d").longOpt("dir").desc("select directory for clone detection").hasArg()
@@ -626,10 +660,10 @@ public class CloneDetector {
 				Config.lang = 2;
 
 		}
-		/*
-		 * if(cl.hasOption("param")) { Config.paramFile =
-		 * cl.getOptionValue("param"); Config.paramFlg = false; }
-		 */
+
+		// if(cl.hasOption("param")) { Config.paramFile =
+		 // cl.getOptionValue("param"); Config.paramFlg = false; }
+
 		if (cl.hasOption("outputcsv"))
 			Config.resultCSV = cl.getOptionValue("outputcsv");
 		if (cl.hasOption("outputtxt"))
@@ -699,5 +733,6 @@ public class CloneDetector {
 		} else
 			Config.NUM_THREADS = 1;
 	}
+	*/
 
 }

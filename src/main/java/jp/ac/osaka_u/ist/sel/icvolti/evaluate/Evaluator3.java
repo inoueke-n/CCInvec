@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.ClonePair;
 
@@ -14,7 +13,7 @@ public class Evaluator3 {
 	static String[] args1 = { "-l", "c", "--size", "30", "-d", "", "--sizeb", "20" };
 	static ArrayList<ClonePair270> clonePair270list = new ArrayList<ClonePair270>();
 
-	private static void evaluate(String path, int start, int end) throws Exception {
+/*	private static void evaluate(String path, int start, int end) throws Exception {
 		args1[5] = path;
 		CloneDetector.main(args1);
 		for (ClonePair270 pairA : clonePair270list) {
@@ -32,7 +31,7 @@ public class Evaluator3 {
 									+ pairB.cloneA.getEndLine() + "),(" + pairB.cloneB.getStartLine() + "-"
 									+ pairB.cloneB.getEndLine() + ")}");
 							flg = true;
-						} 
+						}
 					} else if (pairA.cloneA.fileName.equals(pairB.cloneB.getFileName())
 							&& pairA.cloneB.fileName.equals(pairB.cloneA.getFileName())) {
 						int typeA, typeB;
@@ -44,7 +43,7 @@ public class Evaluator3 {
 									+ pairB.cloneB.getEndLine() + "),(" + pairB.cloneA.getStartLine() + "-"
 									+ pairB.cloneA.getEndLine() + ")}");
 							flg = true;
-						} 
+						}
 					}
 				}
 				if (!flg)
@@ -53,7 +52,7 @@ public class Evaluator3 {
 			}
 		}
 
-	}
+	}*/
 
 	private int checkPair(ClonePair270 pairA, ClonePair pairB) {
 		if (!pairA.cloneA.fileName.equals(pairB.cloneA.getFileName())
@@ -97,7 +96,7 @@ public class Evaluator3 {
 		}
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		System.out.println("Evaluator3");
 		readBenchmark("benchmark\\clonepair270.csv");
 
@@ -110,8 +109,8 @@ public class Evaluator3 {
 			e.printStackTrace();
 		}
 
-	}
- 
+	}*/
+
 }
 
 class ClonePair270 {

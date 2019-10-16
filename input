@@ -1,0 +1,8 @@
+LANGUAGE:java
+OUTPUT_FORMAT:txt
+PRE_DATA:false
+DATA_DIR:E:\ICVolti_Data\Data
+OUTPUT_DIR:E:\ICVolti_Data\Output
+INPUT_DIR:E:\data_for_ICvolti\test
+E:\data_for_ICvolti\test2
+E:\data_for_ICvolti\test3

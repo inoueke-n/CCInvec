@@ -50,11 +50,11 @@ public class DiffDetector {
 	}
 
 
-	public static boolean  getDiff_test(ArrayList<SourceFile> fileList, List<Block> newBlockList) {
+	public static boolean  getDiff_test(ArrayList<SourceFile> fileList, List<Block> newBlockList, Config config) {
 
 		//ディレクトリ全体にdiffをかけて
 
-		if(!executeDiff_test(fileList, newBlockList)) {
+		if(!executeDiff_test(fileList, newBlockList, config)) {
 			return false;
 		}else {
 			return true;
@@ -71,7 +71,7 @@ public class DiffDetector {
 	 *           <li>失敗の場合 - false</li>
 	 *         </ul>
 	 */
-	private static boolean executeDiff_test(ArrayList<SourceFile> fileList, List<Block> newBlockList) {
+	private static boolean executeDiff_test(ArrayList<SourceFile> fileList, List<Block> newBlockList, Config config) {
 		try{
 
 			//System.out.println("DIFFFFFFFFF");
@@ -79,12 +79,12 @@ public class DiffDetector {
 			ProcessBuilder pb;
 			if (File.separatorChar == '\\') {
 				//diff -r oldfolpath newfolpath
-				String[] cmdArray = { Paths.get(Def.CCVOLTI_PATH, Def.DIFF_PATH).toString(),"-r" ,Config.target, Config.target2 };
+				String[] cmdArray = { Paths.get(Def.CCVOLTI_PATH, Def.DIFF_PATH).toString(),"-r" ,config.getOldTarget(), config.getNewTarget() };
 			//	System.out.println(Arrays.asList(cmdArray));
 				//System.out.println("kita  ====");
 				pb = new ProcessBuilder(cmdArray);
 			} else {
-				String[] cmdArray = { "diff", "-r", Config.target, Config.target2 };
+				String[] cmdArray = { "diff", "-r", config.getOldTarget(), config.getNewTarget() };
 				System.out.println(Arrays.asList(cmdArray));
 				//System.out.println("kitaeeeeeeee  ====");
 				pb = new ProcessBuilder(cmdArray);
