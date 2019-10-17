@@ -44,11 +44,15 @@ public class CloneJudgement {
 		System.out.println("parallel calc distanse");
 		long start = System.currentTimeMillis();
 		int numHardThread = Runtime.getRuntime().availableProcessors();
-		if (config.getThreads() == 0 || config.getThreads() > numHardThread)
-			config.setThreads(numHardThread);
+	/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
+			config.setThreads(numHardThread);*/
+		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
+			Config.NUM_THREADS = numHardThread;
 
-		ExecutorService executor = Executors.newFixedThreadPool(config.getThreads());
-		System.out.println("The number of threads : " + config.getThreads());
+//		ExecutorService executor = Executors.newFixedThreadPool(config.getThreads());
+	//	System.out.println("The number of threads : " + config.getThreads());
+		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
+		System.out.println("The number of threads : " + Config.NUM_THREADS);
 
 		List<Callable<Double>> tasks = new ArrayList<Callable<Double>>();
 		List<Pair<Integer, Integer>> pairList = new ArrayList<Pair<Integer, Integer>>();
@@ -163,11 +167,12 @@ public class CloneJudgement {
 		System.out.println("parallel calc distanse");
 		long start = System.currentTimeMillis();
 		int numHardThread = Runtime.getRuntime().availableProcessors();
-		if (config.getThreads() == 0 || config.getThreads() > numHardThread)
-			config.setThreads(numHardThread);
+		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
+			//config.setThreads(numHardThread);
+			Config.NUM_THREADS = numHardThread;
 
-		ExecutorService executor = Executors.newFixedThreadPool(config.getThreads());
-		System.out.println("The number of threads : " + config.getThreads());
+		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
+		System.out.println("The number of threads : " + Config.NUM_THREADS);
 
 		List<Callable<Double>> tasks = new ArrayList<Callable<Double>>();
 		List<Pair<Integer, Integer>> pairList = new ArrayList<Pair<Integer, Integer>>();
@@ -296,10 +301,12 @@ public class CloneJudgement {
 		long start = System.currentTimeMillis();
 
 		int numHardThread = Runtime.getRuntime().availableProcessors();
-		if (config.getThreads() == 0 || config.getThreads() > numHardThread)
+		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
+			Config.NUM_THREADS = numHardThread;
+	/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
 			config.setThreads(numHardThread);
-
-		ExecutorService executor = Executors.newFixedThreadPool(config.getThreads());
+*/
+		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
 
 		List<Callable<Double>> tasks = new ArrayList<Callable<Double>>();
 		ArrayList<ClonePair> clonePairList = new ArrayList<ClonePair>();
@@ -610,26 +617,26 @@ class parallelGetClonePair implements Callable<Double> {
 		//クローン間のノード数の差が30以下かつ
 		//
 
-	//	System.out.println("clone A getNodeNum = " + cloneA.getNodeNum() + " cloneB.getNodeNum " + cloneB.getNodeNum() );
-	//	System.out.println("clone A getlen = " + cloneA.getLen() + " cloneB.getLen " + cloneB.getLen() );
+		//	System.out.println("clone A getNodeNum = " + cloneA.getNodeNum() + " cloneB.getNodeNum " + cloneB.getNodeNum() );
+		//	System.out.println("clone A getlen = " + cloneA.getLen() + " cloneB.getLen " + cloneB.getLen() );
 
 		if (Math.abs(cloneA.getNodeNum() - cloneB.getNodeNum()) < Config.DIFF_TH
 				&& Math.abs(cloneA.getLen() - cloneB.getLen()) < Config.DIS_TH) {
 
-		//	System.out.println(" ==== call call callS");
+			//	System.out.println(" ==== call call callS");
 			if (Config.SIM_TH == 1.0)
 				if (cloneA.getVector().equals(cloneB.getVector())) {
-			//		System.out.println("same vec");
+					//		System.out.println("same vec");
 					return 1.0;
 				}
 
 			double sim = scalar(cloneA.getVector(), cloneB.getVector());
 			if (sim >= Config.SIM_TH) {
-//					System.out.println("similar vec");
+				//					System.out.println("similar vec");
 				return sim;
 			}
 		}else {
-	//				System.out.println("not or similar vec");
+			//				System.out.println("not or similar vec");
 		}
 		return null;
 	}

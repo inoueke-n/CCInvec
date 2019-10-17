@@ -29,9 +29,9 @@ public class Outputter {
 	 * @param clonePairList
 	 * @throws IOException
 	 */
-	public static void outputCSV(List<ClonePair> clonePairList) throws IOException {
+	public static void outputCSV(List<ClonePair> clonePairList, Config config) throws IOException {
 		System.out.println("output CSV");
-		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(Config.resultCSV)));
+		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
 		writer.println(
 				"A name,A class name,A start line,A end line, A method start line , A method end line, B name,B class name,B start line,B end line, B method start line , B method end line,similarity");
 		for (ClonePair pair : clonePairList) {
@@ -72,9 +72,9 @@ public class Outputter {
 	 * @param cloneSetList
 	 * @throws IOException
 	 */
-	public static void outputHTML(List<ClonePair> clonePairList) throws IOException {
+	public static void outputHTML(List<ClonePair> clonePairList,Config config) throws IOException {
 		System.out.println("output HTML");
-		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(Config.resultHTML)));
+		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultHTML())));
 		BufferedReader reader = null;
 		writer.println("<pre>");
 		int id = 0;
@@ -137,8 +137,8 @@ public class Outputter {
 	 * @param cloneSetList
 	 * @throws FileNotFoundException
 	 */
-	public static void outputCSVforCPP(ArrayList<ClonePair> clonePairList) throws FileNotFoundException {
-		PrintWriter writer = new PrintWriter(new FileOutputStream(Config.resultCSV));
+	public static void outputCSVforCPP(ArrayList<ClonePair> clonePairList, Config config) throws FileNotFoundException {
+		PrintWriter writer = new PrintWriter(new FileOutputStream(config.getResultCSV()));
 		for (ClonePair pair : clonePairList) {
 			Block cloneA = pair.cloneA;
 			Block cloneB = pair.cloneB;
@@ -157,9 +157,9 @@ public class Outputter {
 	 * @param cloneSetList
 	 * @throws IOException
 	 */
-	public static void outputTXT(List<ClonePair> clonePairList) throws IOException {
+	public static void outputTXT(List<ClonePair> clonePairList, Config config) throws IOException {
 		System.out.println("output CSV");
-		PrintWriter writer = new PrintWriter(new FileOutputStream(Config.resultTXT));
+		PrintWriter writer = new PrintWriter(new FileOutputStream(config.getResultTXT()));
 		BufferedReader reader = null;
 		int id = 0;
 		for (ClonePair pair : clonePairList) {
@@ -203,8 +203,8 @@ public class Outputter {
 	 * @param cloneSetList
 	 * @throws FileNotFoundException
 	 */
-	public static void outputCloneSetCSVforCPP(ArrayList<CloneSet> cloneSetList) throws FileNotFoundException {
-		PrintWriter writer = new PrintWriter(new FileOutputStream(Config.resultCSV));
+	public static void outputCloneSetCSVforCPP(ArrayList<CloneSet> cloneSetList,Config config) throws FileNotFoundException {
+		PrintWriter writer = new PrintWriter(new FileOutputStream(config.getResultCSV()));
 		int i = 0;
 		for (CloneSet set : cloneSetList) {
 			writer.printf("%d,%d,%d,%f\r\n", i++, set.cloneList.size(), set.over50Token, set.tokenAverage);
@@ -220,8 +220,8 @@ public class Outputter {
 	 * @param cloneSetList
 	 * @throws IOException
 	 */
-	public static void outputCloneSetTXTforCPP(List<CloneSet> cloneSetList) throws IOException {
-		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(Config.resultCloneSet)));
+	public static void outputCloneSetTXTforCPP(List<CloneSet> cloneSetList, Config config) throws IOException {
+		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCloneSet())));
 		BufferedReader reader = null;
 		int id = 0;
 		for (CloneSet set : cloneSetList) {
@@ -257,8 +257,8 @@ public class Outputter {
 	 * @param cloneSetList
 	 * @throws FileNotFoundException
 	 */
-	public static void outputCSVforJava(ArrayList<ClonePair> clonePairList) throws FileNotFoundException {
-		PrintWriter writer = new PrintWriter(new FileOutputStream(Config.resultCSV));
+	public static void outputCSVforJava(ArrayList<ClonePair> clonePairList,Config config) throws FileNotFoundException {
+		PrintWriter writer = new PrintWriter(new FileOutputStream(config.getResultCSV()));
 		for (ClonePair pair : clonePairList) {
 			Block cloneA = pair.cloneA;
 			Block cloneB = pair.cloneB;
@@ -309,7 +309,7 @@ public class Outputter {
 		}
 	}
 
-	public static void outputStatisticsSample(ArrayList<ClonePair> clonePairList, double e, double m, double p)
+	public static void outputStatisticsSample(ArrayList<ClonePair> clonePairList, double e, double m, double p,Config config)
 			throws IOException {
 		System.out.println("output Statistic Sample");
 		double N = clonePairList.size();
@@ -332,7 +332,7 @@ public class Outputter {
 		Arrays.sort(sample);
 
 		PrintWriter writer = new PrintWriter(
-				new BufferedWriter(new FileWriter(Config.resultTXT.split("\\.")[0] + "-sample.txt")));
+				new BufferedWriter(new FileWriter(config.getResultTXT().split("\\.")[0] + "-sample.txt")));
 		BufferedReader reader = null;
 
 		for (int i = 0; i < n; i++) {
@@ -409,9 +409,9 @@ public class Outputter {
 	 * @param fileList
 	 * @throws IOException
 	 */
-	public static void outputNotifier(List<CloneSet> cloneSetList, List<String> fileList) throws IOException {
+	public static void outputNotifier(List<CloneSet> cloneSetList, List<String> fileList, Config config) throws IOException {
 		System.out.println("output for CloneNotifier");
-		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(Config.resultNotifier)));
+		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultNotifier())));
 		int id = 0;
 		writer.printf("source_files {\r\n");
 		for (String filename : fileList) {

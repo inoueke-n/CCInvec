@@ -1,5 +1,5 @@
 LANGUAGE:java
-OUTPUT_FORMAT:txt
+OUTPUT_FORMAT:csv
 PRE_DATA:false
 DATA_DIR:E:\ICVolti_Data\Data
 OUTPUT_DIR:E:\ICVolti_Data\Output

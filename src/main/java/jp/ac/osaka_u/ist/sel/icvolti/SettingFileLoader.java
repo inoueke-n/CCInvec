@@ -93,12 +93,6 @@ public class SettingFileLoader {
 						config.setOutputDir(removeSpace(line.replace("OUTPUT_DIR:","")));
 					}
 
-					// 入力ディレクトリ
-					if(line.contains("INPUT_DIR:")) {
-						inputFlag = 1;
-
-						config.setInputDir(removeSpace(line.replace("INPUT_DIR:","")));
-					}
 
 
 					// Gitから直接clone
@@ -113,8 +107,16 @@ public class SettingFileLoader {
 
 					if(inputFlag == 1) {
 						config.setInputDir(removeSpace(line));
-
 					}
+
+					// 入力ディレクトリ
+					if(line.contains("INPUT_DIR:")) {
+						inputFlag = 1;
+
+						config.setInputDir(removeSpace(line.replace("INPUT_DIR:","")));
+					}
+
+
 
 
 

@@ -66,16 +66,16 @@ public class VectorCalculator implements Serializable {
 
 	private static boolean filter(Block block, Config config) {
 		if (block.getParent() == null) {
-			//親がいない（メソッド）かつトークン数が閾値以下であれば省く
-			if (block.getNodeNum() < config.getSize())
+			//親がいない（メソッド）かつトークン数が閾値以下であれば省く　config.get~にするとバグ
+			if (block.getNodeNum() <Config.METHOD_NODE_TH)
 				return false;
 		} else {
-			//親がいる（ブロック）トークン数が閾値以下あれば省く
-			if (block.getNodeNum() < config.getBlockSize())
+			//親がいる（ブロック）トークン数が閾値以下あれば省く　config.get~にするとバグ
+			if (block.getNodeNum() < Config.BLOCK_NODE_TH)
 				return false;
 		}
-		//行数が閾値以下であれば省く
-		if (block.getLineSize() < config.getMinLine())
+		//行数が閾値以下であれば省く config.get~にするとバグ
+		if (block.getLineSize() < Config.LINE_TH)
 			return false;
 
 		return true;
@@ -157,10 +157,10 @@ public class VectorCalculator implements Serializable {
 		}
 		outputDictionary(dictionary);
 
-		System.out.print("file out done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
 		allData.setWordMap(wordMap);
 		allData.setWordFreq(wordFreq);
+		System.out.print("file out done : ");
+		System.out.println(System.currentTimeMillis() - start + "[ms]");
 
 	}
 
@@ -248,6 +248,7 @@ public class VectorCalculator implements Serializable {
 			for (int i = 0; i < size; i++) {
 				System.out.println("addedModifiedBlockList count : " + i);
 				System.out.println("addedModifiedBlockList category : " + addedModifiedBlockList.get(i).getCategory());
+				System.out.println("addedModifiedBlockList id : " + addedModifiedBlockList.get(i).getId());
 				System.out.println("addedModifiedBlockList start = " + addedModifiedBlockList.get(i).getStartLine() +  " end line  " + addedModifiedBlockList.get(i).getEndLine());
 				System.out.println("addedModifiedBlockList filename = " + addedModifiedBlockList.get(i).getFileName());
 				//System.out.println("addedModifiedBlockList old Blockfilename = " + addedModifiedBlockList.get(i).getOldBlock().getFileName());
@@ -271,6 +272,8 @@ public class VectorCalculator implements Serializable {
 		}
 		outputDictionary(dictionary);
 
+		allData.setWordMap(wordMap);
+		allData.setWordFreq(wordFreq);
 		System.out.print("file out done : ");
 		System.out.println(System.currentTimeMillis() - start + "[ms]");
 	}

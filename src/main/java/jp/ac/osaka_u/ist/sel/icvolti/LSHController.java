@@ -95,9 +95,11 @@ public class LSHController {
 	 */
 	public void execute(List<Block> blockList, int dimention, int program, Config config) {
 		int numHardThread = Runtime.getRuntime().availableProcessors();
-		if (config.getThreads() == 0 || config.getThreads() > numHardThread)
+	/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
 			//Config.NUM_THREADS = numHardThread;
-			config.setThreads(numHardThread);
+			config.setThreads(numHardThread);*/
+		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
+			Config.NUM_THREADS = numHardThread;
 
 		ArrayList<String> fromArray = new ArrayList<String>();
 		if (program == FALCONN64) {
@@ -107,8 +109,8 @@ public class LSHController {
 			fromArray.add(Integer.toString(Config.LSH_L));
 			fromArray.add(CloneDetector.DATASET_FILE);
 			fromArray.add(CloneDetector.DATASET_FILE);
-			fromArray.add(Double.toString(config.getSize()));
-			fromArray.add(Integer.toString(config.getThreads()));
+			fromArray.add(Double.toString(Config.SIM_TH));
+			fromArray.add(Integer.toString(Config.NUM_THREADS));
 		} else if (program == FALCONN32) {
 			fromArray.add(Paths.get(CloneDetector.javaClassPath, "FALCONN32", "falconn4bcd.exe").toString());
 			fromArray.add(Integer.toString(blockList.size()));
@@ -116,8 +118,8 @@ public class LSHController {
 			fromArray.add(Integer.toString(Config.LSH_L));
 			fromArray.add(CloneDetector.DATASET_FILE);
 			fromArray.add(CloneDetector.DATASET_FILE);
-			fromArray.add(Double.toString(config.getSize()));
-			fromArray.add(Integer.toString(config.getThreads()));
+			fromArray.add(Double.toString(Config.SIM_TH));
+			fromArray.add(Integer.toString(Config.NUM_THREADS));
 		} else if (program == E2LSH) {
 			computeParam(blockList, dimention);
 
@@ -175,9 +177,12 @@ public class LSHController {
 	 */
 	public void executePartially(List<Block> blockList,List<Block> updatedBlockList, int dimention, int program, Config config) {
 		int numHardThread = Runtime.getRuntime().availableProcessors();
-		if (config.getThreads() == 0 || config.getThreads() > numHardThread)
+	/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
 			//Config = numHardThread;
 			config.setThreads(numHardThread);
+		*/
+		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
+			Config.NUM_THREADS = numHardThread;
 
 		ArrayList<String> fromArray = new ArrayList<String>();
 		if (program == FALCONN64) {
@@ -189,8 +194,11 @@ public class LSHController {
 			fromArray.add(CloneDetector.DATASET_FILE);
 			//query point
 			fromArray.add(CloneDetector.PARTIAL_QUERY_POINT);
-			fromArray.add(Double.toString(config.getSize()));
-			fromArray.add(Integer.toString(config.getThreads()));
+			fromArray.add(Double.toString(Config.SIM_TH));
+			fromArray.add(Integer.toString(Config.NUM_THREADS));
+			//*以下だとなぜかエラー*//
+		/*	fromArray.add(Double.toString(config.getSize()));
+			fromArray.add(Integer.toString(config.getThreads()));*/
 		} else if (program == FALCONN32) {
 			fromArray.add(Paths.get(CloneDetector.javaClassPath, "FALCONN32", "falconn4bcd.exe").toString());
 			fromArray.add(Integer.toString(blockList.size()));
@@ -198,8 +206,8 @@ public class LSHController {
 			fromArray.add(Integer.toString(Config.LSH_L));
 			fromArray.add(CloneDetector.DATASET_FILE);
 			fromArray.add(CloneDetector.DATASET_FILE);
-			fromArray.add(Double.toString(config.getSize()));
-			fromArray.add(Integer.toString(config.getThreads()));
+			fromArray.add(Double.toString(Config.SIM_TH));
+			fromArray.add(Integer.toString(Config.NUM_THREADS));
 		} else if (program == E2LSH) {
 			computeParam(blockList, dimention);
 

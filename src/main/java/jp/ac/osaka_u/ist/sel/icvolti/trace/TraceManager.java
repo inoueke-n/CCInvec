@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import jp.ac.osaka_u.ist.sel.icvolti.Config;
 import jp.ac.osaka_u.ist.sel.icvolti.Logger;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
@@ -22,7 +23,7 @@ public class TraceManager {
 	 *           <li>失敗の場合 - false</li>
 	 *         </ul>
 	 */
-	public static ArrayList<Block> analyzeBlock(ArrayList<SourceFile> FileList, List<Block> newBlockList) {
+	public static ArrayList<Block> analyzeBlock(ArrayList<SourceFile> FileList, List<Block> newBlockList, Config config) {
 		// TODO 自動生成されたメソッド・スタブ
 		// ファイルのdiffを取得
 		System.out.print("analyze block start");
@@ -32,7 +33,7 @@ public class TraceManager {
 		long start;
 		long end;
 		start = System.currentTimeMillis();
-		if (!DiffDetector.getDiff_test(FileList, newBlockList)) {
+		if (!DiffDetector.getDiff_test(FileList, newBlockList, config)) {
 			System.out.println("diff miss ======");
 			Logger.writeln("Can't get diff of source code.", Logger.ERROR);
 			return null;

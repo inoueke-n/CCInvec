@@ -22,7 +22,7 @@ public class Config {
 	private int CPP = 1;
 	private int lang = JAVA;
 	public static String charset = "UTF-8";
-	private int NUM_THREADS;
+	public static int NUM_THREADS;
 	// private  boolean paramFlg = true;
 
 	//LSHパラメータ
@@ -78,9 +78,6 @@ public class Config {
 
 	/** 入力対象のディレクトリを保存 **/
 	private ArrayList<String> inputDir = new ArrayList<String>();
-
-
-
 
 
 	/*
@@ -404,7 +401,7 @@ public class Config {
 	}
 
 	public String getResultTXT() {
-		return resultCSV;
+		return resultTXT;
 	}
 
 	public String getResultCSV() {

@@ -162,21 +162,26 @@ public class AllData implements  Serializable {
 
 		System.out.println(" ===  block list size  " + blockList.size());
 		System.out.println(" ===  calced block list size  " + BlockListOfCalcedVec.size());
-	/*	for(Block block : blockList) {
+		for(Block block : blockList) {
 			if(block.getVector() == null) {
 				System.out.println(i + "vec null" + block.getId());
 
 			}else {
 				System.out.println(i +  " vec " +  block.getId());
-
 			}
 			i++;
-		}*/
+		}
+		for(ClonePair cp : ClonePairList) {
+			int idA = cp.cloneA.getId();
+			int idB = cp.cloneB.getId();
+			System.out.println("idA = " + idA);
+			System.out.println("idB = " + idB);
+		}
 		for(ClonePair cp : ClonePairList) {
 			int idA = cp.cloneA.getId();
 			int idB = cp.cloneB.getId();
 		//	System.out.println("test");
-	/*		System.out.println("idA = " + idA);
+			System.out.println("idA = " + idA);
 			System.out.println("idB = " + idB);
 			System.out.println("blockList.get(idA).getID() = " + blockList.get(idA).getId());
 			System.out.println("blockList.get(idB).getID() = " + blockList.get(idB).getId());
@@ -184,7 +189,7 @@ public class AllData implements  Serializable {
 			System.out.println("cp.cloneB.getFileName()" + cp.cloneB.getFileName());
 			System.out.println("blockList.get(idA).getFileName() = " + blockList.get(idA).getFileName());
 			System.out.println("blockList.get(idB).getFileName() = " + blockList.get(idB).getFileName());
-*/
+
 
 			cp.setCloneA(blockList.get(idA));
 			cp.setCloneB(blockList.get(idB));
@@ -210,9 +215,9 @@ public class AllData implements  Serializable {
 		int i =0;
 		for(Block block : blockList) {
 			block.setVector(BlockListOfCalcedVec.get(i).getVector());
-	//		System.out.println("block.setLen(BlockListOfCalcedVec.get(i).getLen()) == " + BlockListOfCalcedVec.get(i).getLen());
-
+			System.out.println("block.setLen(BlockListOfCalcedVec.get(i).getLen()) == " + BlockListOfCalcedVec.get(i).getLen());
 			block.setLen(BlockListOfCalcedVec.get(i).getLen());
+			block.setId(i);
 			i++;
 		}
 		return blockList;
