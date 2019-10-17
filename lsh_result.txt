@@ -1,18 +1,8 @@
 Query point 0
-0
-1
-2
 
 Query point 1
-0
-1
-2
 
 Query point 2
-0
-1
-2
 
 Query point 3
-3
 

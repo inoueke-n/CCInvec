@@ -381,23 +381,23 @@ public class Config {
 	public void setResultFile(String filepath) {
 		switch(outputFormat) {
 		case "txt":
-			resultTXT = filepath + ".txt";
-			System.out.println("========= txt");
+			this.resultTXT = filepath + ".txt";
+			System.out.println("========= txt" + resultTXT);
 			break;
 		case "csv":
-			resultCSV = filepath + ".csv";
-			System.out.println("========= csv");
+			this.resultCSV  = filepath + ".csv";
+			System.out.println("========= csv" + resultCSV);
 			break;
 		case "notifier":
-			resultNotifier = filepath;
-			System.out.println("========= noti");
+			this.resultNotifier = filepath;
+			System.out.println("========= noti" + resultNotifier);
 			break;
 		case "html":
-			resultHTML = filepath + ".html";
-			System.out.println("========= html");
+			this.resultHTML = filepath + ".html";
+			System.out.println("========= html" + resultHTML);
 			break;
 		case "cloneset":
-			resultCloneSet = filepath;
+			this.resultCloneSet = filepath;
 			break;
 		}
 
