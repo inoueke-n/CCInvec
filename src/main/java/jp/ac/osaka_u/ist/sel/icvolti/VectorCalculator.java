@@ -93,15 +93,23 @@ public class VectorCalculator implements Serializable {
 		HashMap<String, Integer> wordFreqMap = new HashMap<String, Integer>();
 		ArrayList<String> dictionary = new ArrayList<String>();
 
+		/**
+		 * wordFreqMap どんなワードが何回出たかのデータを保持
+		 * dictionary  1回以上出てきた単語を保持
+		 *
+		 */
+
 		// ワードの出現頻度の計測と、ワード辞書の生成
 		int elementCount = 0;
 		for (Block block : blockList) {
 			if (block.getParent() == null) {
 				for (Word word : block.getWordList()) {
 					if (wordFreqMap.containsKey(word.getName())) {
+						//一度出てきたことがあるワードはwordFreqの出現回数をインクリメント
 						int value = wordFreqMap.get(word.getName());
 						wordFreqMap.put(word.getName(), ++value);
 					} else {
+						//新しくワードが出てきたらそれをwordFreqMapとdictionaryに登録
 						wordFreqMap.put(word.getName(), 1);
 						dictionary.add(word.getName());
 					}
@@ -125,13 +133,16 @@ public class VectorCalculator implements Serializable {
 		for (int i = 0; iter.hasNext();) {
 			String wordName = iter.next();
 			if (wordFreqMap.get(wordName) > APPEARANCE_TH) {
+				//一回以上でてきたことがあるワードはwordMapとwordFreqに登録
 				wordMap.put(wordName, i);
 				wordFreq[i] = wordFreqMap.get(wordName);
 				i++;
 			} else {
+				//1回しか出現しなかったワードはdictionaryから削除
 				iter.remove();
 			}
 		}
+		//次元数はAllDataに保存しておく必要がある
 		dimention = wordMap.size();
 		System.out.println("filtered word count : " + wordMap.size());
 
@@ -270,7 +281,7 @@ public class VectorCalculator implements Serializable {
 			outputSparsePartialDatasetBinary(addedModifiedBlockList);
 
 		}
-		outputDictionary(dictionary);
+	//s	outputDictionary(dictionary);
 
 		allData.setWordMap(wordMap);
 		allData.setWordFreq(wordFreq);

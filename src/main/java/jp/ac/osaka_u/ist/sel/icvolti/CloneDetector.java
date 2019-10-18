@@ -364,9 +364,6 @@ public class CloneDetector {
 		allData =  AllData.deserializeAllDataList(config);
 		ArrayList<ClonePair> ClonePairList_test = new ArrayList<ClonePair>();
 		//AllData.synchronizeAllData();
-		for(Block block :allData.getBlockListOfCalcedVec()) {
-			System.out.println("sucuusc");
-		}
 		allData.synchronizeAllData();
 		ClonePairList_test = allData.getClonePairList();
 		ArrayList<SourceFile> FileList = new ArrayList<SourceFile>();
@@ -381,40 +378,15 @@ public class CloneDetector {
 			ArrayList<SourceFile> oldFileList_test = new ArrayList<SourceFile>();
 			oldFileList_test =  allData.getSourceFileList();
 			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
-			//			ArrayList<SourceFile> oldFileList_test = BlockUpdater.deserializeSourceFileList("SourceFileList.bin");
-			//		ArrayList<SourceFile> FileList = BlockUpdater.updateSourceFileList(Config.target2, Config.target, oldFileList_test, newFileList);
-
-			//ArrayList<SourceFile> FileList = JavaAnalyzer3.setFilesInfo(Config.target, Config.target2);
-			//		System.out.println(Arrays.asList(FileList));
-
-
-			//oldBlockList = oldJavaanalyzer.analyze(oldFileList);
-			//newBlockList = newJavaanalyzer.analyze(newFileList);
-			//List<Block> oldBlockList = new ArrayList<Block>();
-			//oldBlockList.deserializeBlockList("blcoklist.bin");
-			/*	for(SourceFile file : FileList) {
-			for(Block block : file.getNewBlockList()) {
-				System.out.println("FLIE l====enn =     " + block.getLen());
-			}
-
-			}*/
 
 			System.out.println("newFileList size = " + newFileList.size());
 			System.out.println("FileList size = " + FileList.size());
-			//	newBlockListCorrect = newJavaanalyzer.analyze_test(FileList);
 			newBlockList = newJavaanalyzer.incrementalAnalyze(FileList);
-			//oldBlockList = BlockUpdater.deserializeBlockList("blocklist.bin");
-			//System.out.println("old Block Size  = " + oldBlockList.size());
-			//System.out.println("new Block Correct Size  = " + newBlockListCorrect.size());
-
 			System.out.println("new Block Size 1  = " + newBlockList.size());
-
 
 			//新旧コードブロック間の対応をとる
 			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config));
-			/*		for(Block block : newBlockList) {
-				System.out.println("new Block l====enn =     " + block.getLen());
-			}*/
+
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
 
@@ -517,23 +489,7 @@ public class CloneDetector {
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();
-			for(ClonePair cp : ClonePairList_test) {
-				int idA = cp.cloneA.getId();
-				int idB = cp.cloneB.getId();
-				System.out.println("testaidA = " + idA);
-				System.out.println(" testaidB = " + idB);
-				System.out.println("testA = " + cp.cloneA.getStartLine() + "  " +cp.cloneA.getEndLine());
-				System.out.println("tesB = " + cp.cloneB.getStartLine() + "  " +cp.cloneB.getEndLine());
-			}
 			ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, config));
-			for(ClonePair cp : ClonePairList_test) {
-				int idA = cp.cloneA.getId();
-				int idB = cp.cloneB.getId();
-				System.out.println("ato testaidA = " + idA);
-				System.out.println("ato testaidB = " + idB);
-				System.out.println("atotestA = " + cp.cloneA.getStartLine() + "  " +cp.cloneA.getEndLine());
-				System.out.println("ato tesB = " + cp.cloneB.getStartLine() + "  " +cp.cloneB.getEndLine());
-			}
 			cloneJudge = null;
 		} else {
 			CloneJudgement cloneJudge = new CloneJudgement();
@@ -595,26 +551,6 @@ public class CloneDetector {
 		// Debug.debug();
 		// Debug.outputResult02(cloneSetList);
 		// Debug.outputResult(cloneSetList);
-		for(Block block : allBlockList) {
-			System.out.println("Id  " + block.getId() );
-		}
-
-		for(Block block : updatedBlockList) {
-			System.out.println("uId  " + block.getId() );
-		}
-
-		for(Block block : addedModifiedBlockList) {
-			System.out.println("admoId  " + block.getId() );
-
-		}
-		for(ClonePair cp : ClonePairList_test) {
-			int idA = cp.cloneA.getId();
-			int idB = cp.cloneB.getId();
-			System.out.println("aidA = " + idA);
-			System.out.println("aidB = " + idB);
-			System.out.println("A = " + cp.cloneA.getStartLine() + "  " +cp.cloneA.getEndLine());
-			System.out.println("B = " + cp.cloneB.getStartLine() + "  " +cp.cloneB.getEndLine());
-		}
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(ClonePairList_test);
 		allData.setBlockListOfCalcedVec(allBlockList);
