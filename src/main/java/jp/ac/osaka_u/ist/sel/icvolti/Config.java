@@ -18,6 +18,7 @@ public class Config {
 	private String resultHTML = null;
 	private String resultNotifier = null;
 	private String resultCloneSet = null;
+	private String resultFileName = "result";
 	private int JAVA = 0;
 	private int CPP = 1;
 	private int lang = JAVA;
@@ -59,6 +60,9 @@ public class Config {
 	/** 出力先のディレクトリパス */
 	private String outputDir = null;
 
+	/** 前回検出したバージョンのディレクトリパス */
+	private String inputPreDir = null;
+
 	/** トークンの閾値. 指定トークン数以下のクローンを除外. */
 	private int tokenTh;
 
@@ -94,6 +98,22 @@ public class Config {
 	 */
 	public void setOldTarget(String oldTarget) {
 		this.oldTarget = oldTarget;
+	}
+
+	/*
+	 * <p>出力ファイル名の取得</p>
+	 * @return resultFileName
+	 */
+	public String getResultFileName() {
+		return resultFileName;
+	}
+
+	/**
+	 * <p>出力ファイル名の設定</p>
+	 * @param resultFileName
+	 */
+	public void setResultFileName(String resultFileName) {
+		this.resultFileName = resultFileName;
 	}
 
 	/*
@@ -165,7 +185,7 @@ public class Config {
 
 	/*
 	 * <p>検出対象の場所の取得</p>
-	 * @return outputDir
+	 * @return inputDir
 	 */
 	public ArrayList<String> getInputDir() {
 		return inputDir;
@@ -177,6 +197,22 @@ public class Config {
 	 */
 	public void setInputDir(String inputDirStr) {
 		inputDir.add(inputDirStr);
+	}
+
+	/*
+	 * <p>検出対象の前のバージョンの場所の取得</p>
+	 * @return inputPreDir
+	 */
+	public String getInputPreDir() {
+		return inputPreDir;
+	}
+
+	/**
+	 * <p>inputPreDirの設定</p>
+	 * @param name inputPreDir
+	 */
+	public void setInputPreDir(String inputPreDirStr) {
+		this.inputPreDir = inputPreDirStr;
 	}
 
 	/**

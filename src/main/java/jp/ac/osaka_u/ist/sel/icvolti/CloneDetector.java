@@ -66,30 +66,47 @@ public class CloneDetector {
 		Config config = new Config();
 		if(args.length == 1) {
 			if(SettingFileLoader.loadSettingFile(args, config)) {
+				//Fileクラスのオブジェクトを生成する
+				int maxNum = getMaxFileName(config);
 				if(config.getPreData()) {
 					//前のデータがある場合
-					for(int i =0; i < config.getInputDir().size(); i++) {
-
+					if(config.getInputPreDir() != null) {
+						//前回検出した―バージョンが入力として与えられている場合
+						int num = maxNum+1;
+						for(int i =0; i < config.getInputDir().size(); i++) {
+							if(i==0) {
+								config.setOldTarget(config.getInputPreDir());
+								config.setNewTarget(config.getInputDir().get(i));
+								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
+								incrementalRun(config);
+								num++;
+							}else {
+								config.setOldTarget(config.getInputDir().get(i-1));
+								config.setNewTarget(config.getInputDir().get(i));
+								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
+								incrementalRun(config);
+								num++;
+							}
+						}
+					}else {
+						Logger.printlnConsole("Can't load last detected version, please input \"INPUT_PREDIR:PATH\" to config file.", Logger.ERROR);
+						System.exit(1);
 					}
 				}else {
-					for(int i =0; i < config.getInputDir().size(); i++) {
-						System.out.println("str = " + config.getInputDir().get(i));
-
-					}
 					//前のデータがない場合
+					int num = maxNum+1;
 					for(int i =0; i < config.getInputDir().size(); i++) {
-						int num = i+1;
 						if(i == 0) {
 							config.setNewTarget(config.getInputDir().get(0));
-							config.setResultFile(config.getOutputDir() + "\\result" + num);
+							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
 							firstRun(config);
+							num++;
 						}else {
-							System.out.println("config size = " + config.getInputDir().size());
-							System.out.println("config i = " + config.getInputDir().get(i));
 							config.setOldTarget(config.getInputDir().get(i-1));
 							config.setNewTarget(config.getInputDir().get(i));
-							config.setResultFile(config.getOutputDir() + "\\result" + num);
+							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
 							incrementalRun(config);
+							num++;
 						}
 					}
 
@@ -100,6 +117,7 @@ public class CloneDetector {
 		}
 
 	}
+
 	/**
 	 * <p>
 	 * 最初の実行
@@ -289,7 +307,7 @@ public class CloneDetector {
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(clonePairList);
 		allData.setBlockListOfCalcedVec(blockList);
-		AllData.serializeAllDataList(allData);
+		AllData.serializeAllDataList(allData,config);
 		allData = null;
 		fileList = null;
 		FileList = null;
@@ -343,9 +361,13 @@ public class CloneDetector {
 		//ArrayList<SourceFile> newFileList
 		//fileListの取得をちゃんとする
 		AllData allData = new AllData();
-		allData =  AllData.deserializeAllDataList("allData.bin");
+		allData =  AllData.deserializeAllDataList(config);
 		ArrayList<ClonePair> ClonePairList_test = new ArrayList<ClonePair>();
-		AllData.synchronizeAllData();
+		//AllData.synchronizeAllData();
+		for(Block block :allData.getBlockListOfCalcedVec()) {
+			System.out.println("sucuusc");
+		}
+		allData.synchronizeAllData();
 		ClonePairList_test = allData.getClonePairList();
 		ArrayList<SourceFile> FileList = new ArrayList<SourceFile>();
 
@@ -582,7 +604,7 @@ public class CloneDetector {
 		}
 
 		for(Block block : addedModifiedBlockList) {
-				System.out.println("admoId  " + block.getId() );
+			System.out.println("admoId  " + block.getId() );
 
 		}
 		for(ClonePair cp : ClonePairList_test) {
@@ -596,7 +618,7 @@ public class CloneDetector {
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(ClonePairList_test);
 		allData.setBlockListOfCalcedVec(allBlockList);
-		AllData.serializeAllDataList(allData);
+		AllData.serializeAllDataList(allData, config);
 		allData = null;
 
 		System.out.print("Finished : ");
@@ -635,6 +657,40 @@ public class CloneDetector {
 		if (path.endsWith("bin"))
 			path = path.getParent();
 		javaClassPath = path.toString();
+	}
+
+
+	/**
+	 * ファイル名に使われている最大の数字を取得
+	 * @param config
+	 * @return maxNum
+	 */
+	private static int getMaxFileName(Config config) {
+		File dir = new File(config.getOutputDir());
+		//listFilesメソッドを使用して一覧を取得する
+		File[] list = dir.listFiles();
+		int maxNum=0;
+		for(int i=0; i<list.length; i++) {
+			if(list[i].isFile()) {
+				if(list[i].getName().contains(config.getResultFileName())) {
+					String  fileNumStr = list[i].getName().substring(config.getResultFileName().length(), list[i].getName().lastIndexOf("."));
+					boolean isNumber =true;
+					for(int j =0; j<fileNumStr.length(); j++) {
+						if(!Character.isDigit(fileNumStr.charAt(j))) {
+							isNumber = false;
+						}
+					}
+					if(isNumber) {
+						int fileNum = Integer.parseInt(fileNumStr);
+						System.out.println("aa = " + fileNum);
+						if(maxNum < fileNum) {
+							maxNum = fileNum;
+						}
+					}
+				}
+			}
+		}
+		return maxNum;
 	}
 
 	/*	private static void commandOption(String[] args) {
@@ -780,5 +836,6 @@ public class CloneDetector {
 			Config.NUM_THREADS = 1;
 	}
 	 */
+
 
 }

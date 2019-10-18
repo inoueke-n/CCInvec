@@ -10,6 +10,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Map;
 
+import jp.ac.osaka_u.ist.sel.icvolti.Config;
+
 public class AllData implements  Serializable {
 
 	static ArrayList<SourceFile> SourceFileList;
@@ -105,18 +107,49 @@ public class AllData implements  Serializable {
 	 * <p>
 	 * @param allData
 	 */
-	public static void serializeAllDataList(AllData allData) {
-		 try {
-             ObjectOutputStream objOutStream =
-             new ObjectOutputStream(
-             new FileOutputStream("allData.bin"));
-             objOutStream.writeObject(allData);
-             objOutStream.close();
-         } catch (FileNotFoundException e) {
-             e.printStackTrace();
-         } catch (IOException e) {
-             e.printStackTrace();
-         }
+	public static void serializeAllDataList(AllData allData, Config config) {
+		try {
+			ObjectOutputStream objOutStream =
+					new ObjectOutputStream(
+							new FileOutputStream(config.getDataDir() + "\\allData.bin"));
+			objOutStream.writeObject(allData);
+			objOutStream.close();
+
+			ObjectOutputStream objOutStreamBlockList =
+					new ObjectOutputStream(
+							new FileOutputStream(config.getDataDir() + "\\blockList.bin"));
+			objOutStreamBlockList.writeObject(allData.getBlockListOfCalcedVec());
+			objOutStreamBlockList.close();
+
+			ObjectOutputStream objOutStreamSourceFileList =
+					new ObjectOutputStream(
+							new FileOutputStream(config.getDataDir() + "\\sourceFileList.bin"));
+			objOutStreamSourceFileList.writeObject(allData.getSourceFileList());
+			objOutStreamSourceFileList.close();
+
+			ObjectOutputStream objOutStreamClonePairList =
+					new ObjectOutputStream(
+							new FileOutputStream(config.getDataDir() + "\\clonePairList.bin"));
+			objOutStreamClonePairList.writeObject(allData.getClonePairList());
+			objOutStreamClonePairList.close();
+
+			ObjectOutputStream objOutStreamWordMap =
+					new ObjectOutputStream(
+							new FileOutputStream(config.getDataDir() + "\\wordMap.bin"));
+			objOutStreamWordMap.writeObject(allData.getWordMap());
+			objOutStreamWordMap.close();
+
+			ObjectOutputStream objOutStreamWordFreq =
+					new ObjectOutputStream(
+							new FileOutputStream(config.getDataDir() + "\\wordFreq.bin"));
+			objOutStreamWordFreq.writeObject(allData.getWordFreq());
+			objOutStreamWordFreq.close();
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 
@@ -126,25 +159,54 @@ public class AllData implements  Serializable {
 	 * <p>
 	 * @param allData
 	 */
-	public static AllData deserializeAllDataList(String allDataName) {
-        try {
-            ObjectInputStream objInStream
-              = new ObjectInputStream(
-                new FileInputStream(allDataName));
+	public static AllData deserializeAllDataList(Config config) {
+		try {
+			String DataDir = config.getDataDir();
+			ObjectInputStream objInStream
+			= new ObjectInputStream(
+					new FileInputStream(DataDir + "\\allData.bin"));
+			AllData allData = (AllData) objInStream.readObject();
+			objInStream.close();
 
-            AllData allData = (AllData) objInStream.readObject();
+			ObjectInputStream objInStreamBlockList
+			= new ObjectInputStream(
+			new FileInputStream(DataDir + "\\blockList.bin"));
+			allData.setBlockListOfCalcedVec((ArrayList<Block>) objInStreamBlockList.readObject());
+			objInStreamBlockList.close();
 
-            objInStream.close();
+			ObjectInputStream objInStreamSourceFileList
+			= new ObjectInputStream(
+			new FileInputStream(DataDir + "\\sourceFileList.bin"));
+			allData.setSourceFileList((ArrayList<SourceFile>) objInStreamSourceFileList.readObject());
+			objInStreamSourceFileList.close();
 
-            return allData;
+			ObjectInputStream objInStreamClonePairList
+			= new ObjectInputStream(
+			new FileInputStream(DataDir + "\\clonePairList.bin"));
+			allData.setClonePairList((ArrayList<ClonePair>) objInStreamClonePairList.readObject());
+			objInStreamClonePairList.close();
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+			ObjectInputStream objInStreamWordMap
+			= new ObjectInputStream(
+			new FileInputStream(DataDir + "\\wordMap.bin"));
+			allData.setWordMap((Map<String, Integer>) objInStreamWordMap.readObject());
+			objInStreamWordMap.close();
+
+			ObjectInputStream objInStreamWordFreq
+			= new ObjectInputStream(
+			new FileInputStream(DataDir + "\\wordFreq.bin"));
+			allData.setWordFreq((int[]) objInStreamWordFreq.readObject());
+			objInStreamWordFreq.close();
+
+			return allData;
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 
 		return null;
 	}
@@ -180,7 +242,7 @@ public class AllData implements  Serializable {
 		for(ClonePair cp : ClonePairList) {
 			int idA = cp.cloneA.getId();
 			int idB = cp.cloneB.getId();
-		//	System.out.println("test");
+			//	System.out.println("test");
 			System.out.println("idA = " + idA);
 			System.out.println("idB = " + idB);
 			System.out.println("blockList.get(idA).getID() = " + blockList.get(idA).getId());

@@ -105,6 +105,11 @@ public class SettingFileLoader {
 						inputFlag = 0;
 					}
 
+					if(line.contains("INPUT_PREDIR:")) {
+						config.setInputPreDir(removeSpace(line.replace("INPUT_PREDIR:","")));
+						inputFlag = 0;
+					}
+
 					if(inputFlag == 1) {
 						config.setInputDir(removeSpace(line));
 					}
