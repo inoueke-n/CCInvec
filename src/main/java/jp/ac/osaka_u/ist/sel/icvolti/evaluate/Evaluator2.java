@@ -29,58 +29,58 @@ public class Evaluator2 {
 	public static ArrayList<ClonePair> benchmarkList = new ArrayList<ClonePair>();
 	public static ArrayList<Block> blockList = new ArrayList<>();
 	public static HashMap<String, Integer> blockMap = new HashMap<String, Integer>();
-	
-	public static void evaluate() throws Exception {	
+
+	public static void evaluate() throws Exception {
 		readBlockListCSV();
 		readResultCVS();
 		readBenchmark();
-		PrintWriter writer01=new PrintWriter(new FileOutputStream(PRECISION_RESULT));		
+		PrintWriter writer01=new PrintWriter(new FileOutputStream(PRECISION_RESULT));
 		PrintWriter writer02=new PrintWriter(new FileOutputStream(RECALL_RESULT));
-		
+
 		//Precisionの評価
 		int truePositive=0;
 		for(ClonePair pairA:resultList){
 			boolean f=false;
 			for(ClonePair pairB:benchmarkList){
 				if((pairA.cloneA.getId()==pairB.cloneA.getId() && pairA.cloneB.getId()==pairB.cloneB.getId())
-					|| (pairA.cloneA.getId()==pairB.cloneB.getId() && pairA.cloneB.getId()==pairB.cloneA.getId())){	
+					|| (pairA.cloneA.getId()==pairB.cloneB.getId() && pairA.cloneB.getId()==pairB.cloneA.getId())){
 					truePositive++;
 					f=true;
 					break;
-				}				
-			}	
-			writer01.printf("%s,%s,%f,%s,\r\n",pairA.cloneA.getName(),pairA.cloneB.getName(),pairA.sim,f);			
-		}			
-		
+				}
+			}
+			writer01.printf("%s,%s,%f,%s,\r\n",pairA.cloneA.getName(),pairA.cloneB.getName(),pairA.sim,f);
+		}
+
 		for(ClonePair pairB:benchmarkList){
 			boolean f=false;
 			for (ClonePair pairA : resultList) {
 				if((pairA.cloneA.getId()==pairB.cloneA.getId() && pairA.cloneB.getId()==pairB.cloneB.getId())
-						|| (pairA.cloneA.getId()==pairB.cloneB.getId() && pairA.cloneB.getId()==pairB.cloneA.getId())){	
+						|| (pairA.cloneA.getId()==pairB.cloneB.getId() && pairA.cloneB.getId()==pairB.cloneA.getId())){
 							f=true;
 						break;
 					}
 			}
-			writer02.printf("%s,%s,%s,%f,%d,%f,\r\n",pairB.cloneA.getName(),pairB.cloneB.getName(), f, innerPoint(pairB), 
+			writer02.printf("%s,%s,%s,%f,%d,%f,\r\n",pairB.cloneA.getName(),pairB.cloneB.getName(), f, innerPoint(pairB),
 					Math.abs(pairB.cloneA.getNodeNum()-pairB.cloneB.getNodeNum()),
-					 Math.abs(pairB.cloneA.getLen() - pairB.cloneB.getLen()));				
-		}	
-		
-		writer01.close();	
-		writer02.close();	
-		
+					 Math.abs(pairB.cloneA.getLen() - pairB.cloneB.getLen()));
+		}
+
+		writer01.close();
+		writer02.close();
+
 		double precision = (double)truePositive/(double)resultList.size();
 		double recall = (double)truePositive/(double)benchmarkList.size();
 		System.out.printf("Precision : %f\r\n",precision);
 		System.out.printf("Recall : %f\r\n",recall);
 		System.out.printf("F : %f\r\n",2/(1/precision+1/recall));
-		
+
 	}
 
 	private static double innerPoint(ClonePair pair){
 		OpenMapRealVector v1 = pair.cloneA.getVector();
 		OpenMapRealVector v2 = pair.cloneB.getVector();
-		
+
 		double s = 0;
 		for (int index : RealVectorUtil.getSparseIndexList(v1)) {
 			s += v1.getEntry(index) * v2.getEntry(index);
@@ -90,10 +90,10 @@ public class Evaluator2 {
 
 	/**
 	 * <p>ベンチマーク読み込み</p>
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	private static void readBenchmark() throws IOException {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(BENCHMARK)));		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(BENCHMARK)));
 		String line = null;
 		int lineNo=1;
 		while((line=reader.readLine())!=null){
@@ -102,10 +102,10 @@ public class Evaluator2 {
 		}
 		while((line=reader.readLine())!=null){
 			if(line.equals("Cluster Information")) break;
-			
+
 			String[] tmp = line.split("\t");
 			if(Double.valueOf(tmp[11])>Config.E_DIFF || Integer.valueOf(tmp[5])<Config.METHOD_NODE_TH || Integer.valueOf(tmp[10])<Config.METHOD_NODE_TH) continue;
-			
+
 			ClonePair pair;
 			/*
 			Block blockA = new Block();
@@ -115,7 +115,7 @@ public class Evaluator2 {
 			pair.cloneA = blockA;
 			pair.cloneB = blockB;
 			*/
-			
+
 			Block cloneA = null;
 			Block cloneB = null;
 			Integer a,b;
@@ -124,8 +124,8 @@ public class Evaluator2 {
 			b=blockMap.get(tmp[6].replaceAll("\\/", "") + getName(tmp[7]) + tmp[8].split("\\D")[1]);
 			if(a!=null && b!=null){
 				pair = new ClonePair(blockList.get(a), blockList.get(b), 0.0);
-				
-			
+
+
 				if(	Math.abs(pair.cloneA.getNodeNum()-pair.cloneB.getNodeNum())<Config.DIFF_TH &&
 				Math.abs(pair.cloneA.getLen() - pair.cloneB.getLen()) < Config.DIS_TH &&
 				!pair.cloneA.getName().contains("test") && !pair.cloneA.getName().contains("Test")
@@ -133,8 +133,8 @@ public class Evaluator2 {
 					benchmarkList.add(pair);
 				}
 			}
-		}	
-		reader.close();		
+		}
+		reader.close();
 	}
 
 	private static String getName(String str) {
@@ -148,7 +148,7 @@ public class Evaluator2 {
 	 * @throws IOException
 	 */
 	private static void readResultCVS() throws IOException {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(RESULT)));		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(RESULT)));
 		String line = null;
 		while((line=reader.readLine())!=null){
 			ClonePair pair;
@@ -162,17 +162,17 @@ public class Evaluator2 {
 				pair = new ClonePair(blockList.get(a), blockList.get(b), Double.valueOf(tmp[6]));
 				if(	!pair.cloneA.getName().contains("test") && !pair.cloneA.getName().contains("Test")
 					&&!pair.cloneB.getName().contains("test") && !pair.cloneB.getName().contains("Test") )
-				
+
 				resultList.add(pair);
 			}
-			
-			
-			
-				
-		}		
+
+
+
+
+		}
 		reader.close();
 	}
-	
+
 	private static void readBlockListCSV() throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(CloneDetector.BLOCKLIST_CSV)));
 		String line;
@@ -201,7 +201,7 @@ public class Evaluator2 {
 		}
 		reader.close();
 	}
-	
+
 	public static void main(String[] args) throws Exception {
 		evaluate();
 		Toolkit.getDefaultToolkit().beep();

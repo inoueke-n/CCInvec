@@ -1,26 +1,23 @@
 package jp.ac.osaka_u.ist.sel.icvolti.evaluate;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
-import jp.ac.osaka_u.ist.sel.icvolti.model.ClonePair;
 
 public class Evaluator4 {
 	static String[] args1 = { "-l", "c", "--size", "30", "-d", "", "--sizeb", "20" };
 	static List<List<Block>> cloneSetList = new ArrayList<List<Block>>();
 	static List<String> lines = new ArrayList<String>();
-	
+
 	private static void evaluate(String path, int start, int end) throws Exception {
-	
+
 	}
-	
+
 
 	private static void readResult(String file) {
 		try {
@@ -97,7 +94,7 @@ public class Evaluator4 {
 		//searchClone("srclib/apr-util/misc/apr_rmm.c",258,264,"srclib/apr-util/misc/apr_rmm.c",267,273);
 		//searchClone("unix/readwrite.c",336,346,"unix/readwrite.c",356,361);
 		searchClone("Modules/stropmodule.c",706,717,"Objects/stringobject.c",2319,2328);
-		
+
 		//boolean result = searchClone("modules/arch/netware/mod_nw_ssl.c",525,537,"modules/arch/win32/mod_isapi.c",287,301);
 		System.out.println("done");
 	}

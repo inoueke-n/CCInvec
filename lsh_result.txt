@@ -1,44 +1,676 @@
 Query point 0
-0
-1
-2
-3
-5
-6
-7
-8
+23
+26
 
 Query point 1
-0
-1
-2
-3
-5
-6
-7
-8
+24
 
 Query point 2
-0
-1
-2
-3
-5
-6
-7
-8
+25
 
 Query point 3
-0
-1
-2
-3
-5
-6
-7
-8
+27
 
 Query point 4
-4
-9
+28
+
+Query point 5
+41
+42
+
+Query point 6
+41
+42
+
+Query point 7
+57
+
+Query point 8
+62
+
+Query point 9
+65
+
+Query point 10
+70
+
+Query point 11
+71
+
+Query point 12
+81
+82
+86
+
+Query point 13
+68
+81
+82
+87
+
+Query point 14
+81
+86
+87
+
+Query point 15
+82
+86
+87
+
+Query point 16
+99
+
+Query point 17
+124
+
+Query point 18
+129
+130
+
+Query point 19
+129
+130
+
+Query point 20
+331
+
+Query point 21
+339
+
+Query point 22
+341
+
+Query point 23
+342
+
+Query point 24
+496
+
+Query point 25
+508
+
+Query point 26
+509
+
+Query point 27
+510
+
+Query point 28
+525
+526
+
+Query point 29
+525
+526
+
+Query point 30
+532
+
+Query point 31
+540
+
+Query point 32
+546
+
+Query point 33
+547
+
+Query point 34
+570
+
+Query point 35
+576
+577
+579
+580
+581
+582
+
+Query point 36
+576
+577
+579
+580
+581
+582
+
+Query point 37
+578
+
+Query point 38
+584
+
+Query point 39
+586
+
+Query point 40
+587
+
+Query point 41
+589
+
+Query point 42
+620
+
+Query point 43
+625
+
+Query point 44
+626
+
+Query point 45
+700
+701
+
+Query point 46
+700
+701
+
+Query point 47
+735
+736
+
+Query point 48
+756
+
+Query point 49
+758
+
+Query point 50
+912
+
+Query point 51
+949
+
+Query point 52
+950
+
+Query point 53
+1011
+
+Query point 54
+1132
+
+Query point 55
+1181
+
+Query point 56
+1230
+
+Query point 57
+1251
+
+Query point 58
+1253
+
+Query point 59
+1258
+
+Query point 60
+1282
+
+Query point 61
+1354
+1355
+
+Query point 62
+1354
+1355
+
+Query point 63
+1356
+
+Query point 64
+1357
+
+Query point 65
+1374
+1375
+
+Query point 66
+1374
+1375
+1376
+
+Query point 67
+1375
+1376
+1377
+
+Query point 68
+1376
+1377
+1378
+
+Query point 69
+1377
+1378
+
+Query point 70
+1477
+
+Query point 71
+1478
+
+Query point 72
+1504
+1505
+
+Query point 73
+1505
+1506
+1511
+1512
+1504
+
+Query point 74
+1505
+1506
+1512
+
+Query point 75
+1507
+
+Query point 76
+1508
+
+Query point 77
+1509
+1511
+1512
+
+Query point 78
+1505
+1509
+1511
+1512
+
+Query point 79
+1505
+1506
+1509
+1511
+1512
+
+Query point 80
+1513
+
+Query point 81
+1518
+1519
+1520
+
+Query point 82
+1518
+1519
+1520
+
+Query point 83
+1518
+1519
+1520
+
+Query point 84
+1523
+
+Query point 85
+1530
+
+Query point 86
+1630
+1631
+
+Query point 87
+1630
+1631
+1632
+
+Query point 88
+1631
+1632
+
+Query point 89
+1671
+1676
+
+Query point 90
+1673
+
+Query point 91
+1674
+
+Query point 92
+1679
+1680
+1681
+
+Query point 93
+1679
+1680
+1681
+
+Query point 94
+1679
+1680
+1681
+1682
+
+Query point 95
+1736
+
+Query point 96
+1767
+
+Query point 97
+1770
+
+Query point 98
+1825
+
+Query point 99
+1834
+1848
+
+Query point 100
+1838
+1839
+
+Query point 101
+1839
+1838
+
+Query point 102
+1834
+1848
+
+Query point 103
+1975
+
+Query point 104
+2042
+
+Query point 105
+2084
+
+Query point 106
+2093
+
+Query point 107
+2094
+
+Query point 108
+2112
+2113
+2114
+
+Query point 109
+2113
+2114
+2112
+
+Query point 110
+2296
+2297
+2298
+2299
+2301
+2302
+2303
+2382
+2383
+2384
+2385
+2386
+2387
+2388
+2389
+
+Query point 111
+2296
+2297
+2298
+2299
+2300
+2301
+2302
+2303
+2382
+2383
+2384
+2385
+2386
+2387
+2388
+2389
+
+Query point 112
+2654
+
+Query point 113
+2655
+
+Query point 114
+2810
+
+Query point 115
+2819
+
+Query point 116
+2977
+
+Query point 117
+3111
+
+Query point 118
+3113
+3114
+
+Query point 119
+3113
+3114
+
+Query point 120
+3148
+
+Query point 121
+3149
+
+Query point 122
+3156
+
+Query point 123
+3207
+3208
+
+Query point 124
+3207
+3208
+
+Query point 125
+3217
+
+Query point 126
+3235
+
+Query point 127
+3290
+
+Query point 128
+3296
+
+Query point 129
+3302
+3303
+3304
+3306
+3307
+
+Query point 130
+3302
+3303
+3304
+3305
+3306
+
+Query point 131
+3302
+3303
+3304
+3305
+
+Query point 132
+3303
+3304
+3305
+
+Query point 133
+3306
+3307
+3308
+3302
+3303
+
+Query point 134
+3306
+3307
+3308
+3302
+
+Query point 135
+3306
+3307
+3308
+
+Query point 136
+3310
+
+Query point 137
+3313
+
+Query point 138
+3325
+
+Query point 139
+3334
+
+Query point 140
+3494
+
+Query point 141
+3495
+
+Query point 142
+3596
+
+Query point 143
+3627
+3628
+
+Query point 144
+3628
+3627
+
+Query point 145
+3659
+
+Query point 146
+3733
+
+Query point 147
+3751
+
+Query point 148
+3752
+
+Query point 149
+3761
+
+Query point 150
+3784
+3793
+
+Query point 151
+3785
+3786
+
+Query point 152
+3793
+3784
+
+Query point 153
+3794
+3795
+
+Query point 154
+4107
+
+Query point 155
+4333
+
+Query point 156
+4536
+4537
+
+Query point 157
+4537
+4536
+
+Query point 158
+4580
+4581
+
+Query point 159
+4580
+4581
+
+Query point 160
+4610
+4615
+4688
+4839
+5166
+5239
+
+Query point 161
+4812
+
+Query point 162
+5235
+
+Query point 163
+5236
+
+Query point 164
+5329
+
+Query point 165
+5330
+
+Query point 166
+5599
+
+Query point 167
+5600
+
+Query point 168
+5601
+
+Query point 169
+5602
+
+Query point 170
+5603
+
+Query point 171
+5604
+
+Query point 172
+5605
+
+Query point 173
+5606
+
+Query point 174
+5607
 

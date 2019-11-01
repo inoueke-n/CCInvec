@@ -29,6 +29,7 @@ import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.BlockFactory;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
 
+
 public class JavaAnalyzer3 {
 
 	// private ASTParser parser = ASTParser.newParser(AST.JLS4);
@@ -351,9 +352,11 @@ public class JavaAnalyzer3 {
 				for(Block block : file.getNewBlockList()) {
 					Block oldBlock = new Block();
 					oldBlock = block.clone();
+//					System.out.println("oldBlock vec " + oldBlock.getVector());
+//					System.out.println("oldBlock len " + oldBlock.getLen());
 					file.getOldBlockList().add(oldBlock);
 				}
-				file.getOldBlockList().addAll(file.getNewBlockList());
+				//file.getOldBlockList().addAll(file.getNewBlockList());
 				blockList.addAll(file.getNewBlockList());
 			/*	for(Block block : blockList) {
 					System.out.println("aaaa Block l====enn =     " + block.getLen());
@@ -421,19 +424,22 @@ public class JavaAnalyzer3 {
 	 * @return
 	 * @throws IOException
 	 */
-	public static void analyzeAFile(SourceFile file, List<Block> newBlockList) throws IOException {
+	public static void analyzeAFile(SourceFile file, ArrayList<Block> newBlockList) throws IOException {
 
+		// 新しくファイルを解析するので，もとにあったblockのデータはnewBlockListから削除
+		//この処理ってなぜ？
 		for(Block block : file.getNewBlockList()) {
 			int index = newBlockList.indexOf(block);
 			if(index > -1) {
 				newBlockList.remove(index);
 			}
 		}
-		System.out.println("new Block Size 3  = " + newBlockList.size());
+		//System.out.println("new Block Size 3  = " + newBlockList.size());
 
 		//新しくnweBlockListを作るので，前作ってたものを削除
 		file.getNewBlockList().clear();
 
+		file.setState(SourceFile.MODIFIED);
 
 
 		countFiles++;
@@ -541,8 +547,9 @@ public class JavaAnalyzer3 {
 				}
 				// if we parse ok, it's LL not SLL
 			}
-			blockList.addAll(extractMethod(tree, parser));
 			file.getNewBlockList().addAll(extractMethod(tree, parser));
+		//	blockList.addAll(extractMethod(tree, parser));
+			blockList.addAll(file.getNewBlockList());
 			countParseFiles++;
 			tokens.fill();
 

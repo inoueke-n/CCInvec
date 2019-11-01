@@ -31,6 +31,7 @@ import jp.ac.osaka_u.ist.sel.icvolti.model.ClonePair;
 import jp.ac.osaka_u.ist.sel.icvolti.model.CloneSet;
 import jp.ac.osaka_u.ist.sel.icvolti.model.RealVectorUtil;
 
+
 public class CloneJudgement {
 	/**
 	 * <p>
@@ -44,13 +45,13 @@ public class CloneJudgement {
 		System.out.println("parallel calc distanse");
 		long start = System.currentTimeMillis();
 		int numHardThread = Runtime.getRuntime().availableProcessors();
-	/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
+		/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
 			config.setThreads(numHardThread);*/
 		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
 			Config.NUM_THREADS = numHardThread;
 
-//		ExecutorService executor = Executors.newFixedThreadPool(config.getThreads());
-	//	System.out.println("The number of threads : " + config.getThreads());
+		//		ExecutorService executor = Executors.newFixedThreadPool(config.getThreads());
+		//	System.out.println("The number of threads : " + config.getThreads());
 		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
 		System.out.println("The number of threads : " + Config.NUM_THREADS);
 
@@ -103,7 +104,7 @@ public class CloneJudgement {
 			e.printStackTrace();
 		}
 
-		System.out.println("task add done");
+		//System.out.println("task add done");
 		ArrayList<ClonePair> clonePairList = new ArrayList<ClonePair>(tasks.size());
 
 		try {
@@ -191,8 +192,8 @@ public class CloneJudgement {
 					qp = addedModifiedBlockList.get(i).getId();
 					qpList.add(qp);
 					methodIdList = new ArrayList<Integer>();
-					System.out.println(qp + "qp fileName" + blockList.get(qp).getFileName());
-					System.out.println(qp + "qp  start " + blockList.get(qp).getStartLine() + " end " + blockList.get(qp).getEndLine() );
+					//		System.out.println(qp + "qp fileName" + blockList.get(qp).getFileName());
+					//		System.out.println(qp + "qp  start " + blockList.get(qp).getStartLine() + " end " + blockList.get(qp).getEndLine() );
 					// Map<Integer, Double> methodList = new TreeMap<Integer,
 					// Double>();
 				} else if (line.matches("\\d+")) {
@@ -204,22 +205,22 @@ public class CloneJudgement {
 				} else if (line.equals("")) {
 					Collections.sort(methodIdList);
 
-					System.out.println("qp = " + qp);
+					//	System.out.println("qp = " + qp);
 					for (Integer methodId : methodIdList) {
 						// Double diff =
 						// Double.valueOf(line.split("\t")[1].replace("Distance:",""));
 						//クラスタ内の自分の番号より上のコード片を対象に類似度を計算
-						System.out.println("mId = " + methodId);
+						//		System.out.println("mId = " + methodId);
 
 						if (qp <  methodId) {
-							System.out.println(methodId + "methodiD fileName" + blockList.get(methodId).getFileName());
-							System.out.println(methodId + "methodID start " + blockList.get(methodId).getStartLine() + " end " + blockList.get(methodId).getEndLine() );
+							//				System.out.println(methodId + "methodiD fileName" + blockList.get(methodId).getFileName());
+							//				System.out.println(methodId + "methodID start " + blockList.get(methodId).getStartLine() + " end " + blockList.get(methodId).getEndLine() );
 							tasks.add(new parallelGetClonePair(blockList.get(qp), blockList.get(methodId)));
 							//tasks.add(new parallelGetClonePair(addedModifiedBlockList.get(i), blockList.get(methodId)));
 							pairList.add(new Pair<Integer, Integer>(qp, methodId));
 						}else if(qpList.indexOf(methodId) == -1) {
-							System.out.println(methodId + "methodiD fileName" + blockList.get(methodId).getFileName());
-							System.out.println(methodId + "methodID start " + blockList.get(methodId).getStartLine() + " end " + blockList.get(methodId).getEndLine() );
+							//			System.out.println(methodId + "methodiD fileName" + blockList.get(methodId).getFileName());
+							//			System.out.println(methodId + "methodID start " + blockList.get(methodId).getStartLine() + " end " + blockList.get(methodId).getEndLine() );
 							tasks.add(new parallelGetClonePair(blockList.get(qp), blockList.get(methodId)));
 							//tasks.add(new parallelGetClonePair(addedModifiedBlockList.get(i), blockList.get(methodId)));
 							pairList.add(new Pair<Integer, Integer>(qp, methodId));
@@ -263,7 +264,7 @@ public class CloneJudgement {
 					if ((sim = future.get()) != null) {
 						clonePairList.add(new ClonePair(blockList.get(pairList.get(i).getFirst()),
 								blockList.get(pairList.get(i).getSecond()), sim));
-						System.out.println("add clonepair " + i);
+						//					System.out.println("add clonepair " + i);
 					}
 					i++;
 				} catch (Exception e) {
@@ -292,6 +293,12 @@ public class CloneJudgement {
 		System.out.print("filtering done : ");
 		System.out.println(System.currentTimeMillis() - start + "[ms]");
 		System.out.println("cloenpairList sieze = " + clonePairList.size());
+		for(ClonePair cp : clonePairList) {
+			System.out.println("clone A ID" + cp.cloneA.getId());
+			System.out.println("clone A startline" + cp.cloneA.getStartLine());
+			System.out.println("clone B ID" + cp.cloneB.getId());
+			System.out.println("clone B startline" + cp.cloneB.getStartLine());
+		}
 
 		return clonePairList;
 	}
@@ -303,9 +310,9 @@ public class CloneJudgement {
 		int numHardThread = Runtime.getRuntime().availableProcessors();
 		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
 			Config.NUM_THREADS = numHardThread;
-	/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
+		/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
 			config.setThreads(numHardThread);
-*/
+		 */
 		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
 
 		List<Callable<Double>> tasks = new ArrayList<Callable<Double>>();
@@ -355,7 +362,7 @@ public class CloneJudgement {
 		for (ClonePair pair : clonePairList)
 			if (filteringPair(clonePairList, pair.cloneA, pair.cloneB)) {
 				newClonePairList.add(pair);
-				System.out.println("add : " + pair);
+				//			System.out.println("add : " + pair);
 			}
 
 		clonePairList = newClonePairList;
@@ -376,10 +383,40 @@ public class CloneJudgement {
 	public static ArrayList<CloneSet> getCloneSetList(ArrayList<ClonePair> clonePairList, List<Block> blockList) {
 		Graph<Integer, DefaultEdge> graph = new SimpleGraph<>(DefaultEdge.class);
 		for (ClonePair clonePair : clonePairList) {
-			graph.addVertex(clonePair.cloneA.getId());
-			graph.addVertex(clonePair.cloneB.getId());
-			graph.addEdge(clonePair.cloneA.getId(), clonePair.cloneB.getId());
+		//	System.out.println("cloneA.getId() " + clonePair.cloneA.getId());
+		//	System.out.println("cloneB.getId() " + clonePair.cloneB.getId());
+			if(clonePair.cloneA.getId() != clonePair.cloneB.getId()) {
+				graph.addVertex(clonePair.cloneA.getId());
+				graph.addVertex(clonePair.cloneB.getId());
+				graph.addEdge(clonePair.cloneA.getId(), clonePair.cloneB.getId());
+			}
+			//			System.out.println("cloneA.getId() " + clonePair.cloneA.getId());
+			//
+			//			if(clonePair.cloneA.getStartLine() == 716) {
+			//				System.out.println("716 ID = "+  clonePair.cloneA.getId());
+			//				System.out.println("717 ID = "+  clonePair.cloneB.getId());
+			//				System.out.println("sarrt lne = "+  clonePair.cloneB.getStartLine());
+			//
+			//			}
+			//
+			//			//System.out.println("cloneB.getId() " + clonePair.cloneB.getId());
+			//			int aU = blockList.indexOf(clonePair.cloneA);
+			//			int bU = blockList.indexOf(clonePair.cloneB);
+			//			if((aU != -1) || (bU != -1)) {
+			//				System.out.println("noting  ");
+			//				System.out.println("============= = ");
+			//				System.out.println("clone A = " + clonePair.cloneA.getId());
+			//				System.out.println("clone B = " + clonePair.cloneB.getId());
+			//				System.out.println("============= = ");
+			//
+			//			}
 		}
+
+		/*	int i =0;
+		for(Block block : blockList) {
+			System.out.println("block " + i++);
+			System.out.println("block ID" + block.getId());
+		}*/
 
 		MaximalCliqueEnumerationAlgorithm<Integer, DefaultEdge> cliqueFinder;
 		// cliqueFinder = new BronKerboschCliqueFinder<>(graph);
@@ -391,10 +428,24 @@ public class CloneJudgement {
 			CloneSet cloneSet = new CloneSet();
 			clique = new TreeSet<>(clique); // セットをソート
 			for (Integer v : clique) {
+				//		System.out.println("v = " + v);
+				if(blockList.get(v).getStartLine() == 716) {
+					System.out.println("716 ID = "+  blockList.get(v).getId());
+
+				}
+				if(blockList.get(v).getStartLine() == 717) {
+					System.out.println("717 ID = "+  blockList.get(v).getId());
+
+				}
+				if(v != blockList.get(v).getId()){
+					System.out.print(" not match");
+				}
 				cloneSet.cloneList.add(blockList.get(v));
 			}
 			cloneSetList.add(cloneSet);
 		}
+
+		cliqueFinder = null;
 
 		return cloneSetList;
 	}
@@ -599,6 +650,100 @@ public class CloneJudgement {
 			}
 			i++;
 		}
+	}
+
+
+	public void sortClonePair(ArrayList<ClonePair> clonePair_test) {
+		clonePair_test.sort(Comparator.comparing(ClonePair::getCloneAId).thenComparing(ClonePair::getCloneBId));
+
+
+	}
+
+
+	public void insertClonePairToList(ArrayList<ClonePair> clonePairList_test, ArrayList<ClonePair> addedClonePair) {
+		// TODO 自動生成されたメソッド・スタブ
+		//for(ClonePair intsertClonePair: addedClonePair) {
+		//	int cloneAId = insertClonePair
+		//}
+		int i =0;
+		int cloneAId = addedClonePair.get(i).cloneA.getId();
+		int cloneBId = addedClonePair.get(i).cloneB.getId();
+		int AId_pre;
+		int AId;
+		int BId_pre;
+		int BId;
+		/*ArrayList<ClonePair> clonePairList_sub = new ArrayList<ClonePair>();
+		clonePairList_sub = new
+		 */
+		for(int k =1; k<clonePairList_test.size(); k++) {
+			AId_pre= clonePairList_test.get(k-1).cloneA.getId();
+			AId= clonePairList_test.get(k).cloneA.getId();
+			cloneAId = addedClonePair.get(i).cloneA.getId();
+			cloneBId = addedClonePair.get(i).cloneB.getId();
+			if(cloneAId < AId_pre) {
+				clonePairList_test.add(k, addedClonePair.get(i));
+				i++;
+			}else if((cloneAId == AId_pre) && (cloneAId == AId)) {
+				BId_pre = clonePairList_test.get(k-1).cloneB.getId();
+				BId = clonePairList_test.get(k).cloneB.getId();
+				if((BId_pre < cloneBId) && (cloneBId < BId)) {
+					clonePairList_test.add(k, addedClonePair.get(i));
+					i++;
+				}else if(BId_pre > cloneBId) {
+					clonePairList_test.add(k-1, addedClonePair.get(i));
+					i++;
+				}else if(BId < cloneBId) {
+					clonePairList_test.add(k, addedClonePair.get(i));
+					i++;
+				}
+			}else if((cloneAId == AId_pre) && (cloneAId < AId)) {
+				BId_pre = clonePairList_test.get(k-1).cloneB.getId();
+				if(BId_pre > cloneBId) {
+					clonePairList_test.add(k-1, addedClonePair.get(i));
+					i++;
+				}else if(BId_pre < cloneBId) {
+					clonePairList_test.add(k, addedClonePair.get(i));
+					i++;
+				}
+			}else if((k == clonePairList_test.size()) && (cloneAId > AId)) {
+				clonePairList_test.add(k+1, addedClonePair.get(i));
+				i++;
+			}else if((k == clonePairList_test.size()) && (cloneAId < AId)) {
+				clonePairList_test.add(k+1, addedClonePair.get(i));
+				i++;
+
+			}
+
+		}
+		/*	if(AId <= cloneAId) {
+				BId = clonePairList.cloneB.getId();
+				if(BId < cloneBId) {
+					clonePairList_test.add(j, addedClonePair.get(i));
+					i++;
+					cloneAId = addedClonePair.get(i).cloneA.getId();
+					cloneBId = addedClonePair.get(i).cloneB.getId();
+				}
+			}
+			j++;
+			clonePair.cloneA.getId();
+
+		}*/
+
+		/*	for(ClonePair clonePair: clonePairList_test) {
+			AId= clonePair.cloneA.getId();
+			if(AId <= cloneAId) {
+				BId = clonePair.cloneB.getId();
+				if(BId < cloneBId) {
+					clonePairList_test.add(j, addedClonePair.get(i));
+					i++;
+					cloneAId = addedClonePair.get(i).cloneA.getId();
+					cloneBId = addedClonePair.get(i).cloneB.getId();
+				}
+			}
+			j++;
+			clonePair.cloneA.getId();
+		}*/
+
 	}
 
 }

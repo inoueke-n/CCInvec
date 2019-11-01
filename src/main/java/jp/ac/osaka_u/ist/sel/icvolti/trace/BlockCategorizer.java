@@ -3,6 +3,8 @@ package jp.ac.osaka_u.ist.sel.icvolti.trace;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.ac.osaka_u.ist.sel.icvolti.BlockUpdater;
+import jp.ac.osaka_u.ist.sel.icvolti.model.AllData;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
 
@@ -23,15 +25,21 @@ public class BlockCategorizer {
 	 * @param fileList
 	 *            ソースファイルリスト
 	 */
-	public ArrayList<Block> categorizeBlock(ArrayList<SourceFile> fileList) {
+	public ArrayList<Block> categorizeBlock(ArrayList<SourceFile> fileList, AllData allData) {
 
 		ArrayList<Block> updatedBlockList = new ArrayList<Block>();
 
 		for (SourceFile file : fileList) {
 			//	System.out.println(" start filelist");
+			//ここでmodifiedされたファイルだけやるれば効率化と高速化して，normalなやつはすべてstableつければいい
 			if (file.getState() == SourceFile.NORMAL) {
+				for(Block block : file.getNewBlockList()) {
+					block.setCategory(Block.STABLE);
+				}
+			}else if (file.getState() == SourceFile.MODIFIED) {
+				//ここでmodifiedされたファイルだけやるれば効率化と高速化して，normalなやつはすべてstableつければいい
 				//System.out.println("Source File Nomal ");
-				categorizeStableModified(file,updatedBlockList);
+				categorizeStableModified(file,updatedBlockList, allData);
 			}else {
 
 				System.out.println("=============Source File ADD DELETE ");
@@ -52,7 +60,7 @@ public class BlockCategorizer {
 	 * @param file
 	 *            ブロック分類を行うソースファイル
 	 */
-	private void categorizeStableModified(SourceFile file,List<Block> updatedBlockList) {
+	private void categorizeStableModified(SourceFile file,ArrayList<Block> updatedBlockList, AllData allData) {
 		//int i = 0;
 		for (Block blockA : file.getNewBlockList()) {
 
@@ -111,7 +119,7 @@ public class BlockCategorizer {
 				int endLineB = blockB.getEndLine() - deletedLineEnd;
 				//コード片の重複度を計算，30パーンセット重複していれば，追跡
 				double sim = calcurateLocationSimilarity(blockA, blockB, startLineA, endLineA, startLineB, endLineB);
-				if (sim >= 0.3) {
+				if (sim >= 0.5) {
 					if (blockA.getOldBlock() != null) {
 						//blockA.getLocationSimilarity() デフォルト値は0
 						if (sim > blockA.getLocationSimilarity()) {
@@ -122,6 +130,8 @@ public class BlockCategorizer {
 								if(blockA.getVector() == null) {
 									blockA.setVector(blockB.getVector());
 									blockA.setLen(blockB.getLen());
+									//blockBと同じIDのブロックをクローンペアリストから探して，探して，blockAに入れ替え？
+									BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
 								}
 								//System.out.println("Block STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 							} else {
@@ -140,6 +150,7 @@ public class BlockCategorizer {
 							if(blockA.getVector() == null) {
 								blockA.setVector(blockB.getVector());
 								blockA.setLen(blockB.getLen());
+								BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
 							}
 							//	System.out.println("Block STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						} else {
@@ -155,6 +166,7 @@ public class BlockCategorizer {
 							blockB.setLocationSimilarity(sim);
 							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
 								blockB.setCategory(Block.STABLE);
+								BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
 								//System.out.println("Block STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 							} else {
 								blockB.setCategory(Block.MODIFIED);
@@ -168,6 +180,7 @@ public class BlockCategorizer {
 						blockB.setLocationSimilarity(sim);
 						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
 							blockB.setCategory(Block.STABLE);
+							BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
 							//	System.out.println("Block STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 						} else {
 							blockB.setCategory(Block.MODIFIED);

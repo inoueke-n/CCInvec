@@ -1,19 +1,10 @@
 package jp.ac.osaka_u.ist.sel.icvolti.evaluate;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
-import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
-import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
-import jp.ac.osaka_u.ist.sel.icvolti.model.ClonePair;
 
 public class BigCloneEval3 {
 
@@ -60,7 +51,7 @@ public class BigCloneEval3 {
 		}
 		return loc;
 	}
-	
+
 	public static int countLOC(File file){
 		int loc = 0;
 		try {
@@ -77,7 +68,7 @@ public class BigCloneEval3 {
 			e.printStackTrace();
 		}
 		return loc;
-		
+
 	}
 	private static void delete(File f) {
 		/*

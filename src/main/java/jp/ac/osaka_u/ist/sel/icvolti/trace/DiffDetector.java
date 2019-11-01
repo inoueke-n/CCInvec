@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
 import jp.ac.osaka_u.ist.sel.icvolti.Def;
@@ -35,13 +34,15 @@ public class DiffDetector {
 
 		for(SourceFile file: fileList) {
 			// ファイルが存続 かつ ブロックが消滅していない場合
-		//	if(file.getState() == SourceFile.NORMAL && !(file.getNewBlockList().isEmpty() && !file.getOldBlockList().isEmpty())) {
-		//	System.out.println("SourceFile.NOMAL = " + file.getState());
+			//	if(file.getState() == SourceFile.NORMAL && !(file.getNewBlockList().isEmpty() && !file.getOldBlockList().isEmpty())) {
+			//	System.out.println("SourceFile.NOMAL = " + file.getState());
+
+
 
 			if(file.getState() == SourceFile.NORMAL) {
-			//	System.out.println("NOMAL source FIle");
+				//	System.out.println("NOMAL source FIle");
 				if(!executeDiff(file)) {
-				System.out.println("diff false");
+					System.out.println("diff false");
 					return false;
 				}
 			}
@@ -50,7 +51,7 @@ public class DiffDetector {
 	}
 
 
-	public static boolean  getDiff_test(ArrayList<SourceFile> fileList, List<Block> newBlockList, Config config) {
+	public static boolean  getDiff_test(ArrayList<SourceFile> fileList, ArrayList<Block> newBlockList, Config config) {
 
 		//ディレクトリ全体にdiffをかけて
 
@@ -71,7 +72,7 @@ public class DiffDetector {
 	 *           <li>失敗の場合 - false</li>
 	 *         </ul>
 	 */
-	private static boolean executeDiff_test(ArrayList<SourceFile> fileList, List<Block> newBlockList, Config config) {
+	private static boolean executeDiff_test(ArrayList<SourceFile> fileList, ArrayList<Block> newBlockList, Config config) {
 		try{
 
 			//System.out.println("DIFFFFFFFFF");
@@ -80,7 +81,7 @@ public class DiffDetector {
 			if (File.separatorChar == '\\') {
 				//diff -r oldfolpath newfolpath
 				String[] cmdArray = { Paths.get(Def.CCVOLTI_PATH, Def.DIFF_PATH).toString(),"-r" ,config.getOldTarget(), config.getNewTarget() };
-			//	System.out.println(Arrays.asList(cmdArray));
+				//	System.out.println(Arrays.asList(cmdArray));
 				//System.out.println("kita  ====");
 				pb = new ProcessBuilder(cmdArray);
 			} else {
@@ -94,31 +95,69 @@ public class DiffDetector {
 			String line;
 
 			SourceFile subjectFile = null ;
+			int diffSearchFlag =0;
 			while((line = reader.readLine()) != null) {
-			 	System.out.println("line = " + line);
-		//	 	System.out.println("watasiha = ! " + line.substring(0,4).contains("diff"));
+				//   System.out.println("line = " + line);
+				//	 	System.out.println("watasiha = ! " + line.substring(0,4).contains("diff"));
 
-			 	//ここのファイル検索もっと効率化できる
-			 	if(line.contains("diff -r ")) {
-			 		String[] command = line.split(" ");
-			    	//	   System.out.println("command = " + command[3].replace("/", "\\"));
+				//ここのファイル検索もっと効率化できる
+				if(line.contains("diff -r ")) {
+					String[] command = line.split(" ");
+					//	   System.out.println("command = " + command[3].replace("/", "\\"));
+					//特定の拡張子を持ったファイルのみを検出対象にする
+					String fileExtension1 = null;
+					String fileExtension2 = null;
+					if(config.getLang()==0) {
+						fileExtension1 = ".java";
+					}else if(config.getLang() == 1){
+						fileExtension1 = ".c";
+						fileExtension2 = ".cpp";
+					}else if(config.getLang() == 2){
+						fileExtension1 = ".cs";
+					}
+					File fileName = new File(command[3]);
+					if(config.getLang() == 1) {
+						if(fileName.isFile() && fileName.getName().endsWith(fileExtension1) && fileName.getName().endsWith(fileExtension2)){
+							diffSearchFlag = 1;
+							//ここのファイル検索の効率化
+							for(SourceFile file: fileList) {
+								//		   System.out.println("===========miki = "  + file.getNewPath());
+								if(file.getNewPath().contains(command[3].replace("/", "\\"))){
+									subjectFile = file;
+									JavaAnalyzer3.analyzeAFile(file, newBlockList);
 
-			 		//ここのファイル検索の効率化
+									//System.out.println("=========== newBlock List===============");
+									//ソースコードのparse
+									break;
+									//	   System.out.println("===========diff===============");
+								}
+							}
+						}else {
+							diffSearchFlag = 0;
+						}
 
+					}else {
+						if(fileName.isFile() && fileName.getName().endsWith(fileExtension1)){
+							diffSearchFlag = 1;
+							//
+							//ここのファイル検索の効率化
+							for(SourceFile file: fileList) {
+								//		   System.out.println("===========miki = "  + file.getNewPath());
+								if(file.getNewPath().contains(command[3].replace("/", "\\"))){
+									subjectFile = file;
+									JavaAnalyzer3.analyzeAFile(file, newBlockList);
 
-			       for(SourceFile file: fileList) {
-			    //		   System.out.println("===========miki = "  + file.getNewPath());
-			    	   if(file.getNewPath().contains(command[3].replace("/", "\\"))){
-			    		   subjectFile = file;
-			    		   JavaAnalyzer3.analyzeAFile(file, newBlockList);
-
-			    		   System.out.println("=========== newBlock List===============");
-			    		   //ソースコードのparse
-			    		   break;
-			    	//	   System.out.println("===========diff===============");
-			    	   }
-			       }
-			 	}else if(Character.isDigit(line.charAt(0))) {
+									//System.out.println("=========== newBlock List===============");
+									//ソースコードのparse
+									break;
+									//	   System.out.println("===========diff===============");
+								}
+							}
+						}else {
+							diffSearchFlag = 0;
+						}
+					}
+				}else if(Character.isDigit(line.charAt(0)) && diffSearchFlag==1) {
 
 
 					// 追加コード
@@ -147,7 +186,7 @@ public class DiffDetector {
 							subjectFile.getAddedCodeList().add(i);
 						}
 
-					// 削除コード
+						// 削除コード
 					} else if (line.contains("d")) {
 						int startLine, endLine;
 						String[] str1 = line.split("d");
@@ -166,40 +205,40 @@ public class DiffDetector {
 							subjectFile.getDeletedCodeList().add(i);
 						}
 
-		    		// 変更コード
-					// 変更部分全体が削除, 追加されたとみなす
-		    		} else if(line.contains("c")) {
-		    			int startLine, endLine;
-		    			String[] str1 = line.split("c");
-		    			String[] str2 = str1[0].split(",");
-		    			String[] str3 = str1[1].split(",");
+						// 変更コード
+						// 変更部分全体が削除, 追加されたとみなす
+					} else if(line.contains("c")) {
+						int startLine, endLine;
+						String[] str1 = line.split("c");
+						String[] str2 = str1[0].split(",");
+						String[] str3 = str1[1].split(",");
 
-		    			if(str2.length == 1) {
-		    				startLine = Integer.valueOf(str2[0]);
-		    				endLine = Integer.valueOf(str2[0]);
-		    			} else {
-		    				startLine = Integer.valueOf(str2[0]);
-		    				endLine = Integer.valueOf(str2[1]);
-		    			}
+						if(str2.length == 1) {
+							startLine = Integer.valueOf(str2[0]);
+							endLine = Integer.valueOf(str2[0]);
+						} else {
+							startLine = Integer.valueOf(str2[0]);
+							endLine = Integer.valueOf(str2[1]);
+						}
 
-		    			for(int i = startLine; i <= endLine; i++) {
-		    				subjectFile.getDeletedCodeList().add(i);
-		    			}
+						for(int i = startLine; i <= endLine; i++) {
+							subjectFile.getDeletedCodeList().add(i);
+						}
 
-		    			if(str3.length == 1) {
-		    				startLine = Integer.valueOf(str3[0]);
-		    				endLine = Integer.valueOf(str3[0]);
-		    			} else {
-		    				startLine = Integer.valueOf(str3[0]);
-		    				endLine = Integer.valueOf(str3[1]);
-		    			}
+						if(str3.length == 1) {
+							startLine = Integer.valueOf(str3[0]);
+							endLine = Integer.valueOf(str3[0]);
+						} else {
+							startLine = Integer.valueOf(str3[0]);
+							endLine = Integer.valueOf(str3[1]);
+						}
 
-		    			for(int i = startLine; i <= endLine; i++) {
-		    				subjectFile.getAddedCodeList().add(i);
-		    			}
-		    		}
-		    	}
-		     }
+						for(int i = startLine; i <= endLine; i++) {
+							subjectFile.getAddedCodeList().add(i);
+						}
+					}
+				}
+			}
 		} catch (IOException e) {
 			return false;
 		}
@@ -224,7 +263,7 @@ public class DiffDetector {
 
 				String[] cmdArray = { Paths.get(Def.CCVOLTI_PATH, Def.DIFF_PATH).toString(), file.getOldPath(),
 						file.getNewPath() };
-			//	System.out.println(Arrays.asList(cmdArray));
+				//	System.out.println(Arrays.asList(cmdArray));
 				//System.out.println("kita  ====");
 				pb = new ProcessBuilder(cmdArray);
 			} else {
@@ -238,7 +277,7 @@ public class DiffDetector {
 			String line;
 
 			while((line = reader.readLine()) != null) {
-			 	System.out.println("line = " + line);
+				//System.out.println("line = " + line);
 				if(Character.isDigit(line.charAt(0))) {
 
 
@@ -268,7 +307,7 @@ public class DiffDetector {
 							file.getAddedCodeList().add(i);
 						}
 
-					// 削除コード
+						// 削除コード
 					} else if (line.contains("d")) {
 						int startLine, endLine;
 						String[] str1 = line.split("d");
@@ -287,40 +326,40 @@ public class DiffDetector {
 							file.getDeletedCodeList().add(i);
 						}
 
-		    		// 変更コード
-					// 変更部分全体が削除, 追加されたとみなす
-		    		} else if(line.contains("c")) {
-		    			int startLine, endLine;
-		    			String[] str1 = line.split("c");
-		    			String[] str2 = str1[0].split(",");
-		    			String[] str3 = str1[1].split(",");
+						// 変更コード
+						// 変更部分全体が削除, 追加されたとみなす
+					} else if(line.contains("c")) {
+						int startLine, endLine;
+						String[] str1 = line.split("c");
+						String[] str2 = str1[0].split(",");
+						String[] str3 = str1[1].split(",");
 
-		    			if(str2.length == 1) {
-		    				startLine = Integer.valueOf(str2[0]);
-		    				endLine = Integer.valueOf(str2[0]);
-		    			} else {
-		    				startLine = Integer.valueOf(str2[0]);
-		    				endLine = Integer.valueOf(str2[1]);
-		    			}
+						if(str2.length == 1) {
+							startLine = Integer.valueOf(str2[0]);
+							endLine = Integer.valueOf(str2[0]);
+						} else {
+							startLine = Integer.valueOf(str2[0]);
+							endLine = Integer.valueOf(str2[1]);
+						}
 
-		    			for(int i = startLine; i <= endLine; i++) {
-		    				file.getDeletedCodeList().add(i);
-		    			}
+						for(int i = startLine; i <= endLine; i++) {
+							file.getDeletedCodeList().add(i);
+						}
 
-		    			if(str3.length == 1) {
-		    				startLine = Integer.valueOf(str3[0]);
-		    				endLine = Integer.valueOf(str3[0]);
-		    			} else {
-		    				startLine = Integer.valueOf(str3[0]);
-		    				endLine = Integer.valueOf(str3[1]);
-		    			}
+						if(str3.length == 1) {
+							startLine = Integer.valueOf(str3[0]);
+							endLine = Integer.valueOf(str3[0]);
+						} else {
+							startLine = Integer.valueOf(str3[0]);
+							endLine = Integer.valueOf(str3[1]);
+						}
 
-		    			for(int i = startLine; i <= endLine; i++) {
-		    				file.getAddedCodeList().add(i);
-		    			}
-		    		}
-		    	}
-		     }
+						for(int i = startLine; i <= endLine; i++) {
+							file.getAddedCodeList().add(i);
+						}
+					}
+				}
+			}
 		} catch (IOException e) {
 			return false;
 		}

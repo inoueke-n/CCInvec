@@ -12,6 +12,7 @@ import java.util.Map;
 
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 
+
 public class LSHController {
 	public static final int FALCONN64 = 0;
 	public static final int FALCONN32 = 1;

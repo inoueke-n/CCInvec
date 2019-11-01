@@ -2,10 +2,10 @@ package jp.ac.osaka_u.ist.sel.icvolti.trace;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
 import jp.ac.osaka_u.ist.sel.icvolti.Logger;
+import jp.ac.osaka_u.ist.sel.icvolti.model.AllData;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
 
@@ -23,7 +23,7 @@ public class TraceManager {
 	 *           <li>失敗の場合 - false</li>
 	 *         </ul>
 	 */
-	public static ArrayList<Block> analyzeBlock(ArrayList<SourceFile> FileList, List<Block> newBlockList, Config config) {
+	public static ArrayList<Block> analyzeBlock(ArrayList<SourceFile> FileList, ArrayList<Block> newBlockList, Config config, AllData allData) {
 		// TODO 自動生成されたメソッド・スタブ
 		// ファイルのdiffを取得
 		System.out.print("analyze block start");
@@ -42,7 +42,7 @@ public class TraceManager {
 		System.out.println("diff done  time = " + (end - start) + "[ms]");
 
 		// クローンの分類，コード位置の重複に基づいた親子クローン取得
-		updatedBlockList =  new BlockCategorizer().categorizeBlock(FileList);
+		updatedBlockList =  new BlockCategorizer().categorizeBlock(FileList,allData);
 		Logger.writeln("<Success> Categorized clone.", Logger.INFO);
 
 
@@ -52,7 +52,7 @@ public class TraceManager {
 
 	}
 
-	public static ArrayList<Block> devideBlockCategory(List<Block> updatedBlockList, int flag){
+	public static ArrayList<Block> devideBlockCategory(ArrayList<Block> updatedBlockList, int flag){
 		ArrayList<Block> devidedBlockList = new ArrayList<Block>();
 		//flag == 0の場合, 追加，編集されたものに分ける
 		//flag == 1の場合, 削除されたものに分ける
@@ -85,11 +85,11 @@ public class TraceManager {
 				int category = bk.getCategory();
 			//	System.out.println("cate = " + category);
 				if(category == 1 ) {
-					System.out.println(" bk..getOldBlock getFile = " + bk.getOldBlock().getFileName() );
+			//		System.out.println(" bk..getOldBlock getFile = " + bk.getOldBlock().getFileName() );
 
 				}
 				if(category == -1) {
-					System.out.println(" block class = " + bk.getFileName() );
+		//			System.out.println(" block class = " + bk.getFileName() );
 
 				}
 				if(category == 1 || category == 3 || category ==4) {
@@ -103,11 +103,11 @@ public class TraceManager {
 				int category = bk.getCategory();
 			//	System.out.println("cate = " + category);
 				if(category == 1 ) {
-					System.out.println(" bk..getOldBlock getFile = " + bk.getOldBlock().getFileName() );
+			//		System.out.println(" bk..getOldBlock getFile = " + bk.getOldBlock().getFileName() );
 
 				}
 				if(category == -1) {
-					System.out.println(" block class = " + bk.getFileName() );
+			//		System.out.println(" block class = " + bk.getFileName() );
 
 				}
 				if(category == 0 ||category == 1 || category == 3) {

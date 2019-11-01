@@ -24,10 +24,11 @@ import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
 import jp.ac.osaka_u.ist.sel.icvolti.grammar.Java8.Java8Lexer;
 import jp.ac.osaka_u.ist.sel.icvolti.grammar.Java8.Java8Parser;
-import jp.ac.osaka_u.ist.sel.icvolti.grammar.Java8.JavaMyListener;
 import jp.ac.osaka_u.ist.sel.icvolti.grammar.Java8.Java8Parser.CompilationUnitContext;
+import jp.ac.osaka_u.ist.sel.icvolti.grammar.Java8.JavaMyListener;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Word;
+
 
 public class Java8analyzer {
 
@@ -53,20 +54,20 @@ public class Java8analyzer {
 		blockList = new ArrayList<Block>();
 		countFiles=0;
 		countParseFiles=0;
-		
+
 	}
 
 	/**
 	 * <p>
 	 * 単語リストの取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public final ArrayList<String> getWordList() {
 		return allWordList;
 	}
-	
+
 	public final ArrayList<Block> getBlockList(){
 		return blockList;
 	}
@@ -88,7 +89,7 @@ public class Java8analyzer {
 	 * <p>
 	 * ディレクトリ探索
 	 * </p>
-	 * 
+	 *
 	 * @param file
 	 * @throws IOException
 	 */
@@ -146,7 +147,7 @@ public class Java8analyzer {
 	 * <p>
 	 * ソースコードテキスト取得
 	 * </p>
-	 * 
+	 *
 	 * @param file
 	 * @return
 	 * @throws IOException
@@ -165,7 +166,7 @@ public class Java8analyzer {
 	 * <p>
 	 * ASTから各メソッドのASTを構築
 	 * </p>
-	 * 
+	 *
 	 * @param method
 	 * @param node
 	 * @param parent

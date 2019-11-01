@@ -23,6 +23,7 @@ import jp.ac.osaka_u.ist.sel.icvolti.grammar.CPP14.CPP14Lexer;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Word;
 
+
 public class CAnalyzer4 {
 
 	private ArrayList<String> allWordList = new ArrayList<String>();

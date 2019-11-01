@@ -1,6 +1,7 @@
 package jp.ac.osaka_u.ist.sel.icvolti;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -36,6 +37,7 @@ public class CloneDetector {
 	public static String javaClassPath;
 
 	private static ArrayList<Block> blockList;
+	private static ArrayList<Block> allBlockList;
 	public static ArrayList<Block> testBlockList;
 	//public static ArrayList<ClonePair> clonePairList;
 	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
@@ -66,7 +68,7 @@ public class CloneDetector {
 		Config config = new Config();
 		if(args.length == 1) {
 			if(SettingFileLoader.loadSettingFile(args, config)) {
-				//Fileクラスのオブジェクトを生成する
+				makeFol(config);
 				int maxNum = getMaxFileName(config);
 				if(config.getPreData()) {
 					//前のデータがある場合
@@ -118,6 +120,20 @@ public class CloneDetector {
 
 	}
 
+	private static void makeFol(Config config) {
+		if (!(new File(config.getOutputDir())).exists()) {
+			Logger.writeln("Create directory 'file'.", Logger.INFO);
+			(new File(config.getOutputDir())).mkdirs();
+		}
+
+
+		if (!(new File(config.getDataDir())).exists()) {
+			Logger.writeln("Create directory 'file'.", Logger.INFO);
+			(new File(config.getDataDir())).mkdirs();
+		}
+
+	}
+
 	/**
 	 * <p>
 	 * 最初の実行
@@ -154,7 +170,6 @@ public class CloneDetector {
 		case 0: // "java"
 			JavaAnalyzer3 javaanalyzer = new JavaAnalyzer3();
 			//fileList = JavaAnalyzer3.searchFiles(Config.target);
-			//		fileList = JavaAnalyzer3.setFilesInfo(Config.target);
 			//blockList = javaanalyzer.analyze(fileList);
 			FileList = JavaAnalyzer3.setFilesInfo(config.getNewTarget());
 			blockList = javaanalyzer.analyze_test_first(FileList);
@@ -234,10 +249,15 @@ public class CloneDetector {
 		currentTime = System.currentTimeMillis();
 		System.out.println("Cluster done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
 
-		ArrayList<CloneSet> cloneSetList = null;
+		//		ArrayList<CloneSet> cloneSetList = null;
+		ArrayList<CloneSet> cloneSetList = new ArrayList<CloneSet>();
 		if (config.getResultNotifier() != null || config.getResultCloneSet() != null) {
 			System.out.println("generate clone set start...");
 			subStart = System.currentTimeMillis();
+			//			for(Block block : blockList){
+			//				System.out.println("clone A file " + block.getFileName() + "clonea startline " + block.getStartLine() + " end line " + block.getEndLine());
+			//
+			//			}
 			cloneSetList = CloneJudgement.getCloneSetList(clonePairList, blockList);
 			System.out.println("The number of clone set : " + cloneSetList.size());
 			currentTime = System.currentTimeMillis();
@@ -266,6 +286,7 @@ public class CloneDetector {
 			Outputter.outputHTML(clonePairList, config);
 		}
 		if (config.getResultNotifier() != null) {
+			fileList = JavaAnalyzer3.searchFiles(config.getNewTarget());
 			System.out.println("=======output notifier" + config.getResultNotifier());
 			Outputter.outputNotifier(cloneSetList, fileList, config);
 		}
@@ -293,17 +314,6 @@ public class CloneDetector {
 		//ClonePairListをシリアライズ化
 		//BlockUpdater.serializeClonePairList(clonePairList);
 
-		for(Block block : blockList) {
-			System.out.println("Id  " + block.getId() );
-			System.out.println("Id  " + block.getId() );
-
-		}
-		for(ClonePair cp : clonePairList) {
-			int idA = cp.cloneA.getId();
-			int idB = cp.cloneB.getId();
-			System.out.println("aidA = " + idA);
-			System.out.println("aidB = " + idB);
-		}
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(clonePairList);
 		allData.setBlockListOfCalcedVec(blockList);
@@ -312,6 +322,8 @@ public class CloneDetector {
 		fileList = null;
 		FileList = null;
 		clonePairList = null;
+		cloneSetList = null;
+		blockList = null;
 		/*for(SourceFile file : FileList) {
 			for(Block block : file.getNewBlockList()) {
 				System.out.println("l====enn =     " + block.getLen());
@@ -354,10 +366,10 @@ public class CloneDetector {
 		ArrayList<String> newFileList = null;
 		ArrayList<Block> newBlockList = new ArrayList<Block>();
 		ArrayList<Block> oldBlockList = new ArrayList<Block>();
+		//updateBlockList 編集や削除されたブロックのリスト
 		ArrayList<Block> updatedBlockList = new ArrayList<Block>();
 		ArrayList<Block> addedModifiedBlockList = new ArrayList<Block>();
 		ArrayList<Block> deletedBlockList = new ArrayList<Block>();
-		ArrayList<Block> allBlockList = new ArrayList<Block>();
 		//ArrayList<SourceFile> newFileList
 		//fileListの取得をちゃんとする
 		AllData allData = new AllData();
@@ -385,7 +397,7 @@ public class CloneDetector {
 			System.out.println("new Block Size 1  = " + newBlockList.size());
 
 			//新旧コードブロック間の対応をとる
-			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config));
+			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
 
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
@@ -407,7 +419,6 @@ public class CloneDetector {
 			}else {
 
 				System.out.println("====analyze block cant ====");
-
 			}
 			/*	for (Block block : addedModifiedBlockList) {
 				System.out.println(block.getCategory());
@@ -489,7 +500,11 @@ public class CloneDetector {
 			lshCtlr = null;
 			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();
+			//	ArrayList<ClonePair> addedClonePair = new ArrayList<ClonePair>();
+			//addedClonePair = cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, config);
+			//cloneJudge,insertClonePairToList(ClonePairList_test, addedClonePair);
 			ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, config));
+			cloneJudge.sortClonePair(ClonePairList_test);
 			cloneJudge = null;
 		} else {
 			CloneJudgement cloneJudge = new CloneJudgement();
@@ -503,13 +518,39 @@ public class CloneDetector {
 		currentTime = System.currentTimeMillis();
 		System.out.println("Cluster done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
 
-		ArrayList<CloneSet> cloneSetList = null;
+		//ArrayList<CloneSet> cloneSetList = null;
+		//		for (ClonePair clonePair : ClonePairList_test) {
+		//			System.out.println("cloneA.getId() " + clonePair.cloneA.getId());
+		//			if(clonePair.cloneA.getStartLine() == 716) {
+		//				System.out.println("716 ID = "+  clonePair.cloneA.getId());
+		//				System.out.println("717 ID = "+  clonePair.cloneB.getId());
+		//				System.out.println("sarrt lne = "+  clonePair.cloneB.getStartLine());
+		//
+		//			}
+		//
+		//			//System.out.println("cloneB.getId() " + clonePair.cloneB.getId());
+		//			/*int aU = blockList.indexOf(clonePair.cloneA);
+		//			int bU = blockList.indexOf(clonePair.cloneB);
+		//			if((aU != -1) || (bU != -1)) {
+		//				System.out.println("noting  ");
+		//				System.out.println("============= = ");
+		//				System.out.println("clone A = " + clonePair.cloneA.getId());
+		//				System.out.println("clone B = " + clonePair.cloneB.getId());
+		//				System.out.println("============= = ");
+		//
+		//			}*/
+		//		}
+		ArrayList<CloneSet> cloneSetList_test = new ArrayList<CloneSet>();
 		if (config.getResultNotifier() != null || config.getResultCloneSet() != null) {
 			System.out.println("generate clone set start...");
 			subStart = System.currentTimeMillis();
 
-			cloneSetList = CloneJudgement.getCloneSetList(ClonePairList_test, allBlockList);
-			System.out.println("The number of clone set : " + cloneSetList.size());
+			/*for(Block block : allBlockList){
+				System.out.println("clone A file " + block.getFileName() + "clonea startline " + block.getStartLine() + " end line " + block.getEndLine());
+
+			}*/
+			cloneSetList_test = CloneJudgement.getCloneSetList(ClonePairList_test, allBlockList);
+			System.out.println("The number of clone set : " + cloneSetList_test.size());
 			currentTime = System.currentTimeMillis();
 			System.out.println(
 					"generate clone set done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
@@ -532,9 +573,9 @@ public class CloneDetector {
 		if (config.getResultHTML() != null)
 			Outputter.outputHTML(ClonePairList_test, config);
 		if (config.getResultNotifier() != null)
-			Outputter.outputNotifier(cloneSetList, newFileList, config);
+			Outputter.outputNotifier(cloneSetList_test, newFileList, config);
 		if (config.getResultCloneSet() != null)
-			Outputter.outputCloneSetTXTforCPP(cloneSetList, config);
+			Outputter.outputCloneSetTXTforCPP(cloneSetList_test, config);
 
 
 		// Outputter.outputForBigCloneEval(clonePairList);
@@ -551,6 +592,21 @@ public class CloneDetector {
 		// Debug.debug();
 		// Debug.outputResult02(cloneSetList);
 		// Debug.outputResult(cloneSetList);
+
+		FileWriter sw = new FileWriter("test2.txt");
+		for(ClonePair cp : ClonePairList_test) {
+			sw.write("============= = \r\n");
+			sw.write("clone A = " + cp.cloneA.getId() + "\r\n");
+			sw.write("clone B = " + cp.cloneB.getId() +  "\r\n");
+			sw.write("clone A fileName = " + cp.cloneA.getFileName() + "\r\n");
+			sw.write("clone B fileName = " + cp.cloneB.getFileName() + "\r\n");
+			sw.write("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine() + "\r\n");
+			sw.write("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine() + "\r\n");
+			sw.write("============= =  \\r\\n");
+
+		}
+		sw.close();
+
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(ClonePairList_test);
 		allData.setBlockListOfCalcedVec(allBlockList);
@@ -569,6 +625,8 @@ public class CloneDetector {
 		addedModifiedBlockList = null;
 		deletedBlockList = null;
 		allBlockList = null;
+		ClonePairList_test = null;
+		cloneSetList_test = null;
 
 	}
 
@@ -609,7 +667,14 @@ public class CloneDetector {
 		for(int i=0; i<list.length; i++) {
 			if(list[i].isFile()) {
 				if(list[i].getName().contains(config.getResultFileName())) {
-					String  fileNumStr = list[i].getName().substring(config.getResultFileName().length(), list[i].getName().lastIndexOf("."));
+					String fileNumStr;
+					if(config.getOutputFormat().equals("notifier") || config.getOutputFormat().equals("cloneset")) {
+						fileNumStr = list[i].getName().substring(config.getResultFileName().length());
+					}else if(list[i].getName().contains(".")){
+						fileNumStr = list[i].getName().substring(config.getResultFileName().length(), list[i].getName().lastIndexOf("."));
+					}else {
+						fileNumStr = "0";
+					}
 					boolean isNumber =true;
 					for(int j =0; j<fileNumStr.length(); j++) {
 						if(!Character.isDigit(fileNumStr.charAt(j))) {

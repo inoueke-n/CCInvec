@@ -1,2 +1,0 @@
-A name,A class name,A start line,A end line, A method start line , A method end line, B name,B class name,B start line,B end line, B method start line , B method end line,similarity
-testFindResources,E:\data_for_ICvolti\test\AntClassLoaderDelegationTest.java,59,82,59,82,testFindResources2,E:\data_for_ICvolti\test\AntClassLoaderDelegationTest.java,86,109,86,109,1.000000,

@@ -29,6 +29,14 @@ public class ClonePair implements Comparable<ClonePair>,Serializable {
 
 	}
 
+	public int getCloneAId() {
+		return this.cloneA.getId();
+	}
+
+	public int getCloneBId() {
+		return this.cloneB.getId();
+	}
+
 	@Override
 	public int compareTo(ClonePair o) {
 		if (this.cloneA.getId() == o.cloneA.getId())

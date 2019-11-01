@@ -183,6 +183,9 @@ public class SourceFile implements Serializable {
 	/** <p>削除ファイル</p> */
 	public final static int DELETED = 2;
 
+	/** <p>変更ファイル</p> */
+	public final static int MODIFIED = 3;
+
 	/**
 	 * <p>ソースファイル状態の取得</p>
 	 * @return 状態

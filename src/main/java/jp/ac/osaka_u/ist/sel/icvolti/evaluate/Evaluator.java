@@ -21,51 +21,51 @@ public class Evaluator {
 	public static final String RECALL_RESULT = "recall_result.csv";
 	public static ArrayList<ClonePair> resultList = new ArrayList<ClonePair>();
 	public static ArrayList<ClonePair> benchmarkList = new ArrayList<ClonePair>();
-	
+
 	public static void evaluate(List<Block> blockList) throws Exception {
-		
+
 		readResultCVS();
 		readBenchmark(blockList);
-		PrintWriter writer01=new PrintWriter(new FileOutputStream(PRECISION_RESULT));		
+		PrintWriter writer01=new PrintWriter(new FileOutputStream(PRECISION_RESULT));
 		PrintWriter writer02=new PrintWriter(new FileOutputStream(RECALL_RESULT));
-		
+
 		//Precisionの評価
 		int truePositive=0;
 		for(ClonePair pairA:resultList){
 			boolean f=false;
 			for(ClonePair pairB:benchmarkList){
 				if((pairA.cloneA.equals(pairB.cloneA) && pairA.cloneB.equals(pairB.cloneB))
-					|| (pairA.cloneA.equals(pairB.cloneB) && pairA.cloneB.equals(pairB.cloneA))){	
+					|| (pairA.cloneA.equals(pairB.cloneB) && pairA.cloneB.equals(pairB.cloneA))){
 					truePositive++;
 					f=true;
 					break;
-				}				
-			}	
-			writer01.printf("%s,%s,%f,%s,\r\n",pairA.cloneA,pairA.cloneB,pairA.sim,f);			
-		}			
-		
+				}
+			}
+			writer01.printf("%s,%s,%f,%s,\r\n",pairA.cloneA,pairA.cloneB,pairA.sim,f);
+		}
+
 		for(ClonePair pair:benchmarkList){
-			writer02.printf("%s,%s,%f,%s,\r\n",pair.cloneA,pair.cloneB);				
-		}	
-		
-		writer01.close();	
-		writer02.close();	
-		
+			writer02.printf("%s,%s,%f,%s,\r\n",pair.cloneA,pair.cloneB);
+		}
+
+		writer01.close();
+		writer02.close();
+
 		double precision = (double)truePositive/(double)resultList.size();
 		double recall = (double)truePositive/(double)benchmarkList.size();
 		System.out.printf("Precision : %f\r\n",precision);
 		System.out.printf("Recall : %f\r\n",recall);
 		System.out.printf("F : %f\r\n",2/(1/precision+1/recall));
-		
+
 	}
 
 
 	/**
 	 * <p>ベンチマーク読み込み</p>
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	private static void readBenchmark(List<Block> blockList) throws IOException {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(BENCHMARK)));		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(BENCHMARK)));
 		String line = null;
 		while((line=reader.readLine())!=null){
 			ClonePair pair = new ClonePair(new Block(), new Block(), 0.0);
@@ -73,7 +73,7 @@ public class Evaluator {
 			pair.cloneA.setName(getName(tmp[1]));
 			pair.cloneB.setName(getName(tmp[5]));
 			double diff = Double.valueOf(tmp[9]);
-			
+
 			Block cloneA = null;
 			Block cloneB = null;
 			for (Block method : blockList) {
@@ -82,23 +82,23 @@ public class Evaluator {
 				if((method.getFileName()+"."+method.getName()).equals(pair.cloneB))
 					cloneB = method;
 			}
-			
-			
+
+
 			if(cloneA!=null && cloneB!=null &&
 				//Math.abs(cloneA.getNodeNum()-cloneB.getNodeNum())<Params.DIFF_TH &&
 				!pair.cloneA.getName().contains("test") && !pair.cloneA.getName().contains("Test")
-				&&!pair.cloneB.getName().contains("test") && !pair.cloneB.getName().contains("Test") 
+				&&!pair.cloneB.getName().contains("test") && !pair.cloneB.getName().contains("Test")
 				&& diff<=Config.E_DIFF)
 				benchmarkList.add(pair);
-		}		
-		reader.close();		
+		}
+		reader.close();
 	}
 
 	private static String getName(String str) {
 		String name = "";
 		for(char c: str.toCharArray()){
 			if(c=='(') break;
-			else if(c !='\"') name = name+c;			
+			else if(c !='\"') name = name+c;
 		}
 		return name;
 	}
@@ -109,7 +109,7 @@ public class Evaluator {
 	 * @throws IOException
 	 */
 	private static void readResultCVS() throws IOException {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(RESULT)));		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(RESULT)));
 		String line = null;
 		while((line=reader.readLine())!=null){
 			ClonePair pair = new ClonePair(new Block(), new Block(), 0.0);
@@ -120,8 +120,8 @@ public class Evaluator {
 			if(!pair.cloneA.getName().contains("test") && !pair.cloneA.getName().contains("Test")
 				&&!pair.cloneB.getName().contains("test") && !pair.cloneB.getName().contains("Test") )
 				resultList.add(pair);
-		}		
+		}
 		reader.close();
-		
+
 	}
 }

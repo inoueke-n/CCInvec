@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import jp.ac.osaka_u.ist.sel.icvolti.model.AllData;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.ClonePair;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
@@ -135,8 +136,9 @@ public class BlockUpdater {
 	 */
 
 
-	public static ArrayList<SourceFile> updateSourceFileList(String newTarget, String oldTarget, ArrayList<SourceFile> oldFileList, ArrayList<String> newFileListOrigin, ArrayList<Block> deletedBlockList){
+	public static ArrayList<SourceFile> updateSourceFileList(String newTarget, String oldTarget, ArrayList<SourceFile> oldFileList, ArrayList<String> newFileListOrigin, ArrayList<Block> updatedBlockList){
 
+		//incrementalAnalyzaと一緒にできるのでは？
 		ArrayList<SourceFile> fileList = new ArrayList<SourceFile>();
 
 		ArrayList<String> newFileList = (ArrayList<String>) newFileListOrigin.clone();
@@ -157,7 +159,11 @@ public class BlockUpdater {
 				for(Block block : file.getNewBlockList()) {
 					block.setOldFileName(block.getFileName());
 					block.setFileName(newTargetFilePath);
+					//とりあえず，ノーマルなファイルに含まれるブロックはSTABLEに分類
+					block.setCategory(Block.STABLE);
 				}
+				file.getAddedCodeList().clear();
+				file.getDeletedCodeList().clear();
 				file.setId(fileId++);
 				fileList.add(file);
 			}else {
@@ -165,10 +171,9 @@ public class BlockUpdater {
 				file.setState(SourceFile.DELETED);
 				// ここで削除されたファイルのコードブロックに関わる情報は削除？
 				for(Block block : file.getNewBlockList()){
-					block.setCategory(4);
-
+					block.setCategory(Block.DELETED);
 				}
-				deletedBlockList.addAll(file.getNewBlockList());
+				updatedBlockList.addAll(file.getNewBlockList());
 
 			}
 		}
@@ -284,7 +289,7 @@ public class BlockUpdater {
 			for(Block block : updatedBlockList) {
 				//System.out.println("aa");
 				int category  = block.getCategory();
-				if (category == 1 ||category == 4) {
+				if (category == Block.MODIFIED ||category == Block.DELETED) {
 					//System.out.println("=========  category  =========  " + category);
 					//if(block.getOldBlock() != null) {
 
@@ -299,6 +304,10 @@ public class BlockUpdater {
 							System.out.println("============= = ");
 							System.out.println("clone A = " + cp.cloneA.getId());
 							System.out.println("clone B = " + cp.cloneB.getId());
+							System.out.println("clone A fileName = " + cp.cloneA.getFileName());
+							System.out.println("clone B fileName = " + cp.cloneB.getFileName());
+							System.out.println("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine());
+							System.out.println("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine());
 							System.out.println("============= = ");
 							i.remove();
 							deleteCP++;
@@ -355,12 +364,12 @@ public class BlockUpdater {
 			int aU = updatedBlockList.indexOf(cp.cloneA);
 			int bU = updatedBlockList.indexOf(cp.cloneB);
 			if((aU != -1) || (bU != -1)) {
-				System.out.println("DELETE CLONEPAIR ");
+	/*			System.out.println("DELETE CLONEPAIR ");
 				System.out.println("============= = ");
 				System.out.println("clone A = " + cp.cloneA.getId());
 				System.out.println("clone B = " + cp.cloneB.getId());
 				System.out.println("============= = ");
-				i.remove();
+		*/		i.remove();
 			}
 
 		}
@@ -372,6 +381,24 @@ public class BlockUpdater {
 		    Block value = (Block)it.next();
 		    System.out.println("updated ID " + value.getId());
 		}*/
+
+	}
+
+
+	public static void updateClonePairBlock(Block blockA, Block blockB, AllData allData) {
+		// TODO 自動生成されたメソッド・スタブ
+		int bId = blockB.getId();
+		ArrayList<ClonePair> clonePair = allData.getClonePairList();
+		for(ClonePair cp : clonePair) {
+			if(cp.getCloneAId() == bId ) {
+				cp.cloneA = null;
+				cp.setCloneA(blockA);
+			}
+			if(cp.getCloneBId() == bId ) {
+				cp.cloneB = null;
+				cp.setCloneB(blockA);
+			}
+		}
 
 	}
 

@@ -41,7 +41,7 @@ public class JavaAnalyzer4 {
 	 * <p>
 	 * ディレクトリ探索
 	 * </p>
-	 * 
+	 *
 	 * @param file
 	 * @throws IOException
 	 */
@@ -64,7 +64,7 @@ public class JavaAnalyzer4 {
 	 * <p>
 	 * 単語リストの取得
 	 * </p>
-	 * 
+	 *
 	 * @return
 	 */
 	public ArrayList<String> getWordList() {
@@ -75,7 +75,7 @@ public class JavaAnalyzer4 {
 	 * <p>
 	 * ソースファイルから関数を抽出する
 	 * </p>
-	 * 
+	 *
 	 * @param file
 	 * @throws IOException
 	 */
@@ -200,7 +200,7 @@ public class JavaAnalyzer4 {
 	 * <p>
 	 * 関数からワードを抽出
 	 * </p>
-	 * 
+	 *
 	 * @param tokenizer
 	 * @param method
 	 * @throws IOException

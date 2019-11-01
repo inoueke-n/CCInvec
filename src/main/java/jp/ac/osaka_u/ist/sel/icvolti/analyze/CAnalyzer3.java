@@ -30,9 +30,10 @@ import jp.ac.osaka_u.ist.sel.icvolti.grammar.CPP14.CPP14Parser;
 import jp.ac.osaka_u.ist.sel.icvolti.grammar.CPP14.CPP14Parser.TranslationunitContext;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Word;
+
 public class CAnalyzer3 {
 
-	//private ASTParser parser = ASTParser.newParser(AST.JLS4);	
+	//private ASTParser parser = ASTParser.newParser(AST.JLS4);
 	private ArrayList<String> allWordList = new ArrayList<String>();
 	private Block currentBlock;
 	private int blockID = 0;
@@ -45,7 +46,7 @@ public class CAnalyzer3 {
 		//parser.setStatementsRecovery(true);
 		//parser.setResolveBindings(true);
 	}
-	
+
 	/**
 	 * <p>単語リストの取得</p>
 	 * @return
@@ -53,15 +54,15 @@ public class CAnalyzer3 {
 	public ArrayList<String> getWordList(){
 		return allWordList;
 	}
-		
+
 	/**
 	 * <p>ディレクトリ探索</p>
 	 * @param file
 	 * @throws IOException
 	 */
-	public void searchFile(File file) throws IOException{		
-		if(file.isFile() && file.getName().endsWith(".c")){	
-			
+	public void searchFile(File file) throws IOException{
+		if(file.isFile() && file.getName().endsWith(".c")){
+
 			//System.out.println(file.toString());
 			CharStream stream = CharStreams.fromFileName(file.toString(), Charset.forName(Config.charset));
 			CPP14Lexer lexer = new CPP14Lexer(stream);
@@ -70,7 +71,7 @@ public class CAnalyzer3 {
 			//parser.addParseListener(new JavaMyListener());
 			TranslationunitContext tree;
 			//parser.removeErrorListeners();
-			
+
 			/*try {
 			    tree = parser.compilationUnit();  // STAGE 1
 			}
@@ -78,10 +79,10 @@ public class CAnalyzer3 {
 				System.err.println(file.toString() + tokens.LT(1).getLine());
 				return;
 			}*/
-			
+
 			parser.removeErrorListeners();
 			parser.addErrorListener(new CMyErrorListener());
-			
+
 			parser.getInterpreter().setPredictionMode(PredictionMode.SLL);
 			try {
 			    tree = parser.translationunit();  // STAGE 1
@@ -104,40 +105,40 @@ public class CAnalyzer3 {
 				}
 
 			}
-			
-			
+
+
 			//extractMethod(tree, parser);
-			
+
 		}else if(file.isDirectory()){
 			File[] fileList = file.listFiles();
 			for(File f: fileList)
 				searchFile(f);
-		}	
+		}
 	}
-	
-	
+
+
 	/**
 	 * <p>ソースコードテキスト取得</p>
 	 * @param file
 	 * @return
 	 * @throws IOException
 	 */
-	private char[] getCode(File file) throws IOException{		
+	private char[] getCode(File file) throws IOException{
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 		String code = "";
 		String line;
 		while((line=reader.readLine())!=null)
 			code = code + "\n" +line;
 		reader.close();
-		return code.toCharArray();		
+		return code.toCharArray();
 	}
-	
+
 	/**
 	 * <p>ASTから各メソッドのASTを構築</p>
 	 * @param method
 	 * @param node
 	 * @param parent
-	 * @param className 
+	 * @param className
 	 */
 	@SuppressWarnings("unused")
 	private void extractMethod(ParseTree tree, CPP14Parser parser) {
@@ -145,7 +146,7 @@ public class CAnalyzer3 {
 			Block block = new Block();
 			currentBlock = block;
 			Token start = null;
-			
+
 			if(t.getChildCount()==0) return;
 			for(ParseTree subt : ((CParser.FunctionDefinitionContext) t).children){
 				if(subt instanceof TerminalNode) {
@@ -158,7 +159,7 @@ public class CAnalyzer3 {
 					if(subt instanceof CParser.CompoundStatementContext){
 						if(subt.getSourceInterval().length() <= Config.METHOD_NODE_TH ||
 								start == null) break;
-						
+
 						initBlock(block, start, subt);
 						start = null;
 						blockList.add(block);
@@ -168,73 +169,73 @@ public class CAnalyzer3 {
 			}
 		}
 	}
-	
+
 	private void extractBlock(ParseTree tree, CPP14Parser parser){
 		for (ParseTree t : XPath.findAll(tree, "/compoundStatement/blockItem/statement", parser) ) {
 			if(t.getChild(0) instanceof TerminalNode) {
 				TerminalNode token = (TerminalNode)t.getChild(0);
 				Integer arg = null;
-				
+
 				switch (token.getSymbol().getType()) {
 				case CLexer.If:
-					arg = 2;					
+					arg = 2;
 					break;
-					
+
 				case CLexer.For:
-					arg = 2;					
+					arg = 2;
 					break;
 
 				case CLexer.While:
-					arg = 2;					
+					arg = 2;
 					break;
 
 				case CLexer.Do:
-					arg = 1;					
+					arg = 1;
 					break;
 
 				case CLexer.Switch:
-					
+
 					break;
 
 				default:
 					break;
 				}
-				
+
 				if(arg == null) continue;
 				if(t.getChild(arg).getSourceInterval().length() <= Config.BLOCK_NODE_TH ||
 						!(t.getChild(arg).getChild(0) instanceof CParser.CompoundStatementContext)) continue;
-				
+
 				Block block = new Block();
 				block.setParent(currentBlock);
 				Block save = currentBlock;
 				currentBlock = block;
-				
+
 				initBlock(block, token.getSymbol(), t.getChild(arg).getChild(0));
-				
+
 				blockList.add(block);
-				
+
 				extractBlock(t.getChild(arg).getChild(0), parser);
-				
+
 				currentBlock = save;
 				//System.out.println(t.getChild(0).getText());
 			}
-			
+
 		}
 	}
-	
+
 	private void initBlock(Block block, Token token, ParseTree tree){
 		if(!(tree instanceof CParser.CompoundStatementContext)) return;
-		
+
 		block.setId(blockID++);
-		block.setName(token.getText());	
+		block.setName(token.getText());
 		block.setFileName(token.getInputStream().getSourceName());
 		block.setStartLine(token.getLine());
 		block.setEndLine(((CParser.CompoundStatementContext)tree).stop.getLine());
-		
+
 		ArrayList<Token> tokenList = new ArrayList<Token>();
 		ParseTreeWalker walker = new ParseTreeWalker();
 		walker.walk(new CMyListener(tokenList), tree);
-		
+
 		for (Token t : tokenList) {
 			block.incNodeNum();
 			String[] words = Word.separateIdentifier(t.getText());

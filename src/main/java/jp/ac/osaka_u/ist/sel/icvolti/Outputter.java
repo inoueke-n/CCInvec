@@ -20,6 +20,7 @@ import jp.ac.osaka_u.ist.sel.icvolti.model.ClonePair;
 import jp.ac.osaka_u.ist.sel.icvolti.model.CloneSet;
 import jp.ac.osaka_u.ist.sel.icvolti.model.RealVectorUtil;
 
+
 public class Outputter {
 	/**
 	 * <p>

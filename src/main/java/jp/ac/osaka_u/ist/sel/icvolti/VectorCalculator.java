@@ -191,12 +191,12 @@ public class VectorCalculator implements Serializable {
 		Map<String, Integer> wordMap = new HashMap<>();
 		wordMap = allData.getWordMap();
 		int wordFreq[] = allData.getWordFreq();
-		System.out.println(" === wordFReq = " + wordFreq.length);
+		//System.out.println(" === wordFReq = " + wordFreq.length);
 
 
 		// ワードの出現頻度の計測と、ワード辞書の生成
 		int elementCount = 0;
-		System.out.println("test mae");
+		//System.out.println("test mae");
 /*		for (Block block : addedModifiedBlockList) {
 			if (block.getParent() == null) {
 				for (Word word : block.getWordList()) {
@@ -257,12 +257,13 @@ public class VectorCalculator implements Serializable {
 		{
 			final int size = addedModifiedBlockList.size();
 			for (int i = 0; i < size; i++) {
-				System.out.println("addedModifiedBlockList count : " + i);
+		/*		System.out.println("addedModifiedBlockList count : " + i);
 				System.out.println("addedModifiedBlockList category : " + addedModifiedBlockList.get(i).getCategory());
 				System.out.println("addedModifiedBlockList id : " + addedModifiedBlockList.get(i).getId());
 				System.out.println("addedModifiedBlockList start = " + addedModifiedBlockList.get(i).getStartLine() +  " end line  " + addedModifiedBlockList.get(i).getEndLine());
 				System.out.println("addedModifiedBlockList filename = " + addedModifiedBlockList.get(i).getFileName());
-				//System.out.println("addedModifiedBlockList old Blockfilename = " + addedModifiedBlockList.get(i).getOldBlock().getFileName());
+				System.out.println("addedModifiedBlockList blocksize = " + addedModifiedBlockList.get(i).getWordList().size());
+			*/	//System.out.println("addedModifiedBlockList old Blockfilename = " + addedModifiedBlockList.get(i).getOldBlock().getFileName());
 				addedModifiedBlockList.set(i, calcBoW(addedModifiedBlockList.get(i), wordMap, wordFreq, CloneDetector.countMethod));
 			}
 		}
