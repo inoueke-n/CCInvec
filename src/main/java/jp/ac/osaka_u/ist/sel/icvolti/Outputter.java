@@ -31,7 +31,7 @@ public class Outputter {
 	 * @throws IOException
 	 */
 	public static void outputCSV(List<ClonePair> clonePairList, Config config) throws IOException {
-		System.out.println("output CSV");
+//		System.out.println("output CSV");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
 		writer.println(
 				"A name,A class name,A start line,A end line, A method start line , A method end line, B name,B class name,B start line,B end line, B method start line , B method end line,similarity");
@@ -74,7 +74,7 @@ public class Outputter {
 	 * @throws IOException
 	 */
 	public static void outputHTML(List<ClonePair> clonePairList,Config config) throws IOException {
-		System.out.println("output HTML");
+//		System.out.println("output HTML");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultHTML())));
 		BufferedReader reader = null;
 		writer.println("<pre>");
@@ -159,7 +159,7 @@ public class Outputter {
 	 * @throws IOException
 	 */
 	public static void outputTXT(List<ClonePair> clonePairList, Config config) throws IOException {
-		System.out.println("output CSV");
+//		System.out.println("output CSV");
 		PrintWriter writer = new PrintWriter(new FileOutputStream(config.getResultTXT()));
 		BufferedReader reader = null;
 		int id = 0;
@@ -295,7 +295,7 @@ public class Outputter {
 	//	}
 
 	public static void outputBlockList(ArrayList<Block> blockList) throws IOException {
-		System.out.println("output BlockList");
+//		System.out.println("output BlockList");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(CloneDetector.BLOCKLIST_CSV)));
 		writer.printf("id,class,name,start,end,node,vector dimention,vector len,vector\r\n");
 		for (Block block : blockList) {
@@ -312,10 +312,10 @@ public class Outputter {
 
 	public static void outputStatisticsSample(ArrayList<ClonePair> clonePairList, double e, double m, double p,Config config)
 			throws IOException {
-		System.out.println("output Statistic Sample");
+//		System.out.println("output Statistic Sample");
 		double N = clonePairList.size();
 		int n = (int) (N / (Math.pow(e / m, 2) * ((N - 1.0) / (p * (1.0 - p))) + 1.0));
-		System.out.println("the number of randam sample : " + n);
+//		System.out.println("the number of randam sample : " + n);
 		Random rand = new Random();
 		boolean num[] = new boolean[clonePairList.size()];
 		int sample[] = new int[n];
@@ -411,7 +411,7 @@ public class Outputter {
 	 * @throws IOException
 	 */
 	public static void outputNotifier(List<CloneSet> cloneSetList, List<String> fileList, Config config) throws IOException {
-		System.out.println("output for CloneNotifier");
+//		System.out.println("output for CloneNotifier");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultNotifier())));
 		int id = 0;
 		writer.printf("source_files {\r\n");

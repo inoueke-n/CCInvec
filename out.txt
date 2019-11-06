@@ -1,0 +1,7 @@
+CCVolti = C:\Users\h-hon\Desktop\workspace\ICVolti
+========= notiE:\ICVolti_Data4\Output\result1
+ICVolti 19.01.24
+AAAAAAAAAAAAAAAAAA
+----BoW ver----
+Extract word in source code ...
+file list start 

@@ -30,10 +30,10 @@ public class LSHController {
 				Integer.toString(blockList.size()), Integer.toString(dimention),
 				Double.toString(Config.LSH_PROB), Double.toString(Config.LSH_R), CloneDetector.DATASET_FILE,
 				CloneDetector.DATASET_FILE, "3978000000", "-c" };
-		for (String string : fromArray) {
-			System.out.print(string + " ");
-		}
-		System.out.println();
+//		for (String string : fromArray) {
+//			System.out.print(string + " ");
+//		}
+//		System.out.println();
 		ProcessBuilder pb = new ProcessBuilder(fromArray);
 		try {
 			PrintWriter writer = new PrintWriter(new FileOutputStream(CloneDetector.PARAM_FILE));
@@ -137,10 +137,10 @@ public class LSHController {
 			fromArray.add(CloneDetector.PARAM_FILE);
 		}
 
-		for (String string : fromArray) {
-			System.out.print(string + " ");
-		}
-		System.out.println();
+//		for (String string : fromArray) {
+//			System.out.print(string + " ");
+//		}
+//		System.out.println();
 
 		ProcessBuilder pb = new ProcessBuilder(fromArray);
 		try {
@@ -225,10 +225,10 @@ public class LSHController {
 			fromArray.add(CloneDetector.PARAM_FILE);
 		}
 
-		for (String string : fromArray) {
-			System.out.print(string + " ");
-		}
-		System.out.println();
+//		for (String string : fromArray) {
+//			System.out.print(string + " ");
+//		}
+//		System.out.println();
 
 		ProcessBuilder pb = new ProcessBuilder(fromArray);
 		try {

@@ -120,11 +120,11 @@ public class VectorCalculator implements Serializable {
 			}
 		}
 
-		System.out.println("blocklist size : " + blockList.size());
-		System.out.println("word count : " + wordFreqMap.size());
-		System.out.println("element count : " + elementCount);
-		System.out.println("Density : " + String.format("%f",
-				(double) elementCount / ((double) wordFreqMap.size() * (double) blockList.size())));
+//		System.out.println("blocklist size : " + blockList.size());
+//		System.out.println("word count : " + wordFreqMap.size());
+//		System.out.println("element count : " + elementCount);
+//		System.out.println("Density : " + String.format("%f",
+//				(double) elementCount / ((double) wordFreqMap.size() * (double) blockList.size())));
 
 		// ワードの出現回数でフィルタリング（デフォルト 1以下は除去）
 		Map<String, Integer> wordMap = new HashMap<>();
@@ -144,7 +144,7 @@ public class VectorCalculator implements Serializable {
 		}
 		//次元数はAllDataに保存しておく必要がある
 		dimention = wordMap.size();
-		System.out.println("filtered word count : " + wordMap.size());
+//		System.out.println("filtered word count : " + wordMap.size());
 
 		long start = System.currentTimeMillis();
 		{
@@ -153,11 +153,11 @@ public class VectorCalculator implements Serializable {
 				blockList.set(i, calcBoW(blockList.get(i), wordMap, wordFreq, CloneDetector.countMethod));
 			}
 		}
-		System.out.print("calc vector done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
-
-		System.out.println("file out start");
-		start = System.currentTimeMillis();
+//		System.out.print("calc vector done : ");
+//		System.out.println(System.currentTimeMillis() - start + "[ms]");
+//
+//		System.out.println("file out start");
+//		start = System.currentTimeMillis();
 
 		if (Config.LSH_PRG == LSHController.E2LSH) {
 			outputDenseDataset(blockList);
@@ -170,8 +170,8 @@ public class VectorCalculator implements Serializable {
 
 		allData.setWordMap(wordMap);
 		allData.setWordFreq(wordFreq);
-		System.out.print("file out done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
+//		System.out.print("file out done : ");
+//		System.out.println(System.currentTimeMillis() - start + "[ms]");
 
 	}
 
@@ -224,11 +224,11 @@ public class VectorCalculator implements Serializable {
 		 * */
 
 
-		System.out.println("addedModifiedBlockList size : " + addedModifiedBlockList.size());
-		System.out.println("word count : " + wordFreqMap.size());
-		System.out.println("element count : " + elementCount);
-		System.out.println("Density : " + String.format("%f",
-				(double) elementCount / ((double) wordFreqMap.size() * (double) blockList.size())));
+//		System.out.println("addedModifiedBlockList size : " + addedModifiedBlockList.size());
+//		System.out.println("word count : " + wordFreqMap.size());
+//		System.out.println("element count : " + elementCount);
+//		System.out.println("Density : " + String.format("%f",
+//				(double) elementCount / ((double) wordFreqMap.size() * (double) blockList.size())));
 
 		/*
 		// ワードの出現回数でフィルタリング（デフォルト 1以下は除去）
@@ -250,7 +250,7 @@ public class VectorCalculator implements Serializable {
 		}
 		*/
 		dimention = wordMap.size();
-		System.out.println("filtered word count : " + wordMap.size());
+//		System.out.println("filtered word count : " + wordMap.size());
 
 
 		long start = System.currentTimeMillis();
@@ -267,10 +267,10 @@ public class VectorCalculator implements Serializable {
 				addedModifiedBlockList.set(i, calcBoW(addedModifiedBlockList.get(i), wordMap, wordFreq, CloneDetector.countMethod));
 			}
 		}
-		System.out.print("calc vector done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
-
-		System.out.println("file out start");
+//		System.out.print("calc vector done : ");
+//		System.out.println(System.currentTimeMillis() - start + "[ms]");
+//
+//		System.out.println("file out start");
 		start = System.currentTimeMillis();
 
 		if (Config.LSH_PRG == LSHController.E2LSH) {
@@ -286,8 +286,8 @@ public class VectorCalculator implements Serializable {
 
 		allData.setWordMap(wordMap);
 		allData.setWordFreq(wordFreq);
-		System.out.print("file out done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
+//		System.out.print("file out done : ");
+//		System.out.println(System.currentTimeMillis() - start + "[ms]");
 	}
 
 	//private static void outputSparseDataset(ArrayList<Block> blockList) {
@@ -327,9 +327,9 @@ public class VectorCalculator implements Serializable {
 
 			for (Block block : blockList) {
 
-				if(block.getVector() == null) {
-					System.out.println("vector null = " + i);
-				}
+//				if(block.getVector() == null) {
+//					System.out.println("vector null = " + i);
+//				}
 				i++;
 				OpenMapRealVector vector = block.getVector();
 				//	System.out.println(i + " = " + vector);

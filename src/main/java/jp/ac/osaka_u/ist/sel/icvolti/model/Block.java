@@ -599,15 +599,15 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 
 	public boolean equals(Object obj, int i) {
 		if (this == obj) {
-			System.out.println(" object true");
+//			System.out.println(" object true");
 			return true;
 		}
 		if (obj == null) {
-			System.out.println(" object null");
+//			System.out.println(" object null");
 			return false;
 		}
 		if (getClass() != obj.getClass()) {
-			System.out.println(" object class difference");
+//			System.out.println(" object class difference");
 			return false;
 		}
 		Block other = (Block) obj;

@@ -103,7 +103,7 @@ public class JavaAnalyzer3 {
 		// ソースファイルの取得
 		Iterator<String> it = newFileNameList.iterator();
 		int fileId = 0;
-		System.out.print("file list start " );
+		//System.out.print("file list start " );
 		while (it.hasNext()) {
 			String fileName = it.next();
 			SourceFile file = new SourceFile();
@@ -135,7 +135,7 @@ public class JavaAnalyzer3 {
 		it = oldFileNameList.iterator();
 		while (it.hasNext()) {
 			String fileName = it.next();
-			System.out.println("DELETED FILE = " + fileName);
+		//	System.out.println("DELETED FILE = " + fileName);
 			SourceFile file = new SourceFile();
 			//file.setName(fileName);
 			file.setOldPath(fileName);
@@ -155,7 +155,7 @@ public class JavaAnalyzer3 {
 		// ソースファイルの取得
 		Iterator<String> it = FileNameList.iterator();
 		int fileId = 0;
-		System.out.print("file list start " );
+	//	System.out.print("file list start " );
 		while (it.hasNext()) {
 			String fileName = it.next();
 			SourceFile file = new SourceFile();
@@ -364,7 +364,7 @@ public class JavaAnalyzer3 {
 				//System.out.println(" Normal yade");
 			}else {
 				//新規追加されたソースファイル
-				System.out.println("==============new File Analysis");
+//				System.out.println("==============new File Analysis");
 				List<Block> blockListOfFile = new ArrayList<>();
 				CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
 				JavaLexer newlexer = new JavaLexer(newstream);

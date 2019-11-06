@@ -36,17 +36,20 @@ public class BlockCategorizer {
 				for(Block block : file.getNewBlockList()) {
 					block.setCategory(Block.STABLE);
 				}
-			}else if (file.getState() == SourceFile.MODIFIED) {
-				//ここでmodifiedされたファイルだけやるれば効率化と高速化して，normalなやつはすべてstableつければいい
-				//System.out.println("Source File Nomal ");
-				categorizeStableModified(file,updatedBlockList, allData);
+				for(Block block : file.getOldBlockList()) {
+					block.setCategory(Block.STABLE);
+				}
 			}else {
-
-				System.out.println("=============Source File ADD DELETE ");
+				if (file.getState() == SourceFile.MODIFIED) {
+					//ここでmodifiedされたファイルだけやるれば効率化と高速化して，normalなやつはすべてstableつければいい
+					//System.out.println("Source File Nomal ");
+					categorizeStableModified(file,updatedBlockList, allData);
+				}
+				//System.out.println("=============Source File ADD DELETE ");
+				// 実行時点で, 新旧両方に存在するブロックは分類されているはず
+				categorizeAddedDeleted(file,updatedBlockList);
 			}
 
-			// 実行時点で, 新旧両方に存在するブロックは分類されているはず
-			categorizeAddedDeleted(file,updatedBlockList);
 
 		}
 		return updatedBlockList;
@@ -119,7 +122,7 @@ public class BlockCategorizer {
 				int endLineB = blockB.getEndLine() - deletedLineEnd;
 				//コード片の重複度を計算，30パーンセット重複していれば，追跡
 				double sim = calcurateLocationSimilarity(blockA, blockB, startLineA, endLineA, startLineB, endLineB);
-				if (sim >= 0.5) {
+				if (sim >= 0.7) {
 					if (blockA.getOldBlock() != null) {
 						//blockA.getLocationSimilarity() デフォルト値は0
 						if (sim > blockA.getLocationSimilarity()) {
@@ -132,13 +135,16 @@ public class BlockCategorizer {
 									blockA.setLen(blockB.getLen());
 									//blockBと同じIDのブロックをクローンペアリストから探して，探して，blockAに入れ替え？
 									BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
+//								System.out.println("stable block List 1");
+//								System.out.println("Block new STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
+//								System.out.println("Block new STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 								}
 								//System.out.println("Block STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 							} else {
 								blockA.setCategory(Block.MODIFIED);
 								updatedBlockList.add(blockA);
-								System.out.println("ADD block List 1");
-								System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
+//								System.out.println("ADD block List 1");
+//								System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 							}
 						}
 						//上のifに入るのはどんな状況？基本的にはしたのelseにはいる？
@@ -151,13 +157,17 @@ public class BlockCategorizer {
 								blockA.setVector(blockB.getVector());
 								blockA.setLen(blockB.getLen());
 								BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
+//								System.out.println("stable block List 2");
+//								System.out.println("Block new STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
+//								System.out.println("Block new STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
+
 							}
 							//	System.out.println("Block STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						} else {
 							blockA.setCategory(Block.MODIFIED);
 							updatedBlockList.add(blockA);
-							System.out.println("ADD block List 2");
-							System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
+//							System.out.println("ADD block List 2");
+//							System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						}
 					}
 					if (blockB.getNewBlock() != null) {
@@ -171,8 +181,8 @@ public class BlockCategorizer {
 							} else {
 								blockB.setCategory(Block.MODIFIED);
 								//updatedBlockList.add(blockA);
-								System.out.println("ADD block List 3 ");
-								System.out.println("Block MODIFIED = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
+//								System.out.println("ADD block List 3 ");
+//								System.out.println("Block MODIFIED = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 							}
 						}
 					}else {
@@ -185,8 +195,8 @@ public class BlockCategorizer {
 						} else {
 							blockB.setCategory(Block.MODIFIED);
 							//updatedBlockList.add(blockA);
-							System.out.println("ADD block List 4 ");
-							System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
+//							System.out.println("ADD block List 4 ");
+//							System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						}
 					}
 
@@ -197,6 +207,16 @@ public class BlockCategorizer {
 					if (!blockA.getBlockSet().getOldBlockSetList().contains(blockB.getBlockSet())) {
 						blockA.getBlockSet().getOldBlockSetList().add(blockB.getBlockSet());
 					}*/
+				}else if(sim >= 0.2 && sim < 0.7){
+//					System.out.println("===========================================");
+//					System.out.println("block A File Name = " + blockA.getFileName());
+//					System.out.println("block A startLine = " + blockA.getStartLine());
+//					System.out.println("block A end  Line = " + blockA.getEndLine());
+//					System.out.println("block B File Name = " + blockB.getFileName());
+//					System.out.println("block B startLine = " + blockB.getStartLine());
+//					System.out.println("block B end  Line = " + blockB.getEndLine());
+//					System.out.println("===========================================");
+
 				}
 			}
 		}
@@ -248,7 +268,7 @@ public class BlockCategorizer {
 			if (block.getCategory() == Block.NULL) {
 				block.setCategory(Block.ADDED);
 				updatedBlockList.add(block);
-				System.out.println("Block ADDED = filename " + block.getFileName() + "start line =  " + block.getStartLine() + "end line = " + block.getEndLine());
+//				System.out.println("Block ADDED = filename " + block.getFileName() + "start line =  " + block.getStartLine() + "end line = " + block.getEndLine());
 			}
 		}
 
@@ -257,7 +277,7 @@ public class BlockCategorizer {
 			if (block.getCategory() == Block.NULL) {
 				block.setCategory(Block.DELETED);
 				updatedBlockList.add(block);
-				System.out.println("Block DELETED = filename " + block.getFileName() + "start line =  " + block.getStartLine() + "end line = " + block.getEndLine());
+//				System.out.println("Block DELETED = filename " + block.getFileName() + "start line =  " + block.getStartLine() + "end line = " + block.getEndLine());
 			}
 		}
 		return updatedBlockList;

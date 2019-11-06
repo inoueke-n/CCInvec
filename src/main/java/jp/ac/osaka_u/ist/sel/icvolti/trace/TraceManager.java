@@ -26,27 +26,27 @@ public class TraceManager {
 	public static ArrayList<Block> analyzeBlock(ArrayList<SourceFile> FileList, ArrayList<Block> newBlockList, Config config, AllData allData) {
 		// TODO 自動生成されたメソッド・スタブ
 		// ファイルのdiffを取得
-		System.out.print("analyze block start");
+//		System.out.print("analyze block start");
 
 		ArrayList<Block> updatedBlockList = new ArrayList<Block>();
 
-		long start;
-		long end;
-		start = System.currentTimeMillis();
+//		long start;
+//		long end;
+//		start = System.currentTimeMillis();
 		if (!DiffDetector.getDiff_test(FileList, newBlockList, config)) {
 			System.out.println("diff miss ======");
 			Logger.writeln("Can't get diff of source code.", Logger.ERROR);
 			return null;
 		}
-		end = System.currentTimeMillis();
-		System.out.println("diff done  time = " + (end - start) + "[ms]");
+//		end = System.currentTimeMillis();
+//		System.out.println("diff done  time = " + (end - start) + "[ms]");
 
 		// クローンの分類，コード位置の重複に基づいた親子クローン取得
 		updatedBlockList =  new BlockCategorizer().categorizeBlock(FileList,allData);
 		Logger.writeln("<Success> Categorized clone.", Logger.INFO);
 
 
-		System.out.println(" ============ blocksize + " + updatedBlockList.size());
+	//	System.out.println(" ============ blocksize + " + updatedBlockList.size());
 
 		return updatedBlockList;
 
@@ -58,6 +58,7 @@ public class TraceManager {
 		//flag == 1の場合, 削除されたものに分ける
 		//flag == 2の場合，追加，編集，削除されたものに分ける
 		//flag == 3の場合，Stableも含めた，現状プロジェクト内にあるすべてのコードブロック
+		//flag == 4の場合，編集，削除されたものに分ける
 		if(flag == 0) {
 			Iterator<Block> i = updatedBlockList.iterator();
 			while(i.hasNext()){
@@ -114,6 +115,15 @@ public class TraceManager {
 					devidedBlockList.add(bk);
 				}
 			}
+		}else if(flag == 4){
+			Iterator<Block> i = updatedBlockList.iterator();
+			while(i.hasNext()){
+				Block bk = i .next();
+				int category = bk.getCategory();
+				if(category == 1||category == 4) {
+					devidedBlockList.add(bk);
+				}
+			}
 		}
 
 		return devidedBlockList;
@@ -125,7 +135,7 @@ public class TraceManager {
 		for(SourceFile file : FileList) {
 			blockList.addAll(file.getNewBlockList());
 		}
-		System.out.println("end getAllBlock");
+	//	System.out.println("end getAllBlock");
 
 		return blockList;
 	}

@@ -42,7 +42,7 @@ public class CloneJudgement {
 	 * @throws IOException
 	 */
 	public ArrayList<ClonePair> getClonePairList(List<Block> blockList, Config config) {
-		System.out.println("parallel calc distanse");
+//		System.out.println("parallel calc distanse");
 		long start = System.currentTimeMillis();
 		int numHardThread = Runtime.getRuntime().availableProcessors();
 		/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
@@ -53,7 +53,7 @@ public class CloneJudgement {
 		//		ExecutorService executor = Executors.newFixedThreadPool(config.getThreads());
 		//	System.out.println("The number of threads : " + config.getThreads());
 		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
-		System.out.println("The number of threads : " + Config.NUM_THREADS);
+//		System.out.println("The number of threads : " + Config.NUM_THREADS);
 
 		List<Callable<Double>> tasks = new ArrayList<Callable<Double>>();
 		List<Pair<Integer, Integer>> pairList = new ArrayList<Pair<Integer, Integer>>();
@@ -136,10 +136,10 @@ public class CloneJudgement {
 			if (executor != null)
 				executor.shutdown();
 		}
-		System.out.print("parallel calc distanse done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
-
-		System.out.println("filtering start");
+//		System.out.print("parallel calc distanse done : ");
+//		System.out.println(System.currentTimeMillis() - start + "[ms]");
+//
+//		System.out.println("filtering start");
 		start = System.currentTimeMillis();
 
 		ArrayList<ClonePair> newClonePairList = new ArrayList<ClonePair>(clonePairList.size());
@@ -150,8 +150,8 @@ public class CloneJudgement {
 
 		newClonePairList.trimToSize();
 		clonePairList = newClonePairList;
-		System.out.print("filtering done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
+//		System.out.print("filtering done : ");
+//		System.out.println(System.currentTimeMillis() - start + "[ms]");
 
 		return clonePairList;
 	}
@@ -165,7 +165,7 @@ public class CloneJudgement {
 	 * @throws IOException
 	 */
 	public ArrayList<ClonePair> getClonePairListPartially(ArrayList<Block> blockList, ArrayList<Block> addedModifiedBlockList, Config config) {
-		System.out.println("parallel calc distanse");
+//		System.out.println("parallel calc distanse");
 		long start = System.currentTimeMillis();
 		int numHardThread = Runtime.getRuntime().availableProcessors();
 		if (Config.NUM_THREADS == 0 || Config.NUM_THREADS > numHardThread)
@@ -173,7 +173,7 @@ public class CloneJudgement {
 			Config.NUM_THREADS = numHardThread;
 
 		ExecutorService executor = Executors.newFixedThreadPool(Config.NUM_THREADS);
-		System.out.println("The number of threads : " + Config.NUM_THREADS);
+//		System.out.println("The number of threads : " + Config.NUM_THREADS);
 
 		List<Callable<Double>> tasks = new ArrayList<Callable<Double>>();
 		List<Pair<Integer, Integer>> pairList = new ArrayList<Pair<Integer, Integer>>();
@@ -243,7 +243,7 @@ public class CloneJudgement {
 			e.printStackTrace();
 		}
 
-		System.out.println("task add done");
+//		System.out.println("task add done");
 		ArrayList<ClonePair> clonePairList = new ArrayList<ClonePair>(tasks.size());
 
 		try {
@@ -276,10 +276,10 @@ public class CloneJudgement {
 			if (executor != null)
 				executor.shutdown();
 		}
-		System.out.print("parallel calc distanse done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
-
-		System.out.println("filtering start");
+//		System.out.print("parallel calc distanse done : ");
+//		System.out.println(System.currentTimeMillis() - start + "[ms]");
+//
+//		System.out.println("filtering start");
 		start = System.currentTimeMillis();
 
 		ArrayList<ClonePair> newClonePairList = new ArrayList<ClonePair>(clonePairList.size());
@@ -290,21 +290,21 @@ public class CloneJudgement {
 
 		newClonePairList.trimToSize();
 		clonePairList = newClonePairList;
-		System.out.print("filtering done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
-		System.out.println("cloenpairList sieze = " + clonePairList.size());
-		for(ClonePair cp : clonePairList) {
-			System.out.println("clone A ID" + cp.cloneA.getId());
-			System.out.println("clone A startline" + cp.cloneA.getStartLine());
-			System.out.println("clone B ID" + cp.cloneB.getId());
-			System.out.println("clone B startline" + cp.cloneB.getStartLine());
-		}
+//		System.out.print("filtering done : ");
+//		System.out.println(System.currentTimeMillis() - start + "[ms]");
+//		System.out.println("cloenpairList sieze = " + clonePairList.size());
+//		for(ClonePair cp : clonePairList) {
+//			System.out.println("clone A ID" + cp.cloneA.getId());
+//			System.out.println("clone A startline" + cp.cloneA.getStartLine());
+//			System.out.println("clone B ID" + cp.cloneB.getId());
+//			System.out.println("clone B startline" + cp.cloneB.getStartLine());
+//		}
 
 		return clonePairList;
 	}
 
 	public ArrayList<ClonePair> getClonePairListNoLSH(List<Block> blockList, Config config) {
-		System.out.println("parallel calc distanse no LSH");
+//		System.out.println("parallel calc distanse no LSH");
 		long start = System.currentTimeMillis();
 
 		int numHardThread = Runtime.getRuntime().availableProcessors();
@@ -325,7 +325,7 @@ public class CloneJudgement {
 				pairList.add(new Pair<Integer, Integer>(i, j));
 			}
 		}
-		System.out.println("task add done");
+//		System.out.println("task add done");
 		List<Future<Double>> futures;
 		try {
 			futures = executor.invokeAll(tasks);
@@ -337,7 +337,7 @@ public class CloneJudgement {
 			if (executor != null)
 				executor.shutdown();
 		}
-		System.out.println("excuter shutdown");
+//		System.out.println("excuter shutdown");
 		try {
 			Double sim;
 			int i = 0;
@@ -352,10 +352,10 @@ public class CloneJudgement {
 			System.err.println(e);
 		}
 
-		System.out.print("parallel calc distanse done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
-
-		System.out.println("filtering start");
+//		System.out.print("parallel calc distanse done : ");
+//		System.out.println(System.currentTimeMillis() - start + "[ms]");
+//
+//		System.out.println("filtering start");
 		start = System.currentTimeMillis();
 
 		ArrayList<ClonePair> newClonePairList = new ArrayList<ClonePair>();
@@ -366,8 +366,8 @@ public class CloneJudgement {
 			}
 
 		clonePairList = newClonePairList;
-		System.out.print("filtering done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
+//		System.out.print("filtering done : ");
+//		System.out.println(System.currentTimeMillis() - start + "[ms]");
 
 		return clonePairList;
 	}
@@ -429,17 +429,17 @@ public class CloneJudgement {
 			clique = new TreeSet<>(clique); // セットをソート
 			for (Integer v : clique) {
 				//		System.out.println("v = " + v);
-				if(blockList.get(v).getStartLine() == 716) {
-					System.out.println("716 ID = "+  blockList.get(v).getId());
-
-				}
-				if(blockList.get(v).getStartLine() == 717) {
-					System.out.println("717 ID = "+  blockList.get(v).getId());
-
-				}
-				if(v != blockList.get(v).getId()){
-					System.out.print(" not match");
-				}
+//				if(blockList.get(v).getStartLine() == 716) {
+//					System.out.println("716 ID = "+  blockList.get(v).getId());
+//
+//				}
+//				if(blockList.get(v).getStartLine() == 717) {
+//					System.out.println("717 ID = "+  blockList.get(v).getId());
+//
+//				}
+//				if(v != blockList.get(v).getId()){
+//					System.out.print(" not match");
+//				}
 				cloneSet.cloneList.add(blockList.get(v));
 			}
 			cloneSetList.add(cloneSet);

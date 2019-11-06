@@ -416,19 +416,19 @@ public class Config {
 		switch(outputFormat) {
 		case "txt":
 			this.resultTXT = filepath + ".txt";
-			System.out.println("========= txt" + resultTXT);
+//			System.out.println("========= txt" + resultTXT);
 			break;
 		case "csv":
 			this.resultCSV  = filepath + ".csv";
-			System.out.println("========= csv" + resultCSV);
+//			System.out.println("========= csv" + resultCSV);
 			break;
 		case "notifier":
 			this.resultNotifier = filepath;
-			System.out.println("========= noti" + resultNotifier);
+//			System.out.println("========= noti" + resultNotifier);
 			break;
 		case "html":
 			this.resultHTML = filepath + ".html";
-			System.out.println("========= html" + resultHTML);
+//			System.out.println("========= html" + resultHTML);
 			break;
 		case "cloneset":
 			this.resultCloneSet = filepath;
