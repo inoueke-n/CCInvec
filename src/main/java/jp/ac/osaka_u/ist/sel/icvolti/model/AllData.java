@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Map;
 
+import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
 
 public class AllData implements  Serializable {
@@ -170,31 +171,31 @@ public class AllData implements  Serializable {
 
 			ObjectInputStream objInStreamBlockList
 			= new ObjectInputStream(
-			new FileInputStream(DataDir + "\\blockList.bin"));
+					new FileInputStream(DataDir + "\\blockList.bin"));
 			allData.setBlockListOfCalcedVec((ArrayList<Block>) objInStreamBlockList.readObject());
 			objInStreamBlockList.close();
 
 			ObjectInputStream objInStreamSourceFileList
 			= new ObjectInputStream(
-			new FileInputStream(DataDir + "\\sourceFileList.bin"));
+					new FileInputStream(DataDir + "\\sourceFileList.bin"));
 			allData.setSourceFileList((ArrayList<SourceFile>) objInStreamSourceFileList.readObject());
 			objInStreamSourceFileList.close();
 
 			ObjectInputStream objInStreamClonePairList
 			= new ObjectInputStream(
-			new FileInputStream(DataDir + "\\clonePairList.bin"));
+					new FileInputStream(DataDir + "\\clonePairList.bin"));
 			allData.setClonePairList((ArrayList<ClonePair>) objInStreamClonePairList.readObject());
 			objInStreamClonePairList.close();
 
 			ObjectInputStream objInStreamWordMap
 			= new ObjectInputStream(
-			new FileInputStream(DataDir + "\\wordMap.bin"));
+					new FileInputStream(DataDir + "\\wordMap.bin"));
 			allData.setWordMap((Map<String, Integer>) objInStreamWordMap.readObject());
 			objInStreamWordMap.close();
 
 			ObjectInputStream objInStreamWordFreq
 			= new ObjectInputStream(
-			new FileInputStream(DataDir + "\\wordFreq.bin"));
+					new FileInputStream(DataDir + "\\wordFreq.bin"));
 			allData.setWordFreq((int[]) objInStreamWordFreq.readObject());
 			objInStreamWordFreq.close();
 
@@ -217,48 +218,52 @@ public class AllData implements  Serializable {
 	 * <p>
 	 * @throws IOException
 	 */
-	public static void synchronizeAllData() throws IOException {
+	public void synchronizeAllData() throws IOException {
 
 		ArrayList<Block> blockList = new ArrayList<>();
 		blockList = createBlockList();
 		//blockList.addAll(createBlockList());
 
-//        FileWriter fw = new FileWriter("test.txt");
-//
-//		System.out.println(" ===  block list size  " + blockList.size());
-//		System.out.println(" ===  calced block list size  " + BlockListOfCalcedVec.size());
+		//        FileWriter fw = new FileWriter("test.txt");
+		//
+		System.out.println(" ===  block list size  " + blockList.size());
+		System.out.println(" ===  calced block list size  " + BlockListOfCalcedVec.size());
 		for(ClonePair cp : ClonePairList) {
 			int idA = cp.cloneA.getId();
 			int idB = cp.cloneB.getId();
 
 			if(cp.cloneA.getStartLine() != blockList.get(idA).getStartLine() || cp.cloneA.getEndLine() !=  blockList.get(idA).getEndLine()) {
-//				System.out.println("no match startline cloneA  startline" + cp.cloneA.getStartLine());
-//				System.out.println("blockList                  startline" + blockList.get(idA).getStartLine());
-//				System.out.println("cloneA  file" + cp.cloneA.getFileName());
-//				System.out.println("blockLT file" + blockList.get(idA).getFileName());
-//				System.out.println("cloneA  cate" + cp.cloneA.getCategory());
-//				System.out.println("blockLT cate" + blockList.get(idA).getCategory());
+				if(CloneDetector.modeDebug) {
+					System.out.println("no match startline cloneA  startline" + cp.cloneA.getStartLine());
+					System.out.println("blockList                  startline" + blockList.get(idA).getStartLine());
+					System.out.println("cloneA  file" + cp.cloneA.getFileName());
+					System.out.println("blockLT file" + blockList.get(idA).getFileName());
+					System.out.println("cloneA  cate" + cp.cloneA.getCategory());
+					System.out.println("blockLT cate" + blockList.get(idA).getCategory());
+				}
 			}
 
 			if(cp.cloneB.getStartLine() != blockList.get(idB).getStartLine() || cp.cloneB.getEndLine() !=  blockList.get(idB).getEndLine()) {
-//				System.out.println("no match startline cloneB  startline" + cp.cloneB.getStartLine());
-//				System.out.println("blockList                  startline" + blockList.get(idB).getStartLine());
-//				System.out.println("cloneB  file" + cp.cloneB.getFileName());
-//				System.out.println("blockLT file" + blockList.get(idB).getFileName());
-//				System.out.println("cloneB  cate" + cp.cloneB.getCategory());
-//				System.out.println("blockLT cate" + blockList.get(idB).getCategory());
+				if(CloneDetector.modeDebug) {
+					System.out.println("no match startline cloneB  startline" + cp.cloneB.getStartLine());
+					System.out.println("blockList                  startline" + blockList.get(idB).getStartLine());
+					System.out.println("cloneB  file" + cp.cloneB.getFileName());
+					System.out.println("blockLT file" + blockList.get(idB).getFileName());
+					System.out.println("cloneB  cate" + cp.cloneB.getCategory());
+					System.out.println("blockLT cate" + blockList.get(idB).getCategory());
+				}
 			}
 
 
 
-//			fw.write("============= = \r\n");
-//			fw.write("clone A = " + cp.cloneA.getId() + "\r\n");
-//			fw.write("clone B = " + cp.cloneB.getId());
-//			fw.write("clone A fileName = " + cp.cloneA.getFileName() + "\r\n");
-//			fw.write("clone B fileName = " + cp.cloneB.getFileName() + "\r\n");
-//			fw.write("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine() + "\r\n");
-//			fw.write("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine() + "\r\n");
-//			fw.write("============= =  \\r\\n");
+			//			fw.write("============= = \r\n");
+			//			fw.write("clone A = " + cp.cloneA.getId() + "\r\n");
+			//			fw.write("clone B = " + cp.cloneB.getId());
+			//			fw.write("clone A fileName = " + cp.cloneA.getFileName() + "\r\n");
+			//			fw.write("clone B fileName = " + cp.cloneB.getFileName() + "\r\n");
+			//			fw.write("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine() + "\r\n");
+			//			fw.write("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine() + "\r\n");
+			//			fw.write("============= =  \\r\\n");
 
 			cp.cloneA = null;
 			cp.cloneB = null;
@@ -268,7 +273,7 @@ public class AllData implements  Serializable {
 
 		}
 
-//		fw.close();
+		//		fw.close();
 
 
 	}
@@ -289,13 +294,21 @@ public class AllData implements  Serializable {
 			block.setVector(BlockListOfCalcedVec.get(i).getVector());
 			block.setLen(BlockListOfCalcedVec.get(i).getLen());
 			block.setCategory(Block.NULL);
-		//	System.out.println("ID " + block.getId());
+			//	System.out.println("ID " + block.getId());
 			//block.setId(i);
 			i++;
 		}
 		return blockList;
 	}
 
+
+	public void dataClear() {
+		SourceFileList = null;
+		ClonePairList = null;
+		BlockListOfCalcedVec = null;
+		wordMap = null;
+		wordFreq = null;
+	}
 
 
 

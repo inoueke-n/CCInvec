@@ -1,0 +1,125 @@
+ICVolti 19.01.24
+AAAAAAAAAAAAAAAAAA
+----BoW ver----
+7848[ms]
+Finished : 
+ ===  block list size  5619
+ ===  calced block list size  5619
+Synchro Data time = 3[ms]
+java         time = 876[ms]
+reset        time = 6[ms]
+vec          time = 97[ms]
+cp           time = 949[ms]
+cs           time = 39[ms]
+ot           time = 16[ms]
+serializ     time = 0[ms]
+All          time = 2067[ms]
+Finished : 
+ ===  block list size  5623
+ ===  calced block list size  5623
+Synchro Data time = 3[ms]
+java         time = 1231[ms]
+reset        time = 12[ms]
+vec          time = 98[ms]
+cp           time = 1054[ms]
+cs           time = 32[ms]
+ot           time = 16[ms]
+serializ     time = 0[ms]
+All          time = 2517[ms]
+Finished : 
+ ===  block list size  5608
+ ===  calced block list size  5608
+no match startline cloneA  startline40
+blockList                  startline62
+cloneA  fileE:\test55\20180529\src\src\main\org\apache\tools\ant\taskdefs\condition\And.java
+blockLT fileE:\test55\20180529\src\src\main\org\apache\tools\ant\taskdefs\condition\HasFreeSpace.java
+cloneA  cate-1
+blockLT cate-1
+no match startline cloneB  startline40
+blockList                  startline74
+cloneB  fileE:\test55\20180529\src\src\main\org\apache\tools\ant\taskdefs\condition\Or.java
+blockLT fileE:\test55\20180529\src\src\main\org\apache\tools\ant\taskdefs\condition\ResourcesMatch.java
+cloneB  cate-1
+blockLT cate-1
+Synchro Data time = 1[ms]
+java         time = 844[ms]
+reset        time = 1[ms]
+vec          time = 89[ms]
+cp           time = 972[ms]
+cs           time = 33[ms]
+ot           time = 15[ms]
+serializ     time = 0[ms]
+All          time = 2026[ms]
+Finished : 
+ ===  block list size  5609
+ ===  calced block list size  5609
+Synchro Data time = 0[ms]
+java         time = 833[ms]
+reset        time = 0[ms]
+vec          time = 89[ms]
+cp           time = 970[ms]
+cs           time = 29[ms]
+ot           time = 15[ms]
+serializ     time = 0[ms]
+All          time = 2011[ms]
+Finished : 
+ ===  block list size  5609
+ ===  calced block list size  5609
+Synchro Data time = 0[ms]
+java         time = 851[ms]
+reset        time = 1[ms]
+vec          time = 97[ms]
+cp           time = 969[ms]
+cs           time = 29[ms]
+ot           time = 16[ms]
+serializ     time = 0[ms]
+All          time = 2050[ms]
+Finished : 
+ ===  block list size  5619
+ ===  calced block list size  5619
+Synchro Data time = 0[ms]
+java         time = 836[ms]
+reset        time = 0[ms]
+vec          time = 101[ms]
+cp           time = 1308[ms]
+cs           time = 29[ms]
+ot           time = 15[ms]
+serializ     time = 0[ms]
+All          time = 2365[ms]
+Finished : 
+ ===  block list size  5619
+ ===  calced block list size  5619
+Synchro Data time = 1[ms]
+java         time = 885[ms]
+reset        time = 1[ms]
+vec          time = 91[ms]
+cp           time = 980[ms]
+cs           time = 30[ms]
+ot           time = 15[ms]
+serializ     time = 0[ms]
+All          time = 2077[ms]
+Finished : 
+ ===  block list size  5615
+ ===  calced block list size  5615
+no match startline cloneA  startline208
+blockList                  startline232
+cloneA  fileE:\test55\20180807\src\src\main\org\apache\tools\ant\taskdefs\optional\ejb\BorlandDeploymentTool.java
+blockLT fileE:\test55\20180807\src\src\main\org\apache\tools\ant\taskdefs\optional\ejb\BorlandDeploymentTool.java
+cloneA  cate-1
+blockLT cate-1
+no match startline cloneB  startline407
+blockList                  startline455
+cloneB  fileE:\test55\20180807\src\src\main\org\apache\tools\ant\taskdefs\optional\ejb\WeblogicDeploymentTool.java
+blockLT fileE:\test55\20180807\src\src\main\org\apache\tools\ant\taskdefs\optional\ejb\WeblogicDeploymentTool.java
+cloneB  cate-1
+blockLT cate-1
+Synchro Data time = 0[ms]
+java         time = 1019[ms]
+reset        time = 6[ms]
+vec          time = 96[ms]
+cp           time = 1061[ms]
+cs           time = 35[ms]
+ot           time = 16[ms]
+serializ     time = 0[ms]
+All          time = 4766[ms]
+Finished : 

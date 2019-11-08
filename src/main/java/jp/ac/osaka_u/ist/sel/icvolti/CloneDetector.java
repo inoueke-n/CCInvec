@@ -34,6 +34,7 @@ public class CloneDetector {
 	public static final boolean lda = false;
 	public static final boolean modeDebug = true;
 	public static final boolean modeStdout = true;
+	public static boolean finalLoop =false;
 
 
 	public static String javaClassPath;
@@ -72,6 +73,7 @@ public class CloneDetector {
 			if(SettingFileLoader.loadSettingFile(args, config)) {
 				makeFol(config);
 				int maxNum = getMaxFileName(config);
+				AllData allData = new AllData();
 				if(config.getPreData()) {
 					//前のデータがある場合
 					if(config.getInputPreDir() != null) {
@@ -79,16 +81,25 @@ public class CloneDetector {
 						int num = maxNum+1;
 						for(int i =0; i < config.getInputDir().size(); i++) {
 							if(i==0) {
+								if(i == (config.getInputDir().size() -1)) {
+									finalLoop = true;
+								}
 								config.setOldTarget(config.getInputPreDir());
 								config.setNewTarget(config.getInputDir().get(i));
 								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
-								incrementalRun(config);
+								allData =  AllData.deserializeAllDataList(config);
+								allData.synchronizeAllData();
+								allData = incrementalRun(config,i,allData);
 								num++;
 							}else {
+								if(i == (config.getInputDir().size() -1)) {
+									finalLoop = true;
+								}
 								config.setOldTarget(config.getInputDir().get(i-1));
 								config.setNewTarget(config.getInputDir().get(i));
 								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
-								incrementalRun(config);
+								allData.synchronizeAllData();
+								allData = incrementalRun(config,i, allData);
 								num++;
 							}
 						}
@@ -101,15 +112,22 @@ public class CloneDetector {
 					int num = maxNum+1;
 					for(int i =0; i < config.getInputDir().size(); i++) {
 						if(i == 0) {
+							if(i == (config.getInputDir().size() -1)) {
+								finalLoop = true;
+							}
 							config.setNewTarget(config.getInputDir().get(0));
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
-							firstRun(config);
+							allData = firstRun(config);
 							num++;
 						}else {
+							if(i == (config.getInputDir().size() -1)) {
+								finalLoop = true;
+							}
 							config.setOldTarget(config.getInputDir().get(i-1));
 							config.setNewTarget(config.getInputDir().get(i));
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
-							incrementalRun(config);
+							allData.synchronizeAllData();
+							allData = incrementalRun(config, i, allData);
 							num++;
 						}
 					}
@@ -144,7 +162,7 @@ public class CloneDetector {
 	 * @throws Exception
 	 */
 
-	private static void firstRun(Config config) throws Exception {
+	private static AllData firstRun(Config config) throws Exception {
 		System.out.println("ICVolti " + version);
 		System.out.println("AAAAAAAAAAAAAAAAAA");
 		System.out.println("----BoW ver----");
@@ -319,8 +337,11 @@ public class CloneDetector {
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(clonePairList);
 		allData.setBlockListOfCalcedVec(blockList);
-		AllData.serializeAllDataList(allData,config);
-		allData = null;
+		if(finalLoop) {
+			AllData.serializeAllDataList(allData,config);
+			allData.dataClear();
+			allData = null;
+		}
 		fileList = null;
 		FileList = null;
 		clonePairList = null;
@@ -336,6 +357,8 @@ public class CloneDetector {
 		System.out.println(currentTime - start + "[ms]");
 		System.out.println("Finished : ");
 
+		return allData;
+
 	}
 
 	/**
@@ -346,7 +369,7 @@ public class CloneDetector {
 	 * @throws Exception
 	 */
 
-	private static void incrementalRun(Config config) throws Exception {
+	private static AllData incrementalRun(Config config, int loopNum, AllData allData) throws Exception {
 		//		System.out.println("ICVolti " + version);
 		//		System.out.println("Start Incremental Clone Detection fase");
 		//		System.out.println("----BoW ver----");
@@ -377,17 +400,16 @@ public class CloneDetector {
 		ArrayList<Block> oldBlockList = new ArrayList<Block>();
 		//updateBlockList 編集や削除されたブロックのリスト
 		ArrayList<Block> updatedBlockList = new ArrayList<Block>();
-//		ArrayList<Block> needResetBlockList = new ArrayList<Block>();
+		//		ArrayList<Block> needResetBlockList = new ArrayList<Block>();
 		ArrayList<Block> addedModifiedBlockList = new ArrayList<Block>();
-	//	ArrayList<Block> deletedBlockList = new ArrayList<Block>();
+		//	ArrayList<Block> deletedBlockList = new ArrayList<Block>();
 		//ArrayList<SourceFile> newFileList
 		//fileListの取得をちゃんとする
 		long synchroStart = System.currentTimeMillis();
-		AllData allData = new AllData();
-		allData =  AllData.deserializeAllDataList(config);
+		//AllData allData = new AllData();
+	//	allData =  AllData.deserializeAllDataList(config);
 		ArrayList<ClonePair> ClonePairList_test = new ArrayList<ClonePair>();
-		//AllData.synchronizeAllData();
-		allData.synchronizeAllData();
+		//allData.synchronizeAllData();
 		long synchroEnd = System.currentTimeMillis();
 		long synchroTime = synchroEnd - synchroStart;
 
@@ -428,7 +450,7 @@ public class CloneDetector {
 			updatedBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 2));
 			//allBlockList = TraceManager.devideBlockCategory(newBlockList, 3);
 			addedModifiedBlockList = TraceManager.devideBlockCategory(allBlockList, 0);
-		//	deletedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 1);
+			//	deletedBlockList = TraceManager.devideBlockCategory(updatedBlockList, 1);
 
 			long javaEnd = System.currentTimeMillis();
 			javaTime = javaEnd - javaStart;
@@ -644,21 +666,24 @@ public class CloneDetector {
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(ClonePairList_test);
 		allData.setBlockListOfCalcedVec(allBlockList);
-		AllData.serializeAllDataList(allData, config);
 		long serializeEnd = System.currentTimeMillis();
 		serializeTime = serializeEnd - serializeStart;
-
-		allData = null;
+		if(finalLoop) {
+			AllData.serializeAllDataList(allData,config);
+			allData.dataClear();
+			allData = null;
+		}
 		oldFileList = null;
 		newFileList = null;
 		newBlockList = null;
 		oldBlockList = null;
 		updatedBlockList = null;
 		addedModifiedBlockList = null;
-//		deletedBlockList = null;
+		//		deletedBlockList = null;
 		allBlockList = null;
 		ClonePairList_test = null;
 		cloneSetList_test = null;
+		System.gc();
 
 		currentTime = System.currentTimeMillis();
 		System.out.println("Synchro Data time = "+ synchroTime + "[ms]");
@@ -671,6 +696,8 @@ public class CloneDetector {
 		System.out.println("serializ     time = "+ serializeTime + "[ms]");
 		System.out.println("All          time = " + (currentTime - start) + "[ms]");
 		System.out.println("Finished : ");
+
+		return allData;
 
 	}
 
