@@ -64,7 +64,7 @@ public class TraceManager {
 			while(i.hasNext()){
 				Block bk = i .next();
 				int category = bk.getCategory();
-				if(category == 1 || category == 3) {
+				if(category == Block.MODIFIED || category == Block.ADDED) {
 					devidedBlockList.add(bk);
 				}
 			}
@@ -73,27 +73,17 @@ public class TraceManager {
 			while(i.hasNext()){
 				Block bk = i .next();
 				int category = bk.getCategory();
-				if(category == 4) {
+				if(category == Block.DELETED) {
 					devidedBlockList.add(bk);
 				}
 
 			}
-
 		}else if(flag == 2) {
 			Iterator<Block> i = updatedBlockList.iterator();
 			while(i.hasNext()){
 				Block bk = i .next();
 				int category = bk.getCategory();
-			//	System.out.println("cate = " + category);
-				if(category == 1 ) {
-			//		System.out.println(" bk..getOldBlock getFile = " + bk.getOldBlock().getFileName() );
-
-				}
-				if(category == -1) {
-		//			System.out.println(" block class = " + bk.getFileName() );
-
-				}
-				if(category == 1 || category == 3 || category ==4) {
+				if(category == Block.MODIFIED || category == Block.ADDED || category ==Block.DELETED) {
 					devidedBlockList.add(bk);
 				}
 			}
@@ -102,16 +92,7 @@ public class TraceManager {
 			while(i.hasNext()){
 				Block bk = i .next();
 				int category = bk.getCategory();
-			//	System.out.println("cate = " + category);
-				if(category == 1 ) {
-			//		System.out.println(" bk..getOldBlock getFile = " + bk.getOldBlock().getFileName() );
-
-				}
-				if(category == -1) {
-			//		System.out.println(" block class = " + bk.getFileName() );
-
-				}
-				if(category == 0 ||category == 1 || category == 3) {
+				if(category == Block.STABLE ||category == Block.MODIFIED || category == Block.ADDED) {
 					devidedBlockList.add(bk);
 				}
 			}
@@ -120,7 +101,7 @@ public class TraceManager {
 			while(i.hasNext()){
 				Block bk = i .next();
 				int category = bk.getCategory();
-				if(category == 1||category == 4) {
+				if(category == Block.MODIFIED||category == Block.DELETED) {
 					devidedBlockList.add(bk);
 				}
 			}
