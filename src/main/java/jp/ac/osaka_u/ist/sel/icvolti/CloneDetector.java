@@ -614,8 +614,6 @@ public class CloneDetector {
 		AllData.serializeAllDataList(allData, config);
 		allData = null;
 
-
-
 		oldFileList = null;
 		newFileList = null;
 		newBlockList = null;
@@ -626,7 +624,6 @@ public class CloneDetector {
 		allBlockList = null;
 		ClonePairList_test = null;
 		cloneSetList_test = null;
-
 
 		currentTime = System.currentTimeMillis();
 		System.out.println(currentTime - start + "[ms]");
