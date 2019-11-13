@@ -32,9 +32,10 @@ public class CloneDetector {
 	public static final boolean enableBlockExtract = true;
 	public static final boolean removeMethodPair = false;
 	public static final boolean lda = false;
-	public static final boolean modeDebug = true;
-	public static final boolean modeStdout = true;
+	public static final boolean modeDebug = false;
+	public static final boolean modeStdout = false;
 	public static boolean finalLoop =false;
+	public static boolean updatedCode =false;
 
 
 	public static String javaClassPath;
@@ -337,11 +338,7 @@ public class CloneDetector {
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(clonePairList);
 		allData.setBlockListOfCalcedVec(blockList);
-		if(finalLoop) {
-			AllData.serializeAllDataList(allData,config);
-			allData.dataClear();
-			allData = null;
-		}
+
 		fileList = null;
 		FileList = null;
 		clonePairList = null;
@@ -356,6 +353,12 @@ public class CloneDetector {
 		currentTime = System.currentTimeMillis();
 		System.out.println(currentTime - start + "[ms]");
 		System.out.println("Finished : ");
+
+		if(finalLoop) {
+			AllData.serializeAllDataList(allData,config);
+			allData.dataClear();
+			allData = null;
+		}
 
 		return allData;
 
@@ -407,7 +410,7 @@ public class CloneDetector {
 		//fileListの取得をちゃんとする
 		long synchroStart = System.currentTimeMillis();
 		//AllData allData = new AllData();
-	//	allData =  AllData.deserializeAllDataList(config);
+		//	allData =  AllData.deserializeAllDataList(config);
 		ArrayList<ClonePair> ClonePairList_test = new ArrayList<ClonePair>();
 		//allData.synchronizeAllData();
 		long synchroEnd = System.currentTimeMillis();
@@ -501,75 +504,79 @@ public class CloneDetector {
 		//		System.out.println("Extract word in source code done : " + (System.currentTimeMillis() - start) + "[ms]");
 		//		System.out.println();
 
+		if(updatedCode) {
 
-		long resetStart = System.currentTimeMillis();
-		//編集，削除されたクローンペアの削除
-		//needReserBlockListがnullならやらなくていい設定に
-		BlockUpdater.resetClonePair(ClonePairList_test, updatedBlockList);
-		long resetEnd = System.currentTimeMillis();
-		resetTime = resetEnd - resetStart;
-		//BlockUpdater.resetClonePair(ClonePairList_test, newBlockList);
+			long resetStart = System.currentTimeMillis();
+			//編集，削除されたクローンペアの削除
+			//needReserBlockListがnullならやらなくていい設定に
+			BlockUpdater.resetClonePair(ClonePairList_test, updatedBlockList);
+			long resetEnd = System.currentTimeMillis();
+			resetTime = resetEnd - resetStart;
+			//BlockUpdater.resetClonePair(ClonePairList_test, newBlockList);
 
-		// 特徴ベクトル計算
-		subStart = System.currentTimeMillis();
-
-		VectorCalculator calculator = new VectorCalculator();
-		//		blockList = calculator.filterMethod(blockList);
-		//newBlockList = calculator.filterMethod(newBlockList);
-		long vecStart = System.currentTimeMillis();
-		allBlockList = calculator.filterMethod(allBlockList, config);
-		//		System.out.println("The threshold of size for method : " + config.getSize());
-		//		System.out.println("The threshold of size for block : " + config.getBlockSize());
-		//		System.out.println("The threshold of line of block : " + config.getMinLine());
-		//		System.out.println("Filtered blocks / All blocks : " + allBlockList.size() + " / " + (countMethod + countBlock));
-		//		System.out.println();
-		//
-		//		System.out.println("Calculate vector of each method ...");
-
-		calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
-		// System.out.println("wordmap.size = " + wordMap.size());
-		long vecEnd = System.currentTimeMillis();
-		vecTime = vecEnd - vecStart;
-		currentTime = System.currentTimeMillis();
-		//		System.out.println(
-		//				"Calculate vector done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
-
-		long cpStart = System.currentTimeMillis();
-		if (Config.LSH_PRG != LSHController.NO_LSH) {
-			// LSHクラスタリング
-			//			System.out.println("Cluster vector of each method ...");
+			// 特徴ベクトル計算
 			subStart = System.currentTimeMillis();
 
-			// LSHController.computeParam(wordMap.size());
-			//			System.out.println("LSH start");
-			LSHController lshCtlr = new LSHController();
-			lshCtlr.executePartially(allBlockList,addedModifiedBlockList, calculator.getDimention(), Config.LSH_PRG,config);
-			//			System.out.println("dimention = " + dimention_test);
-			//			System.out.println("calculator.getDimention() = " + calculator.getDimention());
-			//	lshCtlr.executePartially(allBlockList,addedModifiedBlockList, dimention_test, Config.LSH_PRG);
-			lshCtlr = null;
-			//			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
-			CloneJudgement cloneJudge = new CloneJudgement();
-			//	ArrayList<ClonePair> addedClonePair = new ArrayList<ClonePair>();
-			//addedClonePair = cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, config);
-			//cloneJudge,insertClonePairToList(ClonePairList_test, addedClonePair);
-			ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, config));
-			cloneJudge.sortClonePair(ClonePairList_test);
-			cloneJudge = null;
-		} else {
-			CloneJudgement cloneJudge = new CloneJudgement();
-			//clonePairList = cloneJudge.getClonePairListNoLSH(newBlockList);
+			VectorCalculator calculator = new VectorCalculator();
+			//		blockList = calculator.filterMethod(blockList);
+			//newBlockList = calculator.filterMethod(newBlockList);
+			long vecStart = System.currentTimeMillis();
+			allBlockList = calculator.filterMethod(allBlockList, config);
+			//		System.out.println("The threshold of size for method : " + config.getSize());
+			//		System.out.println("The threshold of size for block : " + config.getBlockSize());
+			//		System.out.println("The threshold of line of block : " + config.getMinLine());
+			//		System.out.println("Filtered blocks / All blocks : " + allBlockList.size() + " / " + (countMethod + countBlock));
+			//		System.out.println();
+			//
+			//		System.out.println("Calculate vector of each method ...");
+
+			if(addedModifiedBlockList.size() > 0) {
+
+				calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
+				// System.out.println("wordmap.size = " + wordMap.size());
+				long vecEnd = System.currentTimeMillis();
+				vecTime = vecEnd - vecStart;
+				currentTime = System.currentTimeMillis();
+				//		System.out.println(
+				//				"Calculate vector done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
+
+				long cpStart = System.currentTimeMillis();
+				if (Config.LSH_PRG != LSHController.NO_LSH) {
+					// LSHクラスタリング
+					//			System.out.println("Cluster vector of each method ...");
+					subStart = System.currentTimeMillis();
+
+					// LSHController.computeParam(wordMap.size());
+					//			System.out.println("LSH start");
+					LSHController lshCtlr = new LSHController();
+					lshCtlr.executePartially(allBlockList,addedModifiedBlockList, calculator.getDimention(), Config.LSH_PRG,config);
+					//			System.out.println("dimention = " + dimention_test);
+					//			System.out.println("calculator.getDimention() = " + calculator.getDimention());
+					//	lshCtlr.executePartially(allBlockList,addedModifiedBlockList, dimention_test, Config.LSH_PRG);
+					lshCtlr = null;
+					//			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
+					CloneJudgement cloneJudge = new CloneJudgement();
+					//	ArrayList<ClonePair> addedClonePair = new ArrayList<ClonePair>();
+					//addedClonePair = cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, config);
+					//cloneJudge,insertClonePairToList(ClonePairList_test, addedClonePair);
+					ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, config));
+					cloneJudge.sortClonePair(ClonePairList_test);
+					cloneJudge = null;
+				} else {
+					CloneJudgement cloneJudge = new CloneJudgement();
+					//clonePairList = cloneJudge.getClonePairListNoLSH(newBlockList);
+				}
+				long cpEnd = System.currentTimeMillis();
+				cpTime = cpEnd - cpStart;
+				//		System.out.println("The number of clone pair : " + ClonePairList_test.size());
+				long csStart= System.currentTimeMillis();
+				if (removeMethodPair)
+					CloneJudgement.removePairOfMethod(ClonePairList_test);
+
+				currentTime = System.currentTimeMillis();
+				//		System.out.println("Cluster done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
+			}
 		}
-		long cpEnd = System.currentTimeMillis();
-		cpTime = cpEnd - cpStart;
-		//		System.out.println("The number of clone pair : " + ClonePairList_test.size());
-		long csStart= System.currentTimeMillis();
-		if (removeMethodPair)
-			CloneJudgement.removePairOfMethod(ClonePairList_test);
-
-		currentTime = System.currentTimeMillis();
-		//		System.out.println("Cluster done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
-
 		//ArrayList<CloneSet> cloneSetList = null;
 		//		for (ClonePair clonePair : ClonePairList_test) {
 		//			System.out.println("cloneA.getId() " + clonePair.cloneA.getId());
@@ -592,6 +599,7 @@ public class CloneDetector {
 		//
 		//			}*/
 		//		}
+		long csStart= System.currentTimeMillis();
 		ArrayList<CloneSet> cloneSetList_test = new ArrayList<CloneSet>();
 		if (config.getResultNotifier() != null || config.getResultCloneSet() != null) {
 			//			System.out.println("generate clone set start...");
@@ -668,11 +676,7 @@ public class CloneDetector {
 		allData.setBlockListOfCalcedVec(allBlockList);
 		long serializeEnd = System.currentTimeMillis();
 		serializeTime = serializeEnd - serializeStart;
-		if(finalLoop) {
-			AllData.serializeAllDataList(allData,config);
-			allData.dataClear();
-			allData = null;
-		}
+
 		oldFileList = null;
 		newFileList = null;
 		newBlockList = null;
@@ -696,6 +700,12 @@ public class CloneDetector {
 		System.out.println("serializ     time = "+ serializeTime + "[ms]");
 		System.out.println("All          time = " + (currentTime - start) + "[ms]");
 		System.out.println("Finished : ");
+
+		if(finalLoop) {
+			AllData.serializeAllDataList(allData,config);
+			allData.dataClear();
+			allData = null;
+		}
 
 		return allData;
 

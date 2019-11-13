@@ -1,31 +1,31 @@
 ICVolti 19.01.24
 AAAAAAAAAAAAAAAAAA
 ----BoW ver----
-8517[ms]
+17321[ms]
 Finished : 
  ===  block list size  5619
  ===  calced block list size  5619
 Synchro Data time = 0[ms]
-java         time = 1042[ms]
-reset        time = 6[ms]
-vec          time = 106[ms]
-cp           time = 1102[ms]
-cs           time = 37[ms]
-ot           time = 18[ms]
+java         time = 27178[ms]
+reset        time = 5[ms]
+vec          time = 107[ms]
+cp           time = 996[ms]
+cs           time = 41[ms]
+ot           time = 37[ms]
 serializ     time = 0[ms]
-All          time = 2391[ms]
+All          time = 28439[ms]
 Finished : 
  ===  block list size  5623
  ===  calced block list size  5623
 Synchro Data time = 0[ms]
-java         time = 1412[ms]
-reset        time = 11[ms]
-vec          time = 101[ms]
-cp           time = 1100[ms]
-cs           time = 34[ms]
-ot           time = 15[ms]
+java         time = 16851[ms]
+reset        time = 12[ms]
+vec          time = 112[ms]
+cp           time = 1062[ms]
+cs           time = 29[ms]
+ot           time = 26[ms]
 serializ     time = 0[ms]
-All          time = 2744[ms]
+All          time = 18157[ms]
 Finished : 
  ===  block list size  5608
  ===  calced block list size  5608
@@ -42,62 +42,62 @@ blockLT fileE:\test55\20180529\src\src\main\org\apache\tools\ant\taskdefs\condit
 cloneB  cate-1
 blockLT cate-1
 Synchro Data time = 0[ms]
-java         time = 842[ms]
+java         time = 16006[ms]
+reset        time = 1[ms]
+vec          time = 91[ms]
+cp           time = 970[ms]
+cs           time = 34[ms]
+ot           time = 20[ms]
+serializ     time = 0[ms]
+All          time = 17189[ms]
+Finished : 
+ ===  block list size  5609
+ ===  calced block list size  5609
+Synchro Data time = 0[ms]
+java         time = 17005[ms]
 reset        time = 0[ms]
-vec          time = 97[ms]
-cp           time = 995[ms]
+vec          time = 87[ms]
+cp           time = 979[ms]
+cs           time = 31[ms]
+ot           time = 43[ms]
+serializ     time = 0[ms]
+All          time = 18213[ms]
+Finished : 
+ ===  block list size  5609
+ ===  calced block list size  5609
+Synchro Data time = 0[ms]
+java         time = 17275[ms]
+reset        time = 1[ms]
+vec          time = 109[ms]
+cp           time = 1185[ms]
+cs           time = 29[ms]
+ot           time = 25[ms]
+serializ     time = 0[ms]
+All          time = 18706[ms]
+Finished : 
+ ===  block list size  5619
+ ===  calced block list size  5619
+Synchro Data time = 0[ms]
+java         time = 16757[ms]
+reset        time = 0[ms]
+vec          time = 91[ms]
+cp           time = 969[ms]
+cs           time = 30[ms]
+ot           time = 16[ms]
+serializ     time = 0[ms]
+All          time = 17930[ms]
+Finished : 
+ ===  block list size  5619
+ ===  calced block list size  5619
+Synchro Data time = 0[ms]
+java         time = 17558[ms]
+reset        time = 0[ms]
+vec          time = 90[ms]
+cp           time = 974[ms]
 cs           time = 32[ms]
 ot           time = 15[ms]
 serializ     time = 0[ms]
-All          time = 2053[ms]
-Finished : 
- ===  block list size  5609
- ===  calced block list size  5609
-Synchro Data time = 0[ms]
-java         time = 839[ms]
-reset        time = 0[ms]
-vec          time = 92[ms]
-cp           time = 1000[ms]
-cs           time = 30[ms]
-ot           time = 15[ms]
-serializ     time = 0[ms]
-All          time = 2051[ms]
-Finished : 
- ===  block list size  5609
- ===  calced block list size  5609
-Synchro Data time = 0[ms]
-java         time = 970[ms]
-reset        time = 1[ms]
-vec          time = 100[ms]
-cp           time = 1324[ms]
-cs           time = 30[ms]
-ot           time = 18[ms]
-serializ     time = 0[ms]
-All          time = 2532[ms]
-Finished : 
- ===  block list size  5619
- ===  calced block list size  5619
-Synchro Data time = 0[ms]
-java         time = 871[ms]
-reset        time = 0[ms]
-vec          time = 90[ms]
-cp           time = 981[ms]
-cs           time = 30[ms]
-ot           time = 15[ms]
-serializ     time = 0[ms]
-All          time = 2060[ms]
-Finished : 
- ===  block list size  5619
- ===  calced block list size  5619
-Synchro Data time = 0[ms]
-java         time = 842[ms]
-reset        time = 0[ms]
-vec          time = 102[ms]
-cp           time = 1023[ms]
-cs           time = 30[ms]
-ot           time = 15[ms]
-serializ     time = 0[ms]
-All          time = 2085[ms]
+All          time = 18738[ms]
 Finished : 
  ===  block list size  5615
  ===  calced block list size  5615
@@ -114,12 +114,12 @@ blockLT fileE:\test55\20180807\src\src\main\org\apache\tools\ant\taskdefs\option
 cloneB  cate-1
 blockLT cate-1
 Synchro Data time = 0[ms]
-java         time = 1114[ms]
+java         time = 17560[ms]
 reset        time = 6[ms]
 vec          time = 96[ms]
-cp           time = 1116[ms]
-cs           time = 32[ms]
-ot           time = 19[ms]
+cp           time = 1042[ms]
+cs           time = 36[ms]
+ot           time = 15[ms]
 serializ     time = 0[ms]
-All          time = 4908[ms]
+All          time = 21152[ms]
 Finished : 

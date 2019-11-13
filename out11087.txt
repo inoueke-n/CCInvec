@@ -1,0 +1,101 @@
+ICVolti 19.01.24
+AAAAAAAAAAAAAAAAAA
+----BoW ver----
+7560[ms]
+Finished : 
+ ===  block list size  5619
+ ===  calced block list size  5619
+Synchro Data time = 0[ms]
+java         time = 821[ms]
+reset        time = 5[ms]
+vec          time = 93[ms]
+cp           time = 956[ms]
+cs           time = 36[ms]
+ot           time = 24[ms]
+serializ     time = 0[ms]
+All          time = 2018[ms]
+Finished : 
+ ===  block list size  5623
+ ===  calced block list size  5623
+Synchro Data time = 0[ms]
+java         time = 1193[ms]
+reset        time = 11[ms]
+vec          time = 97[ms]
+cp           time = 1054[ms]
+cs           time = 34[ms]
+ot           time = 16[ms]
+serializ     time = 0[ms]
+All          time = 2467[ms]
+Finished : 
+ ===  block list size  5608
+ ===  calced block list size  5608
+Synchro Data time = 0[ms]
+java         time = 797[ms]
+reset        time = 0[ms]
+vec          time = 78[ms]
+cp           time = 1012[ms]
+cs           time = 19[ms]
+ot           time = 16[ms]
+serializ     time = 0[ms]
+All          time = 2016[ms]
+Finished : 
+ ===  block list size  5609
+ ===  calced block list size  5609
+Synchro Data time = 0[ms]
+java         time = 816[ms]
+reset        time = 1573647468009[ms]
+vec          time = 1573647468009[ms]
+cp           time = 1573647468009[ms]
+cs           time = 29[ms]
+ot           time = 15[ms]
+serializ     time = 0[ms]
+All          time = 931[ms]
+Finished : 
+ ===  block list size  5609
+ ===  calced block list size  5609
+Synchro Data time = 0[ms]
+java         time = 790[ms]
+reset        time = 1[ms]
+vec          time = 103[ms]
+cp           time = 1303[ms]
+cs           time = 30[ms]
+ot           time = 16[ms]
+serializ     time = 0[ms]
+All          time = 2332[ms]
+Finished : 
+ ===  block list size  5619
+ ===  calced block list size  5619
+Synchro Data time = 0[ms]
+java         time = 791[ms]
+reset        time = 0[ms]
+vec          time = 86[ms]
+cp           time = 937[ms]
+cs           time = 31[ms]
+ot           time = 16[ms]
+serializ     time = 0[ms]
+All          time = 1939[ms]
+Finished : 
+ ===  block list size  5619
+ ===  calced block list size  5619
+Synchro Data time = 0[ms]
+java         time = 796[ms]
+reset        time = 1[ms]
+vec          time = 92[ms]
+cp           time = 958[ms]
+cs           time = 29[ms]
+ot           time = 16[ms]
+serializ     time = 0[ms]
+All          time = 1965[ms]
+Finished : 
+ ===  block list size  5615
+ ===  calced block list size  5615
+Synchro Data time = 0[ms]
+java         time = 956[ms]
+reset        time = 6[ms]
+vec          time = 94[ms]
+cp           time = 1021[ms]
+cs           time = 36[ms]
+ot           time = 15[ms]
+serializ     time = 0[ms]
+All          time = 2200[ms]
+Finished : 

@@ -1,5 +1,6 @@
 package jp.ac.osaka_u.ist.sel.icvolti.model;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -109,6 +110,15 @@ public class AllData implements  Serializable {
 	 * @param allData
 	 */
 	public static void serializeAllDataList(AllData allData, Config config) {
+
+		File folder = new File(config.getDataDir());
+
+		// フォルダの存在を確認する
+		if (!folder.exists()) {
+			if(folder.mkdirs()) {
+			}
+		}
+
 		try {
 			ObjectOutputStream objOutStream =
 					new ObjectOutputStream(
