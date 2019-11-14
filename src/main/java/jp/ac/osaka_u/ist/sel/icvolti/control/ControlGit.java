@@ -6,6 +6,38 @@ public class ControlGit {
 	public static void checkout(String dirPath, String commitId) {
 
 
+
+
+		try {
+			String cleanCmd = "git  --git-dir=" + dirPath +  "\\.git  --work-tree=" + dirPath  + " clean -f ";
+			Runtime  cleanRuntime = Runtime.getRuntime();
+			Process clean_p;
+			clean_p = cleanRuntime.exec(cleanCmd);
+			clean_p.waitFor();
+		} catch (IOException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+
+		try {
+			String addCmd = "git  --git-dir=" + dirPath +  "\\.git  --work-tree=" + dirPath  + " add . ";
+			Runtime  addRuntime = Runtime.getRuntime();
+			Process add_p;
+			add_p = addRuntime.exec(addCmd);
+			add_p.waitFor();
+		} catch (IOException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+
+
+
 		try {
 			String stashCmd = "git  --git-dir=" + dirPath +  "\\.git  --work-tree=" + dirPath  + " stash ";
 			Runtime  stashRuntime = Runtime.getRuntime();
