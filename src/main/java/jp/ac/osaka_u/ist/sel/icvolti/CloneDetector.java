@@ -15,6 +15,7 @@ import java.util.HashMap;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.CAnalyzer4;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.CSharpAnalyzer;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.JavaAnalyzer3;
+import jp.ac.osaka_u.ist.sel.icvolti.control.ControlGit;
 import jp.ac.osaka_u.ist.sel.icvolti.model.AllData;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.ClonePair;
@@ -75,7 +76,33 @@ public class CloneDetector {
 				makeFol(config);
 				int maxNum = getMaxFileName(config);
 				AllData allData = new AllData();
-				if(config.getPreData()) {
+				if(config.getTargetGit()) {
+					int num = maxNum+1;
+					config.setNewTarget(config.getNewDir());
+					config.setOldTarget(config.getOldDir());
+					for(int i =0; i < config.getInputCommitId().size(); i++) {
+						if(i == 0) {
+							if(i == (config.getInputCommitId().size() -1)) {
+								finalLoop = true;
+							}
+							ControlGit.checkout(config.getNewTarget(), config.getInputCommitId().get(i));
+							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
+							allData = firstRun(config);
+							num++;
+						}else {
+							if(i == (config.getInputCommitId().size() -1)) {
+								finalLoop = true;
+							}
+							ControlGit.checkout(config.getOldTarget(), config.getInputCommitId().get(i-1));
+							ControlGit.checkout(config.getNewTarget(), config.getInputCommitId().get(i));
+							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
+							allData.synchronizeAllData();
+							allData = incrementalRun(config, i, allData);
+							num++;
+						}
+					}
+
+				}else if(config.getPreData()) {
 					//前のデータがある場合
 					if(config.getInputPreDir() != null) {
 						//前回検出した―バージョンが入力として与えられている場合

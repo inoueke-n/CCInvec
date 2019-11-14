@@ -61,6 +61,13 @@ public class Config {
 	/** 出力先のディレクトリパス */
 	private String outputDir = null;
 
+	/** newDirのディレクトリパス */
+	private String newDir = null;
+
+
+	/** oldDirのディレクトリパス */
+	private String oldDir = null;
+
 	/** 前回検出したバージョンのディレクトリパス */
 	private String inputPreDir = null;
 
@@ -74,6 +81,10 @@ public class Config {
 	private boolean preData = false;
 
 
+	/** Gitを使うならtrue */
+	private boolean targetGit = false;
+
+
 	/** プロジェクトが持つファイルのリスト */
 	private ArrayList<SourceFile> fileList = new ArrayList<SourceFile>();
 
@@ -84,6 +95,10 @@ public class Config {
 	/** 入力対象のディレクトリを保存 **/
 	private ArrayList<String> inputDir = new ArrayList<String>();
 
+
+
+	/** 入力対象のディレクトリを保存 **/
+	private ArrayList<String> inputCommitId = new ArrayList<String>();
 
 	/*
 	 * <p>出力形式の取得</p>
@@ -185,6 +200,40 @@ public class Config {
 
 
 	/*
+	 * <p>過去のデータの場所の取得</p>
+	 * @return newDir
+	 */
+	public String getNewDir() {
+		return newDir;
+	}
+
+	/**
+	 * <p>newDirの設定</p>
+	 * @param name newDir
+	 */
+	public void setNewDir(String newDir) {
+		this.newDir = newDir;
+	}
+
+
+	/*
+	 * <p>過去のデータの場所の取得</p>
+	 * @return oldDir
+	 */
+	public String getOldDir() {
+		return oldDir;
+	}
+
+	/**
+	 * <p>oldDirの設定</p>
+	 * @param name oldDir
+	 */
+	public void setOldDir(String oldDir) {
+		this.oldDir = oldDir;
+	}
+
+
+	/*
 	 * <p>検出対象の場所の取得</p>
 	 * @return inputDir
 	 */
@@ -198,6 +247,23 @@ public class Config {
 	 */
 	public void setInputDir(String inputDirStr) {
 		inputDir.add(inputDirStr);
+	}
+
+
+	/*
+	 * <p>検出対象の場所の取得</p>
+	 * @return inputCommitId
+	 */
+	public ArrayList<String> getInputCommitId() {
+		return inputCommitId;
+	}
+
+	/**
+	 * <p>inputCommitIdの設定</p>
+	 * @param name inputCommitId
+	 */
+	public void setInputCommitId(String inputCommitIdStr) {
+		inputCommitId.add(inputCommitIdStr);
 	}
 
 	/*
@@ -346,6 +412,30 @@ public class Config {
 	 */
 	public void setPreData(boolean preData) {
 		this.preData = preData;
+	}
+
+
+
+	/*
+	 * <p>Gitをつかうかどうか</p>
+	 * @return <ul>
+	 *           <li>使う場合 - true</li>
+	 *           <li>使わない場合 - false</li>
+	 *         </ul>
+	 */
+	public boolean getTargetGit() {
+		return targetGit;
+	}
+
+	/**
+	 * <p>targetGitの設定</p>
+	 * @param <ul>
+	 *           <li>使う場合 - true</li>
+	 *           <li>使わない場合 - false</li>
+	 *         </ul>
+	 */
+	public void setTargetGit(boolean targetGit) {
+		this.targetGit = targetGit;
 	}
 
 

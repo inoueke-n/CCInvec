@@ -93,7 +93,17 @@ public class SettingFileLoader {
 						config.setOutputDir(removeSpace(line.replace("OUTPUT_DIR:","")));
 					}
 
+					// NEW_DIR場所
+					if(line.contains("NEW_DIR:")) {
+						inputFlag = 0;
+						config.setNewDir(removeSpace(line.replace("NEW_DIR:","")));
+					}
 
+					// OLD_DIR場所
+					if(line.contains("OLD_DIR:")) {
+						inputFlag = 0;
+						config.setOldDir(removeSpace(line.replace("OLD_DIR:","")));
+					}
 
 					// Gitから直接clone
 					if(line.contains("PRE_DATA:")) {
@@ -101,6 +111,17 @@ public class SettingFileLoader {
 							config.setPreData(true);
 						} else if(removeSpace(line.replace("PRE_DATA:","")).equals("false")) {
 							config.setPreData(false);
+						}
+						inputFlag = 0;
+					}
+
+
+					// Gitから直接clone
+					if(line.contains("TARGET_GIT:")) {
+						if(removeSpace(line.replace("TARGET_GIT:","")).equals("true")) {
+							config.setTargetGit(true);
+						} else if(removeSpace(line.replace("TARGET_GIT:","")).equals("false")) {
+							config.setTargetGit(false);
 						}
 						inputFlag = 0;
 					}
