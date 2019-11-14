@@ -37,12 +37,12 @@ public class SettingFileLoader {
 					// 言語
 					if(line.contains("LANGUAGE:")) {
 						inputFlag = 0;
-							if (removeSpace(line.replace("LANGUAGE:","")).equals("java"))
-								config.setLang(0);
-							if (removeSpace(line.replace("LANGUAGE:","")).equals("c"))
-								config.setLang(1);
-							if (removeSpace(line.replace("LANGUAGE:","")).equals("csharp"))
-								config.setLang(2);
+						if (removeSpace(line.replace("LANGUAGE:","")).equals("java"))
+							config.setLang(0);
+						if (removeSpace(line.replace("LANGUAGE:","")).equals("c"))
+							config.setLang(1);
+						if (removeSpace(line.replace("LANGUAGE:","")).equals("csharp"))
+							config.setLang(2);
 						//config.setLang(removeSpace(line.replace("LANGUAGE:","")));
 					}
 					// 出力形式
@@ -70,12 +70,12 @@ public class SettingFileLoader {
 						inputFlag = 0;
 						config.setMinLine(Integer.parseInt(removeSpace(line.replace("MIN_LINE:",""))));
 					}
-		/*			// 文字コード
+					/*			// 文字コード
 					if(line.contains("CHARSET:")) {
 						inputFlag = 0;
 						config.setCharset(removeSpace(line.replace("CHARSET:","")));
 					}
-				*/
+					 */
 					// スレッド数
 					if(line.contains("THREADS:")) {
 						inputFlag = 0;
@@ -132,7 +132,11 @@ public class SettingFileLoader {
 					}
 
 					if(inputFlag == 1) {
-						config.setInputDir(removeSpace(line));
+						if(config.getTargetGit()) {
+							config.setInputCommitId(removeSpace(line));
+						}else {
+							config.setInputDir(removeSpace(line));
+						}
 					}
 
 					// 入力ディレクトリ
@@ -140,6 +144,12 @@ public class SettingFileLoader {
 						inputFlag = 1;
 
 						config.setInputDir(removeSpace(line.replace("INPUT_DIR:","")));
+					}
+					// 入力ディレクトリ
+					if(line.contains("COMMIT_ID:")) {
+						inputFlag = 1;
+
+						config.setInputCommitId(removeSpace(line.replace("COMMIT_ID:","")));
 					}
 
 
@@ -160,15 +170,15 @@ public class SettingFileLoader {
 			}
 		}
 		// 作業ディレクトリ指定がない場合はデフォルトディレクトリに設定
-/*		if (config.getWorkDir() == null)
+		/*		if (config.getWorkDir() == null)
 			config.setWorkDir(Paths.get(Def.NOTIFIER_PATH, Def.DEFAULT_WORK_DIR).toString());
 
-*/
+		 */
 		// 言語とツール名の対応チェック
-	/*	if(!Def.isValidLang(config.getLang(), config.getTool())) {
+		/*	if(!Def.isValidLang(config.getLang(), config.getTool())) {
 			return false;
 		}
-*/
+		 */
 
 
 

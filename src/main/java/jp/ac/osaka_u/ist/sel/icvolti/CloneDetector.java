@@ -33,8 +33,11 @@ public class CloneDetector {
 	public static final boolean enableBlockExtract = true;
 	public static final boolean removeMethodPair = false;
 	public static final boolean lda = false;
-	public static final boolean modeDebug = false;
-	public static final boolean modeStdout = false;
+
+	public static final boolean modeDebug = true;
+	public static final boolean modeStdout = true;
+	public static final boolean modeTimeMeasure = true;
+
 	public static boolean finalLoop =false;
 	public static boolean updatedCode =false;
 
@@ -77,6 +80,7 @@ public class CloneDetector {
 				int maxNum = getMaxFileName(config);
 				AllData allData = new AllData();
 				if(config.getTargetGit()) {
+					System.out.println("git");
 					int num = maxNum+1;
 					config.setNewTarget(config.getNewDir());
 					config.setOldTarget(config.getOldDir());
@@ -378,8 +382,13 @@ public class CloneDetector {
 
 		}*/
 		currentTime = System.currentTimeMillis();
-		System.out.println(currentTime - start + "[ms]");
-		System.out.println("Finished : ");
+		if(modeTimeMeasure) {
+			System.out.println(currentTime - start + "[ms]");
+		}
+
+		if(modeStdout) {
+			System.out.println("Finished : ");
+		}
 
 		if(finalLoop) {
 			AllData.serializeAllDataList(allData,config);
@@ -717,6 +726,7 @@ public class CloneDetector {
 		System.gc();
 
 		currentTime = System.currentTimeMillis();
+		if(modeTimeMeasure) {
 		System.out.println("Synchro Data time = "+ synchroTime + "[ms]");
 		System.out.println("java         time = "+ javaTime + "[ms]");
 		System.out.println("reset        time = "+ resetTime + "[ms]");
@@ -726,7 +736,12 @@ public class CloneDetector {
 		System.out.println("ot           time = "+ otTime + "[ms]");
 		System.out.println("serializ     time = "+ serializeTime + "[ms]");
 		System.out.println("All          time = " + (currentTime - start) + "[ms]");
-		System.out.println("Finished : ");
+		}
+
+
+		if(modeStdout) {
+			System.out.println("Finished : ");
+		}
 
 		if(finalLoop) {
 			AllData.serializeAllDataList(allData,config);

@@ -236,8 +236,10 @@ public class AllData implements  Serializable {
 
 		//        FileWriter fw = new FileWriter("test.txt");
 		//
+	    if(CloneDetector.modeDebug) {
 		System.out.println(" ===  block list size  " + blockList.size());
 		System.out.println(" ===  calced block list size  " + BlockListOfCalcedVec.size());
+	    }
 		for(ClonePair cp : ClonePairList) {
 			int idA = cp.cloneA.getId();
 			int idB = cp.cloneB.getId();
