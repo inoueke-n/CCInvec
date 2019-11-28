@@ -99,7 +99,10 @@ public class DiffDetector {
 			int diffSearchFlag =0;
 			CloneDetector.updatedCode = false;
 			while((line = reader.readLine()) != null) {
-				//   System.out.println("line = " + line);
+
+				if(CloneDetector.modeDebug) {
+				   System.out.println("line = " + line);
+				}
 				//	 	System.out.println("watasiha = ! " + line.substring(0,4).contains("diff"));
 
 				//ここのファイル検索もっと効率化できる

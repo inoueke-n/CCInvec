@@ -2,6 +2,7 @@ package jp.ac.osaka_u.ist.sel.icvolti;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
@@ -30,25 +31,44 @@ public class Outputter {
 	 * @param clonePairList
 	 * @throws IOException
 	 */
-	public static void outputCSV(List<ClonePair> clonePairList, Config config) throws IOException {
-//		System.out.println("output CSV");
-		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
-		writer.println(
-				"A name,A class name,A start line,A end line, A method start line , A method end line, B name,B class name,B start line,B end line, B method start line , B method end line,similarity");
-		for (ClonePair pair : clonePairList) {
-			Block cloneA = pair.cloneA;
-			Block cloneB = pair.cloneB;
-			writer.printf("%s,%s,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%f,\r\n", cloneA.getName(), cloneA.getFileName(),
-					cloneA.getStartLine(), cloneA.getEndLine(), cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
-					cloneB.getName(), cloneB.getFileName(), cloneB.getStartLine(), cloneB.getEndLine(),
-					cloneB.getMethodStartLine(), cloneB.getMethodEndLine(), pair.sim);
-		}
-		writer.close();
-	}
+//	public static void outputCSV(List<ClonePair> clonePairList, Config config) throws IOException {
+//		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
+//		writer.println(
+//				"A name,A class name,A start line,A end line, A method start line , A method end line, B name,B class name,B start line,B end line, B method start line , B method end line,similarity");
+//		for (ClonePair pair : clonePairList) {
+//			Block cloneA = pair.cloneA;
+//			Block cloneB = pair.cloneB;
+//			writer.printf("%s,%s,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%f,\r\n", cloneA.getName(), cloneA.getFileName(),
+//					cloneA.getStartLine(), cloneA.getEndLine(), cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
+//					cloneB.getName(), cloneB.getFileName(), cloneB.getStartLine(), cloneB.getEndLine(),
+//					cloneB.getMethodStartLine(), cloneB.getMethodEndLine(), pair.sim);
+//		}
+//		writer.close();
+//	}
 
-/*	public static void outputCSV(List<ClonePair> clonePairList) throws IOException {
+//	public static void outputCSV(List<ClonePair> clonePairList,Config config) throws IOException {
+//		System.out.println("output CSV");
+//		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
+//		for (ClonePair pair : clonePairList) {
+//			Block cloneA = pair.cloneA;
+//			Block cloneB = pair.cloneB;
+//			File fileA = new File(cloneA.getFileName());
+//			File folA = new File(fileA.getParent());
+//			File fileB = new File(cloneB.getFileName());
+//			File folB = new File(fileB.getParent());
+//			writer.printf("%s,%s,%d,%d,%s,%s,%d,%d,%f\r\n",
+//					folA.getName(),fileA.getName(),cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
+//					folB.getName(),fileB.getName(),cloneB.getMethodStartLine(), cloneB.getMethodEndLine(),
+//					pair.sim
+//					);
+//		}
+//		writer.close();
+//	}
+
+	//for precision
+	public static void outputCSV(List<ClonePair> clonePairList,Config config) throws IOException {
 		System.out.println("output CSV");
-		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(Config.resultCSV)));
+		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
 		for (ClonePair pair : clonePairList) {
 			Block cloneA = pair.cloneA;
 			Block cloneB = pair.cloneB;
@@ -57,14 +77,14 @@ public class Outputter {
 			File fileB = new File(cloneB.getFileName());
 			File folB = new File(fileB.getParent());
 			writer.printf("%s,%s,%d,%d,%s,%s,%d,%d,%f\r\n",
-					folA.getName(),fileA.getName(),cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
-					folB.getName(),fileB.getName(),cloneB.getMethodStartLine(), cloneB.getMethodEndLine(),
+					folA.getName(),fileA.getAbsolutePath(),cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
+					folB.getName(),fileB.getAbsolutePath(),cloneB.getMethodStartLine(), cloneB.getMethodEndLine(),
 					pair.sim
 					);
 		}
 		writer.close();
 	}
-*/
+
 	/**
 	 * <p>
 	 * 可視化用出力

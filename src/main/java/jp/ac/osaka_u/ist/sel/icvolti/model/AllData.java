@@ -245,25 +245,29 @@ public class AllData implements  Serializable {
 			int idB = cp.cloneB.getId();
 
 			if(cp.cloneA.getStartLine() != blockList.get(idA).getStartLine() || cp.cloneA.getEndLine() !=  blockList.get(idA).getEndLine()) {
-				if(CloneDetector.modeDebug) {
+			//	if(CloneDetector.modeDebug) {
 					System.out.println("no match startline cloneA  startline" + cp.cloneA.getStartLine());
+					System.out.println("no match end  line cloneA  end  line" + cp.cloneA.getEndLine());
 					System.out.println("blockList                  startline" + blockList.get(idA).getStartLine());
+					System.out.println("blockList                  end  line" + blockList.get(idA).getEndLine());
 					System.out.println("cloneA  file" + cp.cloneA.getFileName());
 					System.out.println("blockLT file" + blockList.get(idA).getFileName());
 					System.out.println("cloneA  cate" + cp.cloneA.getCategory());
 					System.out.println("blockLT cate" + blockList.get(idA).getCategory());
-				}
+			//	}
 			}
 
 			if(cp.cloneB.getStartLine() != blockList.get(idB).getStartLine() || cp.cloneB.getEndLine() !=  blockList.get(idB).getEndLine()) {
-				if(CloneDetector.modeDebug) {
+				//if(CloneDetector.modeDebug) {
 					System.out.println("no match startline cloneB  startline" + cp.cloneB.getStartLine());
+					System.out.println("no match end  line cloneA  end  line" + cp.cloneB.getEndLine());
 					System.out.println("blockList                  startline" + blockList.get(idB).getStartLine());
+					System.out.println("blockList                  end  line" + blockList.get(idB).getEndLine());
 					System.out.println("cloneB  file" + cp.cloneB.getFileName());
 					System.out.println("blockLT file" + blockList.get(idB).getFileName());
 					System.out.println("cloneB  cate" + cp.cloneB.getCategory());
 					System.out.println("blockLT cate" + blockList.get(idB).getCategory());
-				}
+				//}
 			}
 
 

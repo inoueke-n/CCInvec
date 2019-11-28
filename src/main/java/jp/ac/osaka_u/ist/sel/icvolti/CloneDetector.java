@@ -34,9 +34,9 @@ public class CloneDetector {
 	public static final boolean removeMethodPair = false;
 	public static final boolean lda = false;
 
-	public static final boolean modeDebug = true;
-	public static final boolean modeStdout = true;
-	public static final boolean modeTimeMeasure = true;
+	public static final boolean modeDebug = false;
+	public static final boolean modeStdout = false;
+	public static final boolean modeTimeMeasure = false;
 
 	public static boolean finalLoop =false;
 	public static boolean updatedCode =false;
@@ -80,7 +80,6 @@ public class CloneDetector {
 				int maxNum = getMaxFileName(config);
 				AllData allData = new AllData();
 				if(config.getTargetGit()) {
-					System.out.println("git");
 					int num = maxNum+1;
 					config.setNewTarget(config.getNewDir());
 					config.setOldTarget(config.getOldDir());
@@ -195,9 +194,11 @@ public class CloneDetector {
 	 */
 
 	private static AllData firstRun(Config config) throws Exception {
-		System.out.println("ICVolti " + version);
-		System.out.println("AAAAAAAAAAAAAAAAAA");
-		System.out.println("----BoW ver----");
+		if(modeStdout) {
+			System.out.println("ICVolti " + version);
+			System.out.println("AAAAAAAAAAAAAAAAAA");
+			System.out.println("----BoW ver----");
+		}
 		// setJavaClassPath();
 		getApplicationPath();
 		//commandOption(args);
@@ -386,6 +387,8 @@ public class CloneDetector {
 			System.out.println(currentTime - start + "[ms]");
 		}
 
+		System.out.println(currentTime - start);
+
 		if(modeStdout) {
 			System.out.println("Finished : ");
 		}
@@ -494,27 +497,6 @@ public class CloneDetector {
 			long javaEnd = System.currentTimeMillis();
 			javaTime = javaEnd - javaStart;
 
-
-			//			if(addedModifiedBlockList != null) {
-			//				System.out.println("analyze block done ====");
-			//			}else {
-			//
-			//				System.out.println("====analyze block cant ====");
-			//			}
-			/*	for (Block block : addedModifiedBlockList) {
-				System.out.println(block.getCategory());
-			}*/
-
-
-			//			System.out.println("addedModified block size  = " + addedModifiedBlockList.size());
-			//			System.out.println("updated block size  = " + updatedBlockList.size());
-			//
-			//
-			//			System.out.println("deleted block size  = " + deletedBlockList.size());
-			//
-			//
-			//			System.out.println(
-			//					"Parse new file / All file = " + newJavaanalyzer.countParseFiles + " / " + newJavaanalyzer.countFiles);
 			break;
 		case 1: // "c"
 			CAnalyzer4 oldCanalyzer = new CAnalyzer4();
@@ -566,9 +548,9 @@ public class CloneDetector {
 			//
 			//		System.out.println("Calculate vector of each method ...");
 
-			if(addedModifiedBlockList.size() > 0) {
+			if(addedModifiedBlockList.size() > 0 && allBlockList.size() > 0) {
 
-				calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
+				allBlockList = calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
 				// System.out.println("wordmap.size = " + wordMap.size());
 				long vecEnd = System.currentTimeMillis();
 				vecTime = vecEnd - vecStart;
@@ -727,15 +709,15 @@ public class CloneDetector {
 
 		currentTime = System.currentTimeMillis();
 		if(modeTimeMeasure) {
-		System.out.println("Synchro Data time = "+ synchroTime + "[ms]");
-		System.out.println("java         time = "+ javaTime + "[ms]");
-		System.out.println("reset        time = "+ resetTime + "[ms]");
-		System.out.println("vec          time = "+ vecTime + "[ms]");
-		System.out.println("cp           time = "+ cpTime + "[ms]");
-		System.out.println("cs           time = "+ csTime + "[ms]");
-		System.out.println("ot           time = "+ otTime + "[ms]");
-		System.out.println("serializ     time = "+ serializeTime + "[ms]");
-		System.out.println("All          time = " + (currentTime - start) + "[ms]");
+			System.out.println("Synchro Data time = "+ synchroTime + "[ms]");
+			System.out.println("java         time = "+ javaTime + "[ms]");
+			System.out.println("reset        time = "+ resetTime + "[ms]");
+			System.out.println("vec          time = "+ vecTime + "[ms]");
+			System.out.println("cp           time = "+ cpTime + "[ms]");
+			System.out.println("cs           time = "+ csTime + "[ms]");
+			System.out.println("ot           time = "+ otTime + "[ms]");
+			System.out.println("serializ     time = "+ serializeTime + "[ms]");
+			System.out.println("All          time = " + (currentTime - start) + "[ms]");
 		}
 
 
@@ -743,6 +725,8 @@ public class CloneDetector {
 			System.out.println("Finished : ");
 		}
 
+
+		System.out.println(currentTime - start);
 		if(finalLoop) {
 			AllData.serializeAllDataList(allData,config);
 			allData.dataClear();
