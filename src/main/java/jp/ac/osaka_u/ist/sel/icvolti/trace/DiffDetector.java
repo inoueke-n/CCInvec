@@ -100,15 +100,16 @@ public class DiffDetector {
 			CloneDetector.updatedCode = false;
 			while((line = reader.readLine()) != null) {
 
-				if(CloneDetector.modeDebug) {
-				   System.out.println("line = " + line);
-				}
+
 				//	 	System.out.println("watasiha = ! " + line.substring(0,4).contains("diff"));
 
 				//ここのファイル検索もっと効率化できる
 
 				if(line.contains("diff -r ")) {
 					String[] command = line.split(" ");
+					if(CloneDetector.modeDebug) {
+						   System.out.println("line = " + line);
+						}
 					//	   System.out.println("command = " + command[3].replace("/", "\\"));
 					//特定の拡張子を持ったファイルのみを検出対象にする
 					String fileExtension1 = null;

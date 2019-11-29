@@ -128,7 +128,7 @@ public class BlockCategorizer {
 						if (sim > blockA.getLocationSimilarity()) {
 							blockA.setOldBlock(blockB);
 							blockA.setLocationSimilarity(sim);
-							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
+							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList() == blockB.getWordList()) {
 								blockA.setCategory(Block.STABLE);
 								if(blockA.getVector() == null) {
 									blockA.setVector(blockB.getVector());
@@ -151,7 +151,7 @@ public class BlockCategorizer {
 					}else {
 						blockA.setOldBlock(blockB);
 						blockA.setLocationSimilarity(sim);
-						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
+						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList() == blockB.getWordList()) {
 							blockA.setCategory(Block.STABLE);
 							if(blockA.getVector() == null) {
 								blockA.setVector(blockB.getVector());
@@ -174,7 +174,7 @@ public class BlockCategorizer {
 						if (sim > blockB.getLocationSimilarity()) {
 							blockB.setNewBlock(blockA);
 							blockB.setLocationSimilarity(sim);
-							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
+							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList() == blockB.getWordList()) {
 								blockB.setCategory(Block.STABLE);
 								BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
 								//System.out.println("Block STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
@@ -188,7 +188,7 @@ public class BlockCategorizer {
 					}else {
 						blockB.setNewBlock(blockA);
 						blockB.setLocationSimilarity(sim);
-						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd) {
+						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList() == blockB.getWordList()) {
 							blockB.setCategory(Block.STABLE);
 							BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
 							//	System.out.println("Block STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
@@ -207,7 +207,6 @@ public class BlockCategorizer {
 					if (!blockA.getBlockSet().getOldBlockSetList().contains(blockB.getBlockSet())) {
 						blockA.getBlockSet().getOldBlockSetList().add(blockB.getBlockSet());
 					}*/
-				}else if(sim >= 0.2 && sim < 0.7){
 //					System.out.println("===========================================");
 //					System.out.println("block A File Name = " + blockA.getFileName());
 //					System.out.println("block A startLine = " + blockA.getStartLine());

@@ -350,8 +350,10 @@ public class JavaAnalyzer3 {
 			if(file.getState()==SourceFile.NORMAL) {
 				file.getOldBlockList().clear();
 				for(Block block : file.getNewBlockList()) {
+					block.setCategory(Block.NULL);
 					Block oldBlock = new Block();
 					oldBlock = block.clone();
+					oldBlock.setCategory(Block.NULL);
 //					System.out.println("oldBlock vec " + oldBlock.getVector());
 //					System.out.println("oldBlock len " + oldBlock.getLen());
 					file.getOldBlockList().add(oldBlock);
@@ -605,6 +607,7 @@ public class JavaAnalyzer3 {
 
 						Block block = BlockFactory.create(blockID++, start.getText(), parser, subt.getChild(0),
 								JavaLexer.IDENTIFIER);
+						block.setCategory(Block.NULL);
 						blockList.add(block);
 						if (CloneDetector.enableBlockExtract)
 							blockList.addAll(extractBlock(subt.getChild(0), parser, block));
@@ -663,9 +666,11 @@ public class JavaAnalyzer3 {
 						if (t.getChild(arg - 1).getText().equals("else")) {
 							token = (TerminalNode) t.getChild(arg - 1);
 						}
-						Block block = BlockFactory.create(blockID++,
+						//Block block = BlockFactory.create(blockID++,
+						Block block = BlockFactory.create(-1,
 								parent.getName() + " - " + token.getSymbol().getText(), parser,
 								t.getChild(arg).getChild(0), JavaLexer.IDENTIFIER);
+						block.setCategory(Block.NULL);
 						block.setParent(parent);
 						blockList.add(block);
 						blockList.addAll(extractBlock(t.getChild(arg).getChild(0), parser, block));

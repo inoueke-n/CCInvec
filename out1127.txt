@@ -1,0 +1,42 @@
+filtered word count : 2368
+7919
+2061
+14861
+no match startline cloneA  startline40
+no match end  line cloneA  end  line48
+blockList                  startline62
+blockList                  end  line69
+cloneA  fileE:\test55\20180529\src\src\main\org\apache\tools\ant\taskdefs\condition\And.java
+blockLT fileE:\test55\20180529\src\src\main\org\apache\tools\ant\taskdefs\condition\HasFreeSpace.java
+cloneA  cate-1
+blockLT cate-1
+no match startline cloneB  startline40
+no match end  line cloneA  end  line49
+blockList                  startline74
+blockList                  end  line91
+cloneB  fileE:\test55\20180529\src\src\main\org\apache\tools\ant\taskdefs\condition\Or.java
+blockLT fileE:\test55\20180529\src\src\main\org\apache\tools\ant\taskdefs\condition\ResourcesMatch.java
+cloneB  cate-1
+blockLT cate-1
+13440
+12455
+13690
+13698
+13423
+no match startline cloneA  startline208
+no match end  line cloneA  end  line220
+blockList                  startline232
+blockList                  end  line252
+cloneA  fileE:\test55\20180807\src\src\main\org\apache\tools\ant\taskdefs\optional\ejb\BorlandDeploymentTool.java
+blockLT fileE:\test55\20180807\src\src\main\org\apache\tools\ant\taskdefs\optional\ejb\BorlandDeploymentTool.java
+cloneA  cate-1
+blockLT cate-1
+no match startline cloneB  startline407
+no match end  line cloneA  end  line419
+blockList                  startline455
+blockList                  end  line480
+cloneB  fileE:\test55\20180807\src\src\main\org\apache\tools\ant\taskdefs\optional\ejb\WeblogicDeploymentTool.java
+blockLT fileE:\test55\20180807\src\src\main\org\apache\tools\ant\taskdefs\optional\ejb\WeblogicDeploymentTool.java
+cloneB  cate-1
+blockLT cate-1
+13840

@@ -33,6 +33,7 @@ public class CloneDetector {
 	public static final boolean enableBlockExtract = true;
 	public static final boolean removeMethodPair = false;
 	public static final boolean lda = false;
+	public static final boolean absoluteTracking = true;
 
 	public static final boolean modeDebug = false;
 	public static final boolean modeStdout = false;
@@ -51,7 +52,7 @@ public class CloneDetector {
 	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
 	public static int countMethod, countBlock, countLine;
 	private static final String version = "19.01.24";
-	public static int dimention_test;
+	//public static int dimention_test;
 
 	/**
 	 * <p>
@@ -254,7 +255,7 @@ public class CloneDetector {
 		subStart = System.currentTimeMillis();
 
 		VectorCalculator calculator = new VectorCalculator();
-		blockList = calculator.filterMethod(blockList, config);
+		blockList = calculator.filterMethod(blockList, config,allData);
 		//		System.out.println("The threshold of size for method : " + config.getSize());
 		//		System.out.println("The threshold of size for block : " + config.getBlockSize());
 		//		System.out.println("The threshold of line of block : " + config.getMinLine());
@@ -282,9 +283,9 @@ public class CloneDetector {
 			// LSHController.computeParam(wordMap.size());
 			//			System.out.println("LSH start");
 			LSHController lshCtlr = new LSHController();
-			dimention_test = calculator.getDimention();
+			//dimention_test = calculator.getDimension();
 			//			System.out.println("dimention = " + dimention_test);
-			lshCtlr.execute(blockList, calculator.getDimention(), Config.LSH_PRG, config);
+			lshCtlr.execute(blockList, allData.getVecDimension(), Config.LSH_PRG, config);
 			lshCtlr = null;
 			//			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
 			CloneJudgement cloneJudge = new CloneJudgement();
@@ -539,7 +540,7 @@ public class CloneDetector {
 			//		blockList = calculator.filterMethod(blockList);
 			//newBlockList = calculator.filterMethod(newBlockList);
 			long vecStart = System.currentTimeMillis();
-			allBlockList = calculator.filterMethod(allBlockList, config);
+			allBlockList = calculator.increFilterMethod(allBlockList, config, allData);
 			//		System.out.println("The threshold of size for method : " + config.getSize());
 			//		System.out.println("The threshold of size for block : " + config.getBlockSize());
 			//		System.out.println("The threshold of line of block : " + config.getMinLine());
@@ -550,7 +551,7 @@ public class CloneDetector {
 
 			if(addedModifiedBlockList.size() > 0 && allBlockList.size() > 0) {
 
-				allBlockList = calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
+				allBlockList = calculator.increCalculateVector(allBlockList, addedModifiedBlockList, allData);
 				// System.out.println("wordmap.size = " + wordMap.size());
 				long vecEnd = System.currentTimeMillis();
 				vecTime = vecEnd - vecStart;
@@ -567,9 +568,9 @@ public class CloneDetector {
 					// LSHController.computeParam(wordMap.size());
 					//			System.out.println("LSH start");
 					LSHController lshCtlr = new LSHController();
-					lshCtlr.executePartially(allBlockList,addedModifiedBlockList, calculator.getDimention(), Config.LSH_PRG,config);
+					lshCtlr.executePartially(allBlockList,addedModifiedBlockList, allData.getVecDimension(), Config.LSH_PRG,config);
 					//			System.out.println("dimention = " + dimention_test);
-					//			System.out.println("calculator.getDimention() = " + calculator.getDimention());
+					//			System.out.println("calculator.getDimension() = " + calculator.getDimension());
 					//	lshCtlr.executePartially(allBlockList,addedModifiedBlockList, dimention_test, Config.LSH_PRG);
 					lshCtlr = null;
 					//			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
@@ -692,6 +693,8 @@ public class CloneDetector {
 		allData.setSourceFileList(FileList);
 		allData.setClonePairList(ClonePairList_test);
 		allData.setBlockListOfCalcedVec(allBlockList);
+		//allData.synchronizeAllData2();
+
 		long serializeEnd = System.currentTimeMillis();
 		serializeTime = serializeEnd - serializeStart;
 
@@ -732,6 +735,8 @@ public class CloneDetector {
 			allData.dataClear();
 			allData = null;
 		}
+
+
 
 		return allData;
 
