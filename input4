@@ -1,8 +1,8 @@
 LANGUAGE:java
-OUTPUT_FORMAT:csv
+OUTPUT_FORMAT:notifier
 PRE_DATA:false
-DATA_DIR:E:\ICVolti_Data12\Data
-OUTPUT_DIR:E:\ICVolti_Data12\Output
+DATA_DIR:E:\ICVolti_Data13\Data
+OUTPUT_DIR:E:\ICVolti_Data13\Output
 INPUT_DIR:E:\test55\20180501
 E:\test55\20180515
 E:\test55\20180529

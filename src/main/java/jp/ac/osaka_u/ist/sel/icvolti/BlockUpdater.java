@@ -386,20 +386,20 @@ public class BlockUpdater {
 								block.getOldBlock().getStartLine() == cp.cloneA.getStartLine() &&
 								block.getOldBlock().getEndLine() == cp.cloneA.getEndLine()) {
 
-							System.out.println("DELETE CLONEPAIR ");
-							System.out.println("============= = ");
-							System.out.println("block  = " + block.getOldBlock().getId());
-							System.out.println("block  = " + block.getOldBlock().getFileName());
-							System.out.println("block startLine =" + block.getOldBlock().getStartLine() + "endline = " + block.getOldBlock().getEndLine());
-							System.out.println("clone A = " + cp.cloneA.getId());
-							System.out.println("catec A = " + cp.cloneA.getCategory());
-							System.out.println("clone B = " + cp.cloneB.getId());
-							System.out.println("catec B = " + cp.cloneB.getCategory());
-							System.out.println("clone A fileName = " + cp.cloneA.getFileName());
-							System.out.println("clone B fileName = " + cp.cloneB.getFileName());
-							System.out.println("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine());
-							System.out.println("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine());
-							System.out.println("============= = ");
+//							System.out.println("DELETE CLONEPAIR ");
+//							System.out.println("============= = ");
+//							System.out.println("block  = " + block.getOldBlock().getId());
+//							System.out.println("block  = " + block.getOldBlock().getFileName());
+//							System.out.println("block startLine =" + block.getOldBlock().getStartLine() + "endline = " + block.getOldBlock().getEndLine());
+//							System.out.println("clone A = " + cp.cloneA.getId());
+//							System.out.println("catec A = " + cp.cloneA.getCategory());
+//							System.out.println("clone B = " + cp.cloneB.getId());
+//							System.out.println("catec B = " + cp.cloneB.getCategory());
+//							System.out.println("clone A fileName = " + cp.cloneA.getFileName());
+//							System.out.println("clone B fileName = " + cp.cloneB.getFileName());
+//							System.out.println("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine());
+//							System.out.println("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine());
+//							System.out.println("============= = ");
 							i.remove();
 							deleteCP++;
 							break;
@@ -410,20 +410,20 @@ public class BlockUpdater {
 								block.getOldBlock().getStartLine() == cp.cloneB.getStartLine() &&
 								block.getOldBlock().getEndLine() == cp.cloneB.getEndLine()) {
 
-							System.out.println("DELETE CLONEPAIR ");
-							System.out.println("============= = ");
-							System.out.println("block  = " + block.getOldBlock().getId());
-							System.out.println("block  = " + block.getOldBlock().getFileName());
-							System.out.println("block startLine =" + block.getOldBlock().getStartLine() + "endline = " + block.getOldBlock().getEndLine());
-							System.out.println("clone A = " + cp.cloneA.getId());
-							System.out.println("catec A = " + cp.cloneA.getCategory());
-							System.out.println("clone B = " + cp.cloneB.getId());
-							System.out.println("catec B = " + cp.cloneB.getCategory());
-							System.out.println("clone A fileName = " + cp.cloneA.getFileName());
-							System.out.println("clone B fileName = " + cp.cloneB.getFileName());
-							System.out.println("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine());
-							System.out.println("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine());
-							System.out.println("============= = ");
+//							System.out.println("DELETE CLONEPAIR ");
+//							System.out.println("============= = ");
+//							System.out.println("block  = " + block.getOldBlock().getId());
+//							System.out.println("block  = " + block.getOldBlock().getFileName());
+//							System.out.println("block startLine =" + block.getOldBlock().getStartLine() + "endline = " + block.getOldBlock().getEndLine());
+//							System.out.println("clone A = " + cp.cloneA.getId());
+//							System.out.println("catec A = " + cp.cloneA.getCategory());
+//							System.out.println("clone B = " + cp.cloneB.getId());
+//							System.out.println("catec B = " + cp.cloneB.getCategory());
+//							System.out.println("clone A fileName = " + cp.cloneA.getFileName());
+//							System.out.println("clone B fileName = " + cp.cloneB.getFileName());
+//							System.out.println("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine());
+//							System.out.println("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine());
+//							System.out.println("============= = ");
 							i.remove();
 							deleteCP++;
 							break;
@@ -455,20 +455,20 @@ public class BlockUpdater {
 								block.getStartLine() == cp.cloneA.getStartLine() &&
 								block.getEndLine() == cp.cloneA.getEndLine()) {
 
-							System.out.println("DELETE CLONEPAIR ");
-							System.out.println("============= = ");
-							System.out.println("block  = " + block.getId());
-							System.out.println("block  = " + block.getFileName());
-							System.out.println("block startLine =" + block.getStartLine() + "endline = " + block.getEndLine());
-							System.out.println("clone A = " + cp.cloneA.getId());
-							System.out.println("catec A = " + cp.cloneA.getCategory());
-							System.out.println("clone B = " + cp.cloneB.getId());
-							System.out.println("catec B = " + cp.cloneB.getCategory());
-							System.out.println("clone A fileName = " + cp.cloneA.getFileName());
-							System.out.println("clone B fileName = " + cp.cloneB.getFileName());
-							System.out.println("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine());
-							System.out.println("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine());
-							System.out.println("============= = ");
+//							System.out.println("DELETE CLONEPAIR ");
+//							System.out.println("============= = ");
+//							System.out.println("block  = " + block.getId());
+//							System.out.println("block  = " + block.getFileName());
+//							System.out.println("block startLine =" + block.getStartLine() + "endline = " + block.getEndLine());
+//							System.out.println("clone A = " + cp.cloneA.getId());
+//							System.out.println("catec A = " + cp.cloneA.getCategory());
+//							System.out.println("clone B = " + cp.cloneB.getId());
+//							System.out.println("catec B = " + cp.cloneB.getCategory());
+//							System.out.println("clone A fileName = " + cp.cloneA.getFileName());
+//							System.out.println("clone B fileName = " + cp.cloneB.getFileName());
+//							System.out.println("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine());
+//							System.out.println("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine());
+//							System.out.println("============= = ");
 							i.remove();
 							deleteCP++;
 							break;
@@ -479,20 +479,20 @@ public class BlockUpdater {
 								block.getStartLine() == cp.cloneB.getStartLine() &&
 								block.getEndLine() == cp.cloneB.getEndLine()) {
 
-							System.out.println("DELETE CLONEPAIR ");
-							System.out.println("============= = ");
-							System.out.println("block  = " + block.getId());
-							System.out.println("block  = " + block.getFileName());
-							System.out.println("block startLine =" + block.getStartLine() + "endline = " + block.getEndLine());
-							System.out.println("clone A = " + cp.cloneA.getId());
-							System.out.println("catec A = " + cp.cloneA.getCategory());
-							System.out.println("clone B = " + cp.cloneB.getId());
-							System.out.println("catec B = " + cp.cloneB.getCategory());
-							System.out.println("clone A fileName = " + cp.cloneA.getFileName());
-							System.out.println("clone B fileName = " + cp.cloneB.getFileName());
-							System.out.println("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine());
-							System.out.println("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine());
-							System.out.println("============= = ");
+//							System.out.println("DELETE CLONEPAIR ");
+//							System.out.println("============= = ");
+//							System.out.println("block  = " + block.getId());
+//							System.out.println("block  = " + block.getFileName());
+//							System.out.println("block startLine =" + block.getStartLine() + "endline = " + block.getEndLine());
+//							System.out.println("clone A = " + cp.cloneA.getId());
+//							System.out.println("catec A = " + cp.cloneA.getCategory());
+//							System.out.println("clone B = " + cp.cloneB.getId());
+//							System.out.println("catec B = " + cp.cloneB.getCategory());
+//							System.out.println("clone A fileName = " + cp.cloneA.getFileName());
+//							System.out.println("clone B fileName = " + cp.cloneB.getFileName());
+//							System.out.println("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine());
+//							System.out.println("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine());
+//							System.out.println("============= = ");
 							i.remove();
 							deleteCP++;
 							break;
@@ -506,22 +506,22 @@ public class BlockUpdater {
 		}
 
 
-		for(Block block : updatedBlockList) {
-			if(block.getOldBlock() == null) {
-				System.out.println(" OLD BLOCK NULL ");
-				System.out.println(" block  fileName" + block.getFileName());
-				System.out.println(" block start line  " + block.getStartLine());
-				System.out.println(" block end   line  " + block.getEndLine());
-				System.out.println(" block cate        " + block.getCategory());
-			}else {
-				System.out.println(" OLD BLOCK  ");
-				System.out.println(" old block " + block.getOldBlock().getFileName());
-				System.out.println(" old block start line  " + block.getOldBlock().getStartLine());
-				System.out.println(" old block end   line  " + block.getOldBlock().getEndLine());
-				System.out.println(" old block cate        " + block.getCategory());
-			}
-
-		}
+//		for(Block block : updatedBlockList) {
+//			if(block.getOldBlock() == null) {
+//				System.out.println(" OLD BLOCK NULL ");
+//				System.out.println(" block  fileName" + block.getFileName());
+//				System.out.println(" block start line  " + block.getStartLine());
+//				System.out.println(" block end   line  " + block.getEndLine());
+//				System.out.println(" block cate        " + block.getCategory());
+//			}else {
+//				System.out.println(" OLD BLOCK  ");
+//				System.out.println(" old block " + block.getOldBlock().getFileName());
+//				System.out.println(" old block start line  " + block.getOldBlock().getStartLine());
+//				System.out.println(" old block end   line  " + block.getOldBlock().getEndLine());
+//				System.out.println(" old block cate        " + block.getCategory());
+//			}
+//
+//		}
 
 
 		//		System.out.println("The number of deleted Clone Pairs = " + deleteCP);
