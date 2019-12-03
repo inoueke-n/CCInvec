@@ -109,7 +109,6 @@ Query point 31
 
 Query point 32
 517
-516
 
 Query point 33
 518
@@ -302,9 +301,9 @@ Query point 86
 580
 581
 582
+2929
 2930
 2931
-2929
 
 Query point 87
 579
@@ -2696,7 +2695,6 @@ Query point 735
 Query point 736
 4373
 4374
-4372
 
 Query point 737
 4373
@@ -2865,8 +2863,8 @@ Query point 774
 
 Query point 775
 4412
-4413
 4410
+4413
 
 Query point 776
 4413
@@ -2992,7 +2990,6 @@ Query point 809
 4938
 5156
 4881
-5065
 
 Query point 810
 4755

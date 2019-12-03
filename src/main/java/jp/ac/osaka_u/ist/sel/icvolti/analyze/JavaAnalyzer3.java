@@ -404,7 +404,7 @@ public class JavaAnalyzer3 {
 					}
 					// if we parse ok, it's LL not SLL
 				}
-				blockListOfFile = extractMethod(newtree,newparser);
+				blockListOfFile = extractMethodForNewFile(newtree,newparser);
 				blockList.addAll(blockListOfFile);
 				file.getNewBlockList().addAll(blockListOfFile);
 				countParseFiles++;
@@ -624,6 +624,47 @@ public class JavaAnalyzer3 {
 		return blockList;
 	}
 
+	/**
+	 * <p>
+	 * ASTから各メソッドのASTを構築
+	 * </p>
+	 *
+	 * @param method
+	 * @param node
+	 * @param parent
+	 * @param className
+	 */
+	private static List<Block> extractMethodForNewFile(ParseTree tree, JavaParser parser) {
+		List<Block> blockList = new ArrayList<>();
+		for (ParseTree t : XPath.findAll(tree, "//methodDeclaration", parser)) {
+			Token start = null;
+			CloneDetector.countMethod++;
+			for (ParseTree subt : ((JavaParser.MethodDeclarationContext) t).children) {
+				if (subt instanceof RuleContext) {
+					if (subt instanceof JavaParser.MethodBodyContext) {
+						if (subt.getSourceInterval().length() <= Config.METHOD_NODE_TH)
+							break;
+
+						Block block = BlockFactory.create(blockID++, start.getText(), parser, subt.getChild(0),
+								JavaLexer.IDENTIFIER);
+						block.setCategory(Block.ADDED);
+						blockList.add(block);
+						if (CloneDetector.enableBlockExtract)
+							blockList.addAll(extractBlockForNewFile(subt.getChild(0), parser, block));
+					}
+				} else {
+					TerminalNode token = (TerminalNode) subt;
+					if (token.getSymbol().getType() == JavaLexer.IDENTIFIER) {
+						// System.out.println(token.getText());
+						start = token.getSymbol();
+					}
+				}
+			}
+		}
+		return blockList;
+	}
+
+
 	private static List<Block> extractBlock(ParseTree tree, JavaParser parser, Block parent) {
 		List<Block> blockList = new ArrayList<>();
 		for (ParseTree t : XPath.findAll(tree, "/block/blockStatement/statement", parser)) {
@@ -674,6 +715,63 @@ public class JavaAnalyzer3 {
 						block.setParent(parent);
 						blockList.add(block);
 						blockList.addAll(extractBlock(t.getChild(arg).getChild(0), parser, block));
+					}
+				}
+			}
+		}
+		return blockList;
+	}
+
+	private static List<Block> extractBlockForNewFile(ParseTree tree, JavaParser parser, Block parent) {
+		List<Block> blockList = new ArrayList<>();
+		for (ParseTree t : XPath.findAll(tree, "/block/blockStatement/statement", parser)) {
+			if (!(t.getChild(0) instanceof RuleContext)) {
+				TerminalNode token = (TerminalNode) t.getChild(0);
+				List<Integer> args = new ArrayList<Integer>();
+
+				switch (token.getSymbol().getType()) {
+				case JavaLexer.IF:
+					args.add(2);
+					if (t.getChildCount() == 5)
+						args.add(4);
+					break;
+
+				case JavaLexer.FOR:
+					args.add(4);
+					break;
+
+				case JavaLexer.WHILE:
+					args.add(2);
+					break;
+
+				case JavaLexer.DO:
+					args.add(1);
+					break;
+
+				case JavaLexer.SWITCH:
+					args.add(2);
+					break;
+				}
+
+				if (args.size() == 0)
+					continue;
+
+				for (Integer arg : args) {
+					CloneDetector.countBlock++;
+					if (t.getChild(arg).getSourceInterval().length() <= Config.BLOCK_NODE_TH)
+						continue;
+					if (t.getChild(arg).getChild(0) instanceof JavaParser.BlockContext) {
+						if (t.getChild(arg - 1).getText().equals("else")) {
+							token = (TerminalNode) t.getChild(arg - 1);
+						}
+						//Block block = BlockFactory.create(blockID++,
+						Block block = BlockFactory.create(-1,
+								parent.getName() + " - " + token.getSymbol().getText(), parser,
+								t.getChild(arg).getChild(0), JavaLexer.IDENTIFIER);
+						block.setCategory(Block.ADDED);
+						block.setParent(parent);
+						blockList.add(block);
+						blockList.addAll(extractBlockForNewFile(t.getChild(arg).getChild(0), parser, block));
 					}
 				}
 			}

@@ -67,7 +67,7 @@ public class Outputter {
 
 	//for precision
 	public static void outputCSV(List<ClonePair> clonePairList,Config config) throws IOException {
-		System.out.println("output CSV");
+//		System.out.println("output CSV");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
 		for (ClonePair pair : clonePairList) {
 			Block cloneA = pair.cloneA;

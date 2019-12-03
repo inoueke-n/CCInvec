@@ -187,10 +187,10 @@ public class VectorCalculator implements Serializable {
 		}
 
 		//次元数はAllDataに保存しておく必要がある
-		dimension = wordMap.size() + 10000;
+		dimension = wordMap.size() + 1000;
 		allData.setVecDimension(dimension);
-		System.out.println("Dimension = " + allData.getVecDimension());
-		System.out.println("filtered word count : " + wordMap.size());
+		//		System.out.println("Dimension = " + allData.getVecDimension());
+		//		System.out.println("filtered word count : " + wordMap.size());
 
 		long start = System.currentTimeMillis();
 		{
@@ -396,7 +396,7 @@ public class VectorCalculator implements Serializable {
 						wordFreqMap.put(word.getName(), ++value);
 					} else {
 						wordFreqMap.put(word.getName(), 1);
-					//	System.out.println("add dictionaly");
+						//	System.out.println("add dictionaly");
 						//ここTF-IDFを使わないなら消すことが出来る
 						dictionary.add(word.getName());
 					}
@@ -421,23 +421,47 @@ public class VectorCalculator implements Serializable {
 		//				(double) elementCount / ((double) wordFreqMap.size() * (double) blockList.size())));
 
 		// ワードの出現回数でフィルタリング（デフォルト 1以下は除去）
+		ArrayList<String> addedWord = new ArrayList<String>();
 		Iterator<String> iter = dictionary.iterator();
 		int j = wordMap.size();
 		while(iter.hasNext()) {
 			String wordName = iter.next();
 			if (wordFreqMap.get(wordName) > APPEARANCE_TH && !wordMap.containsKey(wordName)) {
 				wordMap.put(wordName, j++);
-				System.out.println("ADD word  " + wordName);
+				addedWord.add(wordName);
+				//				System.out.println("ADD word  " + wordName);
 			} else {
 				//dictionaryから削除
 				//System.out.println("delete dictionaly");
 				iter.remove();
 			}
 		}
+
+		if(addedWord.size() > 0) {
+			int k =0;
+			for(Block block : blockList) {
+				if(block.getCategory() == Block.STABLE) {
+				//	System.out.println("stable");
+					for(String wordStr : addedWord) {
+				//		System.out.println("word " + wordStr );
+						int index = block.getWordList().indexOf(wordStr);
+						if(index > -1) {
+							System.out.println("change vec of stable code");
+							blockList.set(k, increCalcBoW(block, wordMap, CloneDetector.countMethod, allData));
+							break;
+						}
+					}
+				}
+				k++;
+			}
+
+		}
+
+
 		//dimension = allData.getVecDimension();
 		//		System.out.println("filtered word count : " + wordMap.size());
 
-		System.out.println("Dimension = " + allData.getVecDimension());
+		//		System.out.println("Dimension = " + allData.getVecDimension());
 
 		long start = System.currentTimeMillis();
 		{
@@ -817,7 +841,7 @@ public class VectorCalculator implements Serializable {
 		OpenMapRealVector vector = new OpenMapRealVector(allData.getVecDimension());
 		final int size = indexList.size();
 		for (int i = 0; i < size; i++) {
-					//	System.out.println("index " +  indexList.get(i) +  "; valueList.get(i) / len) = " + valueList.get(i) / len);
+			//	System.out.println("index " +  indexList.get(i) +  "; valueList.get(i) / len) = " + valueList.get(i) / len);
 			vector.setEntry(indexList.get(i), valueList.get(i) / len);
 		}
 		block.setVector(vector);
