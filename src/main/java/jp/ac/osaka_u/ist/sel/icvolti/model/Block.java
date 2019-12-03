@@ -26,7 +26,7 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 	// private String code;
 	private double len;
 	private double localitySimilarity = 0.0;
-	private List<Word> wordList = new ArrayList<Word>();
+	private ArrayList<Word> wordList = new ArrayList<Word>();
 	private int nodeNum = 0;
 	private OpenMapRealVector vector;
 	// private HashMap<Integer, String> stringVector;
@@ -216,8 +216,19 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 	 *
 	 * @return
 	 */
-	public final List<Word> getWordList() {
+	public final ArrayList<Word> getWordList() {
 		return wordList;
+	}
+
+	/**
+	 * <p>
+	 * ワードリストの設定
+	 * </p>
+	 *
+	 * @return
+	 */
+	public final void setWordList(ArrayList<Word> wordList) {
+		this.wordList = wordList;
 	}
 
 	public final void clearWordList() {

@@ -1,6 +1,6 @@
 cd /d %~dp0
 
-java -jar icvolti.jar input4  > 1130.txt
+java -jar icvolti.jar input4 > 1202.txt
 
 
 pause

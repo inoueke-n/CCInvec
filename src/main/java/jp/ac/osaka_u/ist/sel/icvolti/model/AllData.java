@@ -222,11 +222,11 @@ public class AllData implements  Serializable {
 			allData.setWordMap((Map<String, Integer>) objInStreamWordMap.readObject());
 			objInStreamWordMap.close();
 
-			ObjectInputStream objInStreamWordFreq
-			= new ObjectInputStream(
-					new FileInputStream(DataDir + "\\wordFreq.bin"));
-			allData.setWordFreq((int[]) objInStreamWordFreq.readObject());
-			objInStreamWordFreq.close();
+//			ObjectInputStream objInStreamWordFreq
+//			= new ObjectInputStream(
+//					new FileInputStream(DataDir + "\\wordFreq.bin"));
+//			allData.setWordFreq((int[]) objInStreamWordFreq.readObject());
+//			objInStreamWordFreq.close();
 
 			return allData;
 
@@ -430,6 +430,10 @@ public class AllData implements  Serializable {
 		}
 		int i =0;
 		for(Block block : blockList) {
+			if(BlockListOfCalcedVec.get(i).getWordList() == null) {
+				System.out.println("vec null " + i );
+			}
+			block.setWordList(BlockListOfCalcedVec.get(i).getWordList());
 			block.setVector(BlockListOfCalcedVec.get(i).getVector());
 			block.setLen(BlockListOfCalcedVec.get(i).getLen());
 			block.setCategory(Block.NULL);

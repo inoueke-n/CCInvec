@@ -93,7 +93,7 @@ public class VectorCalculator implements Serializable {
 				//clonepairリストから削除
 				if(block.getCategory() != Block.ADDED) {
 					deleteBlock.add(block);
-				System.out.println("DELETE2  2");
+					System.out.println("DELETE2  2");
 				}
 
 				System.out.println("DELETE2  3");
@@ -131,7 +131,7 @@ public class VectorCalculator implements Serializable {
 	 *
 	 * @throws FileNotFoundException
 	 */
-	public void calculateVector(List<Block> blockList, AllData allData) throws FileNotFoundException {
+	public void calculateVector(ArrayList<Block> blockList, AllData allData) throws FileNotFoundException {
 		// ワードマップの生成
 		HashMap<String, Integer> wordFreqMap = new HashMap<String, Integer>();
 		ArrayList<String> dictionary = new ArrayList<String>();
@@ -187,15 +187,16 @@ public class VectorCalculator implements Serializable {
 		}
 
 		//次元数はAllDataに保存しておく必要がある
-		dimension = wordMap.size() + 1000;
+		dimension = wordMap.size() + 10000;
 		allData.setVecDimension(dimension);
+		System.out.println("Dimension = " + allData.getVecDimension());
 		System.out.println("filtered word count : " + wordMap.size());
 
 		long start = System.currentTimeMillis();
 		{
 			final int size = blockList.size();
 			for (int i = 0; i < size; i++) {
-				blockList.set(i, calcBoW(blockList.get(i), wordMap, wordFreq, CloneDetector.countMethod));
+				blockList.set(i, calcBoW(blockList.get(i), wordMap, wordFreq, CloneDetector.countMethod, allData));
 			}
 		}
 
@@ -227,7 +228,7 @@ public class VectorCalculator implements Serializable {
 		outputDictionary(dictionary);
 
 		allData.setWordMap(wordMap);
-		allData.setWordFreq(wordFreq);
+		//allData.setWordFreq(wordFreq);
 		//		System.out.print("file out done : ");
 		//		System.out.println(System.currentTimeMillis() - start + "[ms]");
 
@@ -322,7 +323,7 @@ public class VectorCalculator implements Serializable {
 				System.out.println("addedModifiedBlockList filename = " + addedModifiedBlockList.get(i).getFileName());
 				System.out.println("addedModifiedBlockList blocksize = " + addedModifiedBlockList.get(i).getWordList().size());
 				 */	//System.out.println("addedModifiedBlockList old Blockfilename = " + addedModifiedBlockList.get(i).getOldBlock().getFileName());
-				addedModifiedBlockList.set(i, calcBoW(addedModifiedBlockList.get(i), wordMap, wordFreq, CloneDetector.countMethod));
+				addedModifiedBlockList.set(i, calcBoW(addedModifiedBlockList.get(i), wordMap, wordFreq, CloneDetector.countMethod, allData));
 			}
 		}
 
@@ -367,7 +368,7 @@ public class VectorCalculator implements Serializable {
 		//s	outputDictionary(dictionary);
 
 		allData.setWordMap(wordMap);
-		allData.setWordFreq(wordFreq);
+		//allData.setWordFreq(wordFreq);
 		//		System.out.print("file out done : ");
 		//		System.out.println(System.currentTimeMillis() - start + "[ms]");
 		return blockList;
@@ -380,23 +381,22 @@ public class VectorCalculator implements Serializable {
 
 		Map<String, Integer> wordMap = new HashMap<>();
 		wordMap = allData.getWordMap();
-		int wordFreq[] = allData.getWordFreq();
+		//int wordFreq[] = allData.getWordFreq();
 		//System.out.println(" === wordFReq = " + wordFreq.length);
 
 
 		// ワードの出現頻度の計測と、ワード辞書の生成
 		int elementCount = 0;
 		//System.out.println("test mae");
-		/*		for (Block block : addedModifiedBlockList) {
+		for (Block block : blockList) {
 			if (block.getParent() == null) {
 				for (Word word : block.getWordList()) {
-					System.out.println("test");
 					if (wordFreqMap.containsKey(word.getName())) {
 						int value = wordFreqMap.get(word.getName());
 						wordFreqMap.put(word.getName(), ++value);
 					} else {
 						wordFreqMap.put(word.getName(), 1);
-						System.out.println("add dictionaly");
+					//	System.out.println("add dictionaly");
 						//ここTF-IDFを使わないなら消すことが出来る
 						dictionary.add(word.getName());
 					}
@@ -405,7 +405,7 @@ public class VectorCalculator implements Serializable {
 			} else {
 				elementCount += block.getWordList().size();
 			}
-		}*/
+		}
 		/*
 		 *
 		 *
@@ -420,28 +420,24 @@ public class VectorCalculator implements Serializable {
 		//		System.out.println("Density : " + String.format("%f",
 		//				(double) elementCount / ((double) wordFreqMap.size() * (double) blockList.size())));
 
-		/*
 		// ワードの出現回数でフィルタリング（デフォルト 1以下は除去）
-		Map<String, Integer> wordMap = new HashMap<>();
-	int wordFreq[] = new int[wordFreqMap.size()];
 		Iterator<String> iter = dictionary.iterator();
-		for (int i = 0; iter.hasNext();) {
+		int j = wordMap.size();
+		while(iter.hasNext()) {
 			String wordName = iter.next();
-			if (wordFreqMap.get(wordName) > APPEARANCE_TH) {
-				wordMap.put(wordName, i);
-				wordFreq[i] = wordFreqMap.get(wordName);
-				i++;
+			if (wordFreqMap.get(wordName) > APPEARANCE_TH && !wordMap.containsKey(wordName)) {
+				wordMap.put(wordName, j++);
+				System.out.println("ADD word  " + wordName);
 			} else {
 				//dictionaryから削除
-				System.out.println("delete dictionaly");
-
+				//System.out.println("delete dictionaly");
 				iter.remove();
 			}
 		}
-		 */
-		dimension = allData.getVecDimension();
+		//dimension = allData.getVecDimension();
 		//		System.out.println("filtered word count : " + wordMap.size());
 
+		System.out.println("Dimension = " + allData.getVecDimension());
 
 		long start = System.currentTimeMillis();
 		{
@@ -454,37 +450,11 @@ public class VectorCalculator implements Serializable {
 				System.out.println("addedModifiedBlockList filename = " + addedModifiedBlockList.get(i).getFileName());
 				System.out.println("addedModifiedBlockList blocksize = " + addedModifiedBlockList.get(i).getWordList().size());
 				 */	//System.out.println("addedModifiedBlockList old Blockfilename = " + addedModifiedBlockList.get(i).getOldBlock().getFileName());
-				addedModifiedBlockList.set(i, increCalcBoW(addedModifiedBlockList.get(i), wordMap, wordFreq, CloneDetector.countMethod, allData));
+				addedModifiedBlockList.set(i, increCalcBoW(addedModifiedBlockList.get(i), wordMap,  CloneDetector.countMethod, allData));
 			}
 		}
 
-		//
-		//		Iterator<Block> i = blockList.iterator();
-		//		int iD =0;
-		//		while(i.hasNext()) {
-		//			Block block  = i.next();
-		//			if(block.getVector() == null) {
-		//				System.out.println("remove block because of no vector");
-		//				i.remove();
-		//			}else {
-		//				block.setId(iD);
-		//				iD++;
-		//			}
-		//		}
-		//
-		//		Iterator<Block> j = addedModifiedBlockList.iterator();
-		//		while(i.hasNext()) {
-		//			Block block  = j.next();
-		//			if(block.getVector() == null) {
-		//				System.out.println("remove block because of no vector");
-		//				j.remove();
-		//			}
-		//		}
 
-		//		System.out.print("calc vector done : ");
-		//		System.out.println(System.currentTimeMillis() - start + "[ms]");
-		//
-		//		System.out.println("file out start");
 		start = System.currentTimeMillis();
 
 		if (Config.LSH_PRG == LSHController.E2LSH) {
@@ -496,10 +466,9 @@ public class VectorCalculator implements Serializable {
 			outputSparsePartialDatasetBinary(addedModifiedBlockList);
 
 		}
-		//s	outputDictionary(dictionary);
 
 		allData.setWordMap(wordMap);
-		allData.setWordFreq(wordFreq);
+		//allData.setWordFreq(wordFreq);
 		//		System.out.print("file out done : ");
 		//		System.out.println(System.currentTimeMillis() - start + "[ms]");
 		return blockList;
@@ -532,7 +501,7 @@ public class VectorCalculator implements Serializable {
 
 	}
 
-	private static void outputSparseDatasetBinary(List<Block> blockList) {
+	private static void outputSparseDatasetBinary(ArrayList<Block> blockList) {
 		byte[] writeBuffer = new byte[8];
 
 		try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(CloneDetector.DATASET_FILE))) {
@@ -592,7 +561,7 @@ public class VectorCalculator implements Serializable {
 		}
 	}
 
-	private static void outputSparsePartialDatasetBinary(List<Block> updatedBlockList) {
+	private static void outputSparsePartialDatasetBinary(ArrayList<Block> updatedBlockList) {
 		byte[] writeBuffer = new byte[8];
 
 		try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(CloneDetector.PARTIAL_QUERY_POINT))) {
@@ -736,71 +705,12 @@ public class VectorCalculator implements Serializable {
 
 		block.setVector(vector);
 		block.setLen(len);
-		block.clearWordList();
+		//block.clearWordList();
 		// block.setStringVector(stringVector);
 		return block;
 	}
 
-	private static Block calcBoW(Block block, Map<String, Integer> wordMap, int[] wordFreq, int numMethod) {
-		int wordCount = 0;
-		int statementCount = 0;
-
-		//		System.out.println("wordListsize : " + block.getWordList().size());
-		for (Word word : block.getWordList()) {
-			if (wordMap.containsKey(word.getName())) {
-				switch (word.getType()) {
-				case Word.WORD:
-					wordCount += word.getCount();
-					break;
-				case Word.STATEMENT:
-					statementCount += word.getCount();
-					break;
-				}
-			}
-		}
-
-		// 重みの計算
-		List<Integer> indexList = new ArrayList<Integer>();
-		List<Double> valueList = new ArrayList<Double>();
-		double len = 0;
-		for (Word word : block.getWordList()) {
-			if (wordMap.containsKey(word.getName())) {
-				int id = wordMap.get(word.getName());
-				double tf = 0;
-				switch (word.getType()) {
-				case Word.WORD:
-					tf = (double) word.getCount() / (double) wordCount;
-					break;
-				case Word.STATEMENT:
-					tf = (double) word.getCount() / (double) statementCount;
-					break;
-				}
-				//double idf = 1.0 + Math.log((double) numMethod / (double) wordFreq[id]);
-				//		double tfidf = tf * idf;
-				//BoW
-				double bow = tf;
-				indexList.add(id);
-				valueList.add(bow);
-				len += bow * bow;
-			}
-		}
-		len = Math.sqrt(len);
-		//	System.out.println("len = " + len);
-		OpenMapRealVector vector = new OpenMapRealVector(wordMap.size());
-		final int size = indexList.size();
-		for (int i = 0; i < size; i++) {
-			//			System.out.println("index " +  indexList.get(i) +  "; valueList.get(i) / len) = " + valueList.get(i) / len);
-			vector.setEntry(indexList.get(i), valueList.get(i) / len);
-		}
-		block.setVector(vector);
-		block.setLen(len);
-		block.clearWordList();
-		// block.setStringVector(stringVector);
-		return block;
-	}
-
-
-	private static Block increCalcBoW(Block block, Map<String, Integer> wordMap, int[] wordFreq, int numMethod, AllData allData) {
+	private static Block calcBoW(Block block, Map<String, Integer> wordMap, int[] wordFreq, int numMethod, AllData allData) {
 		int wordCount = 0;
 		int statementCount = 0;
 
@@ -853,7 +763,66 @@ public class VectorCalculator implements Serializable {
 		}
 		block.setVector(vector);
 		block.setLen(len);
-		block.clearWordList();
+		//block.clearWordList();
+		// block.setStringVector(stringVector);
+		return block;
+	}
+
+
+	private static Block increCalcBoW(Block block, Map<String, Integer> wordMap, int numMethod, AllData allData) {
+		int wordCount = 0;
+		int statementCount = 0;
+
+		//		System.out.println("wordListsize : " + block.getWordList().size());
+		for (Word word : block.getWordList()) {
+			if (wordMap.containsKey(word.getName())) {
+				switch (word.getType()) {
+				case Word.WORD:
+					wordCount += word.getCount();
+					break;
+				case Word.STATEMENT:
+					statementCount += word.getCount();
+					break;
+				}
+			}
+		}
+
+		// 重みの計算
+		List<Integer> indexList = new ArrayList<Integer>();
+		List<Double> valueList = new ArrayList<Double>();
+		double len = 0;
+		for (Word word : block.getWordList()) {
+			if (wordMap.containsKey(word.getName())) {
+				int id = wordMap.get(word.getName());
+				double tf = 0;
+				switch (word.getType()) {
+				case Word.WORD:
+					tf = (double) word.getCount() / (double) wordCount;
+					break;
+				case Word.STATEMENT:
+					tf = (double) word.getCount() / (double) statementCount;
+					break;
+				}
+				//double idf = 1.0 + Math.log((double) numMethod / (double) wordFreq[id]);
+				//		double tfidf = tf * idf;
+				//BoW
+				double bow = tf;
+				indexList.add(id);
+				valueList.add(bow);
+				len += bow * bow;
+			}
+		}
+		len = Math.sqrt(len);
+		//	System.out.println("len = " + len);
+		OpenMapRealVector vector = new OpenMapRealVector(allData.getVecDimension());
+		final int size = indexList.size();
+		for (int i = 0; i < size; i++) {
+					//	System.out.println("index " +  indexList.get(i) +  "; valueList.get(i) / len) = " + valueList.get(i) / len);
+			vector.setEntry(indexList.get(i), valueList.get(i) / len);
+		}
+		block.setVector(vector);
+		block.setLen(len);
+		//block.clearWordList();
 		// block.setStringVector(stringVector);
 		return block;
 	}

@@ -109,6 +109,7 @@ Query point 31
 
 Query point 32
 517
+516
 
 Query point 33
 518
@@ -301,9 +302,9 @@ Query point 86
 580
 581
 582
-2929
 2930
 2931
+2929
 
 Query point 87
 579
@@ -2032,23 +2033,19 @@ Query point 559
 
 Query point 560
 3298
-3272
 3299
 
 Query point 561
-3272
-3299
 3298
+3299
 
 Query point 562
-3273
 3300
 
 Query point 563
 3301
 3294
 3274
-3304
 
 Query point 564
 3268
@@ -2056,7 +2053,6 @@ Query point 564
 3295
 3302
 3278
-3305
 
 Query point 565
 3296
@@ -2067,13 +2063,10 @@ Query point 566
 3277
 3304
 3294
-3301
 
 Query point 567
 3278
 3305
-3275
-3302
 
 Query point 568
 3279
@@ -2703,6 +2696,7 @@ Query point 735
 Query point 736
 4373
 4374
+4372
 
 Query point 737
 4373
@@ -2871,8 +2865,8 @@ Query point 774
 
 Query point 775
 4412
-4410
 4413
+4410
 
 Query point 776
 4413
@@ -2998,6 +2992,7 @@ Query point 809
 4938
 5156
 4881
+5065
 
 Query point 810
 4755

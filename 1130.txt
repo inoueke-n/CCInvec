@@ -1,11 +1,2 @@
 filtered word count : 2368
-8111
-2295
-3124
-2082
-939
-2104
-2016
-2110
-remove clone pair
-2642
+8316

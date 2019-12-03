@@ -376,13 +376,15 @@ public class CloneDetector {
 		FileList = null;
 		clonePairList = null;
 		cloneSetList = null;
-		blockList = null;
-		/*for(SourceFile file : FileList) {
-			for(Block block : file.getNewBlockList()) {
-				System.out.println("l====enn =     " + block.getLen());
+		//blockList = null;
+		int i =0;
+		for(Block block : blockList) {
+			if(block.getWordList() ==null) {
+				System.out.println("aaa wordList null " + i);
 			}
+			i++;
+		}
 
-		}*/
 		currentTime = System.currentTimeMillis();
 		if(modeTimeMeasure) {
 			System.out.println(currentTime - start + "[ms]");
@@ -705,7 +707,7 @@ public class CloneDetector {
 		updatedBlockList = null;
 		addedModifiedBlockList = null;
 		//		deletedBlockList = null;
-		allBlockList = null;
+		//allBlockList = null;
 		ClonePairList_test = null;
 		cloneSetList_test = null;
 		System.gc();
