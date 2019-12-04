@@ -109,6 +109,7 @@ Query point 31
 
 Query point 32
 517
+516
 
 Query point 33
 518
@@ -301,9 +302,9 @@ Query point 86
 580
 581
 582
-2929
 2930
 2931
+2929
 
 Query point 87
 579
@@ -2011,7 +2012,6 @@ Query point 555
 Query point 556
 3267
 3294
-3277
 3304
 3301
 
@@ -2031,15 +2031,18 @@ Query point 559
 3297
 
 Query point 560
+3272
 3298
 3299
 
 Query point 561
+3272
 3298
 3299
 
 Query point 562
 3300
+3273
 
 Query point 563
 3301
@@ -2051,7 +2054,6 @@ Query point 564
 3275
 3295
 3302
-3278
 
 Query point 565
 3296
@@ -2695,6 +2697,7 @@ Query point 735
 Query point 736
 4373
 4374
+4372
 
 Query point 737
 4373
@@ -2863,8 +2866,8 @@ Query point 774
 
 Query point 775
 4412
-4410
 4413
+4410
 
 Query point 776
 4413
@@ -2990,6 +2993,7 @@ Query point 809
 4938
 5156
 4881
+5065
 
 Query point 810
 4755
@@ -3105,91 +3109,91 @@ Query point 831
 5219
 
 Query point 832
-5259
+5220
+5221
+5222
 
 Query point 833
-5304
-5297
-5305
+5220
+5221
+5222
 
 Query point 834
+5220
+5221
+5222
+5246
+5247
+5223
+
+Query point 835
+5223
+5224
+5222
+
+Query point 836
+5223
+5224
+
+Query point 837
+5225
+5226
+5227
+
+Query point 838
+5225
+5226
+
+Query point 839
+5225
+5227
+
+Query point 840
+5259
+
+Query point 841
+5304
+5297
+5305
+
+Query point 842
 5297
 5305
 5304
 
-Query point 835
-5306
-5307
-
-Query point 836
-5306
-5307
-
-Query point 837
-5308
-
-Query point 838
-5309
-
-Query point 839
-5310
-
-Query point 840
-5552
-
-Query point 841
-5553
-
-Query point 842
-5554
-
 Query point 843
-5555
+5306
+5307
 
 Query point 844
-5556
+5306
+5307
 
 Query point 845
-5599
-5600
-5601
-5602
-5603
-5604
+5308
 
 Query point 846
-5599
-5600
-5601
-5602
-5603
-5604
+5309
 
 Query point 847
-5599
-5600
-5601
-5602
-5603
-5604
+5310
 
 Query point 848
-5599
-5600
-5601
-5602
-5603
-5604
+5552
 
 Query point 849
-5599
-5600
-5601
-5602
-5603
-5604
+5553
 
 Query point 850
+5554
+
+Query point 851
+5555
+
+Query point 852
+5556
+
+Query point 853
 5599
 5600
 5601
@@ -3197,44 +3201,84 @@ Query point 850
 5603
 5604
 
-Query point 851
-5605
-
-Query point 852
-5606
-
-Query point 853
-5607
-
 Query point 854
-5622
+5599
+5600
+5601
+5602
+5603
+5604
 
 Query point 855
-5623
+5599
+5600
+5601
+5602
+5603
+5604
 
 Query point 856
-5624
+5599
+5600
+5601
+5602
+5603
+5604
 
 Query point 857
-5625
+5599
+5600
+5601
+5602
+5603
+5604
 
 Query point 858
-5626
-5627
+5599
+5600
+5601
+5602
+5603
+5604
 
 Query point 859
+5605
+
+Query point 860
+5606
+
+Query point 861
+5607
+
+Query point 862
+5622
+
+Query point 863
+5623
+
+Query point 864
+5624
+
+Query point 865
+5625
+
+Query point 866
 5626
 5627
 
-Query point 860
+Query point 867
+5626
+5627
+
+Query point 868
 5628
 
-Query point 861
+Query point 869
 5629
 
-Query point 862
+Query point 870
 5630
 
-Query point 863
+Query point 871
 5631
 

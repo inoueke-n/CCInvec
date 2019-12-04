@@ -187,7 +187,7 @@ public class VectorCalculator implements Serializable {
 		}
 
 		//次元数はAllDataに保存しておく必要がある
-		dimension = wordMap.size() + 1000;
+		dimension = wordMap.size() + 10000;
 		allData.setVecDimension(dimension);
 		//		System.out.println("Dimension = " + allData.getVecDimension());
 		//		System.out.println("filtered word count : " + wordMap.size());
@@ -441,14 +441,21 @@ public class VectorCalculator implements Serializable {
 			int k =0;
 			for(Block block : blockList) {
 				if(block.getCategory() == Block.STABLE) {
-				//	System.out.println("stable");
+					//	System.out.println("stable");
+					boolean breakLoop = false;
 					for(String wordStr : addedWord) {
-				//		System.out.println("word " + wordStr );
-						int index = block.getWordList().indexOf(wordStr);
-						if(index > -1) {
-							System.out.println("change vec of stable code");
-							blockList.set(k, increCalcBoW(block, wordMap, CloneDetector.countMethod, allData));
+						//System.out.println("word " + wordStr );
+						if(breakLoop) {
 							break;
+						}else {
+							for(Word word : block.getWordList()) {
+								if(word.getName().equals(wordStr)) {
+									System.out.println("change vec of stable code");
+									blockList.set(k, increCalcBoW(block, wordMap, CloneDetector.countMethod, allData));
+									breakLoop = true;
+									break;
+								}
+							}
 						}
 					}
 				}
