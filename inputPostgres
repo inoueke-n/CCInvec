@@ -1,0 +1,9 @@
+LANGUAGE:c
+OUTPUT_FORMAT:csv
+PRE_DATA:false
+DATA_DIR:E:\ICVolti_DataForPostgres\ICVoltiData\Data
+OUTPUT_DIR:E:\ICVolti_DataForPostgres\ICVoltiData\Output
+INPUT_DIR:E:\postgresql_test\20050101
+E:\postgresql_test\20050108
+E:\postgresql_test\20050115
+E:\postgresql_test\20050122

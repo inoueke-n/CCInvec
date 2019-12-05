@@ -22,6 +22,7 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 	private int methodStartLine;
 	private int methodEndLine;
 	private int category = NULL;
+	private int filterCategory = NULL;
 	private String name;
 	// private String code;
 	private double len;
@@ -45,23 +46,31 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 	/** <p>初期状態</p> */
 	public final static int NULL = -1;
 
-	/** <p>Stable Clone</p> */
+	/** <p>Stable Block</p> */
 	public final static int STABLE = 0;
 
-	/** <p>Modified Clone</p> */
+	/** <p>Modified Block</p> */
 	public final static int MODIFIED = 1;
 
-	/** <p>Moved Clone</p> */
+	/** <p>Moved Block</p> */
 	public final static int MOVED = 2;
 
-	/** <p>Added Clone</p> */
+	/** <p>Added Block</p> */
 	public final static int ADDED = 3;
 
-	/** <p>Deleted Clone</p> */
+	/** <p>Deleted Block</p> */
 	public final static int DELETED = 4;
 
-	/** <p>Modified and Deleted Clone</p> */
+	/** <p>Modified and Deleted Block</p> */
 	public final static int DELETE_MODIFIED = 5;
+
+
+	/** <p>Filetering OK Block</p> */
+	public final static int NO_FILTER = 0;
+	/** <p>Filetering OK Block</p> */
+	public final static int PASSFILTER = 1;
+	/** <p>Filetering not pass Block</p> */
+	public final static int NO_PASSFILTER = 2;
 
 
 	public Block() {
@@ -476,11 +485,27 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 	}
 
 	/**
-	 * <p>クローン分類の設定</p>
+	 * <p>ブロック分類の設定</p>
 	 * @param category 分類情報
 	 */
 	public void setCategory(int category) {
 		this.category = category;
+	}
+
+	/**
+	 * <p>コードブロックのフィルター分類の取得</p>
+	 * @return 分類情報
+	 */
+	public int getFilterCategory() {
+		return filterCategory;
+	}
+
+	/**
+	 * <p>フィルターの分類の設定</p>
+	 * @param filterCategory 分類情報
+	 */
+	public void setFileterCategory(int filterCategory) {
+		this.filterCategory = filterCategory;
 	}
 
 	/**

@@ -135,7 +135,7 @@ public class JavaAnalyzer3 {
 		it = oldFileNameList.iterator();
 		while (it.hasNext()) {
 			String fileName = it.next();
-		//	System.out.println("DELETED FILE = " + fileName);
+			//	System.out.println("DELETED FILE = " + fileName);
 			SourceFile file = new SourceFile();
 			//file.setName(fileName);
 			file.setOldPath(fileName);
@@ -155,7 +155,7 @@ public class JavaAnalyzer3 {
 		// ソースファイルの取得
 		Iterator<String> it = FileNameList.iterator();
 		int fileId = 0;
-	//	System.out.print("file list start " );
+		//	System.out.print("file list start " );
 		while (it.hasNext()) {
 			String fileName = it.next();
 			SourceFile file = new SourceFile();
@@ -222,12 +222,18 @@ public class JavaAnalyzer3 {
 					//					System.out.println("success");
 				} catch (ParseCancellationException e) {
 					System.err.println(file + " parse cancel");
+					e.printStackTrace();
 					continue;
 				} catch (Exception e) {
 					System.err.println(e);
+					e.printStackTrace();
 					continue;
+				}catch( StackOverflowError e ) {
+					e.printStackTrace();
 				}
 				// if we parse ok, it's LL not SLL
+			} catch( StackOverflowError ex ) {
+				ex.printStackTrace();
 			}
 			blockList.addAll(extractMethod(tree, parser));
 			countParseFiles++;
@@ -302,18 +308,25 @@ public class JavaAnalyzer3 {
 				oldparser.getInterpreter().setPredictionMode(PredictionMode.LL);
 				oldparser.removeErrorListeners();
 				// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
+				ex.printStackTrace();
 				try {
 					newtree = newparser.compilationUnit(); // STAGE 2
 					oldtree = oldparser.compilationUnit(); // STAGE 2
 					//					System.out.println("success");
 				} catch (ParseCancellationException e) {
 					System.err.println(file + " parse cancel");
+					e.printStackTrace();
 					continue;
 				} catch (Exception e) {
 					System.err.println(e);
+					e.printStackTrace();
 					continue;
+				}catch( StackOverflowError e ) {
+					e.printStackTrace();
 				}
 				// if we parse ok, it's LL not SLL
+			} catch( StackOverflowError ex ) {
+				ex.printStackTrace();
 			}
 			blockListOfFile = extractMethod(newtree,newparser);
 			blockList.addAll(blockListOfFile);
@@ -354,19 +367,19 @@ public class JavaAnalyzer3 {
 					Block oldBlock = new Block();
 					oldBlock = block.clone();
 					oldBlock.setCategory(Block.NULL);
-//					System.out.println("oldBlock vec " + oldBlock.getVector());
-//					System.out.println("oldBlock len " + oldBlock.getLen());
+					//					System.out.println("oldBlock vec " + oldBlock.getVector());
+					//					System.out.println("oldBlock len " + oldBlock.getLen());
 					file.getOldBlockList().add(oldBlock);
 				}
 				//file.getOldBlockList().addAll(file.getNewBlockList());
 				blockList.addAll(file.getNewBlockList());
-			/*	for(Block block : blockList) {
+				/*	for(Block block : blockList) {
 					System.out.println("aaaa Block l====enn =     " + block.getLen());
 				}*/
 				//System.out.println(" Normal yade");
 			}else {
 				//新規追加されたソースファイル
-//				System.out.println("==============new File Analysis");
+				//				System.out.println("==============new File Analysis");
 				List<Block> blockListOfFile = new ArrayList<>();
 				CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
 				JavaLexer newlexer = new JavaLexer(newstream);
@@ -391,19 +404,29 @@ public class JavaAnalyzer3 {
 					newparser = new JavaParser(newtokens);
 					newparser.getInterpreter().setPredictionMode(PredictionMode.LL);
 					newparser.removeErrorListeners();
+					ex.printStackTrace();
 					// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
 					try {
 						newtree = newparser.compilationUnit(); // STAGE 2
 						//						System.out.println("success");
 					} catch (ParseCancellationException e) {
 						System.err.println(file + " parse cancel");
+						e.printStackTrace();
 						continue;
 					} catch (Exception e) {
 						System.err.println(e);
+						e.printStackTrace();
 						continue;
+					}catch( StackOverflowError e ) {
+						e.printStackTrace();
+						e.printStackTrace();
 					}
 					// if we parse ok, it's LL not SLL
+				} catch( StackOverflowError ex ) {
+					ex.printStackTrace();
+					ex.printStackTrace();
 				}
+
 				blockListOfFile = extractMethodForNewFile(newtree,newparser);
 				blockList.addAll(blockListOfFile);
 				file.getNewBlockList().addAll(blockListOfFile);
@@ -476,10 +499,14 @@ public class JavaAnalyzer3 {
 				//					System.out.println("success");
 			} catch (ParseCancellationException e) {
 				System.err.println(file + " parse cancel");
+				e.printStackTrace();
 
 			} catch (Exception e) {
 				System.err.println(e);
+				e.printStackTrace();
 
+			} catch( StackOverflowError e ) {
+				e.printStackTrace();
 			}
 			// if we parse ok, it's LL not SLL
 		}
@@ -536,21 +563,29 @@ public class JavaAnalyzer3 {
 				parser = new JavaParser(tokens);
 				parser.getInterpreter().setPredictionMode(PredictionMode.LL);
 				parser.removeErrorListeners();
+
+				ex.printStackTrace();
 				// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
 				try {
 					tree = parser.compilationUnit(); // STAGE 2
 					//					System.out.println("success");
 				} catch (ParseCancellationException e) {
 					System.err.println(file + " parse cancel");
+					e.printStackTrace();
 					continue;
 				} catch (Exception e) {
 					System.err.println(e);
+					e.printStackTrace();
+					continue;
+				}catch( StackOverflowError e ) {
+					System.err.println(e);
+					e.printStackTrace();
 					continue;
 				}
 				// if we parse ok, it's LL not SLL
 			}
 			file.getNewBlockList().addAll(extractMethod(tree, parser));
-		//	blockList.addAll(extractMethod(tree, parser));
+			//	blockList.addAll(extractMethod(tree, parser));
 			blockList.addAll(file.getNewBlockList());
 			countParseFiles++;
 			tokens.fill();
@@ -594,8 +629,8 @@ public class JavaAnalyzer3 {
 	 * @param parent
 	 * @param className
 	 */
-	private static List<Block> extractMethod(ParseTree tree, JavaParser parser) {
-		List<Block> blockList = new ArrayList<>();
+	private static ArrayList<Block> extractMethod(ParseTree tree, JavaParser parser) {
+		ArrayList<Block> blockList = new ArrayList<>();
 		for (ParseTree t : XPath.findAll(tree, "//methodDeclaration", parser)) {
 			Token start = null;
 			CloneDetector.countMethod++;
@@ -634,8 +669,8 @@ public class JavaAnalyzer3 {
 	 * @param parent
 	 * @param className
 	 */
-	private static List<Block> extractMethodForNewFile(ParseTree tree, JavaParser parser) {
-		List<Block> blockList = new ArrayList<>();
+	private static ArrayList<Block> extractMethodForNewFile(ParseTree tree, JavaParser parser) {
+		ArrayList<Block> blockList = new ArrayList<>();
 		for (ParseTree t : XPath.findAll(tree, "//methodDeclaration", parser)) {
 			Token start = null;
 			CloneDetector.countMethod++;
@@ -665,8 +700,8 @@ public class JavaAnalyzer3 {
 	}
 
 
-	private static List<Block> extractBlock(ParseTree tree, JavaParser parser, Block parent) {
-		List<Block> blockList = new ArrayList<>();
+	private static ArrayList<Block> extractBlock(ParseTree tree, JavaParser parser, Block parent) {
+		ArrayList<Block> blockList = new ArrayList<>();
 		for (ParseTree t : XPath.findAll(tree, "/block/blockStatement/statement", parser)) {
 			if (!(t.getChild(0) instanceof RuleContext)) {
 				TerminalNode token = (TerminalNode) t.getChild(0);
@@ -722,8 +757,8 @@ public class JavaAnalyzer3 {
 		return blockList;
 	}
 
-	private static List<Block> extractBlockForNewFile(ParseTree tree, JavaParser parser, Block parent) {
-		List<Block> blockList = new ArrayList<>();
+	private static ArrayList<Block> extractBlockForNewFile(ParseTree tree, JavaParser parser, Block parent) {
+		ArrayList<Block> blockList = new ArrayList<>();
 		for (ParseTree t : XPath.findAll(tree, "/block/blockStatement/statement", parser)) {
 			if (!(t.getChild(0) instanceof RuleContext)) {
 				TerminalNode token = (TerminalNode) t.getChild(0);

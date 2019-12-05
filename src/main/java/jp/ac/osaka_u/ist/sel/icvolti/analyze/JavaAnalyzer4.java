@@ -105,7 +105,7 @@ public class JavaAnalyzer4 {
 				break;
 			case Java8Lexer.LBRACE:
 				if (methodName != null && beforeToken.getType() == Java8Lexer.RPAREN && !methodName.equals("for")
-						&& !methodName.equals("if") && !methodName.equals("switch") && !methodName.equals("while")) {
+				&& !methodName.equals("if") && !methodName.equals("switch") && !methodName.equals("while")) {
 					Block block = new Block();
 					currentBlock = block;
 					// System.out.printf("%s - %s:
@@ -126,14 +126,14 @@ public class JavaAnalyzer4 {
 					methodName = null;
 				}
 				break;
-			// case CPP14Lexer.ErrorCharacter:
-			// if(true){
-			// System.out.println(token.getChannel());
-			// System.out.println(tokens.getText());
-			// System.err.println(token.getInputStream().getSourceName()+"line
-			// "+token.getLine()+":"+token.getCharPositionInLine()+" lexee error
-			// "+token.getText());
-			// }
+				// case CPP14Lexer.ErrorCharacter:
+				// if(true){
+				// System.out.println(token.getChannel());
+				// System.out.println(tokens.getText());
+				// System.err.println(token.getInputStream().getSourceName()+"line
+				// "+token.getLine()+":"+token.getCharPositionInLine()+" lexee error
+				// "+token.getText());
+				// }
 
 			}
 			beforeToken = token;
@@ -156,6 +156,8 @@ public class JavaAnalyzer4 {
 			reader.close();
 		} catch (IOException e) {
 			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}  catch( StackOverflowError e ) {
 			e.printStackTrace();
 		}
 		return buf.toString();
@@ -244,7 +246,7 @@ public class JavaAnalyzer4 {
 						Block child = new Block();
 						parent = block;
 						child.setParent(parent);
-//						parent.addChild(child);
+						//						parent.addChild(child);
 
 						child.setId(blockId++);
 						child.setName(parent.getName() + " - " + blockName);

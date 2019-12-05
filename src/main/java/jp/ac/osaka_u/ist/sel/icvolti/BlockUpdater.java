@@ -383,6 +383,9 @@ public class BlockUpdater {
 //				System.out.println("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine());
 //				System.out.println("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine());
 //				System.out.println("============= = ");
+//				if(cp.cloneA.getFileName().equals("")) {
+//
+//				}
 				i.remove();
 				deleteCP++;
 

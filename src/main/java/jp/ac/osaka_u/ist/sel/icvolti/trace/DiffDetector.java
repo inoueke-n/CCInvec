@@ -11,6 +11,7 @@ import java.util.Arrays;
 import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
 import jp.ac.osaka_u.ist.sel.icvolti.Def;
+import jp.ac.osaka_u.ist.sel.icvolti.analyze.CAnalyzer4;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.JavaAnalyzer3;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
@@ -131,7 +132,7 @@ public class DiffDetector {
 								//		   System.out.println("===========miki = "  + file.getNewPath());
 								if(file.getNewPath().contains(command[3].replace("/", "\\"))){
 									subjectFile = file;
-									JavaAnalyzer3.analyzeAFile(file, newBlockList);
+									CAnalyzer4.analyzeAFile(file, newBlockList);
 									CloneDetector.updatedCode = true;
 									//System.out.println("=========== newBlock List===============");
 									//ソースコードのparse

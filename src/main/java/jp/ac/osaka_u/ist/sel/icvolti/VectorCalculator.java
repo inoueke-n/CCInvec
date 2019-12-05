@@ -38,7 +38,7 @@ public class VectorCalculator implements Serializable {
 	 *
 	 * @return
 	 */
-	public ArrayList<Block> filterMethod(List<Block> blockList, Config config, AllData allData) {
+	public ArrayList<Block> filterMethod(ArrayList<Block> blockList, Config config, AllData allData) {
 		ArrayList<Block> newBlockList = new ArrayList<Block>(blockList.size());
 		int i = 0;
 		for (Block block : blockList) {
@@ -51,12 +51,21 @@ public class VectorCalculator implements Serializable {
 				// !method.getClassName().contains("test") &&
 				// !method.getClassName().contains("Test")){
 				block.setId(i++);
+				block.setFileterCategory(Block.PASSFILTER);
 				newBlockList.add(block);
 				/*
 				 * for(Word word: block.getWordList()){
 				 * if(!CloneDetector.wordMap.containsKey(word.getName()))
 				 * CloneDetector.wordMap.put(word.getName(),i++); }
 				 */
+			}else {
+				block.setFileterCategory(Block.NO_PASSFILTER);
+				if(CloneDetector.modeDebug) {
+					System.out.println("removed because of filtering ");
+					System.out.println("block fine  Name " + block.getFileName());
+					System.out.println("block start line " + block.getStartLine());
+					System.out.println("block end   line " + block.getEndLine());
+				}
 			}
 		}
 
@@ -79,6 +88,7 @@ public class VectorCalculator implements Serializable {
 				// !method.getClassName().contains("test") &&
 				// !method.getClassName().contains("Test")){
 				block.setId(i++);
+				block.setFileterCategory(Block.PASSFILTER);
 				newBlockList.add(block);
 				/*
 				 * for(Word word: block.getWordList()){
@@ -87,14 +97,16 @@ public class VectorCalculator implements Serializable {
 				 */
 			}else if(CloneDetector.absoluteTracking && block.getCategory() != Block.ADDED) {
 				block.setId(i++);
+				block.setFileterCategory(Block.PASSFILTER);
 				newBlockList.add(block);
 				System.out.println("DELETE");
 			}else{
-				//clonepairリストから削除
+				//追加されたブロックでなければ，clonepairリストから削除
 				if(block.getCategory() != Block.ADDED) {
 					deleteBlock.add(block);
 					System.out.println("DELETE2  2");
 				}
+				block.setFileterCategory(Block.NO_PASSFILTER);
 
 				System.out.println("DELETE2  3");
 			}
@@ -188,6 +200,7 @@ public class VectorCalculator implements Serializable {
 
 		//次元数はAllDataに保存しておく必要がある
 		dimension = wordMap.size() + 10000;
+		//dimension = wordMap.size();
 		allData.setVecDimension(dimension);
 		//		System.out.println("Dimension = " + allData.getVecDimension());
 		//		System.out.println("filtered word count : " + wordMap.size());
@@ -430,6 +443,17 @@ public class VectorCalculator implements Serializable {
 				wordMap.put(wordName, j++);
 				addedWord.add(wordName);
 				//				System.out.println("ADD word  " + wordName);
+				for(Block block : blockList) {
+					for(Word word : block.getWordList()) {
+						if(word.getName().equals(wordName)) {
+							System.out.println("ADD word  " + wordName);
+							System.out.println("file Name  " + block.getFileName());
+							System.out.println("start line " + block.getStartLine());
+							System.out.println("end   line " + block.getEndLine());
+						}
+					}
+				}
+
 			} else {
 				//dictionaryから削除
 				//System.out.println("delete dictionaly");
@@ -450,7 +474,7 @@ public class VectorCalculator implements Serializable {
 						}else {
 							for(Word word : block.getWordList()) {
 								if(word.getName().equals(wordStr)) {
-									System.out.println("change vec of stable code");
+									//									System.out.println("change vec of stable code");
 									blockList.set(k, increCalcBoW(block, wordMap, CloneDetector.countMethod, allData));
 									breakLoop = true;
 									break;
@@ -544,10 +568,10 @@ public class VectorCalculator implements Serializable {
 			for (Block block : blockList) {
 
 				if(block.getVector() == null) {
-					System.out.println("vector null = " + i);
-					System.out.println("file Name  = " + block.getFileName());
-					System.out.println("start line = " + block.getStartLine());
-					System.out.println("end   line = " + block.getEndLine());
+					//					System.out.println("vector null = " + i);
+					//					System.out.println("file Name  = " + block.getFileName());
+					//					System.out.println("start line = " + block.getStartLine());
+					//					System.out.println("end   line = " + block.getEndLine());
 
 				}else {
 

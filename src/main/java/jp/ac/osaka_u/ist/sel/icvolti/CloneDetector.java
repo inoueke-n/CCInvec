@@ -36,7 +36,7 @@ public class CloneDetector {
 	public static final boolean absoluteTracking = true;
 
 	public static final boolean modeDebug = false;
-	public static final boolean modeStdout = false;
+	public static final boolean modeStdout = true;
 	public static final boolean modeTimeMeasure = false;
 
 	public static boolean finalLoop =false;
@@ -222,6 +222,11 @@ public class CloneDetector {
 		//fileListの取得をちゃんとする
 		switch (config.getLang()) {
 		case 0: // "java"
+
+			//			JavaAnalyzer3 javaanalyzer = new JavaAnalyzer3();
+			//			fileList = JavaAnalyzer3.searchFiles(Config.target);
+			//			blockList = javaanalyzer.analyze(fileList);
+
 			JavaAnalyzer3 javaanalyzer = new JavaAnalyzer3();
 			//fileList = JavaAnalyzer3.searchFiles(Config.target);
 			//blockList = javaanalyzer.analyze(fileList);
@@ -232,9 +237,9 @@ public class CloneDetector {
 			break;
 		case 1: // "c"
 			CAnalyzer4 canalyzer = new CAnalyzer4();
-			fileList = canalyzer.searchFiles(config.getNewTarget());
-			FileList = JavaAnalyzer3.setFilesInfo(config.getNewTarget());
-			blockList = canalyzer.analyze(fileList);
+			FileList = CAnalyzer4.setFilesInfo(config.getNewTarget());
+			blockList = canalyzer.analyzeFirst(FileList);
+
 			break;
 		case 2: // "c#"
 			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
@@ -426,6 +431,7 @@ public class CloneDetector {
 		long subStart = start;
 		long currentTime;
 		long javaTime = start;
+		long cTime = start;
 		long resetTime = start;
 		long vecTime = start;
 		long cpTime = start;
@@ -460,6 +466,7 @@ public class CloneDetector {
 
 		ClonePairList_test = allData.getClonePairList();
 		ArrayList<SourceFile> FileList = new ArrayList<SourceFile>();
+		ArrayList<SourceFile> oldFileList_test = new ArrayList<SourceFile>();
 
 		switch (config.getLang()) {
 		case 0: // "java"
@@ -470,7 +477,6 @@ public class CloneDetector {
 			//oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
 			/*ゆくゆくはなくしたいやつ*/
 			newFileList = JavaAnalyzer3.searchFiles(config.getNewTarget());
-			ArrayList<SourceFile> oldFileList_test = new ArrayList<SourceFile>();
 			oldFileList_test =  allData.getSourceFileList();
 			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
 
@@ -502,12 +508,42 @@ public class CloneDetector {
 
 			break;
 		case 1: // "c"
-			CAnalyzer4 oldCanalyzer = new CAnalyzer4();
-			CAnalyzer4 newCanalyzer = new CAnalyzer4();
-			//		oldFileList = oldCanalyzer.searchFiles(Config.target2);
-			//		newFileList = newCanalyzer.searchFiles(Config.target);
-			oldBlockList = oldCanalyzer.analyze(oldFileList);
-			newBlockList = oldCanalyzer.analyze(newFileList);
+
+			//			CAnalyzer4 canalyzer = new CAnalyzer4();
+			//			fileList = canalyzer.searchFiles(Config.target);
+			//			blockList = canalyzer.analyze(fileList);
+
+			long cStart = System.currentTimeMillis();
+			CAnalyzer4 Canalyzer = new CAnalyzer4();
+
+
+			newFileList = CAnalyzer4.searchFiles(config.getNewTarget());
+			oldFileList_test =  allData.getSourceFileList();
+			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
+
+			//			System.out.println("newFileList size = " + newFileList.size());
+			//			System.out.println("FileList size = " + FileList.size());
+			newBlockList = Canalyzer.incrementalAnalyze(FileList);
+			//			System.out.println("new Block Size 1  = " + newBlockList.size());
+
+			//新旧コードブロック間の対応をとる
+			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+
+			//コードブロックのIDを再度割り振りなおす
+			allBlockList = TraceManager.getAllBlock(FileList);
+
+
+			//newBlockListの中から，DELETEDやADDEDやMODIFIEDに分類されたものがupdatedBLockListになるようにする
+
+			//			System.out.println("new Block Size 2  = " + newBlockList.size());
+
+			//ここ減らせる．neewReserBlockListがいらない
+			//needResetBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 4));
+			updatedBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 2));
+			//allBlockList = TraceManager.devideBlockCategory(newBlockList, 3);
+			addedModifiedBlockList = TraceManager.devideBlockCategory(allBlockList, 0);
+			long cEnd = System.currentTimeMillis();
+			cTime = cEnd - cStart;
 
 			break;
 		case 2: // "c#"
@@ -554,6 +590,7 @@ public class CloneDetector {
 			if(addedModifiedBlockList.size() > 0 && allBlockList.size() > 0) {
 
 				allBlockList = calculator.increCalculateVector(allBlockList, addedModifiedBlockList, allData);
+//				allBlockList = calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
 				// System.out.println("wordmap.size = " + wordMap.size());
 				long vecEnd = System.currentTimeMillis();
 				vecTime = vecEnd - vecStart;

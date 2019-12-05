@@ -425,8 +425,20 @@ public class AllData implements  Serializable {
 	public static ArrayList<Block> createBlockList() {
 		ArrayList<Block> blockList = new ArrayList<>();
 		for (SourceFile file : SourceFileList) {
-			blockList.addAll(file.getNewBlockList());
+			for(Block block :file.getNewBlockList()) {
+				if(block.getFilterCategory() == Block.PASSFILTER) {
+					//block.setFileterCategory(Block.NO_FILTER);
+					//System.out.println("PASS FILTER");
+					blockList.add(block);
+				}
+//				else {
+//					System.out.println("not added  " + block.getFileName());
+//					System.out.println("start line " + block.getStartLine());
+//					System.out.println("end   line " + block.getEndLine());
 
+//				}
+			}
+			//blockList.addAll(file.getNewBlockList());
 		}
 		int i =0;
 		for(Block block : blockList) {
