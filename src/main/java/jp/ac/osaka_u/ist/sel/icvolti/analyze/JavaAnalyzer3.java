@@ -235,7 +235,7 @@ public class JavaAnalyzer3 {
 			} catch( StackOverflowError ex ) {
 				ex.printStackTrace();
 			}
-			blockList.addAll(extractMethod(tree, parser));
+			blockList.addAll(extractMethod(tree, parser, Block.NULL));
 			countParseFiles++;
 			tokens.fill();
 			CloneDetector.countLine += tokens.LT(tokens.size()).getLine();
@@ -244,106 +244,6 @@ public class JavaAnalyzer3 {
 		return blockList;
 	}
 
-	/**
-	 * <p>
-	 * ディレクトリ探索
-	 * </p>
-	 *
-	 * @param file
-	 * @throws IOException
-	 */
-	public List<Block> analyze_test(ArrayList<SourceFile> fileList) throws IOException {
-		List<Block> blockList = new ArrayList<>();
-
-		for (SourceFile file : fileList) {
-			List<Block> blockListOfFile = new ArrayList<>();
-			countFiles++;
-			//System.out.println("fi = " + file.getNewPath());
-			//////////////////////////////////////////
-			CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
-			JavaLexer newlexer = new JavaLexer(newstream);
-			newlexer.removeErrorListeners();
-			// lexer.addErrorListener(SilentErrorListener.INSTANCE);
-			CommonTokenStream newtokens = new CommonTokenStream(newlexer);
-			JavaParser newparser = new JavaParser(newtokens);
-			// parser.addParseListener(new JavaMyListener());
-			CompilationUnitContext newtree = null;
-			newparser.removeErrorListeners();
-			// parser.addErrorListener(SilentErrorListener.INSTANCE);
-			newparser.getInterpreter().setPredictionMode(PredictionMode.SLL);
-
-			/////////////////////////////////////////
-			CharStream oldstream = CharStreams.fromFileName(file.getOldPath(), Charset.forName(Config.charset));
-			JavaLexer oldlexer = new JavaLexer(oldstream);
-			oldlexer.removeErrorListeners();
-			// lexer.addErrorListener(SilentErrorListener.INSTANCE);
-			CommonTokenStream oldtokens = new CommonTokenStream(oldlexer);
-			JavaParser oldparser = new JavaParser(oldtokens);
-			// parser.addParseListener(old JavaMyListener());
-			CompilationUnitContext oldtree = null;
-			oldparser.removeErrorListeners();
-			// parser.addErrorListener(SilentErrorListener.INSTANCE);
-			oldparser.getInterpreter().setPredictionMode(PredictionMode.SLL);
-
-
-			try {
-				newtree = newparser.compilationUnit(); // STAGE 1
-				oldtree = oldparser.compilationUnit(); // STAGE 1
-			} catch (Exception ex) {
-				System.out.println("try predictionMode LL");
-				newlexer = new JavaLexer(newstream);
-				newlexer.removeErrorListeners();
-				// lexer.addErrorListener(DescriptiveErrorListener.INSTANCE);
-				newtokens = new CommonTokenStream(newlexer); // rewind input stream
-				newparser = new JavaParser(newtokens);
-				newparser.getInterpreter().setPredictionMode(PredictionMode.LL);
-				newparser.removeErrorListeners();
-				// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
-				System.out.println("try predictionMode LL old ");
-				oldlexer = new JavaLexer(oldstream);
-				oldlexer.removeErrorListeners();
-				// lexer.addErrorListener(DescriptiveErrorListener.INSTANCE);
-				oldtokens = new CommonTokenStream(oldlexer); // rewind input stream
-				oldparser = new JavaParser(oldtokens);
-				oldparser.getInterpreter().setPredictionMode(PredictionMode.LL);
-				oldparser.removeErrorListeners();
-				// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
-				ex.printStackTrace();
-				try {
-					newtree = newparser.compilationUnit(); // STAGE 2
-					oldtree = oldparser.compilationUnit(); // STAGE 2
-					//					System.out.println("success");
-				} catch (ParseCancellationException e) {
-					System.err.println(file + " parse cancel");
-					e.printStackTrace();
-					continue;
-				} catch (Exception e) {
-					System.err.println(e);
-					e.printStackTrace();
-					continue;
-				}catch( StackOverflowError e ) {
-					e.printStackTrace();
-				}
-				// if we parse ok, it's LL not SLL
-			} catch( StackOverflowError ex ) {
-				ex.printStackTrace();
-			}
-			blockListOfFile = extractMethod(newtree,newparser);
-			blockList.addAll(blockListOfFile);
-			file.getNewBlockList().addAll(blockListOfFile);
-
-			//	blockList.addAll(extractMethod(newtree, newparser));
-			//	file.getNewBlockList().addAll(extractMethod(newtree, newparser));
-			countParseFiles++;
-			newtokens.fill();
-
-			file.getOldBlockList().addAll(extractMethod(oldtree, oldparser));
-			oldtokens.fill();
-			CloneDetector.countLine += newtokens.LT(newtokens.size()).getLine();
-
-		}
-		return blockList;
-	}
 
 
 	/**
@@ -380,7 +280,7 @@ public class JavaAnalyzer3 {
 			}else {
 				//新規追加されたソースファイル
 				//				System.out.println("==============new File Analysis");
-				List<Block> blockListOfFile = new ArrayList<>();
+				ArrayList<Block> blockListOfFile = new ArrayList<>();
 				CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
 				JavaLexer newlexer = new JavaLexer(newstream);
 				newlexer.removeErrorListeners();
@@ -427,7 +327,7 @@ public class JavaAnalyzer3 {
 					ex.printStackTrace();
 				}
 
-				blockListOfFile = extractMethodForNewFile(newtree,newparser);
+				blockListOfFile = extractMethod(newtree,newparser, Block.ADDED);
 				blockList.addAll(blockListOfFile);
 				file.getNewBlockList().addAll(blockListOfFile);
 				countParseFiles++;
@@ -511,7 +411,7 @@ public class JavaAnalyzer3 {
 			// if we parse ok, it's LL not SLL
 		}
 		//newBlockList.addAll(extractMethod(tree, parser));
-		file.getNewBlockList().addAll(extractMethod(tree, parser));
+		file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL));
 		newBlockList.addAll(file.getNewBlockList());
 		countParseFiles++;
 		tokens.fill();
@@ -584,7 +484,7 @@ public class JavaAnalyzer3 {
 				}
 				// if we parse ok, it's LL not SLL
 			}
-			file.getNewBlockList().addAll(extractMethod(tree, parser));
+			file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL));
 			//	blockList.addAll(extractMethod(tree, parser));
 			blockList.addAll(file.getNewBlockList());
 			countParseFiles++;
@@ -629,7 +529,7 @@ public class JavaAnalyzer3 {
 	 * @param parent
 	 * @param className
 	 */
-	private static ArrayList<Block> extractMethod(ParseTree tree, JavaParser parser) {
+	private static ArrayList<Block> extractMethod(ParseTree tree, JavaParser parser, int category) {
 		ArrayList<Block> blockList = new ArrayList<>();
 		for (ParseTree t : XPath.findAll(tree, "//methodDeclaration", parser)) {
 			Token start = null;
@@ -642,50 +542,10 @@ public class JavaAnalyzer3 {
 
 						Block block = BlockFactory.create(blockID++, start.getText(), parser, subt.getChild(0),
 								JavaLexer.IDENTIFIER);
-						block.setCategory(Block.NULL);
+						block.setCategory(category);
 						blockList.add(block);
 						if (CloneDetector.enableBlockExtract)
-							blockList.addAll(extractBlock(subt.getChild(0), parser, block));
-					}
-				} else {
-					TerminalNode token = (TerminalNode) subt;
-					if (token.getSymbol().getType() == JavaLexer.IDENTIFIER) {
-						// System.out.println(token.getText());
-						start = token.getSymbol();
-					}
-				}
-			}
-		}
-		return blockList;
-	}
-
-	/**
-	 * <p>
-	 * ASTから各メソッドのASTを構築
-	 * </p>
-	 *
-	 * @param method
-	 * @param node
-	 * @param parent
-	 * @param className
-	 */
-	private static ArrayList<Block> extractMethodForNewFile(ParseTree tree, JavaParser parser) {
-		ArrayList<Block> blockList = new ArrayList<>();
-		for (ParseTree t : XPath.findAll(tree, "//methodDeclaration", parser)) {
-			Token start = null;
-			CloneDetector.countMethod++;
-			for (ParseTree subt : ((JavaParser.MethodDeclarationContext) t).children) {
-				if (subt instanceof RuleContext) {
-					if (subt instanceof JavaParser.MethodBodyContext) {
-						if (subt.getSourceInterval().length() <= Config.METHOD_NODE_TH)
-							break;
-
-						Block block = BlockFactory.create(blockID++, start.getText(), parser, subt.getChild(0),
-								JavaLexer.IDENTIFIER);
-						block.setCategory(Block.ADDED);
-						blockList.add(block);
-						if (CloneDetector.enableBlockExtract)
-							blockList.addAll(extractBlockForNewFile(subt.getChild(0), parser, block));
+							blockList.addAll(extractBlock(subt.getChild(0), parser, block, category));
 					}
 				} else {
 					TerminalNode token = (TerminalNode) subt;
@@ -700,7 +560,9 @@ public class JavaAnalyzer3 {
 	}
 
 
-	private static ArrayList<Block> extractBlock(ParseTree tree, JavaParser parser, Block parent) {
+
+
+	private static ArrayList<Block> extractBlock(ParseTree tree, JavaParser parser, Block parent, int category) {
 		ArrayList<Block> blockList = new ArrayList<>();
 		for (ParseTree t : XPath.findAll(tree, "/block/blockStatement/statement", parser)) {
 			if (!(t.getChild(0) instanceof RuleContext)) {
@@ -746,10 +608,10 @@ public class JavaAnalyzer3 {
 						Block block = BlockFactory.create(-1,
 								parent.getName() + " - " + token.getSymbol().getText(), parser,
 								t.getChild(arg).getChild(0), JavaLexer.IDENTIFIER);
-						block.setCategory(Block.NULL);
+						block.setCategory(category);
 						block.setParent(parent);
 						blockList.add(block);
-						blockList.addAll(extractBlock(t.getChild(arg).getChild(0), parser, block));
+						blockList.addAll(extractBlock(t.getChild(arg).getChild(0), parser, block, category));
 					}
 				}
 			}
@@ -757,60 +619,5 @@ public class JavaAnalyzer3 {
 		return blockList;
 	}
 
-	private static ArrayList<Block> extractBlockForNewFile(ParseTree tree, JavaParser parser, Block parent) {
-		ArrayList<Block> blockList = new ArrayList<>();
-		for (ParseTree t : XPath.findAll(tree, "/block/blockStatement/statement", parser)) {
-			if (!(t.getChild(0) instanceof RuleContext)) {
-				TerminalNode token = (TerminalNode) t.getChild(0);
-				List<Integer> args = new ArrayList<Integer>();
 
-				switch (token.getSymbol().getType()) {
-				case JavaLexer.IF:
-					args.add(2);
-					if (t.getChildCount() == 5)
-						args.add(4);
-					break;
-
-				case JavaLexer.FOR:
-					args.add(4);
-					break;
-
-				case JavaLexer.WHILE:
-					args.add(2);
-					break;
-
-				case JavaLexer.DO:
-					args.add(1);
-					break;
-
-				case JavaLexer.SWITCH:
-					args.add(2);
-					break;
-				}
-
-				if (args.size() == 0)
-					continue;
-
-				for (Integer arg : args) {
-					CloneDetector.countBlock++;
-					if (t.getChild(arg).getSourceInterval().length() <= Config.BLOCK_NODE_TH)
-						continue;
-					if (t.getChild(arg).getChild(0) instanceof JavaParser.BlockContext) {
-						if (t.getChild(arg - 1).getText().equals("else")) {
-							token = (TerminalNode) t.getChild(arg - 1);
-						}
-						//Block block = BlockFactory.create(blockID++,
-						Block block = BlockFactory.create(-1,
-								parent.getName() + " - " + token.getSymbol().getText(), parser,
-								t.getChild(arg).getChild(0), JavaLexer.IDENTIFIER);
-						block.setCategory(Block.ADDED);
-						block.setParent(parent);
-						blockList.add(block);
-						blockList.addAll(extractBlockForNewFile(t.getChild(arg).getChild(0), parser, block));
-					}
-				}
-			}
-		}
-		return blockList;
-	}
 }

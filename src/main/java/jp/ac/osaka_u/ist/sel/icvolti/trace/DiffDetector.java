@@ -12,6 +12,7 @@ import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
 import jp.ac.osaka_u.ist.sel.icvolti.Def;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.CAnalyzer4;
+import jp.ac.osaka_u.ist.sel.icvolti.analyze.CSharpAnalyzer;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.JavaAnalyzer3;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
@@ -109,8 +110,8 @@ public class DiffDetector {
 				if(line.contains("diff -r ")) {
 					String[] command = line.split(" ");
 					if(CloneDetector.modeDebug) {
-						   System.out.println("line = " + line);
-						}
+						System.out.println("line = " + line);
+					}
 					//	   System.out.println("command = " + command[3].replace("/", "\\"));
 					//特定の拡張子を持ったファイルのみを検出対象にする
 					String fileExtension1 = null;
@@ -153,7 +154,12 @@ public class DiffDetector {
 								//		   System.out.println("===========miki = "  + file.getNewPath());
 								if(file.getNewPath().contains(command[3].replace("/", "\\"))){
 									subjectFile = file;
-									JavaAnalyzer3.analyzeAFile(file, newBlockList);
+									if(config.getLang() == 1) {
+										JavaAnalyzer3.analyzeAFile(file, newBlockList);
+
+									}else if(config.getLang() == 2) {
+										CSharpAnalyzer.analyzeAFile(file, newBlockList);
+									}
 									CloneDetector.updatedCode = true;
 									//System.out.println("=========== newBlock List===============");
 									//ソースコードのparse

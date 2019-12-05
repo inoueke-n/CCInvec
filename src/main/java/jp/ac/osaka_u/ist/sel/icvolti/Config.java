@@ -22,6 +22,7 @@ public class Config {
 	private String resultFileName = "result";
 	private int JAVA = 0;
 	private int CPP = 1;
+	private int CHARP = 2;
 	private int lang = JAVA;
 	public static String charset = "UTF-8";
 	public static int NUM_THREADS;

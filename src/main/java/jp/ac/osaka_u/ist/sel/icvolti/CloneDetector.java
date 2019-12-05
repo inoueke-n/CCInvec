@@ -243,9 +243,8 @@ public class CloneDetector {
 			break;
 		case 2: // "c#"
 			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
-			fileList = CSharpAnalyzer.searchFiles(config.getNewTarget());
-			FileList= JavaAnalyzer3.setFilesInfo(config.getNewTarget());
-			blockList = csharpAnalyzer.analyze(fileList);
+			FileList = CSharpAnalyzer.setFilesInfo(config.getNewTarget());
+			blockList = csharpAnalyzer.analyzeFirst(FileList);
 			//			System.out.println(
 			//					"Parse file / All file = " + csharpAnalyzer.countParseFiles + " / " + csharpAnalyzer.countFiles);
 			break;
@@ -432,6 +431,7 @@ public class CloneDetector {
 		long currentTime;
 		long javaTime = start;
 		long cTime = start;
+		long csharpTime = start;
 		long resetTime = start;
 		long vecTime = start;
 		long cpTime = start;
@@ -547,13 +547,47 @@ public class CloneDetector {
 
 			break;
 		case 2: // "c#"
-			/*			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
-			fileList = CSharpAnalyzer.searchFiles(Config.target);
-			blockList = csharpAnalyzer.analyze(fileList);
-			System.out.println(
-					"Parse file / All file = " + csharpAnalyzer.countParseFiles + " / " + csharpAnalyzer.countFiles);
+//			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
+//			fileList = CSharpAnalyzer.searchFiles(Config.target);
+//			blockList = csharpAnalyzer.analyze(fileList);
+//			System.out.println(
+//					"Parse file / All file = " + csharpAnalyzer.countParseFiles + " / " + csharpAnalyzer.countFiles);
+
+
+			long csharpStart = System.currentTimeMillis();
+			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();
+
+
+			newFileList = CSharpAnalyzer.searchFiles(config.getNewTarget());
+			oldFileList_test =  allData.getSourceFileList();
+			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
+
+			//			System.out.println("newFileList size = " + newFileList.size());
+			//			System.out.println("FileList size = " + FileList.size());
+			newBlockList = csharpAnalyzer.incrementalAnalyze(FileList);
+			//			System.out.println("new Block Size 1  = " + newBlockList.size());
+
+			//新旧コードブロック間の対応をとる
+			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+
+			//コードブロックのIDを再度割り振りなおす
+			allBlockList = TraceManager.getAllBlock(FileList);
+
+
+			//newBlockListの中から，DELETEDやADDEDやMODIFIEDに分類されたものがupdatedBLockListになるようにする
+
+			//			System.out.println("new Block Size 2  = " + newBlockList.size());
+
+			//ここ減らせる．neewReserBlockListがいらない
+			//needResetBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 4));
+			updatedBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 2));
+			//allBlockList = TraceManager.devideBlockCategory(newBlockList, 3);
+			addedModifiedBlockList = TraceManager.devideBlockCategory(allBlockList, 0);
+			long csharpEnd = System.currentTimeMillis();
+			csharpTime = csharpEnd - csharpStart;
+
 			break;
-			 */	}
+		}
 
 		//		System.out.println("The number of methods : " + countMethod);
 		//		System.out.println("The number of blocks (Excluding methods) : " + countBlock);
@@ -590,7 +624,7 @@ public class CloneDetector {
 			if(addedModifiedBlockList.size() > 0 && allBlockList.size() > 0) {
 
 				allBlockList = calculator.increCalculateVector(allBlockList, addedModifiedBlockList, allData);
-//				allBlockList = calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
+				//				allBlockList = calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
 				// System.out.println("wordmap.size = " + wordMap.size());
 				long vecEnd = System.currentTimeMillis();
 				vecTime = vecEnd - vecStart;

@@ -16,15 +16,10 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.atn.PredictionMode;
-import org.antlr.v4.runtime.misc.ParseCancellationException;
 
 import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
 import jp.ac.osaka_u.ist.sel.icvolti.grammar.CPP14.CPP14Lexer;
-import jp.ac.osaka_u.ist.sel.icvolti.grammar.Java.JavaLexer;
-import jp.ac.osaka_u.ist.sel.icvolti.grammar.Java.JavaParser;
-import jp.ac.osaka_u.ist.sel.icvolti.grammar.Java.JavaParser.CompilationUnitContext;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Word;
@@ -110,7 +105,7 @@ public class CAnalyzer4 {
 		ArrayList<Block> blockList = new ArrayList<>();
 		for (String file : fileList) {
 			try {
-				blockList.addAll(extractMethod(new File(file)));
+				blockList.addAll(extractMethod(new File(file), Block.NULL));
 			} catch (Exception e) {
 				System.err.println(file + " : " + e);
 			}
@@ -123,7 +118,7 @@ public class CAnalyzer4 {
 		ArrayList<Block> blockList = new ArrayList<>();
 		for (SourceFile file : fileList) {
 			try {
-				file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath())));
+				file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL));
 				blockList.addAll(file.getNewBlockList());
 			} catch (Exception e) {
 				System.err.println(file + " : " + e);
@@ -150,12 +145,12 @@ public class CAnalyzer4 {
 
 		file.setState(SourceFile.MODIFIED);
 
-			try {
-				file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath())));
-				newBlockList.addAll(file.getNewBlockList());
-			} catch (Exception e) {
-				System.err.println(file + " : " + e);
-			}
+		try {
+			file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL));
+			newBlockList.addAll(file.getNewBlockList());
+		} catch (Exception e) {
+			System.err.println(file + " : " + e);
+		}
 	}
 
 	/**
@@ -178,66 +173,25 @@ public class CAnalyzer4 {
 					Block oldBlock = new Block();
 					oldBlock = block.clone();
 					oldBlock.setCategory(Block.NULL);
-//					System.out.println("oldBlock vec " + oldBlock.getVector());
-//					System.out.println("oldBlock len " + oldBlock.getLen());
+					//					System.out.println("oldBlock vec " + oldBlock.getVector());
+					//					System.out.println("oldBlock len " + oldBlock.getLen());
 					file.getOldBlockList().add(oldBlock);
 				}
 				//file.getOldBlockList().addAll(file.getNewBlockList());
 				blockList.addAll(file.getNewBlockList());
-			/*	for(Block block : blockList) {
+				/*	for(Block block : blockList) {
 					System.out.println("aaaa Block l====enn =     " + block.getLen());
 				}*/
 				//System.out.println(" Normal yade");
 			}else {
 				//新規追加されたソースファイル
-//				System.out.println("==============new File Analysis");
-				List<Block> blockListOfFile = new ArrayList<>();
-				CharStream newstream = CharStreams.fromFileName(file.getNewPath(), Charset.forName(Config.charset));
-				JavaLexer newlexer = new JavaLexer(newstream);
-				newlexer.removeErrorListeners();
-				// lexer.addErrorListener(SilentErrorListener.INSTANCE);
-				CommonTokenStream newtokens = new CommonTokenStream(newlexer);
-				JavaParser newparser = new JavaParser(newtokens);
-				// parser.addParseListener(new JavaMyListener());
-				CompilationUnitContext newtree = null;
-				newparser.removeErrorListeners();
-				// parser.addErrorListener(SilentErrorListener.INSTANCE);
-				newparser.getInterpreter().setPredictionMode(PredictionMode.SLL);
-
+				//				System.out.println("==============new File Analysis");
 				try {
-					newtree = newparser.compilationUnit(); // STAGE 1
-				} catch (Exception ex) {
-					System.out.println("try predictionMode LL");
-					newlexer = new JavaLexer(newstream);
-					newlexer.removeErrorListeners();
-					// lexer.addErrorListener(DescriptiveErrorListener.INSTANCE);
-					newtokens = new CommonTokenStream(newlexer); // rewind input stream
-					newparser = new JavaParser(newtokens);
-					newparser.getInterpreter().setPredictionMode(PredictionMode.LL);
-					newparser.removeErrorListeners();
-					// parser.addErrorListener(ConsoleErrorListener.INSTANCE);
-					try {
-						newtree = newparser.compilationUnit(); // STAGE 2
-						//						System.out.println("success");
-					} catch (ParseCancellationException e) {
-						System.err.println(file + " parse cancel");
-						continue;
-					} catch (Exception e) {
-						System.err.println(e);
-						continue;
-					}
-					// if we parse ok, it's LL not SLL
-				}
-				try {
-					blockListOfFile = extractMethodForNewFile(new File(file.getNewPath()));
+					file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL));
+					blockList.addAll(file.getNewBlockList());
 				} catch (Exception e) {
-					// TODO 自動生成された catch ブロック
-					e.printStackTrace();
+					System.err.println(file + " : " + e);
 				}
-				blockList.addAll(blockListOfFile);
-				file.getNewBlockList().addAll(blockListOfFile);
-				newtokens.fill();
-				CloneDetector.countLine += newtokens.LT(newtokens.size()).getLine();
 			}
 		}
 		return blockList;
@@ -252,7 +206,7 @@ public class CAnalyzer4 {
 	 * @throws Exception
 	 * @throws IOException
 	 */
-	private static ArrayList<Block> extractMethod(File file) throws Exception {
+	private static ArrayList<Block> extractMethod(File file, int category) throws Exception {
 		ArrayList<Block> blockList = new ArrayList<>();
 		String input = preProcessor(file);
 		CharStream stream = CharStreams.fromString(input, file.toString());
@@ -291,13 +245,13 @@ public class CAnalyzer4 {
 					block.setStartLine(start);
 					block.setMethodStartLine(start);
 					blockList.add(block);
-					block.setCategory(Block.NULL);
+					block.setCategory(category);
 					CloneDetector.countMethod++;
 					int endPtr = p + blockLength(tokens, p);
 					block.setEndLine(tokens.get(endPtr).getLine());
 					block.setMethodEndLine(block.getEndLine());
 					p++;
-					blockList.addAll(extractBlock(tokens, block));
+					blockList.addAll(extractBlock(tokens, block, category));
 
 					methodName = null;
 				}
@@ -320,81 +274,7 @@ public class CAnalyzer4 {
 	}
 
 
-	/**
-	 * <p>
-	 * ソースファイルから関数を抽出する
-	 * </p>
-	 *
-	 * @param file
-	 * @throws Exception
-	 * @throws IOException
-	 */
-	private ArrayList<Block> extractMethodForNewFile(File file) throws Exception {
-		ArrayList<Block> blockList = new ArrayList<>();
-		String input = preProcessor(file);
-		CharStream stream = CharStreams.fromString(input, file.toString());
-		CPP14Lexer lexer = new CPP14Lexer(stream);
-		lexer.removeErrorListeners();
-		// lexer.addErrorListener(DescriptiveErrorListener.INSTANCE);
-		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		tokens.fill();
 
-		Token token = null;
-		Token beforeToken = null;
-		String methodName = null;
-		int start = 0;
-		p = 0;
-		while (p < tokens.size()) {
-			token = tokens.get(p);
-			switch (token.getType()) {
-			case CPP14Lexer.LeftParen:
-				if (beforeToken != null && beforeToken.getType() == CPP14Lexer.Identifier) {
-					methodName = beforeToken.getText();
-					start = token.getLine();
-				} else {
-					methodName = null;
-				}
-				break;
-			case CPP14Lexer.LeftBrace:
-				if (methodName != null && beforeToken.getType() == CPP14Lexer.RightParen && !methodName.equals("for")
-				&& !methodName.equals("if") && !methodName.equals("switch") && !methodName.equals("while")) {
-					Block block = new Block();
-					currentBlock = block;
-					// System.out.printf("%s - %s:
-					// %d\r\n",file.toString(),methodName,start);
-					block.setId(blockId++);
-					block.setName(methodName);
-					block.setFileName(file.toString());
-					block.setStartLine(start);
-					block.setMethodStartLine(start);
-					blockList.add(block);
-					block.setCategory(Block.ADDED);
-					CloneDetector.countMethod++;
-					int endPtr = p + blockLength(tokens, p);
-					block.setEndLine(tokens.get(endPtr).getLine());
-					block.setMethodEndLine(block.getEndLine());
-					p++;
-					blockList.addAll(extractBlockForNewFile(tokens, block));
-
-					methodName = null;
-				}
-				break;
-				// case CPP14Lexer.ErrorCharacter:
-				// if(true){
-				// System.out.println(token.getChannel());
-				// System.out.println(tokens.getText());
-				// System.err.println(token.getInputStream().getSourceName()+"line
-				// "+token.getLine()+":"+token.getCharPositionInLine()+" lexee error
-				// "+token.getText());
-				// }
-
-			}
-			beforeToken = token;
-			p++;
-		}
-		CloneDetector.countLine += token.getLine();
-		return blockList;
-	}
 
 	// プリプロセッサ
 	// マクロの除去
@@ -488,7 +368,7 @@ public class CAnalyzer4 {
 	 * @param method
 	 * @throws IOException
 	 */
-	private static ArrayList<Block> extractBlock(CommonTokenStream tokens, Block block) {
+	private static ArrayList<Block> extractBlock(CommonTokenStream tokens, Block block, int category) {
 		ArrayList<Block> blockList = new ArrayList<>();
 		Token token;
 		Token beforeToken = null;
@@ -537,7 +417,7 @@ public class CAnalyzer4 {
 						int endPtr = p + blockLength(tokens, p);
 						child.setEndLine(tokens.get(endPtr).getLine());
 						child.setMethodEndLine(parent.getMethodEndLine());
-						child.setCategory(Block.NULL);
+						child.setCategory(category);
 
 						blockList.add(child);
 						blockName = null;
@@ -549,7 +429,7 @@ public class CAnalyzer4 {
 				}
 
 				p++;
-				blockList.addAll(extractBlock(tokens, block));
+				blockList.addAll(extractBlock(tokens, block, category));
 
 				if (parent != null) {
 					block.setEndLine(tokens.get(p).getLine());
@@ -592,107 +472,5 @@ public class CAnalyzer4 {
 		return blockList;
 	}
 
-	private ArrayList<Block> extractBlockForNewFile(CommonTokenStream tokens, Block block) {
-		ArrayList<Block> blockList = new ArrayList<>();
-		Token token;
-		Token beforeToken = null;
-		String blockName = null;
 
-		// int beforeToken = 0;
-
-		while (p < tokens.size()) {
-			token = tokens.get(p);
-			Block b = block;
-			while (b != null) {
-				b.incNodeNum();
-				b = b.getParent();
-			}
-
-			switch (token.getType()) {
-			case CPP14Lexer.LeftParen:
-				if (beforeToken != null) {
-					if (beforeToken.getType() == CPP14Lexer.If || beforeToken.getType() == CPP14Lexer.While
-							|| beforeToken.getType() == CPP14Lexer.For || beforeToken.getType() == CPP14Lexer.Switch) {
-						blockName = beforeToken.getText();
-					}
-				} else {
-					blockName = null;
-				}
-				break;
-
-			case CPP14Lexer.LeftBrace:
-
-				Block parent = null;
-
-				if (CloneDetector.enableBlockExtract && beforeToken != null) {
-					if ((blockName != null && beforeToken.getType() == CPP14Lexer.RightParen)
-							|| beforeToken.getType() == CPP14Lexer.Do) {
-						if (beforeToken.getType() == CPP14Lexer.Do)
-							blockName = "do-while";
-
-						Block child = new Block();
-						parent = block;
-						child.setParent(parent);
-						child.setId(blockId++);
-						child.setName(parent.getName() + " - " + blockName);
-						child.setFileName(parent.getFileName());
-						child.setStartLine(token.getLine());
-						child.setMethodStartLine(parent.getMethodStartLine());
-						int endPtr = p + blockLength(tokens, p);
-						child.setEndLine(tokens.get(endPtr).getLine());
-						child.setMethodEndLine(parent.getMethodEndLine());
-						child.setCategory(Block.ADDED);
-
-						blockList.add(child);
-						blockName = null;
-						CloneDetector.countBlock++;
-
-						block = child;
-					}
-
-				}
-
-				p++;
-				blockList.addAll(extractBlock(tokens, block));
-
-				if (parent != null) {
-					block.setEndLine(tokens.get(p).getLine());
-
-					if (block.getParent() != null) {
-						block.setMethodEndLine(block.getParent().getMethodEndLine());
-					} else {
-						block.setMethodStartLine(block.getStartLine());
-						block.setMethodEndLine(block.getEndLine());
-					}
-
-					block = parent;
-				}
-
-				break;
-			case CPP14Lexer.RightBrace:
-				return blockList;
-			case CPP14Lexer.Identifier:
-				b = block;
-				while (b != null) {
-					String[] words = Word.separateIdentifier(token.getText());
-					b.addWord(words);
-					b = b.getParent();
-				}
-				break;
-			default:
-				if (token.getText().matches("[a-zA-Z]+")) {
-					b = block;
-					while (b != null) {
-						b.addWord(token.getText());
-						b = b.getParent();
-					}
-
-				}
-				break;
-			}
-			beforeToken = token;
-			p++;
-		}
-		return blockList;
-	}
 }
