@@ -125,15 +125,18 @@ public class DiffDetector {
 						fileExtension1 = ".cs";
 					}
 					File fileName = new File(command[3]);
-					if(config.getLang() == 1 ) {
-						if(fileName.isFile() && fileName.getName().endsWith(fileExtension1) && fileName.getName().endsWith(fileExtension2)){
+					if(config.getLang() == 1) {
+						if((fileName.isFile() && fileName.getName().endsWith(fileExtension1)) ||
+								(fileName.isFile() && fileName.getName().endsWith(fileExtension2))){
 							diffSearchFlag = 1;
+							System.out.println("CCCCCCCCCCCCCCCCCC");
 							//ここのファイル検索の効率化
 							for(SourceFile file: fileList) {
 								//		   System.out.println("===========miki = "  + file.getNewPath());
 								if(file.getNewPath().contains(command[3].replace("/", "\\"))){
 									subjectFile = file;
 									CAnalyzer4.analyzeAFile(file, newBlockList);
+									System.out.println("analyze new file ");
 									CloneDetector.updatedCode = true;
 									//System.out.println("=========== newBlock List===============");
 									//ソースコードのparse
@@ -148,6 +151,7 @@ public class DiffDetector {
 					}else {
 						if(fileName.isFile() && fileName.getName().endsWith(fileExtension1)){
 							diffSearchFlag = 1;
+							System.out.println("elseeeeeeeeeeeee ");
 							//
 							//ここのファイル検索の効率化
 							for(SourceFile file: fileList) {
@@ -156,10 +160,11 @@ public class DiffDetector {
 									subjectFile = file;
 									if(config.getLang() == 0) {
 										JavaAnalyzer3.analyzeAFile(file, newBlockList);
+										System.out.println("analyze new file java ");
 
 									}else if(config.getLang() == 2) {
 										CSharpAnalyzer.analyzeAFile(file, newBlockList);
-										System.out.println("analyze new file ");
+										System.out.println("analyze new file csharp ");
 									}
 									CloneDetector.updatedCode = true;
 									//System.out.println("=========== newBlock List===============");

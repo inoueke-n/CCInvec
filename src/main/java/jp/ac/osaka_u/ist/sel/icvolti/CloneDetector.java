@@ -507,7 +507,7 @@ public class CloneDetector {
 			javaTime = javaEnd - javaStart;
 
 			break;
-		case 1: // "c"
+		case 1: // "c" "cpp"
 			long cStart = System.currentTimeMillis();
 			CAnalyzer4 Canalyzer = new CAnalyzer4();
 
@@ -518,11 +518,11 @@ public class CloneDetector {
 			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
+			System.out.println("CCCCCCCCCCPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
 
 			updatedBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 2));
 			long cEnd = System.currentTimeMillis();
 			cTime = cEnd - cStart;
-
 			break;
 		case 2: // "c#"
 			//			CSharpAnalyzer csharpAnalyzer = new CSharpAnalyzer();

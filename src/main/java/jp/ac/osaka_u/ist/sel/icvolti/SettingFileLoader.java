@@ -41,6 +41,8 @@ public class SettingFileLoader {
 							config.setLang(0);
 						if (removeSpace(line.replace("LANGUAGE:","")).equals("c"))
 							config.setLang(1);
+						if (removeSpace(line.replace("LANGUAGE:","")).equals("cpp"))
+								config.setLang(1);
 						if (removeSpace(line.replace("LANGUAGE:","")).equals("csharp"))
 							config.setLang(2);
 						//config.setLang(removeSpace(line.replace("LANGUAGE:","")));

@@ -1,0 +1,1110 @@
+ICVolti 19.01.24
+AAAAAAAAAAAAAAAAAA
+----BoW ver----
+blockList size 26922
+80380
+Finished : 
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/common/reloptions.c E:\postgresTest1\new\postgres/src/backend/access/common/reloptions.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/commands/tablecmds.c E:\postgresTest1\new\postgres/src/backend/commands/tablecmds.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/reloptions.h E:\postgresTest1\new\postgres/src/include/access/reloptions.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+56784
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/common/reloptions.c E:\postgresTest1\new\postgres/src/backend/access/common/reloptions.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/reloptions.h E:\postgresTest1\new\postgres/src/include/access/reloptions.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3174
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/manage-ag.sgml E:\postgresTest1\new\postgres/doc/src/sgml/manage-ag.sgml
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/ref/create_database.sgml E:\postgresTest1\new\postgres/doc/src/sgml/ref/create_database.sgml
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3125
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/executor/execMain.c E:\postgresTest1\new\postgres/src/backend/executor/execMain.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3092
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/selfuncs.c E:\postgresTest1\new\postgres/src/backend/utils/adt/selfuncs.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/stats_ext.out E:\postgresTest1\new\postgres/src/test/regress/expected/stats_ext.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/stats_ext.sql E:\postgresTest1\new\postgres/src/test/regress/sql/stats_ext.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3118
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/common/detoast.c E:\postgresTest1\new\postgres/src/backend/access/common/detoast.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3105
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/isolation/specs/vacuum-skip-locked.spec E:\postgresTest1\new\postgres/src/test/isolation/specs/vacuum-skip-locked.spec
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/vacuum.out E:\postgresTest1\new\postgres/src/test/regress/expected/vacuum.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/vacuum.sql E:\postgresTest1\new\postgres/src/test/regress/sql/vacuum.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3120
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/serial_schedule E:\postgresTest1\new\postgres/src/test/regress/serial_schedule
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3140
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/ruleutils.c E:\postgresTest1\new\postgres/src/backend/utils/adt/ruleutils.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/rules.out E:\postgresTest1\new\postgres/src/test/regress/expected/rules.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/rules.sql E:\postgresTest1\new\postgres/src/test/regress/sql/rules.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3165
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/nbtree/nbtinsert.c E:\postgresTest1\new\postgres/src/backend/access/nbtree/nbtinsert.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/nbtree/nbtsort.c E:\postgresTest1\new\postgres/src/backend/access/nbtree/nbtsort.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3162
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/contrib/test_decoding/logical.conf E:\postgresTest1\new\postgres/contrib/test_decoding/logical.conf
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/config.sgml E:\postgresTest1\new\postgres/doc/src/sgml/config.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/logical/reorderbuffer.c E:\postgresTest1\new\postgres/src/backend/replication/logical/reorderbuffer.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/misc/guc.c E:\postgresTest1\new\postgres/src/backend/utils/misc/guc.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/misc/postgresql.conf.sample E:\postgresTest1\new\postgres/src/backend/utils/misc/postgresql.conf.sample
+line = diff -r E:\postgresTest1\old\postgres/src/include/replication/reorderbuffer.h E:\postgresTest1\new\postgres/src/include/replication/reorderbuffer.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3141
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/ref/psql-ref.sgml E:\postgresTest1\new\postgres/doc/src/sgml/ref/psql-ref.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/prompt.c E:\postgresTest1\new\postgres/src/bin/psql/prompt.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3180
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/ref/alter_default_privileges.sgml E:\postgresTest1\new\postgres/doc/src/sgml/ref/alter_default_privileges.sgml
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3128
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/ref/select.sgml E:\postgresTest1\new\postgres/doc/src/sgml/ref/select.sgml
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3116
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/gin/README E:\postgresTest1\new\postgres/src/backend/access/gin/README
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/gin/ginvacuum.c E:\postgresTest1\new\postgres/src/backend/access/gin/ginvacuum.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3094
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/gin/ginbtree.c E:\postgresTest1\new\postgres/src/backend/access/gin/ginbtree.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/gin/gindatapage.c E:\postgresTest1\new\postgres/src/backend/access/gin/gindatapage.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/gin/ginvacuum.c E:\postgresTest1\new\postgres/src/backend/access/gin/ginvacuum.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/gin/ginxlog.c E:\postgresTest1\new\postgres/src/backend/access/gin/ginxlog.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3074
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/gin/README E:\postgresTest1\new\postgres/src/backend/access/gin/README
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3116
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/gin/ginvacuum.c E:\postgresTest1\new\postgres/src/backend/access/gin/ginvacuum.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3078
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/like_support.c E:\postgresTest1\new\postgres/src/backend/utils/adt/like_support.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/btree_index.out E:\postgresTest1\new\postgres/src/test/regress/expected/btree_index.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/btree_index.sql E:\postgresTest1\new\postgres/src/test/regress/sql/btree_index.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3115
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/func.sgml E:\postgresTest1\new\postgres/doc/src/sgml/func.sgml
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3147
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/ref/dropdb.sgml E:\postgresTest1\new\postgres/doc/src/sgml/ref/dropdb.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/dropdb.c E:\postgresTest1\new\postgres/src/bin/scripts/dropdb.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/t/050_dropdb.pl E:\postgresTest1\new\postgres/src/bin/scripts/t/050_dropdb.pl
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3170
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/port/pread.c E:\postgresTest1\new\postgres/src/port/pread.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3295
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/xact.h E:\postgresTest1\new\postgres/src/include/access/xact.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3142
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/libpq.sgml E:\postgresTest1\new\postgres/doc/src/sgml/libpq.sgml
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3110
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/ddl.sgml E:\postgresTest1\new\postgres/doc/src/sgml/ddl.sgml
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3125
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/like_support.c E:\postgresTest1\new\postgres/src/backend/utils/adt/like_support.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_operator.dat E:\postgresTest1\new\postgres/src/include/catalog/pg_operator.dat
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3114
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/heap/heapam_visibility.c E:\postgresTest1\new\postgres/src/backend/access/heap/heapam_visibility.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3090
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/like_support.c E:\postgresTest1\new\postgres/src/backend/utils/adt/like_support.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3069
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/selfuncs.c E:\postgresTest1\new\postgres/src/backend/utils/adt/selfuncs.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3084
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/monitoring.sgml E:\postgresTest1\new\postgres/doc/src/sgml/monitoring.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/backend/catalog/system_views.sql E:\postgresTest1\new\postgres/src/backend/catalog/system_views.sql
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/logical/reorderbuffer.c E:\postgresTest1\new\postgres/src/backend/replication/logical/reorderbuffer.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/walsender.c E:\postgresTest1\new\postgres/src/backend/replication/walsender.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/catversion.h E:\postgresTest1\new\postgres/src/include/catalog/catversion.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_proc.dat E:\postgresTest1\new\postgres/src/include/catalog/pg_proc.dat
+line = diff -r E:\postgresTest1\old\postgres/src/include/replication/reorderbuffer.h E:\postgresTest1\new\postgres/src/include/replication/reorderbuffer.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/replication/walsender_private.h E:\postgresTest1\new\postgres/src/include/replication/walsender_private.h
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/rules.out E:\postgresTest1\new\postgres/src/test/regress/expected/rules.out
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3186
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/tab-complete.c E:\postgresTest1\new\postgres/src/bin/psql/tab-complete.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3199
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/ref/alter_view.sgml E:\postgresTest1\new\postgres/doc/src/sgml/ref/alter_view.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/backend/commands/view.c E:\postgresTest1\new\postgres/src/backend/commands/view.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/parser/gram.y E:\postgresTest1\new\postgres/src/backend/parser/gram.y
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/tab-complete.c E:\postgresTest1\new\postgres/src/bin/psql/tab-complete.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/create_view.out E:\postgresTest1\new\postgres/src/test/regress/expected/create_view.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/create_view.sql E:\postgresTest1\new\postgres/src/test/regress/sql/create_view.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3400
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/rmgrdesc/dbasedesc.c E:\postgresTest1\new\postgres/src/backend/access/rmgrdesc/dbasedesc.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/commands/dbcommands.c E:\postgresTest1\new\postgres/src/backend/commands/dbcommands.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/commands/dbcommands_xlog.h E:\postgresTest1\new\postgres/src/include/commands/dbcommands_xlog.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3143
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/xlog_internal.h E:\postgresTest1\new\postgres/src/include/access/xlog_internal.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3117
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/configure E:\postgresTest1\new\postgres/configure
+line = diff -r E:\postgresTest1\old\postgres/configure.in E:\postgresTest1\new\postgres/configure.in
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/func.sgml E:\postgresTest1\new\postgres/doc/src/sgml/func.sgml
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/installation.sgml E:\postgresTest1\new\postgres/doc/src/sgml/installation.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/index/indexam.c E:\postgresTest1\new\postgres/src/backend/access/index/indexam.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/transam/xlog.c E:\postgresTest1\new\postgres/src/backend/access/transam/xlog.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/bootstrap/bootstrap.c E:\postgresTest1\new\postgres/src/backend/bootstrap/bootstrap.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/catalog/genbki.pl E:\postgresTest1\new\postgres/src/backend/catalog/genbki.pl
+line = diff -r E:\postgresTest1\old\postgres/src/backend/commands/analyze.c E:\postgresTest1\new\postgres/src/backend/commands/analyze.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/fmgr/dfmgr.c E:\postgresTest1\new\postgres/src/backend/utils/fmgr/dfmgr.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/fmgr/fmgr.c E:\postgresTest1\new\postgres/src/backend/utils/fmgr/fmgr.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/misc/pg_controldata.c E:\postgresTest1\new\postgres/src/backend/utils/misc/pg_controldata.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/initdb/initdb.c E:\postgresTest1\new\postgres/src/bin/initdb/initdb.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_controldata/pg_controldata.c E:\postgresTest1\new\postgres/src/bin/pg_controldata/pg_controldata.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_resetwal/pg_resetwal.c E:\postgresTest1\new\postgres/src/bin/pg_resetwal/pg_resetwal.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/catversion.h E:\postgresTest1\new\postgres/src/include/catalog/catversion.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_control.h E:\postgresTest1\new\postgres/src/include/catalog/pg_control.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_proc.dat E:\postgresTest1\new\postgres/src/include/catalog/pg_proc.dat
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_type.dat E:\postgresTest1\new\postgres/src/include/catalog/pg_type.dat
+line = diff -r E:\postgresTest1\old\postgres/src/include/fmgr.h E:\postgresTest1\new\postgres/src/include/fmgr.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/pg_config.h.in E:\postgresTest1\new\postgres/src/include/pg_config.h.in
+line = diff -r E:\postgresTest1\old\postgres/src/include/postgres.h E:\postgresTest1\new\postgres/src/include/postgres.h
+line = diff -r E:\postgresTest1\old\postgres/src/tools/msvc/Solution.pm E:\postgresTest1\new\postgres/src/tools/msvc/Solution.pm
+line = diff -r E:\postgresTest1\old\postgres/src/tools/msvc/config_default.pl E:\postgresTest1\new\postgres/src/tools/msvc/config_default.pl
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3309
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/rewrite/rewriteHandler.c E:\postgresTest1\new\postgres/src/backend/rewrite/rewriteHandler.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/misc.c E:\postgresTest1\new\postgres/src/backend/utils/adt/misc.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/rewrite/rewriteHandler.h E:\postgresTest1\new\postgres/src/include/rewrite/rewriteHandler.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3321
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/tutorial/funcs.c E:\postgresTest1\new\postgres/src/tutorial/funcs.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3111
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3093
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/logical/worker.c E:\postgresTest1\new\postgres/src/backend/replication/logical/worker.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/subscription/t/001_rep_changes.pl E:\postgresTest1\new\postgres/src/test/subscription/t/001_rep_changes.pl
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3109
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/subscription/t/001_rep_changes.pl E:\postgresTest1\new\postgres/src/test/subscription/t/001_rep_changes.pl
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3102
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpgsql/src/pl_exec.c E:\postgresTest1\new\postgres/src/pl/plpgsql/src/pl_exec.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpgsql/src/plpgsql.h E:\postgresTest1\new\postgres/src/pl/plpgsql/src/plpgsql.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3083
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/ref/psql-ref.sgml E:\postgresTest1\new\postgres/doc/src/sgml/ref/psql-ref.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/command.c E:\postgresTest1\new\postgres/src/bin/psql/command.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/mainloop.c E:\postgresTest1\new\postgres/src/bin/psql/mainloop.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3115
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/catalog/objectaccess.c E:\postgresTest1\new\postgres/src/backend/catalog/objectaccess.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/commands/tablecmds.c E:\postgresTest1\new\postgres/src/backend/commands/tablecmds.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/objectaccess.h E:\postgresTest1\new\postgres/src/include/catalog/objectaccess.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3113
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/contrib/sepgsql/hooks.c E:\postgresTest1\new\postgres/contrib/sepgsql/hooks.c
+line = diff -r E:\postgresTest1\old\postgres/contrib/sepgsql/relation.c E:\postgresTest1\new\postgres/contrib/sepgsql/relation.c
+line = diff -r E:\postgresTest1\old\postgres/contrib/sepgsql/selinux.c E:\postgresTest1\new\postgres/contrib/sepgsql/selinux.c
+line = diff -r E:\postgresTest1\old\postgres/contrib/sepgsql/sepgsql-regtest.te E:\postgresTest1\new\postgres/contrib/sepgsql/sepgsql-regtest.te
+line = diff -r E:\postgresTest1\old\postgres/contrib/sepgsql/sepgsql.h E:\postgresTest1\new\postgres/contrib/sepgsql/sepgsql.h
+line = diff -r E:\postgresTest1\old\postgres/contrib/sepgsql/test_sepgsql E:\postgresTest1\new\postgres/contrib/sepgsql/test_sepgsql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3130
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/error/elog.c E:\postgresTest1\new\postgres/src/backend/utils/error/elog.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3182
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/port/snprintf.c E:\postgresTest1\new\postgres/src/port/snprintf.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3076
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/commands/async.c E:\postgresTest1\new\postgres/src/backend/commands/async.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/catversion.h E:\postgresTest1\new\postgres/src/include/catalog/catversion.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_proc.dat E:\postgresTest1\new\postgres/src/include/catalog/pg_proc.dat
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3134
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/commands/async.c E:\postgresTest1\new\postgres/src/backend/commands/async.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/tcop/postgres.c E:\postgresTest1\new\postgres/src/backend/tcop/postgres.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3103
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/ref/insert.sgml E:\postgresTest1\new\postgres/doc/src/sgml/ref/insert.sgml
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3092
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/transam/xact.c E:\postgresTest1\new\postgres/src/backend/access/transam/xact.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/isolation/expected/async-notify.out E:\postgresTest1\new\postgres/src/test/isolation/expected/async-notify.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/isolation/specs/async-notify.spec E:\postgresTest1\new\postgres/src/test/isolation/specs/async-notify.spec
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3118
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/ref/listen.sgml E:\postgresTest1\new\postgres/doc/src/sgml/ref/listen.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/backend/commands/async.c E:\postgresTest1\new\postgres/src/backend/commands/async.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3095
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/perl/TestLib.pm E:\postgresTest1\new\postgres/src/test/perl/TestLib.pm
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3108
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/common/reloptions.c E:\postgresTest1\new\postgres/src/backend/access/common/reloptions.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/hash/hashpage.c E:\postgresTest1\new\postgres/src/backend/access/hash/hashpage.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/hash/hashutil.c E:\postgresTest1\new\postgres/src/backend/access/hash/hashutil.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/nbtree/nbtree.c E:\postgresTest1\new\postgres/src/backend/access/nbtree/nbtree.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/nbtree/nbtsort.c E:\postgresTest1\new\postgres/src/backend/access/nbtree/nbtsort.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/nbtree/nbtsplitloc.c E:\postgresTest1\new\postgres/src/backend/access/nbtree/nbtsplitloc.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/nbtree/nbtutils.c E:\postgresTest1\new\postgres/src/backend/access/nbtree/nbtutils.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/spgist/spgutils.c E:\postgresTest1\new\postgres/src/backend/access/spgist/spgutils.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/brin.h E:\postgresTest1\new\postgres/src/include/access/brin.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/gin_private.h E:\postgresTest1\new\postgres/src/include/access/gin_private.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/hash.h E:\postgresTest1\new\postgres/src/include/access/hash.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/nbtree.h E:\postgresTest1\new\postgres/src/include/access/nbtree.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/spgist.h E:\postgresTest1\new\postgres/src/include/access/spgist.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/spgist_private.h E:\postgresTest1\new\postgres/src/include/access/spgist_private.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/utils/rel.h E:\postgresTest1\new\postgres/src/include/utils/rel.h
+line = diff -r E:\postgresTest1\old\postgres/src/tools/pgindent/typedefs.list E:\postgresTest1\new\postgres/src/tools/pgindent/typedefs.list
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3202
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/mac8.c E:\postgresTest1\new\postgres/src/backend/utils/adt/mac8.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3220
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/contrib/bloom/bloom.h E:\postgresTest1\new\postgres/contrib/bloom/bloom.h
+line = diff -r E:\postgresTest1\old\postgres/contrib/btree_gist/btree_gist.h E:\postgresTest1\new\postgres/contrib/btree_gist/btree_gist.h
+line = diff -r E:\postgresTest1\old\postgres/contrib/btree_gist/btree_utils_num.h E:\postgresTest1\new\postgres/contrib/btree_gist/btree_utils_num.h
+line = diff -r E:\postgresTest1\old\postgres/contrib/btree_gist/btree_utils_var.h E:\postgresTest1\new\postgres/contrib/btree_gist/btree_utils_var.h
+line = diff -r E:\postgresTest1\old\postgres/contrib/postgres_fdw/postgres_fdw.h E:\postgresTest1\new\postgres/contrib/postgres_fdw/postgres_fdw.h
+line = diff -r E:\postgresTest1\old\postgres/src/backend/libpq/auth.c E:\postgresTest1\new\postgres/src/backend/libpq/auth.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_basebackup/receivelog.h E:\postgresTest1\new\postgres/src/bin/pg_basebackup/receivelog.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_basebackup/streamutil.h E:\postgresTest1\new\postgres/src/bin/pg_basebackup/streamutil.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_dump/pg_backup_archiver.h E:\postgresTest1\new\postgres/src/bin/pg_dump/pg_backup_archiver.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_rewind/datapagemap.h E:\postgresTest1\new\postgres/src/bin/pg_rewind/datapagemap.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_rewind/filemap.h E:\postgresTest1\new\postgres/src/bin/pg_rewind/filemap.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_rewind/pg_rewind.h E:\postgresTest1\new\postgres/src/bin/pg_rewind/pg_rewind.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_waldump/pg_waldump.c E:\postgresTest1\new\postgres/src/bin/pg_waldump/pg_waldump.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/command.c E:\postgresTest1\new\postgres/src/bin/psql/command.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/command.h E:\postgresTest1\new\postgres/src/bin/psql/command.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/common.h E:\postgresTest1\new\postgres/src/bin/psql/common.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/prompt.h E:\postgresTest1\new\postgres/src/bin/psql/prompt.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/settings.h E:\postgresTest1\new\postgres/src/bin/psql/settings.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/tab-complete.c E:\postgresTest1\new\postgres/src/bin/psql/tab-complete.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/common.h E:\postgresTest1\new\postgres/src/bin/scripts/common.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/gin_private.h E:\postgresTest1\new\postgres/src/include/access/gin_private.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/hio.h E:\postgresTest1\new\postgres/src/include/access/hio.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/htup_details.h E:\postgresTest1\new\postgres/src/include/access/htup_details.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/relation.h E:\postgresTest1\new\postgres/src/include/access/relation.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/table.h E:\postgresTest1\new\postgres/src/include/access/table.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/twophase.h E:\postgresTest1\new\postgres/src/include/access/twophase.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_constraint.h E:\postgresTest1\new\postgres/src/include/catalog/pg_constraint.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_conversion.h E:\postgresTest1\new\postgres/src/include/catalog/pg_conversion.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_operator.h E:\postgresTest1\new\postgres/src/include/catalog/pg_operator.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_proc.h E:\postgresTest1\new\postgres/src/include/catalog/pg_proc.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_publication.h E:\postgresTest1\new\postgres/src/include/catalog/pg_publication.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_replication_origin.h E:\postgresTest1\new\postgres/src/include/catalog/pg_replication_origin.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_subscription_rel.h E:\postgresTest1\new\postgres/src/include/catalog/pg_subscription_rel.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/pg_type.h E:\postgresTest1\new\postgres/src/include/catalog/pg_type.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/commands/event_trigger.h E:\postgresTest1\new\postgres/src/include/commands/event_trigger.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/executor/nodeBitmapHeapscan.h E:\postgresTest1\new\postgres/src/include/executor/nodeBitmapHeapscan.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/executor/nodeIndexonlyscan.h E:\postgresTest1\new\postgres/src/include/executor/nodeIndexonlyscan.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/executor/tuptable.h E:\postgresTest1\new\postgres/src/include/executor/tuptable.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/funcapi.h E:\postgresTest1\new\postgres/src/include/funcapi.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/jit/llvmjit.h E:\postgresTest1\new\postgres/src/include/jit/llvmjit.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/nodes/execnodes.h E:\postgresTest1\new\postgres/src/include/nodes/execnodes.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/replication/decode.h E:\postgresTest1\new\postgres/src/include/replication/decode.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/replication/logical.h E:\postgresTest1\new\postgres/src/include/replication/logical.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/replication/walreceiver.h E:\postgresTest1\new\postgres/src/include/replication/walreceiver.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/rewrite/rewriteHandler.h E:\postgresTest1\new\postgres/src/include/rewrite/rewriteHandler.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/statistics/extended_stats_internal.h E:\postgresTest1\new\postgres/src/include/statistics/extended_stats_internal.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/storage/buf_internals.h E:\postgresTest1\new\postgres/src/include/storage/buf_internals.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/storage/condition_variable.h E:\postgresTest1\new\postgres/src/include/storage/condition_variable.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/storage/lock.h E:\postgresTest1\new\postgres/src/include/storage/lock.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/storage/lwlock.h E:\postgresTest1\new\postgres/src/include/storage/lwlock.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/storage/standby.h E:\postgresTest1\new\postgres/src/include/storage/standby.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/tsearch/ts_locale.h E:\postgresTest1\new\postgres/src/include/tsearch/ts_locale.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/utils/date.h E:\postgresTest1\new\postgres/src/include/utils/date.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/utils/jsonpath.h E:\postgresTest1\new\postgres/src/include/utils/jsonpath.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/utils/pg_lsn.h E:\postgresTest1\new\postgres/src/include/utils/pg_lsn.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/utils/xml.h E:\postgresTest1\new\postgres/src/include/utils/xml.h
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/ecpglib/descriptor.c E:\postgresTest1\new\postgres/src/interfaces/ecpg/ecpglib/descriptor.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/ecpglib/ecpglib_extern.h E:\postgresTest1\new\postgres/src/interfaces/ecpg/ecpglib/ecpglib_extern.h
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/ecpglib/misc.c E:\postgresTest1\new\postgres/src/interfaces/ecpg/ecpglib/misc.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/include/ecpglib.h E:\postgresTest1\new\postgres/src/interfaces/ecpg/include/ecpglib.h
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/preproc/preproc_extern.h E:\postgresTest1\new\postgres/src/interfaces/ecpg/preproc/preproc_extern.h
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plperl/plperl.c E:\postgresTest1\new\postgres/src/pl/plperl/plperl.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_cursorobject.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_cursorobject.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_elog.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_elog.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_exec.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_exec.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_main.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_main.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_planobject.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_planobject.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_plpymodule.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_plpymodule.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_procedure.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_procedure.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_resultobject.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_resultobject.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_spi.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_spi.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_spi.h E:\postgresTest1\new\postgres/src/pl/plpython/plpy_spi.h
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_subxactobject.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_subxactobject.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_subxactobject.h E:\postgresTest1\new\postgres/src/pl/plpython/plpy_subxactobject.h
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_typeio.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_typeio.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_typeio.h E:\postgresTest1\new\postgres/src/pl/plpython/plpy_typeio.h
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpython/plpy_util.c E:\postgresTest1\new\postgres/src/pl/plpython/plpy_util.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/modules/test_ginpostinglist/test_ginpostinglist.c E:\postgresTest1\new\postgres/src/test/modules/test_ginpostinglist/test_ginpostinglist.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3541
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/walsender.c E:\postgresTest1\new\postgres/src/backend/replication/walsender.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3357
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/transam/xlogreader.c E:\postgresTest1\new\postgres/src/backend/access/transam/xlogreader.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/transam/xlogutils.c E:\postgresTest1\new\postgres/src/backend/access/transam/xlogutils.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/walsender.c E:\postgresTest1\new\postgres/src/backend/replication/walsender.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_waldump/pg_waldump.c E:\postgresTest1\new\postgres/src/bin/pg_waldump/pg_waldump.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/xlogreader.h E:\postgresTest1\new\postgres/src/include/access/xlogreader.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/xlogutils.h E:\postgresTest1\new\postgres/src/include/access/xlogutils.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3106
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/perl/TestLib.pm E:\postgresTest1\new\postgres/src/test/perl/TestLib.pm
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3137
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/postmaster/bgwriter.c E:\postgresTest1\new\postgres/src/backend/postmaster/bgwriter.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/postmaster/checkpointer.c E:\postgresTest1\new\postgres/src/backend/postmaster/checkpointer.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/postmaster/startup.c E:\postgresTest1\new\postgres/src/backend/postmaster/startup.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/postmaster/walwriter.c E:\postgresTest1\new\postgres/src/backend/postmaster/walwriter.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/walreceiver.c E:\postgresTest1\new\postgres/src/backend/replication/walreceiver.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3118
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/executor/nodeLimit.c E:\postgresTest1\new\postgres/src/backend/executor/nodeLimit.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/select_parallel.out E:\postgresTest1\new\postgres/src/test/regress/expected/select_parallel.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/select_parallel.sql E:\postgresTest1\new\postgres/src/test/regress/sql/select_parallel.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3133
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/storage/file/fd.c E:\postgresTest1\new\postgres/src/backend/storage/file/fd.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3122
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/selfuncs.c E:\postgresTest1\new\postgres/src/backend/utils/adt/selfuncs.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/inherit.out E:\postgresTest1\new\postgres/src/test/regress/expected/inherit.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/inherit.sql E:\postgresTest1\new\postgres/src/test/regress/sql/inherit.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3102
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/perl/TestLib.pm E:\postgresTest1\new\postgres/src/test/perl/TestLib.pm
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3104
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/optimizer/util/relnode.c E:\postgresTest1\new\postgres/src/backend/optimizer/util/relnode.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3080
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/configure E:\postgresTest1\new\postgres/configure
+line = diff -r E:\postgresTest1\old\postgres/configure.in E:\postgresTest1\new\postgres/configure.in
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/installation.sgml E:\postgresTest1\new\postgres/doc/src/sgml/installation.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/include/c.h E:\postgresTest1\new\postgres/src/include/c.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/pg_config.h.in E:\postgresTest1\new\postgres/src/include/pg_config.h.in
+line = diff -r E:\postgresTest1\old\postgres/src/include/pg_config_manual.h E:\postgresTest1\new\postgres/src/include/pg_config_manual.h
+line = diff -r E:\postgresTest1\old\postgres/src/tools/msvc/Solution.pm E:\postgresTest1\new\postgres/src/tools/msvc/Solution.pm
+line = diff -r E:\postgresTest1\old\postgres/src/tools/msvc/config_default.pl E:\postgresTest1\new\postgres/src/tools/msvc/config_default.pl
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3172
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/perl/TestLib.pm E:\postgresTest1\new\postgres/src/test/perl/TestLib.pm
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3159
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/perl/TestLib.pm E:\postgresTest1\new\postgres/src/test/perl/TestLib.pm
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3093
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_upgrade/check.c E:\postgresTest1\new\postgres/src/bin/pg_upgrade/check.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3368
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_upgrade/check.c E:\postgresTest1\new\postgres/src/bin/pg_upgrade/check.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3096
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/perl/TestLib.pm E:\postgresTest1\new\postgres/src/test/perl/TestLib.pm
+line = diff -r E:\postgresTest1\old\postgres/src/test/recovery/t/013_crash_restart.pl E:\postgresTest1\new\postgres/src/test/recovery/t/013_crash_restart.pl
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3110
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/t/050_dropdb.pl E:\postgresTest1\new\postgres/src/bin/scripts/t/050_dropdb.pl
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3078
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/contrib/fuzzystrmatch/fuzzystrmatch.c E:\postgresTest1\new\postgres/contrib/fuzzystrmatch/fuzzystrmatch.c
+line = diff -r E:\postgresTest1\old\postgres/contrib/ltree/ltxtquery_io.c E:\postgresTest1\new\postgres/contrib/ltree/ltxtquery_io.c
+line = diff -r E:\postgresTest1\old\postgres/contrib/pg_standby/pg_standby.c E:\postgresTest1\new\postgres/contrib/pg_standby/pg_standby.c
+line = diff -r E:\postgresTest1\old\postgres/contrib/pgcrypto/mbuf.c E:\postgresTest1\new\postgres/contrib/pgcrypto/mbuf.c
+line = diff -r E:\postgresTest1\old\postgres/contrib/seg/seg.c E:\postgresTest1\new\postgres/contrib/seg/seg.c
+line = diff -r E:\postgresTest1\old\postgres/contrib/sepgsql/selinux.c E:\postgresTest1\new\postgres/contrib/sepgsql/selinux.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/gist/gist.c E:\postgresTest1\new\postgres/src/backend/access/gist/gist.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/rmgrdesc/genericdesc.c E:\postgresTest1\new\postgres/src/backend/access/rmgrdesc/genericdesc.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/transam/twophase.c E:\postgresTest1\new\postgres/src/backend/access/transam/twophase.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/transam/xact.c E:\postgresTest1\new\postgres/src/backend/access/transam/xact.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/executor/nodeTableFuncscan.c E:\postgresTest1\new\postgres/src/backend/executor/nodeTableFuncscan.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/jit/llvm/llvmjit.c E:\postgresTest1\new\postgres/src/backend/jit/llvm/llvmjit.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/libpq/hba.c E:\postgresTest1\new\postgres/src/backend/libpq/hba.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/logical/launcher.c E:\postgresTest1\new\postgres/src/backend/replication/logical/launcher.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/walsender.c E:\postgresTest1\new\postgres/src/backend/replication/walsender.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/rewrite/rowsecurity.c E:\postgresTest1\new\postgres/src/backend/rewrite/rowsecurity.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/datetime.c E:\postgresTest1\new\postgres/src/backend/utils/adt/datetime.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_ctl/pg_ctl.c E:\postgresTest1\new\postgres/src/bin/pg_ctl/pg_ctl.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_dump/compress_io.c E:\postgresTest1\new\postgres/src/bin/pg_dump/compress_io.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_dump/pg_backup_archiver.c E:\postgresTest1\new\postgres/src/bin/pg_dump/pg_backup_archiver.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_dump/pg_backup_custom.c E:\postgresTest1\new\postgres/src/bin/pg_dump/pg_backup_custom.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_dump/pg_backup_directory.c E:\postgresTest1\new\postgres/src/bin/pg_dump/pg_backup_directory.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_dump/pg_backup_null.c E:\postgresTest1\new\postgres/src/bin/pg_dump/pg_backup_null.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_dump/pg_backup_tar.c E:\postgresTest1\new\postgres/src/bin/pg_dump/pg_backup_tar.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_dump/pg_dump.c E:\postgresTest1\new\postgres/src/bin/pg_dump/pg_dump.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_upgrade/parallel.c E:\postgresTest1\new\postgres/src/bin/pg_upgrade/parallel.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_upgrade/relfilenode.c E:\postgresTest1\new\postgres/src/bin/pg_upgrade/relfilenode.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_upgrade/tablespace.c E:\postgresTest1\new\postgres/src/bin/pg_upgrade/tablespace.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/common.c E:\postgresTest1\new\postgres/src/bin/psql/common.c
+line = diff -r E:\postgresTest1\old\postgres/src/fe_utils/print.c E:\postgresTest1\new\postgres/src/fe_utils/print.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/compatlib/informix.c E:\postgresTest1\new\postgres/src/interfaces/ecpg/compatlib/informix.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/pgtypeslib/datetime.c E:\postgresTest1\new\postgres/src/interfaces/ecpg/pgtypeslib/datetime.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/pgtypeslib/dt_common.c E:\postgresTest1\new\postgres/src/interfaces/ecpg/pgtypeslib/dt_common.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/pgtypeslib/timestamp.c E:\postgresTest1\new\postgres/src/interfaces/ecpg/pgtypeslib/timestamp.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/libpq/fe-auth-scram.c E:\postgresTest1\new\postgres/src/interfaces/libpq/fe-auth-scram.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plperl/plperl.c E:\postgresTest1\new\postgres/src/pl/plperl/plperl.c
+line = diff -r E:\postgresTest1\old\postgres/src/pl/plpgsql/src/pl_exec.c E:\postgresTest1\new\postgres/src/pl/plpgsql/src/pl_exec.c
+line = diff -r E:\postgresTest1\old\postgres/src/port/win32error.c E:\postgresTest1\new\postgres/src/port/win32error.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/examples/testlo.c E:\postgresTest1\new\postgres/src/test/examples/testlo.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/examples/testlo64.c E:\postgresTest1\new\postgres/src/test/examples/testlo64.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3387
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/statistics/dependencies.c E:\postgresTest1\new\postgres/src/backend/statistics/dependencies.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/statistics/extended_stats.c E:\postgresTest1\new\postgres/src/backend/statistics/extended_stats.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/statistics/statistics.h E:\postgresTest1\new\postgres/src/include/statistics/statistics.h
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/stats_ext.out E:\postgresTest1\new\postgres/src/test/regress/expected/stats_ext.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/stats_ext.sql E:\postgresTest1\new\postgres/src/test/regress/sql/stats_ext.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3328
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/statistics/extended_stats.c E:\postgresTest1\new\postgres/src/backend/statistics/extended_stats.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3161
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/common/pg_lzcompress.c E:\postgresTest1\new\postgres/src/common/pg_lzcompress.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3089
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/commands/prepare.c E:\postgresTest1\new\postgres/src/backend/commands/prepare.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/prepare.out E:\postgresTest1\new\postgres/src/test/regress/expected/prepare.out
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3066
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/catalog/aclchk.c E:\postgresTest1\new\postgres/src/backend/catalog/aclchk.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3107
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/config.sgml E:\postgresTest1\new\postgres/doc/src/sgml/config.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/misc/guc.c E:\postgresTest1\new\postgres/src/backend/utils/misc/guc.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3081
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/modules/unsafe_tests/Makefile E:\postgresTest1\new\postgres/src/test/modules/unsafe_tests/Makefile
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/alter_table.out E:\postgresTest1\new\postgres/src/test/regress/expected/alter_table.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/alter_table.sql E:\postgresTest1\new\postgres/src/test/regress/sql/alter_table.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3170
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/rangetypes_typanalyze.c E:\postgresTest1\new\postgres/src/backend/utils/adt/rangetypes_typanalyze.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3157
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/t/050_dropdb.pl E:\postgresTest1\new\postgres/src/bin/scripts/t/050_dropdb.pl
+line = diff -r E:\postgresTest1\old\postgres/src/test/perl/TestLib.pm E:\postgresTest1\new\postgres/src/test/perl/TestLib.pm
+line = diff -r E:\postgresTest1\old\postgres/src/test/recovery/t/013_crash_restart.pl E:\postgresTest1\new\postgres/src/test/recovery/t/013_crash_restart.pl
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3087
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/pgtypeslib/timestamp.c E:\postgresTest1\new\postgres/src/interfaces/ecpg/pgtypeslib/timestamp.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/test/expected/pgtypeslib-dt_test.c E:\postgresTest1\new\postgres/src/interfaces/ecpg/test/expected/pgtypeslib-dt_test.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/test/expected/pgtypeslib-dt_test.stderr E:\postgresTest1\new\postgres/src/interfaces/ecpg/test/expected/pgtypeslib-dt_test.stderr
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/test/expected/pgtypeslib-dt_test.stdout E:\postgresTest1\new\postgres/src/interfaces/ecpg/test/expected/pgtypeslib-dt_test.stdout
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/ecpg/test/pgtypeslib/dt_test.pgc E:\postgresTest1\new\postgres/src/interfaces/ecpg/test/pgtypeslib/dt_test.pgc
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3117
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/contrib/dblink/expected/dblink.out E:\postgresTest1\new\postgres/contrib/dblink/expected/dblink.out
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/libpq.sgml E:\postgresTest1\new\postgres/doc/src/sgml/libpq.sgml
+line = diff -r E:\postgresTest1\old\postgres/doc/src/sgml/postgres-fdw.sgml E:\postgresTest1\new\postgres/doc/src/sgml/postgres-fdw.sgml
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/libpq/exports.txt E:\postgresTest1\new\postgres/src/interfaces/libpq/exports.txt
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/libpq/fe-connect.c E:\postgresTest1\new\postgres/src/interfaces/libpq/fe-connect.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/libpq/fe-secure-openssl.c E:\postgresTest1\new\postgres/src/interfaces/libpq/fe-secure-openssl.c
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/libpq/libpq-fe.h E:\postgresTest1\new\postgres/src/interfaces/libpq/libpq-fe.h
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/libpq/libpq-int.h E:\postgresTest1\new\postgres/src/interfaces/libpq/libpq-int.h
+line = diff -r E:\postgresTest1\old\postgres/src/test/ssl/Makefile E:\postgresTest1\new\postgres/src/test/ssl/Makefile
+line = diff -r E:\postgresTest1\old\postgres/src/test/ssl/t/001_ssltests.pl E:\postgresTest1\new\postgres/src/test/ssl/t/001_ssltests.pl
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3182
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/catalog/heap.c E:\postgresTest1\new\postgres/src/backend/catalog/heap.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/catalog/index.c E:\postgresTest1\new\postgres/src/backend/catalog/index.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/cache/relcache.c E:\postgresTest1\new\postgres/src/backend/utils/cache/relcache.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/catalog/index.h E:\postgresTest1\new\postgres/src/include/catalog/index.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/utils/relcache.h E:\postgresTest1\new\postgres/src/include/utils/relcache.h
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/temp.out E:\postgresTest1\new\postgres/src/test/regress/expected/temp.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/temp.sql E:\postgresTest1\new\postgres/src/test/regress/sql/temp.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3258
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/interfaces/libpq/fe-secure.c E:\postgresTest1\new\postgres/src/interfaces/libpq/fe-secure.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3143
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/command.c E:\postgresTest1\new\postgres/src/bin/psql/command.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/common.c E:\postgresTest1\new\postgres/src/bin/psql/common.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/common.h E:\postgresTest1\new\postgres/src/bin/psql/common.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/large_obj.c E:\postgresTest1\new\postgres/src/bin/psql/large_obj.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/psql/startup.c E:\postgresTest1\new\postgres/src/bin/psql/startup.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/clusterdb.c E:\postgresTest1\new\postgres/src/bin/scripts/clusterdb.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/common.c E:\postgresTest1\new\postgres/src/bin/scripts/common.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/common.h E:\postgresTest1\new\postgres/src/bin/scripts/common.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/reindexdb.c E:\postgresTest1\new\postgres/src/bin/scripts/reindexdb.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/vacuumdb.c E:\postgresTest1\new\postgres/src/bin/scripts/vacuumdb.c
+line = diff -r E:\postgresTest1\old\postgres/src/fe_utils/Makefile E:\postgresTest1\new\postgres/src/fe_utils/Makefile
+line = diff -r E:\postgresTest1\old\postgres/src/tools/msvc/Mkvcbuild.pm E:\postgresTest1\new\postgres/src/tools/msvc/Mkvcbuild.pm
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3191
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pgbench/pgbench.c E:\postgresTest1\new\postgres/src/bin/pgbench/pgbench.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3157
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/contrib/postgres_fdw/expected/postgres_fdw.out E:\postgresTest1\new\postgres/contrib/postgres_fdw/expected/postgres_fdw.out
+line = diff -r E:\postgresTest1\old\postgres/contrib/postgres_fdw/postgres_fdw.c E:\postgresTest1\new\postgres/contrib/postgres_fdw/postgres_fdw.c
+line = diff -r E:\postgresTest1\old\postgres/contrib/postgres_fdw/postgres_fdw.h E:\postgresTest1\new\postgres/contrib/postgres_fdw/postgres_fdw.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3269
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/nodes/copyfuncs.c E:\postgresTest1\new\postgres/src/backend/nodes/copyfuncs.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/nodes/equalfuncs.c E:\postgresTest1\new\postgres/src/backend/nodes/equalfuncs.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/nodes/nodeFuncs.c E:\postgresTest1\new\postgres/src/backend/nodes/nodeFuncs.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/nodes/outfuncs.c E:\postgresTest1\new\postgres/src/backend/nodes/outfuncs.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/optimizer/prep/prepjointree.c E:\postgresTest1\new\postgres/src/backend/optimizer/prep/prepjointree.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/optimizer/util/appendinfo.c E:\postgresTest1\new\postgres/src/backend/optimizer/util/appendinfo.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/utils/adt/selfuncs.c E:\postgresTest1\new\postgres/src/backend/utils/adt/selfuncs.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/nodes/pathnodes.h E:\postgresTest1\new\postgres/src/include/nodes/pathnodes.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3235
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/contrib/postgres_fdw/expected/postgres_fdw.out E:\postgresTest1\new\postgres/contrib/postgres_fdw/expected/postgres_fdw.out
+line = diff -r E:\postgresTest1\old\postgres/src/backend/optimizer/util/inherit.c E:\postgresTest1\new\postgres/src/backend/optimizer/util/inherit.c
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/aggregates.out E:\postgresTest1\new\postgres/src/test/regress/expected/aggregates.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/alter_table.out E:\postgresTest1\new\postgres/src/test/regress/expected/alter_table.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/inherit.out E:\postgresTest1\new\postgres/src/test/regress/expected/inherit.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/partition_aggregate.out E:\postgresTest1\new\postgres/src/test/regress/expected/partition_aggregate.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/partition_join.out E:\postgresTest1\new\postgres/src/test/regress/expected/partition_join.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/partition_prune.out E:\postgresTest1\new\postgres/src/test/regress/expected/partition_prune.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/rowsecurity.out E:\postgresTest1\new\postgres/src/test/regress/expected/rowsecurity.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/select_parallel.out E:\postgresTest1\new\postgres/src/test/regress/expected/select_parallel.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/tablesample.out E:\postgresTest1\new\postgres/src/test/regress/expected/tablesample.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/union.out E:\postgresTest1\new\postgres/src/test/regress/expected/union.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/updatable_views.out E:\postgresTest1\new\postgres/src/test/regress/expected/updatable_views.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/update.out E:\postgresTest1\new\postgres/src/test/regress/expected/update.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/expected/with.out E:\postgresTest1\new\postgres/src/test/regress/expected/with.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/regress/sql/partition_prune.sql E:\postgresTest1\new\postgres/src/test/regress/sql/partition_prune.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3470
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pg_ctl/t/001_start_stop.pl E:\postgresTest1\new\postgres/src/bin/pg_ctl/t/001_start_stop.pl
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3358
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/transam/xlog.c E:\postgresTest1\new\postgres/src/backend/access/transam/xlog.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/transam/xlogutils.c E:\postgresTest1\new\postgres/src/backend/access/transam/xlogutils.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/walreceiver.c E:\postgresTest1\new\postgres/src/backend/replication/walreceiver.c
+line = diff -r E:\postgresTest1\old\postgres/src/backend/replication/walsender.c E:\postgresTest1\new\postgres/src/backend/replication/walsender.c
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/xlog.h E:\postgresTest1\new\postgres/src/include/access/xlog.h
+line = diff -r E:\postgresTest1\old\postgres/src/include/access/xlog_internal.h E:\postgresTest1\new\postgres/src/include/access/xlog_internal.h
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3102
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/test/modules/unsafe_tests/expected/alter_system_table.out E:\postgresTest1\new\postgres/src/test/modules/unsafe_tests/expected/alter_system_table.out
+line = diff -r E:\postgresTest1\old\postgres/src/test/modules/unsafe_tests/sql/alter_system_table.sql E:\postgresTest1\new\postgres/src/test/modules/unsafe_tests/sql/alter_system_table.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3151
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/access/transam/xlog.c E:\postgresTest1\new\postgres/src/backend/access/transam/xlog.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3098
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/contrib/postgres_fdw/expected/postgres_fdw.out E:\postgresTest1\new\postgres/contrib/postgres_fdw/expected/postgres_fdw.out
+line = diff -r E:\postgresTest1\old\postgres/contrib/postgres_fdw/postgres_fdw.c E:\postgresTest1\new\postgres/contrib/postgres_fdw/postgres_fdw.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3145
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/contrib/dict_int/dict_int.c E:\postgresTest1\new\postgres/contrib/dict_int/dict_int.c
+line = diff -r E:\postgresTest1\old\postgres/contrib/dict_int/expected/dict_int.out E:\postgresTest1\new\postgres/contrib/dict_int/expected/dict_int.out
+line = diff -r E:\postgresTest1\old\postgres/contrib/dict_int/sql/dict_int.sql E:\postgresTest1\new\postgres/contrib/dict_int/sql/dict_int.sql
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3154
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/clusterdb.c E:\postgresTest1\new\postgres/src/bin/scripts/clusterdb.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/common.c E:\postgresTest1\new\postgres/src/bin/scripts/common.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/common.h E:\postgresTest1\new\postgres/src/bin/scripts/common.h
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/reindexdb.c E:\postgresTest1\new\postgres/src/bin/scripts/reindexdb.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/scripts_parallel.c E:\postgresTest1\new\postgres/src/bin/scripts/scripts_parallel.c
+line = diff -r E:\postgresTest1\old\postgres/src/bin/scripts/vacuumdb.c E:\postgresTest1\new\postgres/src/bin/scripts/vacuumdb.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3132
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/bin/pgbench/pgbench.c E:\postgresTest1\new\postgres/src/bin/pgbench/pgbench.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3114
+line = diff -r E:\postgresTest1\old\postgres/.git/HEAD E:\postgresTest1\new\postgres/.git/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/HEAD E:\postgresTest1\new\postgres/.git/logs/HEAD
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/heads/master E:\postgresTest1\new\postgres/.git/logs/refs/heads/master
+line = diff -r E:\postgresTest1\old\postgres/.git/logs/refs/remotes/origin/HEAD E:\postgresTest1\new\postgres/.git/logs/refs/remotes/origin/HEAD
+line = diff -r E:\postgresTest1\old\postgres/src/backend/executor/nodeModifyTable.c E:\postgresTest1\new\postgres/src/backend/executor/nodeModifyTable.c
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Finished : 
+3085
