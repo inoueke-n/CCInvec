@@ -26,27 +26,27 @@ public class TraceManager {
 	public static ArrayList<Block> analyzeBlock(ArrayList<SourceFile> FileList, ArrayList<Block> newBlockList, Config config, AllData allData) {
 		// TODO 自動生成されたメソッド・スタブ
 		// ファイルのdiffを取得
-//		System.out.print("analyze block start");
+		//		System.out.print("analyze block start");
 
 		ArrayList<Block> updatedBlockList = new ArrayList<Block>();
 
-//		long start;
-//		long end;
-//		start = System.currentTimeMillis();
+		//		long start;
+		//		long end;
+		//		start = System.currentTimeMillis();
 		if (!DiffDetector.getDiff_test(FileList, newBlockList, config)) {
 			System.out.println("diff miss ======");
 			Logger.writeln("Can't get diff of source code.", Logger.ERROR);
 			return null;
 		}
-//		end = System.currentTimeMillis();
-//		System.out.println("diff done  time = " + (end - start) + "[ms]");
+		//		end = System.currentTimeMillis();
+		//		System.out.println("diff done  time = " + (end - start) + "[ms]");
 
 		// クローンの分類，コード位置の重複に基づいた親子クローン取得
 		updatedBlockList =  new BlockCategorizer().categorizeBlock(FileList,allData);
 		Logger.writeln("<Success> Categorized clone.", Logger.INFO);
 
 
-	//	System.out.println(" ============ blocksize + " + updatedBlockList.size());
+		//	System.out.println(" ============ blocksize + " + updatedBlockList.size());
 
 		return updatedBlockList;
 
@@ -64,8 +64,10 @@ public class TraceManager {
 			while(i.hasNext()){
 				Block bk = i .next();
 				int category = bk.getCategory();
-				if(category == Block.MODIFIED || category == Block.ADDED) {
-					devidedBlockList.add(bk);
+				if(bk.getFilterCategory() == Block.PASSFILTER) {
+					if(category == Block.MODIFIED || category == Block.ADDED) {
+						devidedBlockList.add(bk);
+					}
 				}
 			}
 		}else if(flag == 1){
@@ -116,7 +118,7 @@ public class TraceManager {
 		for(SourceFile file : FileList) {
 			blockList.addAll(file.getNewBlockList());
 		}
-	//	System.out.println("end getAllBlock");
+		//	System.out.println("end getAllBlock");
 
 		return blockList;
 	}

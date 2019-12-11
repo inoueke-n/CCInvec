@@ -42,7 +42,7 @@ public class BlockCategorizer {
 			}else {
 				if (file.getState() == SourceFile.MODIFIED) {
 					//ここでmodifiedされたファイルだけやるれば効率化と高速化して，normalなやつはすべてstableつければいい
-					//System.out.println("Source File Nomal ");
+					System.out.println("Source File Nomal " + file.getNewPath());
 					categorizeStableModified(file,updatedBlockList, allData);
 				}
 				//System.out.println("=============Source File ADD DELETE ");
@@ -128,7 +128,7 @@ public class BlockCategorizer {
 						if (sim > blockA.getLocationSimilarity()) {
 							blockA.setOldBlock(blockB);
 							blockA.setLocationSimilarity(sim);
-							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList() == blockB.getWordList()) {
+							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList().equals(blockB.getWordList())) {
 								blockA.setCategory(Block.STABLE);
 								blockB.setCategory(Block.STABLE);
 								if(blockA.getVector() == null) {
@@ -152,7 +152,7 @@ public class BlockCategorizer {
 					}else {
 						blockA.setOldBlock(blockB);
 						blockA.setLocationSimilarity(sim);
-						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList() == blockB.getWordList()) {
+						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd &&  blockA.getWordList().equals(blockB.getWordList())) {
 							blockA.setCategory(Block.STABLE);
 							blockB.setCategory(Block.STABLE);
 							if(blockA.getVector() == null) {
@@ -176,7 +176,7 @@ public class BlockCategorizer {
 						if (sim > blockB.getLocationSimilarity()) {
 							blockB.setNewBlock(blockA);
 							blockB.setLocationSimilarity(sim);
-							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList() == blockB.getWordList()) {
+							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList().equals(blockB.getWordList())) {
 								blockA.setCategory(Block.STABLE);
 								blockB.setCategory(Block.STABLE);
 								BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
@@ -191,7 +191,7 @@ public class BlockCategorizer {
 					}else {
 						blockB.setNewBlock(blockA);
 						blockB.setLocationSimilarity(sim);
-						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList() == blockB.getWordList()) {
+						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList().equals(blockB.getWordList())) {
 							blockA.setCategory(Block.STABLE);
 							blockB.setCategory(Block.STABLE);
 							BlockUpdater.updateClonePairBlock(blockA,blockB, allData);

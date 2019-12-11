@@ -125,7 +125,7 @@ public class DiffDetector {
 						fileExtension1 = ".cs";
 					}
 					File fileName = new File(command[3]);
-					if(config.getLang() == 1) {
+					if(config.getLang() == 1 ) {
 						if(fileName.isFile() && fileName.getName().endsWith(fileExtension1) && fileName.getName().endsWith(fileExtension2)){
 							diffSearchFlag = 1;
 							//ここのファイル検索の効率化
@@ -154,11 +154,12 @@ public class DiffDetector {
 								//		   System.out.println("===========miki = "  + file.getNewPath());
 								if(file.getNewPath().contains(command[3].replace("/", "\\"))){
 									subjectFile = file;
-									if(config.getLang() == 1) {
+									if(config.getLang() == 0) {
 										JavaAnalyzer3.analyzeAFile(file, newBlockList);
 
 									}else if(config.getLang() == 2) {
 										CSharpAnalyzer.analyzeAFile(file, newBlockList);
+										System.out.println("analyze new file ");
 									}
 									CloneDetector.updatedCode = true;
 									//System.out.println("=========== newBlock List===============");

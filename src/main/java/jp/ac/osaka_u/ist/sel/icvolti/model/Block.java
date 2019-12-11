@@ -23,6 +23,7 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 	private int methodEndLine;
 	private int category = NULL;
 	private int filterCategory = NULL;
+	private int preFilterCategory = NULL;
 	private String name;
 	// private String code;
 	private double len;
@@ -92,6 +93,10 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 	//	this.endToken = block.getEndToken();
 		this.newBlock = block.getNewBlock();
 		this.newBlock = block.getOldBlock();
+		this.vector = block.getVector();
+		this.len = block.getLen();
+		this.filterCategory = block.getFilterCategory();
+		this.preFilterCategory = block.getPreFilterCategory();
 	}
 
 	/**
@@ -504,8 +509,24 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 	 * <p>フィルターの分類の設定</p>
 	 * @param filterCategory 分類情報
 	 */
-	public void setFileterCategory(int filterCategory) {
+	public void setFilterCategory(int filterCategory) {
 		this.filterCategory = filterCategory;
+	}
+
+	/**
+	 * <p>コードブロックのフィルター分類の取得</p>
+	 * @return 分類情報
+	 */
+	public int getPreFilterCategory() {
+		return preFilterCategory;
+	}
+
+	/**
+	 * <p>フィルターの分類の設定</p>
+	 * @param filterCategory 分類情報
+	 */
+	public void setPreFilterCategory(int preFilterCategory) {
+		this.preFilterCategory = preFilterCategory;
 	}
 
 	/**

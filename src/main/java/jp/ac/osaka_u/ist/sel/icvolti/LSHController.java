@@ -176,7 +176,7 @@ public class LSHController {
 	 * @throws InterruptedException
 	 * @throws IOException
 	 */
-	public void executePartially(List<Block> blockList,List<Block> updatedBlockList, int dimention, int program, Config config) {
+	public void executePartially(ArrayList<Block> blockList, ArrayList<Block> updatedBlockList, int dimention, int program, Config config) {
 		int numHardThread = Runtime.getRuntime().availableProcessors();
 	/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
 			//Config = numHardThread;

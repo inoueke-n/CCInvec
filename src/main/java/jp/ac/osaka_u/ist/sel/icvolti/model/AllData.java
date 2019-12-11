@@ -23,6 +23,7 @@ public class AllData implements  Serializable {
 	static Map<String, Integer> wordMap;
 	static int wordFreq[];
 	static int dimension;
+	static boolean pre_Diff = true;
 
 
 	/**
@@ -120,6 +121,22 @@ public class AllData implements  Serializable {
 	 */
 	public void setVecDimension(int dimension) {
 		this.dimension = dimension;
+	}
+
+	/**
+	 * <p>前回diffがあったかどうか</p>
+	 * @return pre_diff
+	 */
+	public boolean getPreDiff() {
+		return pre_Diff;
+	}
+
+	/**
+	 * <p>前回diffがあったかどうか</p>
+	 * @param pre_diff
+	 */
+	public void setPreDiff(boolean pre_Diff) {
+		this.pre_Diff = pre_Diff;
 	}
 
 	/**
@@ -222,11 +239,11 @@ public class AllData implements  Serializable {
 			allData.setWordMap((Map<String, Integer>) objInStreamWordMap.readObject());
 			objInStreamWordMap.close();
 
-//			ObjectInputStream objInStreamWordFreq
-//			= new ObjectInputStream(
-//					new FileInputStream(DataDir + "\\wordFreq.bin"));
-//			allData.setWordFreq((int[]) objInStreamWordFreq.readObject());
-//			objInStreamWordFreq.close();
+			//			ObjectInputStream objInStreamWordFreq
+			//			= new ObjectInputStream(
+			//					new FileInputStream(DataDir + "\\wordFreq.bin"));
+			//			allData.setWordFreq((int[]) objInStreamWordFreq.readObject());
+			//			objInStreamWordFreq.close();
 
 			return allData;
 
@@ -250,7 +267,7 @@ public class AllData implements  Serializable {
 	public void synchronizeAllData() throws IOException {
 
 		ArrayList<Block> blockList = new ArrayList<>();
-		blockList = createBlockList();
+		blockList.addAll(createBlockList());
 		//blockList.addAll(createBlockList());
 
 		//        FileWriter fw = new FileWriter("test.txt");
@@ -279,72 +296,72 @@ public class AllData implements  Serializable {
 			cp.setCloneB(blockList.get(idB));
 		}
 
-//		for(ClonePair cp : ClonePairList) {
-//			int idA = cp.cloneA.getId();
-//			int idB = cp.cloneB.getId();
-//
-//
-//			if(cp.cloneA.getStartLine() != blockList.get(idA).getStartLine() || cp.cloneA.getEndLine() !=  blockList.get(idA).getEndLine()) {
-//				//	if(CloneDetector.modeDebug) {
-//				System.out.println("no match startline cloneA  startline" + cp.cloneA.getStartLine());
-//				System.out.println("no match end  line cloneA  end  line" + cp.cloneA.getEndLine());
-//				System.out.println("blockList                  startline" + blockList.get(idA).getStartLine());
-//				System.out.println("blockList                  end  line" + blockList.get(idA).getEndLine());
-//				System.out.println("cloneA  file" + cp.cloneA.getFileName());
-//				System.out.println("blockLT file" + blockList.get(idA).getFileName());
-//				System.out.println("cloneA  cate" + cp.cloneA.getCategory());
-//				System.out.println("blockLT cate" + blockList.get(idA).getCategory());
-//				System.out.println("no match startline cloneB  startline" + cp.cloneB.getStartLine());
-//				System.out.println("no match end  line cloneB  end  line" + cp.cloneB.getEndLine());
-//				System.out.println("cloneB  file" + cp.cloneB.getFileName());
-//				System.out.println();
-//				System.out.println();
-//
-//				//	}
-//			}
-//
-//			if(cp.cloneB.getStartLine() != blockList.get(idB).getStartLine() || cp.cloneB.getEndLine() !=  blockList.get(idB).getEndLine()) {
-//				//if(CloneDetector.modeDebug) {
-//				System.out.println("no match startline cloneB  startline" + cp.cloneB.getStartLine());
-//				System.out.println("no match end  line cloneA  end  line" + cp.cloneB.getEndLine());
-//				System.out.println("blockList                  startline" + blockList.get(idB).getStartLine());
-//				System.out.println("blockList                  end  line" + blockList.get(idB).getEndLine());
-//				System.out.println("cloneB  file" + cp.cloneB.getFileName());
-//				System.out.println("blockLT file" + blockList.get(idB).getFileName());
-//				System.out.println("cloneB  cate" + cp.cloneB.getCategory());
-//				System.out.println("blockLT cate" + blockList.get(idB).getCategory());
-//				System.out.println("no match startline cloneA  startline" + cp.cloneA.getStartLine());
-//				System.out.println("no match end  line cloneA  end  line" + cp.cloneA.getEndLine());
-//				System.out.println("cloneA  file" + cp.cloneA.getFileName());
-//				System.out.println();
-//				System.out.println();
-//				//}
-//			}
-//
-//			if((cp.cloneA.getStartLine() != blockList.get(idA).getStartLine() || cp.cloneA.getEndLine() !=  blockList.get(idA).getEndLine()) ||
-//					(cp.cloneB.getStartLine() != blockList.get(idB).getStartLine() || cp.cloneB.getEndLine() !=  blockList.get(idB).getEndLine())) {
-//				ClonePairList.remove(cp);
-//				System.out.println("remove clone pair");
-//			}
-//
-//
-//
-//			//			fw.write("============= = \r\n");
-//			//			fw.write("clone A = " + cp.cloneA.getId() + "\r\n");
-//			//			fw.write("clone B = " + cp.cloneB.getId());
-//			//			fw.write("clone A fileName = " + cp.cloneA.getFileName() + "\r\n");
-//			//			fw.write("clone B fileName = " + cp.cloneB.getFileName() + "\r\n");
-//			//			fw.write("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine() + "\r\n");
-//			//			fw.write("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine() + "\r\n");
-//			//			fw.write("============= =  \\r\\n");
-//
-//			cp.cloneA = null;
-//			cp.cloneB = null;
-//
-//			cp.setCloneA(blockList.get(idA));
-//			cp.setCloneB(blockList.get(idB));
-//
-//		}
+		//		for(ClonePair cp : ClonePairList) {
+		//			int idA = cp.cloneA.getId();
+		//			int idB = cp.cloneB.getId();
+		//
+		//
+		//			if(cp.cloneA.getStartLine() != blockList.get(idA).getStartLine() || cp.cloneA.getEndLine() !=  blockList.get(idA).getEndLine()) {
+		//				//	if(CloneDetector.modeDebug) {
+		//				System.out.println("no match startline cloneA  startline" + cp.cloneA.getStartLine());
+		//				System.out.println("no match end  line cloneA  end  line" + cp.cloneA.getEndLine());
+		//				System.out.println("blockList                  startline" + blockList.get(idA).getStartLine());
+		//				System.out.println("blockList                  end  line" + blockList.get(idA).getEndLine());
+		//				System.out.println("cloneA  file" + cp.cloneA.getFileName());
+		//				System.out.println("blockLT file" + blockList.get(idA).getFileName());
+		//				System.out.println("cloneA  cate" + cp.cloneA.getCategory());
+		//				System.out.println("blockLT cate" + blockList.get(idA).getCategory());
+		//				System.out.println("no match startline cloneB  startline" + cp.cloneB.getStartLine());
+		//				System.out.println("no match end  line cloneB  end  line" + cp.cloneB.getEndLine());
+		//				System.out.println("cloneB  file" + cp.cloneB.getFileName());
+		//				System.out.println();
+		//				System.out.println();
+		//
+		//				//	}
+		//			}
+		//
+		//			if(cp.cloneB.getStartLine() != blockList.get(idB).getStartLine() || cp.cloneB.getEndLine() !=  blockList.get(idB).getEndLine()) {
+		//				//if(CloneDetector.modeDebug) {
+		//				System.out.println("no match startline cloneB  startline" + cp.cloneB.getStartLine());
+		//				System.out.println("no match end  line cloneA  end  line" + cp.cloneB.getEndLine());
+		//				System.out.println("blockList                  startline" + blockList.get(idB).getStartLine());
+		//				System.out.println("blockList                  end  line" + blockList.get(idB).getEndLine());
+		//				System.out.println("cloneB  file" + cp.cloneB.getFileName());
+		//				System.out.println("blockLT file" + blockList.get(idB).getFileName());
+		//				System.out.println("cloneB  cate" + cp.cloneB.getCategory());
+		//				System.out.println("blockLT cate" + blockList.get(idB).getCategory());
+		//				System.out.println("no match startline cloneA  startline" + cp.cloneA.getStartLine());
+		//				System.out.println("no match end  line cloneA  end  line" + cp.cloneA.getEndLine());
+		//				System.out.println("cloneA  file" + cp.cloneA.getFileName());
+		//				System.out.println();
+		//				System.out.println();
+		//				//}
+		//			}
+		//
+		//			if((cp.cloneA.getStartLine() != blockList.get(idA).getStartLine() || cp.cloneA.getEndLine() !=  blockList.get(idA).getEndLine()) ||
+		//					(cp.cloneB.getStartLine() != blockList.get(idB).getStartLine() || cp.cloneB.getEndLine() !=  blockList.get(idB).getEndLine())) {
+		//				ClonePairList.remove(cp);
+		//				System.out.println("remove clone pair");
+		//			}
+		//
+		//
+		//
+		//			//			fw.write("============= = \r\n");
+		//			//			fw.write("clone A = " + cp.cloneA.getId() + "\r\n");
+		//			//			fw.write("clone B = " + cp.cloneB.getId());
+		//			//			fw.write("clone A fileName = " + cp.cloneA.getFileName() + "\r\n");
+		//			//			fw.write("clone B fileName = " + cp.cloneB.getFileName() + "\r\n");
+		//			//			fw.write("clone A startLine =" + cp.cloneA.getStartLine() + "endline = " + cp.cloneA.getEndLine() + "\r\n");
+		//			//			fw.write("clone B startLine =" + cp.cloneB.getStartLine() + "endline = " + cp.cloneB.getEndLine() + "\r\n");
+		//			//			fw.write("============= =  \\r\\n");
+		//
+		//			cp.cloneA = null;
+		//			cp.cloneB = null;
+		//
+		//			cp.setCloneA(blockList.get(idA));
+		//			cp.setCloneB(blockList.get(idB));
+		//
+		//		}
 
 		//		fw.close();
 
@@ -426,25 +443,37 @@ public class AllData implements  Serializable {
 		ArrayList<Block> blockList = new ArrayList<>();
 		for (SourceFile file : SourceFileList) {
 			for(Block block :file.getNewBlockList()) {
-				if(block.getFilterCategory() == Block.PASSFILTER) {
-					//block.setFileterCategory(Block.NO_FILTER);
-					//System.out.println("PASS FILTER");
-					blockList.add(block);
-				}
-//				else {
-//					System.out.println("not added  " + block.getFileName());
-//					System.out.println("start line " + block.getStartLine());
-//					System.out.println("end   line " + block.getEndLine());
+				if(pre_Diff) {
+					if(block.getFilterCategory() == Block.PASSFILTER) {
+						block.setFilterCategory(Block.NO_FILTER);
+						System.out.println("PASS FILTER");
+						blockList.add(block);
+					}
+					else {
+						System.out.println("not added  " + block.getFileName());
+						System.out.println("start line " + block.getStartLine());
+						System.out.println("end   line " + block.getEndLine());
+					}
+				}else {
+					if(block.getPreFilterCategory() == Block.PASSFILTER) {
+						System.out.println("PASS FILTER");
+						blockList.add(block);
+					}
+					else {
+						System.out.println("not added  " + block.getFileName());
+						System.out.println("start line " + block.getStartLine());
+					}
 
-//				}
+				}
+
 			}
 			//blockList.addAll(file.getNewBlockList());
 		}
 		int i =0;
 		for(Block block : blockList) {
-			if(BlockListOfCalcedVec.get(i).getWordList() == null) {
-				System.out.println("vec null " + i );
-			}
+			//			if(BlockListOfCalcedVec.get(i).getWordList() == null) {
+			//				System.out.println("vec null " + i );
+			//			}
 			block.setWordList(BlockListOfCalcedVec.get(i).getWordList());
 			block.setVector(BlockListOfCalcedVec.get(i).getVector());
 			block.setLen(BlockListOfCalcedVec.get(i).getLen());

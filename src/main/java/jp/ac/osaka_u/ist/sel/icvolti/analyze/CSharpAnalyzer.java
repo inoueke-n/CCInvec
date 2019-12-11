@@ -369,7 +369,9 @@ public class CSharpAnalyzer {
 				}
 				// if we parse ok, it's LL not SLL
 			}
-			blockList.addAll(extractMethod(tree, parser, Block.NULL));
+			//
+			file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL));
+			blockList.addAll(file.getNewBlockList());
 			countParseFiles++;
 			CloneDetector.countLine += tokens.get(tokens.size() - 1).getLine();
 
@@ -499,7 +501,6 @@ public class CSharpAnalyzer {
 		file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL));
 		newBlockList.addAll(file.getNewBlockList());
 
-		newBlockList.addAll(file.getNewBlockList());
 	}
 	/**
 	 * <p>
@@ -639,7 +640,8 @@ public class CSharpAnalyzer {
 					}
 					// if we parse ok, it's LL not SLL
 				}
-				blockList.addAll(extractMethod(tree, parser, Block.ADDED));
+				file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL));
+				blockList.addAll(file.getNewBlockList());
 				countParseFiles++;
 				CloneDetector.countLine += tokens.get(tokens.size() - 1).getLine();
 

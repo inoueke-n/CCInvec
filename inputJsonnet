@@ -1,0 +1,15 @@
+LANGUAGE:csharp
+OUTPUT_FORMAT:csv
+PRE_DATA:false
+DATA_DIR:E:\ICVolti_DataForJsonnet\ICVoltiData1\Data
+OUTPUT_DIR:E:\ICVolti_DataForJsonnet\ICVoltiData1\Output
+TARGET_GIT:true
+NEW_DIR:E:\jsonnetTest1\new\Newtonsoft.Json
+OLD_DIR:E:\jsonnetTest1\old\Newtonsoft.Json
+COMMIT_ID:23be46f665887c9be03faf7864ae98890ca08246
+e27710ffaa6d31e0d3f6d03f9760ad1474bab2a8
+cb09e67abe181d3a2b6eda424f9023cecf191493
+0688f3f206eefb1ad5e4f2d8dfe89eafa5988443
+7c3d7f8da7e35dde8fa74188b0decff70f8f10e3
+9be95e0f6aedf5cdc108b058bf71f0839911e0c9
+936acbf622b51dcc2fbd214199d22c7a639d3c1b
