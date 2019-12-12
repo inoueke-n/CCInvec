@@ -23,6 +23,7 @@ public class AllData implements  Serializable {
 	static Map<String, Integer> wordMap;
 	static int wordFreq[];
 	static int dimension;
+	static String detectingCommitId = null;;
 	static boolean pre_Diff = true;
 
 
@@ -138,6 +139,17 @@ public class AllData implements  Serializable {
 	public void setPreDiff(boolean pre_Diff) {
 		this.pre_Diff = pre_Diff;
 	}
+
+
+	public String getDetectingCommitId() {
+		return detectingCommitId;
+	}
+
+
+	public void setDetectingCommitId(String detectingCommitId) {
+		this.detectingCommitId = detectingCommitId;
+	}
+
 
 	/**
 	 * <p>

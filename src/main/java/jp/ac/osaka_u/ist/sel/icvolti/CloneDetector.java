@@ -35,12 +35,15 @@ public class CloneDetector {
 	public static final boolean lda = false;
 	public static final boolean absoluteTracking = true;
 
-	public static final boolean modeDebug = true;
-	public static final boolean modeStdout = true;
+	public static final boolean modeDebug = false;
+	public static final boolean modeStdout = false;
 	public static final boolean modeTimeMeasure = false;
+	public static final boolean modeEvalForOnlyDiffVer = true;
 
 	public static boolean finalLoop =false;
-	public static boolean updatedCode =false;
+	public static boolean modifiedSourceFile =false;
+	public static boolean addedSourceFile =false;
+	public static boolean deletedSourceFile =false;
 
 
 	public static String javaClassPath;
@@ -92,6 +95,7 @@ public class CloneDetector {
 							String newCommitId = config.getInputCommitId().get(i);
 							ControlGit.checkout(config.getNewTarget(), newCommitId);
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
+							allData.setDetectingCommitId(newCommitId);
 							allData = firstRun(config);
 							num++;
 						}else {
@@ -103,6 +107,7 @@ public class CloneDetector {
 							ControlGit.checkout(config.getOldTarget(), oldCommitId);
 							ControlGit.checkout(config.getNewTarget(), newCommitId);
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
+							allData.setDetectingCommitId(newCommitId);
 							//							allData.synchronizeAllData();
 							allData = incrementalRun(config, i, allData);
 							num++;
@@ -379,7 +384,7 @@ public class CloneDetector {
 		allData.setClonePairList(clonePairList);
 		allData.setBlockListOfCalcedVec(blockList);
 
-		System.out.println("blockList size " + blockList.size());
+		//		System.out.println("blockList size " + blockList.size());
 
 		int i =0;
 		for(Block block : blockList) {
@@ -408,7 +413,11 @@ public class CloneDetector {
 			System.out.println(currentTime - start + "[ms]");
 		}
 
-		System.out.println(currentTime - start);
+		if(config.getTargetGit()) {
+			System.out.println(currentTime - start + "," + allData.getDetectingCommitId());
+		}else {
+			System.out.println(currentTime - start);
+		}
 
 		if(modeStdout) {
 			System.out.println("Finished : ");
@@ -518,7 +527,6 @@ public class CloneDetector {
 			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
-			System.out.println("CCCCCCCCCCPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
 
 			updatedBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 2));
 			long cEnd = System.currentTimeMillis();
@@ -548,17 +556,6 @@ public class CloneDetector {
 			break;
 		}
 
-		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-		for(Block block : allBlockList) {
-			if(block.getPreFilterCategory() == Block.PASSFILTER && block.getVector() == null) {
-				System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-				System.out.println("ID        "+ block.getId() );
-				System.out.println("fileName  "+ block.getFileName());
-				System.out.println("startLine "+ block.getStartLine());
-				System.out.println("endLine   "+ block.getEndLine());
-				System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-			}
-		}
 
 		//		System.out.println("The number of methods : " + countMethod);
 		//		System.out.println("The number of blocks (Excluding methods) : " + countBlock);
@@ -566,7 +563,7 @@ public class CloneDetector {
 		//		System.out.println("Extract word in source code done : " + (System.currentTimeMillis() - start) + "[ms]");
 		//		System.out.println();
 
-		if(updatedCode) {
+		if(modifiedSourceFile || addedSourceFile || deletedSourceFile) {
 			allData.setPreDiff(true);
 
 			long resetStart = System.currentTimeMillis();
@@ -583,33 +580,8 @@ public class CloneDetector {
 			VectorCalculator calculator = new VectorCalculator();
 			//		blockList = calculator.filterMethod(blockList);
 			//newBlockList = calculator.filterMethod(newBlockList);
-			System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-			for(Block block : allBlockList) {
-				if(block.getPreFilterCategory() == Block.PASSFILTER && block.getVector() == null && block.getCategory() == Block.STABLE) {
-					System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-					System.out.println("category        "+ block.getCategory());
-					System.out.println("ID        "+ block.getId() );
-					System.out.println("fileName  "+ block.getFileName());
-					System.out.println("startLine "+ block.getStartLine());
-					System.out.println("endLine   "+ block.getEndLine());
-					System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-				}
-			}
 			long vecStart = System.currentTimeMillis();
 			allBlockList = calculator.increFilterMethod(allBlockList, config, allData);
-
-			System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-			for(Block block : allBlockList) {
-				if(block.getPreFilterCategory() == Block.PASSFILTER && block.getVector() == null && block.getCategory() == Block.STABLE) {
-					System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-					System.out.println("category        "+ block.getCategory());
-					System.out.println("ID        "+ block.getId() );
-					System.out.println("fileName  "+ block.getFileName());
-					System.out.println("startLine "+ block.getStartLine());
-					System.out.println("endLine   "+ block.getEndLine());
-					System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-				}
-			}
 
 
 			addedModifiedBlockList = TraceManager.devideBlockCategory(allBlockList, 0);
@@ -621,37 +593,12 @@ public class CloneDetector {
 			//
 			//		System.out.println("Calculate vector of each method ...");
 
-			System.out.println("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
-			for(Block block : allBlockList) {
-				if(block.getPreFilterCategory() == Block.PASSFILTER && block.getVector() == null && block.getCategory() == Block.STABLE) {
-					System.out.println("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
-					System.out.println("category        "+ block.getCategory());
-					System.out.println("ID        "+ block.getId() );
-					System.out.println("fileName  "+ block.getFileName());
-					System.out.println("startLine "+ block.getStartLine());
-					System.out.println("endLine   "+ block.getEndLine());
-					System.out.println("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
-				}
-			}
 
-			System.out.println("allblockList size " + allBlockList.size());
+			//			System.out.println("allblockList size " + allBlockList.size());
 
 			if(addedModifiedBlockList.size() > 0 && allBlockList.size() > 0) {
 
 				allBlockList = calculator.increCalculateVector(allBlockList, addedModifiedBlockList, allData);
-
-				System.out.println("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
-				for(Block block : allBlockList) {
-					if(block.getPreFilterCategory() == Block.PASSFILTER && block.getVector() == null && block.getCategory() == Block.STABLE) {
-						System.out.println("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
-						System.out.println("category        "+ block.getCategory());
-						System.out.println("ID        "+ block.getId() );
-						System.out.println("fileName  "+ block.getFileName());
-						System.out.println("startLine "+ block.getStartLine());
-						System.out.println("endLine   "+ block.getEndLine());
-						System.out.println("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
-					}
-				}
 
 
 				//				allBlockList = calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);
@@ -681,49 +628,49 @@ public class CloneDetector {
 					//	ArrayList<ClonePair> addedClonePair = new ArrayList<ClonePair>();
 					//addedClonePair = cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, config);
 					//cloneJudge,insertClonePairToList(ClonePairList_test, addedClonePair);
-					int i =0;
-					for(Block block : addedModifiedBlockList) {
-						if(block.getFileName().contains("JsonSerializerInternalReader.cs")) {
-							System.out.println("++++++++++++++++++++++++++++++++");
-							System.out.println("ID        "+ block.getId() );
-							System.out.println("fileName  "+ block.getFileName());
-							System.out.println("startLine "+ block.getStartLine());
-							System.out.println("endLine   "+ block.getEndLine());
-							System.out.println("++++++++++++++++++++++++++++++++");
-						}
-						if(block.getVector() == null) {
-							System.out.println("vec null " + i);
-							System.out.println("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
-							System.out.println("ID        "+ block.getId() );
-							System.out.println("fileName  "+ block.getFileName());
-							System.out.println("startLine "+ block.getStartLine());
-							System.out.println("endLine   "+ block.getEndLine());
-							System.out.println("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
-
-						}
-						i++;
-					}
-					int j =0;
-					for(Block block : allBlockList) {
-						if(block.getFileName().contains("JsonSerializerInternalReader.cs")) {
-							System.out.println("====================================");
-							System.out.println("ID        "+ block.getId() );
-							System.out.println("fileName  "+ block.getFileName());
-							System.out.println("startLine "+ block.getStartLine());
-							System.out.println("endLine   "+ block.getEndLine());
-							System.out.println("====================================");
-						}
-						if(block.getVector() == null) {
-							System.out.println("vec null " + j);
-							System.out.println("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
-							System.out.println("ID        "+ block.getId() );
-							System.out.println("fileName  "+ block.getFileName());
-							System.out.println("startLine "+ block.getStartLine());
-							System.out.println("endLine   "+ block.getEndLine());
-							System.out.println("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
-						}
-						j++;
-					}
+//					int i =0;
+//					for(Block block : addedModifiedBlockList) {
+//						if(block.getFileName().contains("JsonSerializerInternalReader.cs")) {
+//							System.out.println("++++++++++++++++++++++++++++++++");
+//							System.out.println("ID        "+ block.getId() );
+//							System.out.println("fileName  "+ block.getFileName());
+//							System.out.println("startLine "+ block.getStartLine());
+//							System.out.println("endLine   "+ block.getEndLine());
+//							System.out.println("++++++++++++++++++++++++++++++++");
+//						}
+//						if(block.getVector() == null) {
+//							System.out.println("vec null " + i);
+//							System.out.println("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
+//							System.out.println("ID        "+ block.getId() );
+//							System.out.println("fileName  "+ block.getFileName());
+//							System.out.println("startLine "+ block.getStartLine());
+//							System.out.println("endLine   "+ block.getEndLine());
+//							System.out.println("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
+//
+//						}
+//						i++;
+//					}
+//					int j =0;
+//					for(Block block : allBlockList) {
+//						if(block.getFileName().contains("JsonSerializerInternalReader.cs")) {
+//							System.out.println("====================================");
+//							System.out.println("ID        "+ block.getId() );
+//							System.out.println("fileName  "+ block.getFileName());
+//							System.out.println("startLine "+ block.getStartLine());
+//							System.out.println("endLine   "+ block.getEndLine());
+//							System.out.println("====================================");
+//						}
+//						if(block.getVector() == null) {
+//							System.out.println("vec null " + j);
+//							System.out.println("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
+//							System.out.println("ID        "+ block.getId() );
+//							System.out.println("fileName  "+ block.getFileName());
+//							System.out.println("startLine "+ block.getStartLine());
+//							System.out.println("endLine   "+ block.getEndLine());
+//							System.out.println("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
+//						}
+//						j++;
+//					}
 					ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, config));
 					cloneJudge.sortClonePair(ClonePairList_test);
 					cloneJudge = null;
@@ -796,16 +743,31 @@ public class CloneDetector {
 		// Outputter.outputCSVforCPP(clonePairList);
 
 		long otStart= System.currentTimeMillis();
-		if (config.getResultCSV() != null)
-			Outputter.outputCSV(ClonePairList_test, config);
-		if (config.getResultTXT() != null)
-			Outputter.outputTXT(ClonePairList_test, config);
-		if (config.getResultHTML() != null)
-			Outputter.outputHTML(ClonePairList_test, config);
-		if (config.getResultNotifier() != null)
-			Outputter.outputNotifier(cloneSetList_test, newFileList, config);
-		if (config.getResultCloneSet() != null)
-			Outputter.outputCloneSetTXTforCPP(cloneSetList_test, config);
+		if(modeEvalForOnlyDiffVer) {
+			if(modifiedSourceFile || addedSourceFile || deletedSourceFile) {
+			if (config.getResultCSV() != null)
+				Outputter.outputCSV(ClonePairList_test, config);
+			if (config.getResultTXT() != null)
+				Outputter.outputTXT(ClonePairList_test, config);
+			if (config.getResultHTML() != null)
+				Outputter.outputHTML(ClonePairList_test, config);
+			if (config.getResultNotifier() != null)
+				Outputter.outputNotifier(cloneSetList_test, newFileList, config);
+			if (config.getResultCloneSet() != null)
+				Outputter.outputCloneSetTXTforCPP(cloneSetList_test, config);
+			}
+		}else {
+			if (config.getResultCSV() != null)
+				Outputter.outputCSV(ClonePairList_test, config);
+			if (config.getResultTXT() != null)
+				Outputter.outputTXT(ClonePairList_test, config);
+			if (config.getResultHTML() != null)
+				Outputter.outputHTML(ClonePairList_test, config);
+			if (config.getResultNotifier() != null)
+				Outputter.outputNotifier(cloneSetList_test, newFileList, config);
+			if (config.getResultCloneSet() != null)
+				Outputter.outputCloneSetTXTforCPP(cloneSetList_test, config);
+		}
 		long otEnd= System.currentTimeMillis();
 		otTime = otEnd - otStart;
 		// Outputter.outputForBigCloneEval(clonePairList);
@@ -846,17 +808,16 @@ public class CloneDetector {
 		long serializeEnd = System.currentTimeMillis();
 		serializeTime = serializeEnd - serializeStart;
 
-		//		oldFileList = null;
-		//		newFileList = null;
-		//		newBlockList = null;
-		//		oldBlockList = null;
-		//		updatedBlockList = null;
-		//		addedModifiedBlockList = null;
-		//		//		deletedBlockList = null;
-		//		//allBlockList = null;
-		//		ClonePairList_test = null;
-		//		cloneSetList_test = null;
-		//		System.gc();
+		oldFileList = null;
+		newFileList = null;
+		newBlockList = null;
+		oldBlockList = null;
+		updatedBlockList = null;
+		addedModifiedBlockList = null;
+		//				allBlockList = null;
+		//				ClonePairList_test = null;
+		cloneSetList_test = null;
+		System.gc();
 
 		currentTime = System.currentTimeMillis();
 		if(modeTimeMeasure) {
@@ -876,8 +837,21 @@ public class CloneDetector {
 			System.out.println("Finished : ");
 		}
 
+		if(modeEvalForOnlyDiffVer) {
+			if(modifiedSourceFile || addedSourceFile || deletedSourceFile) {
+				if(config.getTargetGit()) {
+					System.out.println(currentTime - start + "," + allData.getDetectingCommitId());
+				}else {
+					System.out.println(currentTime - start);
+				}
+			}
 
-		System.out.println(currentTime - start);
+		}else if(config.getTargetGit()) {
+			System.out.println(currentTime - start + "," + allData.getDetectingCommitId());
+		}else {
+			System.out.println(currentTime - start);
+		}
+
 		if(finalLoop) {
 			AllData.serializeAllDataList(allData,config);
 			allData.dataClear();

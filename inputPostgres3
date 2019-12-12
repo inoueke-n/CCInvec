@@ -1,0 +1,13 @@
+LANGUAGE:c
+OUTPUT_FORMAT:csv
+PRE_DATA:false
+DATA_DIR:E:\ICVolti_DataForPostgres\ICVoltiData22\Data
+OUTPUT_DIR:E:\ICVolti_DataForPostgres\ICVoltiData22\Output
+TARGET_GIT:true
+NEW_DIR:E:\postgresTest1\new\postgres
+OLD_DIR:E:\postgresTest1\old\postgres
+COMMIT_ID:5b6d08cd2992922b667564a49f19580f11676050
+d3d3975836f88443f07e3cc059c2dd21f09df165
+4aeceb4683575bccf9417452a01171a4c0596cc7
+382b694175e9dfda98c508cedc70b7b4d1bcfb19
+05a0283e7a48ffdca96cb6dd94fa5bae06e29bd1

@@ -1,6 +1,6 @@
 cd /d %~dp0
 
-java -jar icvolti.jar inputPostgres2 > 1206Postgres.txt
+java -jar icvolti.jar inputPostgres3 > 1211Postgres.txt
 
 
 pause

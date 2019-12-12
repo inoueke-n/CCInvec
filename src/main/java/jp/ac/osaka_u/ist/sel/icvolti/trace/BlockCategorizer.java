@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.ac.osaka_u.ist.sel.icvolti.BlockUpdater;
+import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.model.AllData;
 import jp.ac.osaka_u.ist.sel.icvolti.model.Block;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
@@ -42,7 +43,9 @@ public class BlockCategorizer {
 			}else {
 				if (file.getState() == SourceFile.MODIFIED) {
 					//ここでmodifiedされたファイルだけやるれば効率化と高速化して，normalなやつはすべてstableつければいい
-					System.out.println("Source File Nomal " + file.getNewPath());
+					if(CloneDetector.modeDebug) {
+						System.out.println("Source File Nomal " + file.getNewPath());
+					}
 					categorizeStableModified(file,updatedBlockList, allData);
 				}
 				//System.out.println("=============Source File ADD DELETE ");

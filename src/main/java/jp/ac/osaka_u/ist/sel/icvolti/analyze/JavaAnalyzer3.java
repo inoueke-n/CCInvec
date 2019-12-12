@@ -256,6 +256,7 @@ public class JavaAnalyzer3 {
 	 */
 	public ArrayList<Block> incrementalAnalyze(ArrayList<SourceFile> fileList) throws IOException {
 		ArrayList<Block> blockList = new ArrayList<>();
+		CloneDetector.addedSourceFile=false;
 
 		for (SourceFile file : fileList) {
 			countFiles++;
@@ -326,6 +327,7 @@ public class JavaAnalyzer3 {
 					ex.printStackTrace();
 					ex.printStackTrace();
 				}
+				CloneDetector.addedSourceFile=true;
 
 				blockListOfFile = extractMethod(newtree,newparser, Block.ADDED);
 				blockList.addAll(blockListOfFile);

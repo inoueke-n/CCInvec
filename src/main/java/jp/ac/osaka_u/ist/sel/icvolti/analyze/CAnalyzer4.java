@@ -163,6 +163,7 @@ public class CAnalyzer4 {
 	 */
 	public ArrayList<Block> incrementalAnalyze(ArrayList<SourceFile> fileList) throws IOException {
 		ArrayList<Block> blockList = new ArrayList<>();
+		CloneDetector.addedSourceFile=false;
 
 		for (SourceFile file : fileList) {
 
@@ -192,6 +193,8 @@ public class CAnalyzer4 {
 				} catch (Exception e) {
 					System.err.println(file + " : " + e);
 				}
+
+				CloneDetector.addedSourceFile=true;
 			}
 		}
 		return blockList;

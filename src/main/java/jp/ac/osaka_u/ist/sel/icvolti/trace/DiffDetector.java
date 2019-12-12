@@ -99,7 +99,7 @@ public class DiffDetector {
 
 			SourceFile subjectFile = null ;
 			int diffSearchFlag =0;
-			CloneDetector.updatedCode = false;
+			CloneDetector.modifiedSourceFile = false;
 			while((line = reader.readLine()) != null) {
 
 
@@ -129,15 +129,16 @@ public class DiffDetector {
 						if((fileName.isFile() && fileName.getName().endsWith(fileExtension1)) ||
 								(fileName.isFile() && fileName.getName().endsWith(fileExtension2))){
 							diffSearchFlag = 1;
-							System.out.println("CCCCCCCCCCCCCCCCCC");
 							//ここのファイル検索の効率化
 							for(SourceFile file: fileList) {
 								//		   System.out.println("===========miki = "  + file.getNewPath());
 								if(file.getNewPath().contains(command[3].replace("/", "\\"))){
 									subjectFile = file;
 									CAnalyzer4.analyzeAFile(file, newBlockList);
-									System.out.println("analyze new file ");
-									CloneDetector.updatedCode = true;
+									if(CloneDetector.modeDebug) {
+										System.out.println("analyze new file c c++");
+									}
+									CloneDetector.modifiedSourceFile = true;
 									//System.out.println("=========== newBlock List===============");
 									//ソースコードのparse
 									break;
@@ -151,7 +152,6 @@ public class DiffDetector {
 					}else {
 						if(fileName.isFile() && fileName.getName().endsWith(fileExtension1)){
 							diffSearchFlag = 1;
-							System.out.println("elseeeeeeeeeeeee ");
 							//
 							//ここのファイル検索の効率化
 							for(SourceFile file: fileList) {
@@ -160,13 +160,16 @@ public class DiffDetector {
 									subjectFile = file;
 									if(config.getLang() == 0) {
 										JavaAnalyzer3.analyzeAFile(file, newBlockList);
-										System.out.println("analyze new file java ");
-
+										if(CloneDetector.modeDebug) {
+											System.out.println("analyze new file java ");
+										}
 									}else if(config.getLang() == 2) {
 										CSharpAnalyzer.analyzeAFile(file, newBlockList);
-										System.out.println("analyze new file csharp ");
+										if(CloneDetector.modeDebug) {
+											System.out.println("analyze new file csharp ");
+										}
 									}
-									CloneDetector.updatedCode = true;
+									CloneDetector.modifiedSourceFile = true;
 									//System.out.println("=========== newBlock List===============");
 									//ソースコードのparse
 									break;

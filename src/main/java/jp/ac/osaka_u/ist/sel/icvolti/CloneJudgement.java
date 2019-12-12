@@ -217,20 +217,20 @@ public class CloneJudgement {
 						//		System.out.println("mId = " + methodId);
 
 						if (qp <  methodId) {
-							System.out.println("query point  = " + i);
-							System.out.println(qp + "qp fileName" + blockList.get(qp).getFileName());
-							System.out.println(qp + "qp  start " + blockList.get(qp).getStartLine() + " end " + blockList.get(qp).getEndLine() );
-							System.out.println(methodId + "methodiD fileName" + blockList.get(methodId).getFileName());
-							System.out.println(methodId + "methodID start " + blockList.get(methodId).getStartLine() + " end " + blockList.get(methodId).getEndLine() );
+							//							System.out.println("query point  = " + i);
+							//							System.out.println(qp + "qp fileName" + blockList.get(qp).getFileName());
+							//							System.out.println(qp + "qp  start " + blockList.get(qp).getStartLine() + " end " + blockList.get(qp).getEndLine() );
+							//							System.out.println(methodId + "methodiD fileName" + blockList.get(methodId).getFileName());
+							//							System.out.println(methodId + "methodID start " + blockList.get(methodId).getStartLine() + " end " + blockList.get(methodId).getEndLine() );
 							tasks.add(new parallelGetClonePair(blockList.get(qp), blockList.get(methodId)));
 							//tasks.add(new parallelGetClonePair(addedModifiedBlockList.get(i), blockList.get(methodId)));
 							pairList.add(new Pair<Integer, Integer>(qp, methodId));
 						}else if(qpList.indexOf(methodId) < 0) {
-							System.out.println("query point  = " + i);
-							System.out.println(qp + "qp fileName" + blockList.get(qp).getFileName());
-							System.out.println(qp + "qp  start " + blockList.get(qp).getStartLine() + " end " + blockList.get(qp).getEndLine() );
-							System.out.println(methodId + "methodiD fileName" + blockList.get(methodId).getFileName());
-							System.out.println(methodId + "methodID start " + blockList.get(methodId).getStartLine() + " end " + blockList.get(methodId).getEndLine() );
+							//							System.out.println("query point  = " + i);
+							//							System.out.println(qp + "qp fileName" + blockList.get(qp).getFileName());
+							//							System.out.println(qp + "qp  start " + blockList.get(qp).getStartLine() + " end " + blockList.get(qp).getEndLine() );
+							//							System.out.println(methodId + "methodiD fileName" + blockList.get(methodId).getFileName());
+							//							System.out.println(methodId + "methodID start " + blockList.get(methodId).getStartLine() + " end " + blockList.get(methodId).getEndLine() );
 							tasks.add(new parallelGetClonePair(blockList.get(qp), blockList.get(methodId)));
 							//tasks.add(new parallelGetClonePair(addedModifiedBlockList.get(i), blockList.get(methodId)));
 							pairList.add(new Pair<Integer, Integer>(qp, methodId));
@@ -302,16 +302,18 @@ public class CloneJudgement {
 
 		newClonePairList.trimToSize();
 		clonePairList = newClonePairList;
-		System.out.print("filtering done : ");
-		System.out.println(System.currentTimeMillis() - start + "[ms]");
-		System.out.println("cloenpairList size = " + clonePairList.size());
-		for(ClonePair cp : clonePairList) {
-			System.out.println("clone A File      " + cp.cloneA.getFileName());
-			System.out.println("clone A ID        " + cp.cloneA.getId());
-			System.out.println("clone A startline " + cp.cloneA.getStartLine());
-			System.out.println("clone A File      " + cp.cloneB.getFileName());
-			System.out.println("clone B ID        " + cp.cloneB.getId());
-			System.out.println("clone B startline " + cp.cloneB.getStartLine());
+		if(CloneDetector.modeDebug) {
+			System.out.print("filtering done : ");
+			System.out.println(System.currentTimeMillis() - start + "[ms]");
+			System.out.println("cloenpairList size = " + clonePairList.size());
+			for(ClonePair cp : clonePairList) {
+				System.out.println("clone A File      " + cp.cloneA.getFileName());
+				System.out.println("clone A ID        " + cp.cloneA.getId());
+				System.out.println("clone A startline " + cp.cloneA.getStartLine());
+				System.out.println("clone A File      " + cp.cloneB.getFileName());
+				System.out.println("clone B ID        " + cp.cloneB.getId());
+				System.out.println("clone B startline " + cp.cloneB.getStartLine());
+			}
 		}
 
 		return clonePairList;
