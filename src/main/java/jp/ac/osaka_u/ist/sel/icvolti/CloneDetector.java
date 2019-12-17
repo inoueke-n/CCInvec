@@ -478,6 +478,8 @@ public class CloneDetector {
 		long subStart = start;
 		long currentTime;
 		long javaTime = start;
+		long addTime = start;
+		long analyzeTime = start;
 		long cTime = start;
 		long csharpTime = start;
 		long resetTime = start;
@@ -524,18 +526,24 @@ public class CloneDetector {
 			JavaAnalyzer3 newJavaanalyzer = new JavaAnalyzer3();
 			//oldFileList = JavaAnalyzer3.searchFiles(Config.target2);
 			/*ゆくゆくはなくしたいやつ*/
+			long analyzeStart = System.currentTimeMillis();
 			newFileList = JavaAnalyzer3.searchFiles(config.getNewTarget());
 			oldFileList_test =  allData.getSourceFileList();
 			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
 			newBlockList = newJavaanalyzer.incrementalAnalyze(FileList);
+			long analyzeEnd = System.currentTimeMillis();
+			analyzeTime = analyzeEnd - analyzeStart;
 			//			System.out.println("new Block Size 1  = " + newBlockList.size());
 			//新旧コードブロック間の対応をとる
+			long addStart = System.currentTimeMillis();
 			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
 			//ここ減らせる．neewReserBlockListがいらない
 			//needResetBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 4));
 			updatedBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 2));
+			long addEnd = System.currentTimeMillis();
+			addTime = addEnd - addStart;
 			//			addedModifiedBlockList = TraceManager.devideBlockCategory(allBlockList, 0);
 			long javaEnd = System.currentTimeMillis();
 			javaTime = javaEnd - javaStart;
@@ -874,7 +882,7 @@ public class CloneDetector {
 		//				System.out.println(currentTime - start);
 		//			}
 		//		}else
-
+		System.out.println(analyzeTime +  "," + addTime);
 		if(modeEvalForOnlyDiffVer) {
 			if(modifiedSourceFile || addedSourceFile || deletedSourceFile) {
 				if(config.getLang() == 0) {

@@ -399,101 +399,90 @@ public class VectorCalculator implements Serializable {
 		// ワードマップの生成
 		HashMap<String, Integer> wordFreqMap = new HashMap<String, Integer>();
 		ArrayList<String> dictionary = new ArrayList<String>();
+		ArrayList<String> targetAddWord = new ArrayList<String>();
+		ArrayList<String> addedWord = new ArrayList<String>();
+		ArrayList<Block> reCalcBlockList = new ArrayList<Block>();
+
 
 		Map<String, Integer> wordMap = new HashMap<>();
 		wordMap = allData.getWordMap();
 		//int wordFreq[] = allData.getWordFreq();
 		//System.out.println(" === wordFReq = " + wordFreq.length);
 
-
-		// ワードの出現頻度の計測と、ワード辞書の生成
-		int elementCount = 0;
-		//System.out.println("test mae");
-		for (Block block : blockList) {
-			if (block.getParent() == null) {
-				for (Word word : block.getWordList()) {
-					if (wordFreqMap.containsKey(word.getName())) {
-						int value = wordFreqMap.get(word.getName());
-						wordFreqMap.put(word.getName(), ++value);
-					} else {
-						wordFreqMap.put(word.getName(), 1);
-						//	System.out.println("add dictionaly");
-						//ここTF-IDFを使わないなら消すことが出来る
-						dictionary.add(word.getName());
-					}
-					elementCount++;
-				}
-			} else {
-				elementCount += block.getWordList().size();
-			}
-		}
-		/*
-		 *
-		 *
-		 * wordMap
-		 * wordFreq
-		 * */
+		int wordMapSize = wordMap.size();
+		int allDataVecDimension = allData.getVecDimension();
+		int numOfExtraWords = allDataVecDimension- wordMapSize;
+		if(numOfExtraWords > 0) {
 
 
-		//		System.out.println("addedModifiedBlockList size : " + addedModifiedBlockList.size());
-		//		System.out.println("word count : " + wordFreqMap.size());
-		//		System.out.println("element count : " + elementCount);
-		//		System.out.println("Density : " + String.format("%f",
-		//				(double) elementCount / ((double) wordFreqMap.size() * (double) blockList.size())));
-
-		// ワードの出現回数でフィルタリング（デフォルト 1以下は除去）
-		ArrayList<String> addedWord = new ArrayList<String>();
-		Iterator<String> iter = dictionary.iterator();
-		int j = wordMap.size();
-		while(iter.hasNext()) {
-			String wordName = iter.next();
-			if (wordFreqMap.get(wordName) > APPEARANCE_TH && !wordMap.containsKey(wordName)) {
-				wordMap.put(wordName, j++);
-				addedWord.add(wordName);
-				//				System.out.println("ADD word  " + wordName);
-				//				for(Block block : blockList) {
-				//					for(Word word : block.getWordList()) {
-				//						if(word.getName().equals(wordName)) {
-				//							System.out.println("ADD word  " + wordName);
-				//							System.out.println("file Name  " + block.getFileName());
-				//							System.out.println("start line " + block.getStartLine());
-				//							System.out.println("end   line " + block.getEndLine());
-				//						}
-				//					}
-				//				}
-
-			} else {
-				//dictionaryから削除
-				//System.out.println("delete dictionaly");
-				iter.remove();
-			}
-		}
-
-		if(addedWord.size() > 0) {
-			int k =0;
-			for(Block block : blockList) {
-				if(block.getCategory() == Block.STABLE) {
-					//	System.out.println("stable");
-					boolean breakLoop = false;
-					for(String wordStr : addedWord) {
-						//System.out.println("word " + wordStr );
-						if(breakLoop) {
-							break;
-						}else {
-							for(Word word : block.getWordList()) {
-								if(word.getName().equals(wordStr)) {
-									//									System.out.println("change vec of stable code");
-									blockList.set(k, increCalcBoW(block, wordMap, CloneDetector.countMethod, allData));
-									breakLoop = true;
-									break;
+			// ワードの出現頻度の計測と、ワード辞書の生成
+			// ワードの出現回数でフィルタリング（デフォルト 1以下は除去）
+			int elementCount = 0;
+			//System.out.println("test mae");
+			ArrayList<Integer> setNum = new ArrayList<Integer>(blockList.size());
+			int n = 0;
+			for (Block block : blockList) {
+				if (block.getParent() == null) {
+					for (Word word : block.getWordList()) {
+						if(!wordMap.containsKey(word.getName())) {
+							if (wordFreqMap.containsKey(word.getName())) {
+								int value = wordFreqMap.get(word.getName());
+								wordFreqMap.put(word.getName(), ++value);
+								if(value > APPEARANCE_TH) {
+									targetAddWord.add(word.getName());
+									if(block.getCategory() == Block.STABLE) {
+										reCalcBlockList.add(block);
+										setNum.add(n);
+									}
 								}
+							} else {
+								wordFreqMap.put(word.getName(), 1);
+								//	System.out.println("add dictionaly");
+								//ここTF-IDFを使わないなら消すことが出来る
+								dictionary.add(word.getName());
 							}
 						}
+						elementCount++;
 					}
+				} else {
+					elementCount += block.getWordList().size();
 				}
-				k++;
+				n++;
 			}
 
+			int reCalcNum = 0;
+			if(targetAddWord.size() > 0) {
+				int breakPoint = targetAddWord.size();
+				int j = wordMap.size();
+				for(int i=0; i < numOfExtraWords; i++) {
+					wordMap.put(targetAddWord.get(i), j++);
+					addedWord.add(targetAddWord.get(i));
+					if(breakPoint-1 == i) {
+						reCalcNum = i;
+						break;
+					}
+				}
+			}
+
+			//		System.out.println("addedModifiedBlockList size : " + addedModifiedBlockList.size());
+			//		System.out.println("word count : " + wordFreqMap.size());
+			//		System.out.println("element count : " + elementCount);
+			//		System.out.println("Density : " + String.format("%f",
+			//				(double) elementCount / ((double) wordFreqMap.size() * (double) blockList.size())));
+
+			// ワードの出現回数でフィルタリング（デフォルト 1以下は除去）
+			if(reCalcBlockList.size() > 0) {
+				int k =0;
+				for(Block block : reCalcBlockList) {
+					if(reCalcNum < k) break;
+					if(block.getCategory() == Block.STABLE) {
+//						System.out.println("stable");
+						blockList.set(setNum.get(k), increCalcBoW(block, wordMap, CloneDetector.countMethod, allData));
+//						System.out.println("change vec of stable code");
+					}
+					k++;
+				}
+			}
 		}
 
 
@@ -539,7 +528,7 @@ public class VectorCalculator implements Serializable {
 
 
 	//private static void outputSparseDataset(ArrayList<Block> blockList) {
-	private static void outputSparseDataset(List<Block> blockList) {
+	private static void outputSparseDataset(ArrayList<Block> blockList) {
 		try {
 			Block.serializeBlockList(blockList);
 			List<Block> blockList2 =Block.deserializeBlockList("blockList.bin");
