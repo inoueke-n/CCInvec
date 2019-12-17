@@ -220,6 +220,8 @@ public class CloneDetector {
 		long csharpTime = start;
 		long resetTime = start;
 		long vecTime = start;
+		long lshTime = start;
+		long mkcpTime = start;
 		long cpTime = start;
 		long csTime = start;
 		long otTime = start;
@@ -314,12 +316,18 @@ public class CloneDetector {
 			LSHController lshCtlr = new LSHController();
 			//dimention_test = calculator.getDimension();
 			//			System.out.println("dimention = " + dimention_test);
+			long lshStart  = System.currentTimeMillis();
 			lshCtlr.execute(blockList, allData.getVecDimension(), Config.LSH_PRG, config);
 			lshCtlr = null;
+			long lshEnd  = System.currentTimeMillis();
+			lshTime = lshEnd - lshStart;
 			//			System.out.println("LSH done : " + (System.currentTimeMillis() - subStart) + "[ms]");
+			long mkcpStart  = System.currentTimeMillis();
 			CloneJudgement cloneJudge = new CloneJudgement();
 			clonePairList = cloneJudge.getClonePairList(blockList, config);
 			cloneJudge = null;
+			long mkcpEnd  = System.currentTimeMillis();
+			mkcpTime = mkcpEnd - mkcpStart;
 		} else {
 			CloneJudgement cloneJudge = new CloneJudgement();
 			clonePairList = cloneJudge.getClonePairListNoLSH(blockList, config);
@@ -418,6 +426,7 @@ public class CloneDetector {
 		//			}
 		//			i++;
 		//		}
+		System.out.println(lshTime + "," +mkcpTime);
 
 		currentTime = System.currentTimeMillis();
 		if(modeTimeMeasure) {

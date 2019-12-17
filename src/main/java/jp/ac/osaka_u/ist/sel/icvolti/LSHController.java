@@ -94,7 +94,7 @@ public class LSHController {
 	 * @throws InterruptedException
 	 * @throws IOException
 	 */
-	public void execute(List<Block> blockList, int dimention, int program, Config config) {
+	public void execute(ArrayList<Block> blockList, int dimention, int program, Config config) {
 		int numHardThread = Runtime.getRuntime().availableProcessors();
 	/*	if (config.getThreads() == 0 || config.getThreads() > numHardThread)
 			//Config.NUM_THREADS = numHardThread;
