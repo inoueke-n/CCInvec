@@ -207,7 +207,7 @@ public class VectorCalculator implements Serializable {
 		}
 
 		//次元数はAllDataに保存しておく必要がある
-		dimension = wordMap.size() + 10000;
+		dimension = wordMap.size() + 1000;
 		//dimension = wordMap.size();
 		allData.setVecDimension(dimension);
 		//		System.out.println("Dimension = " + allData.getVecDimension());

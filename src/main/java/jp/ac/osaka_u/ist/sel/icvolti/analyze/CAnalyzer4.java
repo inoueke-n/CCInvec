@@ -1,9 +1,12 @@
 package jp.ac.osaka_u.ist.sel.icvolti.analyze;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.StreamTokenizer;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,10 +51,38 @@ public class CAnalyzer4 {
 	 * @throws IOException
 	 */
 	public static ArrayList<String> searchFiles(String pathname) {
+
+		//	    if(cs.equals(StandardCharsets.UTF_16) ||
+		//	    		cs.equals(StandardCharsets.UTF_8) {
+		//
+		//	    }
 		ArrayList<String> fileList = new ArrayList<String>();
 		File file = new File(pathname);
 		if (file.isFile() && (file.getName().endsWith(".c") || file.getName().endsWith(".cpp"))) {
-			fileList.add(file.getAbsolutePath());
+			Charset cs = null;
+			FileInputStream fis = null;
+			try {
+				fis = new FileInputStream(file.getAbsoluteFile());
+			} catch (FileNotFoundException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
+			try {
+				cs = charsetDetector.getCharsetName(fis);
+			} catch (IOException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
+//			System.out.println("charset:" + cs);
+			if(cs.equals(StandardCharsets.UTF_16) ||
+					cs.equals(StandardCharsets.UTF_8) ||
+					cs.equals(StandardCharsets.UTF_16BE) ||
+					cs.equals(StandardCharsets.UTF_16LE) ||
+					cs.equals(StandardCharsets.US_ASCII) ||
+					cs.equals(StandardCharsets.ISO_8859_1) ) {
+					fileList.add(file.getAbsolutePath());
+			}
+
 		} else if (file.isDirectory()) {
 			File[] files = file.listFiles();
 			for (File f : files) {
@@ -107,6 +138,7 @@ public class CAnalyzer4 {
 			try {
 				blockList.addAll(extractMethod(new File(file), Block.NULL));
 			} catch (Exception e) {
+				e.printStackTrace();
 				System.err.println(file + " : " + e);
 			}
 		}
@@ -121,6 +153,7 @@ public class CAnalyzer4 {
 				file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL));
 				blockList.addAll(file.getNewBlockList());
 			} catch (Exception e) {
+				e.printStackTrace();
 				System.err.println(file + " : " + e);
 			}
 		}
@@ -149,6 +182,7 @@ public class CAnalyzer4 {
 			file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL));
 			newBlockList.addAll(file.getNewBlockList());
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.err.println(file + " : " + e);
 		}
 	}
@@ -191,6 +225,7 @@ public class CAnalyzer4 {
 					file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL));
 					blockList.addAll(file.getNewBlockList());
 				} catch (Exception e) {
+					e.printStackTrace();
 					System.err.println(file + " : " + e);
 				}
 
@@ -282,6 +317,9 @@ public class CAnalyzer4 {
 	// プリプロセッサ
 	// マクロの除去
 	private static String preProcessor(File file) throws Exception {
+
+
+
 		List<String> lines = new ArrayList<>();
 		try (Stream<String> stream = Files.lines(file.toPath(), Charset.forName(Config.charset))) {
 			stream.forEach(line -> {
@@ -291,6 +329,7 @@ public class CAnalyzer4 {
 				lines.add(line);
 			});
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw e;
 		}
 

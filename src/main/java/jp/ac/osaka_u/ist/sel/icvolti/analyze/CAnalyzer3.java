@@ -85,17 +85,19 @@ public class CAnalyzer3 {
 
 			parser.getInterpreter().setPredictionMode(PredictionMode.SLL);
 			try {
-			    tree = parser.translationunit();  // STAGE 1
+				tree = parser.translationunit();  // STAGE 1
 			}
 			catch (Exception ex) {
-			    tokens.reset(); // rewind input stream
-			    parser.reset();
-			    //parser.getInterpreter().setPredictionMode(PredictionMode.LL);
-			    try {
-				    tree = parser.translationunit();  // STAGE 2
-				    // if we parse ok, it's LL not SLL
-			    } catch (ParseCancellationException ex2) {
+				tokens.reset(); // rewind input stream
+				parser.reset();
+				ex.printStackTrace();
+				//parser.getInterpreter().setPredictionMode(PredictionMode.LL);
+				try {
+					tree = parser.translationunit();  // STAGE 2
+					// if we parse ok, it's LL not SLL
+				} catch (ParseCancellationException ex2) {
 					System.err.println(ex2.getMessage());
+					ex2.printStackTrace();
 					//ANTLRFileStream stream2 = new ANTLRFileStream(file.toString());
 					//SimpleCLexer lexer2 = new SimpleCLexer(stream2);
 					//tokens = new CommonTokenStream(lexer2);
@@ -152,9 +154,9 @@ public class CAnalyzer3 {
 				if(subt instanceof TerminalNode) {
 					TerminalNode token = (TerminalNode)subt;
 					if(token.getSymbol().getType()==CLexer.Identifier){
-				        //System.out.println(token.getText());
+						//System.out.println(token.getText());
 						start = token.getSymbol();
-			        }
+					}
 				} else {
 					if(subt instanceof CParser.CompoundStatementContext){
 						if(subt.getSourceInterval().length() <= Config.METHOD_NODE_TH ||

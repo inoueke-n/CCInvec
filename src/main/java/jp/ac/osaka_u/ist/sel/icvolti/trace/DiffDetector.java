@@ -23,6 +23,8 @@ import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
  */
 public class DiffDetector {
 
+	static boolean fileExist = true;
+
 	/**
 	 * <p>ソースファイル間のdiffの取得</p>
 	 * @param fileList 新旧バージョン間でdiffを実施するファイルのリスト
@@ -129,6 +131,7 @@ public class DiffDetector {
 						if((fileName.isFile() && fileName.getName().endsWith(fileExtension1)) ||
 								(fileName.isFile() && fileName.getName().endsWith(fileExtension2))){
 							diffSearchFlag = 1;
+							fileExist = false;
 							//ここのファイル検索の効率化
 							for(SourceFile file: fileList) {
 								//		   System.out.println("===========miki = "  + file.getNewPath());
@@ -141,6 +144,7 @@ public class DiffDetector {
 									CloneDetector.modifiedSourceFile = true;
 									//System.out.println("=========== newBlock List===============");
 									//ソースコードのparse
+									fileExist = true;
 									break;
 									//	   System.out.println("===========diff===============");
 								}
@@ -153,6 +157,7 @@ public class DiffDetector {
 						if(fileName.isFile() && fileName.getName().endsWith(fileExtension1)){
 							diffSearchFlag = 1;
 							//
+							fileExist = false;
 							//ここのファイル検索の効率化
 							for(SourceFile file: fileList) {
 								//		   System.out.println("===========miki = "  + file.getNewPath());
@@ -172,15 +177,17 @@ public class DiffDetector {
 									CloneDetector.modifiedSourceFile = true;
 									//System.out.println("=========== newBlock List===============");
 									//ソースコードのparse
+									fileExist = true;
 									break;
 									//	   System.out.println("===========diff===============");
 								}
+
 							}
 						}else {
 							diffSearchFlag = 0;
 						}
 					}
-				}else if(Character.isDigit(line.charAt(0)) && diffSearchFlag==1) {
+				}else if(Character.isDigit(line.charAt(0)) && diffSearchFlag==1 && fileExist) {
 
 
 					// 追加コード
