@@ -1,7 +1,6 @@
 package jp.ac.osaka_u.ist.sel.icvolti.trace;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import jp.ac.osaka_u.ist.sel.icvolti.BlockUpdater;
 import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
@@ -26,7 +25,7 @@ public class BlockCategorizer {
 	 * @param fileList
 	 *            ソースファイルリスト
 	 */
-	public ArrayList<Block> categorizeBlock(ArrayList<SourceFile> fileList, AllData allData) {
+	public static ArrayList<Block> categorizeBlock(ArrayList<SourceFile> fileList, AllData allData) {
 
 		ArrayList<Block> updatedBlockList = new ArrayList<Block>();
 
@@ -66,7 +65,7 @@ public class BlockCategorizer {
 	 * @param file
 	 *            ブロック分類を行うソースファイル
 	 */
-	private void categorizeStableModified(SourceFile file,ArrayList<Block> updatedBlockList, AllData allData) {
+	private static void categorizeStableModified(SourceFile file,ArrayList<Block> updatedBlockList, AllData allData) {
 		//int i = 0;
 		for (Block blockA : file.getNewBlockList()) {
 
@@ -228,7 +227,7 @@ public class BlockCategorizer {
 		}
 	}
 
-	private double calcurateLocationSimilarity(Block blockA, Block blockB, int startLineA, int endLineA, int startLineB,
+	private static double calcurateLocationSimilarity(Block blockA, Block blockB, int startLineA, int endLineA, int startLineB,
 			int endLineB) {
 		double sim = 0.0;
 		//ブロックの行数計算
@@ -267,7 +266,7 @@ public class BlockCategorizer {
 	 * @param file
 	 *            ブロック分類を行うソースファイル
 	 */
-	private List<Block> categorizeAddedDeleted(SourceFile file, ArrayList<Block> updatedBlockList) {
+	private static ArrayList<Block> categorizeAddedDeleted(SourceFile file, ArrayList<Block> updatedBlockList) {
 
 		// Addedブロックの分類
 		for (Block block : file.getNewBlockList()) {

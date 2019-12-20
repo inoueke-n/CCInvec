@@ -426,7 +426,7 @@ public class CloneDetector {
 		//			}
 		//			i++;
 		//		}
-		System.out.println(lshTime + "," +mkcpTime);
+//		System.out.println(lshTime + "," +mkcpTime);
 
 		currentTime = System.currentTimeMillis();
 		if(modeTimeMeasure) {
@@ -506,7 +506,6 @@ public class CloneDetector {
 
 		ArrayList<String> oldFileList = null;
 		ArrayList<String> newFileList = null;
-		ArrayList<Block> newBlockList = new ArrayList<Block>();
 		ArrayList<Block> oldBlockList = new ArrayList<Block>();
 		//updateBlockList 編集や削除されたブロックのリスト
 		ArrayList<Block> updatedBlockList = new ArrayList<Block>();
@@ -538,24 +537,31 @@ public class CloneDetector {
 			long analyzeStart = System.currentTimeMillis();
 			newFileList = JavaAnalyzer3.searchFiles(config.getNewTarget());
 			oldFileList_test =  allData.getSourceFileList();
+			//ここでdeletedに分類されたクローンをupdatedBlockListに格納
 			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
-			newBlockList = newJavaanalyzer.incrementalAnalyze(FileList);
+//			newBlockList = newJavaanalyzer.incrementalAnalyze(FileList);
+			newJavaanalyzer.incrementalAnalyze(FileList);
 			long analyzeEnd = System.currentTimeMillis();
 			analyzeTime = analyzeEnd - analyzeStart;
 			//			System.out.println("new Block Size 1  = " + newBlockList.size());
 			//新旧コードブロック間の対応をとる
 			long addStart = System.currentTimeMillis();
-			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+
+//			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+//			TraceManager.analyzeBlock(FileList, newBlockList, config, allData);
+			TraceManager.analyzeBlock(FileList, config, allData);
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
-			//ここ減らせる．neewReserBlockListがいらない
 			//needResetBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 4));
-			updatedBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 2));
+			//modifiedされたもの
+			updatedBlockList.addAll(TraceManager.devideBlockCategory(allBlockList, 4));
 			long addEnd = System.currentTimeMillis();
 			addTime = addEnd - addStart;
 			//			addedModifiedBlockList = TraceManager.devideBlockCategory(allBlockList, 0);
 			long javaEnd = System.currentTimeMillis();
 			javaTime = javaEnd - javaStart;
+
+			//ほしいのはdeletedなコード片，それ以外はblockListに入っている．
 
 			break;
 		case 1: // "c" "cpp"
@@ -565,12 +571,13 @@ public class CloneDetector {
 			newFileList = CAnalyzer4.searchFiles(config.getNewTarget());
 			oldFileList_test =  allData.getSourceFileList();
 			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
-			newBlockList = Canalyzer.incrementalAnalyze(FileList);
-			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+			Canalyzer.incrementalAnalyze(FileList);
+//			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+			TraceManager.analyzeBlock(FileList, config, allData);
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
-
-			updatedBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 2));
+			//とりあえず，modifiedとdeletedにするaddedはいれない，おなじクローンペアはfilteringで除去する
+			updatedBlockList.addAll(TraceManager.devideBlockCategory(allBlockList, 4));
 			long cEnd = System.currentTimeMillis();
 			cTime = cEnd - cStart;
 			break;
@@ -587,12 +594,13 @@ public class CloneDetector {
 			newFileList = CSharpAnalyzer.searchFiles(config.getNewTarget());
 			oldFileList_test =  allData.getSourceFileList();
 			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
-			newBlockList = csharpAnalyzer.incrementalAnalyze(FileList);
+			csharpAnalyzer.incrementalAnalyze(FileList);
 			//新旧コードブロック間の対応をとる
-			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+//			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+			TraceManager.analyzeBlock(FileList, config, allData);
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
-			updatedBlockList.addAll(TraceManager.devideBlockCategory(newBlockList, 2));
+			updatedBlockList.addAll(TraceManager.devideBlockCategory(allBlockList, 4));
 			long csharpEnd = System.currentTimeMillis();
 			csharpTime = csharpEnd - csharpStart;
 			break;
@@ -852,7 +860,6 @@ public class CloneDetector {
 
 		oldFileList = null;
 		newFileList = null;
-		newBlockList = null;
 		oldBlockList = null;
 		updatedBlockList = null;
 		addedModifiedBlockList = null;
@@ -891,7 +898,7 @@ public class CloneDetector {
 		//				System.out.println(currentTime - start);
 		//			}
 		//		}else
-		System.out.println(analyzeTime +  "," + addTime);
+//		System.out.println(analyzeTime +  "," + addTime);
 		if(modeEvalForOnlyDiffVer) {
 			if(modifiedSourceFile || addedSourceFile || deletedSourceFile) {
 				if(config.getLang() == 0) {

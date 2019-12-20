@@ -254,8 +254,9 @@ public class JavaAnalyzer3 {
 	 * @param file
 	 * @throws IOException
 	 */
-	public ArrayList<Block> incrementalAnalyze(ArrayList<SourceFile> fileList) throws IOException {
-		ArrayList<Block> blockList = new ArrayList<>();
+//	public ArrayList<Block> incrementalAnalyze(ArrayList<SourceFile> fileList) throws IOException {
+	public void incrementalAnalyze(ArrayList<SourceFile> fileList) throws IOException {
+//		ArrayList<Block> blockList = new ArrayList<>();
 		CloneDetector.addedSourceFile=false;
 
 		for (SourceFile file : fileList) {
@@ -273,7 +274,7 @@ public class JavaAnalyzer3 {
 					file.getOldBlockList().add(oldBlock);
 				}
 				//file.getOldBlockList().addAll(file.getNewBlockList());
-				blockList.addAll(file.getNewBlockList());
+//				blockList.addAll(file.getNewBlockList());
 				/*	for(Block block : blockList) {
 					System.out.println("aaaa Block l====enn =     " + block.getLen());
 				}*/
@@ -330,14 +331,13 @@ public class JavaAnalyzer3 {
 				CloneDetector.addedSourceFile=true;
 
 				blockListOfFile = extractMethod(newtree,newparser, Block.ADDED);
-				blockList.addAll(blockListOfFile);
+//				blockList.addAll(blockListOfFile);
 				file.getNewBlockList().addAll(blockListOfFile);
 				countParseFiles++;
 				newtokens.fill();
 				CloneDetector.countLine += newtokens.LT(newtokens.size()).getLine();
 			}
 		}
-		return blockList;
 	}
 
 
@@ -351,19 +351,21 @@ public class JavaAnalyzer3 {
 	 * @return
 	 * @throws IOException
 	 */
-	public static void analyzeAFile(SourceFile file, ArrayList<Block> newBlockList) throws IOException {
+	public static void analyzeAFile(SourceFile file) throws IOException {
 
 		// 新しくファイルを解析するので，もとにあったblockのデータはnewBlockListから削除
 		//この処理ってなぜ？
-		for(Block block : file.getNewBlockList()) {
-			int index = newBlockList.indexOf(block);
-			if(index > -1) {
-				newBlockList.remove(index);
-			}
-		}
+//		for(Block block : file.getNewBlockList()) {
+//			int index = newBlockList.indexOf(block);
+//			if(index > -1) {
+//				newBlockList.remove(index);
+//			}
+//		}
 		//System.out.println("new Block Size 3  = " + newBlockList.size());
 
 		//新しくnweBlockListを作るので，前作ってたものを削除
+		file.getOldBlockList().clear();
+		file.setOldBlockList(file.getNewBlockList());
 		file.getNewBlockList().clear();
 
 		file.setState(SourceFile.MODIFIED);
@@ -414,7 +416,7 @@ public class JavaAnalyzer3 {
 		}
 		//newBlockList.addAll(extractMethod(tree, parser));
 		file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL));
-		newBlockList.addAll(file.getNewBlockList());
+//		newBlockList.addAll(file.getNewBlockList());
 		countParseFiles++;
 		tokens.fill();
 

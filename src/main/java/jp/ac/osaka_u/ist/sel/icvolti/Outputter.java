@@ -66,7 +66,7 @@ public class Outputter {
 //	}
 
 	//for precision
-	public static void outputCSV(List<ClonePair> clonePairList,Config config) throws IOException {
+	public static void outputCSV(ArrayList<ClonePair> clonePairList,Config config) throws IOException {
 //		System.out.println("output CSV");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
 		for (ClonePair pair : clonePairList) {
@@ -77,8 +77,10 @@ public class Outputter {
 			File fileB = new File(cloneB.getFileName());
 			File folB = new File(fileB.getParent());
 			writer.printf("%s,%s,%d,%d,%s,%s,%d,%d,%f\r\n",
-					folA.getName(),fileA.getAbsolutePath(),cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
-					folB.getName(),fileB.getAbsolutePath(),cloneB.getMethodStartLine(), cloneB.getMethodEndLine(),
+//					folA.getName(),fileA.getAbsolutePath(),cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
+//					folB.getName(),fileB.getAbsolutePath(),cloneB.getMethodStartLine(), cloneB.getMethodEndLine(),
+					folA.getName(),fileA.getAbsolutePath(),cloneA.getStartLine(), cloneA.getEndLine(),
+					folB.getName(),fileB.getAbsolutePath(),cloneB.getStartLine(), cloneB.getEndLine(),
 					pair.sim
 					);
 		}

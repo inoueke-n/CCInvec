@@ -160,27 +160,30 @@ public class CAnalyzer4 {
 		return blockList;
 	}
 
-	public static void analyzeAFile(SourceFile file,ArrayList<Block> newBlockList ) {
+//	public static void analyzeAFile(SourceFile file,ArrayList<Block> newBlockList ) {
+	public static void analyzeAFile(SourceFile file ) {
 
 		// 新しくファイルを解析するので，もとにあったblockのデータはnewBlockListから削除
 		//この処理ってなぜ？
-		for(Block block : file.getNewBlockList()) {
-			int index = newBlockList.indexOf(block);
-			if(index > -1) {
-				newBlockList.remove(index);
-			}
-		}
+//		for(Block block : file.getNewBlockList()) {
+//			int index = newBlockList.indexOf(block);
+//			if(index > -1) {
+//				newBlockList.remove(index);
+//			}
+//		}
 
 		//System.out.println("new Block Size 3  = " + newBlockList.size());
 
 		//新しくnweBlockListを作るので，前作ってたものを削除
+		file.getOldBlockList().clear();
+		file.setOldBlockList(file.getNewBlockList());
 		file.getNewBlockList().clear();
 
 		file.setState(SourceFile.MODIFIED);
 
 		try {
 			file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL));
-			newBlockList.addAll(file.getNewBlockList());
+//			newBlockList.addAll(file.getNewBlockList());
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println(file + " : " + e);
@@ -195,8 +198,8 @@ public class CAnalyzer4 {
 	 * @param file
 	 * @throws IOException
 	 */
-	public ArrayList<Block> incrementalAnalyze(ArrayList<SourceFile> fileList) throws IOException {
-		ArrayList<Block> blockList = new ArrayList<>();
+	public void incrementalAnalyze(ArrayList<SourceFile> fileList) throws IOException {
+//		ArrayList<Block> blockList = new ArrayList<>();
 		CloneDetector.addedSourceFile=false;
 
 		for (SourceFile file : fileList) {
@@ -213,7 +216,7 @@ public class CAnalyzer4 {
 					file.getOldBlockList().add(oldBlock);
 				}
 				//file.getOldBlockList().addAll(file.getNewBlockList());
-				blockList.addAll(file.getNewBlockList());
+//				blockList.addAll(file.getNewBlockList());
 				/*	for(Block block : blockList) {
 					System.out.println("aaaa Block l====enn =     " + block.getLen());
 				}*/
@@ -222,8 +225,8 @@ public class CAnalyzer4 {
 				//新規追加されたソースファイル
 				//				System.out.println("==============new File Analysis");
 				try {
-					file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL));
-					blockList.addAll(file.getNewBlockList());
+					file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.ADDED));
+//					blockList.addAll(file.getNewBlockList());
 				} catch (Exception e) {
 					e.printStackTrace();
 					System.err.println(file + " : " + e);
@@ -232,7 +235,7 @@ public class CAnalyzer4 {
 				CloneDetector.addedSourceFile=true;
 			}
 		}
-		return blockList;
+//		return blockList;
 	}
 
 	/**

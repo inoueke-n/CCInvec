@@ -381,20 +381,23 @@ public class CSharpAnalyzer {
 
 
 
-	public static void analyzeAFile(SourceFile file,ArrayList<Block> newBlockList ) throws IOException {
+	public static void analyzeAFile(SourceFile file) throws IOException {
+//	public static void analyzeAFile(SourceFile file,ArrayList<Block> newBlockList ) throws IOException {
 
 		// 新しくファイルを解析するので，もとにあったblockのデータはnewBlockListから削除
-		//この処理ってなぜ？
-		for(Block block : file.getNewBlockList()) {
-			int index = newBlockList.indexOf(block);
-			if(index > -1) {
-				newBlockList.remove(index);
-			}
-		}
+//		//この処理ってなぜ？
+//		for(Block block : file.getNewBlockList()) {
+//			int index = newBlockList.indexOf(block);
+//			if(index > -1) {
+//				newBlockList.remove(index);
+//			}
+//		}
 
 		//System.out.println("new Block Size 3  = " + newBlockList.size());
 
 		//新しくnweBlockListを作るので，前作ってたものを削除
+		file.getOldBlockList().clear();
+		file.setOldBlockList(file.getNewBlockList());
 		file.getNewBlockList().clear();
 
 		file.setState(SourceFile.MODIFIED);
@@ -499,7 +502,7 @@ public class CSharpAnalyzer {
 
 
 		file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL));
-		newBlockList.addAll(file.getNewBlockList());
+//		newBlockList.addAll(file.getNewBlockList());
 
 	}
 	/**

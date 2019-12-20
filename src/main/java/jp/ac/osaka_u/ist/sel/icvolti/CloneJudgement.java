@@ -147,7 +147,7 @@ public class CloneJudgement {
 		ArrayList<ClonePair> newClonePairList = new ArrayList<ClonePair>(clonePairList.size());
 
 		for (ClonePair pair : clonePairList)
-			if (filteringPair(clonePairList, pair.cloneA, pair.cloneB))
+			if (filteringPair(clonePairList, newClonePairList, pair.cloneA, pair.cloneB))
 				newClonePairList.add(pair);
 
 		newClonePairList.trimToSize();
@@ -297,7 +297,7 @@ public class CloneJudgement {
 		ArrayList<ClonePair> newClonePairList = new ArrayList<ClonePair>(clonePairList.size());
 
 		for (ClonePair pair : clonePairList)
-			if (filteringPair(clonePairList, pair.cloneA, pair.cloneB))
+			if (filteringPair(clonePairList, newClonePairList, pair.cloneA, pair.cloneB))
 				newClonePairList.add(pair);
 
 		newClonePairList.trimToSize();
@@ -376,7 +376,7 @@ public class CloneJudgement {
 
 		ArrayList<ClonePair> newClonePairList = new ArrayList<ClonePair>();
 		for (ClonePair pair : clonePairList)
-			if (filteringPair(clonePairList, pair.cloneA, pair.cloneB)) {
+			if (filteringPair(clonePairList,newClonePairList, pair.cloneA, pair.cloneB)) {
 				newClonePairList.add(pair);
 				//			System.out.println("add : " + pair);
 			}
@@ -619,7 +619,10 @@ public class CloneJudgement {
 		return s;
 	}
 
-	private static boolean filteringPair(ArrayList<ClonePair> clonePairList, Block cloneA, Block cloneB) {
+	private static boolean filteringPair(ArrayList<ClonePair> clonePairList, ArrayList<ClonePair> newClonePairList, Block cloneA, Block cloneB) {
+//		//同じコード片でないかチェック
+//		if(isSameCode(cloneA, cloneB))
+//			return false;
 		//親子関係でないかチェック
 		if (isPairWithDescendants(cloneA, cloneB))
 			return false;
@@ -628,7 +631,9 @@ public class CloneJudgement {
 		//重複コードでないかチェック
 		if (isDuplicatePair(clonePairList, cloneA, cloneB))
 			return false;
-
+		//同じクローンペアがないかチェック
+		if (isSameClonePair(newClonePairList, cloneA, cloneB))
+			return false;
 		return true;
 	}
 
@@ -642,7 +647,16 @@ public class CloneJudgement {
 		return false;
 	}
 
-	public static final boolean isDuplicatePair(final List<ClonePair> clonePairList, final Block a, final Block b) {
+	public static final boolean isSameCode(final Block codeA, final Block codeB) {
+		if(codeA.getFileName() == codeB.getFileName() &&
+				codeA.getStartLine() == codeB.getStartLine() &&
+				codeA.getEndLine() == codeB.getEndLine())
+			return true;
+
+		return false;
+	}
+
+	public static final boolean isDuplicatePair(final ArrayList<ClonePair> clonePairList, final Block a, final Block b) {
 		for (ClonePair pair : clonePairList) {
 			final Block pairA = pair.cloneA;
 			final Block pairB = pair.cloneB;
@@ -652,6 +666,52 @@ public class CloneJudgement {
 			if (isPairWithDescendants(pairA, b) && isPairWithDescendants(pairB, a))
 				if (!pairA.equals(b) || pairB.equals(a))
 					return true;
+		}
+		return false;
+	}
+
+	public static final boolean isSameClonePair(final ArrayList<ClonePair> newClonePairList , final Block a, final Block b) {
+		for (ClonePair pair : newClonePairList) {
+			final Block pairA = pair.cloneA;
+			final Block pairB = pair.cloneB;
+			String aFile = a.getFileName();
+			String bFile = b.getFileName();
+			String pairAFile = pairA.getFileName();
+			String pairBFile = pairB.getFileName();
+
+			if(aFile == pairAFile) {
+				if(bFile == pairBFile) {
+					int aStart = a.getStartLine();
+					int bStart = b.getStartLine();
+					int aEnd = a.getStartLine();
+					int bEnd = b.getStartLine();
+					int pairAStart = pairA.getStartLine();
+					int pairBStart = pairB.getStartLine();
+					int pairAEnd = pairA.getStartLine();
+					int pairBEnd = pairB.getStartLine();
+					if(aStart == pairAStart && bStart == pairBStart &&
+							aEnd == pairAEnd && bEnd == pairBEnd) {
+						return true;
+					}
+				}
+			}else if(aFile == pairBFile) {
+				if(bFile == pairAFile) {
+					int aStart = a.getStartLine();
+					int bStart = b.getStartLine();
+					int aEnd = a.getStartLine();
+					int bEnd = b.getStartLine();
+					int pairAStart = pairA.getStartLine();
+					int pairBStart = pairB.getStartLine();
+					int pairAEnd = pairA.getStartLine();
+					int pairBEnd = pairB.getStartLine();
+					if(aStart == pairBStart && bStart == pairAStart &&
+							aEnd == pairBEnd && bEnd == pairAEnd) {
+						return true;
+					}
+
+				}
+			}
+
 		}
 		return false;
 	}

@@ -84,6 +84,7 @@ public class VectorCalculator implements Serializable {
 		ArrayList<Block> deleteBlock = new ArrayList<Block>();
 		int i = 0;
 		for (Block block : blockList) {
+			//ブロックリストフィルタリング
 			if (filter(block, config)) {
 				/*
 				 * && !('A' <= block.getName().charAt(0) && block.getName().charAt(0) <= 'Z')
@@ -120,7 +121,8 @@ public class VectorCalculator implements Serializable {
 			}
 		}
 
-		BlockUpdater.deleteClonePair(deleteBlock, allData);
+//		BlockUpdater.deleteClonePair(deleteBlock, allData);
+		deleteBlock = null;
 
 		newBlockList.trimToSize();
 		return newBlockList;
@@ -207,7 +209,7 @@ public class VectorCalculator implements Serializable {
 		}
 
 		//次元数はAllDataに保存しておく必要がある
-		dimension = wordMap.size() + 1000;
+		dimension = wordMap.size() + 15000;
 		//dimension = wordMap.size();
 		allData.setVecDimension(dimension);
 		//		System.out.println("Dimension = " + allData.getVecDimension());
