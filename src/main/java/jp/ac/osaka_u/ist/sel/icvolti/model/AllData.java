@@ -458,22 +458,22 @@ public class AllData implements  Serializable {
 				if(pre_Diff) {
 					if(block.getFilterCategory() == Block.PASSFILTER) {
 						block.setFilterCategory(Block.NO_FILTER);
-						System.out.println("PASS FILTER");
+//						System.out.println("PASS FILTER");
 						blockList.add(block);
 					}
 					else {
-						System.out.println("not added  " + block.getFileName());
-						System.out.println("start line " + block.getStartLine());
-						System.out.println("end   line " + block.getEndLine());
+//						System.out.println("not added  " + block.getFileName());
+//						System.out.println("start line " + block.getStartLine());
+//						System.out.println("end   line " + block.getEndLine());
 					}
 				}else {
 					if(block.getPreFilterCategory() == Block.PASSFILTER) {
-						System.out.println("PASS FILTER");
+//						System.out.println("PASS FILTER");
 						blockList.add(block);
 					}
 					else {
-						System.out.println("not added  " + block.getFileName());
-						System.out.println("start line " + block.getStartLine());
+//						System.out.println("not added  " + block.getFileName());
+//						System.out.println("start line " + block.getStartLine());
 					}
 
 				}

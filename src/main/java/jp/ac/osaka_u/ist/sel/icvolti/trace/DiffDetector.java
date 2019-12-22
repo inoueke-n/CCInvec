@@ -11,9 +11,6 @@ import java.util.Arrays;
 import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
 import jp.ac.osaka_u.ist.sel.icvolti.Def;
-import jp.ac.osaka_u.ist.sel.icvolti.analyze.CAnalyzer4;
-import jp.ac.osaka_u.ist.sel.icvolti.analyze.CSharpAnalyzer;
-import jp.ac.osaka_u.ist.sel.icvolti.analyze.JavaAnalyzer3;
 import jp.ac.osaka_u.ist.sel.icvolti.model.SourceFile;
 
 /**
@@ -55,12 +52,12 @@ public class DiffDetector {
 	}
 
 
-//	public static boolean  getDiff_test(ArrayList<SourceFile> fileList, ArrayList<Block> newBlockList, Config config) {
+	//	public static boolean  getDiff_test(ArrayList<SourceFile> fileList, ArrayList<Block> newBlockList, Config config) {
 	public static boolean  getDiff_test(ArrayList<SourceFile> fileList, Config config) {
 
 		//ディレクトリ全体にdiffをかけて
 
-//		if(!executeDiff_test(fileList, newBlockList, config)) {
+		//		if(!executeDiff_test(fileList, newBlockList, config)) {
 		if(!executeDiff_test(fileList, config)) {
 			return false;
 		}else {
@@ -78,7 +75,7 @@ public class DiffDetector {
 	 *           <li>失敗の場合 - false</li>
 	 *         </ul>
 	 */
-//	private static boolean executeDiff_test(ArrayList<SourceFile> fileList, ArrayList<Block> newBlockList, Config config) {
+	//	private static boolean executeDiff_test(ArrayList<SourceFile> fileList, ArrayList<Block> newBlockList, Config config) {
 	private static boolean executeDiff_test(ArrayList<SourceFile> fileList, Config config) {
 		try{
 
@@ -114,12 +111,14 @@ public class DiffDetector {
 			int diffSearchFlag =0;
 			CloneDetector.modifiedSourceFile = false;
 			while((line = reader.readLine()) != null) {
-//				System.out.println("line = " + line);
+				//				System.out.println("line = " + line);
 
 
 				//	 	System.out.println("watasiha = ! " + line.substring(0,4).contains("diff"));
 
 				//ここのファイル検索もっと効率化できる
+				boolean analyzeFileDone = false;
+				boolean copyRightModified = false;
 
 				if(line.contains("diff -r -w")) {
 					String[] command = line.split(" ");
@@ -149,8 +148,9 @@ public class DiffDetector {
 								//		   System.out.println("===========miki = "  + file.getNewPath());
 								if(file.getNewPath().contains(command[5].replace("/", "\\"))){
 									subjectFile = file;
-//									CAnalyzer4.analyzeAFile(file, newBlockList);
-									CAnalyzer4.analyzeAFile(file);
+									file.setState(SourceFile.MODIFIED);
+									//									CAnalyzer4.analyzeAFile(file, newBlockList);
+									//									CAnalyzer4.analyzeAFile(file);
 									if(CloneDetector.modeDebug) {
 										System.out.println("analyze new file c c++");
 									}
@@ -176,15 +176,17 @@ public class DiffDetector {
 								//		   System.out.println("===========miki = "  + file.getNewPath());
 								if(file.getNewPath().contains(command[5].replace("/", "\\"))){
 									subjectFile = file;
+									file.setState(SourceFile.MODIFIED);
 									if(config.getLang() == 0) {
-//										JavaAnalyzer3.analyzeAFile(file, newBlockList);
-										JavaAnalyzer3.analyzeAFile(file);
+										//										JavaAnalyzer3.analyzeAFile(file, newBlockList);
+										//										JavaAnalyzer3.analyzeAFile(file);
+
 										if(CloneDetector.modeDebug) {
 											System.out.println("analyze new file java ");
 										}
 									}else if(config.getLang() == 2) {
-//										CSharpAnalyzer.analyzeAFile(file, newBlockList);
-										CSharpAnalyzer.analyzeAFile(file);
+										//										CSharpAnalyzer.analyzeAFile(file, newBlockList);
+										//										CSharpAnalyzer.analyzeAFile(file);
 										if(CloneDetector.modeDebug) {
 											System.out.println("analyze new file csharp ");
 										}
@@ -212,6 +214,7 @@ public class DiffDetector {
 					  line = 22c21 旧22が削除されて新21行が追加された
 					  line = 24c23 旧24が削除された新23行目になった
 						 * */
+
 						if(line.contains("a")) {
 							int startLine, endLine;
 							String[] str1 = line.split("a");
@@ -279,6 +282,14 @@ public class DiffDetector {
 
 							for(int i = startLine; i <= endLine; i++) {
 								subjectFile.getAddedCodeList().add(i);
+							}
+						}
+					}else {
+						if(line.contains("*")) {
+							if(line.toLowerCase().contains("copyright") || line.toLowerCase().contains("(c)") ) {
+//								System.out.println("flag on copy");
+								subjectFile.setCopyRightModified(true);
+
 							}
 						}
 					}

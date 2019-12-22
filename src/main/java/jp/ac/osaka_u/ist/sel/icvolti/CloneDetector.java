@@ -108,7 +108,7 @@ public class CloneDetector {
 							ControlGit.checkout(config.getNewTarget(), newCommitId);
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
 							allData.setDetectingCommitId(newCommitId);
-							//							allData.synchronizeAllData();
+							allData.synchronizeAllData();
 							allData = incrementalRun(config, i, allData);
 							num++;
 						}
@@ -173,8 +173,6 @@ public class CloneDetector {
 					}
 
 				}
-
-
 			}
 		}
 
@@ -414,10 +412,10 @@ public class CloneDetector {
 
 		//		System.out.println("blockList size " + blockList.size());
 
-		//fileList = null;
-		//FileList = null;
-		//clonePairList = null;
-		//		cloneSetList = null;
+		fileList = null;
+		FileList = null;
+		clonePairList = null;
+		cloneSetList = null;
 		blockList = null;
 		//		int i =0;
 		//		for(Block block : blockList) {
@@ -634,20 +632,20 @@ public class CloneDetector {
 			long vecStart = System.currentTimeMillis();
 			allBlockList = calculator.increFilterMethod(allBlockList, config, allData);
 
-//			int s =0;
-//			for(Block block : allBlockList) {
-//				if(block.getVector() == null) {
-//					System.out.println("vec null " + s++);
-//					System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-//					System.out.println("ID        "+ block.getId() );
-//					System.out.println("fileName  "+ block.getFileName());
-//					System.out.println("startLine "+ block.getStartLine());
-//					System.out.println("endLine   "+ block.getEndLine());
-//					System.out.println("category   "+ block.getCategoryString());
-//					System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-//
-//				}
-//			}
+			//			int s =0;
+			//			for(Block block : allBlockList) {
+			//				if(block.getVector() == null) {
+			//					System.out.println("vec null " + s++);
+			//					System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+			//					System.out.println("ID        "+ block.getId() );
+			//					System.out.println("fileName  "+ block.getFileName());
+			//					System.out.println("startLine "+ block.getStartLine());
+			//					System.out.println("endLine   "+ block.getEndLine());
+			//					System.out.println("category   "+ block.getCategoryString());
+			//					System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+			//
+			//				}
+			//			}
 
 
 			addedModifiedBlockList = TraceManager.devideBlockCategory(allBlockList, 0);

@@ -22,6 +22,8 @@ public class SourceFile implements Serializable {
 	/** 旧プロジェクトにおけるパス */
 	private String oldPath = null;
 
+	private boolean copyRightModified = false;
+
 	/** ファイルの状態 */
 	private int state = NULL;
 
@@ -300,6 +302,14 @@ public class SourceFile implements Serializable {
 	 */
 	public void setNewMethodList(ArrayList<Method> newMethodList) {
 		this.newMethodList = newMethodList;
+	}
+
+	public boolean isCopyRightModified() {
+		return copyRightModified;
+	}
+
+	public void setCopyRightModified(boolean copyRightModified) {
+		this.copyRightModified = copyRightModified;
 	}
 
 	/**

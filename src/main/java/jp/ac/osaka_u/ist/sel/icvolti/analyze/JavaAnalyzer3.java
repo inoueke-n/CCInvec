@@ -361,7 +361,7 @@ public class JavaAnalyzer3 {
 //				newBlockList.remove(index);
 //			}
 //		}
-		System.out.println("fileName  = " + file.getNewPath());
+//		System.out.println("fileName  = " + file.getNewPath());
 
 		//新しくnweBlockListを作るので，前作ってたものを削除
 //		file.getOldBlockList().clear();

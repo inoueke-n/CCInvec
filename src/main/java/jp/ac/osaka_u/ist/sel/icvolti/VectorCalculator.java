@@ -491,7 +491,7 @@ public class VectorCalculator implements Serializable {
 					if(block.getCategory() == Block.STABLE) {
 //						System.out.println("stable");
 //						blockList.set(setNum.get(k),increCalcBoW(block, wordMap, CloneDetector.countMethod, allData));
-//						increCalcBoW(block, wordMap, CloneDetector.countMethod, allData);
+						increCalcBoW(block, wordMap, CloneDetector.countMethod, allData);
 //						System.out.println("change vec of stable code");
 					}
 					k++;
@@ -509,12 +509,12 @@ public class VectorCalculator implements Serializable {
 		{
 			final int size = addedModifiedBlockList.size();
 			for (int i = 0; i < size; i++) {
-				System.out.println("addedModifiedBlockList count : " + i);
-				System.out.println("addedModifiedBlockList category : " + addedModifiedBlockList.get(i).getCategoryString());
-				System.out.println("addedModifiedBlockList id : " + addedModifiedBlockList.get(i).getId());
-				System.out.println("addedModifiedBlockList start = " + addedModifiedBlockList.get(i).getStartLine() +  " end line  " + addedModifiedBlockList.get(i).getEndLine());
-				System.out.println("addedModifiedBlockList filename = " + addedModifiedBlockList.get(i).getFileName());
-				System.out.println("addedModifiedBlockList blocksize = " + addedModifiedBlockList.get(i).getWordList().size());
+//				System.out.println("addedModifiedBlockList count : " + i);
+//				System.out.println("addedModifiedBlockList category : " + addedModifiedBlockList.get(i).getCategoryString());
+//				System.out.println("addedModifiedBlockList id : " + addedModifiedBlockList.get(i).getId());
+//				System.out.println("addedModifiedBlockList start = " + addedModifiedBlockList.get(i).getStartLine() +  " end line  " + addedModifiedBlockList.get(i).getEndLine());
+//				System.out.println("addedModifiedBlockList filename = " + addedModifiedBlockList.get(i).getFileName());
+//				System.out.println("addedModifiedBlockList blocksize = " + addedModifiedBlockList.get(i).getWordList().size());
 
 				//System.out.println("addedModifiedBlockList old Blockfilename = " + addedModifiedBlockList.get(i).getOldBlock().getFileName());
 				addedModifiedBlockList.set(i, increCalcBoW(addedModifiedBlockList.get(i), wordMap,  CloneDetector.countMethod, allData));
