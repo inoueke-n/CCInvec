@@ -396,8 +396,10 @@ public class CSharpAnalyzer {
 		//System.out.println("new Block Size 3  = " + newBlockList.size());
 
 		//新しくnweBlockListを作るので，前作ってたものを削除
-		file.getOldBlockList().clear();
-		file.setOldBlockList(file.getNewBlockList());
+//		file.getOldBlockList().clear();
+//		file.setOldBlockList(file.getNewBlockList());
+//		file.getNewBlockList().clear();
+		//前ここでバグ
 		file.getNewBlockList().clear();
 
 		file.setState(SourceFile.MODIFIED);

@@ -67,6 +67,7 @@ public class BlockCategorizer {
 	 */
 	private static void categorizeStableModified(SourceFile file,ArrayList<Block> updatedBlockList, AllData allData) {
 		//int i = 0;
+		System.out.println("categoryzed file  " + file.getNewPath()  );
 		for (Block blockA : file.getNewBlockList()) {
 
 
@@ -144,8 +145,11 @@ public class BlockCategorizer {
 								}
 								//System.out.println("Block STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 							} else {
-								blockA.setCategory(Block.MODIFIED);
-								updatedBlockList.add(blockA);
+								if(blockA.getCategory() == Block.NULL) {
+									blockA.setCategory(Block.MODIFIED);
+								}
+								blockB.setCategory(Block.MODIFIED);
+								//								updatedBlockList.add(blockA);
 								//								System.out.println("ADD block List 1");
 								//								System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 							}
@@ -168,8 +172,11 @@ public class BlockCategorizer {
 							}
 							//	System.out.println("Block STABLE = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						} else {
-							blockA.setCategory(Block.MODIFIED);
-							updatedBlockList.add(blockA);
+							if(blockA.getCategory() == Block.NULL) {
+								blockA.setCategory(Block.MODIFIED);
+							}
+							blockB.setCategory(Block.MODIFIED);
+							//							updatedBlockList.add(blockA);
 							//							System.out.println("ADD block List 2");
 							//							System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());
 						}
@@ -181,10 +188,17 @@ public class BlockCategorizer {
 							if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList().equals(blockB.getWordList())) {
 								blockA.setCategory(Block.STABLE);
 								blockB.setCategory(Block.STABLE);
-								BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
+								if(blockA.getVector() == null) {
+									blockA.setVector(blockB.getVector());
+									blockA.setLen(blockB.getLen());
+									BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
+								}
 								//System.out.println("Block STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 							} else {
 								blockB.setCategory(Block.MODIFIED);
+								if(blockA.getCategory() == Block.NULL) {
+									blockA.setCategory(Block.MODIFIED);
+								}
 								//updatedBlockList.add(blockA);
 								//								System.out.println("ADD block List 3 ");
 								//								System.out.println("Block MODIFIED = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
@@ -196,10 +210,17 @@ public class BlockCategorizer {
 						if (addedLineStart == addedLineEnd && deletedLineStart == deletedLineEnd && blockA.getWordList().equals(blockB.getWordList())) {
 							blockA.setCategory(Block.STABLE);
 							blockB.setCategory(Block.STABLE);
-							BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
+							if(blockA.getVector() == null) {
+								blockA.setVector(blockB.getVector());
+								blockA.setLen(blockB.getLen());
+								BlockUpdater.updateClonePairBlock(blockA,blockB, allData);
+							}
 							//	System.out.println("Block STABLE = filename " + blockB.getFileName() + "start line =  " + blockB.getStartLine() + "end line = " + blockA.getEndLine());
 						} else {
 							blockB.setCategory(Block.MODIFIED);
+							if(blockA.getCategory() == Block.NULL) {
+								blockA.setCategory(Block.MODIFIED);
+							}
 							//updatedBlockList.add(blockA);
 							//							System.out.println("ADD block List 4 ");
 							//							System.out.println("Block MODIFIED = filename " + blockA.getFileName() + "start line =  " + blockA.getStartLine() + "end line = " + blockA.getEndLine());

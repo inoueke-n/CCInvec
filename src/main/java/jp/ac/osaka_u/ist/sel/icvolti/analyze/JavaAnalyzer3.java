@@ -361,11 +361,14 @@ public class JavaAnalyzer3 {
 //				newBlockList.remove(index);
 //			}
 //		}
-		//System.out.println("new Block Size 3  = " + newBlockList.size());
+		System.out.println("fileName  = " + file.getNewPath());
 
 		//新しくnweBlockListを作るので，前作ってたものを削除
-		file.getOldBlockList().clear();
-		file.setOldBlockList(file.getNewBlockList());
+//		file.getOldBlockList().clear();
+//		file.setOldBlockList(file.getNewBlockList());
+//		file.getNewBlockList().clear();
+
+		//前ここでバグ
 		file.getNewBlockList().clear();
 
 		file.setState(SourceFile.MODIFIED);

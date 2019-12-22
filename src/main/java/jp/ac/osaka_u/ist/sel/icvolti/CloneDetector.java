@@ -426,7 +426,7 @@ public class CloneDetector {
 		//			}
 		//			i++;
 		//		}
-//		System.out.println(lshTime + "," +mkcpTime);
+		//		System.out.println(lshTime + "," +mkcpTime);
 
 		currentTime = System.currentTimeMillis();
 		if(modeTimeMeasure) {
@@ -539,7 +539,7 @@ public class CloneDetector {
 			oldFileList_test =  allData.getSourceFileList();
 			//ここでdeletedに分類されたクローンをupdatedBlockListに格納
 			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
-//			newBlockList = newJavaanalyzer.incrementalAnalyze(FileList);
+			//			newBlockList = newJavaanalyzer.incrementalAnalyze(FileList);
 			newJavaanalyzer.incrementalAnalyze(FileList);
 			long analyzeEnd = System.currentTimeMillis();
 			analyzeTime = analyzeEnd - analyzeStart;
@@ -547,8 +547,8 @@ public class CloneDetector {
 			//新旧コードブロック間の対応をとる
 			long addStart = System.currentTimeMillis();
 
-//			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
-//			TraceManager.analyzeBlock(FileList, newBlockList, config, allData);
+			//			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+			//			TraceManager.analyzeBlock(FileList, newBlockList, config, allData);
 			TraceManager.analyzeBlock(FileList, config, allData);
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
@@ -572,7 +572,7 @@ public class CloneDetector {
 			oldFileList_test =  allData.getSourceFileList();
 			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
 			Canalyzer.incrementalAnalyze(FileList);
-//			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+			//			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
 			TraceManager.analyzeBlock(FileList, config, allData);
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
@@ -596,10 +596,11 @@ public class CloneDetector {
 			FileList = BlockUpdater.updateSourceFileList(config.getNewTarget(), config.getOldTarget(), oldFileList_test, newFileList,updatedBlockList);
 			csharpAnalyzer.incrementalAnalyze(FileList);
 			//新旧コードブロック間の対応をとる
-//			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
+			//			newBlockList.addAll(TraceManager.analyzeBlock(FileList, newBlockList, config, allData));
 			TraceManager.analyzeBlock(FileList, config, allData);
 			//コードブロックのIDを再度割り振りなおす
 			allBlockList = TraceManager.getAllBlock(FileList);
+
 			updatedBlockList.addAll(TraceManager.devideBlockCategory(allBlockList, 4));
 			long csharpEnd = System.currentTimeMillis();
 			csharpTime = csharpEnd - csharpStart;
@@ -632,6 +633,21 @@ public class CloneDetector {
 			//newBlockList = calculator.filterMethod(newBlockList);
 			long vecStart = System.currentTimeMillis();
 			allBlockList = calculator.increFilterMethod(allBlockList, config, allData);
+
+//			int s =0;
+//			for(Block block : allBlockList) {
+//				if(block.getVector() == null) {
+//					System.out.println("vec null " + s++);
+//					System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+//					System.out.println("ID        "+ block.getId() );
+//					System.out.println("fileName  "+ block.getFileName());
+//					System.out.println("startLine "+ block.getStartLine());
+//					System.out.println("endLine   "+ block.getEndLine());
+//					System.out.println("category   "+ block.getCategoryString());
+//					System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+//
+//				}
+//			}
 
 
 			addedModifiedBlockList = TraceManager.devideBlockCategory(allBlockList, 0);
@@ -898,7 +914,7 @@ public class CloneDetector {
 		//				System.out.println(currentTime - start);
 		//			}
 		//		}else
-//		System.out.println(analyzeTime +  "," + addTime);
+		//		System.out.println(analyzeTime +  "," + addTime);
 		if(modeEvalForOnlyDiffVer) {
 			if(modifiedSourceFile || addedSourceFile || deletedSourceFile) {
 				if(config.getLang() == 0) {
