@@ -296,16 +296,39 @@ public class AllData implements  Serializable {
 			ClonePair cp  = i.next();
 			int idA = cp.cloneA.getId();
 			int idB = cp.cloneB.getId();
-			if((cp.cloneA.getStartLine() != blockList.get(idA).getStartLine() || cp.cloneA.getEndLine() !=  blockList.get(idA).getEndLine()) ||
-					(cp.cloneB.getStartLine() != blockList.get(idB).getStartLine() || cp.cloneB.getEndLine() !=  blockList.get(idB).getEndLine())) {
-				System.out.println("remove clone pair");
+			int bLSize = blockList.size();
+			if(bLSize >=  idA && bLSize >= idB) {
+				if((Block.eqaulsCodeInfo(cp.cloneA, blockList.get(idA)) &&
+						(!Block.eqaulsCodeInfo(cp.cloneB, blockList.get(idB))))) {
+					cp.cloneA = null;
+					cp.cloneB = null;
+
+					cp.setCloneA(blockList.get(idA));
+					cp.setCloneB(blockList.get(idB));
+				}else {
+					boolean cpAset = false;
+					boolean cpBset = false;
+					for(Block block : blockList) {
+						if(Block.eqaulsCodeInfo(block, cp.cloneA)) {
+							cp.cloneA = null;
+							cp.setCloneA(block);
+							cpAset = true;
+						}
+						if(Block.eqaulsCodeInfo(block, cp.cloneB)) {
+							cp.cloneB = null;
+							cp.setCloneB(block);
+							cpBset = true;
+						}
+					}
+					if(!cpAset || !cpBset) {
+						//				System.out.println("remove clone pair");
+						i.remove();
+					}
+
+				}
+			}else {
 				i.remove();
 			}
-			cp.cloneA = null;
-			cp.cloneB = null;
-
-			cp.setCloneA(blockList.get(idA));
-			cp.setCloneB(blockList.get(idB));
 		}
 
 		//		for(ClonePair cp : ClonePairList) {
@@ -458,22 +481,22 @@ public class AllData implements  Serializable {
 				if(pre_Diff) {
 					if(block.getFilterCategory() == Block.PASSFILTER) {
 						block.setFilterCategory(Block.NO_FILTER);
-//						System.out.println("PASS FILTER");
+						//						System.out.println("PASS FILTER");
 						blockList.add(block);
 					}
 					else {
-//						System.out.println("not added  " + block.getFileName());
-//						System.out.println("start line " + block.getStartLine());
-//						System.out.println("end   line " + block.getEndLine());
+						//						System.out.println("not added  " + block.getFileName());
+						//						System.out.println("start line " + block.getStartLine());
+						//						System.out.println("end   line " + block.getEndLine());
 					}
 				}else {
 					if(block.getPreFilterCategory() == Block.PASSFILTER) {
-//						System.out.println("PASS FILTER");
+						//						System.out.println("PASS FILTER");
 						blockList.add(block);
 					}
 					else {
-//						System.out.println("not added  " + block.getFileName());
-//						System.out.println("start line " + block.getStartLine());
+						//						System.out.println("not added  " + block.getFileName());
+						//						System.out.println("start line " + block.getStartLine());
 					}
 
 				}

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
 import jp.ac.osaka_u.ist.sel.icvolti.Logger;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.CAnalyzer4;
@@ -67,7 +68,7 @@ public class TraceManager {
 		for(SourceFile file : fileList) {
 			if(file.getState() == SourceFile.MODIFIED) {
 				if(file.isCopyRightModified() && file.getAddedCodeList().equals(file.getDeletedCodeList())) {
-//						System.out.println("copyright on  " + file.getNewPath());
+					//						System.out.println("copyright on  " + file.getNewPath());
 					file.setState(SourceFile.NORMAL);
 				}else {
 					analyzeAFile(config, file);
@@ -79,6 +80,7 @@ public class TraceManager {
 	}
 
 	private static void analyzeAFile(Config config, SourceFile file) {
+		CloneDetector.modifiedSourceFile = true;
 		if(config.getLang()==0) {
 			try {
 				JavaAnalyzer3.analyzeAFile(file);
@@ -150,6 +152,15 @@ public class TraceManager {
 				Block bk = i .next();
 				int category = bk.getCategory();
 				if(category == Block.MODIFIED||category == Block.DELETED) {
+					devidedBlockList.add(bk);
+				}
+			}
+		}else if(flag == 5) {
+			Iterator<Block> i = updatedBlockList.iterator();
+			while(i.hasNext()){
+				Block bk = i .next();
+				if(bk.getPreFilterCategory() == Block.PASSFILTER) {
+					bk.setFilterCategory(Block.PASSFILTER);
 					devidedBlockList.add(bk);
 				}
 			}

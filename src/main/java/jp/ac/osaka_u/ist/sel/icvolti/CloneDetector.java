@@ -754,6 +754,8 @@ public class CloneDetector {
 			}
 		}else {
 			allData.setPreDiff(false);
+			allBlockList = TraceManager.devideBlockCategory(allBlockList, 5);
+
 		}
 		//ArrayList<CloneSet> cloneSetList = null;
 		//		for (ClonePair clonePair : ClonePairList_test) {

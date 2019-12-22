@@ -154,7 +154,6 @@ public class DiffDetector {
 									if(CloneDetector.modeDebug) {
 										System.out.println("analyze new file c c++");
 									}
-									CloneDetector.modifiedSourceFile = true;
 									//System.out.println("=========== newBlock List===============");
 									//ソースコードのparse
 									fileExist = true;
@@ -191,7 +190,6 @@ public class DiffDetector {
 											System.out.println("analyze new file csharp ");
 										}
 									}
-									CloneDetector.modifiedSourceFile = true;
 									//System.out.println("=========== newBlock List===============");
 									//ソースコードのparse
 									fileExist = true;

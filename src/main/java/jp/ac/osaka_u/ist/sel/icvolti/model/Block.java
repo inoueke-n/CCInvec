@@ -87,10 +87,10 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 		this.name = block.getName();
 		this.startLine = block.getStartLine();
 		this.endLine = block.getEndLine();
-	//	this.startColumn = block.getStartColumn();
-	//	this.endColumn = block.getEndColumn();
-	//	this.startToken = block.getStartToken();
-	//	this.endToken = block.getEndToken();
+		//	this.startColumn = block.getStartColumn();
+		//	this.endColumn = block.getEndColumn();
+		//	this.startToken = block.getStartToken();
+		//	this.endToken = block.getEndToken();
 		this.newBlock = block.getNewBlock();
 		this.newBlock = block.getOldBlock();
 		this.vector = block.getVector();
@@ -589,17 +589,17 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 	 * @param blocklist
 	 */
 	public static void serializeBlockList(List<Block> blockList) {
-		 try {
-             ObjectOutputStream objOutStream =
-             new ObjectOutputStream(
-             new FileOutputStream("blockList.bin"));
-             objOutStream.writeObject(blockList);
-             objOutStream.close();
-         } catch (FileNotFoundException e) {
-             e.printStackTrace();
-         } catch (IOException e) {
-             e.printStackTrace();
-         }
+		try {
+			ObjectOutputStream objOutStream =
+					new ObjectOutputStream(
+							new FileOutputStream("blockList.bin"));
+			objOutStream.writeObject(blockList);
+			objOutStream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 
@@ -610,24 +610,24 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 	 * @param blocklist
 	 */
 	public static List<Block> deserializeBlockList(String blockListName) {
-        try {
-            ObjectInputStream objInStream
-              = new ObjectInputStream(
-                new FileInputStream(blockListName));
+		try {
+			ObjectInputStream objInStream
+			= new ObjectInputStream(
+					new FileInputStream(blockListName));
 
-            List<Block> blockList = (List<Block>) objInStream.readObject();
+			List<Block> blockList = (List<Block>) objInStream.readObject();
 
-            objInStream.close();
+			objInStream.close();
 
-            return blockList;
+			return blockList;
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
@@ -656,15 +656,15 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 
 	public boolean equals(Object obj, int i) {
 		if (this == obj) {
-//			System.out.println(" object true");
+			//			System.out.println(" object true");
 			return true;
 		}
 		if (obj == null) {
-//			System.out.println(" object null");
+			//			System.out.println(" object null");
 			return false;
 		}
 		if (getClass() != obj.getClass()) {
-//			System.out.println(" object class difference");
+			//			System.out.println(" object class difference");
 			return false;
 		}
 		Block other = (Block) obj;
@@ -674,6 +674,7 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 		}
 		return true;
 	}
+
 
 	public boolean match(String className, String name) {
 		if (this.fileName.equals(className) && this.name.equals(name)) {
@@ -687,16 +688,30 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 		return this.id - b.id;
 	}
 
-    @Override
-    public Block clone(){
+	@Override
+	public Block clone(){
 
-        Block block = new Block();
-        try {
-           block = (Block)super.clone();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return block;
-    }
+		Block block = new Block();
+		try {
+			block = (Block)super.clone();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return block;
+	}
+
+	public static boolean eqaulsCodeInfo(Block blockA, Block blockB) {
+		// TODO 自動生成されたメソッド・スタブ
+
+		if(blockA.getFileName().equals(blockB.getFileName()) &&
+				blockA.getStartLine() == blockB.getStartLine() &&
+				blockA.getEndLine() == blockB.getEndLine()) {
+			return true;
+		}else {
+			return false;
+		}
+
+
+	}
 
 }
