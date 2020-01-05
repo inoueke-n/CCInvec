@@ -223,7 +223,7 @@ public class VectorCalculator implements Serializable {
 		dimension = wordMap.size() + 15000;
 		//dimension = wordMap.size();
 		allData.setVecDimension(dimension);
-		//		System.out.println("Dimension = " + allData.getVecDimension());
+		System.out.println("Dimension = " + allData.getVecDimension());
 		//		System.out.println("filtered word count : " + wordMap.size());
 
 		long start = System.currentTimeMillis();

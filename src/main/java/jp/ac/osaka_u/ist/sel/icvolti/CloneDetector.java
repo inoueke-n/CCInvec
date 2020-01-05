@@ -56,6 +56,20 @@ public class CloneDetector {
 	public static int countMethod, countBlock, countLine;
 	private static final String version = "19.01.24";
 	//public static int dimention_test;
+	public static long start = System.currentTimeMillis();
+	public static long subStart = start;
+	public static long currentTime;
+	public static long javaTime = start;
+	public static long cTime = start;
+	public static  long csharpTime = start;
+	public static long resetTime = start;
+	public static long vecTime = start;
+	public static long lshTime = start;
+	public static long mkcpTime = start;
+	public static long cpTime = start;
+	public static long csTime = start;
+	public static long otTime = start;
+	public static long serializeTime = start;
 
 	/**
 	 * <p>
@@ -96,6 +110,7 @@ public class CloneDetector {
 							ControlGit.checkout(config.getNewTarget(), newCommitId);
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
 							allData.setDetectingCommitId(newCommitId);
+							start = System.currentTimeMillis();
 							allData = firstRun(config);
 							num++;
 						}else {
@@ -108,6 +123,7 @@ public class CloneDetector {
 							ControlGit.checkout(config.getNewTarget(), newCommitId);
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
 							allData.setDetectingCommitId(newCommitId);
+							start = System.currentTimeMillis();
 							allData.synchronizeAllData();
 							allData = incrementalRun(config, i, allData);
 							num++;
@@ -166,7 +182,7 @@ public class CloneDetector {
 							config.setOldTarget(config.getInputDir().get(i-1));
 							config.setNewTarget(config.getInputDir().get(i));
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
-							//							allData.synchronizeAllData();
+							allData.synchronizeAllData();
 							allData = incrementalRun(config, i, allData);
 							num++;
 						}
@@ -210,20 +226,7 @@ public class CloneDetector {
 		getApplicationPath();
 		//commandOption(args);
 
-		long start = System.currentTimeMillis();
-		long subStart = start;
-		long currentTime;
-		long javaTime = start;
-		long cTime = start;
-		long csharpTime = start;
-		long resetTime = start;
-		long vecTime = start;
-		long lshTime = start;
-		long mkcpTime = start;
-		long cpTime = start;
-		long csTime = start;
-		long otTime = start;
-		long serializeTime = start;
+
 
 		//		System.out.println("Extract word in source code ...");
 		countMethod = 0;
