@@ -440,12 +440,12 @@ public class VectorCalculator implements Serializable {
 				if (block.getParent() == null) {
 					for (Word word : block.getWordList()) {
 						//そのバージョンのソースコードに出てくるワードをカウント
-						if (wordFreqMapSource.containsKey(word.getName())) {
-							int valueAll = wordFreqMapSource.get(word.getName());
-							wordFreqMapSource.put(word.getName(), ++valueAll);
-						} else {
-							wordFreqMapSource.put(word.getName(), 1);
-						}
+						//						if (wordFreqMapSource.containsKey(word.getName())) {
+						//							int valueAll = wordFreqMapSource.get(word.getName());
+						//							wordFreqMapSource.put(word.getName(), ++valueAll);
+						//						} else {
+						//							wordFreqMapSource.put(word.getName(), 1);
+						//						}
 						//新規単語かつ，APPEARANCE_TH以上出現する単語を空いているベクトルの次元数に割り当てる
 						if(!wordMap.containsKey(word.getName())) {
 							if (wordFreqMap.containsKey(word.getName())) {
@@ -475,19 +475,18 @@ public class VectorCalculator implements Serializable {
 
 
 			// ワードの出現回数でフィルタリング（デフォルト 1以下は除去）
-
-			int wordFreqSource[] = new int[wordFreqMapSource.size()];
-			Iterator<String> iter = dictionary.iterator();
-			for (int i = 0; iter.hasNext();) {
-				String wordName = iter.next();
-				if (wordFreqMapSource.get(wordName) > APPEARANCE_TH) {
-					wordMapSource.put(wordName, i);
-					wordFreqSource[i] = wordFreqMapSource.get(wordName);
-					i++;
-				} else {
-					iter.remove();
-				}
-			}
+			//			int wordFreqSource[] = new int[wordFreqMapSource.size()];
+			//			Iterator<String> iter = dictionary.iterator();
+			//			for (int i = 0; iter.hasNext();) {
+			//				String wordName = iter.next();
+			//				if (wordFreqMapSource.get(wordName) > APPEARANCE_TH) {
+			//					wordMapSource.put(wordName, i);
+			//					wordFreqSource[i] = wordFreqMapSource.get(wordName);
+			//					i++;
+			//				} else {
+			//					iter.remove();
+			//				}
+			//			}
 
 			int reCalcNum = 0;
 			if(targetAddWord.size() > 0) {
@@ -509,7 +508,7 @@ public class VectorCalculator implements Serializable {
 			//		System.out.println("Density : " + String.format("%f",
 			//				(double) elementCount / ((double) wordFreqMap.size() * (double) blockList.size())));
 
-			// ワードの出現回数でフィルタリング（デフォルト 1以下は除去）
+			// 新規単語があるものはベクトルを更新
 			if(reCalcBlockList.size() > 0) {
 				int k =0;
 				for(Block block : reCalcBlockList) {
@@ -524,6 +523,7 @@ public class VectorCalculator implements Serializable {
 				}
 			}
 		}
+
 
 
 		//dimension = allData.getVecDimension();
@@ -884,7 +884,8 @@ public class VectorCalculator implements Serializable {
 		double len = 0;
 		for (Word word : block.getWordList()) {
 			//wordMapにもあるし，今回のバージョンのソースコードにも単語がある
-			if (wordMap.containsKey(word.getName()) && wordMapSource.containsKey(word.getName())) {
+			if (wordMap.containsKey(word.getName())) {
+				//			if (wordMap.containsKey(word.getName()) && wordMapSource.containsKey(word.getName())) {
 				int id = wordMap.get(word.getName());
 				double tf = 0;
 				switch (word.getType()) {
