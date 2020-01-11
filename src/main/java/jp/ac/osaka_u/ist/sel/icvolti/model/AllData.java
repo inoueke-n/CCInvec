@@ -14,6 +14,7 @@ import java.util.Map;
 
 import jp.ac.osaka_u.ist.sel.icvolti.CloneDetector;
 import jp.ac.osaka_u.ist.sel.icvolti.Config;
+import jp.ac.osaka_u.ist.sel.icvolti.VectorCalculator;
 
 public class AllData implements  Serializable {
 
@@ -21,6 +22,7 @@ public class AllData implements  Serializable {
 	static ArrayList<ClonePair> ClonePairList;
 	static ArrayList<Block> BlockListOfCalcedVec;
 	static Map<String, Integer> wordMap;
+	static Map<String, Integer> wordMapSource;
 	static int wordFreq[];
 	static int dimension;
 	static String detectingCommitId = null;;
@@ -89,6 +91,22 @@ public class AllData implements  Serializable {
 	 */
 	public void setWordMap( Map<String, Integer> wordMap) {
 		this.wordMap = wordMap;
+	}
+
+	/**
+	 * <p>ワードマップの取得</p>
+	 * @return ワードマップ
+	 */
+	public Map<String, Integer> getWordMapSource() {
+		return wordMapSource;
+	}
+
+	/**
+	 * <p>ワードマップの設定</p>
+	 * @param ワードマップ
+	 */
+	public void setWordMapSource( Map<String, Integer> wordMapSource) {
+		this.wordMapSource = wordMapSource;
 	}
 
 	/**
@@ -298,8 +316,8 @@ public class AllData implements  Serializable {
 			int idB = cp.cloneB.getId();
 			int bLSize = blockList.size();
 			if(bLSize >=  idA && bLSize >= idB) {
-				if((Block.eqaulsCodeInfo(cp.cloneA, blockList.get(idA)) &&
-						(!Block.eqaulsCodeInfo(cp.cloneB, blockList.get(idB))))) {
+				if((Block.equalsCodeInfo(cp.cloneA, blockList.get(idA)) &&
+						(!Block.equalsCodeInfo(cp.cloneB, blockList.get(idB))))) {
 					cp.cloneA = null;
 					cp.cloneB = null;
 
@@ -309,12 +327,12 @@ public class AllData implements  Serializable {
 					boolean cpAset = false;
 					boolean cpBset = false;
 					for(Block block : blockList) {
-						if(Block.eqaulsCodeInfo(block, cp.cloneA)) {
+						if(Block.equalsCodeInfo(block, cp.cloneA)) {
 							cp.cloneA = null;
 							cp.setCloneA(block);
 							cpAset = true;
 						}
-						if(Block.eqaulsCodeInfo(block, cp.cloneB)) {
+						if(Block.equalsCodeInfo(block, cp.cloneB)) {
 							cp.cloneB = null;
 							cp.setCloneB(block);
 							cpBset = true;
@@ -509,10 +527,32 @@ public class AllData implements  Serializable {
 			//			if(BlockListOfCalcedVec.get(i).getWordList() == null) {
 			//				System.out.println("vec null " + i );
 			//			}
-			block.setWordList(BlockListOfCalcedVec.get(i).getWordList());
-			block.setVector(BlockListOfCalcedVec.get(i).getVector());
-			block.setLen(BlockListOfCalcedVec.get(i).getLen());
-			block.setCategory(Block.NULL);
+			Block calcedVecBlock = BlockListOfCalcedVec.get(i);
+			if(Block.equalsCodeInfo(block, calcedVecBlock)) {
+				block.setWordList(calcedVecBlock.getWordList());
+				block.setVector(calcedVecBlock.getVector());
+				block.setLen(calcedVecBlock.getLen());
+				block.setCategory(Block.NULL);
+			}else {
+				boolean blockExist = false;
+				for(Block calcedBlock : BlockListOfCalcedVec) {
+					if(Block.equalsCodeInfo(block, calcedBlock)) {
+						block.setWordList(calcedBlock.getWordList());
+						block.setVector(calcedBlock.getVector());
+						block.setLen(calcedBlock.getLen());
+						block.setCategory(Block.NULL);
+						blockExist = true;
+						break;
+					}
+				}
+				if(!blockExist) {
+					if(CloneDetector.vecMethod == "BoW") {
+						block.setCategory(Block.NULL);
+						VectorCalculator.increCalcBoW(block, wordMap, wordMapSource, CloneDetector.countMethod, dimension);
+					}
+
+				}
+			}
 			//	System.out.println("ID " + block.getId());
 			//block.setId(i);
 			i++;

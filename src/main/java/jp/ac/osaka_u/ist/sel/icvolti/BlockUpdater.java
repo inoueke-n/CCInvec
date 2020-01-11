@@ -168,6 +168,8 @@ public class BlockUpdater {
 					block.setCategory(Block.NULL);
 					block.setOldFileName(block.getFileName());
 					block.setFileName(newTargetFilePath);
+					block.setNewBlock(null);
+					block.setOldBlock(null);
 					//とりあえず，ノーマルなファイルに含まれるブロックはSTABLEに分類 ＜－これが原因でAddedにうまく分類されていない？
 					//block.setCategory(Block.STABLE);
 				}
@@ -411,9 +413,10 @@ public class BlockUpdater {
 						//	System.out.println(" cpB block " + cp.cloneB.getFileName());
 
 						if(block.getOldBlock() != null) {
-							if(block.getOldBlock().getFileName() == cp.cloneA.getFileName() &&
-									block.getOldBlock().getStartLine() == cp.cloneA.getStartLine() &&
-									block.getOldBlock().getEndLine() == cp.cloneA.getEndLine()) {
+							if(Block.equalsCodeInfo(block.getOldBlock(), cp.cloneA)) {
+//							if(block.getOldBlock().getFileName() == cp.cloneA.getFileName() &&
+//									block.getOldBlock().getStartLine() == cp.cloneA.getStartLine() &&
+//									block.getOldBlock().getEndLine() == cp.cloneA.getEndLine()) {
 
 								//							System.out.println("DELETE CLONEPAIR because update A ");
 								//							System.out.println("============= = ");

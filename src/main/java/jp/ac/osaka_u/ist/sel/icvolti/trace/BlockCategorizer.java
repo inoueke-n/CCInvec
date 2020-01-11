@@ -125,7 +125,7 @@ public class BlockCategorizer {
 				int endLineB = blockB.getEndLine() - deletedLineEnd;
 				//コード片の重複度を計算，30パーンセット重複していれば，追跡
 				double sim = calcurateLocationSimilarity(blockA, blockB, startLineA, endLineA, startLineB, endLineB);
-				if (sim >= 0.7) {
+				if (sim >= 0.3 && blockB.getNewBlock() == null) {
 					if (blockA.getOldBlock() != null) {
 						//blockA.getLocationSimilarity() デフォルト値は0
 						if (sim > blockA.getLocationSimilarity()) {

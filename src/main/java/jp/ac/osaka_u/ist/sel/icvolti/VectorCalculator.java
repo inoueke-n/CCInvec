@@ -516,7 +516,7 @@ public class VectorCalculator implements Serializable {
 					if(block.getCategory() == Block.STABLE) {
 						//						System.out.println("stable");
 						//						blockList.set(setNum.get(k),increCalcBoW(block, wordMap, CloneDetector.countMethod, allData));
-						increCalcBoW(block, wordMap, wordMapSource, CloneDetector.countMethod, allData);
+						increCalcBoW(block, wordMap, wordMapSource, CloneDetector.countMethod, allData.getVecDimension());
 						//						System.out.println("change vec of stable code");
 					}
 					k++;
@@ -541,7 +541,7 @@ public class VectorCalculator implements Serializable {
 			//				System.out.println("addedModifiedBlockList blocksize = " + addedModifiedBlockList.get(i).getWordList().size());
 
 			//System.out.println("addedModifiedBlockList old Blockfilename = " + addedModifiedBlockList.get(i).getOldBlock().getFileName());
-			addedModifiedBlockList.set(i, increCalcBoW(addedModifiedBlockList.get(i), wordMap, wordMapSource, CloneDetector.countMethod, allData));
+			addedModifiedBlockList.set(i, increCalcBoW(addedModifiedBlockList.get(i), wordMap, wordMapSource, CloneDetector.countMethod, allData.getVecDimension()));
 		}
 
 
@@ -557,6 +557,7 @@ public class VectorCalculator implements Serializable {
 		}
 
 		allData.setWordMap(wordMap);
+		allData.setWordMapSource(wordMapSource);
 		//allData.setWordFreq(wordFreq);
 		//		System.out.print("file out done : ");
 		//		System.out.println(System.currentTimeMillis() - start + "[ms]");
@@ -860,7 +861,7 @@ public class VectorCalculator implements Serializable {
 	}
 
 
-	private static Block increCalcBoW(Block block, Map<String, Integer> wordMap, Map<String, Integer> wordMapSource, int numMethod, AllData allData) {
+	public static Block increCalcBoW(Block block, Map<String, Integer> wordMap, Map<String, Integer> wordMapSource, int numMethod, int vecDimension) {
 		int wordCount = 0;
 		int statementCount = 0;
 
@@ -907,7 +908,7 @@ public class VectorCalculator implements Serializable {
 		}
 		len = Math.sqrt(len);
 		//	System.out.println("len = " + len);
-		OpenMapRealVector vector = new OpenMapRealVector(allData.getVecDimension());
+		OpenMapRealVector vector = new OpenMapRealVector(vecDimension);
 		final int size = indexList.size();
 		for (int i = 0; i < size; i++) {
 			//	System.out.println("index " +  indexList.get(i) +  "; valueList.get(i) / len) = " + valueList.get(i) / len);

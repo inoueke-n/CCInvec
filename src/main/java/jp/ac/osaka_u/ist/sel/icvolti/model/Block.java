@@ -700,12 +700,14 @@ public class Block implements Comparable<Block>, Serializable,Cloneable {
 		return block;
 	}
 
-	public static boolean eqaulsCodeInfo(Block blockA, Block blockB) {
+	public static boolean equalsCodeInfo(Block blockA, Block blockB) {
 		// TODO 自動生成されたメソッド・スタブ
 
 		if(blockA.getFileName().equals(blockB.getFileName()) &&
 				blockA.getStartLine() == blockB.getStartLine() &&
-				blockA.getEndLine() == blockB.getEndLine()) {
+				blockA.getEndLine() == blockB.getEndLine() &&
+				blockA.getWordList().equals(blockB.getWordList())
+				) {
 			return true;
 		}else {
 			return false;

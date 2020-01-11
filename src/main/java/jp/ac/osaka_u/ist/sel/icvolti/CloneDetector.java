@@ -35,8 +35,8 @@ public class CloneDetector {
 	public static final boolean lda = false;
 	public static final boolean absoluteTracking = true;
 
-	public static final boolean modeDebug = false;
-	public static final boolean modeStdout = false;
+	public static final boolean modeDebug = true;
+	public static final boolean modeStdout = true;
 	public static final boolean modeTimeMeasure = true;
 	public static final boolean modeEvalForOnlyDiffVer = true;
 
@@ -47,6 +47,7 @@ public class CloneDetector {
 
 
 	public static String javaClassPath;
+	public static String vecMethod = "BoW";
 
 	private static ArrayList<Block> blockList;
 	private static ArrayList<Block> allBlockList;
