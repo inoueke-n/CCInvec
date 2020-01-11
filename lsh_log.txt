@@ -1,11 +1,11 @@
-nPoints: 1260
+nPoints: 835
 DIMENSION: 18368
 reading dataset
-5469 points read
-time: 0.0199651[s]
+4972 points read
+time: 0.0179894[s]
 reading query points
-1260 points read
-time: 0.0049971[s]
+835 points read
+time: 0.0029997[s]
 table: 6
 params::
 dimension: 18368
@@ -23,14 +23,14 @@ last_cp_dimension: 3
 determination params time: 0[s]
 building the index based on the CrossPolytope LSH
 done
-time: 0.0509704[s]
+time: 0.0469499[s]
 get candidates
-probe = 12average_hash_table_time : 0.000349694[s]
-average_distance_time : 0.0018229[s]
-average_lsh_time : 2.93456e-05[s]
-average_num_candidates : 12241.8
+probe = 12average_hash_table_time : 0.000354374[s]
+average_distance_time : 0.00161943[s]
+average_lsh_time : 1.91156e-05[s]
+average_num_candidates : 11205.8
 done
-time: 2.77445[s]
+time: 1.66709[s]
 output LSH result
 finished
-total time:2.85238[s]
+total time:1.73602[s]
