@@ -84,6 +84,13 @@ public class SettingFileLoader {
 						config.setThreads(Integer.parseInt(removeSpace(line.replace("THREADS:",""))));
 					}
 
+					// 余分にとるベクトルの次元数
+					if(line.contains("EX_DIM:")) {
+						inputFlag = 0;
+						config.setExDim(Integer.parseInt(removeSpace(line.replace("EX_DIM:",""))));
+					}
+
+
 					// 過去のデータの場所
 					if(line.contains("DATA_DIR:")) {
 						inputFlag = 0;

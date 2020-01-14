@@ -26,6 +26,7 @@ public class Config {
 	private int lang = JAVA;
 	public static String charset = "UTF-8";
 	public static int NUM_THREADS;
+	public static int EX_DIM = 15000;
 	// private  boolean paramFlg = true;
 
 	//LSHパラメータ
@@ -302,11 +303,28 @@ public class Config {
 	}
 
 	/**
-	 * <p>最小行の設定</p>
+	 * <p>スレッド数の設定</p>
 	 * @param NUM_THREADS
 	 */
 	public void setThreads(int NUM_THREADS) {
 		this.NUM_THREADS = NUM_THREADS;
+	}
+
+
+	/**
+	 * <p>EX_DIMの取得</p>
+	 * @return EX_DIM
+	 */
+	public int getExDim() {
+		return EX_DIM;
+	}
+
+	/**
+	 * <p>EX_DIMの設定</p>
+	 * @param EX_DIM
+	 */
+	public void setExDim(int EX_DIM) {
+		this.EX_DIM = EX_DIM;
 	}
 
 	/**
