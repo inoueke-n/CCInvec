@@ -206,7 +206,7 @@ public class CAnalyzer4 {
 
 		for (SourceFile file : fileList) {
 
-			if(file.getState()==SourceFile.NORMAL) {
+			if(file.getState()==SourceFile.STABLE) {
 				file.getOldBlockList().clear();
 				for(Block block : file.getNewBlockList()) {
 					block.setCategory(Block.NULL);

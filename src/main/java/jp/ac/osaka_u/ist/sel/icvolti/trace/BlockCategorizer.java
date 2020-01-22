@@ -32,7 +32,7 @@ public class BlockCategorizer {
 		for (SourceFile file : fileList) {
 			//	System.out.println(" start filelist");
 			//ここでmodifiedされたファイルだけやるれば効率化と高速化して，normalなやつはすべてstableつければいい
-			if (file.getState() == SourceFile.NORMAL) {
+			if (file.getState() == SourceFile.STABLE) {
 				for(Block block : file.getNewBlockList()) {
 					block.setCategory(Block.STABLE);
 				}

@@ -124,7 +124,7 @@ public class JavaAnalyzer3 {
 			//			int index = oldFileNameList.indexOf(fileName);
 			int index = oldFileNameList.indexOf(oldPath);
 			if (index > -1) {
-				file.setState(SourceFile.NORMAL);
+				file.setState(SourceFile.STABLE);
 				oldFileNameList.remove(oldPathName + "\\" + fileName.substring(newPathName.length()+1));
 			} else {
 				file.setState(SourceFile.ADDED);
@@ -262,7 +262,7 @@ public class JavaAnalyzer3 {
 		for (SourceFile file : fileList) {
 			countFiles++;
 
-			if(file.getState()==SourceFile.NORMAL) {
+			if(file.getState()==SourceFile.STABLE) {
 				file.getOldBlockList().clear();
 				for(Block block : file.getNewBlockList()) {
 					block.setCategory(Block.NULL);

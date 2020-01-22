@@ -177,7 +177,7 @@ public class SourceFile implements Serializable {
 	public final static int NULL = -1;
 
 	/** <p>存続ファイル</p> */
-	public final static int NORMAL = 0;
+	public final static int STABLE = 0;
 
 	/** <p>追加ファイル</p> */
 	public final static int ADDED = 1;

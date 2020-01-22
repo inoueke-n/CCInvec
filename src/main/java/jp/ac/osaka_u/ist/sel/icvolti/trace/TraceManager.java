@@ -69,7 +69,7 @@ public class TraceManager {
 			if(file.getState() == SourceFile.MODIFIED) {
 				if(file.isCopyRightModified() && file.getAddedCodeList().equals(file.getDeletedCodeList())) {
 					//						System.out.println("copyright on  " + file.getNewPath());
-					file.setState(SourceFile.NORMAL);
+					file.setState(SourceFile.STABLE);
 				}else {
 					analyzeAFile(config, file);
 				}

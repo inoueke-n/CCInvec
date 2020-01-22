@@ -155,7 +155,7 @@ public class BlockUpdater {
 				file.setNewPath(newTargetFilePath);
 				//System.out.println("newFile = " + newFilePath);
 				newFileList.remove(newTargetFilePath);
-				file.setState(SourceFile.NORMAL);
+				file.setState(SourceFile.STABLE);
 				for(Block block : file.getNewBlockList()) {
 					//					block.setFileterCategory(Block.NO_FILTER);
 					if(block.getPreFilterCategory() == Block.PASSFILTER && block.getVector()==null) {
@@ -249,7 +249,7 @@ public class BlockUpdater {
 				newTargetFilePath = newTarget + file.getOldPath().substring(oldTarget.length());
 				if(newFile == newTargetFilePath) {
 					file.setNewPath(newTargetFilePath);
-					file.setState(SourceFile.NORMAL);
+					file.setState(SourceFile.STABLE);
 					for(Block block : file.getNewBlockList()) {
 						block.setOldFileName(block.getFileName());
 						block.setFileName(newTargetFilePath);

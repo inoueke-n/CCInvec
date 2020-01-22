@@ -35,12 +35,12 @@ public class DiffDetector {
 
 		for(SourceFile file: fileList) {
 			// ファイルが存続 かつ ブロックが消滅していない場合
-			//	if(file.getState() == SourceFile.NORMAL && !(file.getNewBlockList().isEmpty() && !file.getOldBlockList().isEmpty())) {
+			//	if(file.getState() == SourceFile.STABLE && !(file.getNewBlockList().isEmpty() && !file.getOldBlockList().isEmpty())) {
 			//	System.out.println("SourceFile.NOMAL = " + file.getState());
 
 
 
-			if(file.getState() == SourceFile.NORMAL) {
+			if(file.getState() == SourceFile.STABLE) {
 				//	System.out.println("NOMAL source FIle");
 				if(!executeDiff(file)) {
 					System.out.println("diff false");
