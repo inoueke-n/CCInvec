@@ -47,7 +47,7 @@ public class CloneDetector {
 
 
 	public static String javaClassPath;
-	public static String vecMethod = "BoW";
+//	public static String vecMethod;
 
 	private static ArrayList<Block> blockList;
 	private static ArrayList<Block> allBlockList;
@@ -125,7 +125,7 @@ public class CloneDetector {
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
 							allData.setDetectingCommitId(newCommitId);
 							start = System.currentTimeMillis();
-							allData.synchronizeAllData();
+							allData.synchronizeAllData(config);
 							allData = incrementalRun(config, i, allData);
 							num++;
 						}
@@ -145,7 +145,7 @@ public class CloneDetector {
 								config.setNewTarget(config.getInputDir().get(i));
 								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
 								allData =  AllData.deserializeAllDataList(config);
-								allData.synchronizeAllData();
+								allData.synchronizeAllData(config);
 								allData = incrementalRun(config,i,allData);
 								num++;
 							}else {
@@ -155,7 +155,7 @@ public class CloneDetector {
 								config.setOldTarget(config.getInputDir().get(i-1));
 								config.setNewTarget(config.getInputDir().get(i));
 								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
-								allData.synchronizeAllData();
+								allData.synchronizeAllData(config);
 								allData = incrementalRun(config,i, allData);
 								num++;
 							}
@@ -183,7 +183,7 @@ public class CloneDetector {
 							config.setOldTarget(config.getInputDir().get(i-1));
 							config.setNewTarget(config.getInputDir().get(i));
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
-							allData.synchronizeAllData();
+							allData.synchronizeAllData(config);
 							allData = incrementalRun(config, i, allData);
 							num++;
 						}
@@ -220,8 +220,7 @@ public class CloneDetector {
 	private static AllData firstRun(Config config) throws Exception {
 		if(modeStdout) {
 			System.out.println("ICVolti " + version);
-			System.out.println("AAAAAAAAAAAAAAAAAA");
-			System.out.println("----BoW ver----");
+			System.out.println("----START----");
 		}
 		// setJavaClassPath();
 		getApplicationPath();
@@ -295,7 +294,7 @@ public class CloneDetector {
 		//		System.out.println();
 		//
 		//		System.out.println("Calculate vector of each method ...");
-		calculator.calculateVector(blockList, allData);
+		calculator.calculateVector(blockList, allData, config);
 
 		/*		for(Block block : blockList) {
 				System.out.println("l====enn =     " + block.getLen());
@@ -666,7 +665,7 @@ public class CloneDetector {
 
 			if(addedModifiedBlockList.size() > 0 && allBlockList.size() > 0) {
 
-				allBlockList = calculator.increCalculateVector(allBlockList, addedModifiedBlockList, allData);
+				allBlockList = calculator.increCalculateVector(allBlockList, addedModifiedBlockList, allData,config.getVecMethod());
 
 
 				//				allBlockList = calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);

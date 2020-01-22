@@ -47,6 +47,17 @@ public class SettingFileLoader {
 							config.setLang(2);
 						//config.setLang(removeSpace(line.replace("LANGUAGE:","")));
 					}
+
+					// ベクトル表現
+					if(line.contains("VEC_METHOD:")) {
+						inputFlag = 0;
+						if (removeSpace(line.replace("VEC_METHOD:","")).equals("BoW"))
+							config.setVecMethod(0);
+						if (removeSpace(line.replace("VEC_METHOD:","")).equals("TF-IDF"))
+							config.setVecMethod(1);
+						//config.setLang(removeSpace(line.replace("LANGUAGE:","")));
+					}
+
 					// 出力形式
 					if(line.contains("OUTPUT_FORMAT:")) {
 						inputFlag = 0;

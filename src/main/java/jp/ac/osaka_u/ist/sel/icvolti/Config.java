@@ -26,6 +26,9 @@ public class Config {
 	private int lang = JAVA;
 	public static String charset = "UTF-8";
 	public static int NUM_THREADS;
+	public static final int BoW = 0;
+	public static final int TFIDF = 1;
+	private int vecMethod = BoW;
 	public static int EX_DIM = 15000;
 	// private  boolean paramFlg = true;
 
@@ -232,6 +235,22 @@ public class Config {
 	 */
 	public void setOldDir(String oldDir) {
 		this.oldDir = oldDir;
+	}
+
+	/*
+	 * <p>ベクトル表現</p>
+	 * @return lang
+	 */
+	public int getVecMethod() {
+		return vecMethod;
+	}
+
+	/**
+	 * <p>ベクトル表現の設定</p>
+	 * @param vecMethod
+	 */
+	public void setVecMethod(int vecMethod) {
+		this.vecMethod = vecMethod;
 	}
 
 

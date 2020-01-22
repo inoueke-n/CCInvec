@@ -13,6 +13,9 @@ public class SourceFile implements Serializable {
 	/** ファイルID */
 	private int id = NULL;
 
+	/** メソッドの数 */
+	private int numMethodinFile = 0;
+
 	/** ファイル名 */
 	private String name = null;
 
@@ -202,6 +205,22 @@ public class SourceFile implements Serializable {
 	 */
 	public void setState(int state) {
 		this.state = state;
+	}
+
+	/**
+	 * <p>ソースファイルに含まれる関数の数</p>
+	 * @return 関数の数
+	 */
+	public int getNumMethod() {
+		return numMethodinFile;
+	}
+
+	/**
+	 * <p>ソースファイルに含まれる関数の数の設定</p>
+	 * @param 関数の数
+	 */
+	public void setNumMethod(int numMethodinFile) {
+		this.numMethodinFile = numMethodinFile;
 	}
 
 	/**
