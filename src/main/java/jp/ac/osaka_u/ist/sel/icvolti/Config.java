@@ -30,7 +30,7 @@ public class Config {
 	public static final int TFIDF = 1;
 	private int vecMethod = BoW;
 	public static int EX_DIM = 15000;
-	public static int NUMWORD_RECALC = 20;
+	public static int NUMWORD_RECALC = 50;
 	// private  boolean paramFlg = true;
 
 	//LSHパラメータ

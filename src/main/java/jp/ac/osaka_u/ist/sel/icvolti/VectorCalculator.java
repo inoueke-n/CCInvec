@@ -225,6 +225,7 @@ public class VectorCalculator implements Serializable {
 		dimension = wordMap.size() + config.getExDim();
 		//dimension = wordMap.size();
 		allData.setVecDimension(dimension);
+		allData.setNumWordForCalc(wordMap.size());
 		System.out.println("Dimension = " + allData.getVecDimension());
 		//		System.out.println("filtered word count : " + wordMap.size());
 
@@ -459,7 +460,7 @@ public class VectorCalculator implements Serializable {
 		int wordMapSize = wordMap.size();
 		int allDataVecDimension = allData.getVecDimension();
 		int numOfExtraWords = allDataVecDimension- wordMapSize;
-		System.out.println("numOfExtraWords  " + numOfExtraWords);
+		//		System.out.println("numOfExtraWords  " + numOfExtraWords);
 		if(numOfExtraWords > 0) {
 
 
@@ -477,8 +478,11 @@ public class VectorCalculator implements Serializable {
 						if (wordFreqMapSource.containsKey(word.getName())) {
 							int valueAll = wordFreqMapSource.get(word.getName());
 							wordFreqMapSource.put(word.getName(), ++valueAll);
-							wordMapSource.put(word.getName(), i);
-							i++;
+							if(valueAll > APPEARANCE_TH) {
+								//n回以上出現するワードを記録
+								wordMapSource.put(word.getName(), i);
+								i++;
+							}
 						} else {
 							wordFreqMapSource.put(word.getName(), 1);
 						}
@@ -510,8 +514,20 @@ public class VectorCalculator implements Serializable {
 			}
 			//			System.out.println(" =================== PRE wordMap size = " + wordMap.size() + "===================");
 			//			System.out.println("targetAddWord = " + targetAddWord.size());
-			if(targetAddWord.size() >= config.getNumWordRecalc()) {
+
+			//検出対象バージョンのワードの数
+			//wordMapSource.size();
+			//もともと計算につかっていたバージョンのワードの数
+			//allData.getNumWordForCalc();
+			//この二つの絶対値をとりそれが閾値以上だったら，TF-IDFを再計算
+			int numOfIncreOrDecre = Math.abs(wordMapSource.size() - allData.getNumWordForCalc());
+//			System.out.println("########## wordMapSource size = " + wordMapSource.size() + "############");
+
+			//			if(targetAddWord.size() >= config.getNumWordRecalc()) {
+			if(numOfIncreOrDecre >= config.getNumWordRecalc()) {
 				//新規単語が閾値以上出現した場合 tf-idfを再計算
+				allData.setNumWordForCalc(wordMapSource.size());
+//				System.out.println("=============Recalc IDF ===================");
 				if(CloneDetector.modeDebug) {
 					System.out.println("=============Recalc IDF ===================");
 				}
@@ -523,49 +539,37 @@ public class VectorCalculator implements Serializable {
 				allData.setCountMethodForCalc(numMethod);
 
 				//				int reCalcNum = 0;
-
-				int breakPoint = targetAddWord.size();
-				int j = wordMapSize;
-				for(int i=0; i < numOfExtraWords; i++) {
-					wordMap.put(targetAddWord.get(i), j++);
-					addedWord.add(targetAddWord.get(i));
-					if(breakPoint-1 == i) {
-						//							reCalcNum = i;
-						break;
+				if(targetAddWord.size() > 0) {
+					int breakPoint = targetAddWord.size();
+					int j = wordMapSize;
+					for(int i=0; i < numOfExtraWords; i++) {
+						wordMap.put(targetAddWord.get(i), j++);
+						addedWord.add(targetAddWord.get(i));
+						if(breakPoint-1 == i) {
+							//							reCalcNum = i;
+							break;
+						}
 					}
 				}
 
 				//wordMapに登録されている単語の出現頻度をwordFreqに記録
-
-				int wordFreq[] = new int[j];
-				//				for(int i =0; i<wordMap.size(); i++) {
-				//					if(wordMap.get(i) != null) {
-				//						System.out.println("wordMap Word " + wordMap.get(i));
-				//						if(wordFreqMapSource.containsKey(wordMap.get(i))) {
-				//							wordFreq[i] = wordFreqMapSource.get(wordMap.get(i));
-				//						}else {
-				//							wordFreq[i] = 0;
-				//						}
-				//					}else {
-				//						wordFreq[i] = 0;
-				//					}
-				//				}
-
+				int wordFreq[] = new int[dimension];
 				Set<Map.Entry<String, Integer>> entries = wordMap.entrySet();
 
 				for (Map.Entry<String, Integer> entry : entries) {
-					System.out.println("key is [" + entry.getKey() + "]、value is [" + entry.getValue() + "]");
+					//					System.out.println("key is [" + entry.getKey() + "]、value is [" + entry.getValue() + "]");
 					if(wordFreqMapSource.containsKey(entry.getKey())) {
 						wordFreq[entry.getValue()] = wordFreqMapSource.get(entry.getKey());
 					}else {
+						//今回のソースコードにその単語がなければ0を格納
 						wordFreq[entry.getValue()]=0;
 					}
 				}
-				System.out.println("word Freq size = " + wordFreq.length);
+				//				System.out.println("word Freq size = " + wordFreq.length);
 
-				for(int freq : wordFreq) {
-					System.out.println("wordFreq  = " + freq);
-				}
+				//				for(int freq : wordFreq) {
+				//					System.out.println("wordFreq  = " + freq);
+				//				}
 
 				final int size = blockList.size();
 				for (int i = 0; i < size; i++) {
