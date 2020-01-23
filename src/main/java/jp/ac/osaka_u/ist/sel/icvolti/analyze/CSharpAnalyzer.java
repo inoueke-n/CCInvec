@@ -130,128 +130,6 @@ public class CSharpAnalyzer {
 		return is;
 	}
 
-	/**
-	 * <p>
-	 * ディレクトリ探索
-	 * </p>
-	 *
-	 * @param file
-	 * @throws IOException
-	 */
-	public ArrayList<Block> analyze(List<String> fileList) throws IOException {
-		ArrayList<Block> blockList = new ArrayList<>();
-		for (String file : fileList) {
-			countFiles++;
-
-			List<Token> codeTokens = new ArrayList<Token>();
-			// List<Token> commentTokens = new ArrayList<Token>();
-
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					skipUTF8BOM(new FileInputStream(file), Config.charset), Charset.forName(Config.charset)));
-			CharStream stream = CharStreams.fromReader(reader, file);
-			CSharpLexer preprocessorLexer = new CSharpLexer(stream);
-			preprocessorLexer.removeErrorListeners();
-			preprocessorLexer.addErrorListener(DescriptiveErrorListener.INSTANCE);
-
-			// Collect all tokens with lexer (CSharpLexer.g4).
-			List<? extends Token> tokens;
-			try {
-				tokens = preprocessorLexer.getAllTokens();
-			} catch (Exception e) {
-				continue;
-			}
-
-			// List<Token> directiveTokens = new ArrayList<Token>();
-			// ListTokenSource directiveTokenSource = new ListTokenSource(directiveTokens);
-			// CommonTokenStream directiveTokenStream = new
-			// CommonTokenStream(directiveTokenSource, CSharpLexer.DIRECTIVE);
-			// CSharpPreprocessorParser preprocessorParser = new
-			// CSharpPreprocessorParser(directiveTokenStream);
-
-			int index = 0;
-			boolean compiliedTokens = true;
-			while (index < tokens.size()) {
-				Token token = tokens.get(index);
-				if (token.getType() == CSharpLexer.SHARP) {
-					// directiveTokens.clear();
-					int directiveTokenIndex = index + 1;
-					// Collect all preprocessor directive tokens.
-					while (directiveTokenIndex < tokens.size()
-							&& tokens.get(directiveTokenIndex).getType() != CSharpLexer.EOF
-							&& tokens.get(directiveTokenIndex).getType() != CSharpLexer.DIRECTIVE_NEW_LINE
-							&& tokens.get(directiveTokenIndex).getType() != CSharpLexer.SHARP) {
-						/*
-						 * if (tokens.get(directiveTokenIndex).getChannel() ==
-						 * CSharpLexer.COMMENTS_CHANNEL) {
-						 * commentTokens.add(tokens.get(directiveTokenIndex)); } else if
-						 * (tokens.get(directiveTokenIndex).getChannel() != CSharpLexer.HIDDEN) {
-						 * directiveTokens.add(tokens.get(directiveTokenIndex)); }
-						 */
-						directiveTokenIndex++;
-					}
-
-					/*
-					 * directiveTokenSource = new ListTokenSource(directiveTokens);
-					 * directiveTokenStream = new CommonTokenStream(directiveTokenSource,
-					 * CSharpLexer.DIRECTIVE);
-					 * preprocessorParser.setInputStream(directiveTokenStream);
-					 * preprocessorParser.reset(); Parse condition in preprocessor directive (based
-					 * on CSharpPreprocessorParser.g4 grammar).
-					 * CSharpPreprocessorParser.Preprocessor_directiveContext directive =
-					 * preprocessorParser .preprocessor_directive(); if true than next code is valid
-					 * and not ignored. compiliedTokens = directive.value;
-					 */
-					index = directiveTokenIndex - 1;
-				} else if (token.getChannel() != CSharpLexer.HIDDEN && token.getType() != CSharpLexer.DIRECTIVE_NEW_LINE
-						&& compiliedTokens) {
-					codeTokens.add(token); // Collect code tokens.
-				}
-				index++;
-			}
-
-			// At second stage tokens parsed in usual way.
-			ListTokenSource codeTokenSource = new ListTokenSource(codeTokens);
-			CommonTokenStream codeTokenStream = new CommonTokenStream(codeTokenSource);
-			CSharpParser parser = new CSharpParser(codeTokenStream);
-			// Parse syntax tree (CSharpParser.g4)
-			Compilation_unitContext tree = null;
-
-			parser.removeErrorListeners();
-			// parser.addErrorListener(SilentErrorListener.INSTANCE);
-
-			parser.getInterpreter().setPredictionMode(PredictionMode.SLL);
-			try {
-				tree = parser.compilation_unit(); // STAGE 1
-			} catch (Exception ex) {
-				// System.out.println("try predictionMode LL");
-				codeTokenSource = new ListTokenSource(codeTokens);
-				codeTokenStream = new CommonTokenStream(codeTokenSource);
-				parser = new CSharpParser(codeTokenStream);
-
-				parser.getInterpreter().setPredictionMode(PredictionMode.LL);
-				parser.removeErrorListeners();
-				parser.addErrorListener(DescriptiveErrorListener.INSTANCE);
-				// parser.addErrorListener(ParserErrorListener.INSTANCE);
-				try {
-					tree = parser.compilation_unit(); // STAGE 2
-					// System.out.println("success");
-				} catch (ParseCancellationException e) {
-					System.err.println(file + " parse cancel");
-					continue;
-				} catch (Exception e) {
-					System.err.println(e);
-					continue;
-				}
-				// if we parse ok, it's LL not SLL
-			}
-			blockList.addAll(extractMethod(tree, parser, Block.NULL));
-			countParseFiles++;
-			CloneDetector.countLine += tokens.get(tokens.size() - 1).getLine();
-
-		}
-		return blockList;
-	}
-
 
 	/**
 	 * <p>
@@ -370,7 +248,7 @@ public class CSharpAnalyzer {
 				// if we parse ok, it's LL not SLL
 			}
 			//
-			file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL));
+			file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL,file));
 			blockList.addAll(file.getNewBlockList());
 			countParseFiles++;
 			CloneDetector.countLine += tokens.get(tokens.size() - 1).getLine();
@@ -503,7 +381,7 @@ public class CSharpAnalyzer {
 		//			CloneDetector.countLine += tokens.get(tokens.size() - 1).getLine();
 
 
-		file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL));
+		file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL,file));
 //		newBlockList.addAll(file.getNewBlockList());
 
 	}
@@ -645,7 +523,7 @@ public class CSharpAnalyzer {
 					}
 					// if we parse ok, it's LL not SLL
 				}
-				file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL));
+				file.getNewBlockList().addAll(extractMethod(tree, parser, Block.NULL,file));
 				blockList.addAll(file.getNewBlockList());
 				countParseFiles++;
 				CloneDetector.countLine += tokens.get(tokens.size() - 1).getLine();
@@ -684,10 +562,12 @@ public class CSharpAnalyzer {
 	 * @param parent
 	 * @param className
 	 */
-	private static ArrayList<Block> extractMethod(ParseTree tree, CSharpParser parser, int category) {
+	private static ArrayList<Block> extractMethod(ParseTree tree, CSharpParser parser, int category, SourceFile file) {
 		ArrayList<Block> blockList = new ArrayList<>();
+		int numMethod = 0;
 		for (ParseTree t : XPath.findAll(tree, "//method_declaration", parser)) {
 			CloneDetector.countMethod++;
+			numMethod++;
 			int c = t.getChildCount();
 			for (ParseTree subt : ((CSharpParser.Method_declarationContext) t).children) {
 				if (subt instanceof RuleContext) {
@@ -705,6 +585,7 @@ public class CSharpAnalyzer {
 				}
 			}
 		}
+		file.setNumMethod(numMethod);
 		return blockList;
 	}
 

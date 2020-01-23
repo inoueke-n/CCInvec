@@ -30,6 +30,7 @@ public class Config {
 	public static final int TFIDF = 1;
 	private int vecMethod = BoW;
 	public static int EX_DIM = 15000;
+	public static int NUMWORD_RECALC = 20;
 	// private  boolean paramFlg = true;
 
 	//LSHパラメータ
@@ -312,6 +313,24 @@ public class Config {
 	}
 
 
+
+	/**
+	 * <p>再計算条件の単語数の取得</p>
+	 * @return NUM_THREADS
+	 */
+	public int getNumWordRecalc() {
+		return NUMWORD_RECALC;
+	}
+
+	/**
+	 * <p>再計算条件の単語数の設定</p>
+	 * @param NUM_THREADS
+	 */
+	public void setNumWordRecalc(int NUMWORD_RECALC) {
+		if(NUMWORD_RECALC >0) {
+			this.NUMWORD_RECALC = NUMWORD_RECALC;
+		}
+	}
 
 	/**
 	 * <p>スレッド数の取得</p>

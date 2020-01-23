@@ -132,25 +132,11 @@ public class CAnalyzer4 {
 		return allWordList;
 	}
 
-	public ArrayList<Block> analyze(List<String> fileList) {
-		ArrayList<Block> blockList = new ArrayList<>();
-		for (String file : fileList) {
-			try {
-				blockList.addAll(extractMethod(new File(file), Block.NULL));
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.err.println(file + " : " + e);
-			}
-		}
-		return blockList;
-	}
-
-
 	public ArrayList<Block> analyzeFirst(ArrayList<SourceFile> fileList) {
 		ArrayList<Block> blockList = new ArrayList<>();
 		for (SourceFile file : fileList) {
 			try {
-				file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL));
+				file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL, file));
 				blockList.addAll(file.getNewBlockList());
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -184,7 +170,7 @@ public class CAnalyzer4 {
 		file.setState(SourceFile.MODIFIED);
 
 		try {
-			file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL));
+			file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.NULL, file));
 //			newBlockList.addAll(file.getNewBlockList());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -227,7 +213,7 @@ public class CAnalyzer4 {
 				//新規追加されたソースファイル
 				//				System.out.println("==============new File Analysis");
 				try {
-					file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.ADDED));
+					file.getNewBlockList().addAll(extractMethod(new File(file.getNewPath()), Block.ADDED, file));
 //					blockList.addAll(file.getNewBlockList());
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -249,7 +235,7 @@ public class CAnalyzer4 {
 	 * @throws Exception
 	 * @throws IOException
 	 */
-	private static ArrayList<Block> extractMethod(File file, int category) throws Exception {
+	private static ArrayList<Block> extractMethod(File file, int category, SourceFile srcFile) throws Exception {
 		ArrayList<Block> blockList = new ArrayList<>();
 		String input = preProcessor(file);
 		CharStream stream = CharStreams.fromString(input, file.toString());
@@ -264,6 +250,7 @@ public class CAnalyzer4 {
 		String methodName = null;
 		int start = 0;
 		p = 0;
+		int numMethod = 0;
 		while (p < tokens.size()) {
 			token = tokens.get(p);
 			switch (token.getType()) {
@@ -290,6 +277,7 @@ public class CAnalyzer4 {
 					blockList.add(block);
 					block.setCategory(category);
 					CloneDetector.countMethod++;
+					numMethod++;
 					int endPtr = p + blockLength(tokens, p);
 					block.setEndLine(tokens.get(endPtr).getLine());
 					block.setMethodEndLine(block.getEndLine());
@@ -312,6 +300,7 @@ public class CAnalyzer4 {
 			beforeToken = token;
 			p++;
 		}
+		srcFile.setNumMethod(numMethod);
 		CloneDetector.countLine += token.getLine();
 		return blockList;
 	}

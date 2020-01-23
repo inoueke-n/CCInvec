@@ -1,6 +1,6 @@
 cd /d %~dp0
 
-java -Xms512M -Xmx1024M -jar icvolti_0.1sim.jar inputAnt7day > Ant7daysim01.csv
+java -Xms512M -Xmx1024M -jar icvolti.jar inputAnt7dayTfIdf > Ant7daysTfIdf.txt
 
 REM KEYにアクセストークンを記入
 set KEY=RlTjf1ufK8Bn1LbdMXKTnUFYEY2pnjDcCdJH6l3sr4r

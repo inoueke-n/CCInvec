@@ -1,0 +1,6742 @@
+ICVolti 19.01.24
+----START----
+Dimension = 16014
+3914[ms]
+2927,1579767458934,108,850,1579767458934,25,1579767458934,3914,0bfa36507ce49c8c6f0469afd7daee250ed60cd8
+Finished : 
+numOfExtraWords  15000
+ =================== PRE wordMap size = 1014===================
+targetAddWord = 14
+IDF Stable
+3936,1,60,324,0,12,0,4381,2f3fc4ceb269ba3d0285afb816295ff76e503b10
+Finished : 
+numOfExtraWords  15000
+ =================== PRE wordMap size = 1014===================
+targetAddWord = 139
+=============Recalc IDF ===================
+ =================== wordMap size = 1081===================
+ =================== wordFreqMapSource size = 1590===================
+キーは[exception]、値は[12]です
+キーは[]、値は[474]です
+キーは[cce]、値は[421]です
+キーは[references]、値は[820]です
+キーは[year]、値は[1143]です
+キーは[allowed]、値は[976]です
+キーは[descriptor]、値は[129]です
+キーは[remote]、値は[738]です
+キーは[gridx]、値は[1107]です
+キーは[hashtable]、値は[325]です
+キーは[quote]、値は[707]です
+キーは[pkgs]、値は[776]です
+キーは[gridy]、値は[1108]です
+キーは[opts]、値は[913]です
+キーは[xml]、値は[227]です
+キーは[definitions]、値は[651]です
+キーは[adapter]、値は[655]です
+キーは[pool]、値は[805]です
+キーは[raw]、値は[983]です
+キーは[optional]、値は[865]です
+キーは[circular]、値は[972]です
+キーは[concat]、値は[1149]です
+キーは[packages]、値は[598]です
+キーは[version]、値は[388]です
+キーは[0]、値は[23]です
+キーは[1]、値は[48]です
+キーは[2]、値は[69]です
+キーは[contains]、値は[272]です
+キーは[3]、値は[70]です
+キーは[folder]、値は[921]です
+キーは[4]、値は[25]です
+キーは[size]、値は[83]です
+キーは[util]、値は[346]です
+キーは[selection]、値は[476]です
+キーは[stop]、値は[705]です
+キーは[5]、値は[71]です
+キーは[left]、値は[312]です
+キーは[reserved]、値は[344]です
+キーは[6]、値は[72]です
+キーは[7]、値は[73]です
+キーは[8]、値は[74]です
+キーは[9]、値は[75]です
+キーは[object]、値は[132]です
+キーは[taskdef]、値は[650]です
+キーは[1000]、値は[77]です
+キーは[result]、値は[241]です
+キーは[sleep]、値は[695]です
+キーは[characters]、値は[656]です
+キーは[strs]、値は[900]です
+キーは[fullpath]、値は[742]です
+キーは[quiet]、値は[386]です
+キーは[listing]、値は[829]です
+キーは[ejb]、値は[834]です
+キーは[behavior]、値は[965]です
+キーは[close]、値は[94]です
+キーは[connect]、値は[305]です
+キーは[resolved]、値は[377]です
+キーは[linked]、値は[478]です
+キーは[policy]、値は[570]です
+キーは[rebuild]、値は[852]です
+キーは[a]、値は[790]です
+キーは[linker]、値は[877]です
+キーは[b]、値は[515]です
+キーは[c]、値は[139]です
+キーは[d]、値は[678]です
+キーは[e]、値は[141]です
+キーは[f]、値は[95]です
+キーは[ioex]、値は[685]です
+キーは[i]、値は[51]です
+キーは[loops]、値は[935]です
+キーは[j]、値は[481]です
+キーは[k]、値は[549]です
+キーは[buildfile]、値は[156]です
+キーは[fileset]、値は[288]です
+キーは[l]、値は[538]です
+キーは[m]、値は[338]です
+キーは[n]、値は[472]です
+キーは[o]、値は[133]です
+キーは[p]、値は[539]です
+キーは[the]、値は[592]です
+キーは[newer]、値は[904]です
+キーは[modtimelen]、値は[998]です
+キーは[q]、値は[296]です
+キーは[halt]、値は[883]です
+キーは[component]、値は[257]です
+キーは[basedirectory]、値は[438]です
+キーは[swing]、値は[494]です
+キーは[ncdfe]、値は[640]です
+キーは[r]、値は[887]です
+キーは[s]、値は[205]です
+キーは[excl]、値は[619]です
+キーは[fast]、値は[625]です
+キーは[suite]、値は[888]です
+キーは[t]、値は[161]です
+キーは[throw]、値は[177]です
+キーは[v]、値は[62]です
+キーは[w]、値は[1007]です
+キーは[converterinforegistry]、値は[450]です
+キーは[x]、値は[532]です
+キーは[y]、値は[533]です
+キーは[z]、値は[740]です
+キーは[initialize]、値は[446]です
+キーは[register]、値は[231]です
+キーは[resolve]、値は[347]です
+キーは[reader]、値は[407]です
+キーは[good]、値は[952]です
+キーは[datatypes]、値は[458]です
+キーは[empty]、値は[321]です
+キーは[deploy]、値は[405]です
+キーは[acs]、値は[464]です
+キーは[rec]、値は[989]です
+キーは[ref]、値は[813]です
+キーは[post]、値は[486]です
+キーは[helper]、値は[527]です
+キーは[storepass]、値は[730]です
+キーは[optionen]、値は[1101]です
+キーは[generated]、値は[784]です
+キーは[reg]、値は[979]です
+キーは[stub]、値は[838]です
+キーは[mnemonic]、値は[507]です
+キーは[finish]、値は[322]です
+キーは[ite]、値は[354]です
+キーは[replacements]、値は[781]です
+キーは[enumeration]、値は[168]です
+キーは[export]、値は[300]です
+キーは[add]、値は[107]です
+キーは[ret]、値は[775]です
+キーは[rmic]、値は[945]です
+キーは[area]、値は[1098]です
+キーは[res]、値は[645]です
+キーは[pat]、値は[604]です
+キーは[myos]、値は[687]です
+キーは[itr]、値は[223]です
+キーは[patchfile]、値は[940]です
+キーは[check]、値は[376]です
+キーは[list]、値は[88]です
+キーは[encoding]、値は[661]です
+キーは[external]、値は[1035]です
+キーは[modelen]、値は[994]です
+キーは[parser]、値は[170]です
+キーは[port]、値は[907]です
+キーは[shell]、値は[912]です
+nothing 
+キーは[1024]、値は[104]です
+キーは[success]、値は[756]です
+キーは[alignment]、値は[1086]です
+キーは[locator]、値は[297]です
+キーは[exec]、値は[37]です
+キーは[child]、値は[298]です
+キーは[addfiles]、値は[871]です
+キーは[scanners]、値は[966]です
+キーは[aligning]、値は[1055]です
+キーは[interface]、値は[814]です
+キーは[locale]、値は[959]です
+キーは[directory]、値は[81]です
+キーは[remove]、値は[201]です
+キーは[xsl]、値は[1146]です
+キーは[urls]、値は[167]です
+キーは[expanded]、値は[579]です
+キーは[pce]、値は[176]です
+キーは[unsupported]、値は[660]です
+キーは[engine]、値は[320]です
+キーは[scope]、値は[237]です
+キーは[root]、値は[319]です
+キーは[directories]、値は[626]です
+キーは[end]、値は[76]です
+キーは[liaison]、値は[962]です
+キーは[menus]、値は[1031]です
+キーは[compiler]、値は[114]です
+キーは[ivj]、値は[860]です
+キーは[label]、値は[484]です
+キーは[message]、値は[142]です
+キーは[env]、値は[699]です
+キーは[args]、値は[34]です
+キーは[with]、値は[21]です
+キーは[environment]、値は[698]です
+キーは[referenced]、値は[941]です
+キーは[visited]、値は[271]です
+キーは[clone]、値は[543]です
+キーは[preceeded]、値は[511]です
+キーは[eof]、値は[725]です
+キーは[username]、値は[856]です
+キーは[newenvironment]、値は[700]です
+キーは[named]、値は[471]です
+キーは[defaultexcludes]、値は[627]です
+キーは[callee]、値は[662]です
+キーは[namelen]、値は[992]です
+キーは[utilities]、値は[495]です
+キーは[number]、値は[248]です
+キーは[tmp]、値は[608]です
+キーは[scandir]、値は[616]です
+キーは[property]、値は[18]です
+キーは[unamelen]、値は[1001]です
+キーは[block]、値は[984]です
+キーは[per]、値は[987]です
+キーは[write]、値は[49]です
+キーは[chksumlen]、値は[999]です
+キーは[flow]、値は[1088]です
+キーは[order]、値は[467]です
+キーは[mapping]、値は[374]です
+キーは[byte]、値は[41]です
+キーは[handle]、値は[456]です
+キーは[cls]、値は[867]です
+キーは[script]、値は[704]です
+キーは[attrs]、値は[648]です
+キーは[exit]、値は[82]です
+キーは[system]、値は[16]です
+キーは[install]、値は[214]です
+キーは[compose]、値は[444]です
+キーは[gui]、値は[1050]です
+キーは[cmd]、値は[503]です
+キーは[hash]、値は[334]です
+キーは[regexp]、値は[980]です
+キーは[wait]、値は[689]です
+キーは[other]、値は[961]です
+キーは[jarfile]、値は[89]です
+キーは[save]、値は[502]です
+キーは[cell]、値は[575]です
+キーは[restrict]、値は[674]です
+キーは[login]、値は[908]です
+キーは[malformed]、値は[228]です
+キーは[local]、値は[293]です
+キーは[commandline]、値は[680]です
+キーは[valid]、値は[439]です
+キーは[tok]、値は[194]です
+キーは[top]、値は[426]です
+キーは[too]、値は[974]です
+キーは[locatorregistry]、値は[442]です
+キーは[have]、値は[617]です
+キーは[deployment]、値は[416]です
+キーは[err]、値は[225]です
+キーは[heading]、値は[573]です
+キーは[gzip]、値は[739]です
+キーは[peek]、値は[326]です
+キーは[names]、値は[211]です
+キーは[stored]、値は[874]です
+キーは[attributes]、値は[134]です
+キーは[com]、値は[868]です
+キーは[col]、値は[726]です
+キーは[prefixed]、値は[741]です
+キーは[minor]、値は[801]です
+キーは[screen]、値は[1126]です
+キーは[reinit]、値は[659]です
+キーは[devlen]、値は[1004]です
+キーは[nested]、値は[601]です
+キーは[rmi]、値は[944]です
+キーは[mode]、値は[329]です
+キーは[optimize]、値は[758]です
+キーは[modified]、値は[667]です
+キーは[buffer]、値は[180]です
+キーは[net]、値は[826]です
+キーは[all]、値は[318]です
+キーは[border]、値は[561]です
+キーは[always]、値は[571]です
+キーは[new]、値は[31]です
+キーは[read]、値は[46]です
+キーは[void]、値は[363]です
+キーは[libdir]、値は[401]です
+キーは[touch]、値は[713]です
+キーは[real]、値は[968]です
+キーは[nfe]、値は[919]です
+キーは[affected]、値は[817]です
+キーは[tool]、値は[516]です
+キーは[condition]、値は[378]です
+キーは[unit]、値は[882]です
+キーは[try]、値は[4]です
+キーは[unix]、値は[1013]です
+キーは[indent]、値は[311]です
+キーは[cause]、値は[162]です
+キーは[mapper]、値は[670]です
+キーは[tsk]、値は[412]です
+キーは[pkg]、値は[773]です
+キーは[substring]、値は[22]です
+キーは[starteam]、値は[924]です
+キーは[reload]、値は[1121]です
+キーは[crc]、値は[853]です
+キーは[and]、値は[585]です
+キーは[recs]、値は[986]です
+キーは[extra]、値は[828]です
+キーは[define]、値は[395]です
+キーは[working]、値は[683]です
+キーは[tokens]、値は[197]です
+キーは[row]、値は[547]です
+キーは[lang]、値は[632]です
+キーは[attr]、値は[718]です
+キーは[atts]、値は[188]です
+キーは[manifest]、値は[93]です
+キーは[ant]、値は[152]です
+キーは[editable]、値は[492]です
+キーは[warnings]、値は[761]です
+キーは[chooser]、値は[498]です
+キーは[minute]、値は[1140]です
+キーは[super]、値は[375]です
+キーは[unsigned]、値は[802]です
+キーは[converterengine]、値は[1027]です
+キーは[verbosity]、値は[675]です
+キーは[prev]、値は[233]です
+キーは[echo]、値は[686]です
+キーは[defines]、値は[397]です
+キーは[exc]、値は[212]です
+キーは[password]、値は[857]です
+キーは[java]、値は[14]です
+キーは[exe]、値は[682]です
+キーは[len]、値は[283]です
+キーは[squelchchangeevents]、値は[535]です
+キーは[merge]、値は[870]です
+キーは[jar]、値は[84]です
+キーは[state]、値は[186]です
+キーは[filtering]、値は[676]です
+キーは[defined]、値は[462]です
+キーは[element]、値は[108]です
+キーは[ext]、値は[763]です
+キーは[cache]、値は[818]です
+キーは[merging]、値は[956]です
+キーは[expected]、値は[1009]です
+キーは[subst]、値は[780]です
+キーは[monitoring]、値は[565]です
+キーは[pack]、値は[497]です
+キーは[processor]、値は[963]です
+キーは[input]、値は[38]です
+キーは[slow]、値は[618]です
+キーは[toolkit]、値は[1125]です
+キーは[styles]、値は[566]です
+キーは[actions]、値は[510]です
+キーは[items]、値は[581]です
+キーは[feels]、値は[587]です
+キーは[renderer]、値は[576]です
+キーは[cnfe]、値は[13]です
+キーは[document]、値は[568]です
+キーは[250]、値は[777]です
+キーは[matching]、値は[684]です
+キーは[pop]、値は[277]です
+キーは[default]、値は[189]です
+キーは[found]、値は[11]です
+キーは[pos]、値は[234]です
+キーは[vendor]、値は[844]です
+キーは[arg]、値は[79]です
+キーは[starbase]、値は[923]です
+キーは[builder]、値は[157]です
+キーは[attribute]、値は[200]です
+キーは[timestamp]、値は[316]です
+キーは[validate]、値は[330]です
+キーは[arr]、値は[609]です
+キーは[changenumber]、値は[914]です
+キーは[such]、値は[290]です
+キーは[watchdog]、値は[697]です
+キーは[classic]、値は[748]です
+キーは[watch]、値は[711]です
+キーは[refs]、値は[808]です
+キーは[handlers]、値は[294]です
+キーは[absolute]、値は[419]です
+キーは[loglevel]、値は[572]です
+キーは[calc]、値は[878]です
+キーは[setter]、値は[629]です
+キーは[supported]、値は[967]です
+キーは[lib]、値は[390]です
+キーは[taskletengine]、値は[432]です
+キーは[converter]、値は[350]です
+キーは[run]、値は[33]です
+キーは[source]、値は[306]です
+キーは[view]、値は[791]です
+キーは[compile]、値は[65]です
+キーは[continue]、値は[275]です
+キーは[has]、値は[195]です
+キーは[refid]、値は[977]です
+キーは[starts]、値は[163]です
+キーは[results]、値は[274]です
+キーは[instantiation]、値は[245]です
+キーは[last]、値は[365]です
+キーは[deftext]、値は[583]です
+キーは[warn]、値は[403]です
+キーは[name]、値は[8]です
+キーは[spaces]、値は[313]です
+キーは[parameters]、値は[364]です
+キーは[jikes]、値は[750]です
+キーは[full]、値は[267]です
+キーは[next]、値は[102]です
+キーは[tskdef]、値は[455]です
+キーは[string]、値は[0]です
+キーは[import]、値は[266]です
+キーは[color]、値は[580]です
+キーは[classes]、値は[203]です
+キーは[show]、値は[488]です
+キーは[description]、値は[191]です
+キーは[edition]、値は[863]です
+キーは[button]、値は[518]です
+キーは[not]、値は[10]です
+キーは[indexes]、値は[812]です
+キーは[toplink]、値は[854]です
+キーは[ends]、値は[20]です
+キーは[now]、値は[315]です
+キーは[sorting]、値は[466]です
+キーは[statement]、値は[951]です
+キーは[filecopy]、値は[679]です
+キーは[prefixedfileset]、値は[1145]です
+キーは[newcmd]、値は[706]です
+キーは[npe]、値は[642]です
+キーは[interfaces]、値は[848]です
+キーは[yes]、値は[504]です
+キーは[center]、値は[563]です
+キーは[start]、値は[53]です
+キーは[pto]、値は[1054]です
+キーは[configure]、値は[340]です
+キーは[disposable]、値は[409]です
+キーは[generic]、値は[839]です
+キーは[target]、値は[121]です
+キーは[initializable]、値は[404]です
+キーは[bootclasspath]、値は[759]です
+キーは[logstr]、値は[754]です
+キーは[short]、値は[356]です
+キーは[keepgenerated]、値は[836]です
+キーは[time]、値は[54]です
+キーは[window]、値は[496]です
+キーは[configurable]、値は[339]です
+キーは[awt]、値は[1124]です
+キーは[container]、値は[323]です
+キーは[play]、値は[934]です
+キーは[excludes]、値は[613]です
+キーは[logger]、値は[220]です
+キーは[put]、値は[101]です
+キーは[required]、値は[384]です
+キーは[bindir]、値は[400]です
+キーは[excluded]、値は[615]です
+キーは[cast]、値は[420]です
+キーは[logged]、値は[280]です
+キーは[options]、値は[382]です
+キーは[converters]、値は[457]です
+キーは[keystore]、値は[731]です
+キーは[catch]、値は[9]です
+キーは[case]、値は[187]です
+キーは[item]、値は[473]です
+キーは[depends]、値は[192]です
+キーは[double]、値は[359]です
+キーは[destroy]、値は[690]です
+キーは[iter]、値は[845]です
+キーは[priority]、値は[278]です
+キーは[matcher]、値は[981]です
+キーは[matches]、値は[361]です
+キーは[dependencies]、値は[435]です
+キーは[formatter]、値は[886]です
+キーは[bounds]、値は[1092]です
+キーは[reset]、値は[747]です
+キーは[style]、値は[567]です
+キーは[primary]、値は[837]です
+キーは[browse]、値は[1119]です
+キーは[implicit]、値は[428]です
+キーは[loc]、値は[771]です
+キーは[introspection]、値は[127]です
+キーは[widget]、値は[534]です
+キーは[log]、値は[385]です
+キーは[methods]、値は[345]です
+キーは[pattern]、値は[603]です
+キーは[flags]、値は[806]です
+キーは[enabled]、値は[1131]です
+キーは[unknown]、値は[646]です
+キーは[modern]、値は[749]です
+キーは[low]、値は[148]です
+キーは[datatype]、値は[459]です
+キーは[childcontext]、値は[461]です
+キーは[taskletregistry]、値は[452]です
+キーは[prop]、値は[337]です
+キーは[pane]、値は[482]です
+キーは[editor]、値は[243]です
+キーは[proc]、値は[688]です
+キーは[more]、値は[196]です
+キーは[display]、値は[465]です
+キーは[proj]、値は[717]です
+キーは[cnfmsg]、値は[850]です
+キーは[storetype]、値は[732]です
+キーは[grid]、値は[1102]です
+キーは[char]、値は[182]です
+キーは[width]、値は[590]です
+キーは[choice]、値は[1128]です
+キーは[clip]、値は[932]です
+キーは[stuff]、値は[513]です
+キーは[insets]、値は[1109]です
+キーは[num]、値は[558]です
+キーは[replace]、値は[287]です
+キーは[memberset]、値は[552]です
+キーは[wrapper]、値は[654]です
+キーは[simple]、値は[916]です
+キーは[vajproject]、値は[862]です
+キーは[protocol]、値は[1030]です
+キーは[major]、値は[803]です
+キーは[checked]、値は[922]です
+キーは[day]、値は[1142]です
+キーは[bean]、値は[124]です
+キーは[group]、値は[772]です
+キーは[elem]、値は[295]です
+キーは[visible]、値は[542]です
+キーは[package]、値は[599]です
+キーは[created]、値は[369]です
+キーは[minutes]、値は[1058]です
+キーは[format]、値は[249]です
+キーは[tree]、値は[475]です
+キーは[runtime]、値は[35]です
+キーは[archive]、値は[379]です
+キーは[illegal]、値は[246]です
+キーは[done]、値は[434]です
+キーは[inner]、値は[847]です
+キーは[formatters]、値は[885]です
+キーは[transfer]、値は[891]です
+キーは[keep]、値は[796]です
+キーは[option]、値は[381]です
+キーは[launcher]、値は[701]です
+キーは[values]、値は[254]です
+キーは[outfile]、値は[872]です
+キーは[part]、値は[930]です
+キーは[insert]、値は[184]です
+キーは[jos]、値は[92]です
+キーは[descriptors]、値は[130]です
+キーは[configurer]、値は[441]です
+キーは[alias]、値は[729]です
+キーは[datatypeengine]、値は[1026]です
+キーは[sheet]、値は[964]です
+キーは[preservetime]、値は[795]です
+キーは[dimension]、値は[577]です
+キーは[win]、値は[703]です
+キーは[process]、値は[36]です
+キーは[temp]、値は[788]です
+キーは[move]、値は[920]です
+キーは[debug]、値は[230]です
+キーは[original]、値は[371]です
+キーは[clear]、値は[546]です
+キーは[sax]、値は[169]です
+キーは[clean]、値は[1152]です
+キーは[assignable]、値は[372]です
+キーは[sizelen]、値は[997]です
+キーは[build]、値は[66]です
+キーは[approve]、値は[500]です
+キーは[front]、値は[158]です
+キーは[filesets]、値は[668]です
+キーは[user]、値は[423]です
+キーは[parent]、値は[224]です
+キーは[stack]、値は[154]です
+キーは[projects]、値は[262]です
+キーは[def]、値は[639]です
+キーは[bag]、値は[1103]です
+キーは[del]、値は[897]です
+キーは[userid]、値は[898]です
+キーは[dep]、値は[657]です
+キーは[path]、値は[27]です
+キーは[fis]、値は[103]です
+キーは[bar]、値は[506]です
+キーは[trim]、値は[199]です
+キーは[dev]、値は[1003]です
+キーは[telnet]、値は[909]です
+キーは[record]、値は[985]です
+キーは[scanner]、値は[669]です
+キーは[mkdir]、値は[57]です
+キーは[overwrite]、値は[666]です
+キーは[ae]、値は[153]です
+キーは[al]、値は[958]です
+キーは[contextualize]、値は[445]です
+キーは[basedir]、値は[285]です
+キーは[proxy]、値は[260]です
+キーは[as]、値は[222]です
+キーは[at]、値は[115]です
+キーは[defaults]、値は[1025]です
+キーは[mkdirs]、値は[284]です
+キーは[compression]、値は[873]です
+キーは[scroller]、値は[569]です
+キーは[relative]、値は[819]です
+キーは[ptargets]、値は[1133]です
+キーは[compare]、値は[540]です
+キーは[be]、値は[637]です
+キーは[jsp]、値は[879]です
+キーは[icon]、値は[517]です
+キーは[unsafe]、値は[824]です
+キーは[br]、値は[778]です
+キーは[javadoc]、値は[766]です
+キーは[propertyfile]、値は[917]です
+キーは[bw]、値は[779]です
+キーは[weighty]、値は[1114]です
+キーは[by]、値は[336]です
+キーは[weightx]、値は[1112]です
+キーは[panel]、値は[491]です
+キーは[sep]、値は[600]です
+キーは[cc]、値は[764]です
+キーは[completion]、値は[903]です
+キーは[ce]、値は[352]です
+キーは[addtab]、値は[720]です
+キーは[set]、値は[136]です
+キーは[rdbms]、値は[950]です
+キーは[ch]、値は[610]です
+キーは[throwable]、値は[160]です
+キーは[column]、値は[548]です
+キーは[cl]、値は[380]です
+キーは[cp]、値は[807]です
+キーは[javacc]、値は[866]です
+キーは[executable]、値は[556]です
+キーは[cr]、値は[723]です
+キーは[stringbuf]、値は[915]です
+キーは[incl]、値は[620]です
+キーは[font]、値は[1099]です
+キーは[encode]、値は[728]です
+キーは[dd]、値は[832]です
+キーは[de]、値は[417]です
+キーは[sfs]、値は[752]です
+キーは[die]、値は[973]です
+キーは[javac]、値は[112]です
+キーは[transferred]、値は[899]です
+キーは[added]、値は[743]です
+キーは[listener]、値は[219]です
+キーは[din]、値は[694]です
+キーは[do]、値は[64]です
+キーは[dir]、値は[78]です
+キーは[ds]、値は[520]です
+キーは[hold]、値は[622]です
+キーは[hierarchical]、値は[324]です
+キーは[contact]、値は[1076]です
+キーは[exclude]、値は[783]です
+キーは[ea]、値は[636]です
+キーは[fne]、値は[647]です
+キーは[reply]、値は[901]です
+キーは[info]、値は[125]です
+キーは[image]、値は[531]です
+キーは[test]、値は[881]です
+キーは[finally]、値は[269]です
+キーは[patterns]、値は[861]です
+キーは[count]、値は[45]です
+キーは[ex]、値は[468]です
+キーは[dsfiles]、値は[789]です
+キーは[month]、値は[1144]です
+キーは[final]、値は[341]です
+キーは[parts]、値は[969]です
+キーは[addedfiles]、値は[842]です
+キーは[fe]、値は[448]です
+キーは[frame]、値は[490]です
+キーは[sources]、値は[63]です
+キーは[additional]、値は[827]です
+キーは[for]、値は[7]です
+キーは[skel]、値は[946]です
+キーは[fos]、値は[91]です
+キーは[title]、値は[487]です
+キーは[fs]、値は[663]です
+キーは[content]、値は[343]です
+キーは[timeout]、値は[712]です
+キーは[duration]、値は[933]です
+キーは[random]、値は[762]です
+キーは[load]、値は[209]です
+キーは[ignore]、値は[408]です
+キーは[client]、値は[906]です
+キーは[componentmanager]、値は[431]です
+キーは[class]、値は[5]です
+キーは[keepcopy]、値は[797]です
+キーは[owner]、値は[830]です
+キーは[custom]、値は[1138]です
+キーは[length]、値は[24]です
+キーは[false]、値は[164]です
+キーは[parse]、値は[174]です
+キーは[converterregistry]、値は[451]です
+キーは[home]、値は[15]です
+キーは[instanceof]、値は[179]です
+キーは[wri]、値は[893]です
+キーは[existing]、値は[753]です
+キーは[print]、値は[143]です
+キーは[fork]、値は[744]です
+キーは[nodes]、値は[165]です
+キーは[obj]、値は[258]です
+キーは[setup]、値は[216]です
+キーは[append]、値は[226]です
+キーは[select]、値は[1129]です
+キーは[bin]、値は[389]です
+nothing 
+キーは[invoke]、値は[140]です
+キーは[convert]、値は[351]です
+キーは[extdirs]、値は[760]です
+キーは[output]、値は[90]です
+キーは[else]、値は[32]です
+キーは[context]、値は[342]です
+キーは[action]、値は[509]です
+キーは[lock]、値は[928]です
+キーは[model]、値は[545]です
+キーは[text]、値は[244]です
+キーは[id]、値は[308]です
+キーは[ie]、値は[128]です
+キーは[if]、値は[19]です
+キーは[tasks]、値は[261]です
+キーは[ih]、値は[628]です
+キーは[init]、値は[327]です
+キーは[in]、値は[40]です
+キーは[dependency]、値は[273]です
+キーは[io]、値は[85]です
+キーは[lower]、値は[366]です
+キーは[index]、値は[235]です
+キーは[is]、値は[80]です
+キーは[it]、値は[536]です
+キーは[params]、値は[522]です
+キーは[enum]、値は[210]です
+キーは[selections]、値は[530]です
+キーは[field]、値は[815]です
+キーは[validating]、値は[841]です
+キーは[contents]、値は[875]です
+キーは[doc]、値は[574]です
+キーは[evaluate]、値は[436]です
+キーは[status]、値は[286]です
+キーは[server]、値は[855]です
+キーは[dom]、値は[895]です
+キーは[targettype]、値は[821]です
+キーは[vals]、値は[524]です
+キーは[glob]、値は[751]です
+キーは[dot]、値は[809]です
+キーは[skip]、値は[782]です
+キーは[targets]、値は[221]です
+キーは[customizer]、値は[541]です
+キーは[signedjar]、値は[948]です
+キーは[file]、値は[26]です
+キーは[stream]、値は[39]です
+キーは[addcr]、値は[719]です
+キーは[member]、値は[553]です
+キーは[dname]、値は[727]です
+キーは[map]、値は[252]です
+キーは[table]、値は[544]です
+キーは[blk]、値は[988]です
+キーは[creator]、値は[630]です
+キーは[ftp]、値は[896]です
+キーは[listeners]、値は[279]です
+キーは[break]、値は[190]です
+キーは[max]、値は[550]です
+キーは[composer]、値は[443]です
+キーは[could]、値は[621]です
+キーは[change]、値は[470]です
+キーは[weblogic]、値は[833]です
+キーは[positive]、値は[902]です
+キーは[menu]、値は[505]です
+キーは[jlink]、値は[876]です
+キーは[uri]、値は[292]です
+キーは[extraoptions]、値は[825]です
+キーは[url]、値は[166]です
+キーは[verbose]、値は[387]です
+キーは[equals]、値は[99]です
+キーは[lf]、値は[724]です
+キーは[return]、値は[105]です
+キーは[synchronized]、値は[551]です
+キーは[keypass]、値は[733]です
+キーは[instance]、値は[204]です
+キーは[constant]、値は[804]です
+キーは[mail]、値は[947]です
+キーは[use]、値は[596]です
+キーは[jvmarg]、値は[746]です
+キーは[feel]、値は[586]です
+キーは[main]、値は[113]です
+キーは[integer]、値は[355]です
+キーは[while]、値は[47]です
+キーは[suffix]、値は[331]です
+キーは[second]、値は[1139]です
+キーは[550]、値は[1136]です
+キーは[find]、値は[215]です
+キーは[buffered]、値は[406]です
+キーは[selected]、値は[501]です
+キーは[osname]、値は[702]です
+キーは[mm]、値は[957]です
+キーは[level]、値は[146]です
+キーは[utf]、値は[811]です
+キーは[mt]、値は[1012]です
+キーは[dirs]、値は[398]です
+キーは[includes]、値は[612]です
+キーは[sort]、値は[268]です
+キーは[canonical]、値は[425]です
+キーは[preserve]、値は[677]です
+キーは[interrupted]、値は[693]です
+キーは[my]、値は[911]です
+キーは[fill]、値は[1130]です
+キーは[separator]、値は[28]です
+キーは[entry]、値は[97]です
+キーは[expand]、値は[714]です
+キーは[entries]、値は[810]です
+キーは[task]、値は[149]です
+キーは[null]、値は[3]です
+キーは[background]、値は[1104]です
+キーは[true]、値は[122]です
+キーは[nf]、値は[892]です
+キーは[header]、値は[927]です
+キーは[dispose]、値は[410]です
+キーは[position]、値は[644]です
+キーは[millis]、値は[56]です
+キーは[errors]、値は[737]です
+キーは[parents]、値は[880]です
+キーは[importer]、値は[217]です
+キーは[no]、値は[289]です
+キーは[code]、値は[736]です
+キーは[keys]、値は[317]です
+キーは[nt]、値は[631]です
+キーは[bos]、値は[918]です
+キーは[box]、値は[514]です
+キーは[delete]、値は[332]です
+キーは[nocomment]、値は[793]です
+キーは[switch]、値は[185]です
+キーは[nowarn]、値は[794]です
+キーは[sql]、値は[949]です
+キーは[dialog]、値は[489]です
+キーは[println]、値は[30]です
+キーは[total]、値は[953]です
+キーは[transform]、値は[1148]です
+キーは[hour]、値は[1141]です
+キーは[dtd]、値は[835]です
+キーは[of]、値は[236]です
+キーは[ok]、値は[755]です
+キーは[included]、値は[614]です
+キーは[make]、値は[1135]です
+キーは[on]、値は[692]です
+キーは[os]、値は[422]です
+キーは[src]、値は[281]です
+キーは[control]、値は[1105]です
+キーは[thread]、値は[528]です
+キーは[100]、値は[578]です
+キーは[pd]、値は[131]です
+キーは[pe]、値は[348]です
+キーは[datatyperegistry]、値は[453]です
+キーは[bytes]、値は[595]です
+キーは[failonerror]、値は[559]です
+キーは[writer]、値は[299]です
+キーは[socket]、値は[982]です
+キーは[properties]、値は[208]です
+キーは[handler]、値は[172]です
+キーは[depend]、値は[240]です
+キーは[upper]、値は[368]です
+キーは[pw]、値は[816]です
+キーは[about]、値は[1120]です
+キーは[constraints]、値は[1106]です
+キーは[iterator]、値は[251]です
+キーは[character]、値は[367]です
+キーは[utils]、値は[588]です
+キーは[fire]、値は[264]です
+キーは[curr]、値は[480]です
+キーは[runner]、値は[529]です
+キーは[10]、値は[68]です
+キーは[height]、値は[591]です
+キーは[12]、値は[393]です
+キーは[pointer]、値は[641]です
+キーは[14]、値は[1134]です
+キーは[16]、値は[118]です
+キーは[old]、値は[469]です
+キーは[localpath]、値は[938]です
+キーは[module]、値は[67]です
+キーは[tasklet]、値は[414]です
+キーは[stk]、値は[971]です
+キーは[execute]、値は[270]です
+キーは[accept]、値は[555]です
+キーは[str]、値は[602]です
+キーは[secondary]、値は[926]です
+キーは[node]、値は[151]です
+キーは[filename]、値は[396]です
+キーは[re]、値は[447]です
+キーは[meta]、値は[843]です
+キーは[sub]、値は[440]です
+キーは[access]、値は[247]です
+キーは[primitive]、値は[349]です
+キーは[scan]、値は[106]です
+キーは[sum]、値は[1005]です
+キーは[iae]、値は[353]です
+キーは[sun]、値は[110]です
+キーは[baos]、値は[594]です
+キーは[long]、値は[52]です
+キーは[sb]、値は[310]です
+キーは[into]、値は[526]です
+キーは[offline]、値は[768]です
+キーは[current]、値は[55]です
+キーは[se]、値は[178]です
+キーは[unless]、値は[427]です
+キーは[arraycopy]、値は[437]です
+キーは[uidlen]、値は[995]です
+キーは[vector]、値は[61]です
+キーは[pump]、値は[681]です
+キーは[cmdl]、値は[696]です
+キーは[key]、値は[253]です
+キーは[32]、値は[929]です
+キーは[calendar]、値は[910]です
+キーは[ss]、値は[936]です
+キーは[st]、値は[605]です
+キーは[variables]、値は[238]です
+キーは[manager]、値は[150]です
+キーは[star]、値は[611]です
+キーは[one]、値は[831]です
+キーは[sz]、値は[990]です
+キーは[started]、値は[265]です
+キーは[mergefiles]、値は[869]です
+キーは[store]、値は[890]です
+キーは[many]、値は[975]です
+キーは[homedir]、値は[399]です
+キーは[td]、値は[1039]です
+キーは[te]、値は[931]です
+キーは[buf]、値は[42]です
+キーは[tasklibdir]、値は[402]です
+キーは[orig]、値は[710]です
+キーは[destdir]、値は[823]です
+キーは[closed]、値は[1034]です
+キーは[to]、値は[116]です
+キーは[operation]、値は[560]です
+キーは[open]、値は[304]です
+キーは[4096]、値は[282]です
+キーは[bus]、値は[485]です
+キーは[workspace]、値は[218]です
+キーは[loader]、値は[229]です
+キーは[project]、値は[120]です
+キーは[dest]、値は[109]です
+キーは[descriptions]、値は[643]です
+キーは[loaded]、値は[593]です
+キーは[horizontal]、値は[1111]です
+キーは[apache]、値は[634]です
+キーは[excludesfile]、値は[1011]です
+キーは[ui]、値は[582]です
+キーは[loop]、値は[554]です
+キーは[terminator]、値は[840]です
+キーは[up]、値は[786]です
+キーは[srcdir]、値は[822]です
+キーは[magiclen]、値は[1000]です
+キーは[vsspath]、値は[937]です
+キーは[us]、値は[960]です
+キーは[newfiles]、値は[623]です
+キーは[ensure]、値は[1147]です
+キーは[todir]、値は[884]です
+キーは[this]、値は[123]です
+キーは[constructor]、値は[521]です
+キーは[gidlen]、値は[996]です
+キーは[deprecation]、値は[757]です
+キーは[look]、値は[584]です
+キーは[modules]、値は[59]です
+キーは[retval]、値は[463]です
+キーは[opt]、値は[383]です
+キーは[extract]、値は[942]です
+キーは[paths]、値は[477]です
+キーは[owning]、値は[653]です
+キーは[failure]、値は[889]です
+キーは[vm]、値は[745]です
+キーは[60]、値は[1059]です
+キーは[idx]、値は[606]です
+キーは[support]、値は[430]です
+キーは[tasklib]、値は[391]です
+キーは[desc]、値は[537]です
+キーは[changed]、値は[1032]です
+キーは[ctrlz]、値は[722]です
+キーは[destination]、値は[370]です
+キーは[update]、値は[250]です
+キーは[modifiers]、値は[362]です
+キーは[sys]、値は[708]です
+キーは[flush]、値は[301]です
+キーは[param]、値は[709]です
+キーは[wl]、値は[851]です
+キーは[missing]、値は[523]です
+キーは[definition]、値は[658]です
+キーは[includesfile]、値は[1010]です
+キーは[checkout]、値は[798]です
+キーは[registry]、値は[373]です
+キーは[normal]、値は[970]です
+キーは[types]、値は[138]です
+キーは[classpath]、値は[2]です
+キーは[org]、値は[633]です
+キーは[filters]、値は[716]です
+キーは[layout]、値は[562]です
+キーは[popup]、値は[519]です
+キーは[80]、値は[43]です
+キーは[location]、値は[173]です
+キーは[comment]、値は[792]です
+キーは[base]、値は[58]です
+キーは[listenersupport]、値は[429]です
+キーは[octal]、値は[993]です
+キーは[conn]、値は[303]です
+キーは[mod]、値は[955]です
+キーは[prefix]、値は[98]です
+キーは[type]、値は[159]です
+キーは[cond]、値は[652]です
+キーは[repository]、値は[864]です
+キーは[seconds]、値は[1057]です
+キーは[actionids]、値は[508]です
+キーは[filtered]、値は[1151]です
+キーは[children]、値は[328]です
+キーは[superclass]、値は[849]です
+キーは[connection]、値は[302]です
+キーは[href]、値は[769]です
+キーは[introspector]、値は[126]です
+キーは[vaj]、値は[858]です
+キーは[zip]、値は[96]です
+キーは[val]、値は[479]です
+キーは[method]、値は[135]です
+キーは[compress]、値は[787]です
+キーは[work]、値は[433]です
+キーは[scroll]、値は[493]です
+キーは[vpath]、値は[624]です
+キーは[ze]、値は[100]です
+キーは[emacs]、値は[557]です
+キーは[push]、値は[276]です
+キーは[props]、値は[206]です
+キーは[fail]、値は[691]です
+キーは[invocation]、値は[259]です
+キーは[forwarder]、値は[1033]です
+キーは[force]、値は[665]です
+キーは[tablength]、値は[721]です
+キーは[extension]、値は[411]です
+キーは[flag]、値は[765]です
+キーは[north]、値は[564]です
+キーは[tools]、値は[111]です
+キーは[substitute]、値は[333]です
+キーは[out]、値は[29]です
+キーは[flat]、値は[672]です
+キーは[identity]、値は[673]です
+キーは[assert]、値は[1008]です
+キーは[get]、値は[17]です
+キーは[beans]、値は[256]です
+キーは[verify]、値は[943]です
+キーは[initialized]、値は[1132]です
+キーは[copy]、値は[525]です
+キーは[event]、値は[213]です
+キーは[gnamelen]、値は[1002]です
+キーは[include]、値は[664]です
+キーは[deflated]、値は[846]です
+キーは[projectengine]、値は[1028]です
+キーは[assem]、値は[1006]です
+キーは[incremental]、値は[392]です
+キーは[abstract]、値は[1029]です
+キーは[nice]、値は[512]です
+キーは[tokenizer]、値は[193]です
+キーは[token]、値は[198]です
+キーは[filter]、値は[147]です
+キーは[help]、値は[144]です
+キーは[depth]、値は[1150]です
+キーは[classname]、値は[232]です
+キーは[rename]、値は[799]です
+キーは[elements]、値は[207]です
+キーは[exists]、値は[60]です
+キーは[first]、値は[597]です
+キーは[msg]、値は[145]です
+キーは[date]、値は[314]です
+キーは[magic]、値は[800]です
+キーは[argument]、値は[360]です
+キーは[data]、値は[183]です
+キーは[taskdefs]、値は[454]です
+キーは[float]、値は[358]です
+キーは[translate]、値は[715]です
+キーは[spec]、値は[859]です
+キーは[autoresponse]、値は[939]です
+キーは[reference]、値は[649]です
+キーは[tab]、値は[483]です
+キーは[filepath]、値は[1037]です
+キーは[only]、値は[905]です
+キーは[create]、値は[255]です
+キーは[from]、値は[117]です
+キーは[tag]、値は[181]です
+キーは[enumerated]、値は[635]です
+キーは[tar]、値は[954]です
+キーは[offset]、値は[991]です
+キーは[resource]、値は[460]です
+キーは[finished]、値は[202]です
+キーは[failed]、値は[894]です
+キーは[files]、値は[87]です
+キーは[mue]、値は[415]です
+キーは[send]、値は[589]です
+キーは[configuration]、値は[175]です
+キーは[cab]、値は[785]です
+キーは[line]、値は[309]です
+キーは[link]、値は[767]です
+キーは[error]、値は[50]です
+キーは[can]、値は[734]です
+キーは[trace]、値は[155]です
+キーは[security]、値は[263]です
+キーは[public]、値は[307]です
+キーは[array]、値は[242]です
+キーは[ready]、値は[638]です
+キーは[parameter]、値は[137]です
+キーは[choosable]、値は[499]です
+キーは[userdir]、値は[424]です
+nothing 
+キーは[deployer]、値は[413]です
+キーは[postfix]、値は[978]です
+キーは[packagelist]、値は[770]です
+キーは[value]、値は[119]です
+キーは[delim]、値は[925]です
+キーは[factory]、値は[171]です
+キーは[lookup]、値は[449]です
+キーは[implementation]、値は[671]です
+キーは[match]、値は[607]です
+キーは[resources]、値は[418]です
+キーは[groups]、値は[774]です
+キーは[command]、値は[1]です
+キーは[int]、値は[44]です
+キーは[boolean]、値は[357]です
+キーは[response]、値は[735]です
+キーは[variable]、値は[239]です
+キーは[namespace]、値は[291]です
+キーは[slash]、値は[335]です
+キーは[arguments]、値は[394]です
+キーは[clazz]、値は[6]です
+キーは[ioe]、値は[86]です
+wordFreq  = 480
+wordFreq  = 59
+wordFreq  = 43
+wordFreq  = 556
+wordFreq  = 337
+wordFreq  = 163
+wordFreq  = 17
+wordFreq  = 290
+wordFreq  = 383
+wordFreq  = 325
+wordFreq  = 53
+wordFreq  = 48
+wordFreq  = 500
+wordFreq  = 11
+wordFreq  = 82
+wordFreq  = 10
+wordFreq  = 135
+wordFreq  = 656
+wordFreq  = 120
+wordFreq  = 776
+wordFreq  = 39
+wordFreq  = 66
+wordFreq  = 62
+wordFreq  = 465
+wordFreq  = 289
+wordFreq  = 11
+wordFreq  = 322
+wordFreq  = 163
+wordFreq  = 59
+wordFreq  = 106
+wordFreq  = 61
+wordFreq  = 734
+wordFreq  = 313
+wordFreq  = 50
+wordFreq  = 33
+wordFreq  = 18
+wordFreq  = 24
+wordFreq  = 23
+wordFreq  = 52
+wordFreq  = 110
+wordFreq  = 44
+wordFreq  = 40
+wordFreq  = 35
+wordFreq  = 2
+wordFreq  = 337
+wordFreq  = 45
+wordFreq  = 58
+wordFreq  = 146
+wordFreq  = 188
+wordFreq  = 59
+wordFreq  = 51
+wordFreq  = 285
+wordFreq  = 35
+wordFreq  = 43
+wordFreq  = 43
+wordFreq  = 39
+wordFreq  = 26
+wordFreq  = 2
+wordFreq  = 61
+wordFreq  = 3
+wordFreq  = 84
+wordFreq  = 53
+wordFreq  = 29
+wordFreq  = 6
+wordFreq  = 22
+wordFreq  = 21
+wordFreq  = 320
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 44
+wordFreq  = 22
+wordFreq  = 12
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 29
+wordFreq  = 3
+wordFreq  = 152
+wordFreq  = 27
+wordFreq  = 146
+wordFreq  = 107
+wordFreq  = 14
+wordFreq  = 138
+wordFreq  = 16
+wordFreq  = 110
+wordFreq  = 39
+wordFreq  = 101
+wordFreq  = 107
+wordFreq  = 3
+wordFreq  = 89
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 75
+wordFreq  = 35
+wordFreq  = 27
+wordFreq  = 43
+wordFreq  = 17
+wordFreq  = 151
+wordFreq  = 5
+wordFreq  = 47
+wordFreq  = 134
+wordFreq  = 3
+wordFreq  = 15
+wordFreq  = 446
+wordFreq  = 20
+wordFreq  = 193
+wordFreq  = 189
+wordFreq  = 49
+wordFreq  = 4
+wordFreq  = 10
+wordFreq  = 5
+wordFreq  = 13
+wordFreq  = 9
+wordFreq  = 72
+wordFreq  = 240
+wordFreq  = 28
+wordFreq  = 2
+wordFreq  = 164
+wordFreq  = 316
+wordFreq  = 120
+wordFreq  = 121
+wordFreq  = 133
+wordFreq  = 15
+wordFreq  = 96
+wordFreq  = 4
+wordFreq  = 16
+wordFreq  = 9
+wordFreq  = 36
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 75
+wordFreq  = 14
+wordFreq  = 28
+wordFreq  = 37
+wordFreq  = 346
+wordFreq  = 7
+wordFreq  = 12
+wordFreq  = 25
+wordFreq  = 24
+wordFreq  = 126
+wordFreq  = 110
+wordFreq  = 68
+wordFreq  = 7
+wordFreq  = 167
+wordFreq  = 37
+wordFreq  = 9
+wordFreq  = 2
+wordFreq  = 95
+wordFreq  = 24
+wordFreq  = 14
+wordFreq  = 118
+wordFreq  = 5
+wordFreq  = 59
+wordFreq  = 43
+wordFreq  = 1
+wordFreq  = 8
+wordFreq  = 4
+wordFreq  = 82
+wordFreq  = 89
+wordFreq  = 36
+wordFreq  = 3
+wordFreq  = 28
+wordFreq  = 98
+wordFreq  = 5
+wordFreq  = 30
+wordFreq  = 2
+wordFreq  = 58
+wordFreq  = 22
+wordFreq  = 6
+wordFreq  = 16
+wordFreq  = 43
+wordFreq  = 123
+wordFreq  = 27
+wordFreq  = 28
+wordFreq  = 2
+wordFreq  = 359
+wordFreq  = 4
+wordFreq  = 69
+wordFreq  = 81
+wordFreq  = 11
+wordFreq  = 49
+wordFreq  = 36
+wordFreq  = 7
+wordFreq  = 12
+wordFreq  = 7
+wordFreq  = 41
+wordFreq  = 5
+wordFreq  = 52
+wordFreq  = 43
+wordFreq  = 11
+wordFreq  = 12
+wordFreq  = 34
+wordFreq  = 24
+wordFreq  = 118
+wordFreq  = 76
+wordFreq  = 33
+wordFreq  = 37
+wordFreq  = 32
+wordFreq  = 31
+wordFreq  = 23
+wordFreq  = 15
+wordFreq  = 11
+wordFreq  = 36
+wordFreq  = 30
+wordFreq  = 13
+wordFreq  = 62
+wordFreq  = 47
+wordFreq  = 31
+wordFreq  = 8
+wordFreq  = 25
+wordFreq  = 87
+wordFreq  = 62
+wordFreq  = 4
+wordFreq  = 15
+wordFreq  = 11
+wordFreq  = 4
+wordFreq  = 24
+wordFreq  = 44
+wordFreq  = 29
+wordFreq  = 22
+wordFreq  = 19
+wordFreq  = 19
+wordFreq  = 60
+wordFreq  = 56
+wordFreq  = 72
+wordFreq  = 8
+wordFreq  = 9
+wordFreq  = 24
+wordFreq  = 44
+wordFreq  = 12
+wordFreq  = 35
+wordFreq  = 4
+wordFreq  = 20
+wordFreq  = 87
+wordFreq  = 72
+wordFreq  = 7
+wordFreq  = 9
+wordFreq  = 6
+wordFreq  = 6
+wordFreq  = 47
+wordFreq  = 26
+wordFreq  = 5
+wordFreq  = 60
+wordFreq  = 8
+wordFreq  = 22
+wordFreq  = 16
+wordFreq  = 14
+wordFreq  = 27
+wordFreq  = 8
+wordFreq  = 39
+wordFreq  = 25
+wordFreq  = 29
+wordFreq  = 10
+wordFreq  = 131
+wordFreq  = 4
+wordFreq  = 22
+wordFreq  = 2
+wordFreq  = 15
+wordFreq  = 9
+wordFreq  = 10
+wordFreq  = 9
+wordFreq  = 5
+wordFreq  = 15
+wordFreq  = 15
+wordFreq  = 10
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 53
+wordFreq  = 79
+wordFreq  = 2
+wordFreq  = 15
+wordFreq  = 9
+wordFreq  = 6
+wordFreq  = 13
+wordFreq  = 16
+wordFreq  = 7
+wordFreq  = 10
+wordFreq  = 18
+wordFreq  = 4
+wordFreq  = 46
+wordFreq  = 2
+wordFreq  = 11
+wordFreq  = 15
+wordFreq  = 13
+wordFreq  = 2
+wordFreq  = 39
+wordFreq  = 9
+wordFreq  = 17
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 23
+wordFreq  = 17
+wordFreq  = 17
+wordFreq  = 3
+wordFreq  = 23
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 8
+wordFreq  = 10
+wordFreq  = 50
+wordFreq  = 11
+wordFreq  = 24
+wordFreq  = 57
+wordFreq  = 15
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 22
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 22
+wordFreq  = 9
+wordFreq  = 16
+wordFreq  = 22
+wordFreq  = 17
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 13
+wordFreq  = 2
+wordFreq  = 19
+wordFreq  = 22
+wordFreq  = 8
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 32
+wordFreq  = 7
+wordFreq  = 7
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 9
+wordFreq  = 79
+wordFreq  = 5
+wordFreq  = 16
+wordFreq  = 99
+wordFreq  = 56
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 33
+wordFreq  = 45
+wordFreq  = 6
+wordFreq  = 3
+wordFreq  = 12
+wordFreq  = 9
+wordFreq  = 10
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 20
+wordFreq  = 7
+wordFreq  = 38
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 60
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 45
+wordFreq  = 17
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 44
+wordFreq  = 23
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 9
+wordFreq  = 9
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 177
+wordFreq  = 6
+wordFreq  = 85
+wordFreq  = 34
+wordFreq  = 0
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 15
+wordFreq  = 3
+wordFreq  = 15
+wordFreq  = 2
+wordFreq  = 20
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 49
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 19
+wordFreq  = 17
+wordFreq  = 12
+wordFreq  = 1
+wordFreq  = 5
+wordFreq  = 6
+wordFreq  = 6
+wordFreq  = 14
+wordFreq  = 19
+wordFreq  = 4
+wordFreq  = 15
+wordFreq  = 4
+wordFreq  = 23
+wordFreq  = 79
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 9
+wordFreq  = 12
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 1
+wordFreq  = 7
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 20
+wordFreq  = 1
+wordFreq  = 6
+wordFreq  = 6
+wordFreq  = 8
+wordFreq  = 1
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 53
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 21
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 28
+wordFreq  = 20
+wordFreq  = 10
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 63
+wordFreq  = 12
+wordFreq  = 16
+wordFreq  = 5
+wordFreq  = 14
+wordFreq  = 25
+wordFreq  = 70
+wordFreq  = 8
+wordFreq  = 14
+wordFreq  = 1
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 14
+wordFreq  = 39
+wordFreq  = 11
+wordFreq  = 2
+wordFreq  = 34
+wordFreq  = 16
+wordFreq  = 10
+wordFreq  = 10
+wordFreq  = 11
+wordFreq  = 10
+wordFreq  = 15
+wordFreq  = 14
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 19
+wordFreq  = 7
+wordFreq  = 43
+wordFreq  = 2
+wordFreq  = 17
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 17
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 16
+wordFreq  = 6
+wordFreq  = 21
+wordFreq  = 3
+wordFreq  = 27
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 25
+wordFreq  = 18
+wordFreq  = 19
+wordFreq  = 7
+wordFreq  = 1
+wordFreq  = 1
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 9
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 22
+wordFreq  = 55
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 13
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 8
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 19
+wordFreq  = 6
+wordFreq  = 12
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 11
+wordFreq  = 19
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 9
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 6
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 17
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 6
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 16
+wordFreq  = 6
+wordFreq  = 8
+wordFreq  = 7
+wordFreq  = 8
+wordFreq  = 13
+wordFreq  = 7
+wordFreq  = 8
+wordFreq  = 31
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 13
+wordFreq  = 15
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 18
+wordFreq  = 14
+wordFreq  = 37
+wordFreq  = 8
+wordFreq  = 5
+wordFreq  = 6
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 20
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 11
+wordFreq  = 30
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 9
+wordFreq  = 6
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 14
+wordFreq  = 21
+wordFreq  = 8
+wordFreq  = 8
+wordFreq  = 29
+wordFreq  = 10
+wordFreq  = 38
+wordFreq  = 22
+wordFreq  = 8
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 11
+wordFreq  = 3
+wordFreq  = 51
+wordFreq  = 6
+wordFreq  = 22
+wordFreq  = 19
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 31
+wordFreq  = 19
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 9
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 11
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 11
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 13
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 8
+wordFreq  = 10
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 1
+wordFreq  = 1
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 12
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 6
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 12
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 10
+wordFreq  = 8
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 14
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 11
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 14
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 17
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 13
+wordFreq  = 11
+wordFreq  = 14
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 8
+wordFreq  = 9
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 1
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 10
+wordFreq  = 3
+wordFreq  = 8
+wordFreq  = 22
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 14
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 11
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 8
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 7
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 10
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 10
+wordFreq  = 11
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 7
+wordFreq  = 9
+wordFreq  = 2
+wordFreq  = 14
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 30
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 6
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 0
+wordFreq  = 5
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 3
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 13
+wordFreq  = 4
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 8
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 0
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 9
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+2169,2,97,303,0,10,0,2631,701a0156d23aeac450057aba421f2c95b5365bc0
+Finished : 
+numOfExtraWords  14933
+ =================== PRE wordMap size = 1081===================
+targetAddWord = 36
+IDF Stable
+1642,1,43,167,0,11,0,1895,92e1bc0807e9a95345f737bcab80c185222c6da1
+Finished : 
+numOfExtraWords  14933
+ =================== PRE wordMap size = 1081===================
+targetAddWord = 55
+IDF Stable
+921,1,56,486,0,17,0,1513,736a4d27489980fa3ea6322ad7de27132c8e474d
+Finished : 
+numOfExtraWords  14933
+ =================== PRE wordMap size = 1081===================
+targetAddWord = 121
+=============Recalc IDF ===================
+ =================== wordMap size = 1144===================
+ =================== wordFreqMapSource size = 1680===================
+キーは[exception]、値は[12]です
+キーは[]、値は[474]です
+キーは[cancel]、値は[1091]です
+キーは[cce]、値は[421]です
+キーは[references]、値は[820]です
+キーは[year]、値は[1143]です
+キーは[allowed]、値は[976]です
+キーは[descriptor]、値は[129]です
+キーは[remote]、値は[738]です
+キーは[gridx]、値は[1107]です
+キーは[hashtable]、値は[325]です
+キーは[quote]、値は[707]です
+キーは[pkgs]、値は[776]です
+nothing 
+キーは[gridy]、値は[1108]です
+キーは[opts]、値は[913]です
+キーは[xml]、値は[227]です
+キーは[definitions]、値は[651]です
+キーは[adapter]、値は[655]です
+キーは[pool]、値は[805]です
+キーは[raw]、値は[983]です
+キーは[optional]、値は[865]です
+キーは[circular]、値は[972]です
+キーは[concat]、値は[1149]です
+キーは[packages]、値は[598]です
+キーは[version]、値は[388]です
+キーは[0]、値は[23]です
+キーは[1]、値は[48]です
+キーは[2]、値は[69]です
+キーは[contains]、値は[272]です
+キーは[3]、値は[70]です
+キーは[folder]、値は[921]です
+キーは[4]、値は[25]です
+キーは[size]、値は[83]です
+キーは[util]、値は[346]です
+キーは[selection]、値は[476]です
+キーは[stop]、値は[705]です
+キーは[5]、値は[71]です
+キーは[left]、値は[312]です
+キーは[reserved]、値は[344]です
+キーは[6]、値は[72]です
+キーは[7]、値は[73]です
+キーは[8]、値は[74]です
+キーは[9]、値は[75]です
+キーは[object]、値は[132]です
+キーは[taskdef]、値は[650]です
+キーは[1000]、値は[77]です
+キーは[result]、値は[241]です
+キーは[sleep]、値は[695]です
+キーは[characters]、値は[656]です
+キーは[strs]、値は[900]です
+キーは[fullpath]、値は[742]です
+キーは[quiet]、値は[386]です
+キーは[listing]、値は[829]です
+キーは[ejb]、値は[834]です
+キーは[behavior]、値は[965]です
+キーは[close]、値は[94]です
+キーは[connect]、値は[305]です
+キーは[resolved]、値は[377]です
+キーは[linked]、値は[478]です
+キーは[policy]、値は[570]です
+キーは[rebuild]、値は[852]です
+キーは[a]、値は[790]です
+キーは[linker]、値は[877]です
+キーは[b]、値は[515]です
+キーは[c]、値は[139]です
+キーは[failures]、値は[1162]です
+キーは[d]、値は[678]です
+キーは[e]、値は[141]です
+キーは[f]、値は[95]です
+キーは[ioex]、値は[685]です
+キーは[i]、値は[51]です
+キーは[loops]、値は[935]です
+キーは[j]、値は[481]です
+キーは[k]、値は[549]です
+キーは[buildfile]、値は[156]です
+キーは[fileset]、値は[288]です
+キーは[l]、値は[538]です
+キーは[m]、値は[338]です
+キーは[n]、値は[472]です
+キーは[o]、値は[133]です
+キーは[gnu]、値は[1194]です
+キーは[p]、値は[539]です
+キーは[the]、値は[592]です
+キーは[newer]、値は[904]です
+キーは[modtimelen]、値は[998]です
+キーは[q]、値は[296]です
+キーは[halt]、値は[883]です
+キーは[component]、値は[257]です
+キーは[basedirectory]、値は[438]です
+キーは[swing]、値は[494]です
+キーは[ncdfe]、値は[640]です
+キーは[r]、値は[887]です
+キーは[s]、値は[205]です
+キーは[excl]、値は[619]です
+キーは[fast]、値は[625]です
+キーは[suite]、値は[888]です
+キーは[t]、値は[161]です
+キーは[throw]、値は[177]です
+キーは[replacefilter]、値は[1182]です
+キーは[v]、値は[62]です
+キーは[w]、値は[1007]です
+キーは[converterinforegistry]、値は[450]です
+キーは[x]、値は[532]です
+キーは[y]、値は[533]です
+キーは[z]、値は[740]です
+キーは[initialize]、値は[446]です
+キーは[combined]、値は[1132]です
+キーは[register]、値は[231]です
+キーは[resolve]、値は[347]です
+キーは[reader]、値は[407]です
+キーは[good]、値は[952]です
+キーは[datatypes]、値は[458]です
+キーは[empty]、値は[321]です
+キーは[deploy]、値は[405]です
+キーは[acs]、値は[464]です
+キーは[rec]、値は[989]です
+キーは[ref]、値は[813]です
+キーは[post]、値は[486]です
+キーは[helper]、値は[527]です
+キーは[storepass]、値は[730]です
+キーは[optionen]、値は[1101]です
+キーは[generated]、値は[784]です
+キーは[reg]、値は[979]です
+キーは[stub]、値は[838]です
+キーは[mnemonic]、値は[507]です
+キーは[finish]、値は[322]です
+キーは[tip]、値は[1090]です
+キーは[ite]、値は[354]です
+キーは[replacements]、値は[781]です
+キーは[enumeration]、値は[168]です
+キーは[export]、値は[300]です
+キーは[add]、値は[107]です
+キーは[ret]、値は[775]です
+キーは[rmic]、値は[945]です
+キーは[area]、値は[1098]です
+キーは[res]、値は[645]です
+キーは[pat]、値は[604]です
+キーは[myos]、値は[687]です
+キーは[itr]、値は[223]です
+キーは[patchfile]、値は[940]です
+キーは[check]、値は[376]です
+キーは[list]、値は[88]です
+キーは[encoding]、値は[661]です
+キーは[external]、値は[1035]です
+キーは[modelen]、値は[994]です
+キーは[tests]、値は[1177]です
+キーは[parser]、値は[170]です
+キーは[port]、値は[907]です
+キーは[shell]、値は[912]です
+nothing 
+キーは[1024]、値は[104]です
+キーは[success]、値は[756]です
+キーは[alignment]、値は[1086]です
+キーは[decimal]、値は[1164]です
+キーは[locator]、値は[297]です
+キーは[exec]、値は[37]です
+キーは[child]、値は[298]です
+キーは[addfiles]、値は[871]です
+キーは[scanners]、値は[966]です
+キーは[aligning]、値は[1055]です
+キーは[interface]、値は[814]です
+キーは[locale]、値は[959]です
+キーは[directory]、値は[81]です
+キーは[remove]、値は[201]です
+キーは[xsl]、値は[1146]です
+キーは[urls]、値は[167]です
+キーは[expanded]、値は[579]です
+キーは[pce]、値は[176]です
+キーは[unsupported]、値は[660]です
+キーは[engine]、値は[320]です
+キーは[scope]、値は[237]です
+キーは[root]、値は[319]です
+キーは[directories]、値は[626]です
+キーは[end]、値は[76]です
+キーは[liaison]、値は[962]です
+キーは[menus]、値は[1031]です
+キーは[compiler]、値は[114]です
+キーは[ivj]、値は[860]です
+キーは[fileeditor]、値は[1087]です
+キーは[label]、値は[484]です
+キーは[message]、値は[142]です
+キーは[env]、値は[699]です
+キーは[args]、値は[34]です
+キーは[with]、値は[21]です
+キーは[environment]、値は[698]です
+キーは[supportcancel]、値は[1082]です
+キーは[referenced]、値は[941]です
+キーは[visited]、値は[271]です
+キーは[clone]、値は[543]です
+キーは[preceeded]、値は[511]です
+キーは[eof]、値は[725]です
+キーは[username]、値は[856]です
+キーは[newenvironment]、値は[700]です
+キーは[named]、値は[471]です
+キーは[defaultexcludes]、値は[627]です
+キーは[callee]、値は[662]です
+キーは[namelen]、値は[992]です
+キーは[utilities]、値は[495]です
+キーは[number]、値は[248]です
+キーは[tmp]、値は[608]です
+キーは[scandir]、値は[616]です
+キーは[property]、値は[18]です
+キーは[unamelen]、値は[1001]です
+キーは[block]、値は[984]です
+キーは[per]、値は[987]です
+キーは[write]、値は[49]です
+キーは[chksumlen]、値は[999]です
+キーは[flow]、値は[1088]です
+キーは[order]、値は[467]です
+キーは[mapping]、値は[374]です
+キーは[byte]、値は[41]です
+キーは[handle]、値は[456]です
+キーは[cls]、値は[867]です
+キーは[script]、値は[704]です
+キーは[attrs]、値は[648]です
+キーは[exit]、値は[82]です
+キーは[system]、値は[16]です
+キーは[install]、値は[214]です
+キーは[compose]、値は[444]です
+キーは[gui]、値は[1050]です
+キーは[cmd]、値は[503]です
+キーは[hash]、値は[334]です
+キーは[regexp]、値は[980]です
+キーは[wait]、値は[689]です
+キーは[other]、値は[961]です
+キーは[jarfile]、値は[89]です
+キーは[save]、値は[502]です
+キーは[cell]、値は[575]です
+キーは[restrict]、値は[674]です
+キーは[login]、値は[908]です
+キーは[malformed]、値は[228]です
+キーは[local]、値は[293]です
+キーは[commandline]、値は[680]です
+キーは[valid]、値は[439]です
+キーは[tok]、値は[194]です
+キーは[top]、値は[426]です
+キーは[too]、値は[974]です
+キーは[locatorregistry]、値は[442]です
+キーは[have]、値は[617]です
+キーは[deployment]、値は[416]です
+キーは[err]、値は[225]です
+キーは[heading]、値は[573]です
+キーは[gzip]、値は[739]です
+キーは[peek]、値は[326]です
+キーは[names]、値は[211]です
+キーは[stored]、値は[874]です
+キーは[attributes]、値は[134]です
+キーは[entity]、値は[1186]です
+キーは[com]、値は[868]です
+キーは[col]、値は[726]です
+キーは[prefixed]、値は[741]です
+nothing 
+キーは[minor]、値は[801]です
+キーは[screen]、値は[1126]です
+キーは[reinit]、値は[659]です
+キーは[devlen]、値は[1004]です
+キーは[nested]、値は[601]です
+キーは[rmi]、値は[944]です
+キーは[mode]、値は[329]です
+キーは[optimize]、値は[758]です
+キーは[modified]、値は[667]です
+キーは[buffer]、値は[180]です
+キーは[longfile]、値は[1193]です
+キーは[net]、値は[826]です
+キーは[all]、値は[318]です
+キーは[border]、値は[561]です
+キーは[always]、値は[571]です
+キーは[new]、値は[31]です
+キーは[read]、値は[46]です
+キーは[void]、値は[363]です
+キーは[libdir]、値は[401]です
+キーは[touch]、値は[713]です
+キーは[real]、値は[968]です
+キーは[nfe]、値は[919]です
+キーは[affected]、値は[817]です
+キーは[tool]、値は[516]です
+キーは[condition]、値は[378]です
+キーは[unit]、値は[882]です
+キーは[try]、値は[4]です
+キーは[unix]、値は[1013]です
+キーは[indent]、値は[311]です
+キーは[cause]、値は[162]です
+キーは[mapper]、値は[670]です
+キーは[tsk]、値は[412]です
+キーは[pkg]、値は[773]です
+キーは[substring]、値は[22]です
+キーは[starteam]、値は[924]です
+キーは[reload]、値は[1121]です
+キーは[crc]、値は[853]です
+キーは[and]、値は[585]です
+キーは[recs]、値は[986]です
+キーは[extra]、値は[828]です
+キーは[define]、値は[395]です
+キーは[working]、値は[683]です
+キーは[tokens]、値は[197]です
+キーは[row]、値は[547]です
+キーは[lang]、値は[632]です
+キーは[attr]、値は[718]です
+キーは[atts]、値は[188]です
+キーは[manifest]、値は[93]です
+キーは[ant]、値は[152]です
+キーは[editable]、値は[492]です
+キーは[warnings]、値は[761]です
+キーは[chooser]、値は[498]です
+キーは[minute]、値は[1140]です
+キーは[super]、値は[375]です
+キーは[unsigned]、値は[802]です
+キーは[converterengine]、値は[1027]です
+キーは[verbosity]、値は[675]です
+キーは[caught]、値は[1116]です
+キーは[prev]、値は[233]です
+キーは[echo]、値は[686]です
+キーは[defines]、値は[397]です
+キーは[exc]、値は[212]です
+キーは[impl]、値は[1189]です
+キーは[password]、値は[857]です
+キーは[java]、値は[14]です
+キーは[exe]、値は[682]です
+キーは[len]、値は[283]です
+キーは[squelchchangeevents]、値は[535]です
+キーは[merge]、値は[870]です
+キーは[jar]、値は[84]です
+キーは[state]、値は[186]です
+キーは[filtering]、値は[676]です
+キーは[defined]、値は[462]です
+キーは[element]、値は[108]です
+キーは[ext]、値は[763]です
+キーは[cache]、値は[818]です
+キーは[merging]、値は[956]です
+キーは[expected]、値は[1009]です
+キーは[subst]、値は[780]です
+キーは[monitoring]、値は[565]です
+キーは[pack]、値は[497]です
+キーは[processor]、値は[963]です
+キーは[testsuites]、値は[1157]です
+キーは[input]、値は[38]です
+キーは[slow]、値は[618]です
+キーは[toolkit]、値は[1125]です
+キーは[styles]、値は[566]です
+キーは[actions]、値は[510]です
+キーは[items]、値は[581]です
+キーは[feels]、値は[587]です
+キーは[renderer]、値は[576]です
+キーは[cnfe]、値は[13]です
+キーは[document]、値は[568]です
+キーは[250]、値は[777]です
+キーは[matching]、値は[684]です
+キーは[pop]、値は[277]です
+キーは[default]、値は[189]です
+キーは[found]、値は[11]です
+キーは[256]、値は[1191]です
+キーは[pos]、値は[234]です
+キーは[vendor]、値は[844]です
+キーは[arg]、値は[79]です
+キーは[starbase]、値は[923]です
+キーは[builder]、値は[157]です
+キーは[attribute]、値は[200]です
+キーは[timestamp]、値は[316]です
+キーは[validate]、値は[330]です
+キーは[arr]、値は[609]です
+キーは[changenumber]、値は[914]です
+キーは[such]、値は[290]です
+キーは[watchdog]、値は[697]です
+キーは[classic]、値は[748]です
+キーは[watch]、値は[711]です
+キーは[refs]、値は[808]です
+キーは[handlers]、値は[294]です
+キーは[absolute]、値は[419]です
+キーは[loglevel]、値は[572]です
+キーは[calc]、値は[878]です
+キーは[setter]、値は[629]です
+キーは[supported]、値は[967]です
+キーは[lib]、値は[390]です
+キーは[taskletengine]、値は[432]です
+キーは[converter]、値は[350]です
+キーは[run]、値は[33]です
+キーは[source]、値は[306]です
+キーは[view]、値は[791]です
+キーは[compile]、値は[65]です
+キーは[continue]、値は[275]です
+キーは[has]、値は[195]です
+キーは[refid]、値は[977]です
+キーは[starts]、値は[163]です
+キーは[results]、値は[274]です
+キーは[instantiation]、値は[245]です
+キーは[last]、値は[365]です
+キーは[deftext]、値は[583]です
+キーは[noframes]、値は[1141]です
+キーは[warn]、値は[403]です
+キーは[name]、値は[8]です
+キーは[spaces]、値は[313]です
+キーは[parameters]、値は[364]です
+キーは[jikes]、値は[750]です
+キーは[full]、値は[267]です
+キーは[next]、値は[102]です
+キーは[tskdef]、値は[455]です
+キーは[string]、値は[0]です
+キーは[import]、値は[266]です
+キーは[color]、値は[580]です
+キーは[classes]、値は[203]です
+キーは[show]、値は[488]です
+キーは[description]、値は[191]です
+キーは[edition]、値は[863]です
+キーは[button]、値は[518]です
+キーは[not]、値は[10]です
+キーは[indexes]、値は[812]です
+キーは[toplink]、値は[854]です
+キーは[ends]、値は[20]です
+キーは[now]、値は[315]です
+キーは[sorting]、値は[466]です
+キーは[statement]、値は[951]です
+キーは[filecopy]、値は[679]です
+キーは[prefixedfileset]、値は[1145]です
+nothing 
+キーは[newcmd]、値は[706]です
+キーは[npe]、値は[642]です
+キーは[interfaces]、値は[848]です
+キーは[yes]、値は[504]です
+キーは[center]、値は[563]です
+キーは[start]、値は[53]です
+キーは[pto]、値は[1054]です
+キーは[configure]、値は[340]です
+キーは[disposable]、値は[409]です
+キーは[generic]、値は[839]です
+キーは[target]、値は[121]です
+キーは[initializable]、値は[404]です
+キーは[bootclasspath]、値は[759]です
+キーは[logstr]、値は[754]です
+キーは[short]、値は[356]です
+キーは[keepgenerated]、値は[836]です
+キーは[time]、値は[54]です
+キーは[window]、値は[496]です
+キーは[titled]、値は[1102]です
+キーは[configurable]、値は[339]です
+キーは[awt]、値は[1124]です
+キーは[container]、値は[323]です
+キーは[play]、値は[934]です
+キーは[excludes]、値は[613]です
+キーは[logger]、値は[220]です
+キーは[put]、値は[101]です
+キーは[required]、値は[384]です
+キーは[bindir]、値は[400]です
+キーは[excluded]、値は[615]です
+キーは[cast]、値は[420]です
+キーは[truncate]、値は[1195]です
+キーは[logged]、値は[280]です
+キーは[options]、値は[382]です
+キーは[converters]、値は[457]です
+キーは[keystore]、値は[731]です
+キーは[catch]、値は[9]です
+キーは[case]、値は[187]です
+キーは[item]、値は[473]です
+キーは[depends]、値は[192]です
+キーは[double]、値は[359]です
+キーは[destroy]、値は[690]です
+キーは[iter]、値は[845]です
+キーは[priority]、値は[278]です
+キーは[matcher]、値は[981]です
+キーは[matches]、値は[361]です
+キーは[dependencies]、値は[435]です
+キーは[cdata]、値は[1184]です
+キーは[formatter]、値は[886]です
+キーは[bounds]、値は[1092]です
+キーは[reset]、値は[747]です
+キーは[style]、値は[567]です
+キーは[primary]、値は[837]です
+キーは[browse]、値は[1119]です
+キーは[implicit]、値は[428]です
+キーは[loc]、値は[771]です
+キーは[introspection]、値は[127]です
+キーは[widget]、値は[534]です
+キーは[log]、値は[385]です
+キーは[methods]、値は[345]です
+キーは[pattern]、値は[603]です
+キーは[flags]、値は[806]です
+キーは[increment]、値は[1174]です
+キーは[enabled]、値は[1131]です
+キーは[unknown]、値は[646]です
+キーは[modern]、値は[749]です
+キーは[low]、値は[148]です
+キーは[datatype]、値は[459]です
+キーは[childcontext]、値は[461]です
+キーは[taskletregistry]、値は[452]です
+キーは[prop]、値は[337]です
+キーは[pane]、値は[482]です
+キーは[editor]、値は[243]です
+キーは[proc]、値は[688]です
+キーは[more]、値は[196]です
+キーは[display]、値は[465]です
+キーは[proj]、値は[717]です
+キーは[cnfmsg]、値は[850]です
+キーは[storetype]、値は[732]です
+キーは[grid]、値は[1102]です
+キーは[char]、値は[182]です
+キーは[width]、値は[590]です
+キーは[choice]、値は[1128]です
+キーは[clip]、値は[932]です
+キーは[stuff]、値は[513]です
+キーは[insets]、値は[1109]です
+キーは[num]、値は[558]です
+キーは[replace]、値は[287]です
+キーは[memberset]、値は[552]です
+キーは[wrapper]、値は[654]です
+キーは[simple]、値は[916]です
+キーは[section]、値は[1185]です
+キーは[vajproject]、値は[862]です
+キーは[protocol]、値は[1030]です
+キーは[major]、値は[803]です
+キーは[checked]、値は[922]です
+キーは[day]、値は[1142]です
+キーは[bean]、値は[124]です
+キーは[group]、値は[772]です
+キーは[elem]、値は[295]です
+キーは[visible]、値は[542]です
+キーは[package]、値は[599]です
+キーは[created]、値は[369]です
+キーは[minutes]、値は[1058]です
+キーは[format]、値は[249]です
+キーは[tree]、値は[475]です
+キーは[runtime]、値は[35]です
+キーは[archive]、値は[379]です
+キーは[illegal]、値は[246]です
+キーは[done]、値は[434]です
+キーは[inner]、値は[847]です
+キーは[formatters]、値は[885]です
+キーは[transfer]、値は[891]です
+キーは[keep]、値は[796]です
+キーは[option]、値は[381]です
+キーは[launcher]、値は[701]です
+キーは[values]、値は[254]です
+キーは[outfile]、値は[872]です
+キーは[part]、値は[930]です
+キーは[insert]、値は[184]です
+キーは[jos]、値は[92]です
+キーは[descriptors]、値は[130]です
+キーは[configurer]、値は[441]です
+キーは[alias]、値は[729]です
+キーは[datatypeengine]、値は[1026]です
+キーは[sheet]、値は[964]です
+キーは[preservetime]、値は[795]です
+キーは[dimension]、値は[577]です
+キーは[win]、値は[703]です
+キーは[process]、値は[36]です
+キーは[temp]、値は[788]です
+キーは[move]、値は[920]です
+キーは[debug]、値は[230]です
+キーは[original]、値は[371]です
+キーは[clear]、値は[546]です
+キーは[sax]、値は[169]です
+キーは[clean]、値は[1152]です
+キーは[assignable]、値は[372]です
+キーは[sizelen]、値は[997]です
+キーは[build]、値は[66]です
+キーは[approve]、値は[500]です
+キーは[front]、値は[158]です
+キーは[filesets]、値は[668]です
+キーは[user]、値は[423]です
+キーは[parent]、値は[224]です
+キーは[stack]、値は[154]です
+キーは[projects]、値は[262]です
+キーは[def]、値は[639]です
+キーは[bag]、値は[1103]です
+キーは[del]、値は[897]です
+キーは[userid]、値は[898]です
+キーは[dep]、値は[657]です
+キーは[path]、値は[27]です
+キーは[fis]、値は[103]です
+キーは[bar]、値は[506]です
+キーは[trim]、値は[199]です
+キーは[dev]、値は[1003]です
+キーは[telnet]、値は[909]です
+キーは[record]、値は[985]です
+キーは[scanner]、値は[669]です
+キーは[mkdir]、値は[57]です
+キーは[overwrite]、値は[666]です
+キーは[ae]、値は[153]です
+キーは[al]、値は[958]です
+キーは[contextualize]、値は[445]です
+キーは[basedir]、値は[285]です
+キーは[proxy]、値は[260]です
+キーは[canceled]、値は[1112]です
+キーは[as]、値は[222]です
+キーは[at]、値は[115]です
+キーは[defaults]、値は[1025]です
+キーは[mkdirs]、値は[284]です
+キーは[domain]、値は[1136]です
+キーは[compression]、値は[873]です
+キーは[scroller]、値は[569]です
+キーは[relative]、値は[819]です
+キーは[ptargets]、値は[1133]です
+キーは[compare]、値は[540]です
+キーは[be]、値は[637]です
+キーは[jsp]、値は[879]です
+キーは[icon]、値は[517]です
+キーは[unsafe]、値は[824]です
+キーは[br]、値は[778]です
+キーは[javadoc]、値は[766]です
+キーは[propertyfile]、値は[917]です
+キーは[bw]、値は[779]です
+キーは[weighty]、値は[1114]です
+キーは[by]、値は[336]です
+キーは[weightx]、値は[1112]です
+キーは[panel]、値は[491]です
+キーは[publicid]、値は[1128]です
+キーは[sep]、値は[600]です
+キーは[cc]、値は[764]です
+キーは[completion]、値は[903]です
+キーは[ce]、値は[352]です
+キーは[addtab]、値は[720]です
+キーは[set]、値は[136]です
+キーは[rdbms]、値は[950]です
+キーは[ch]、値は[610]です
+キーは[throwable]、値は[160]です
+キーは[column]、値は[548]です
+キーは[cl]、値は[380]です
+キーは[cp]、値は[807]です
+キーは[javacc]、値は[866]です
+キーは[executable]、値は[556]です
+キーは[cr]、値は[723]です
+キーは[stringbuf]、値は[915]です
+キーは[wizard]、値は[1113]です
+キーは[config]、値は[1135]です
+キーは[incl]、値は[620]です
+キーは[font]、値は[1099]です
+キーは[bea]、値は[1139]です
+キーは[encode]、値は[728]です
+キーは[dd]、値は[832]です
+キーは[de]、値は[417]です
+キーは[sfs]、値は[752]です
+キーは[die]、値は[973]です
+キーは[javac]、値は[112]です
+キーは[transferred]、値は[899]です
+キーは[added]、値は[743]です
+キーは[listener]、値は[219]です
+キーは[din]、値は[694]です
+キーは[do]、値は[64]です
+キーは[dir]、値は[78]です
+キーは[fmt]、値は[1165]です
+キーは[ds]、値は[520]です
+キーは[hold]、値は[622]です
+キーは[dt]、値は[1158]です
+キーは[hierarchical]、値は[324]です
+キーは[contact]、値は[1076]です
+キーは[exclude]、値は[783]です
+キーは[ea]、値は[636]です
+キーは[fne]、値は[647]です
+キーは[reply]、値は[901]です
+キーは[info]、値は[125]です
+キーは[jvm]、値は[1138]です
+キーは[image]、値は[531]です
+キーは[test]、値は[881]です
+キーは[finally]、値は[269]です
+キーは[patterns]、値は[861]です
+キーは[count]、値は[45]です
+キーは[ex]、値は[468]です
+キーは[dsfiles]、値は[789]です
+キーは[month]、値は[1144]です
+キーは[final]、値は[341]です
+キーは[parts]、値は[969]です
+キーは[addedfiles]、値は[842]です
+キーは[fe]、値は[448]です
+キーは[frame]、値は[490]です
+キーは[sources]、値は[63]です
+キーは[additional]、値は[827]です
+キーは[for]、値は[7]です
+キーは[back]、値は[1103]です
+キーは[skel]、値は[946]です
+キーは[fos]、値は[91]です
+キーは[title]、値は[487]です
+キーは[fs]、値は[663]です
+キーは[content]、値は[343]です
+キーは[timeout]、値は[712]です
+キーは[duration]、値は[933]です
+キーは[random]、値は[762]です
+キーは[load]、値は[209]です
+キーは[ignore]、値は[408]です
+キーは[client]、値は[906]です
+キーは[componentmanager]、値は[431]です
+キーは[class]、値は[5]です
+キーは[keepcopy]、値は[797]です
+キーは[owner]、値は[830]です
+キーは[custom]、値は[1138]です
+キーは[length]、値は[24]です
+キーは[false]、値は[164]です
+キーは[parse]、値は[174]です
+キーは[converterregistry]、値は[451]です
+キーは[killed]、値は[1201]です
+キーは[home]、値は[15]です
+キーは[instanceof]、値は[179]です
+キーは[wri]、値は[893]です
+キーは[existing]、値は[753]です
+キーは[print]、値は[143]です
+キーは[fork]、値は[744]です
+キーは[nodes]、値は[165]です
+キーは[obj]、値は[258]です
+キーは[setup]、値は[216]です
+キーは[append]、値は[226]です
+キーは[select]、値は[1129]です
+キーは[bin]、値は[389]です
+nothing 
+キーは[invoke]、値は[140]です
+キーは[convert]、値は[351]です
+キーは[extdirs]、値は[760]です
+キーは[output]、値は[90]です
+キーは[else]、値は[32]です
+キーは[context]、値は[342]です
+キーは[action]、値は[509]です
+キーは[lock]、値は[928]です
+キーは[filenames]、値は[1183]です
+キーは[model]、値は[545]です
+キーは[text]、値は[244]です
+キーは[id]、値は[308]です
+キーは[join]、値は[1200]です
+キーは[ie]、値は[128]です
+キーは[replacefilters]、値は[1181]です
+キーは[if]、値は[19]です
+キーは[tasks]、値は[261]です
+キーは[ih]、値は[628]です
+キーは[init]、値は[327]です
+キーは[in]、値は[40]です
+キーは[dependency]、値は[273]です
+キーは[io]、値は[85]です
+キーは[lower]、値は[366]です
+キーは[index]、値は[235]です
+キーは[is]、値は[80]です
+キーは[it]、値は[536]です
+キーは[params]、値は[522]です
+キーは[enum]、値は[210]です
+キーは[selections]、値は[530]です
+キーは[field]、値は[815]です
+キーは[validating]、値は[841]です
+キーは[contents]、値は[875]です
+キーは[doc]、値は[574]です
+キーは[evaluate]、値は[436]です
+キーは[status]、値は[286]です
+キーは[server]、値は[855]です
+キーは[dom]、値は[895]です
+キーは[targettype]、値は[821]です
+キーは[vals]、値は[524]です
+キーは[glob]、値は[751]です
+キーは[dot]、値は[809]です
+キーは[skip]、値は[782]です
+キーは[targets]、値は[221]です
+キーは[customizer]、値は[541]です
+キーは[signedjar]、値は[948]です
+キーは[file]、値は[26]です
+キーは[stream]、値は[39]です
+キーは[addcr]、値は[719]です
+キーは[member]、値は[553]です
+キーは[dname]、値は[727]です
+キーは[map]、値は[252]です
+キーは[table]、値は[544]です
+キーは[blk]、値は[988]です
+キーは[creator]、値は[630]です
+キーは[ftp]、値は[896]です
+キーは[listeners]、値は[279]です
+キーは[break]、値は[190]です
+キーは[max]、値は[550]です
+キーは[composer]、値は[443]です
+キーは[could]、値は[621]です
+キーは[change]、値は[470]です
+キーは[weblogic]、値は[833]です
+キーは[positive]、値は[902]です
+キーは[menu]、値は[505]です
+キーは[jlink]、値は[876]です
+キーは[uri]、値は[292]です
+キーは[extraoptions]、値は[825]です
+キーは[url]、値は[166]です
+キーは[verbose]、値は[387]です
+キーは[instruction]、値は[1188]です
+キーは[equals]、値は[99]です
+キーは[lf]、値は[724]です
+キーは[return]、値は[105]です
+キーは[synchronized]、値は[551]です
+キーは[keypass]、値は[733]です
+キーは[instance]、値は[204]です
+キーは[constant]、値は[804]です
+キーは[mail]、値は[947]です
+キーは[use]、値は[596]です
+キーは[jvmarg]、値は[746]です
+キーは[feel]、値は[586]です
+キーは[main]、値は[113]です
+キーは[integer]、値は[355]です
+キーは[while]、値は[47]です
+キーは[suffix]、値は[331]です
+キーは[second]、値は[1139]です
+キーは[550]、値は[1136]です
+キーは[find]、値は[215]です
+キーは[buffered]、値は[406]です
+キーは[selected]、値は[501]です
+キーは[osname]、値は[702]です
+キーは[mm]、値は[957]です
+キーは[level]、値は[146]です
+キーは[utf]、値は[811]です
+キーは[mt]、値は[1012]です
+キーは[dirs]、値は[398]です
+キーは[includes]、値は[612]です
+キーは[sort]、値は[268]です
+キーは[canonical]、値は[425]です
+キーは[preserve]、値は[677]です
+キーは[interrupted]、値は[693]です
+キーは[my]、値は[911]です
+キーは[fill]、値は[1130]です
+キーは[separator]、値は[28]です
+キーは[steps]、値は[1110]です
+キーは[entry]、値は[97]です
+キーは[expand]、値は[714]です
+キーは[entries]、値は[810]です
+キーは[task]、値は[149]です
+キーは[null]、値は[3]です
+キーは[background]、値は[1104]です
+キーは[true]、値は[122]です
+キーは[nf]、値は[892]です
+キーは[header]、値は[927]です
+キーは[dispose]、値は[410]です
+キーは[position]、値は[644]です
+キーは[millis]、値は[56]です
+キーは[errors]、値は[737]です
+キーは[parents]、値は[880]です
+キーは[importer]、値は[217]です
+キーは[no]、値は[289]です
+キーは[code]、値は[736]です
+キーは[keys]、値は[317]です
+キーは[nt]、値は[631]です
+キーは[bos]、値は[918]です
+キーは[box]、値は[514]です
+キーは[delete]、値は[332]です
+キーは[nocomment]、値は[793]です
+キーは[switch]、値は[185]です
+キーは[nowarn]、値は[794]です
+キーは[sql]、値は[949]です
+キーは[elapsed]、値は[1197]です
+キーは[dialog]、値は[489]です
+キーは[println]、値は[30]です
+キーは[total]、値は[953]です
+キーは[transform]、値は[1148]です
+キーは[hour]、値は[1141]です
+キーは[dtd]、値は[835]です
+キーは[of]、値は[236]です
+キーは[ok]、値は[755]です
+キーは[included]、値は[614]です
+キーは[make]、値は[1135]です
+キーは[on]、値は[692]です
+キーは[os]、値は[422]です
+キーは[src]、値は[281]です
+キーは[control]、値は[1105]です
+キーは[thread]、値は[528]です
+キーは[compound]、値は[1101]です
+キーは[100]、値は[578]です
+キーは[pd]、値は[131]です
+キーは[pe]、値は[348]です
+キーは[datatyperegistry]、値は[453]です
+キーは[bytes]、値は[595]です
+キーは[failonerror]、値は[559]です
+キーは[writer]、値は[299]です
+キーは[socket]、値は[982]です
+キーは[pk]、値は[1137]です
+キーは[properties]、値は[208]です
+キーは[handler]、値は[172]です
+キーは[ps]、値は[1114]です
+キーは[depend]、値は[240]です
+キーは[upper]、値は[368]です
+キーは[pw]、値は[816]です
+キーは[about]、値は[1120]です
+キーは[constraints]、値は[1106]です
+キーは[iterator]、値は[251]です
+キーは[character]、値は[367]です
+キーは[utils]、値は[588]です
+キーは[fire]、値は[264]です
+キーは[curr]、値は[480]です
+キーは[runner]、値は[529]です
+キーは[10]、値は[68]です
+キーは[height]、値は[591]です
+キーは[12]、値は[393]です
+キーは[pointer]、値は[641]です
+キーは[14]、値は[1134]です
+キーは[16]、値は[118]です
+キーは[old]、値は[469]です
+キーは[localpath]、値は[938]です
+キーは[module]、値は[67]です
+キーは[tasklet]、値は[414]です
+キーは[stk]、値は[971]です
+キーは[execute]、値は[270]です
+キーは[accept]、値は[555]です
+キーは[str]、値は[602]です
+キーは[secondary]、値は[926]です
+キーは[node]、値は[151]です
+キーは[filename]、値は[396]です
+キーは[re]、値は[447]です
+キーは[meta]、値は[843]です
+キーは[processing]、値は[1187]です
+キーは[sub]、値は[440]です
+キーは[access]、値は[247]です
+キーは[primitive]、値は[349]です
+キーは[scan]、値は[106]です
+キーは[sum]、値は[1005]です
+キーは[iae]、値は[353]です
+キーは[sun]、値は[110]です
+キーは[baos]、値は[594]です
+キーは[long]、値は[52]です
+キーは[sb]、値は[310]です
+キーは[into]、値は[526]です
+キーは[offline]、値は[768]です
+キーは[current]、値は[55]です
+キーは[se]、値は[178]です
+キーは[unless]、値は[427]です
+キーは[arraycopy]、値は[437]です
+キーは[uidlen]、値は[995]です
+キーは[vector]、値は[61]です
+キーは[pump]、値は[681]です
+キーは[cmdl]、値は[696]です
+キーは[key]、値は[253]です
+キーは[preferred]、値は[1084]です
+キーは[32]、値は[929]です
+キーは[calendar]、値は[910]です
+キーは[ss]、値は[936]です
+キーは[st]、値は[605]です
+キーは[variables]、値は[238]です
+キーは[manager]、値は[150]です
+キーは[star]、値は[611]です
+キーは[one]、値は[831]です
+キーは[sz]、値は[990]です
+キーは[started]、値は[265]です
+キーは[mergefiles]、値は[869]です
+キーは[store]、値は[890]です
+キーは[many]、値は[975]です
+キーは[homedir]、値は[399]です
+キーは[td]、値は[1039]です
+キーは[confirm]、値は[1083]です
+キーは[single]、値は[1140]です
+キーは[te]、値は[931]です
+キーは[buf]、値は[42]です
+キーは[tasklibdir]、値は[402]です
+キーは[orig]、値は[710]です
+キーは[destdir]、値は[823]です
+キーは[closed]、値は[1034]です
+キーは[oper]、値は[1173]です
+キーは[to]、値は[116]です
+キーは[operation]、値は[560]です
+キーは[open]、値は[304]です
+キーは[4096]、値は[282]です
+キーは[bus]、値は[485]です
+キーは[workspace]、値は[218]です
+キーは[loader]、値は[229]です
+キーは[navigator]、値は[1092]です
+キーは[project]、値は[120]です
+キーは[dest]、値は[109]です
+キーは[descriptions]、値は[643]です
+キーは[loaded]、値は[593]です
+キーは[horizontal]、値は[1111]です
+キーは[apache]、値は[634]です
+キーは[excludesfile]、値は[1011]です
+キーは[ui]、値は[582]です
+キーは[loop]、値は[554]です
+キーは[terminator]、値は[840]です
+キーは[dynamic]、値は[1081]です
+キーは[details]、値は[1151]です
+キーは[up]、値は[786]です
+キーは[srcdir]、値は[822]です
+キーは[magiclen]、値は[1000]です
+キーは[vsspath]、値は[937]です
+キーは[us]、値は[960]です
+キーは[newfiles]、値は[623]です
+キーは[ensure]、値は[1147]です
+キーは[todir]、値は[884]です
+キーは[this]、値は[123]です
+キーは[constructor]、値は[521]です
+キーは[gidlen]、値は[996]です
+キーは[deprecation]、値は[757]です
+キーは[look]、値は[584]です
+キーは[modules]、値は[59]です
+キーは[retval]、値は[463]です
+キーは[opt]、値は[383]です
+キーは[extract]、値は[942]です
+キーは[paths]、値は[477]です
+キーは[owning]、値は[653]です
+キーは[failure]、値は[889]です
+キーは[vm]、値は[745]です
+キーは[60]、値は[1059]です
+キーは[idx]、値は[606]です
+キーは[support]、値は[430]です
+キーは[tasklib]、値は[391]です
+キーは[desc]、値は[537]です
+キーは[changed]、値は[1032]です
+キーは[ctrlz]、値は[722]です
+キーは[destination]、値は[370]です
+キーは[update]、値は[250]です
+キーは[modifiers]、値は[362]です
+キーは[sys]、値は[708]です
+キーは[flush]、値は[301]です
+キーは[param]、値は[709]です
+キーは[wl]、値は[851]です
+キーは[missing]、値は[523]です
+キーは[definition]、値は[658]です
+キーは[includesfile]、値は[1010]です
+キーは[checkout]、値は[798]です
+キーは[successful]、値は[1176]です
+キーは[summary]、値は[1154]です
+キーは[registry]、値は[373]です
+キーは[normal]、値は[970]です
+キーは[types]、値は[138]です
+キーは[previous]、値は[1107]です
+キーは[classpath]、値は[2]です
+キーは[org]、値は[633]です
+キーは[filters]、値は[716]です
+キーは[layout]、値は[562]です
+キーは[popup]、値は[519]です
+キーは[80]、値は[43]です
+キーは[location]、値は[173]です
+キーは[comment]、値は[792]です
+キーは[step]、値は[1108]です
+キーは[base]、値は[58]です
+キーは[listenersupport]、値は[429]です
+キーは[octal]、値は[993]です
+キーは[conn]、値は[303]です
+キーは[mod]、値は[955]です
+キーは[prefix]、値は[98]です
+キーは[type]、値は[159]です
+キーは[cond]、値は[652]です
+キーは[repository]、値は[864]です
+キーは[seconds]、値は[1057]です
+キーは[actionids]、値は[508]です
+キーは[filtered]、値は[1151]です
+キーは[children]、値は[328]です
+キーは[dbfactory]、値は[1155]です
+キーは[superclass]、値は[849]です
+キーは[connection]、値は[302]です
+キーは[href]、値は[769]です
+キーは[introspector]、値は[126]です
+キーは[vaj]、値は[858]です
+キーは[zip]、値は[96]です
+キーは[val]、値は[479]です
+キーは[method]、値は[135]です
+キーは[compress]、値は[787]です
+キーは[work]、値は[433]です
+キーは[scroll]、値は[493]です
+キーは[vpath]、値は[624]です
+キーは[ze]、値は[100]です
+キーは[emacs]、値は[557]です
+キーは[push]、値は[276]です
+キーは[props]、値は[206]です
+キーは[fail]、値は[691]です
+キーは[invocation]、値は[259]です
+キーは[forwarder]、値は[1033]です
+キーは[force]、値は[665]です
+キーは[word]、値は[1099]です
+キーは[tablength]、値は[721]です
+キーは[extension]、値は[411]です
+キーは[flag]、値は[765]です
+キーは[north]、値は[564]です
+キーは[tools]、値は[111]です
+キーは[substitute]、値は[333]です
+キーは[out]、値は[29]です
+キーは[flat]、値は[672]です
+キーは[identity]、値は[673]です
+キーは[assert]、値は[1008]です
+キーは[get]、値は[17]です
+キーは[beans]、値は[256]です
+キーは[verify]、値は[943]です
+キーは[initialized]、値は[1132]です
+キーは[copy]、値は[525]です
+キーは[event]、値は[213]です
+キーは[gnamelen]、値は[1002]です
+キーは[include]、値は[664]です
+キーは[deflated]、値は[846]です
+キーは[projectengine]、値は[1028]です
+キーは[assem]、値は[1006]です
+キーは[testsuite]、値は[1147]です
+キーは[incremental]、値は[392]です
+キーは[abstract]、値は[1029]です
+キーは[nice]、値は[512]です
+キーは[tokenizer]、値は[193]です
+キーは[token]、値は[198]です
+キーは[filter]、値は[147]です
+キーは[help]、値は[144]です
+キーは[depth]、値は[1150]です
+キーは[classname]、値は[232]です
+キーは[rename]、値は[799]です
+キーは[decrement]、値は[1175]です
+キーは[elements]、値は[207]です
+キーは[pkgname]、値は[1153]です
+キーは[exists]、値は[60]です
+キーは[first]、値は[597]です
+キーは[msg]、値は[145]です
+キーは[date]、値は[314]です
+キーは[magic]、値は[800]です
+キーは[argument]、値は[360]です
+キーは[data]、値は[183]です
+キーは[taskdefs]、値は[454]です
+キーは[float]、値は[358]です
+キーは[axis]、値は[1089]です
+キーは[translate]、値は[715]です
+キーは[spec]、値は[859]です
+キーは[autoresponse]、値は[939]です
+キーは[reference]、値は[649]です
+キーは[tab]、値は[483]です
+キーは[filepath]、値は[1037]です
+キーは[plain]、値は[1098]です
+キーは[only]、値は[905]です
+キーは[create]、値は[255]です
+キーは[from]、値は[117]です
+キーは[tag]、値は[181]です
+キーは[constants]、値は[1192]です
+キーは[enumerated]、値は[635]です
+キーは[tar]、値は[954]です
+キーは[offset]、値は[991]です
+キーは[resource]、値は[460]です
+キーは[finished]、値は[202]です
+キーは[failed]、値は[894]です
+キーは[files]、値は[87]です
+キーは[mue]、値は[415]です
+キーは[send]、値は[589]です
+キーは[configuration]、値は[175]です
+キーは[cab]、値は[785]です
+キーは[line]、値は[309]です
+キーは[link]、値は[767]です
+キーは[error]、値は[50]です
+キーは[can]、値は[734]です
+キーは[trace]、値は[155]です
+キーは[security]、値は[263]です
+キーは[public]、値は[307]です
+キーは[array]、値は[242]です
+キーは[ready]、値は[638]です
+キーは[parameter]、値は[137]です
+キーは[choosable]、値は[499]です
+キーは[userdir]、値は[424]です
+nothing 
+キーは[deployer]、値は[413]です
+キーは[postfix]、値は[978]です
+キーは[packagelist]、値は[770]です
+キーは[value]、値は[119]です
+キーは[delim]、値は[925]です
+キーは[factory]、値は[171]です
+キーは[lookup]、値は[449]です
+キーは[implementation]、値は[671]です
+キーは[match]、値は[607]です
+キーは[resources]、値は[418]です
+キーは[groups]、値は[774]です
+キーは[command]、値は[1]です
+キーは[int]、値は[44]です
+キーは[boolean]、値は[357]です
+キーは[response]、値は[735]です
+キーは[variable]、値は[239]です
+キーは[namespace]、値は[291]です
+キーは[slash]、値は[335]です
+キーは[arguments]、値は[394]です
+キーは[locations]、値は[1126]です
+キーは[clazz]、値は[6]です
+キーは[ioe]、値は[86]です
+wordFreq  = 512
+wordFreq  = 59
+wordFreq  = 45
+wordFreq  = 610
+wordFreq  = 352
+wordFreq  = 177
+wordFreq  = 19
+wordFreq  = 312
+wordFreq  = 404
+wordFreq  = 339
+wordFreq  = 58
+wordFreq  = 46
+wordFreq  = 524
+wordFreq  = 11
+wordFreq  = 80
+wordFreq  = 13
+wordFreq  = 142
+wordFreq  = 723
+wordFreq  = 129
+wordFreq  = 830
+wordFreq  = 39
+wordFreq  = 66
+wordFreq  = 64
+wordFreq  = 491
+wordFreq  = 305
+wordFreq  = 11
+wordFreq  = 342
+wordFreq  = 175
+wordFreq  = 59
+wordFreq  = 114
+wordFreq  = 65
+wordFreq  = 779
+wordFreq  = 335
+wordFreq  = 51
+wordFreq  = 36
+wordFreq  = 20
+wordFreq  = 30
+wordFreq  = 24
+wordFreq  = 61
+wordFreq  = 120
+wordFreq  = 51
+wordFreq  = 41
+wordFreq  = 37
+wordFreq  = 2
+wordFreq  = 366
+wordFreq  = 46
+wordFreq  = 61
+wordFreq  = 156
+wordFreq  = 196
+wordFreq  = 61
+wordFreq  = 57
+wordFreq  = 300
+wordFreq  = 40
+wordFreq  = 47
+wordFreq  = 50
+wordFreq  = 40
+wordFreq  = 28
+wordFreq  = 2
+wordFreq  = 62
+wordFreq  = 3
+wordFreq  = 89
+wordFreq  = 53
+wordFreq  = 33
+wordFreq  = 6
+wordFreq  = 22
+wordFreq  = 21
+wordFreq  = 335
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 48
+wordFreq  = 23
+wordFreq  = 15
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 30
+wordFreq  = 3
+wordFreq  = 161
+wordFreq  = 28
+wordFreq  = 153
+wordFreq  = 112
+wordFreq  = 17
+wordFreq  = 152
+wordFreq  = 16
+wordFreq  = 113
+wordFreq  = 40
+wordFreq  = 105
+wordFreq  = 123
+wordFreq  = 3
+wordFreq  = 94
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 79
+wordFreq  = 37
+wordFreq  = 31
+wordFreq  = 44
+wordFreq  = 18
+wordFreq  = 162
+wordFreq  = 5
+wordFreq  = 50
+wordFreq  = 147
+wordFreq  = 3
+wordFreq  = 16
+wordFreq  = 482
+wordFreq  = 20
+wordFreq  = 203
+wordFreq  = 203
+wordFreq  = 49
+wordFreq  = 4
+wordFreq  = 10
+wordFreq  = 5
+wordFreq  = 15
+wordFreq  = 9
+wordFreq  = 75
+wordFreq  = 250
+wordFreq  = 28
+wordFreq  = 2
+wordFreq  = 184
+wordFreq  = 327
+wordFreq  = 122
+wordFreq  = 125
+wordFreq  = 143
+wordFreq  = 15
+wordFreq  = 96
+wordFreq  = 4
+wordFreq  = 16
+wordFreq  = 9
+wordFreq  = 37
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 83
+wordFreq  = 14
+wordFreq  = 30
+wordFreq  = 39
+wordFreq  = 366
+wordFreq  = 7
+wordFreq  = 12
+wordFreq  = 25
+wordFreq  = 27
+wordFreq  = 133
+wordFreq  = 115
+wordFreq  = 74
+wordFreq  = 7
+wordFreq  = 174
+wordFreq  = 38
+wordFreq  = 13
+wordFreq  = 2
+wordFreq  = 99
+wordFreq  = 24
+wordFreq  = 21
+wordFreq  = 119
+wordFreq  = 5
+wordFreq  = 65
+wordFreq  = 49
+wordFreq  = 1
+wordFreq  = 10
+wordFreq  = 4
+wordFreq  = 87
+wordFreq  = 91
+wordFreq  = 38
+wordFreq  = 5
+wordFreq  = 28
+wordFreq  = 105
+wordFreq  = 9
+wordFreq  = 30
+wordFreq  = 2
+wordFreq  = 61
+wordFreq  = 22
+wordFreq  = 6
+wordFreq  = 18
+wordFreq  = 43
+wordFreq  = 125
+wordFreq  = 31
+wordFreq  = 28
+wordFreq  = 2
+wordFreq  = 376
+wordFreq  = 4
+wordFreq  = 71
+wordFreq  = 84
+wordFreq  = 14
+wordFreq  = 49
+wordFreq  = 48
+wordFreq  = 7
+wordFreq  = 15
+wordFreq  = 10
+wordFreq  = 46
+wordFreq  = 5
+wordFreq  = 60
+wordFreq  = 46
+wordFreq  = 12
+wordFreq  = 12
+wordFreq  = 33
+wordFreq  = 23
+wordFreq  = 125
+wordFreq  = 78
+wordFreq  = 32
+wordFreq  = 38
+wordFreq  = 32
+wordFreq  = 34
+wordFreq  = 23
+wordFreq  = 17
+wordFreq  = 12
+wordFreq  = 36
+wordFreq  = 30
+wordFreq  = 13
+wordFreq  = 67
+wordFreq  = 52
+wordFreq  = 33
+wordFreq  = 9
+wordFreq  = 25
+wordFreq  = 87
+wordFreq  = 62
+wordFreq  = 4
+wordFreq  = 15
+wordFreq  = 12
+wordFreq  = 4
+wordFreq  = 24
+wordFreq  = 48
+wordFreq  = 29
+wordFreq  = 22
+wordFreq  = 24
+wordFreq  = 19
+wordFreq  = 65
+wordFreq  = 60
+wordFreq  = 75
+wordFreq  = 12
+wordFreq  = 9
+wordFreq  = 24
+wordFreq  = 45
+wordFreq  = 12
+wordFreq  = 38
+wordFreq  = 5
+wordFreq  = 21
+wordFreq  = 91
+wordFreq  = 76
+wordFreq  = 7
+wordFreq  = 9
+wordFreq  = 6
+wordFreq  = 6
+wordFreq  = 48
+wordFreq  = 31
+wordFreq  = 6
+wordFreq  = 69
+wordFreq  = 8
+wordFreq  = 27
+wordFreq  = 16
+wordFreq  = 14
+wordFreq  = 31
+wordFreq  = 13
+wordFreq  = 43
+wordFreq  = 27
+wordFreq  = 32
+wordFreq  = 10
+wordFreq  = 142
+wordFreq  = 4
+wordFreq  = 22
+wordFreq  = 2
+wordFreq  = 16
+wordFreq  = 9
+wordFreq  = 10
+wordFreq  = 9
+wordFreq  = 6
+wordFreq  = 17
+wordFreq  = 15
+wordFreq  = 12
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 56
+wordFreq  = 81
+wordFreq  = 2
+wordFreq  = 16
+wordFreq  = 9
+wordFreq  = 6
+wordFreq  = 13
+wordFreq  = 16
+wordFreq  = 7
+wordFreq  = 10
+wordFreq  = 21
+wordFreq  = 4
+wordFreq  = 48
+wordFreq  = 2
+wordFreq  = 14
+wordFreq  = 17
+wordFreq  = 13
+wordFreq  = 2
+wordFreq  = 44
+wordFreq  = 12
+wordFreq  = 18
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 23
+wordFreq  = 23
+wordFreq  = 17
+wordFreq  = 3
+wordFreq  = 23
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 8
+wordFreq  = 10
+wordFreq  = 54
+wordFreq  = 14
+wordFreq  = 35
+wordFreq  = 60
+wordFreq  = 15
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 22
+wordFreq  = 11
+wordFreq  = 3
+wordFreq  = 23
+wordFreq  = 12
+wordFreq  = 23
+wordFreq  = 22
+wordFreq  = 20
+wordFreq  = 6
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 14
+wordFreq  = 2
+wordFreq  = 20
+wordFreq  = 24
+wordFreq  = 13
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 32
+wordFreq  = 7
+wordFreq  = 7
+wordFreq  = 7
+wordFreq  = 5
+wordFreq  = 9
+wordFreq  = 84
+wordFreq  = 5
+wordFreq  = 16
+wordFreq  = 109
+wordFreq  = 56
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 35
+wordFreq  = 46
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 12
+wordFreq  = 9
+wordFreq  = 10
+wordFreq  = 3
+wordFreq  = 8
+wordFreq  = 22
+wordFreq  = 7
+wordFreq  = 39
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 62
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 10
+wordFreq  = 3
+wordFreq  = 45
+wordFreq  = 18
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 9
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 44
+wordFreq  = 26
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 11
+wordFreq  = 13
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 181
+wordFreq  = 6
+wordFreq  = 90
+wordFreq  = 34
+wordFreq  = 0
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 15
+wordFreq  = 3
+wordFreq  = 17
+wordFreq  = 2
+wordFreq  = 24
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 50
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 20
+wordFreq  = 18
+wordFreq  = 13
+wordFreq  = 1
+wordFreq  = 5
+wordFreq  = 8
+wordFreq  = 6
+wordFreq  = 14
+wordFreq  = 19
+wordFreq  = 4
+wordFreq  = 15
+wordFreq  = 4
+wordFreq  = 28
+wordFreq  = 81
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 9
+wordFreq  = 13
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 20
+wordFreq  = 1
+wordFreq  = 6
+wordFreq  = 6
+wordFreq  = 8
+wordFreq  = 1
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 53
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 26
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 30
+wordFreq  = 20
+wordFreq  = 11
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 70
+wordFreq  = 17
+wordFreq  = 18
+wordFreq  = 6
+wordFreq  = 14
+wordFreq  = 31
+wordFreq  = 89
+wordFreq  = 9
+wordFreq  = 15
+wordFreq  = 1
+wordFreq  = 2
+wordFreq  = 9
+wordFreq  = 22
+wordFreq  = 48
+wordFreq  = 12
+wordFreq  = 2
+wordFreq  = 35
+wordFreq  = 16
+wordFreq  = 10
+wordFreq  = 11
+wordFreq  = 16
+wordFreq  = 12
+wordFreq  = 16
+wordFreq  = 15
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 23
+wordFreq  = 7
+wordFreq  = 44
+wordFreq  = 2
+wordFreq  = 17
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 17
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 17
+wordFreq  = 6
+wordFreq  = 23
+wordFreq  = 3
+wordFreq  = 30
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 6
+wordFreq  = 29
+wordFreq  = 19
+wordFreq  = 20
+wordFreq  = 10
+wordFreq  = 1
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 9
+wordFreq  = 2
+wordFreq  = 25
+wordFreq  = 63
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 13
+wordFreq  = 14
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 8
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 20
+wordFreq  = 6
+wordFreq  = 12
+wordFreq  = 7
+wordFreq  = 7
+wordFreq  = 14
+wordFreq  = 23
+wordFreq  = 9
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 14
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 6
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 18
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 6
+wordFreq  = 6
+wordFreq  = 6
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 16
+wordFreq  = 8
+wordFreq  = 8
+wordFreq  = 8
+wordFreq  = 14
+wordFreq  = 13
+wordFreq  = 7
+wordFreq  = 8
+wordFreq  = 34
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 14
+wordFreq  = 16
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 19
+wordFreq  = 17
+wordFreq  = 39
+wordFreq  = 8
+wordFreq  = 5
+wordFreq  = 6
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 11
+wordFreq  = 4
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 20
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 11
+wordFreq  = 35
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 9
+wordFreq  = 6
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 18
+wordFreq  = 24
+wordFreq  = 8
+wordFreq  = 8
+wordFreq  = 29
+wordFreq  = 12
+wordFreq  = 42
+wordFreq  = 22
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 9
+wordFreq  = 3
+wordFreq  = 51
+wordFreq  = 6
+wordFreq  = 22
+wordFreq  = 19
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 9
+wordFreq  = 3
+wordFreq  = 32
+wordFreq  = 18
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 10
+wordFreq  = 6
+wordFreq  = 7
+wordFreq  = 11
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 16
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 14
+wordFreq  = 5
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 14
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 8
+wordFreq  = 11
+wordFreq  = 8
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 1
+wordFreq  = 1
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 13
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 6
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 12
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 11
+wordFreq  = 8
+wordFreq  = 4
+wordFreq  = 8
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 14
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 11
+wordFreq  = 10
+wordFreq  = 2
+wordFreq  = 14
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 18
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 16
+wordFreq  = 11
+wordFreq  = 15
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 6
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 10
+wordFreq  = 10
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 1
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 11
+wordFreq  = 4
+wordFreq  = 9
+wordFreq  = 22
+wordFreq  = 2
+wordFreq  = 8
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 20
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 7
+wordFreq  = 11
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 8
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 9
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 7
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 10
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 10
+wordFreq  = 11
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 7
+wordFreq  = 9
+wordFreq  = 2
+wordFreq  = 15
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 34
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 6
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 3
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 13
+wordFreq  = 4
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 8
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 4
+wordFreq  = 12
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 7
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 1
+wordFreq  = 0
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 5
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 4
+wordFreq  = 3
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 6
+wordFreq  = 4
+wordFreq  = 4
+wordFreq  = 2
+wordFreq  = 4
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 5
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 2
+wordFreq  = 3
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 2
+wordFreq  = 6
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+wordFreq  = 0
+1020,0,94,226,0,15,0,1399,a04d66471422958bfad8b4497d76b1bfdeb064b3
+Finished : 
+numOfExtraWords  14870
+ =================== PRE wordMap size = 1144===================
+targetAddWord = 1
+IDF Stable
+860,0,53,105,0,9,0,1048,867ec77b0d9efa8819be2ebf82cace4600b929ee
+Finished : 
+numOfExtraWords  14870
+ =================== PRE wordMap size = 1144===================
+targetAddWord = 18
+IDF Stable
+739,1,57,160,0,8,0,997,7435b27b914764c3845b4821363ffeb4ddfe89cd
+Finished : 
+numOfExtraWords  14870
+ =================== PRE wordMap size = 1144===================
+targetAddWord = 44
+IDF Stable
+1249,0,55,119,0,9,0,1458,cfa93603e73e635d31be01cdb31dc9959a5ea35c
+Finished : 

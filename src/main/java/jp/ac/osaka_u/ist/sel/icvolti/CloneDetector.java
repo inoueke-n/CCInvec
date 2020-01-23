@@ -10,7 +10,6 @@ import java.nio.file.Paths;
 import java.security.CodeSource;
 import java.security.ProtectionDomain;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.CAnalyzer4;
 import jp.ac.osaka_u.ist.sel.icvolti.analyze.CSharpAnalyzer;
@@ -36,7 +35,7 @@ public class CloneDetector {
 	public static final boolean absoluteTracking = true;
 
 	public static final boolean modeDebug = false;
-	public static final boolean modeStdout = false;
+	public static final boolean modeStdout = true;
 	public static final boolean modeTimeMeasure = true;
 	public static final boolean modeEvalForOnlyDiffVer = true;
 
@@ -47,13 +46,13 @@ public class CloneDetector {
 
 
 	public static String javaClassPath;
-//	public static String vecMethod;
+	//	public static String vecMethod;
 
 	private static ArrayList<Block> blockList;
 	private static ArrayList<Block> allBlockList;
 	public static ArrayList<Block> testBlockList;
 	//public static ArrayList<ClonePair> clonePairList;
-	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
+//	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
 	public static int countMethod, countBlock, countLine;
 	private static final String version = "19.01.24";
 	//public static int dimention_test;
@@ -251,7 +250,7 @@ public class CloneDetector {
 			//fileList = JavaAnalyzer3.searchFiles(Config.target);
 			//blockList = javaanalyzer.analyze(fileList);
 			FileList = JavaAnalyzer3.setFilesInfo(config.getNewTarget());
-			blockList = javaanalyzer.analyze_test_first(FileList);
+			blockList = javaanalyzer.analyzeFirst(FileList);
 			long javaEnd = System.currentTimeMillis();
 			javaTime = javaEnd-javaStart;
 			//			System.out.println(
@@ -664,8 +663,13 @@ public class CloneDetector {
 			//			System.out.println("allblockList size " + allBlockList.size());
 
 			if(addedModifiedBlockList.size() > 0 && allBlockList.size() > 0) {
+				int numMethod=0;
+				if(config.getVecMethod()==Config.BoW) {
+					allBlockList = calculator.increCalculateVectorForBoW(allBlockList, addedModifiedBlockList, allData,config.getVecMethod());
+				}else if(config.getVecMethod()==Config.TFIDF) {
+					allBlockList = calculator.increCalculateVectorForTfIdf(allBlockList, addedModifiedBlockList, allData,config.getVecMethod(), FileList, config);
+				}
 
-				allBlockList = calculator.increCalculateVector(allBlockList, addedModifiedBlockList, allData,config.getVecMethod());
 
 
 				//				allBlockList = calculator.calculateVector_test(allBlockList, addedModifiedBlockList, allData);

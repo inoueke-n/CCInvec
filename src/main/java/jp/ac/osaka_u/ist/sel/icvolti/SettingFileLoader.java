@@ -58,6 +58,12 @@ public class SettingFileLoader {
 						//config.setLang(removeSpace(line.replace("LANGUAGE:","")));
 					}
 
+					// 再計算条件の単語数の
+					if(line.contains("NUMWORD_RECALC:")) {
+						inputFlag = 0;
+						config.setNumWordRecalc(Integer.parseInt(removeSpace(line.replace("NUMWORD_RECALC:",""))));
+					}
+
 					// 出力形式
 					if(line.contains("OUTPUT_FORMAT:")) {
 						inputFlag = 0;

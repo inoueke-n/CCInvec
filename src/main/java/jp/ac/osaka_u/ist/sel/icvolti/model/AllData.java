@@ -27,7 +27,9 @@ public class AllData implements  Serializable {
 	static int dimension;
 	static String detectingCommitId = null;;
 	static boolean pre_Diff = true;
-	static int numMethod =0;
+	static int nextNumWordForRecalc =0;
+	static int numWordForCalc =0;
+	static int countMethod =0;
 
 
 	/**
@@ -142,6 +144,56 @@ public class AllData implements  Serializable {
 	public void setVecDimension(int dimension) {
 		this.dimension = dimension;
 	}
+
+
+	/**
+	 * <p>ソースコード中の関数の数の取得</p>
+	 * @return ソースコード中の関数の数
+	 */
+	public int getCountMethodForCalc() {
+		return countMethod;
+	}
+
+	/**
+	 * <p>ソースコード中の関数の数の設定</p>
+	 * @param ソースコード中の関数の数
+	 */
+	public void setCountMethodForCalc(int countMethod) {
+		this.countMethod = countMethod;
+	}
+
+	/**
+	 * <p>次にIDFを再計算するソースコード中の単語の数の取得</p>
+	 * @return ソースコード中の関数の数
+	 */
+	public int getNextNumWordForRecalc() {
+		return nextNumWordForRecalc;
+	}
+
+	/**
+	 * <p>次にIDFを再計算するソースコード中の単語の数の設定</p>
+	 * @param ソースコード中の関数の数
+	 */
+	public void setNextNumWordForRecalc(int nextNumWordForRecalc) {
+		this.nextNumWordForRecalc = nextNumWordForRecalc;
+	}
+
+	/**
+	 * <p>現在の計算に使用している単語の数の取得</p>
+	 * @return ソースコード中の関数の数
+	 */
+	public int getNumWordForCalc() {
+		return numWordForCalc;
+	}
+
+	/**
+	 * <p>現在の計算に使用している単語の数の設定</p>
+	 * @param ソースコード中の関数の数
+	 */
+	public void setNumWordForCalc(int numWordForCalc) {
+		this.numWordForCalc = numWordForCalc;
+	}
+
 
 	/**
 	 * <p>前回diffがあったかどうか</p>
@@ -484,8 +536,9 @@ public class AllData implements  Serializable {
 					if(vecMethod == Config.BoW) {
 						block.setCategory(Block.NULL);
 						VectorCalculator.increCalcBoW(block, wordMap, wordMapSource, CloneDetector.countMethod, dimension);
+					}else if(vecMethod == Config.TFIDF) {
+						VectorCalculator.increCalcTfIdf(block, wordMap, wordMapSource,wordFreq ,countMethod, dimension);
 					}
-
 				}
 			}
 			//	System.out.println("ID " + block.getId());

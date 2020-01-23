@@ -440,7 +440,7 @@ public class JavaAnalyzer3 {
 	 * @return
 	 * @throws IOException
 	 */
-	public ArrayList<Block> analyze_test_first(ArrayList<SourceFile> fileList) throws IOException {
+	public ArrayList<Block> analyzeFirst(ArrayList<SourceFile> fileList) throws IOException {
 		ArrayList<Block> blockList = new ArrayList<>();
 
 		for (SourceFile file : fileList) {
