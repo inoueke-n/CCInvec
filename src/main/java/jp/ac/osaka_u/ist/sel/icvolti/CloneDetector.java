@@ -43,6 +43,9 @@ public class CloneDetector {
 	public static boolean modifiedSourceFile =false;
 	public static boolean addedSourceFile =false;
 	public static boolean deletedSourceFile =false;
+	public static boolean idfRecalc =false;
+
+	public static boolean allRecalc =true;
 
 
 	public static String javaClassPath;
@@ -70,6 +73,9 @@ public class CloneDetector {
 	public static long csTime = start;
 	public static long otTime = start;
 	public static long serializeTime = start;
+	public static long diffStart = 0;
+	public static long diffEnd = 0;
+	public static long diffTime = 0;
 
 	/**
 	 * <p>
@@ -429,6 +435,7 @@ public class CloneDetector {
 		//		System.out.println(lshTime + "," +mkcpTime);
 
 		currentTime = System.currentTimeMillis();
+		diffTime = diffEnd -diffStart;
 		if(modeTimeMeasure) {
 			System.out.println(currentTime - start + "[ms]");
 		}
@@ -440,7 +447,8 @@ public class CloneDetector {
 		}else if(config.getLang() == 2){
 			System.out.print(csharpTime + ",");
 		}
-		System.out.print(    resetTime + "," +
+		System.out.print(diffTime + "," +
+				resetTime + "," +
 				vecTime + "," +
 				cpTime + "," +
 				csTime + "," +
@@ -922,6 +930,7 @@ public class CloneDetector {
 		//			}
 		//		}else
 		//		System.out.println(analyzeTime +  "," + addTime);
+		diffTime = diffEnd -diffStart;
 		if(modeEvalForOnlyDiffVer) {
 			if(modifiedSourceFile || addedSourceFile || deletedSourceFile) {
 				if(config.getLang() == 0) {
@@ -931,17 +940,22 @@ public class CloneDetector {
 				}else if(config.getLang() == 2){
 					System.out.print(csharpTime + ",");
 				}
-				System.out.print(    resetTime + "," +
+				System.out.print(diffTime + "," +
+						resetTime + "," +
 						vecTime + "," +
 						cpTime + "," +
 						csTime + "," +
 						otTime + "," +
 						serializeTime + ",");
 				if(config.getTargetGit()) {
-					System.out.println(currentTime - start + "," + allData.getDetectingCommitId());
+					System.out.print(currentTime - start + "," + allData.getDetectingCommitId());
 				}else {
-					System.out.println(currentTime - start);
+					System.out.print(currentTime - start);
 				}
+				if(idfRecalc) {
+					System.out.print(",Recalc");
+				}
+				System.out.println();
 			}
 		}else if(config.getTargetGit()) {
 			System.out.println(currentTime - start + "," + allData.getDetectingCommitId());

@@ -30,7 +30,8 @@ public class Config {
 	public static final int TFIDF = 1;
 	private int vecMethod = BoW;
 	public static int EX_DIM = 15000;
-	public static int NUMWORD_RECALC = 50;
+	public static int NUMWORD_RECALC = 5;//num
+	public static int CHANGERATE_RECALC = 5;//%
 	// private  boolean paramFlg = true;
 
 	//LSHパラメータ
@@ -329,6 +330,25 @@ public class Config {
 	public void setNumWordRecalc(int NUMWORD_RECALC) {
 		if(NUMWORD_RECALC >0) {
 			this.NUMWORD_RECALC = NUMWORD_RECALC;
+		}
+	}
+
+
+	/**
+	 * <p>再計算条件のワード増減割合の取得</p>
+	 * @return CHANGERATE_RECALC
+	 */
+	public int getChangeRateRecalc() {
+		return CHANGERATE_RECALC;
+	}
+
+	/**
+	 * <p>再計算条件のワード増減割合の設定</p>
+	 * @param CHANGERATE_RECALC
+	 */
+	public void setChangeRateRecalc(int CHANGERATE_RECALC) {
+		if(CHANGERATE_RECALC >=0) {
+			this.CHANGERATE_RECALC = CHANGERATE_RECALC;
 		}
 	}
 

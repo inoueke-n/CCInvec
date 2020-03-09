@@ -103,6 +103,7 @@ public class DiffDetector {
 				//System.out.println("kitaeeeeeeee  ====");
 				pb = new ProcessBuilder(cmdArray);
 			}
+			CloneDetector.diffStart = System.currentTimeMillis();
 			Process p = pb.start();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			String line;
@@ -285,7 +286,7 @@ public class DiffDetector {
 					}else {
 						if(line.contains("*")) {
 							if(line.toLowerCase().contains("copyright") || line.toLowerCase().contains("(c)") ) {
-//								System.out.println("flag on copy");
+								//								System.out.println("flag on copy");
 								subjectFile.setCopyRightModified(true);
 
 							}
@@ -293,6 +294,7 @@ public class DiffDetector {
 					}
 				}
 			}
+			CloneDetector.diffEnd = System.currentTimeMillis();
 		} catch (IOException e) {
 			return false;
 		}

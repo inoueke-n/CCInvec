@@ -1,18 +1,18 @@
-nPoints: 1378
-DIMENSION: 17142
+nPoints: 144
+DIMENSION: 16014
 reading dataset
-6428 points read
-time: 0.020988[s]
+1699 points read
+time: 0.0059976[s]
 reading query points
-1378 points read
-time: 0.0049969[s]
-table: 6
+144 points read
+time: 0[s]
+table: 5
 params::
-dimension: 17142
+dimension: 16014
 lsh_family: CrossPolytope
 DistanceFunction: EuclideanSquared
 k:1
-l:6
+l:5
 strage_hash_table: BitPackedFlatHashTable
 num_setup_threads: 4
 seed: 409556018
@@ -23,14 +23,14 @@ last_cp_dimension: 3
 determination params time: 0[s]
 building the index based on the CrossPolytope LSH
 done
-time: 0.085927[s]
+time: 0.0199882[s]
 get candidates
-probe = 12average_hash_table_time : 0.000428069[s]
-average_distance_time : 0.00189463[s]
-average_lsh_time : 2.32833e-05[s]
-average_num_candidates : 13705
+probe = 10average_hash_table_time : 9.73729e-05[s]
+average_distance_time : 0.000506287[s]
+average_lsh_time : 1.38799e-05[s]
+average_num_candidates : 3261.71
 done
-time: 3.23476[s]
+time: 0.0889258[s]
 output LSH result
 finished
-total time:3.34967[s]
+total time:0.114912[s]

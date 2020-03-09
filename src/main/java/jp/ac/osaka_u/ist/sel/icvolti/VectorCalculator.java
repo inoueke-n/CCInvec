@@ -238,7 +238,7 @@ public class VectorCalculator implements Serializable {
 				}else if(config.getVecMethod() == Config.TFIDF) {
 					blockList.set(i, calcTfIdf(blockList.get(i), wordMap, wordFreq, CloneDetector.countMethod, allData));
 					allData.setCountMethodForCalc(CloneDetector.countMethod);
-					allData.setNextNumWordForRecalc(wordMap.size() + config.getNumWordRecalc());
+					allData.setNumWordForCalc(wordMap.size());
 					//					allData.setNextNumMethod(CloneDetector.countMethod + config.getNumWordRecalc());
 				}
 			}
@@ -520,13 +520,23 @@ public class VectorCalculator implements Serializable {
 			//もともと計算につかっていたバージョンのワードの数
 			//allData.getNumWordForCalc();
 			//この二つの絶対値をとりそれが閾値以上だったら，TF-IDFを再計算
-			int numOfIncreOrDecre = Math.abs(wordMapSource.size() - allData.getNumWordForCalc());
+
+			double diffFromNumWordForCalc = allData.getNumWordForCalc() * (config.getChangeRateRecalc() * 0.01);
+			double lowerNumWord = allData.getNumWordForCalc() - diffFromNumWordForCalc;
+			double upperNumWord = allData.getNumWordForCalc() + diffFromNumWordForCalc;
+//			System.out.println("diffFromNumWordForCalc " + diffFromNumWordForCalc);
+//			System.out.println("lowerNumWord " + lowerNumWord);
+//			System.out.println("upperNumWord " + upperNumWord);
+//			int numOfIncreOrDecre = Math.abs(wordMapSource.size() - allData.getNumWordForCalc());
+//			System.out.println("########## word size = " + allData.getNumWordForCalc() + "############");
 //			System.out.println("########## wordMapSource size = " + wordMapSource.size() + "############");
 
-			//			if(targetAddWord.size() >= config.getNumWordRecalc()) {
-			if(numOfIncreOrDecre >= config.getNumWordRecalc()) {
+				CloneDetector.idfRecalc = false;
+//			if(numOfIncreOrDecre >= config.getNumWordRecalc()) {
+			if(wordMapSource.size() >= upperNumWord || wordMapSource.size() <= lowerNumWord ) {
 				//新規単語が閾値以上出現した場合 tf-idfを再計算
 				allData.setNumWordForCalc(wordMapSource.size());
+				CloneDetector.idfRecalc = true;
 //				System.out.println("=============Recalc IDF ===================");
 				if(CloneDetector.modeDebug) {
 					System.out.println("=============Recalc IDF ===================");

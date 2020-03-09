@@ -108,7 +108,7 @@ public class Def {
 	public static final String TEXTSIM_TXT = "textsim.txt";
 
 	/** diff.exe (Windows ver.) へのパス */
-	public static final String DIFF_PATH  = "lib/diff.exe";
+	public static final String DIFF_PATH  = "DIFF/diff.exe";
 
 	/** imageディレクトリへのパス */
 	public static final String RESOURCES = "res";

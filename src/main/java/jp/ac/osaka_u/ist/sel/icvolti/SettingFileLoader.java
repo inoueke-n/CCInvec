@@ -58,10 +58,10 @@ public class SettingFileLoader {
 						//config.setLang(removeSpace(line.replace("LANGUAGE:","")));
 					}
 
-					// 再計算条件の単語数の
-					if(line.contains("NUMWORD_RECALC:")) {
+					// 再計算条件のワードの増減割合
+					if(line.contains("CHANGERATE_RECALC:")) {
 						inputFlag = 0;
-						config.setNumWordRecalc(Integer.parseInt(removeSpace(line.replace("NUMWORD_RECALC:",""))));
+						config.setChangeRateRecalc(Integer.parseInt(removeSpace(line.replace("CHANGERATE_RECALC:",""))));
 					}
 
 					// 出力形式
