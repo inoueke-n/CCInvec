@@ -51,4 +51,4 @@ This project uses the following components.
  - FALCONN (https://falconn-lib.org/): MIT License
  - Cygwin (https://cygwin.com/licensing.html): LGPL License
  - JGraphT (http://jgrapht.org/): EPL License
- - GNU diff (http://www.gnu.org/software/diffutils/): GNU General Public License
+ - GNU diff (http://www.gnu.org/software/diffutils/): G License
