@@ -15,7 +15,7 @@ The following command builds a runnable jar `icvolti.jar`:
 The project  includes Eclipse project file and `pom.xml` for dependencies. 
 
 ## Step 2
-Place `icvolti.jar` and `FALCONN` directory in the same directory.
+Place `icvolti.jar`, `FALCONN` and `DIFF` directory in the same directory.
 
 # Usage
 ```
