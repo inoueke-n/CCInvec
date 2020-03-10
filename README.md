@@ -15,11 +15,7 @@ The following command builds a runnable jar `ccinvec.jar`:
 The project  includes Eclipse project file and `pom.xml` for dependencies. 
 
 ## Step 2
-<<<<<<< HEAD
-Place `ccinvec.jar` and `FALCONN` directory in the same directory.
-=======
 Place `ccinvec.jar`, `FALCONN` and `DIFF` directory in the same directory.
->>>>>>> 7a5c9373cb44bba5b16f29679e894d00f11c3364
 
 # Usage
 ```
