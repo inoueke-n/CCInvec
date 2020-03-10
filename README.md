@@ -24,7 +24,7 @@ java -jar ccinvec.jar [configfilename]
 
 # Config File Format
 You can make a config file by reffering to sample A.
-If there is no dafault setting, you must set it.
+The details of the setting are shown below.
 ```
  LANGUAGE              select language from following ( default: java )
                            * java   [Java]
