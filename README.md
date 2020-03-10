@@ -36,6 +36,7 @@ If there is no dafault setting, you must set it.
                            * TF-IDF
  SIZE                  set threshold of size for method ( 0<=size ) ( dafault: 50 )
  BLOCK_SIZE            set threshold of size for block ( 0<=size ) ( dafault: same as size for method) 
+ SIM                   set set threshold of similarity for clone detection ( 0.0<=sim<=1.0 ) ( default: 0.9 )
  OUTPUT_FORMAT         select output format from following
                            * csv  [*.csv]
                            * text [*.txt]
