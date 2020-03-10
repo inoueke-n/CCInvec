@@ -1,5 +1,5 @@
-# CCVolti
-Code Clone detector by Vectorization based On Lsh and Tf-Idf.
+# CCInvec
+Incremental Code Clone detector using Vectorization.
 
 # Requirement
  - Windows
@@ -15,30 +15,50 @@ The following command builds a runnable jar `ccinvec.jar`:
 The project  includes Eclipse project file and `pom.xml` for dependencies. 
 
 ## Step 2
+<<<<<<< HEAD
 Place `ccinvec.jar` and `FALCONN` directory in the same directory.
+=======
+Place `ccinvec.jar`, `FALCONN` and `DIFF` directory in the same directory.
+>>>>>>> 7a5c9373cb44bba5b16f29679e894d00f11c3364
 
 # Usage
 ```
-java -jar clonedetector.jar -d [dirname] -l [lang] <*options>
+java -jar ccinvec.jar [configfilename]
 ```
 
+# Config File Format
+You can make a config file by reffering to sample A.
+If there is no dafault setting, you must set it.
 ```
- -cs,--charset <charset>    set the name of character encoding ( default: UTF-8 )
- -d, --dir <dirname>        select directory for clone detection
- -h, --help                 display help
- -l, --lang <lang>          select language from following ( default: java )
-                                * java
-                                * c
-                                * csharp
- -oc,--outputcsv <*.csv>    select csv file name for output
- -ot,--outputtxt <*.txt>    select text file name for output
- -on,--outputnotifier       select notifier file name for output
- -ocs,--outputcloneset      select text file name for output clone set
-     --sim <value>          set threshold of similarity for clone detection
-                                ( 0.0<=sim<=1.0 ) ( default: 0.9 )
-     --size <value>         set threshold of size for method  ( 0<=size ) ( default: 50 )
-     --sizeb <value>        set threshold of size for block  ( 0<=size ) ( default: same as size for method )
- -t, --threads <value>      set the number of threads. 0 indicates max threads. ( default: 1 )
+ LANGUAGE              select language from following ( default: java )
+                           * java   [Java]
+                           * c      [C]
+                           * cpp    [C++]
+                           * csharp [C#]
+ VEC_METHOD            select vectorization method from following ( default: BoW )
+                           * BoW
+                           * TF-IDF
+ SIZE                  set threshold of size for method ( 0<=size ) ( dafault: 50 )
+ BLOCK_SIZE            set threshold of size for block ( 0<=size ) ( dafault: same as size for method) 
+ OUTPUT_FORMAT         select output format from following
+                           * csv  [*.csv]
+                           * text [*.txt]
+ OUTPUT_DIR            set output destination folder
+ TARGET                select analysis target form following 
+	                   * local (Target your local project)
+                           * git   (Target git project)
+```
+
+If you set "TARGET:git", you should prepare two folders containing the same git project for using GNU diff and set following additional options.
+```
+COMMIT_ID      set the commit ID in the order from the oldest date.
+NEW_DIR        set the folder path of git project (different path from OLD_DIR) 
+OLD_DIR        set the folder path of git project (different path from NEW_DIR)
+```
+
+If you set "TARGET:local", you should set following additional option.
+```
+INPUT_DIR      set target path of folder in the order from the oldest date.
 ```
 
 # Licence
@@ -51,3 +71,4 @@ This project uses the following components.
  - FALCONN (https://falconn-lib.org/): MIT License
  - Cygwin (https://cygwin.com/licensing.html): LGPL License
  - JGraphT (http://jgrapht.org/): EPL License
+ - GNU diff (http://www.gnu.org/software/diffutils/): GPL License
