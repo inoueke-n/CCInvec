@@ -8,14 +8,14 @@ Code Clone detector by Vectorization based On Lsh and Tf-Idf.
 # Setup
 ## Step 1
 The project uses Maven with Maven Assembly Plugin.
-The following command builds a runnable jar `icvolti.jar`:
+The following command builds a runnable jar `ccinvec.jar`:
 
          mvn package
 
 The project  includes Eclipse project file and `pom.xml` for dependencies. 
 
 ## Step 2
-Place `icvolti.jar` and `FALCONN` directory in the same directory.
+Place `ccinvec.jar` and `FALCONN` directory in the same directory.
 
 # Usage
 ```

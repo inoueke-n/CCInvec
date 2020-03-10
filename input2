@@ -1,8 +1,8 @@
 LANGUAGE:java
 OUTPUT_FORMAT:csv
 PRE_DATA:true
-DATA_DIR:E:\ICVolti_Data\Data
-OUTPUT_DIR:E:\ICVolti_Data\Output
+DATA_DIR:E:\CCInvec_Data\Data
+OUTPUT_DIR:E:\CCInvec_Data\Output
 INPUT_PREDIR:E:\data_for_ICvolti\test3
 INPUT_DIR:E:\data_for_ICvolti\test
 E:\data_for_ICvolti\test2

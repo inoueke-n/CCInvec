@@ -1,8 +1,8 @@
 LANGUAGE:java
 OUTPUT_FORMAT:csv
 PRE_DATA:false
-DATA_DIR:E:\h-honda\ICVoltiData\ANTtfidf\ICVolti7day4\Data
-OUTPUT_DIR:E:\h-honda\ICVoltiData\ANTtfidf\ICVolti7day4\Output
+DATA_DIR:E:\h-honda\CCInvecData\ANTtfidf\CCInvec7day4\Data
+OUTPUT_DIR:E:\h-honda\CCInvecData\ANTtfidf\CCInvec7day4\Output
 TARGET_GIT:true
 VEC_METHOD:TF-IDF
 CHANGERATE_RECALC:5

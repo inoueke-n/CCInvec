@@ -1,8 +1,8 @@
 LANGUAGE:java
 OUTPUT_FORMAT:csv
 PRE_DATA:false
-DATA_DIR:E:\h-honda\ICVoltiData\CAMEL\ICVolti7daysim012\Data
-OUTPUT_DIR:E:\h-honda\ICVoltiData\CAMEL\ICVolti7daysim012\Output
+DATA_DIR:E:\h-honda\CCInvecData\CAMEL\CCInvec7daysim012\Data
+OUTPUT_DIR:E:\h-honda\CCInvecData\CAMEL\CCInvec7daysim012\Output
 TARGET_GIT:true
 NEW_DIR:E:\h-honda\repository\camel\new\camel
 OLD_DIR:E:\h-honda\repository\camel\old\camel

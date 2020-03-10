@@ -1,6 +1,6 @@
 cd /d %~dp0
 
-java -Xms512M -Xmx1024M -jar icvolti.jar inputAntTest > AntTest.txt
+java -Xms512M -Xmx1024M -jar ccinvec.jar inputAntTest > AntTest.txt
 
 REM KEYにアクセストークンを記入
 set KEY=RlTjf1ufK8Bn1LbdMXKTnUFYEY2pnjDcCdJH6l3sr4r

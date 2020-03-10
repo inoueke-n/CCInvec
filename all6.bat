@@ -1,6 +1,6 @@
 cd /d %~dp0
 
-java -jar icvolti_allversion.jar input6
+java -jar ccinvec_allversion.jar input6
 
 pause
 

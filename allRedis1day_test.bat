@@ -1,6 +1,6 @@
 cd /d %~dp0
 
-java  -Xms512M -Xmx1024M -jar icvolti.jar  inputRedis1day_test > Redis1day1_test.csv
+java  -Xms512M -Xmx1024M -jar ccinvec.jar  inputRedis1day_test > Redis1day1_test.csv
 
 
 REM KEYにアクセストークンを記入

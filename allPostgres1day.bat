@@ -1,6 +1,6 @@
 cd /d %~dp0
 
-java -jar icvolti_0.1sim.jar inputPostgres1day > Postgres1daysim01.csv
+java -jar ccinvec_0.1sim.jar inputPostgres1day > Postgres1daysim01.csv
 
 REM KEYにアクセストークンを記入
 set KEY=RlTjf1ufK8Bn1LbdMXKTnUFYEY2pnjDcCdJH6l3sr4r
