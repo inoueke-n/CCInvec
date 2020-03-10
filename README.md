@@ -41,13 +41,15 @@ If there is no dafault setting, you must set it.
                            * text [*.txt]
  OUTPUT_DIR            set output destination folder
  TARGET                select analysis target form following 
-	                          * local (Target your local project)
+	                   * local (Target your local project)
                            * git   (Target git project)
 ```
 
-If you set "TARGET:git", you should set following additional option.
+If you set "TARGET:git", you should prepare two folders containing the same git project for using GNU diff and set following additional options.
 ```
 COMMIT_ID      set the commit ID in the order from the oldest date.
+NEW_DIR        set the folder path of git project (different path from OLD_DIR) 
+OLD_DIR        set the folder path of git project (different path from NEW_DIR)
 ```
 
 If you set "TARGET:local", you should set following additional option.
