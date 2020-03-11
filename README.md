@@ -41,7 +41,7 @@ The details of the setting are shown below.
                            * csv  [*.csv]
                            * text [*.txt]
  OUTPUT_DIR            set output destination folder
- DATA_DIR              set data destination folder. The data used for detection was saved in this path. 
+ DATA_DIR              set data destination folder, the data used for detection was saved in this path 
  PRE_DATA              select true or false
                            * true (detection from the continuation of the previous detection using the previous data of detection)
 	                   * false (first detection)
@@ -52,14 +52,14 @@ The details of the setting are shown below.
 
 If you set "TARGET:git", you should prepare two folders containing the same git project for using GNU diff and set following additional options.
 ```
-COMMIT_ID      set the commit ID in the order from the oldest date.
+COMMIT_ID      set the commit ID in the order from the oldest date
 NEW_DIR        set the folder path of git project (different path from OLD_DIR) 
 OLD_DIR        set the folder path of git project (different path from NEW_DIR)
 ```
 
 If you set "TARGET:local", you should set following additional option.
 ```
-INPUT_DIR      set target path of folder in the order from the oldest date.
+INPUT_DIR      set target path of folder in the order from the oldest date
 ```
 
 # Licence
