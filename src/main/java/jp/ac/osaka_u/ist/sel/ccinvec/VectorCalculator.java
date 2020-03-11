@@ -1035,11 +1035,9 @@ public class VectorCalculator implements Serializable {
 			}
 		}
 		len = Math.sqrt(len);
-		//	System.out.println("len = " + len);
 		OpenMapRealVector vector = new OpenMapRealVector(vecDimension);
 		final int size = indexList.size();
 		for (int i = 0; i < size; i++) {
-			//	System.out.println("index " +  indexList.get(i) +  "; valueList.get(i) / len) = " + valueList.get(i) / len);
 			vector.setEntry(indexList.get(i), valueList.get(i) / len);
 		}
 		block.setVector(vector);

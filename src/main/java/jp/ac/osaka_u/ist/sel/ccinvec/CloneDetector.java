@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import jp.ac.osaka_u.ist.sel.ccinvec.analyze.CAnalyzer4;
 import jp.ac.osaka_u.ist.sel.ccinvec.analyze.CSharpAnalyzer;
 import jp.ac.osaka_u.ist.sel.ccinvec.analyze.JavaAnalyzer3;
+import jp.ac.osaka_u.ist.sel.ccinvec.control.ControlAllData;
 import jp.ac.osaka_u.ist.sel.ccinvec.control.ControlGit;
 import jp.ac.osaka_u.ist.sel.ccinvec.model.AllData;
 import jp.ac.osaka_u.ist.sel.ccinvec.model.Block;
@@ -35,9 +36,9 @@ public class CloneDetector {
 	public static final boolean absoluteTracking = true;
 
 	public static final boolean modeDebug = false;
-	public static final boolean modeStdout = false;
+	public static final boolean modeStdout = true;
 	//研究用のタイマー測定
-	public static final boolean modeTimeMeasure = true;
+	public static final boolean modeTimeMeasure = false;
 	//研究用ソースファイルにdiffがあるコミットのみを出力したい場合はtrue
 	public static final boolean modeEvalForOnlyDiffVer = false;
 
@@ -110,9 +111,14 @@ public class CloneDetector {
 				AllData allData = new AllData();
 				if(config.getTargetGit()) {
 					if(config.getPreData()) {
+						//以前の検出の続きの場合
 						int num = maxNum+1;
 						config.setNewTarget(config.getNewDir());
 						config.setOldTarget(config.getOldDir());
+						allData =  ControlAllData.deserializeAllDataList(config);
+//						System.out.println("alldata vec " + allData.getVecDimension());
+//						System.out.println("alldata commit " + allData.getDetectingCommitId());
+//						ControlAllData.synchronizeAllData(config, allData);
 						for(int i =0; i < config.getInputCommitId().size(); i++) {
 
 							String oldCommitId = null;
@@ -128,13 +134,13 @@ public class CloneDetector {
 								}
 								oldCommitId = config.getInputCommitId().get(i-1);
 							}
-								newCommitId = config.getInputCommitId().get(i);
+							newCommitId = config.getInputCommitId().get(i);
 							ControlGit.checkout(config.getOldTarget(), oldCommitId, config);
 							ControlGit.checkout(config.getNewTarget(), newCommitId, config);
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
 							allData.setDetectingCommitId(newCommitId);
 							start = System.currentTimeMillis();
-							allData.synchronizeAllData(config);
+
 							allData = incrementalRun(config, i, allData);
 							num++;
 						}
@@ -144,10 +150,6 @@ public class CloneDetector {
 						config.setNewTarget(config.getNewDir());
 						config.setOldTarget(config.getOldDir());
 						for(int i =0; i < config.getInputCommitId().size(); i++) {
-							if(modeStdout) {
-								System.out.println("CCInvec " + version);
-								System.out.println("----START----");
-							}
 							if(i == 0) {
 								if(i == (config.getInputCommitId().size() -1)) {
 									finalLoop = true;
@@ -170,7 +172,7 @@ public class CloneDetector {
 								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
 								allData.setDetectingCommitId(newCommitId);
 								start = System.currentTimeMillis();
-								allData.synchronizeAllData(config);
+//								ControlAllData.synchronizeAllData(config, allData);
 								allData = incrementalRun(config, i, allData);
 								num++;
 							}
@@ -179,6 +181,8 @@ public class CloneDetector {
 				}else if(config.getPreData()) {
 					//前のデータがある場合
 					int num = maxNum+1;
+					allData =  ControlAllData.deserializeAllDataList(config);
+//					ControlAllData.synchronizeAllData(config, allData);
 					for(int i =0; i < config.getInputDir().size(); i++) {
 						if(i==0) {
 							if(i == (config.getInputDir().size() -1)) {
@@ -188,8 +192,6 @@ public class CloneDetector {
 							config.setOldTarget(allData.getDetectingLocalPath());
 							config.setNewTarget(config.getInputDir().get(i));
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + folName);
-							allData =  AllData.deserializeAllDataList(config);
-							allData.synchronizeAllData(config);
 							allData = incrementalRun(config,i,allData);
 							num++;
 						}else {
@@ -200,8 +202,7 @@ public class CloneDetector {
 							config.setOldTarget(config.getInputDir().get(i-1));
 							config.setNewTarget(config.getInputDir().get(i));
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + folName);
-							allData.synchronizeAllData(config);
-							allData.getDetectingLocalPath();
+//							ControlAllData.synchronizeAllData(config, allData);
 							allData = incrementalRun(config,i, allData);
 							num++;
 						}
@@ -228,7 +229,7 @@ public class CloneDetector {
 							config.setOldTarget(config.getInputDir().get(i-1));
 							config.setNewTarget(config.getInputDir().get(i));
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + folName);
-							allData.synchronizeAllData(config);
+//							ControlAllData.synchronizeAllData(config, allData);
 							allData.setDetectingLocalPath(config.getNewTarget());
 							allData = incrementalRun(config, i, allData);
 							num++;
@@ -522,9 +523,9 @@ public class CloneDetector {
 
 
 		if(finalLoop) {
-			AllData.serializeAllDataList(allData,config);
-			allData.dataClear();
-			allData = null;
+			ControlAllData.serializeAllDataList(allData,config);
+//			allData.dataClear();
+//			allData = null;
 		}
 
 		return allData;
@@ -1041,8 +1042,8 @@ public class CloneDetector {
 
 
 		if(finalLoop) {
-			AllData.serializeAllDataList(allData,config);
-			allData.dataClear();
+			ControlAllData.serializeAllDataList(allData,config);
+			ControlAllData.dataClear(allData);
 			allData = null;
 		}
 
