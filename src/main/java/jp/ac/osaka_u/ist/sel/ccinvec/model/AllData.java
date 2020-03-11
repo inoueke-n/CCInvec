@@ -25,7 +25,8 @@ public class AllData implements  Serializable {
 	static Map<String, Integer> wordMapSource;
 	static int wordFreq[];
 	static int dimension;
-	static String detectingCommitId = null;;
+	static String detectingCommitId = null;
+	static String detectingLocalPath = null;
 	static boolean pre_Diff = true;
 	static int nextNumWordForRecalc =0;
 	static int numWordForCalc =0;
@@ -221,6 +222,15 @@ public class AllData implements  Serializable {
 		this.detectingCommitId = detectingCommitId;
 	}
 
+
+	public String getDetectingLocalPath() {
+		return detectingLocalPath;
+	}
+
+
+	public void setDetectingLocalPath(String detectingLocalPath) {
+		this.detectingLocalPath = detectingLocalPath;
+	}
 
 	/**
 	 * <p>

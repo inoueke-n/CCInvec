@@ -8,6 +8,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
@@ -297,7 +298,7 @@ public class CloneJudgement {
 		ArrayList<ClonePair> newClonePairList = new ArrayList<ClonePair>(clonePairList.size());
 
 		for (ClonePair pair : clonePairList)
-			if (filteringPair(clonePairList, originClonePairList, pair.cloneA, pair.cloneB))
+			if (filteringPair(clonePairList, newClonePairList, pair.cloneA, pair.cloneB))
 				newClonePairList.add(pair);
 
 		newClonePairList.trimToSize();
@@ -620,9 +621,9 @@ public class CloneJudgement {
 	}
 
 	private static boolean filteringPair(ArrayList<ClonePair> clonePairList, ArrayList<ClonePair> newClonePairList, Block cloneA, Block cloneB) {
-//		//同じコード片でないかチェック
-//		if(isSameCode(cloneA, cloneB))
-//			return false;
+		//		//同じコード片でないかチェック
+		//		if(isSameCode(cloneA, cloneB))
+		//			return false;
 		//親子関係でないかチェック
 		if (isPairWithDescendants(cloneA, cloneB))
 			return false;
@@ -819,6 +820,33 @@ public class CloneJudgement {
 			j++;
 			clonePair.cloneA.getId();
 		}*/
+
+	}
+
+	public void deleteDupulicatePair(ArrayList<ClonePair> clonePairList) {
+
+		Iterator<ClonePair> i = clonePairList.iterator();
+		int j =0;
+		Block preCloneA = null;
+		Block preCloneB = null;
+		while(i.hasNext()){
+			ClonePair pair = i.next();
+			Block cloneA = pair.cloneA;
+			Block cloneB = pair.cloneB;
+
+			if(j>0) {
+				if(Block.equalsCodeInfo(cloneA, preCloneA) && Block.equalsCodeInfo(cloneB, preCloneB)) {
+					i.remove();
+				}else {
+					preCloneA = cloneA;
+					preCloneB = cloneB;
+				}
+			}else {
+				preCloneA = cloneA;
+				preCloneB = cloneB;
+			}
+			j++;
+		}
 
 	}
 

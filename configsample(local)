@@ -1,0 +1,11 @@
+LANGUAGE:c
+OUTPUT_FORMAT:csv
+PRE_DATA:false
+DATA_DIR:F:\user\CCInvec\Data
+OUTPUT_DIR:F:\user\CCInvec\Output
+TARGET:local
+INPUT_DIR:F:\CCInvec\local\redis15da88c8dc026dea2051dd63198a6d9affa42b9a
+F:\CCInvec\local\redis74b77ff8a6c397602196c4dc3c5a318f93720ad7
+F:\CCInvec\local\redis991eee4d01fd24f1d1cf0207248d41a6b254b0b8
+F:\CCInvec\local\redisf97b01d36ab4c863d37f694c6c1b9f63b719832d
+F:\CCInvec\local\redis8ff874d2b2ad7a5b8a498eebb6ae534030489bee

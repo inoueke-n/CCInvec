@@ -31,43 +31,43 @@ public class Outputter {
 	 * @param clonePairList
 	 * @throws IOException
 	 */
-//	public static void outputCSV(List<ClonePair> clonePairList, Config config) throws IOException {
-//		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
-//		writer.println(
-//				"A name,A class name,A start line,A end line, A method start line , A method end line, B name,B class name,B start line,B end line, B method start line , B method end line,similarity");
-//		for (ClonePair pair : clonePairList) {
-//			Block cloneA = pair.cloneA;
-//			Block cloneB = pair.cloneB;
-//			writer.printf("%s,%s,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%f,\r\n", cloneA.getName(), cloneA.getFileName(),
-//					cloneA.getStartLine(), cloneA.getEndLine(), cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
-//					cloneB.getName(), cloneB.getFileName(), cloneB.getStartLine(), cloneB.getEndLine(),
-//					cloneB.getMethodStartLine(), cloneB.getMethodEndLine(), pair.sim);
-//		}
-//		writer.close();
-//	}
+	//	public static void outputCSV(List<ClonePair> clonePairList, Config config) throws IOException {
+	//		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
+	//		writer.println(
+	//				"A name,A class name,A start line,A end line, A method start line , A method end line, B name,B class name,B start line,B end line, B method start line , B method end line,similarity");
+	//		for (ClonePair pair : clonePairList) {
+	//			Block cloneA = pair.cloneA;
+	//			Block cloneB = pair.cloneB;
+	//			writer.printf("%s,%s,%d,%d,%d,%d,%s,%s,%d,%d,%d,%d,%f,\r\n", cloneA.getName(), cloneA.getFileName(),
+	//					cloneA.getStartLine(), cloneA.getEndLine(), cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
+	//					cloneB.getName(), cloneB.getFileName(), cloneB.getStartLine(), cloneB.getEndLine(),
+	//					cloneB.getMethodStartLine(), cloneB.getMethodEndLine(), pair.sim);
+	//		}
+	//		writer.close();
+	//	}
 
-//	public static void outputCSV(List<ClonePair> clonePairList,Config config) throws IOException {
-//		System.out.println("output CSV");
-//		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
-//		for (ClonePair pair : clonePairList) {
-//			Block cloneA = pair.cloneA;
-//			Block cloneB = pair.cloneB;
-//			File fileA = new File(cloneA.getFileName());
-//			File folA = new File(fileA.getParent());
-//			File fileB = new File(cloneB.getFileName());
-//			File folB = new File(fileB.getParent());
-//			writer.printf("%s,%s,%d,%d,%s,%s,%d,%d,%f\r\n",
-//					folA.getName(),fileA.getName(),cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
-//					folB.getName(),fileB.getName(),cloneB.getMethodStartLine(), cloneB.getMethodEndLine(),
-//					pair.sim
-//					);
-//		}
-//		writer.close();
-//	}
+	//	public static void outputCSV(List<ClonePair> clonePairList,Config config) throws IOException {
+	//		System.out.println("output CSV");
+	//		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
+	//		for (ClonePair pair : clonePairList) {
+	//			Block cloneA = pair.cloneA;
+	//			Block cloneB = pair.cloneB;
+	//			File fileA = new File(cloneA.getFileName());
+	//			File folA = new File(fileA.getParent());
+	//			File fileB = new File(cloneB.getFileName());
+	//			File folB = new File(fileB.getParent());
+	//			writer.printf("%s,%s,%d,%d,%s,%s,%d,%d,%f\r\n",
+	//					folA.getName(),fileA.getName(),cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
+	//					folB.getName(),fileB.getName(),cloneB.getMethodStartLine(), cloneB.getMethodEndLine(),
+	//					pair.sim
+	//					);
+	//		}
+	//		writer.close();
+	//	}
 
 	//for precision
 	public static void outputCSV(ArrayList<ClonePair> clonePairList,Config config) throws IOException {
-//		System.out.println("output CSV");
+		//		System.out.println("output CSV");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultCSV())));
 		for (ClonePair pair : clonePairList) {
 			Block cloneA = pair.cloneA;
@@ -77,8 +77,8 @@ public class Outputter {
 			File fileB = new File(cloneB.getFileName());
 			File folB = new File(fileB.getParent());
 			writer.printf("%s,%s,%d,%d,%s,%s,%d,%d,%f\r\n",
-//					folA.getName(),fileA.getAbsolutePath(),cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
-//					folB.getName(),fileB.getAbsolutePath(),cloneB.getMethodStartLine(), cloneB.getMethodEndLine(),
+					//					folA.getName(),fileA.getAbsolutePath(),cloneA.getMethodStartLine(), cloneA.getMethodEndLine(),
+					//					folB.getName(),fileB.getAbsolutePath(),cloneB.getMethodStartLine(), cloneB.getMethodEndLine(),
 					folA.getName(),fileA.getAbsolutePath(),cloneA.getStartLine(), cloneA.getEndLine(),
 					folB.getName(),fileB.getAbsolutePath(),cloneB.getStartLine(), cloneB.getEndLine(),
 					pair.sim
@@ -96,7 +96,7 @@ public class Outputter {
 	 * @throws IOException
 	 */
 	public static void outputHTML(List<ClonePair> clonePairList,Config config) throws IOException {
-//		System.out.println("output HTML");
+		//		System.out.println("output HTML");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultHTML())));
 		BufferedReader reader = null;
 		writer.println("<pre>");
@@ -181,7 +181,7 @@ public class Outputter {
 	 * @throws IOException
 	 */
 	public static void outputTXT(List<ClonePair> clonePairList, Config config) throws IOException {
-//		System.out.println("output CSV");
+		//		System.out.println("output CSV");
 		PrintWriter writer = new PrintWriter(new FileOutputStream(config.getResultTXT()));
 		BufferedReader reader = null;
 		int id = 0;
@@ -317,7 +317,7 @@ public class Outputter {
 	//	}
 
 	public static void outputBlockList(ArrayList<Block> blockList) throws IOException {
-//		System.out.println("output BlockList");
+		//		System.out.println("output BlockList");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(CloneDetector.BLOCKLIST_CSV)));
 		writer.printf("id,class,name,start,end,node,vector dimention,vector len,vector\r\n");
 		for (Block block : blockList) {
@@ -334,10 +334,10 @@ public class Outputter {
 
 	public static void outputStatisticsSample(ArrayList<ClonePair> clonePairList, double e, double m, double p,Config config)
 			throws IOException {
-//		System.out.println("output Statistic Sample");
+		//		System.out.println("output Statistic Sample");
 		double N = clonePairList.size();
 		int n = (int) (N / (Math.pow(e / m, 2) * ((N - 1.0) / (p * (1.0 - p))) + 1.0));
-//		System.out.println("the number of randam sample : " + n);
+		//		System.out.println("the number of randam sample : " + n);
 		Random rand = new Random();
 		boolean num[] = new boolean[clonePairList.size()];
 		int sample[] = new int[n];
@@ -433,7 +433,7 @@ public class Outputter {
 	 * @throws IOException
 	 */
 	public static void outputNotifier(List<CloneSet> cloneSetList, List<String> fileList, Config config) throws IOException {
-//		System.out.println("output for CloneNotifier");
+		//		System.out.println("output for CloneNotifier");
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(config.getResultNotifier())));
 		int id = 0;
 		writer.printf("source_files {\r\n");

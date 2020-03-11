@@ -36,8 +36,10 @@ public class CloneDetector {
 
 	public static final boolean modeDebug = false;
 	public static final boolean modeStdout = false;
+	//研究用のタイマー測定
 	public static final boolean modeTimeMeasure = true;
-	public static final boolean modeEvalForOnlyDiffVer = true;
+	//研究用ソースファイルにdiffがあるコミットのみを出力したい場合はtrue
+	public static final boolean modeEvalForOnlyDiffVer = false;
 
 	public static boolean finalLoop =false;
 	public static boolean modifiedSourceFile =false;
@@ -55,7 +57,7 @@ public class CloneDetector {
 	private static ArrayList<Block> allBlockList;
 	public static ArrayList<Block> testBlockList;
 	//public static ArrayList<ClonePair> clonePairList;
-//	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
+	//	private static HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
 	public static int countMethod, countBlock, countLine;
 	private static final String version = "20.03.13";
 	//public static int dimention_test;
@@ -96,7 +98,10 @@ public class CloneDetector {
 		Def.CCINVEC_PATH = new File(".").getAbsoluteFile().getParent();
 		//		System.out.println("CCVolti = " + Def.CCINVEC_PATH);
 
-
+		if(modeStdout) {
+			System.out.println("CCInvec " + version);
+			System.out.println("----START----");
+		}
 		Config config = new Config();
 		if(args.length == 1) {
 			if(SettingFileLoader.loadSettingFile(args, config)) {
@@ -104,27 +109,26 @@ public class CloneDetector {
 				int maxNum = getMaxFileName(config);
 				AllData allData = new AllData();
 				if(config.getTargetGit()) {
-					int num = maxNum+1;
-					config.setNewTarget(config.getNewDir());
-					config.setOldTarget(config.getOldDir());
-					for(int i =0; i < config.getInputCommitId().size(); i++) {
-						if(i == 0) {
-							if(i == (config.getInputCommitId().size() -1)) {
-								finalLoop = true;
+					if(config.getPreData()) {
+						int num = maxNum+1;
+						config.setNewTarget(config.getNewDir());
+						config.setOldTarget(config.getOldDir());
+						for(int i =0; i < config.getInputCommitId().size(); i++) {
+
+							String oldCommitId = null;
+							String newCommitId = null;
+							if(i == 0) {
+								if(i == (config.getInputCommitId().size() -1)) {
+									finalLoop = true;
+								}
+								oldCommitId = allData.getDetectingCommitId();
+							}else {
+								if(i == (config.getInputCommitId().size() -1)) {
+									finalLoop = true;
+								}
+								oldCommitId = config.getInputCommitId().get(i-1);
 							}
-							String newCommitId = config.getInputCommitId().get(i);
-							ControlGit.checkout(config.getNewTarget(), newCommitId, config);
-							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
-							allData.setDetectingCommitId(newCommitId);
-							start = System.currentTimeMillis();
-							allData = firstRun(config);
-							num++;
-						}else {
-							if(i == (config.getInputCommitId().size() -1)) {
-								finalLoop = true;
-							}
-							String oldCommitId = config.getInputCommitId().get(i-1);
-							String newCommitId = config.getInputCommitId().get(i);
+								newCommitId = config.getInputCommitId().get(i);
 							ControlGit.checkout(config.getOldTarget(), oldCommitId, config);
 							ControlGit.checkout(config.getNewTarget(), newCommitId, config);
 							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
@@ -134,39 +138,73 @@ public class CloneDetector {
 							allData = incrementalRun(config, i, allData);
 							num++;
 						}
-					}
-				}else if(config.getPreData()) {
-					//前のデータがある場合
-					if(config.getInputPreDir() != null) {
-						//前回検出した―バージョンが入力として与えられている場合
+
+					}else {
 						int num = maxNum+1;
-						for(int i =0; i < config.getInputDir().size(); i++) {
-							if(i==0) {
-								if(i == (config.getInputDir().size() -1)) {
+						config.setNewTarget(config.getNewDir());
+						config.setOldTarget(config.getOldDir());
+						for(int i =0; i < config.getInputCommitId().size(); i++) {
+							if(modeStdout) {
+								System.out.println("CCInvec " + version);
+								System.out.println("----START----");
+							}
+							if(i == 0) {
+								if(i == (config.getInputCommitId().size() -1)) {
 									finalLoop = true;
 								}
-								config.setOldTarget(config.getInputPreDir());
-								config.setNewTarget(config.getInputDir().get(i));
-								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
-								allData =  AllData.deserializeAllDataList(config);
-								allData.synchronizeAllData(config);
-								allData = incrementalRun(config,i,allData);
+								String newCommitId = config.getInputCommitId().get(i);
+								ControlGit.checkout(config.getNewTarget(), newCommitId, config);
+								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
+								allData.setDetectingCommitId(newCommitId);
+								start = System.currentTimeMillis();
+								allData = firstRun(config);
 								num++;
 							}else {
-								if(i == (config.getInputDir().size() -1)) {
+								if(i == (config.getInputCommitId().size() -1)) {
 									finalLoop = true;
 								}
-								config.setOldTarget(config.getInputDir().get(i-1));
-								config.setNewTarget(config.getInputDir().get(i));
-								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
+								String oldCommitId = config.getInputCommitId().get(i-1);
+								String newCommitId = config.getInputCommitId().get(i);
+								ControlGit.checkout(config.getOldTarget(), oldCommitId, config);
+								ControlGit.checkout(config.getNewTarget(), newCommitId, config);
+								config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + newCommitId);
+								allData.setDetectingCommitId(newCommitId);
+								start = System.currentTimeMillis();
 								allData.synchronizeAllData(config);
-								allData = incrementalRun(config,i, allData);
+								allData = incrementalRun(config, i, allData);
 								num++;
 							}
 						}
-					}else {
-						Logger.printlnConsole("Can't load last detected version, please input \"INPUT_PREDIR:PATH\" to config file.", Logger.ERROR);
-						System.exit(1);
+					}
+				}else if(config.getPreData()) {
+					//前のデータがある場合
+					int num = maxNum+1;
+					for(int i =0; i < config.getInputDir().size(); i++) {
+						if(i==0) {
+							if(i == (config.getInputDir().size() -1)) {
+								finalLoop = true;
+							}
+							String folName = new File(config.getInputDir().get(0)).getName();
+							config.setOldTarget(allData.getDetectingLocalPath());
+							config.setNewTarget(config.getInputDir().get(i));
+							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + folName);
+							allData =  AllData.deserializeAllDataList(config);
+							allData.synchronizeAllData(config);
+							allData = incrementalRun(config,i,allData);
+							num++;
+						}else {
+							if(i == (config.getInputDir().size() -1)) {
+								finalLoop = true;
+							}
+							String folName = new File(config.getInputDir().get(i)).getName();
+							config.setOldTarget(config.getInputDir().get(i-1));
+							config.setNewTarget(config.getInputDir().get(i));
+							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + folName);
+							allData.synchronizeAllData(config);
+							allData.getDetectingLocalPath();
+							allData = incrementalRun(config,i, allData);
+							num++;
+						}
 					}
 				}else {
 					//前のデータがない場合
@@ -176,18 +214,22 @@ public class CloneDetector {
 							if(i == (config.getInputDir().size() -1)) {
 								finalLoop = true;
 							}
+							String folName = new File(config.getInputDir().get(0)).getName();
 							config.setNewTarget(config.getInputDir().get(0));
-							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
+							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + folName);
+							allData.setDetectingLocalPath(config.getNewTarget());
 							allData = firstRun(config);
 							num++;
 						}else {
 							if(i == (config.getInputDir().size() -1)) {
 								finalLoop = true;
 							}
+							String folName = new File(config.getInputDir().get(i)).getName();
 							config.setOldTarget(config.getInputDir().get(i-1));
 							config.setNewTarget(config.getInputDir().get(i));
-							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num);
+							config.setResultFile(config.getOutputDir() + "\\" + config.getResultFileName() + num + "_" + folName);
 							allData.synchronizeAllData(config);
+							allData.setDetectingLocalPath(config.getNewTarget());
 							allData = incrementalRun(config, i, allData);
 							num++;
 						}
@@ -196,7 +238,9 @@ public class CloneDetector {
 				}
 			}
 		}
-
+		if(modeStdout) {
+			System.out.println("Finished : ");
+		}
 	}
 
 	private static void makeFol(Config config) {
@@ -223,8 +267,8 @@ public class CloneDetector {
 
 	private static AllData firstRun(Config config) throws Exception {
 		if(modeStdout) {
-			System.out.println("CCInvec " + version);
-			System.out.println("----START----");
+			System.out.println("=============================");
+			System.out.println("-----First run algorithm-----");
 		}
 		// setJavaClassPath();
 		getApplicationPath();
@@ -286,6 +330,9 @@ public class CloneDetector {
 		//		System.out.println("Extract word in source code done : " + (System.currentTimeMillis() - start) + "[ms]");
 		//		System.out.println();
 
+		if(modeStdout) {
+			System.out.println("Extract word in source code done");
+		}
 		// 特徴ベクトル計算
 		subStart = System.currentTimeMillis();
 
@@ -307,6 +354,9 @@ public class CloneDetector {
 
 		// System.out.println("wordmap.size = " + wordMap.size());
 		currentTime = System.currentTimeMillis();
+		if(modeStdout) {
+			System.out.println("Generate clone pair done");
+		}
 		//		System.out.println(
 		//				"Calculate vector done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
 		vecTime = currentTime - subStart;
@@ -344,6 +394,9 @@ public class CloneDetector {
 
 		currentTime = System.currentTimeMillis();
 		cpTime = currentTime - subStart;
+		if(modeStdout) {
+			System.out.println("Clustering done");
+		}
 		//		System.out.println("Cluster done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
 
 		//		ArrayList<CloneSet> cloneSetList = null;
@@ -361,6 +414,9 @@ public class CloneDetector {
 			//			System.out.println(
 			//					"generate clone set done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
 			csTime = currentTime - subStart;
+			if(modeStdout) {
+				System.out.println("Generate clone set done");
+			}
 		}
 
 
@@ -392,6 +448,10 @@ public class CloneDetector {
 			//			System.out.println("=======output cloneset " + config.getResultCloneSet());
 			Outputter.outputNotifier(cloneSetList, fileList, config);
 			Outputter.outputCloneSetTXTforCPP(cloneSetList, config);
+		}
+		if(modeStdout) {
+			System.out.println("Output result done");
+			System.out.println("=============================");
 		}
 		// Outputter.outputForBigCloneEval(clonePairList);
 		// Outputter.outputTXTforCPP(clonePairList);
@@ -460,9 +520,6 @@ public class CloneDetector {
 			System.out.println(currentTime - start);
 		}
 
-		if(modeStdout) {
-			System.out.println("Finished : ");
-		}
 
 		if(finalLoop) {
 			AllData.serializeAllDataList(allData,config);
@@ -483,6 +540,11 @@ public class CloneDetector {
 	 */
 
 	private static AllData incrementalRun(Config config, int loopNum, AllData allData) throws Exception {
+
+		if(modeStdout) {
+			System.out.println("=============================");
+			System.out.println("-----Incremental algorithm-----");
+		}
 		//		System.out.println("CCInvec " + version);
 		//		System.out.println("Start Incremental Clone Detection fase");
 		//		System.out.println("----BoW ver----");
@@ -613,6 +675,9 @@ public class CloneDetector {
 			csharpTime = csharpEnd - csharpStart;
 			break;
 		}
+		if(modeStdout) {
+			System.out.println("Extract word in source code done");
+		}
 
 
 		//		System.out.println("The number of methods : " + countMethod);
@@ -665,7 +730,9 @@ public class CloneDetector {
 			//		System.out.println();
 			//
 			//		System.out.println("Calculate vector of each method ...");
-
+			if(modeStdout) {
+				System.out.println("Caluculate vector done");
+			}
 
 			//			System.out.println("allblockList size " + allBlockList.size());
 
@@ -751,6 +818,7 @@ public class CloneDetector {
 					//					}
 					ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, ClonePairList_test,config));
 					cloneJudge.sortClonePair(ClonePairList_test);
+					cloneJudge.deleteDupulicatePair(ClonePairList_test);
 					cloneJudge = null;
 				} else {
 					CloneJudgement cloneJudge = new CloneJudgement();
@@ -762,7 +830,9 @@ public class CloneDetector {
 				long csStart= System.currentTimeMillis();
 				if (removeMethodPair)
 					CloneJudgement.removePairOfMethod(ClonePairList_test);
-
+				if(modeStdout) {
+					System.out.println("Generate clone pair done");
+				}
 				currentTime = System.currentTimeMillis();
 				//		System.out.println("Cluster done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
 			}
@@ -808,6 +878,9 @@ public class CloneDetector {
 			currentTime = System.currentTimeMillis();
 			//			System.out.println(
 			//					"generate clone set done : " + (currentTime - subStart) + "/" + (currentTime - start) + "[ms]\n");
+			if(modeStdout) {
+				System.out.println("Generate clone set done");
+			}
 
 		}
 		long csEnd= System.currentTimeMillis();
@@ -847,6 +920,10 @@ public class CloneDetector {
 				Outputter.outputNotifier(cloneSetList_test, newFileList, config);
 			if (config.getResultCloneSet() != null)
 				Outputter.outputCloneSetTXTforCPP(cloneSetList_test, config);
+		}
+		if(modeStdout) {
+			System.out.println("Output result done");
+			System.out.println("=============================");
 		}
 		long otEnd= System.currentTimeMillis();
 		otTime = otEnd - otStart;
@@ -961,9 +1038,7 @@ public class CloneDetector {
 		}else {
 			System.out.println(currentTime - start);
 		}
-		if(modeStdout) {
-			System.out.println("Finished : ");
-		}
+
 
 		if(finalLoop) {
 			AllData.serializeAllDataList(allData,config);
@@ -1021,7 +1096,7 @@ public class CloneDetector {
 						if(config.getTargetGit()) {
 							fileNumStr = list[i].getName().substring(config.getResultFileName().length(), list[i].getName().lastIndexOf("_"));
 						}else {
-							fileNumStr = list[i].getName().substring(config.getResultFileName().length(), list[i].getName().lastIndexOf("."));
+							fileNumStr = list[i].getName().substring(config.getResultFileName().length(), list[i].getName().lastIndexOf("_"));
 						}
 					}else {
 						fileNumStr = "0";

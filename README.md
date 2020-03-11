@@ -23,7 +23,7 @@ java -jar ccinvec.jar [configfilename]
 ```
 
 # Config File Format
-You can make a config file by reffering to sample A.
+You can make a config file by reffering to configsample(git) and configsample(local).
 The details of the setting are shown below.
 ```
  LANGUAGE              select language from following ( default: java )

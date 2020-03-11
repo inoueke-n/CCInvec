@@ -1,8 +1,0 @@
-cd /d %~dp0
-
-java -jar ccinvec.jar input
-
-pause
-
-
-
