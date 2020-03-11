@@ -41,6 +41,10 @@ The details of the setting are shown below.
                            * csv  [*.csv]
                            * text [*.txt]
  OUTPUT_DIR            set output destination folder
+ DATA_DIR              set data destination folder. The data used for detection was saved in this path. 
+ PRE_DATA              select true or false
+                           * true (detection from the continuation of the previous detection using the previous data of detection)
+	                   * false (first detection)
  TARGET                select analysis target form following 
 	                   * local (Target your local project)
                            * git   (Target git project)
