@@ -12,7 +12,7 @@ The following command builds a runnable jar `ccinvec.jar`:
 
          mvn package
 
-The project  includes Eclipse project file and `pom.xml` for dependencies. 
+The project includes Eclipse project file and `pom.xml` for dependencies. 
 
 ## Step 2
 Place `ccinvec.jar`, `FALCONN` and `DIFF` directory in the same directory.
@@ -50,16 +50,16 @@ The details of the setting are shown below.
                            * git   (Target git project)
 ```
 
-If you set "TARGET:git", you should prepare two folders containing the same git project for using GNU diff and set following additional options.
+If you set "TARGET:git", you should prepare two folders containing the same git project for using GNU diff and set the following additional options. Reference [configsample(git)](https://github.com/hirotaka0616/CCInvec/blob/master/configsample(git))
 ```
 COMMIT_ID      set the commit ID in the order from the oldest date
 NEW_DIR        set the folder path of git project (different path from OLD_DIR) 
 OLD_DIR        set the folder path of git project (different path from NEW_DIR)
 ```
 
-If you set "TARGET:local", you should set following additional option.
+If you set "TARGET:local", you should set the following additional option.　Reference[configsample(local)](https://github.com/hirotaka0616/CCInvec/blob/master/configsample(local))
 ```
-INPUT_DIR      set target path of folder in the order from the oldest date
+INPUT_DIR      set the target path of folders in the order from the oldest date
 ```
 
 # Licence
