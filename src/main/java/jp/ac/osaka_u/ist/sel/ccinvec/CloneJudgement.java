@@ -295,14 +295,15 @@ public class CloneJudgement {
 		//		System.out.println("filtering start");
 		start = System.currentTimeMillis();
 
-		ArrayList<ClonePair> newClonePairList = new ArrayList<ClonePair>(clonePairList.size());
+//		ArrayList<ClonePair> newClonePairList = new ArrayList<ClonePair>(clonePairList.size());
 
 		for (ClonePair pair : clonePairList)
-			if (filteringPair(clonePairList, newClonePairList, pair.cloneA, pair.cloneB))
-				newClonePairList.add(pair);
+//			if (filteringPair(clonePairList, newClonePairList, pair.cloneA, pair.cloneB))
+			if (filteringPair(clonePairList, originClonePairList, pair.cloneA, pair.cloneB))
+				originClonePairList.add(pair);
 
-		newClonePairList.trimToSize();
-		clonePairList = newClonePairList;
+		originClonePairList.trimToSize();
+//		clonePairList = newClonePairList;
 		if(CloneDetector.modeDebug) {
 			System.out.print("filtering done : ");
 			System.out.println(System.currentTimeMillis() - start + "[ms]");
@@ -317,7 +318,7 @@ public class CloneJudgement {
 			}
 		}
 
-		return clonePairList;
+		return originClonePairList;
 	}
 
 	public ArrayList<ClonePair> getClonePairListNoLSH(List<Block> blockList, Config config) {

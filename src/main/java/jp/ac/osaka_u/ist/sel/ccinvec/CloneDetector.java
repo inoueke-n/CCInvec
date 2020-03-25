@@ -817,7 +817,8 @@ public class CloneDetector {
 					//						}
 					//						j++;
 					//					}
-					ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, ClonePairList_test,config));
+					ClonePairList_test = cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, ClonePairList_test,config);
+//					ClonePairList_test.addAll(cloneJudge.getClonePairListPartially(allBlockList, addedModifiedBlockList, ClonePairList_test,config));
 					cloneJudge.sortClonePair(ClonePairList_test);
 					cloneJudge.deleteDupulicatePair(ClonePairList_test);
 					cloneJudge = null;
